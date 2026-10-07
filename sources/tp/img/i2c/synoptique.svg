@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" font-family="Inter, Segoe UI, sans-serif" font-size="13">
+  <!-- Module TMP102 -->
+  <rect x="20" y="40" width="190" height="200" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+  <text x="115" y="30" text-anchor="middle" font-weight="700" fill="#14532d">Module TMP102</text>
+  <rect x="40" y="110" width="44" height="44" rx="3" fill="#0f172a"/>
+  <text x="62" y="137" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">TMP102</text>
+  <text x="62" y="172" text-anchor="middle" fill="#14532d" font-size="10">capteur + CAN</text>
+  <text x="62" y="185" text-anchor="middle" fill="#14532d" font-size="10">12 bits</text>
+
+  <!-- Pull-up -->
+  <g stroke="#15803d" stroke-width="2" fill="#fff">
+    <line x1="130" y1="80" x2="130" y2="98"/><rect x="124" y="98" width="12" height="24"/><line x1="130" y1="122" x2="130" y2="140"/>
+    <line x1="160" y1="80" x2="160" y2="128"/><rect x="154" y="128" width="12" height="24"/><line x1="160" y1="152" x2="160" y2="170"/>
+  </g>
+  <text x="115" y="226" text-anchor="middle" fill="#14532d" font-size="10">pull-up 4,7 kΩ intégrées</text>
+  <g fill="#15803d"><circle cx="130" cy="140" r="3"/><circle cx="160" cy="170" r="3"/><circle cx="130" cy="80" r="3"/><circle cx="160" cy="80" r="3"/></g>
+  <g stroke="#15803d" stroke-width="2">
+    <line x1="84" y1="125" x2="100" y2="125"/><line x1="100" y1="125" x2="100" y2="140"/><line x1="100" y1="140" x2="210" y2="140"/>
+    <line x1="84" y1="145" x2="95" y2="145"/><line x1="95" y1="145" x2="95" y2="170"/><line x1="95" y1="170" x2="210" y2="170"/>
+    <line x1="120" y1="80" x2="210" y2="80"/>
+  </g>
+
+  <!-- Bornes du module -->
+  <g font-weight="700" text-anchor="end" fill="#14532d" font-size="11">
+    <text x="204" y="74">V+</text><text x="204" y="104">GND</text><text x="204" y="134">SDA</text><text x="204" y="164">SCL</text><text x="204" y="194">ADD0</text>
+  </g>
+
+  <!-- Liaisons (câble ≈ 3 m) -->
+  <text x="320" y="30" text-anchor="middle" font-size="12" fill="#475569">câble ≈ 3 m  (C<tspan font-size="9" dy="3">b</tspan><tspan dy="-3"> ≈ 200 pF)</tspan></text>
+  <g stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M210 80 H440" stroke="#dc2626"/>
+    <path d="M210 110 H440" stroke="#0f172a"/>
+    <path d="M210 140 H440" stroke="#2563eb"/>
+    <path d="M210 170 H440" stroke="#f59e0b"/>
+    <path d="M210 200 H240 V110" stroke="#0f172a"/>
+  </g>
+  <g font-size="11" font-weight="700">
+    <text x="320" y="74" text-anchor="middle" fill="#dc2626">3,3 V</text>
+    <text x="320" y="134" text-anchor="middle" fill="#2563eb">SDA (données)</text>
+    <text x="320" y="164" text-anchor="middle" fill="#b45309">SCL (horloge)</text>
+    <text x="115" y="262" text-anchor="middle" fill="#0f172a">ADD0 à GND → adresse 0x48</text>
+  </g>
+
+  <!-- ESP32 -->
+  <rect x="440" y="40" width="200" height="210" rx="8" fill="#1e293b"/>
+  <text x="540" y="30" text-anchor="middle" font-weight="700" fill="#0f172a">ESP32 DevKit</text>
+  <rect x="520" y="70" width="90" height="60" rx="4" fill="#94a3b8"/>
+  <text x="565" y="105" text-anchor="middle" fill="#0f172a" font-size="11" font-weight="700">WROOM-32</text>
+  <g fill="#fff" font-size="11" font-weight="700">
+    <text x="450" y="84">3V3</text><text x="450" y="114">GND</text><text x="450" y="144">GPIO21</text><text x="450" y="174">GPIO22</text><text x="450" y="234">GPIO4</text>
+  </g>
+  <rect x="610" y="225" width="30" height="18" rx="2" fill="#64748b"/>
+  <text x="625" y="267" text-anchor="middle" font-size="10" fill="#475569">USB → PC</text>
+
+  <!-- LED d'alarme -->
+  <g stroke="#0f172a" stroke-width="2.5" fill="none">
+    <path d="M440 230 H400"/>
+    <rect x="370" y="223" width="30" height="14" fill="#fff"/>
+    <path d="M370 230 H350"/>
+    <path d="M350 218 v24 l-20 -12 z" fill="#dc2626" stroke="#dc2626"/>
+    <path d="M328 218 v24"/>
+    <path d="M328 230 H300 V260"/>
+    <path d="M290 260 h20 M294 266 h12 M298 272 h4"/>
+  </g>
+  <text x="385" y="256" text-anchor="middle" font-size="10" fill="#0f172a">330 Ω</text>
+  <text x="340" y="210" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">LED alarme</text>
+</svg>

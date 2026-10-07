@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 200" font-family="Inter, Segoe UI, sans-serif">
+  <text x="8" y="50" font-size="14" font-weight="700" fill="#b45309">SCL</text>
+  <text x="8" y="120" font-size="14" font-weight="700" fill="#2563eb">SDA</text>
+
+  <g transform="translate(40 0)">
+    <!-- Cellules de bit -->
+    <g fill="#eff6ff">
+      <rect x="80" y="20" width="420" height="125"/>
+      <rect x="500" y="20" width="60" height="125" fill="#fef3c7"/>
+      <rect x="560" y="20" width="60" height="125" fill="#dcfce7"/>
+    </g>
+    <g stroke="#cbd5e1" stroke-dasharray="3 3">
+      <line x1="140" y1="20" x2="140" y2="145"/><line x1="200" y1="20" x2="200" y2="145"/><line x1="260" y1="20" x2="260" y2="145"/>
+      <line x1="320" y1="20" x2="320" y2="145"/><line x1="380" y1="20" x2="380" y2="145"/><line x1="440" y1="20" x2="440" y2="145"/>
+    </g>
+
+    <!-- Signaux -->
+    <polyline fill="none" stroke="#b45309" stroke-width="3" points="0,30 70,30 74,60 100,60 104,30 125,30 129,60 160,60 164,30 185,30 189,60 220,60 224,30 245,30 249,60 280,60 284,30 305,30 309,60 340,60 344,30 365,30 369,60 400,60 404,30 425,30 429,60 460,60 464,30 485,30 489,60 520,60 524,30 545,30 549,60 580,60 584,30 605,30 609,60 625,60"/>
+    <polyline fill="none" stroke="#2563eb" stroke-width="3" points="0,100 50,100 54,130 80,130 84,100 140,100 144,130 260,130 264,100 320,100 324,130 625,130"/>
+
+    <!-- Valeurs des bits -->
+    <g font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">
+      <text x="112" y="92">1</text><text x="172" y="122">0</text><text x="232" y="122">0</text><text x="292" y="92">1</text>
+      <text x="352" y="122">0</text><text x="412" y="122">0</text><text x="472" y="122">0</text><text x="532" y="122">0</text><text x="592" y="122">0</text>
+    </g>
+
+    <!-- START -->
+    <line x1="52" y1="15" x2="52" y2="150" stroke="#dc2626" stroke-width="2"/>
+    <text x="52" y="168" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626">START</text>
+
+    <!-- Légendes -->
+    <g font-size="12" text-anchor="middle" fill="#334155">
+      <path d="M82 152 v6 h416 v-6" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+      <text x="290" y="175" font-weight="700" fill="#1d4ed8">adresse 7 bits : 1001000 = 0x48</text>
+      <text x="530" y="160" font-weight="700" fill="#b45309">R/W</text>
+      <text x="530" y="175">0 = écriture</text>
+      <text x="590" y="160" font-weight="700" fill="#15803d">ACK</text>
+      <text x="590" y="175">esclave</text>
+    </g>
+    <text x="350" y="194" text-anchor="middle" font-size="11" fill="#64748b">premier octet envoyé : 1001 0000 = 0x90 — chaque bit est lu pendant que SCL est à l'état HIGH</text>
+  </g>
+</svg>

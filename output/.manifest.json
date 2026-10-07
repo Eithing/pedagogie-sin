@@ -1,0 +1,45 @@
+{
+  "sources/progression/PROGRESSION_2nde_Rapinoe.md": [
+    "2nde_SNT/PROGRESSION_2nde_Rapinoe.pdf"
+  ],
+  "sources/cours/COURS_SNT_TCP_IP.md": [
+    "2nde_SNT/eleve/ELEVE_COURS_SNT_TCP_IP.pdf",
+    "2nde_SNT/prof/PROF_COURS_SNT_TCP_IP.pdf",
+    "2nde_SNT/prof/DEROULE_COURS_SNT_TCP_IP.pdf",
+    "2nde_SNT/slides/COURS_SNT_TCP_IP.html",
+    "2nde_SNT/slides/SLIDES_COURS_SNT_TCP_IP.pdf"
+  ],
+  "sources/progression/PROGRESSION_TSTI2D1.md": [
+    "Term_STI2D_SIN/PROGRESSION_TSTI2D1.pdf"
+  ],
+  "sources/progression/PROGRESSION_TSTI2D2.md": [
+    "Term_STI2D_SIN/PROGRESSION_TSTI2D2.pdf"
+  ],
+  "sources/progression/PROGRESSION_TSTI2D3.md": [
+    "Term_STI2D_SIN/PROGRESSION_TSTI2D3.pdf"
+  ],
+  "sources/tp/TP_TermSIN_I2C_ESP32_Temperature.md": [
+    "Term_STI2D_SIN/eleve/ELEVE_TP_TermSIN_I2C_ESP32_Temperature.pdf",
+    "Term_STI2D_SIN/prof/PROF_TP_TermSIN_I2C_ESP32_Temperature.pdf"
+  ],
+  "sources/evaluation/EVAL_SNT_Internet.md": [
+    "2nde_SNT/eleve/ELEVE_EVAL_SNT_Internet_A.pdf",
+    "2nde_SNT/prof/PROF_EVAL_SNT_Internet_A.pdf",
+    "2nde_SNT/eleve/ELEVE_EVAL_SNT_Internet_B.pdf",
+    "2nde_SNT/prof/PROF_EVAL_SNT_Internet_B.pdf"
+  ],
+  "sources/evaluation/EVAL_TermSIN_CAN.md": [
+    "Term_STI2D_SIN/eleve/ELEVE_EVAL_TermSIN_CAN_A.pdf",
+    "Term_STI2D_SIN/prof/PROF_EVAL_TermSIN_CAN_A.pdf",
+    "Term_STI2D_SIN/eleve/ELEVE_EVAL_TermSIN_CAN_B.pdf",
+    "Term_STI2D_SIN/prof/PROF_EVAL_TermSIN_CAN_B.pdf"
+  ],
+  "sources/td/TD_TermSIN_CAN_QualiteAir.md": [
+    "Term_STI2D_SIN/eleve/ELEVE_TD_TermSIN_CAN_QualiteAir.pdf",
+    "Term_STI2D_SIN/prof/PROF_TD_TermSIN_CAN_QualiteAir.pdf"
+  ],
+  "sources/tp/TP_TermSIN_TMP36_Tinkercad.md": [
+    "Term_STI2D_SIN/eleve/ELEVE_TP_TermSIN_TMP36_Tinkercad.pdf",
+    "Term_STI2D_SIN/prof/PROF_TP_TermSIN_TMP36_Tinkercad.pdf"
+  ]
+}

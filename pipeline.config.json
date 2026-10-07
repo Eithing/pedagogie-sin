@@ -1,0 +1,50 @@
+{
+  "etablissement": "Lycée César Baggio",
+  "discipline": "STI2D — SIN",
+  "dossierSources": "sources",
+  "dossierSortie": "output",
+  "lignesReponseParDefaut": 6,
+  "baremeTotalParDefaut": 20,
+  "navigateur": "",
+  "themes": {
+    "SNT": "#0d9488",
+    "1ère": "#7c3aed",
+    "Term": "#2563eb"
+  },
+  "accentParDefaut": "#2563eb",
+  "rythme": {
+    "exposeMaxMin": 10,
+    "partActiviteMin": 0.4
+  },
+  "classes": [
+    {
+      "dossier": "2nde_SNT",
+      "motifs": [
+        "SNT",
+        "2nde",
+        "seconde"
+      ]
+    },
+    {
+      "dossier": "1ere_STI2D",
+      "motifs": [
+        "1ère",
+        "1ere",
+        "première"
+      ]
+    },
+    {
+      "dossier": "Term_STI2D_SIN",
+      "motifs": [
+        "SIN"
+      ]
+    },
+    {
+      "dossier": "Term_STI2D_2I2D",
+      "motifs": [
+        "2I2D",
+        "Term"
+      ]
+    }
+  ]
+}

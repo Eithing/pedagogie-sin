@@ -1,0 +1,116 @@
+# Programme de l'enseignement de spécialité « Ingénierie, innovation et développement durable » (2I2D)
+# classe terminale STI2D — périmètre de l'enseignement spécifique SIN.
+# Texte officiel : BO spécial n°1 du 22 janvier 2019 (annexe IT / I2D / 2I2D) ;
+# ressource Éduscol « Mise en œuvre de l'enseignement de spécialité 2I2D » (organisation, CO5.8 / CO6.5 / CO7.3).
+# Intitulés reproduits mot pour mot. Identifiants : numérotation du BO + lettre (ordre d'apparition dans le tableau).
+titre: "Spécialité 2I2D — classe terminale STI2D — enseignement spécifique SIN"
+reference: BO spécial n°1 du 22 janvier 2019 (programme 2I2D) ; Éduscol, mise en œuvre 2I2D terminale
+principes:
+  - "Le projet est le pivot des enseignements spécifiques du programme ; il requiert un développement pluri-technologique mené de manière collaborative."
+  - "En classe terminale, un projet pluri-technologique collaboratif de conception - réalisation, d'amélioration ou d'optimisation d'un produit, d'une durée de 72 heures, implique un travail collectif de synthèse et d'approfondissement."
+  - "Il s'agit d'organiser de façon cohérente, progressive et spiralaire l'acquisition des compétences et connaissances associées du programme au travers de séquences pédagogiques (Éduscol)."
+  - "Les tableaux définissant les programmes de la série STI2D ne sont en aucun cas une présentation chronologique des connaissances et compétences à faire acquérir aux élèves."
+  - "12 heures étant consacrées à l'enseignement de spécialité 2I2D, 3 à 4 heures peuvent être consacrées aux enseignements communs et 8 ou 9 heures aux enseignements spécifiques (Éduscol)."
+
+# Compétences : objectifs O1 à O7 (communes) et déclinaison SIN de CO5.8, CO6.5 et CO7.3.
+competences:
+  - { id: CO1.1, texte: "Justifier les choix des structures matérielles et/ou logicielles d'un produit, identifier les flux mis en œuvre dans une approche de développement durable." }
+  - { id: CO2.1, texte: "Décoder le cahier des charges d'un produit, participer, si besoin, à sa modification." }
+  - { id: CO3.1, texte: "Identifier et caractériser les fonctions et les constituants d'un produit ainsi que ses entrées/sorties." }
+  - { id: CO3.2, texte: "Identifier et caractériser l'agencement matériel et/ou logiciel d'un produit." }
+  - { id: CO3.3, texte: "Identifier et caractériser le fonctionnement temporel d'un produit ou d'un processus." }
+  - { id: CO3.4, texte: "Identifier et caractériser des solutions techniques." }
+  - { id: CO4.1, texte: "Décrire une idée, un principe, une solution, un projet en utilisant des outils de représentation adaptés." }
+  - { id: CO4.2, texte: "Décrire le fonctionnement et/ou l'exploitation d'un produit en utilisant l'outil de description le plus pertinent." }
+  - { id: CO4.3, texte: "Présenter de manière argumentée des démarches, des résultats, y compris dans une langue étrangère." }
+  - { id: CO5.1, texte: "S'impliquer dans une démarche de projet menée en groupe." }
+  - { id: CO5.4, texte: "Planifier un projet (diagramme de Gantt, chemin critique) en utilisant les outils adaptés et en prenant en compte les données technico-économiques." }
+  - { id: CO5.5, texte: "Proposer des solutions à un problème technique identifié en participant à des démarches de créativité, choisir et justifier la solution retenue." }
+  - { id: CO5.8-SIN1, texte: "Concevoir — Proposer/choisir l'architecture d'une solution logicielle et matérielle au regard de la définition d'un produit." }
+  - { id: CO5.8-SIN2, texte: "Concevoir — Rechercher et écrire l'algorithme de fonctionnement puis programmer la réponse logicielle relative au traitement d'une problématique posée." }
+  - { id: CO6.3, texte: "Évaluer un écart entre le comportement du réel et les résultats fournis par le modèle en fonction des paramètres proposés, conclure sur la validité du modèle." }
+  - { id: CO6.5-SIN1, texte: "Interpréter les résultats d'une simulation et conclure sur la performance de la solution — Simulation d'un comportement informationnel faisant intervenir un ou plusieurs constituants matériels et/ou traitements logiciels simples d'une chaîne d'information." }
+  - { id: CO7.1, texte: "Réaliser et valider un prototype ou une maquette obtenus en réponse à tout ou partie du cahier des charges initial." }
+  - { id: CO7.2, texte: "Mettre en œuvre un scénario de validation devant intégrer un protocole d'essais, de mesures et/ou d'observations sur le prototype ou la maquette, interpréter les résultats et qualifier le produit." }
+  - { id: CO7.3-SIN1, texte: "Expérimenter — Des moyens matériels d'acquisition, de traitement, de stockage et de restitution de l'information pour aider à la conception d'une chaîne d'information." }
+  - { id: CO7.3-SIN2, texte: "Expérimenter — Des architectures matérielles et logicielles en réponse à une problématique posée." }
+
+groupes:
+  - id: "1.2"
+    titre: "1.2 Outils de l'ingénierie système (connaissances communes, mobilisées en SIN)"
+    items:
+      - { id: 1.2.1b, contenu: "Approche système (environnement, frontières, système d'intérêt, points de vue)." }
+      - { id: 1.2.2c, contenu: "Analyse du besoin : besoin initial, mission principale, contexte, cas d'utilisations, scénarios d'utilisation, besoins des parties prenantes." }
+      - { id: 1.2.2d, contenu: "Spécification technique, conception de l'architecture. États, séquences. Fonctionnalités, structure physique, flux internes/externes." }
+
+  - id: "2.4"
+    titre: "2.4 Approche fonctionnelle et structurelle d'une chaîne d'information"
+    items:
+      - { id: 2.4.1, contenu: "Notion de chaîne d'information. Principales fonctions relatives à la chaîne d'information : acquérir, traiter, communiquer. Caractérisation des fonctions. Représentation graphique d'une chaîne d'information." }
+      - { id: 2.4.2a, contenu: "Acquisition d'une grandeur physique (principe, démarches et méthodes, notions requises)." }
+      - { id: 2.4.2b, contenu: "Conditionnement d'une grandeur électrique (mise en forme, amplification, filtrage)." }
+      - { id: 2.4.2c, contenu: "Conversion Analogique/Numérique (CAN)." }
+      - { id: 2.4.3a, contenu: "Encodage de l'information : binaire, hexadécimal, ASCII." }
+      - { id: 2.4.3b, contenu: "Algorithmique." }
+      - { id: 2.4.3c, contenu: "Traitement numérique." }
+      - { id: 2.4.3d, contenu: "Compression de données." }
+      - { id: 2.4.4a, contenu: "Typologie des transmissions." }
+      - { id: 2.4.4b, contenu: "Architecture d'un réseau informatique." }
+      - { id: 2.4.4c, contenu: "Architecture Client/Serveur." }
+      - { id: 2.4.5, contenu: "Organisation structurelle d'une application logicielle : (programme principal, interfaces, entrées-sorties, sous programmes, procédures, fonctions)." }
+
+  - id: "3.1"
+    titre: "3.1 Modélisations et simulations"
+    items:
+      - { id: 3.1.1, contenu: "Progiciels de simulation : typologie des progiciels, critères de choix." }
+      - { id: 3.1.2, contenu: "Paramétrage d'un modèle : variables internes, variables externes ; entrées, sources de simulation ; sorties, rendus des résultats." }
+      - { id: 3.1.4, contenu: "Post-traitement et analyse des résultats : interprétation des résultats d'une simulation (courbe, tableau, graphe, unités associées)." }
+
+  - id: "3.4"
+    titre: "3.4 Comportement informationnel des produits"
+    items:
+      - { id: 3.4.1a, contenu: "Nature d'une information." }
+      - { id: 3.4.1b, contenu: "Représentation temporelle d'une information." }
+      - { id: 3.4.1c, contenu: "Représentation fréquentielle d'une information." }
+      - { id: 3.4.2a, contenu: "Diagramme de séquence." }
+      - { id: 3.4.2b, contenu: "Diagramme d'états, d'activités." }
+      - { id: 3.4.3a, contenu: "Typologies des communications." }
+      - { id: 3.4.3b, contenu: "Liaisons séries : protocoles de communication, sens du flux de données, débit et rapidité de transmission." }
+      - { id: 3.4.3c, contenu: "Configuration d'un réseau : routage de l'information ; adressage statique, dynamique." }
+      - { id: 3.4.3d, contenu: "Communication au sein d'un réseau : trames TCP/IP, UDP ; sockets ; protocoles FTP, http." }
+      - { id: 3.4.3e, contenu: "Système temps-réel." }
+      - { id: 3.4.4a, contenu: "Représentation d'une boucle de régulation ou d'asservissement." }
+      - { id: 3.4.4b, contenu: "Contrôle du fonctionnement d'un système régulé ou asservi en vue d'un maintien au plus près d'un point de fonctionnement." }
+
+  - id: "4.3.5"
+    titre: "4.3.5 Conception informationnelle des produits"
+    items:
+      - { id: 4.3.5a, contenu: "Bilan et nature des entrées/sorties. Structures de programmation. Fonctions logicielles. Méthodes et propriétés utiles en lien avec les bibliothèques logicielles choisies. Types de variables. Diagrammes de description." }
+      - { id: 4.3.5b, contenu: "Codage dans un langage spécifique. Règles d'écriture (organisation du code, commentaires, documentation, etc.)." }
+      - { id: 4.3.5c, contenu: "Mise au point." }
+
+  - id: "5.3"
+    titre: "5.3 Constituants de l'information"
+    items:
+      - { id: 5.3.1a, contenu: "Capteurs analogiques. Capteurs numériques, détecteurs." }
+      - { id: 5.3.1b, contenu: "Amplificateurs." }
+      - { id: 5.3.1c, contenu: "Filtres passe-bas." }
+      - { id: 5.3.1d, contenu: "Convertisseurs analogique-numérique." }
+      - { id: 5.3.2a, contenu: "Constituants sonores, visuels, tactiles." }
+      - { id: 5.3.2b, contenu: "Interfaces hybrides." }
+      - { id: 5.3.3a, contenu: "Cartes électroniques à microcontrôleur." }
+      - { id: 5.3.3b, contenu: "Nano ordinateurs." }
+      - { id: 5.3.3c, contenu: "Objets connectés." }
+      - { id: 5.3.4a, contenu: "Constituants d'un réseau." }
+      - { id: 5.3.4b, contenu: "Caractéristiques des bus de communication." }
+      - { id: 5.3.4c, contenu: "Composants émetteurs et récepteurs pour la transmission sans fil." }
+
+  - id: "6"
+    titre: "6 Prototypage et expérimentations"
+    items:
+      - { id: 6.1a, contenu: "Prototypage de pièces et de la chaîne d'information." }
+      - { id: 6.1b, contenu: "Virtualisation de solutions logicielles." }
+      - { id: 6.2a, contenu: "Protocole d'essai. Sécurité de mise en œuvre." }
+      - { id: 6.2b, contenu: "Expérimentations de constituants de la chaîne d'information." }
+      - { id: 6.3a, contenu: "Intégration des éléments prototypés du produit." }
+      - { id: 6.3b, contenu: "Mesure et validation de performances." }

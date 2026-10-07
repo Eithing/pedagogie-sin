@@ -1,0 +1,226 @@
+# Catalogue des séquences de Terminale STI2D — enseignement spécifique SIN (2I2D)
+# Partagé par PROGRESSION_TSTI2D1, _TSTI2D2 et _TSTI2D3 : même séquences, profondeur différente.
+#   activites.socle             : toutes les classes
+#   activites.approfondissement : classes en « profondeur: approfondi » (TSTI2D2, 4 h)
+# Références au programme : referentiels/bo/2i2d_sin_terminale.yaml
+# Thèmes et problématiques : liste d'exemples de la ressource Éduscol « mise en œuvre 2I2D ».
+
+sequences:
+  # ---------------- Piste « classe » : créneaux propres à chaque classe ----------------
+  - id: T0
+    titre: Modéliser un système avec SysML (mini-séquence de rentrée)
+    court: Modélisation SysML
+    couleur: "#64748b"
+    theme: Rentrée
+    problematique: Comment décrire un système technique avant de l'étudier ?
+    programme: [1.2.1b, 1.2.2c, 1.2.2d, 2.4.1]
+    competences: [CO4.1, CO4.2, CO3.1]
+    activites:
+      socle:
+        - "Lecture de diagrammes SysML d'un système réel : contexte, cas d'utilisation, exigences, blocs"
+        - "Chaîne d'information du système : acquérir, traiter, communiquer"
+    evaluation: "Non notée (effectif très réduit et incident d'appel ce jour-là)."
+
+  - id: T1
+    titre: Acquérir une grandeur physique
+    court: Capteurs et CAN
+    couleur: "#2563eb"
+    theme: "Préserver la santé"
+    problematique: Comment obtenir une mesure numérique fiable de la qualité de l'air d'une salle de classe ?
+    programme: [2.4.2a, 2.4.2b, 2.4.2c, 2.4.3a, 5.3.1a, 5.3.1b, 5.3.1c, 5.3.1d, 3.4.1a, 3.4.1b, 3.4.1c]
+    competences: [CO7.3-SIN1, CO3.1, CO6.3]
+    activites:
+      socle:
+        - "Caractéristiques d'un capteur : étendue de mesure, résolution, sensibilité, précision, linéarité"
+        - "CAN : quantum, résolution, valeur pleine échelle, nombre de bits ($q = V_{ref} / 2^n$)"
+        - "Conditionnement : amplificateur à gain réglable, filtre passe-bas du premier ordre pour lisser une mesure"
+        - "Signal logique, analogique, numérique ; lecture de chronogrammes ; approche qualitative du spectre d'un signal audio"
+        - "TD : choisir un capteur et un CAN pour répondre à un cahier des charges"
+      approfondissement:
+        - "Exercices Tinkercad : relevés de mesure, lien entre tension mesurée et code, calcul du quantum"
+        - "TP Wokwi : acquisition analogique sur ESP32, affichage au traceur série et lissage par moyenne glissante"
+        - "TP : comparer mesure brute et mesure filtrée, conclure sur la précision obtenue"
+    outils: [Wokwi (ESP32), tableur]
+    evaluation: "Interrogation écrite de 30 min sur le CAN (deux sujets : A pour D1, B pour l'heure commune D2 + D3)."
+    ressources: [EVAL_TermSIN_CAN]
+
+  - id: T2
+    titre: Traiter l'information par programme
+    court: Programmer un µC
+    couleur: "#7c3aed"
+    theme: "Gérer la ville du futur (smart city)"
+    problematique: Comment éclairer une rue de façon autonome tout en respectant l'environnement ?
+    programme: [2.4.3b, 2.4.3c, 2.4.5, 4.3.5a, 4.3.5b, 4.3.5c, 5.3.3a, 3.4.2b, 3.4.3e]
+    competences: [CO5.8-SIN2, CO3.3, CO4.2]
+    activites:
+      socle:
+        - "Diagramme d'états du lampadaire (jour, nuit, présence détectée)"
+        - "De l'algorithme au programme C++ : structures, fonctions, variables typées, bibliothèques"
+        - "Interruptions sur entrée (détecteur de présence) et temporisations non bloquantes"
+        - "Mise au point : moniteur série, pas à pas"
+      approfondissement:
+        - "TP Wokwi : lampadaire autonome complet (capteur de luminosité, détecteur PIR, LED commandée en PWM)"
+        - "Mini-projet : intégration et fusion de plusieurs programmes en un programme unique"
+    outils: [Wokwi (ESP32), VS Code]
+    evaluation: "Programme évalué sur grille (fonctionnement, structure, commentaires) + questions de cours."
+    note: "Problématique reprise de l'exemple de séquence Éduscol (annexe 2 de la ressource « mise en œuvre 2I2D »)."
+
+  - id: T3
+    titre: Faire dialoguer les constituants
+    court: Liaisons série et bus
+    couleur: "#0891b2"
+    theme: "Préserver la santé"
+    problematique: Comment un microcontrôleur échange-t-il avec ses capteurs et ses afficheurs ?
+    programme: [3.4.3a, 3.4.3b, 5.3.4b, 5.3.2a, 2.4.4a]
+    competences: [CO5.8-SIN1, CO7.3-SIN2, CO3.3]
+    activites:
+      socle:
+        - "Typologie des communications : synchrone / asynchrone, half / full duplex, maître / esclave"
+        - "Liaison série asynchrone : trame, bits de start et de stop, parité, débit"
+        - "Bus I2C : adressage, lecture d'une trame sur un chronogramme"
+        - "TD : décoder des trames UART et I2C"
+      approfondissement:
+        - "TP « Surveillance HACCP d'une chambre froide » : acquisition I2C sur ESP32 et alarme à hystérésis"
+        - "Analyseur logique virtuel de Wokwi, trames lues dans PulseView"
+    outils: [Wokwi, PulseView]
+    ressources: ["TP_TermSIN_I2C_ESP32_Temperature (à adapter en simulation)"]
+    evaluation: "Évaluation écrite : décodage de trames ; TP noté pour la classe à 4 h."
+
+  - id: T4
+    titre: Réguler et simuler un système
+    court: Régulation
+    couleur: "#ea580c"
+    theme: "Améliorer l'efficacité énergétique d'un produit"
+    problematique: Comment maintenir la température d'une serre près de la consigne en consommant le moins possible ?
+    programme: [3.4.4a, 3.4.4b, 3.1.1, 3.1.2, 3.1.4, 3.4.2a]
+    competences: [CO6.5-SIN1, CO6.3, CO5.8-SIN2]
+    activites:
+      socle:
+        - "Schéma-bloc d'une boucle de régulation : consigne, mesure, écart, correcteur"
+        - "Régulation Tout-ou-Rien avec hystérésis : chronogrammes"
+        - "Diagramme de séquence d'un scénario d'utilisation"
+        - "Simulation comportementale : paramétrer, lancer, interpréter les résultats"
+      approfondissement:
+        - "TP : régulation TOR simulée sur ESP32 (Wokwi), influence de l'hystérésis sur le nombre de commutations"
+        - "Écart entre simulation et mesures, validité du modèle"
+    outils: [Wokwi, tableur]
+    evaluation: "Sujet type bac (partie spécifique SIN)."
+
+  - id: T5
+    titre: Préparer l'épreuve
+    court: Révisions bac
+    couleur: "#475569"
+    problematique: Analyser un système pluritechnologique complet en temps limité.
+    programme: [2.4.1]
+    competences: [CO4.3]
+    activites:
+      socle:
+        - "Sujets de bac (parties spécifiques SIN) en temps limité, correction collective"
+        - "Fiches de synthèse par chapitre"
+    evaluation: "Bac blanc (date fixée par l'établissement)."
+
+  # ---------------- Projet (piste « projet » de TSTI2D2) ----------------
+  - id: P
+    titre: Projet pluritechnologique (72 h)
+    court: Projet 72 h
+    couleur: "#16a34a"
+    theme: Projet
+    problematique: Concevoir, réaliser et qualifier tout ou partie d'un prototype en équipe.
+    programme: [6.1a, 6.2a, 6.2b, 6.3a, 6.3b]
+    competences: [CO2.1, CO5.1, CO5.4, CO5.5, CO7.1, CO7.2, CO4.3]
+    activites:
+      socle:
+        - "Revue 1 : cahier des charges, répartition des tâches, planification (Gantt)"
+        - "Conception et prototypage de la chaîne d'information"
+        - "Intégration, protocole d'essai, mesures et validation des performances"
+        - "Revue 2 et préparation de la présentation orale"
+    evaluation: "Revues de projet (grilles communes à l'équipe)."
+    note: "Le projet de 72 h est partagé avec l'équipe : dates des revues et répartition des heures à confirmer."
+
+  # ---------------- Piste partagée « commun » : heure commune TSTI2D2 + TSTI2D3 ----------------
+  - id: C0
+    titre: Révisions et CAN en classe commune
+    court: Révisions / CAN
+    couleur: "#64748b"
+    problematique: Remettre à niveau un groupe issu de deux classes.
+    programme: [2.4.1, 2.4.2c]
+    competences: [CO3.1]
+    activites:
+      socle:
+        - "Exercices de révision et premières notions sur le CAN, communs aux deux classes"
+    evaluation: Formative.
+
+  - id: C1
+    titre: Mettre en réseau des objets
+    court: Réseau local
+    couleur: "#0d9488"
+    theme: "Gérer la ville du futur (smart city)"
+    problematique: Comment raccorder les capteurs d'un parking connecté au réseau du lycée ?
+    programme: [2.4.4b, 3.4.3c, 5.3.4a]
+    competences: [CO3.2, CO7.3-SIN2]
+    activites:
+      socle:
+        - "Modèle OSI, encapsulation, adresse physique (MAC) et adresse logique (IPv4), masque"
+        - "Simulation Filius / Packet Tracer : switch, routeur, adressage statique puis dynamique (DHCP)"
+        - "Calcul d'adresses de réseau ; circulation des trames"
+    outils: [Filius, Packet Tracer]
+    evaluation: "TP noté en binôme : configurer un réseau simulé selon un cahier des charges."
+
+  - id: C2
+    titre: Échanger des données en client/serveur
+    court: Client / serveur
+    couleur: "#0284c7"
+    theme: "Gérer la ville du futur (smart city)"
+    problematique: Comment le tableau de bord du parking récupère-t-il les mesures des capteurs ?
+    programme: [2.4.4c, 3.4.3d, 3.4.2a, 6.1b]
+    competences: [CO5.8-SIN1, CO4.2]
+    activites:
+      socle:
+        - "Architecture client/serveur : serveur web, serveur DHCP, serveur DNS (Filius)"
+        - "Observer TCP, UDP et HTTP avec Wireshark (fichiers de capture fournis)"
+        - "Diagramme de séquence d'une requête HTTP"
+        - "Serveur dans une machine virtuelle (virtualisation)"
+    outils: [Filius, Wireshark]
+    evaluation: "Évaluation écrite : analyse d'une capture de trames."
+
+  - id: C3
+    titre: Objets connectés et IHM web
+    court: IoT et IHM web
+    couleur: "#db2777"
+    theme: "Préserver la santé"
+    problematique: Comment consulter et piloter à distance un objet connecté ?
+    programme: [5.3.3b, 5.3.3c, 5.3.4c, 5.3.2b, 2.4.3d]
+    competences: [CO5.8-SIN1, CO5.8-SIN2, CO7.3-SIN2]
+    activites:
+      socle:
+        - "Page web d'IHM en HTML / CSS (le BO prévoit HTML/CSS et PHP pour les pages web)"
+        - "ESP32 simulé (Wokwi, Wi-Fi « Wokwi-GUEST ») : publier une mesure, piloter une sortie à distance"
+        - "Comparer Wi-Fi, Bluetooth, RF : portée, débit, consommation"
+        - "Nano-ordinateur (système d'exploitation, périphériques) ; taux de compression d'une image ou d'une page"
+    outils: [Wokwi, VS Code, MQTT Explorer]
+    evaluation: "Mini-projet en binôme : objet connecté simulé avec son IHM web."
+
+  - id: C4
+    titre: Révisions en classe commune
+    court: Révisions bac
+    couleur: "#475569"
+    problematique: S'entraîner sur des sujets complets.
+    programme: [2.4.1]
+    competences: [CO4.3]
+    activites:
+      socle:
+        - "Sujets de bac en binôme sur poste, correction collective"
+    evaluation: Formative.
+
+pistes_partagees:
+  commun:
+    nom: Heure commune D2 + D3
+    resume: vendredi midi, labo, 26 élèves
+    creneaux:
+      - { jour: vendredi, heures: 1, libelle: "Vendredi midi, 1 h, TSTI2D2 + TSTI2D3 regroupées (26 élèves, labo, 1 poste pour 2)" }
+    sequences:
+      - { ref: C0, semaines: 7, etat: en-cours }
+      - { ref: C1, semaines: 7 }
+      - { ref: C2, semaines: 7 }
+      - { ref: C3, semaines: 6 }
+      - { ref: C4, semaines: fin }

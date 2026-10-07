@@ -1,0 +1,25 @@
+{
+  "name": "pedagogie-sin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chaîne de production des cours, TD et TP STI2D SIN : Markdown -> versions élève/prof -> PDF (CSS + KaTeX)",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:html": "node scripts/build.mjs --html",
+    "watch": "node scripts/build.mjs --watch",
+    "validate": "node scripts/validate.mjs"
+  },
+  "dependencies": {
+    "@fontsource/fira-code": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.12.0",
+    "js-yaml": "^5.4.3",
+    "katex": "^0.19.0",
+    "markdown-it": "^15.0.2",
+    "markdown-it-attrs": "^5.0.1",
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-texmath": "^1.0.0",
+    "puppeteer-core": "^25.12.0"
+  }
+}

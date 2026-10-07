@@ -1,0 +1,187 @@
+# Programme de sciences numériques et technologie — classe de seconde générale et technologique
+# Texte officiel : annexe de l'arrêté du 17 janvier 2019, BO spécial n°1 du 22 janvier 2019.
+# Contenus et capacités attendues reproduits mot pour mot. Les identifiants (INT.1…) sont internes au projet.
+titre: Programme de sciences numériques et technologie (SNT) — seconde
+reference: BO spécial n°1 du 22 janvier 2019 (arrêté du 17 janvier 2019)
+principes:
+  - Chacun des thèmes a vocation à être enseigné sur une durée d'environ quatre semaines.
+  - L'ordre dans lequel sont traités les thèmes est au libre choix des professeurs.
+  - "Cet enseignement a vocation à multiplier les occasions de mise en activité des élèves, sous des formes variées (exposés, travaux en groupe, mini-projets, productions individuelles ou collectives, etc.)."
+  - Le langage de programmation retenu est Python version 3 (ou supérieure).
+groupes:
+  - id: PY
+    titre: Notions transversales de programmation
+    items:
+      - id: PY.1
+        contenu: "Affectations, variables ; séquences ; instructions conditionnelles ; boucles bornées et non bornées ; définitions et appels de fonctions"
+        capacites:
+          - Écrire et développer des programmes pour répondre à des problèmes et modéliser des phénomènes physiques, économiques et sociaux.
+
+  - id: INT
+    titre: Internet
+    items:
+      - id: INT.1
+        contenu: "Protocole TCP/IP : paquets, routage des paquets"
+        capacites:
+          - Distinguer le rôle des protocoles IP et TCP.
+          - Caractériser les principes du routage et ses limites.
+          - Distinguer la fiabilité de transmission et l'absence de garantie temporelle.
+      - id: INT.2
+        contenu: Adresses symboliques et serveurs DNS
+        capacites:
+          - Sur des exemples réels, retrouver une adresse IP à partir d'une adresse symbolique et inversement.
+      - id: INT.3
+        contenu: Réseaux pair-à-pair
+        capacites:
+          - Décrire l'intérêt des réseaux pair-à-pair ainsi que les usages illicites qu'on peut en faire.
+      - id: INT.4
+        contenu: Indépendance d'internet par rapport au réseau physique
+        capacites:
+          - "Caractériser quelques types de réseaux physiques : obsolètes ou actuels, rapides ou lents, filaires ou non."
+          - Caractériser l'ordre de grandeur du trafic de données sur internet et son évolution.
+
+  - id: WEB
+    titre: Le Web
+    items:
+      - id: WEB.1
+        contenu: Repères historiques
+        capacites: [Connaître les étapes du développement du Web.]
+      - id: WEB.2
+        contenu: Notions juridiques
+        capacites: ["Connaître certaines notions juridiques (licence, droit d'auteur, droit d'usage, valeur d'un bien)."]
+      - id: WEB.3
+        contenu: Hypertexte
+        capacites: [Maîtriser les renvois d'un texte à différents contenus.]
+      - id: WEB.4
+        contenu: Langages HTML et CSS
+        capacites:
+          - Distinguer ce qui relève du contenu d'une page et de son style de présentation.
+          - Étudier et modifier une page HTML simple.
+      - id: WEB.5
+        contenu: URL
+        capacites:
+          - Décomposer l'URL d'une page.
+          - Reconnaître les pages sécurisées.
+      - id: WEB.6
+        contenu: Requête HTTP
+        capacites: [Décomposer le contenu d'une requête HTTP et identifier les paramètres passés.]
+      - id: WEB.7
+        contenu: Modèle client/serveur
+        capacites: [Inspecter le code d'une page hébergée par un serveur et distinguer ce qui est exécuté par le client et par le serveur.]
+      - id: WEB.8
+        contenu: "Moteurs de recherche : principes et usages"
+        capacites:
+          - Mener une analyse critique des résultats fournis par un moteur de recherche.
+          - Comprendre les enjeux de la publication d'informations.
+      - id: WEB.9
+        contenu: Paramètres de sécurité d'un navigateur
+        capacites:
+          - Maîtriser les réglages les plus importants concernant la gestion des cookies, la sécurité et la confidentialité d'un navigateur.
+          - Sécuriser sa navigation en ligne et analyser les pages et fichiers.
+
+  - id: RS
+    titre: Les réseaux sociaux
+    items:
+      - id: RS.1
+        contenu: "Identité numérique, e-réputation, identification, authentification"
+        capacites: [Connaître les principaux concepts liés à l'usage des réseaux sociaux.]
+      - id: RS.2
+        contenu: Réseaux sociaux existants
+        capacites:
+          - Distinguer plusieurs réseaux sociaux selon leurs caractéristiques, y compris un ordre de grandeur de leurs nombres d'abonnés.
+          - Paramétrer des abonnements pour assurer la confidentialité de données personnelles.
+      - id: RS.3
+        contenu: Modèle économique des réseaux sociaux
+        capacites: [Identifier les sources de revenus des entreprises de réseautage social.]
+      - id: RS.4
+        contenu: Rayon, diamètre et centre d'un graphe
+        capacites: [Déterminer ces caractéristiques sur des graphes simples.]
+      - id: RS.5
+        contenu: "Notion de « petit monde » ; expérience de Milgram"
+        capacites: [Décrire comment l'information présentée par les réseaux sociaux est conditionnée par le choix préalable de ses amis.]
+      - id: RS.6
+        contenu: Cyberviolence
+        capacites:
+          - Connaître les dispositions de l'article 222-33-2-2 du code pénal.
+          - Connaître les différentes formes de cyberviolence (harcèlement, discrimination, sexting...) et les ressources disponibles pour lutter contre la cyberviolence.
+
+  - id: DON
+    titre: Les données structurées et leur traitement
+    items:
+      - id: DON.1
+        contenu: Données
+        capacites:
+          - Définir une donnée personnelle.
+          - Identifier les principaux formats et représentations de données.
+      - id: DON.2
+        contenu: Données structurées
+        capacites:
+          - Identifier les différents descripteurs d'un objet.
+          - Distinguer la valeur d'une donnée de son descripteur.
+          - Utiliser un site de données ouvertes, pour sélectionner et récupérer des données.
+      - id: DON.3
+        contenu: Traitement de données structurées
+        capacites: [Réaliser des opérations de recherche, filtre, tri ou calcul sur une ou plusieurs tables.]
+      - id: DON.4
+        contenu: Métadonnées
+        capacites: [Retrouver les métadonnées d'un fichier personnel.]
+      - id: DON.5
+        contenu: Données dans le nuage (cloud)
+        capacites:
+          - Utiliser un support de stockage dans le nuage.
+          - Partager des fichiers, paramétrer des modes de synchronisation.
+          - Identifier les principales causes de la consommation énergétique des centres de données ainsi que leur ordre de grandeur.
+
+  - id: LOC
+    titre: Localisation, cartographie et mobilité
+    items:
+      - id: LOC.1
+        contenu: GPS, Galileo
+        capacites: [Décrire le principe de fonctionnement de la géolocalisation.]
+      - id: LOC.2
+        contenu: Cartes numériques
+        capacites:
+          - Identifier les différentes couches d'information de GeoPortail pour extraire différents types de données.
+          - Contribuer à OpenStreetMap de façon collaborative.
+      - id: LOC.3
+        contenu: Protocole NMEA 0183
+        capacites: [Décoder une trame NMEA pour trouver des coordonnées géographiques.]
+      - id: LOC.4
+        contenu: Calculs d'itinéraires
+        capacites:
+          - Utiliser un logiciel pour calculer un itinéraire.
+          - Représenter un calcul d'itinéraire comme un problème sur un graphe.
+      - id: LOC.5
+        contenu: Confidentialité
+        capacites: [Régler les paramètres de confidentialité d'un téléphone pour partager ou non sa position.]
+
+  - id: IOT
+    titre: Informatique embarquée et objets connectés
+    items:
+      - id: IOT.1
+        contenu: Systèmes informatiques embarqués
+        capacites: [Identifier des algorithmes de contrôle des comportements physiques à travers les données des capteurs, l'IHM et les actions des actionneurs dans des systèmes courants.]
+      - id: IOT.2
+        contenu: Interface homme-machine (IHM)
+        capacites: [Réaliser une IHM simple d'un objet connecté.]
+      - id: IOT.3
+        contenu: Commande d'un actionneur, acquisition des données d'un capteur
+        capacites: [Écrire des programmes simples d'acquisition de données ou de commande d'un actionneur.]
+
+  - id: PHO
+    titre: La photographie numérique
+    items:
+      - id: PHO.1
+        contenu: "Photosites, pixels, résolution (du capteur, de l'image), profondeur de couleur"
+        capacites: [Distinguer les photosites du capteur et les pixels de l'image en comparant les résolutions du capteur et de l'image selon les réglages de l'appareil.]
+      - id: PHO.2
+        contenu: Métadonnées EXIF
+        capacites: [Retrouver les métadonnées d'une photographie.]
+      - id: PHO.3
+        contenu: Traitement d'image
+        capacites: [Traiter par programme une image pour la transformer en agissant sur les trois composantes de ses pixels.]
+      - id: PHO.4
+        contenu: Rôle des algorithmes dans les appareils photo numériques
+        capacites:
+          - Expliciter des algorithmes associés à la prise de vue.
+          - Identifier les étapes de la construction de l'image finale.

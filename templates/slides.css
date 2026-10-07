@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Diapositives 16:9 (1280 x 720 px)
+   Écran : une diapo à la fois, mise à l'échelle (←/→, F plein écran, T minuteur).
+   Impression / PDF : une diapo par page.
+   ========================================================================== */
+
+body.presentation {
+  margin: 0;
+  background: #0f172a;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: var(--texte);
+  overflow: hidden;
+}
+
+.diapo {
+  width: 1280px;
+  height: 720px;
+  box-sizing: border-box;
+  padding: 44px 64px 52px;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 26px;
+  line-height: 1.4;
+}
+
+@media screen {
+  .diapo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--echelle, 1));
+  }
+  .diapo.active { display: flex; }
+}
+
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body.presentation { background: #fff; overflow: visible; }
+  .diapo { display: flex; position: relative; break-after: page; }
+}
+
+/* ---------- Titre de diapo ---------- */
+.diapo-titre { flex: none; margin-bottom: 22px; }
+.diapo-titre h2 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #0f172a;
+  padding-left: 22px;
+  border-left: 10px solid var(--accent);
+}
+
+.diapo-corps { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+.diapo-corps > *, .colonnes > div > * { flex: none; }
+
+/* Les images prennent la place restante (texte prioritaire), sans jamais déborder. */
+.diapo-corps > p:has(> img:only-child),
+.colonnes > div > p:has(> img:only-child) {
+  flex: 1 1 0;
+  min-height: 140px;
+  position: relative;
+  margin: 0 0 14px;
+}
+.diapo-corps > p:has(> img:only-child) > img,
+.colonnes > div > p:has(> img:only-child) > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+.diapo-corps > :first-child { margin-top: 0; }
+.diapo-corps p, .diapo-corps ul, .diapo-corps ol { margin: 0 0 14px; }
+.diapo-corps li { margin: 6px 0; }
+.diapo-corps li::marker { color: var(--accent); }
+.diapo-corps strong { color: var(--accent-fonce); }
+.diapo-corps img { max-width: 100%; max-height: 520px; display: block; margin: 0 auto; }
+.diapo-corps h3 { font-size: 30px; color: var(--accent-fonce); margin: 0 0 10px; }
+.diapo-corps table { border-collapse: collapse; font-size: 21px; margin: 8px 0; }
+.diapo-corps th, .diapo-corps td { border: 1px solid var(--bordure); padding: 6px 14px; text-align: left; }
+.diapo-corps th { background: var(--accent-pale); color: var(--accent-fonce); }
+.diapo-corps pre.hljs { font-size: 19px; }
+.diapo-corps :not(pre) > code { font-size: 0.9em; }
+.diapo-corps blockquote { font-size: 28px; border-left-width: 8px; padding: 12px 22px; border-radius: 0 10px 10px 0; }
+.diapo-corps .figure figcaption { font-size: 16px; }
+.diapo-corps .figure figcaption::before { content: none; }
+
+.colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; flex: 1 1 0; min-height: 0; }
+.colonnes > div { min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+
+/* ---------- Pied et barre de progression ---------- */
+.diapo-pied {
+  position: absolute;
+  left: 64px; right: 64px; bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+.diapo-progression {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 6px;
+  width: var(--p);
+  background: var(--accent);
+}
+.diapo { position: relative; }
+@media screen { .diapo { position: fixed; } }
+
+/* ---------- Couverture ---------- */
+.diapo-couverture {
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, var(--accent-fonce), var(--accent));
+  color: #fff;
+}
+.couverture-texte { flex: 1.2; }
+.couverture-bandeau { font-size: 18px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.85; }
+.diapo-couverture h1 { font-size: 54px; line-height: 1.1; font-weight: 800; margin: 14px 0 18px; }
+.couverture-accroche { font-size: 26px; font-style: italic; opacity: 0.95; margin: 0 0 22px; }
+.couverture-objectifs { font-size: 20px; margin: 0; padding-left: 26px; opacity: 0.95; }
+.couverture-objectifs li { margin: 4px 0; }
+.titre-illustration {
+  flex: 1;
+  max-width: 46%;
+  max-height: 560px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 18px;
+  box-sizing: border-box;
+}
+.diapo-couverture .diapo-pied { color: rgba(255, 255, 255, 0.75); }
+
+/* ---------- Intercalaire de phase ---------- */
+.diapo-phase { justify-content: center; background: var(--accent-fonce); }
+.diapo-phase .diapo-corps { display: flex; align-items: center; flex: none; }
+.diapo-phase h2 {
+  color: #fff;
+  font-size: 62px;
+  font-weight: 800;
+  margin: 0;
+  padding-left: 30px;
+  border-left: 14px solid rgba(255, 255, 255, 0.6);
+}
+.diapo-phase .diapo-pied { color: rgba(255, 255, 255, 0.7); }
+.diapo-phase .diapo-progression { background: #fff; }
+
+/* ---------- Activité ---------- */
+.diapo-activite { border-top: 16px solid var(--activite); }
+.diapo-activite .diapo-titre h2, .diapo-question .diapo-titre h2 { border-left-color: var(--activite); }
+.act-bandeau {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.act-num {
+  background: var(--activite);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.act-modalite { color: var(--activite); }
+.act-chrono {
+  margin-left: auto;
+  font-size: 46px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--activite);
+  border: 3px solid var(--activite);
+  border-radius: 14px;
+  padding: 0 18px;
+  cursor: pointer;
+  user-select: none;
+}
+.act-chrono::before { content: '⏱ '; font-size: 32px; }
+.act-chrono.en-cours { background: var(--activite-pale); }
+.act-chrono.bientot { color: #b45309; border-color: #b45309; }
+.act-chrono.fini { background: #dc2626; border-color: #dc2626; color: #fff; }
+.diapo-question .diapo-titre h2 { font-size: 34px; }
+.diapo-question .act-num { font-size: 16px; vertical-align: middle; margin-right: 10px; }
+.diapo-question .diapo-corps { font-size: 30px; }
+.diapo-question .choix { font-size: 30px; margin: 14px 0; }
+
+/* ---------- À retenir ---------- */
+.diapo-retenir { border-top: 16px solid var(--retenir); }
+.diapo-retenir .diapo-titre h2 { border-left-color: var(--retenir); color: var(--retenir); }
+.diapo-retenir .diapo-corps { font-size: 24px; }
+
+/* ---------- Éléments partagés avec les documents ---------- */
+.diapo .encadre, .diapo .problematique, .diapo .doc-ressource, .diapo .contexte { font-size: 22px; }
+.diapo .problematique { font-size: 28px; padding: 14px 22px; }
+.diapo .reponse, .diapo .note-prof, .diapo .note-dire { display: none; }

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" font-family="Inter, Segoe UI, sans-serif">
+  <!-- Chambre froide -->
+  <rect x="20" y="40" width="260" height="235" rx="6" fill="#dbeafe" stroke="#1e3a8a" stroke-width="3"/>
+  <text x="150" y="30" text-anchor="middle" font-size="15" font-weight="700" fill="#1e3a8a">Chambre froide négative</text>
+
+  <!-- Flocon -->
+  <g stroke="#60a5fa" stroke-width="3" stroke-linecap="round" transform="translate(240 80)">
+    <line x1="0" y1="-18" x2="0" y2="18"/>
+    <line x1="-16" y1="-9" x2="16" y2="9"/>
+    <line x1="-16" y1="9" x2="16" y2="-9"/>
+  </g>
+
+  <!-- Étagères et cartons -->
+  <g stroke="#64748b" stroke-width="4">
+    <line x1="35" y1="185" x2="265" y2="185"/>
+    <line x1="35" y1="255" x2="265" y2="255"/>
+  </g>
+  <g stroke="#92400e" stroke-width="1.5">
+    <rect x="45" y="145" width="55" height="40" fill="#fcd34d"/>
+    <rect x="105" y="155" width="45" height="30" fill="#fbbf24"/>
+    <rect x="160" y="140" width="60" height="45" fill="#fcd34d"/>
+    <rect x="50" y="215" width="70" height="40" fill="#fbbf24"/>
+    <rect x="130" y="225" width="45" height="30" fill="#fcd34d"/>
+    <rect x="185" y="210" width="65" height="45" fill="#fbbf24"/>
+  </g>
+
+  <!-- Capteur TMP102 -->
+  <rect x="35" y="70" width="42" height="30" rx="3" fill="#15803d"/>
+  <rect x="49" y="78" width="14" height="14" fill="#0f172a"/>
+  <text x="56" y="116" text-anchor="middle" font-size="11" font-weight="700" fill="#14532d">TMP102</text>
+
+  <!-- Afficheur -->
+  <rect x="110" y="62" width="100" height="42" rx="6" fill="#0f172a"/>
+  <text x="160" y="91" text-anchor="middle" font-size="20" font-weight="700" fill="#4ade80" font-family="Consolas, monospace">-18,5°C</text>
+
+  <!-- Bus I2C vers le local technique -->
+  <path d="M77 85 H95 V52 H330 V130" fill="none" stroke="#2563eb" stroke-width="4" stroke-dasharray="10 5"/>
+  <rect x="290" y="40" width="70" height="20" rx="4" fill="#fff" stroke="#2563eb"/>
+  <text x="325" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">bus I2C</text>
+
+  <!-- Local technique -->
+  <rect x="300" y="110" width="160" height="165" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+  <text x="380" y="292" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">Local technique</text>
+
+  <!-- ESP32 -->
+  <rect x="318" y="130" width="90" height="56" rx="4" fill="#1e293b"/>
+  <rect x="328" y="138" width="40" height="30" rx="2" fill="#94a3b8"/>
+  <path d="M374 140 h24 v6 h-20 v6 h20 v6 h-20 v6 h20" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <text x="363" y="203" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">ESP32</text>
+
+  <!-- Alarme -->
+  <circle cx="420" cy="235" r="26" fill="#fecaca"/>
+  <circle cx="420" cy="235" r="15" fill="#dc2626"/>
+  <path d="M408 158 H425 V209" fill="none" stroke="#475569" stroke-width="3"/>
+  <text x="372" y="240" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">Alarme</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 210" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <!-- Air de la salle -->
+  <g>
+    <circle cx="60" cy="95" r="44" fill="#dbeafe"/>
+    <g fill="#60a5fa"><circle cx="45" cy="80" r="7"/><circle cx="70" cy="75" r="5"/><circle cx="58" cy="105" r="8"/><circle cx="80" cy="102" r="5"/><circle cx="40" cy="110" r="4"/></g>
+    <text x="60" y="160" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">Air de la salle</text>
+  </g>
+  <!-- Blocs -->
+  <g font-size="13" text-anchor="middle">
+    <rect x="150" y="60" width="130" height="70" rx="10" fill="#2563eb"/>
+    <text x="215" y="90" fill="#fff" font-weight="700">Capteur CO₂</text>
+    <text x="215" y="110" fill="#dbeafe" font-size="11">sortie 0,4 V à 2,0 V</text>
+
+    <rect x="330" y="60" width="130" height="70" rx="10" fill="#7c3aed"/>
+    <text x="395" y="90" fill="#fff" font-weight="700">CAN 12 bits</text>
+    <text x="395" y="110" fill="#ede9fe" font-size="11">pleine échelle 3,3 V</text>
+
+    <rect x="510" y="60" width="130" height="70" rx="10" fill="#1e293b"/>
+    <text x="575" y="90" fill="#fff" font-weight="700">Microcontrôleur</text>
+    <text x="575" y="110" fill="#cbd5e1" font-size="11">calcul, seuil</text>
+  </g>
+  <!-- Voyant -->
+  <circle cx="712" cy="95" r="24" fill="#fed7aa"/>
+  <circle cx="712" cy="95" r="14" fill="#ea580c"/>
+  <text x="712" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">« Aérez ! »</text>
+
+  <!-- Flèches -->
+  <g stroke="#334155" stroke-width="2.5" marker-end="url(#fl)">
+    <line x1="106" y1="95" x2="148" y2="95"/>
+    <line x1="282" y1="95" x2="328" y2="95"/>
+    <line x1="462" y1="95" x2="508" y2="95"/>
+    <line x1="642" y1="95" x2="686" y2="95"/>
+  </g>
+  <g font-size="11" fill="#475569" text-anchor="middle">
+    <text x="127" y="50">?</text>
+    <text x="305" y="50">?</text>
+    <text x="485" y="50">?</text>
+    <text x="664" y="50">commande</text>
+  </g>
+  <text x="380" y="195" text-anchor="middle" font-size="11" fill="#64748b">Les « ? » désignent la nature de l'information sur chaque liaison (question 1).</text>
+</svg>

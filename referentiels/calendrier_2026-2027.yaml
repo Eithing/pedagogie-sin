@@ -1,0 +1,22 @@
+# Calendrier scolaire 2026-2027 — zone B (académie de Nice)
+# Source : service-public.gouv.fr (actualité A18563), consulté le 07/10/2026.
+# Les vacances commencent après la classe le jour « du » ; reprise le lendemain du jour « au ».
+annee: 2026-2027
+zone: B (académie de Nice)
+rentree: 2026-09-01
+fin_annee: 2027-07-03
+vacances:
+  - { nom: Toussaint, du: 2026-10-17, au: 2026-11-01 }
+  - { nom: Noël, du: 2026-12-19, au: 2027-01-03 }
+  - { nom: Hiver, du: 2027-02-20, au: 2027-03-07 }
+  - { nom: Printemps, du: 2027-04-17, au: 2027-05-02 }
+feries:
+  - { date: 2026-11-11, nom: Armistice }
+  - { date: 2027-03-29, nom: Lundi de Pâques }
+  - { date: 2027-05-06, nom: Ascension }
+  - { date: 2027-05-07, nom: Pont de l'Ascension, a_verifier: true }
+  - { date: 2027-05-17, nom: Lundi de Pentecôte }
+evenements:
+  - { date: 2027-06-14, nom: "Bac : philosophie", court: Philo }
+  - { du: 2027-06-16, au: 2027-06-18, nom: "Bac : épreuves écrites de spécialité", court: Spé }
+  - { du: 2027-06-21, au: 2027-07-02, nom: "Grand oral", court: Grand oral }

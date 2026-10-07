@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/sources/cours/">
+<title>Comment une photo traverse Internet ? Paquets, adresses IP et TCP — Diapos</title>
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/highlight.js/styles/github.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/@fontsource/inter/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/@fontsource/inter/700.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/@fontsource/inter/800.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/node_modules/@fontsource/fira-code/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/templates/style.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing/Documents/COURS_VRAC/pedagogie-sin/templates/slides.css">
+</head>
+<body class="presentation" style="--accent:#0d9488">
+<main class="diapos">
+<section class="diapo diapo-couverture">
+  <div class="couverture-texte">
+    <div class="couverture-bandeau">Lycée César Baggio · SNT (2nde)</div>
+    <h1>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</h1>
+    <p class="couverture-accroche">Une photo envoyée de Nice arrive à Montréal en moins d'une seconde. Comment ?</p>
+    <ul class="couverture-objectifs"><li>Expliquer pourquoi une donnée est découpée en paquets</li><li>Distinguer le rôle d'IP (adresser, acheminer) et de TCP (numéroter, vérifier, redemander)</li><li>Reconnaître une adresse IPv4 valide</li><li>Trouver un chemin dans un réseau de routeurs et expliquer la tolérance aux pannes</li></ul>
+  </div>
+  <img class="titre-illustration" src="img/tcp-ip/couverture.svg" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 22</span></footer>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Se poser la question</h2></div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>2 / 22</span></footer>
+  <div class="diapo-progression" style="--p:9.090909090909092%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Une photo, de Nice à Montréal</h2></header>
+  <div class="diapo-corps"><p><img src="img/tcp-ip/couverture.svg" alt="" width="70%"></p>
+<blockquote>
+<p>Vous envoyez une photo de <strong>3 Mo</strong> à un ami à Montréal, à plus de 6 000 km. Elle arrive en <strong>moins d'une seconde</strong>. Comment fait-elle ?</p>
+</blockquote>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>3 / 22</span></footer>
+  <div class="diapo-progression" style="--p:13.636363636363635%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 1</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="240" title="Clic ou touche T : démarrer / pause">04:00</span>
+      </div>Ce que je sais déjà</h2></header>
+  <div class="diapo-corps"><p>Répondez à main levée, puis cochez votre réponse sur la fiche. Pas de note : c'est pour savoir d'où l'on part.</p>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>4 / 22</span></footer>
+  <div class="diapo-progression" style="--p:18.181818181818183%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 1</h2></header>
+  <div class="diapo-corps"><p>Internet, c'est…</p>
+<ul class="qcm qcm qcm qcm">
+<li class="choix"><span class="case"></span>un logiciel installé sur l'ordinateur</li>
+<li class="choix"><span class="case"></span>un réseau de réseaux qui relie des machines du monde entier</li>
+<li class="choix"><span class="case"></span>la même chose que le Web</li>
+<li class="choix"><span class="case"></span>un câble unique qui traverse l'océan</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>5 / 22</span></footer>
+  <div class="diapo-progression" style="--p:22.727272727272727%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 2</h2></header>
+  <div class="diapo-corps"><p>Une photo envoyée sur Internet voyage…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>en un seul bloc, d'un coup</li>
+<li class="choix"><span class="case"></span>découpée en petits morceaux</li>
+<li class="choix"><span class="case"></span>uniquement par satellite</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>6 / 22</span></footer>
+  <div class="diapo-progression" style="--p:27.27272727272727%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 3</h2></header>
+  <div class="diapo-corps"><p>Une adresse IP sert à…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>protéger un ordinateur contre les virus</li>
+<li class="choix"><span class="case"></span>identifier une machine sur le réseau</li>
+<li class="choix"><span class="case"></span>mesurer la vitesse de la connexion</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>7 / 22</span></footer>
+  <div class="diapo-progression" style="--p:31.818181818181817%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Découper et envoyer : les paquets</h2></div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>8 / 22</span></footer>
+  <div class="diapo-progression" style="--p:36.36363636363637%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Internet : un réseau de réseaux</h2></header>
+  <div class="diapo-corps"><div class="colonnes"><div><p><img src="img/tcp-ip/routage.svg" alt=""></p>
+</div><div><ul>
+<li>Des <strong>milliards de machines</strong> reliées.</li>
+<li>Des <strong>routeurs</strong> relient les réseaux entre eux.</li>
+<li><strong>Aucune machine centrale</strong> ne commande tout.</li>
+<li>Une photo ne part pas d'un bloc : elle est découpée en <strong>paquets</strong> d'environ 1 500 octets.</li>
+</ul>
+</div></div></div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>9 / 22</span></footer>
+  <div class="diapo-progression" style="--p:40.909090909090914%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">En groupe</span>
+        <span class="act-chrono" data-secondes="720" title="Clic ou touche T : démarrer / pause">12:00</span>
+      </div>Le jeu des paquets</h2></header>
+  <div class="diapo-corps"><p>Votre groupe est l'<strong>ordinateur destinataire</strong>. Le professeur joue le rôle du <strong>réseau</strong> : il va vous livrer, un par un, les morceaux d'un message.</p>
+<ol>
+<li>Reconstituez le message (5 min).</li>
+<li>Répondez ensemble aux questions ci-dessous.</li>
+</ol>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>10 / 22</span></footer>
+  <div class="diapo-progression" style="--p:45.45454545454545%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>IP et TCP : deux protocoles qui travaillent ensemble</h2></header>
+  <div class="diapo-corps"><p><img src="img/tcp-ip/paquet.svg" alt=""></p>
+<ul>
+<li><strong>IP</strong> (<em>Internet Protocol</em>) : chaque machine a une <strong>adresse IP</strong>. Chaque paquet porte l'adresse de l'expéditeur et du destinataire ; les routeurs s'en servent pour l'acheminer.</li>
+<li><strong>TCP</strong> (<em>Transmission Control Protocol</em>) : <strong>numérote</strong> les paquets, vérifie qu'ils sont tous arrivés grâce aux <strong>accusés de réception</strong>, <strong>redemande</strong> ceux qui manquent et remet le tout dans l'ordre.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>11 / 22</span></footer>
+  <div class="diapo-progression" style="--p:50%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+      </div>Lire une adresse IP</h2></header>
+  <div class="diapo-corps"><aside class="encadre encadre-rappel"><header>Adresse IPv4</header>
+<p>Une adresse IPv4 est formée de <strong>4 nombres</strong> compris entre <strong>0 et 255</strong>, séparés par des points. Exemple : <code>192.168.1.15</code>.
+Chaque nombre tient sur un octet : l'adresse fait donc <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mo>×</mo><mn>8</mn><mo>=</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">4 \times 8 = 32</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">8</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">32</span></span></span></span></eq> bits.</p>
+</aside>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>12 / 22</span></footer>
+  <div class="diapo-progression" style="--p:54.54545454545454%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Trouver son chemin : le routage</h2></div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>13 / 22</span></footer>
+  <div class="diapo-progression" style="--p:59.09090909090909%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Les routeurs : des aiguilleurs</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Un <strong>routeur</strong> reçoit un paquet, lit l'<strong>adresse IP de destination</strong> et l'envoie vers le routeur suivant le plus adapté.</li>
+<li>Chaque routeur ne connaît que ses <strong>voisins</strong> : il consulte sa <strong>table de routage</strong>.</li>
+<li>Deux paquets d'une même photo peuvent prendre <strong>des chemins différents</strong>.</li>
+<li>On peut observer ce chemin avec la commande <code>traceroute</code> (<code>tracert</code> sous Windows).</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>14 / 22</span></footer>
+  <div class="diapo-progression" style="--p:63.63636363636363%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 4</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+      </div>Trouver le chemin</h2></header>
+  <div class="diapo-corps"><p>Le schéma représente une petite partie d'Internet entre Nice et Montréal. Chaque cercle est un routeur, chaque trait une liaison.</p>
+<p><img src="img/tcp-ip/routage.svg" alt=""></p>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>15 / 22</span></footer>
+  <div class="diapo-progression" style="--p:68.18181818181817%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>16 / 22</span></footer>
+  <div class="diapo-progression" style="--p:72.72727272727273%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le modèle en couches</h2></header>
+  <div class="diapo-corps"><p><img src="img/tcp-ip/couches.svg" alt=""></p>
+<p>Chaque couche a <strong>un rôle</strong> et ajoute <strong>ses informations</strong> au paquet avant de le passer à la couche du dessous.</p>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>17 / 22</span></footer>
+  <div class="diapo-progression" style="--p:77.27272727272727%"></div>
+</section>
+<section class="diapo diapo-retenir" >
+  <header class="diapo-titre"><h2>À retenir</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Sur Internet, les données sont découpées en <mark class="trou-rempli">paquets</mark> qui voyagent indépendamment les uns des autres.</li>
+<li>Le protocole <mark class="trou-rempli">IP</mark> donne une adresse à chaque machine ; les <mark class="trou-rempli">routeurs</mark> lisent l'adresse de destination pour acheminer chaque paquet.</li>
+<li>Une adresse IPv4 est formée de <mark class="trou-rempli">4</mark> nombres compris entre <mark class="trou-rempli">0</mark> et <mark class="trou-rempli">255</mark>.</li>
+<li>Le protocole <mark class="trou-rempli">TCP</mark> numérote les paquets, vérifie leur arrivée grâce aux <mark class="trou-rempli">accusés de réception</mark> et redemande les paquets perdus.</li>
+<li>Comme il existe de nombreux chemins, Internet résiste aux <mark class="trou-rempli">pannes</mark>.</li>
+<li>Les protocoles sont organisés en <mark class="trou-rempli">couches</mark> : chacune ajoute ses informations au paquet.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>18 / 22</span></footer>
+  <div class="diapo-progression" style="--p:81.81818181818183%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 5</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="180" title="Clic ou touche T : démarrer / pause">03:00</span>
+      </div>Quiz de sortie</h2></header>
+  <div class="diapo-corps"><p>Trois questions, réponse sur la fiche, puis à main levée.</p>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>19 / 22</span></footer>
+  <div class="diapo-progression" style="--p:86.36363636363636%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 13</h2></header>
+  <div class="diapo-corps"><p>Qui remet les paquets dans le bon ordre à l'arrivée ?</p>
+<ul class="qcm qcm qcm qcm">
+<li class="choix"><span class="case"></span>IP</li>
+<li class="choix"><span class="case"></span>TCP</li>
+<li class="choix"><span class="case"></span>le routeur</li>
+<li class="choix"><span class="case"></span>le Wi-Fi</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>20 / 22</span></footer>
+  <div class="diapo-progression" style="--p:90.9090909090909%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 14</h2></header>
+  <div class="diapo-corps"><p><code>300.12.4.1</code> est-elle une adresse IPv4 valide ?</p>
+<ul class="qcm qcm">
+<li class="choix"><span class="case"></span>oui</li>
+<li class="choix"><span class="case"></span>non</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>21 / 22</span></footer>
+  <div class="diapo-progression" style="--p:95.45454545454545%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 15</h2></header>
+  <div class="diapo-corps"><p>Un paquet se perd en route. Que se passe-t-il ?</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>la photo arrive abîmée, tant pis</li>
+<li class="choix"><span class="case"></span>TCP le redemande à l'expéditeur</li>
+<li class="choix"><span class="case"></span>le dernier routeur le recrée</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Comment une photo traverse Internet ? Paquets, adresses IP et TCP</span><span>22 / 22</span></footer>
+  <div class="diapo-progression" style="--p:100%"></div>
+</section>
+</main>
+<script>
+const d=[...document.querySelectorAll('.diapo')];let i=0;
+const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
+function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
+const minuteurs=new Map();
+function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+ minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
+  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
+addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
+addEventListener('keydown',e=>{
+ if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){voir(i+1);e.preventDefault();}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){voir(i-1);e.preventDefault();}
+ else if(e.key==='Home')voir(0);else if(e.key==='End')voir(d.length-1);
+ else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+ else if(e.key==='t'||e.key==='T')chrono(d[i]);});
+addEventListener('click',e=>{if(e.target.closest('.act-chrono')){chrono(d[i]);return;}voir(e.clientX>innerWidth/3?i+1:i-1);});
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+/* ==========================================================================
+   Progressions annuelles (A4 paysage) — complète style.css
+   ========================================================================== */
+
+body.type-progression { max-width: 267mm; font-size: 9.5pt; }
+@media print { body.type-progression { max-width: none; } }
+
+.type-progression .doc-entete { margin-bottom: 10px; }
+.type-progression .doc-titre { font-size: 15pt; }
+h1.partie {
+  font-size: 13pt;
+  color: var(--accent-fonce);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 3px;
+  margin: 0 0 8px;
+}
+.type-progression h2 small { font-weight: 400; font-size: 9pt; color: var(--texte-doux); }
+
+/* ---------- Indicateurs ---------- */
+.kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 10px; }
+.kpis > div {
+  border: 1px solid var(--accent-doux);
+  border-radius: 8px;
+  padding: 5px 10px;
+  background: var(--accent-pale);
+  display: flex; flex-direction: column;
+}
+.kpis b { font-size: 14pt; color: var(--accent-fonce); line-height: 1.2; }
+.kpis span { font-size: 8pt; color: var(--texte-doux); }
+
+/* ---------- Frise annuelle ---------- */
+.gantt {
+  display: grid;
+  grid-auto-rows: minmax(9mm, auto);
+  grid-template-rows: 5mm 4mm;
+  position: relative;
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 7pt;
+}
+.g-mois {
+  background: var(--accent-fonce);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  text-transform: capitalize;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  line-height: 5mm;
+}
+.g-sem { text-align: center; color: var(--texte-doux); font-size: 6pt; line-height: 4mm; border-left: 1px solid #f1f5f9; background: #fff; }
+.g-sem.g-vac { background: #e2e8f0; }
+.g-sem.g-ferie { color: #dc2626; font-weight: 700; }
+.g-fond-vac {
+  background: repeating-linear-gradient(135deg, #f1f5f9 0 4px, #e2e8f0 4px 8px);
+  position: relative;
+  z-index: 0;
+}
+.g-fond-vac span {
+  position: absolute; top: 2px; left: 50%;
+  transform: translateX(-50%);
+  writing-mode: vertical-rl;
+  font-size: 6.5pt; color: #64748b; white-space: nowrap;
+}
+.g-vide { background: repeating-linear-gradient(90deg, transparent 0 3px, #fecaca 3px 4px); opacity: 0.7; }
+.g-piste {
+  border-top: 1px solid var(--bordure);
+  border-right: 1px solid var(--bordure);
+  padding: 2px 6px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: #f8fafc;
+  z-index: 1;
+}
+.g-piste strong { font-size: 8pt; color: var(--accent-fonce); }
+.g-piste small { font-size: 6.5pt; color: var(--texte-doux); line-height: 1.2; }
+.g-piste-ex { font-weight: 700; color: #b91c1c; min-height: 6mm; }
+
+.g-barre {
+  margin: 1.2mm 0.4mm;
+  border-radius: 4px;
+  padding: 1px 4px;
+  overflow: hidden;
+  z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+  line-height: 1.15;
+  border: 1.5px solid var(--c);
+}
+.g-barre b { font-size: 7.5pt; }
+.g-barre span { font-size: 6.5pt; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.g-barre.etat-fait { background: var(--c); color: #fff; }
+.g-barre.etat-en-cours {
+  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--c) 35%, white) 0 5px, color-mix(in srgb, var(--c) 22%, white) 5px 10px);
+  color: color-mix(in srgb, var(--c) 70%, black);
+  border-width: 2.5px;
+}
+.g-barre.etat-prevu { background: color-mix(in srgb, var(--c) 8%, white); color: color-mix(in srgb, var(--c) 75%, black); border-style: dashed; }
+
+.g-examen {
+  margin: 1mm 0.4mm;
+  background: #fee2e2;
+  border: 1px solid #dc2626;
+  color: #b91c1c;
+  border-radius: 3px;
+  font-size: 6pt;
+  padding: 0 2px;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  z-index: 2;
+}
+.g-auj { position: relative; z-index: 3; pointer-events: none; }
+.g-auj::before {
+  content: '';
+  position: absolute; top: 0; bottom: 0; left: var(--x);
+  border-left: 2px solid #dc2626;
+}
+.g-auj span {
+  position: absolute; top: 0; left: calc(var(--x) + 2px);
+  background: #dc2626; color: #fff; font-size: 6pt; padding: 0 3px; border-radius: 2px; white-space: nowrap;
+}
+
+.g-legende { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 7.5pt; color: var(--texte-doux); margin: 4px 0 10px; }
+.g-legende span::before { content: ''; display: inline-block; width: 14px; height: 9px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.l-fait::before { background: var(--accent); }
+.l-en-cours::before { background: repeating-linear-gradient(135deg, var(--accent-doux) 0 3px, var(--accent-pale) 3px 6px); border: 2px solid var(--accent); }
+.l-prevu::before { background: var(--accent-pale); border: 1.5px dashed var(--accent); }
+.l-vac::before { background: repeating-linear-gradient(135deg, #f1f5f9 0 3px, #e2e8f0 3px 6px); }
+.l-vide::before { background: repeating-linear-gradient(90deg, transparent 0 3px, #fecaca 3px 4px); }
+.l-auj::before { width: 2px !important; background: #dc2626; }
+
+/* ---------- Organisation ---------- */
+.orga { display: grid; grid-template-columns: 1fr 1.6fr; gap: 14px; font-size: 8.5pt; }
+.orga h3 { margin-top: 0 !important; font-size: 9.5pt !important; }
+.orga ul { padding-left: 16px; margin: 0; }
+.orga-texte h2 { font-size: 10pt !important; margin: 0 0 4px !important; padding: 2px 8px !important; }
+.orga-texte p, .orga-texte li { margin: 2px 0; }
+
+/* ---------- Fiches séquences ---------- */
+.seq {
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  margin: 0 0 8px;
+  break-inside: avoid;
+  overflow: hidden;
+}
+.seq-tete {
+  display: flex; align-items: center; gap: 10px;
+  padding: 4px 10px;
+  background: color-mix(in srgb, var(--c) 10%, white);
+  border-bottom: 1px solid var(--bordure);
+  border-left: 6px solid var(--c);
+}
+.seq-id { font-weight: 800; color: var(--c); font-size: 10pt; }
+.seq-titre { font-weight: 700; font-size: 10pt; flex: 1; }
+.seq-dates { font-size: 8pt; color: var(--texte-doux); white-space: nowrap; }
+.seq-corps { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 4px 10px 6px; font-size: 8.3pt; }
+.seq-corps h4 { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.4px; color: var(--accent-fonce); margin: 5px 0 1px; }
+.seq-corps ul { margin: 0; padding-left: 14px; }
+.seq-corps li { margin: 1px 0; }
+.seq-corps p { margin: 2px 0; }
+.seq-theme { font-size: 7.5pt; color: var(--texte-doux); text-transform: uppercase; letter-spacing: 0.3px; }
+.seq-pb { font-weight: 700; color: var(--accent-fonce); font-style: italic; }
+.seq-bo b { color: var(--accent-fonce); }
+.seq-note { background: var(--activite-pale); border-left: 3px solid var(--activite); padding: 2px 6px; }
+.seq.etat-fait { opacity: 0.85; }
+
+.badge {
+  display: inline-block;
+  font-size: 7pt; font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge.etat-fait { background: var(--accent); color: #fff; }
+.badge.etat-en-cours { background: var(--activite); color: #fff; }
+.badge.etat-prevu { background: #fff; color: var(--accent-fonce); border: 1px dashed var(--accent); }
+.badge.manque { background: #fee2e2; color: #b91c1c; border: 1px solid #dc2626; }
+.badge.hors { background: #f1f5f9; color: #475569; border: 1px solid #94a3b8; }
+
+/* ---------- Couverture du programme ---------- */
+.principes { font-size: 8pt; color: #334155; margin: 0 0 8px; padding-left: 16px; }
+table.couverture { font-size: 7.5pt !important; }
+table.couverture th, table.couverture td { padding: 2px 5px !important; }
+table.couverture tbody tr:nth-child(even) { background: #fff; }
+.c-groupe td { background: var(--accent-pale) !important; font-weight: 700; color: var(--accent-fonce); }
+.c-item { width: 55%; }
+.c-capa { color: var(--texte-doux); font-size: 7pt; margin-top: 1px; }
+.c-case { text-align: center !important; width: 7mm; }
+th.c-case { font-size: 7pt; }
+.c-statut { width: 22mm; text-align: center; }
+.pt { display: inline-block; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid var(--accent); }
+.pt.etat-fait { background: var(--accent); }
+.pt.etat-en-cours { background: var(--activite); border-color: var(--activite); }
+.c-hors { font-size: 8pt; margin-top: 6px; }
+.c-hors ul { margin: 2px 0; padding-left: 16px; }
+
+/* ---------- Journal ---------- */
+table.journal { font-size: 8.5pt !important; }
+.j-date { width: 28mm; white-space: nowrap; font-weight: 600; color: var(--accent-fonce); }
+
+.g-fond-fin { background: #f1f5f9; position: relative; }
+.g-fond-fin span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 7pt; color: #64748b; white-space: nowrap; }
