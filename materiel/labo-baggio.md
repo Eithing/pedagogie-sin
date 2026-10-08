@@ -24,7 +24,7 @@
 | Outil | Accès | Usage |
 | :--- | :--- | :--- |
 | **Thonny** | à installer | Python pour débutants (SNT) |
-| **Capytale** | via l'ENT | Notebooks Python partagés avec la classe (à vérifier : disponibilité dans l'ENT du lycée) |
+| ~~Capytale~~ | **indisponible** | Pas proposé par l'ENT de l'académie de Lille : utiliser l'éditeur web maison (`sources/autonomie/fichiers/editeur_web.html`) pour HTML/CSS, Thonny ou Basthon pour Python |
 | **VS Code** | à installer | Python, HTML/CSS, Arduino (Term) |
 | **PulseView** | à installer (sigrok) | Lecture de chronogrammes VCD exportés de Wokwi, décodeurs I2C / SPI / UART |
 | **MQTT Explorer** | à installer | Observer les messages MQTT d'un broker public de test |

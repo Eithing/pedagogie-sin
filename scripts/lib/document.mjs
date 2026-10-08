@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'cadrage', 'progression'];
+export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'autonomie', 'cadrage', 'progression'];
 export const NOTES = ['tp', 'td', 'evaluation']; // documents notés : points et barème obligatoires
+// Un travail en autonomie (distanciel) est noté seulement s'il porte un barème.
+export const estNote = (meta) => NOTES.includes(meta.type) || (meta.type === 'autonomie' && meta.bareme != null);
 export const BLOCS = [
   'question', 'reponse', 'zone', 'prof', 'dire',
   'info', 'attention', 'rappel', 'contexte', 'problematique', 'retenir', 'doc', 'figure',
@@ -122,6 +124,7 @@ export function valider(doc, config) {
     E(null, `Front matter : type « ${meta.type} » inconnu (attendu : ${TYPES.join(', ')})`);
   }
   if (meta.type === 'tp' && !meta.materiel) E(null, 'Front matter : champ « materiel » obligatoire pour un TP');
+  if (meta.type === 'autonomie' && !meta.rendu) E(null, 'Front matter : champ « rendu » obligatoire en autonomie (quoi déposer, où, pour quand)');
 
   // Blocs
   const { lignes, blocs, erreurs: errStruct } = reperer(corps);
@@ -154,12 +157,12 @@ export function valider(doc, config) {
 
     const suivant = blocs.find((b) => b.debut > q.fin && b.parent === q.parent);
     const entre = suivant ? lignes.slice(q.fin + 1, suivant.debut).every((l) => !l.trim()) : false;
-    if (!(suivant && suivant.nom === 'reponse' && entre) && [...NOTES, 'cours'].includes(meta.type)) {
+    if (!(suivant && suivant.nom === 'reponse' && entre) && (estNote(meta) || meta.type === 'cours')) {
       A(q.debut, `Question ${a.numero ?? '?'} : aucun bloc « reponse » juste après`);
     }
   }
 
-  if (NOTES.includes(meta.type)) {
+  if (estNote(meta)) {
     if (!questions.length) E(null, `Aucune question \`::: question N\` dans ce ${meta.type.toUpperCase()}`);
     const bareme = meta.bareme ?? config.baremeTotalParDefaut;
     if (avecPoints === 0 && questions.length) {
@@ -204,7 +207,10 @@ export function valider(doc, config) {
     if (/^(https?:|data:)/.test(src)) continue;
     if (!fs.existsSync(path.resolve(path.dirname(doc.fichier), decodeURI(src)))) E(null, `Image introuvable : ${src}`);
   }
-  if (!imgs.length && ['tp', 'td', 'cours'].includes(meta.type)) {
+  for (const f of [].concat(meta.fichiers ?? [])) {
+    if (!fs.existsSync(path.resolve(path.dirname(doc.fichier), f))) E(null, `Fichier joint introuvable : ${f}`);
+  }
+  if (!imgs.length && ['tp', 'td', 'cours', 'autonomie'].includes(meta.type)) {
     A(null, 'Aucune illustration : ajouter au moins un schéma ou une image de mise en situation');
   }
 

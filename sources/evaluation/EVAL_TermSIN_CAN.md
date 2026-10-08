@@ -1,6 +1,7 @@
 ---
 titre: Conversion analogique-numérique
 niveau: Term STI2D SIN
+sequence: T1
 type: evaluation
 duree: 30 min
 bareme: 20

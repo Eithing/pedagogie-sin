@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Éditeur web — SNT</title>
+<style>
+  :root {
+    --fond: #f1f5f9; --carte: #ffffff; --texte: #1e293b; --doux: #64748b;
+    --bord: #cbd5e1; --accent: #0d9488; --accent-fonce: #0f766e; --code: #0f172a; --code-texte: #e2e8f0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body { font-family: "Segoe UI", system-ui, sans-serif; background: var(--fond); color: var(--texte); display: flex; flex-direction: column; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 16px; background: var(--carte); border-bottom: 1px solid var(--bord); }
+  header h1 { font-size: 16px; margin: 0 8px 0 0; color: var(--accent-fonce); }
+  header label { font-size: 13px; color: var(--doux); }
+  header input { font: inherit; font-size: 14px; padding: 5px 8px; border: 1px solid var(--bord); border-radius: 6px; width: 150px; }
+  .espace { flex: 1; }
+  button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--bord); background: var(--carte); cursor: pointer; }
+  button.principal { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  button:hover { filter: brightness(0.95); }
+  main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 16px; min-height: 0; }
+  .panneau { display: flex; flex-direction: column; min-height: 0; background: var(--carte); border: 1px solid var(--bord); border-radius: 8px; overflow: hidden; }
+  .onglets { display: flex; border-bottom: 1px solid var(--bord); }
+  .onglets button { border: 0; border-radius: 0; background: transparent; padding: 8px 14px; color: var(--doux); }
+  .onglets button.actif { color: var(--accent-fonce); font-weight: 700; box-shadow: inset 0 -3px 0 var(--accent); }
+  .titre-panneau { padding: 8px 14px; font-weight: 700; color: var(--doux); border-bottom: 1px solid var(--bord); font-size: 14px; }
+  textarea { flex: 1; width: 100%; border: 0; resize: none; padding: 12px; font: 14px/1.5 Consolas, "Courier New", monospace; background: var(--code); color: var(--code-texte); tab-size: 2; outline: none; }
+  textarea[hidden] { display: none; }
+  iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+  #etat { font-size: 12px; color: var(--doux); }
+  @media (max-width: 760px) {
+    main { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; padding: 8px; }
+    header { padding: 8px; }
+    header input { width: 120px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Éditeur web SNT</h1>
+  <label>Nom <input id="nom" autocomplete="off"></label>
+  <label>Prénom <input id="prenom" autocomplete="off"></label>
+  <span class="espace"></span>
+  <span id="etat"></span>
+  <button id="ouvrir" type="button">Ouvrir une page…</button>
+  <button id="reinit" type="button">Recommencer</button>
+  <button id="telecharger" class="principal" type="button">Télécharger ma page</button>
+  <input id="fichier" type="file" accept=".html,.htm" hidden>
+</header>
+<main>
+  <section class="panneau">
+    <div class="onglets">
+      <button type="button" data-onglet="html" class="actif">HTML (contenu)</button>
+      <button type="button" data-onglet="css">CSS (style)</button>
+    </div>
+    <textarea id="html" spellcheck="false"></textarea>
+    <textarea id="css" spellcheck="false" hidden></textarea>
+  </section>
+  <section class="panneau">
+    <div class="titre-panneau">Aperçu de ma page (mis à jour en direct)</div>
+    <iframe id="apercu" title="Aperçu"></iframe>
+  </section>
+</main>
+<script>
+// Code de depart donne aux eleves
+var HTML_DEPART = [
+  '<h1>Ma passion : TODO</h1>',
+  '',
+  '<p>Bonjour, je m\'appelle TODO et je vais vous présenter ma passion.</p>',
+  '',
+  '<!-- TODO : ajoute ici tes sous-titres, paragraphes, liste, liens et image -->',
+  '',
+  ''
+].join('\n');
+
+var CSS_DEPART = [
+  '/* Le style de la page : couleurs, polices, marges */',
+  'body {',
+  '  font-family: Arial, sans-serif;',
+  '}',
+  '',
+  'h1 {',
+  '  color: black;',
+  '}',
+  ''
+].join('\n');
+
+var CLE = 'snt-editeur-web';
+var zones = { html: document.getElementById('html'), css: document.getElementById('css') };
+var apercu = document.getElementById('apercu');
+var etat = document.getElementById('etat');
+var nom = document.getElementById('nom');
+var prenom = document.getElementById('prenom');
+
+function lire() {
+  try { return JSON.parse(localStorage.getItem(CLE)) || null; } catch (e) { return null; }
+}
+function sauver() {
+  try {
+    localStorage.setItem(CLE, JSON.stringify({ html: zones.html.value, css: zones.css.value, nom: nom.value, prenom: prenom.value }));
+    etat.textContent = 'Enregistré dans ce navigateur';
+  } catch (e) {
+    etat.textContent = 'Pense à télécharger ta page avant de fermer';
+  }
+}
+
+// Page complete : le contenu HTML et le style CSS restent separes (balise style a part)
+function pageComplete() {
+  var auteur = (prenom.value + ' ' + nom.value).trim();
+  return '<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n' +
+    '<meta name="author" content="' + auteur.replace(/"/g, '&quot;') + '">\n' +
+    '<title>Page de ' + (auteur || 'un eleve') + '</title>\n' +
+    '<style id="css-eleve">\n' + zones.css.value + '\n</style>\n</head>\n<body>\n' +
+    zones.html.value + '\n</body>\n</html>\n';
+}
+
+var minuteur = null;
+function rafraichir() {
+  apercu.srcdoc = pageComplete();
+  clearTimeout(minuteur);
+  minuteur = setTimeout(sauver, 400);
+}
+
+// Touche Tab : inserer deux espaces au lieu de quitter la zone de texte
+function tabulation(ev) {
+  if (ev.key !== 'Tab') return;
+  ev.preventDefault();
+  var z = ev.target, d = z.selectionStart;
+  z.value = z.value.slice(0, d) + '  ' + z.value.slice(z.selectionEnd);
+  z.selectionStart = z.selectionEnd = d + 2;
+  rafraichir();
+}
+
+document.querySelectorAll('.onglets button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.onglets button').forEach(function (x) { x.classList.toggle('actif', x === b); });
+    zones.html.hidden = b.dataset.onglet !== 'html';
+    zones.css.hidden = b.dataset.onglet !== 'css';
+  });
+});
+[zones.html, zones.css].forEach(function (z) {
+  z.addEventListener('input', rafraichir);
+  z.addEventListener('keydown', tabulation);
+});
+[nom, prenom].forEach(function (c) { c.addEventListener('input', rafraichir); });
+
+document.getElementById('telecharger').addEventListener('click', function () {
+  if (!nom.value.trim() || !prenom.value.trim()) {
+    alert('Écris ton nom et ton prénom en haut avant de télécharger ta page.');
+    return;
+  }
+  var nomFichier = ('page_' + nom.value + '_' + prenom.value).normalize('NFD')
+    .replace(/[̀-ͯ]/g, '').replace(/[^A-Za-z0-9_-]+/g, '_') + '.html';
+  var lien = document.createElement('a');
+  lien.href = URL.createObjectURL(new Blob([pageComplete()], { type: 'text/html' }));
+  lien.download = nomFichier;
+  document.body.appendChild(lien);
+  lien.click();
+  lien.remove();
+  etat.textContent = 'Téléchargée : ' + nomFichier + ' (à déposer sur l\'ENT)';
+});
+
+document.getElementById('reinit').addEventListener('click', function () {
+  if (!confirm('Effacer ton travail et repartir du code de départ ?')) return;
+  zones.html.value = HTML_DEPART;
+  zones.css.value = CSS_DEPART;
+  rafraichir();
+});
+
+// Reprendre une page deja telechargee
+var fichier = document.getElementById('fichier');
+document.getElementById('ouvrir').addEventListener('click', function () { fichier.click(); });
+fichier.addEventListener('change', function () {
+  var f = fichier.files[0];
+  if (!f) return;
+  f.text().then(function (texte) {
+    var doc = new DOMParser().parseFromString(texte, 'text/html');
+    var style = doc.getElementById('css-eleve') || doc.querySelector('style');
+    zones.css.value = style ? style.textContent.replace(/^\n|\n$/g, '') : '';
+    zones.html.value = doc.body.innerHTML.replace(/^\n|\n$/g, '');
+    var auteur = doc.querySelector('meta[name="author"]');
+    if (auteur && !nom.value && !prenom.value) {
+      var mots = auteur.content.split(' ');
+      prenom.value = mots.shift() || '';
+      nom.value = mots.join(' ');
+    }
+    rafraichir();
+  });
+  fichier.value = '';
+});
+
+var sauve = lire();
+zones.html.value = sauve ? sauve.html : HTML_DEPART;
+zones.css.value = sauve ? sauve.css : CSS_DEPART;
+nom.value = sauve ? sauve.nom || '' : '';
+prenom.value = sauve ? sauve.prenom || '' : '';
+rafraichir();
+etat.textContent = sauve ? 'Travail précédent retrouvé' : '';
+</script>
+</body>
+</html>

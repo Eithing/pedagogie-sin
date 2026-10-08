@@ -1,6 +1,7 @@
 ---
 titre: Comment une photo traverse Internet ? Paquets, adresses IP et TCP
 niveau: SNT (2nde)
+sequence: S1
 type: cours
 duree: 55 min
 illustration: img/tcp-ip/couverture.svg

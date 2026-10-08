@@ -1,6 +1,7 @@
 ---
 titre: Titre de la séance (formulé comme une question)
 niveau: SNT (2nde)
+sequence: S2
 type: cours
 duree: 55 min
 illustration: img/sujet/couverture.svg

@@ -1,6 +1,7 @@
 ---
 titre: Surveillance HACCP d'une chambre froide — acquisition de température par bus I2C sur ESP32
 niveau: Term STI2D SIN
+sequence: T3
 type: tp
 illustration: img/i2c/chambre-froide.svg
 accroche: Plus jamais de surgelés perdus un lundi matin.

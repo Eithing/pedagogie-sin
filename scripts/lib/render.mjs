@@ -4,11 +4,12 @@ import { pathToFileURL, fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import katex from 'katex';
 import { esc, rendre, accentPour } from './markdown.mjs';
+import { estNote, SANS_CODE } from './document.mjs';
 
 const require = createRequire(import.meta.url);
 export const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-export const LIBELLES_TYPE = { tp: 'Travaux pratiques', td: 'Travaux dirigés', evaluation: 'Évaluation', cours: 'Cours', cadrage: 'Document de cadrage' };
+export const LIBELLES_TYPE = { tp: 'Travaux pratiques', td: 'Travaux dirigés', evaluation: 'Évaluation', cours: 'Cours', autonomie: 'Travail en autonomie', cadrage: 'Document de cadrage' };
 
 const lien = (fichier) => pathToFileURL(fichier).href;
 const FEUILLES_BASE = () => [
@@ -45,9 +46,24 @@ ${script ? `<script>${script}</script>` : ''}
 `;
 }
 
+// Travail en autonomie : plan de travail (étapes = titres ##, durée entre parenthèses en fin de titre),
+// ce qu'il faut déposer et comment obtenir de l'aide.
+function planTravail(meta, corps) {
+  const etapes = corps.replace(SANS_CODE, '$1').split('\n').filter((l) => /^##\s/.test(l)).map((l) => {
+    const m = l.replace(/^##\s+/, '').match(/^(.*?)\s*(?:\((\d+\s*min)\))?\s*$/);
+    return { titre: m[1], duree: m[2] };
+  }).filter((e) => !/bar[eè]me/i.test(e.titre));
+  const liste = (v) => [].concat(v ?? []).map((t) => `<li>${esc(t)}</li>`).join('');
+  return `<section class="plan-travail">
+    <div class="plan-etapes"><h2>Mon plan de travail</h2><ol>${etapes.map((e) => `<li><span class="case"></span><span>${esc(e.titre)}</span>${e.duree ? `<em>${esc(e.duree)}</em>` : ''}</li>`).join('')}</ol></div>
+    <div class="plan-rendu"><h2>À déposer sur l'ENT</h2><ul>${liste(meta.rendu)}</ul></div>
+    ${meta.aide ? `<div class="plan-aide"><h2>Besoin d'aide ?</h2><ul>${liste(meta.aide)}</ul></div>` : ''}
+  </section>`;
+}
+
 function entete(meta, cible, config, libelleVariante) {
   const type = meta.type ?? '';
-  const evaluable = ['tp', 'td', 'evaluation'].includes(type);
+  const evaluable = estNote(meta);
   const bareme = meta.bareme ?? config.baremeTotalParDefaut;
   const identite = cible === 'eleve'
     ? `<div class="doc-identite">
@@ -85,7 +101,7 @@ export function rendreHtml({ meta, corps, cible, config, fichierSource, libelleV
   const contenu = rendre(corps, cible);
   return page({
     titre: `${meta.titre} — ${cible === 'prof' ? 'Prof' : 'Élève'}`,
-    corps: `${entete(meta, cible, config, libelleVariante)}\n<main class="doc-corps">\n${contenu}\n</main>`,
+    corps: `${entete(meta, cible, config, libelleVariante)}\n${meta.type === 'autonomie' ? planTravail(meta, corps) : ''}\n<main class="doc-corps">\n${contenu}\n</main>`,
     meta, config, fichierSource,
     classes: `document variante-${cible} type-${esc(meta.type ?? 'doc')}`,
   });

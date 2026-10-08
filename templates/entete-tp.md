@@ -1,6 +1,7 @@
 ---
 titre: Titre de l'activité
 niveau: Term STI2D SIN
+sequence: T1
 type: tp
 illustration: img/sujet/illustration.svg
 accroche: Une phrase qui donne envie.

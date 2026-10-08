@@ -4,16 +4,20 @@
 //   npm run build:html                 -> HTML seulement (aperçu rapide, sans PDF)
 //   npm run watch                      -> régénère à chaque enregistrement
 //
-// Sorties rangées par classe : output/<dossier>/ (voir pipeline.config.json > classes)
+// Sorties rangées par classe puis par séquence : output/<classe>/<séquence>/
+// (classe : pipeline.config.json > classes ; séquence : champ « sequence: » du front matter,
+//  ou séquence de la progression qui cite le document dans « ressources », sinon Hors_sequence)
 //   TP / TD / cadrage : eleve/ELEVE_<nom>.pdf, prof/PROF_<nom>.pdf
 //   Cours (séance)    : slides/SLIDES_<nom>.pdf + slides/<nom>.html (projection),
 //                       prof/DEROULE_<nom>.pdf, eleve/ELEVE_<nom>.pdf, prof/PROF_<nom>.pdf
-//   Progression       : PROGRESSION_<classe>.pdf à la racine du dossier de la classe
+//   Autonomie         : eleve/ELEVE_<nom>.pdf, prof/PROF_<nom>.pdf (+ plan de travail, dépôt ENT)
+//   Progression       : PROGRESSION_<classe>.pdf à la racine du dossier de la classe (pas de séquence)
+//   Fichiers joints (front matter « fichiers: ») : copiés dans eleve/
 // output/.manifest.json mémorise ce que chaque source a produit : les fichiers devenus inutiles
 // (source renommée ou supprimée, ancien rangement) sont effacés automatiquement.
 import fs from 'node:fs';
 import path from 'node:path';
-import { chargerConfig, listerSources, analyser, dossierClasse, RACINE } from './lib/commun.mjs';
+import { chargerConfig, listerSources, analyser, dossierClasse, dossierSequence, oublierSequences, RACINE } from './lib/commun.mjs';
 import { variante, appliquerSujet } from './lib/document.mjs';
 import { rendreHtml } from './lib/render.mjs';
 import { rendreDiapos, rendreDeroule, corpsFiche } from './lib/seance.mjs';
@@ -35,7 +39,8 @@ const relSortie = (f) => path.relative(SORTIE(), f).split(path.sep).join('/');
 
 // Une sortie = { cle, html, fichierHtml, pdf, format, libelle }
 function sorties(doc, seance, progression, config, nom) {
-  const dossier = path.join(SORTIE(), dossierClasse(doc.meta, config));
+  const classe = path.join(SORTIE(), dossierClasse(doc.meta, config));
+  const dossier = progression ? classe : path.join(classe, dossierSequence(doc.meta, nom, config));
   const cache = (cle) => path.join(SORTIE(), '.cache', `${nom}.${cle}.html`);
   const s = [];
 
@@ -100,6 +105,15 @@ async function construire(fichier, config, manifeste) {
     if (debordements.length) console.log(`    avert.  contenu trop long (coupé) sur les diapos ${debordements.join(', ')} : alléger ou découper`);
   }
 
+  // Fichiers joints (champ « fichiers: » : outils, données, code de départ) copiés tels quels avec la version élève
+  for (const joint of [].concat(doc.meta.fichiers ?? [])) {
+    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', path.basename(joint));
+    fs.mkdirSync(path.dirname(cible), { recursive: true });
+    fs.copyFileSync(path.resolve(path.dirname(fichier), joint), cible);
+    produits.push(cible);
+    console.log(`    → ${relSortie(cible)}`);
+  }
+
   if (!htmlSeul) {
     const cle = path.relative(RACINE, fichier).split(path.sep).join('/');
     const nouveaux = produits.map(relSortie);
@@ -140,6 +154,7 @@ function nettoyer(manifeste, sources) {
 
 async function toutConstruire(fichiers, { complet = false } = {}) {
   const config = chargerConfig();
+  oublierSequences();
   const manifeste = lireManifeste();
   supprimes = [];
   let ok = true;

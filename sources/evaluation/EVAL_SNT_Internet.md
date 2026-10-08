@@ -1,6 +1,7 @@
 ---
 titre: "Internet : paquets, routage et DNS"
 niveau: SNT (2nde)
+sequence: S1
 type: evaluation
 duree: 25 min
 bareme: 20

@@ -30,11 +30,11 @@ sequences:
       - "TP DNS et routage : retrouver l'adresse IP d'un site à partir de son nom, suivre le chemin des paquets"
       - "Réseaux physiques (fibre, 4G, Wi-Fi…) et ordre de grandeur du trafic ; pair-à-pair et usages illicites"
     outils: [Filius, navigateur, activités débranchées]
-    evaluation: "Interrogation de 25 min (sujets A / B) semaine du 12 octobre : QCM, adresses IPv4, DNS, routage, TCP."
+    evaluation: "Interrogation de 25 min (sujets A / B) à la première heure en présentiel après le blocus : QCM, adresses IPv4, DNS, routage, TCP."
     ressources: [COURS_SNT_TCP_IP, EVAL_SNT_Internet]
-    semaines: 7
-    etat: en-cours
+    etat: fait
     debut: 2026-09-01
+    fin: 2026-10-08
 
   - id: S2
     titre: Le Web
@@ -49,9 +49,12 @@ sequences:
       - "Décomposer des URL, reconnaître une page sécurisée (HTTPS), lire une requête HTTP dans les outils du navigateur"
       - "Indexer à la main quelques textes puis répondre à une requête ; comparer plusieurs moteurs de recherche"
       - "Régler cookies et confidentialité du navigateur ; visualiser les traqueurs"
-    outils: [navigateur (outils de développement), éditeur HTML (VS Code ou Capytale)]
-    evaluation: "Production : page web personnelle évaluée sur grille ; QCM de fin de thème."
+    outils: [navigateur (outils de développement), éditeur web maison (fichier HTML, sans compte)]
+    evaluation: "Production : page web personnelle évaluée sur grille (TP en autonomie, note de travail) ; QCM de fin de thème."
+    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage]
     semaines: 4
+    etat: en-cours
+    debut: 2026-10-09
 
   - id: S3
     titre: Les réseaux sociaux
@@ -66,7 +69,7 @@ sequences:
       - "Graphes en débranché : rayon, diamètre, centre, notion de « petit monde »"
       - "Python : représenter un graphe d'amis (dictionnaire) et calculer le degré d'un sommet (demi-groupe)"
       - "Cyberviolence : article 222-33-2-2 du code pénal et ressources d'aide"
-    outils: [Python (Thonny ou Capytale), activités débranchées]
+    outils: [Python (Thonny ou Basthon), activités débranchées]
     evaluation: "Évaluation écrite : caractéristiques d'un graphe simple et analyse d'une situation de cyberviolence."
     semaines: 4
 
@@ -151,6 +154,8 @@ journal:
     texte: "Blocus du lycée : plusieurs séances perdues début octobre, aucune note posée. Faits : TP diagnostique (peu exploitable), TP Filius, TP DNS / routage. Interrogation sur le thème Internet programmée avant la Toussaint."
   - date: 2026-10-07
     texte: "Mise en forme de la progression. Thème Internet en voie d'achèvement (séance TCP/IP réalisée) ; le Web suivra après les vacances de la Toussaint."
+  - date: 2026-10-08
+    texte: "Blocus : cours en distanciel. Thème Internet terminé (INT.3 et INT.4 traités à distance) ; l'interrogation Internet (sujets A/B) est reportée à la première heure en présentiel. Le Web démarre le 9 octobre en autonomie : fiche « Le Web n'est pas Internet » (classe entière) et TP noté « Ma première page web » (demi-groupe, éditeur web sans compte, Capytale n'étant pas disponible dans l'académie)."
 ---
 
 ## Intentions pédagogiques

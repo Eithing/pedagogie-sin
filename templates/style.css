@@ -460,3 +460,33 @@ table.deroule tbody tr { break-inside: auto; background: #fff !important; }
 }
 .doc-consignes { margin: 6px 0 0; padding-left: 16px; font-size: 8.5pt; color: #334155; }
 .doc-consignes li { margin: 0; }
+
+/* ---------- Travail en autonomie : plan de travail ---------- */
+.plan-travail {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3mm;
+  margin: 0 0 5mm;
+  break-inside: avoid;
+}
+.plan-travail h2 {
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin: 0 0 1.5mm;
+  border: 0;
+  padding: 0;
+}
+.plan-travail > div { border-radius: 2mm; padding: 2.5mm 3.5mm; }
+.plan-etapes { grid-row: span 2; border: 1.5px solid var(--accent); background: var(--accent-pale); }
+.plan-etapes h2 { color: var(--accent-fonce); }
+.plan-etapes ol { list-style: none; margin: 0; padding: 0; }
+.plan-etapes li { display: flex; align-items: center; gap: 2.5mm; padding: 1mm 0; border-bottom: 1px dashed var(--accent-doux); }
+.plan-etapes li:last-child { border-bottom: 0; }
+.plan-etapes li em { margin-left: auto; font-style: normal; font-weight: 600; color: var(--accent-fonce); white-space: nowrap; }
+.plan-etapes .case { flex: none; width: 3.5mm; height: 3.5mm; border: 1.5px solid var(--accent-fonce); border-radius: .6mm; background: #fff; }
+.plan-rendu { border: 1.5px solid var(--activite); background: var(--activite-pale); }
+.plan-rendu h2 { color: var(--activite); }
+.plan-aide { border: 1.5px solid var(--retenir); background: var(--retenir-pale); }
+.plan-aide h2 { color: var(--retenir); }
+.plan-rendu ul, .plan-aide ul { margin: 0; padding-left: 4mm; font-size: 9.5pt; }
