@@ -490,3 +490,11 @@ table.deroule tbody tr { break-inside: auto; background: #fff !important; }
 .plan-aide { border: 1.5px solid var(--retenir); background: var(--retenir-pale); }
 .plan-aide h2 { color: var(--retenir); }
 .plan-rendu ul, .plan-aide ul { margin: 0; padding-left: 4mm; font-size: 9.5pt; }
+
+/* ---------- Sauts de page ---------- */
+/* « \newpage » dans la source ; en autonomie, chaque étape commence une nouvelle page */
+.saut-page { break-after: page; height: 0; }
+.type-autonomie .doc-corps > h2 { break-before: page; }
+@media screen {
+  .saut-page { border-top: 1px dashed var(--bordure); margin: 8mm 0; }
+}

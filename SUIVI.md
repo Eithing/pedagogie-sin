@@ -21,6 +21,7 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 - **Cours jamais descendants** : séances rythmées, au moins 40 % du temps en activités (vérifié par la chaîne).
 - **Terminales** : mêmes séquences T pour D1, D2 et D3 sur les mêmes semaines, profondeur variable selon l'horaire (D1 1 h, D3 2 h, D2 4 h). L'heure commune D2 + D3 a son propre fil (réseaux, client/serveur, IoT). Projet de D2 : 2 h par semaine de janvier à mai.
 - **Matériel** : tout en simulation pour l'instant (Wokwi, Tinkercad, Filius, Packet Tracer). **Capytale indisponible** (académie de Lille, Nord) : outils sans compte uniquement.
+- **Distanciel = tout sur PC** : pas d'impression. Document réponse .docx généré, ou photos du cahier au choix de l'élève, avec des conditions de rendu écrites dans la fiche. Une étape par page.
 - **Distanciel** : on ne note à distance que des productions personnelles (grille, coefficient réduit) ; les connaissances s'évaluent sur table au retour.
 - **Évaluation** : échelle à 4 niveaux (Non acquis / En cours / Acquis / Maîtrisé). Les sigles TI/TS/WA/NA ont été abandonnés.
 - **Convention CAN** : q = PE / 2ⁿ (les deux conventions acceptées à la correction).

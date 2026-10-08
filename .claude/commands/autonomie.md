@@ -7,6 +7,7 @@ Génère un **travail en autonomie** pour les séances à distance (blocus, abse
 - **Un plan de travail à cocher** : le corps est découpé en `## Étape N — Titre (x min)` ; la chaîne en tire automatiquement l'encadré « Mon plan de travail », avec « À déposer sur l'ENT » (`rendu:`) et « Besoin d'aide ? » (`aide:`).
 - **Toujours actif** : défi de départ, lecture puis questions, manipulation (navigateur, simulateur, éditeur), bilan à trous, dépôt.
 - **Ne noter que ce qui ne se copie pas** : production personnelle (sujet choisi par l'élève, parcours propre à chacun), évaluée sur une grille avec un coefficient réduit. Les connaissances s'évaluent sur table, au retour en classe (`/td` ou évaluation à sujets A/B).
+- **Tout sur ordinateur, rien à imprimer** : une étape par page (automatique), `document_reponse: true` pour fournir un document réponse .docx. Laisser le choix « document numérique ou photos du cahier » et écrire les conditions de rendu dans l'encadré « Comment répondre et rendre ton travail ». Ne jamais parler de feuille ni de stylo.
 - **Outils sans compte** : rien qui exige Capytale (indisponible dans l'académie de Lille). Pour HTML/CSS : `sources/autonomie/fichiers/editeur_web.html`. Prévoir le cas « l'élève n'a qu'un téléphone ».
 
 ## Procédure (obligatoire)
@@ -15,4 +16,4 @@ Génère un **travail en autonomie** pour les séances à distance (blocus, abse
 3. Écrire `sources/autonomie/AUTO_<Niveau>_<Sujet>.md` avec `type: autonomie`, `sequence:`, `duree`, `competences`, `rendu`, `aide`, et si besoin `fichiers` et `bareme`. Questions en `::: reponse 0` (réponses sur feuille ou dans un fichier). Ajouter un bloc `::: prof` de mise en œuvre : devoir ENT à créer, fichiers à déposer, comment corriger.
 4. `npm run build -- sources/autonomie/<fichier>.md` et corriger toutes les erreurs.
 5. Ajouter le document aux `ressources:` de la séquence et une ligne au `journal:` de la progression.
-6. Donner à l'enseignant la liste exacte de ce qu'il faut déposer sur l'ENT (PDF élève, fichiers joints).
+6. Donner à l'enseignant la liste exacte de ce qu'il faut déposer sur l'ENT (PDF élève, document réponse .docx, fichiers joints).

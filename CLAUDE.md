@@ -10,7 +10,7 @@ Les sorties sont rangées **par classe puis par séquence** dans `output/<classe
 | :--- | :--- |
 | `tp`, `td`, `cadrage` | `eleve/ELEVE_<nom>.pdf` (zones de réponse) · `prof/PROF_<nom>.pdf` (corrigé + barème) |
 | `cours` (séance) | `slides/SLIDES_<nom>.pdf` + `slides/<nom>.html` (projection : ←/→, F plein écran, T minuteur) · `prof/DEROULE_<nom>.pdf` (fiche de suivi de séance) · `eleve/ELEVE_` et `prof/PROF_<nom>.pdf` (fiche d'activités) |
-| `autonomie` (distanciel) | `eleve/ELEVE_<nom>.pdf` avec **plan de travail** (étapes à cocher, ce qu'il faut déposer sur l'ENT, comment obtenir de l'aide) · `prof/PROF_<nom>.pdf` · fichiers joints (`fichiers:`) copiés dans `eleve/` · noté seulement si `bareme:` est présent |
+| `autonomie` (distanciel) | `eleve/ELEVE_<nom>.pdf` avec **plan de travail** (étapes à cocher, ce qu'il faut déposer sur l'ENT, comment obtenir de l'aide) · `prof/PROF_<nom>.pdf` · `eleve/REPONSES_<nom>.docx` si `document_reponse: true` (l'élève répond sous Word ou LibreOffice) · fichiers joints (`fichiers:`) copiés dans `eleve/` · une étape par page · noté seulement si `bareme:` est présent |
 | `progression` | `PROGRESSION_<classe>.pdf` à la racine de `output/<classe>/` (A4 paysage : frise annuelle, séquences, couverture du BO, journal) |
 
 `output/.manifest.json` mémorise ce que chaque source produit : une génération complète supprime d'elle-même les fichiers devenus inutiles (source renommée ou supprimée, ancien rangement).

@@ -13,6 +13,7 @@
 //   Autonomie         : eleve/ELEVE_<nom>.pdf, prof/PROF_<nom>.pdf (+ plan de travail, dépôt ENT)
 //   Progression       : PROGRESSION_<classe>.pdf à la racine du dossier de la classe (pas de séquence)
 //   Fichiers joints (front matter « fichiers: ») : copiés dans eleve/
+//   Document réponse (« document_reponse: true ») : eleve/REPONSES_<nom>.docx
 // output/.manifest.json mémorise ce que chaque source a produit : les fichiers devenus inutiles
 // (source renommée ou supprimée, ancien rangement) sont effacés automatiquement.
 import fs from 'node:fs';
@@ -23,6 +24,7 @@ import { rendreHtml } from './lib/render.mjs';
 import { rendreDiapos, rendreDeroule, corpsFiche } from './lib/seance.mjs';
 import { rendreProgression } from './lib/progression.mjs';
 import { ouvrirNavigateur, genererPdf } from './lib/pdf.mjs';
+import { genererDocx } from './lib/docx.mjs';
 
 const args = process.argv.slice(2);
 const htmlSeul = args.includes('--html');
@@ -103,6 +105,14 @@ async function construire(fichier, config, manifeste) {
     produits.push(s.pdf);
     console.log(`    → ${relSortie(s.pdf)}`);
     if (debordements.length) console.log(`    avert.  contenu trop long (coupé) sur les diapos ${debordements.join(', ')} : alléger ou découper`);
+  }
+
+  // Document réponse Word / LibreOffice (autonomie, « document_reponse: true »)
+  if (doc.meta.document_reponse) {
+    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', `REPONSES_${nom}.docx`);
+    await genererDocx(doc, cible);
+    produits.push(cible);
+    console.log(`    → ${relSortie(cible)}`);
   }
 
   // Fichiers joints (champ « fichiers: » : outils, données, code de départ) copiés tels quels avec la version élève

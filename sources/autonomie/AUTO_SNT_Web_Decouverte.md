@@ -7,12 +7,13 @@ duree: 55 min
 illustration: img/web/internet-web.svg
 accroche: Tu utilises le Web tous les jours. Sais-tu d'où il vient et comment une adresse mène à une page ?
 competences: [WEB.1, WEB.3, WEB.5]
+document_reponse: true
 consignes:
-  - "Travail individuel à la maison, pendant l'heure de cours. Suis les étapes dans l'ordre et coche-les au fur et à mesure."
-  - "Réponds sur une feuille ou dans un document, en notant le numéro de chaque question."
+  - "Travail individuel, à l'ordinateur, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page."
+  - "Garde ce PDF ouvert d'un côté et ton document réponse de l'autre (voir l'encadré « Comment répondre » ci-dessous)."
 rendu:
-  - "Tes réponses aux questions 1 à 8 : une photo nette de ta feuille ou ton document."
-  - "Dépôt dans le devoir « Le Web — découverte » de l'ENT, avant la date indiquée."
+  - "Tes réponses aux questions 1 à 8 et le bilan complété : le fichier REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier."
+  - "Un seul dépôt, dans le devoir « Le Web — découverte » de l'ENT, avant la date indiquée."
   - "Ce travail n'est pas noté, mais il est obligatoire : il prépare l'évaluation du thème."
 aide:
   - "Pendant l'heure de cours, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds tout de suite."
@@ -20,11 +21,20 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre (vendredi 9 octobre, classe entière, distanciel)** : déposer ce PDF élève dans un devoir ENT « Le Web — découverte », avec une date limite le soir même ou le lendemain. Rester connecté à la messagerie pendant l'heure.
+**Mise en œuvre (vendredi 9 octobre, classe entière, distanciel)** : déposer sur l'ENT ce PDF élève **et** le document réponse `REPONSES_AUTO_SNT_Web_Decouverte.docx` (même dossier `eleve/`), dans un devoir « Le Web — découverte » qui accepte les fichiers .docx, .odt et les photos, avec une date limite le soir même ou le lendemain. Rester connecté à la messagerie pendant l'heure.
 
 **Suivi** : ce travail n'est pas noté. On regarde seulement s'il a été rendu et s'il est sérieux, ce qui peut alimenter une note de travail personnel. La question 5 (jeu de Wikipédia) est **propre à chaque élève**, puisque chacun part de sa propre page : une copie entre élèves s'y repère tout de suite.
 
 **Au retour en classe** : 5 minutes de correction collective sur la frise (Q3) et sur les URL (Q6), puis l'interrogation Internet (sujets A/B) déjà prête.
+:::
+
+::: info Comment répondre et rendre ton travail
+Tu as **deux possibilités**, au choix :
+
+1. **À l'ordinateur (conseillé)** : télécharge sur l'ENT le fichier **`REPONSES_AUTO_SNT_Web_Decouverte.docx`** et ouvre-le avec Word ou LibreOffice Writer. Toutes les questions y sont déjà écrites : tape tes réponses dans les zones « Ma réponse ». Enregistre-le sous le nom **`REPONSES_NOM_Prenom`** et dépose ce fichier sur l'ENT.
+2. **Dans ton cahier de SNT** : écris la date, le titre de la fiche, puis le **numéro de chaque question** devant ta réponse. Prends ensuite des **photos nettes et lisibles**, une par page, et dépose-les toutes sur l'ENT.
+
+**Dans les deux cas** : écris tes réponses avec **tes propres mots**, sans copier-coller depuis Internet, et **n'oublie aucune question**. Une réponse que tu n'as pas trouvée s'écrit « je n'ai pas trouvé » : c'est mieux qu'une case vide.
 :::
 
 ## Étape 1 — Défi de départ (5 min)
@@ -94,7 +104,7 @@ Sans regarder le DR1, range ces événements dans l'ordre chronologique (écris 
 
 **A.** le Web devient libre d'utilisation · **B.** invention du mot « hypertexte » · **C.** naissance de Wikipédia · **D.** Tim Berners-Lee propose le Web au CERN · **E.** naissance d'ARPANET · **F.** le Web arrive sur les smartphones
 
-Vérifie ensuite avec le DR1 et corrige, au stylo d'une autre couleur.
+Vérifie ensuite avec le DR1. **Ne modifie pas ta première réponse** : écris la correction juste en dessous, en commençant par « Correction : ».
 :::
 
 ::: reponse 0
@@ -178,7 +188,7 @@ Pour `https://fr.wikipedia.org/wiki/World_Wide_Web` : protocole `https`, nom de 
 
 ## Étape 5 — Ce que je retiens, puis je dépose (5 min)
 
-Recopie ce bilan sur ta feuille en complétant les trous.
+Complète ce bilan dans ton document réponse, où il est déjà recopié (ou dans ton cahier).
 
 ::: retenir
 - **Internet** est le réseau qui transporte les données ; le **Web** est un [[service]] qui l'utilise, fait de pages reliées par des liens [[hypertextes]].
@@ -186,7 +196,7 @@ Recopie ce bilan sur ta feuille en complétant les trous.
 - Une URL contient un [[protocole]], un nom de [[domaine]], un chemin et parfois des paramètres ; `https` indique une page [[sécurisée]].
 :::
 
-Pour finir, **prends en photo ta feuille** (ou enregistre ton document) et **dépose-la sur l'ENT**.
+Pour finir, **enregistre ton document réponse** (ou prends en photo les pages de ton cahier) et **dépose-le sur l'ENT**, dans le devoir « Le Web — découverte ».
 
 ::: info Corrigé du défi de départ (étape 1)
 **1.** Le Web, qui fonctionne grâce à Internet : la page YouTube est une page web, transportée par Internet. **2.** Internet, mais pas forcément le Web : le jeu échange des données par Internet, sans passer par des pages web.

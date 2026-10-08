@@ -124,7 +124,8 @@ export function creerMarkdown() {
 }
 
 export const md = creerMarkdown();
-export const rendre = (texte, cible) => md.render(texte, { cible });
+// « \newpage » seul sur sa ligne : saut de page (tous types de documents)
+export const rendre = (texte, cible) => md.render(texte.replace(/^\\newpage[ \t]*$/gm, '<div class="saut-page"></div>'), { cible });
 
 // Couleur d'accent selon le niveau (pipeline.config.json > themes)
 export function accentPour(niveau, config) {
