@@ -36,6 +36,8 @@ journal:
     texte: "Blocus du lycée : plusieurs séances perdues début octobre dans toutes les classes (dates exactes à préciser), aucune note posée. Évaluations programmées avant les vacances de la Toussaint."
   - date: 2026-10-07
     texte: "Mise en forme de la progression. Mini-séquence SysML (T0) faite, non notée. CAN (T1) : cours complet fait."
+  - date: 2026-10-09
+    texte: "Blocus : cours en distanciel. Remédiation CAN en autonomie (« Le CAN pas à pas », simulateur de CAN sans compte), non notée. Le cours était allé trop vite pour la majorité. L'interrogation CAN (sujet A) est reportée au retour en présentiel."
 ---
 
 ## Organisation

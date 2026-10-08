@@ -10,11 +10,13 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 - **Sorties rangées par séquence** : `output/<classe>/<séquence>/` (ex. `2nde_SNT/S2_Le_Web/`), d'après le champ `sequence:` du front matter.
 - **Nouveau type `autonomie`** (distanciel, commande `/autonomie`) : plan de travail à cocher, dépôt ENT, aide ; fichiers joints (`fichiers:`).
 - **2nde, Web en distanciel (vendredi 9 octobre)** : `AUTO_SNT_Web_Decouverte` (classe entière, non noté, rendu obligatoire) et `AUTO_SNT_Web_PremierePage` (TP noté /20, demi-groupe, avec `editeur_web.html`, éditeur HTML/CSS sans compte). L'autre demi-groupe fera le TP à sa prochaine séance de TP.
+- **Terminales en distanciel (vendredi 9 octobre)** : `AUTO_TermSIN_CAN_PasAPas` (remédiation CAN, non notée, pour D1 et pour l'heure commune D2 + D3, avec `simulateur_can.html`) ; `AUTO_TermSIN_TMP36_Tinkercad` (TP noté /20 pour D2, individuel, captures d'écran, `station_temperature.ino`). Le TP TMP36 a quitté `sources/tp/` pour `sources/autonomie/`.
+- Les documents réponse .docx convertissent les formules LaTeX en texte et les tableaux Markdown en vrais tableaux Word.
 - Évaluations avant la Toussaint :
   - 2nde : interro Internet (sujets A/B), **à la première heure en présentiel** (reportée à cause du blocus) ;
   - D3 : TD noté CO₂, mardi 13 octobre ;
-  - D1 : interro CAN, sujet A, vendredi 16 octobre ;
-  - D2 + D3 : interro CAN, sujet B, heure commune du vendredi 16 octobre ;
+  - D1 : interro CAN, sujet A, **au retour en présentiel** (prévue le vendredi 16 octobre) ;
+  - D2 + D3 : interro CAN, sujet B, heure commune, **au retour en présentiel** ;
   - D2 : TP noté Tinkercad TMP36, vendredi après-midi.
 
 ### Décisions
@@ -28,6 +30,7 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 
 ### En attente (à demander ou à confirmer)
 - Retour sur les séances du 9/10 en distanciel : taux de rendu, difficultés avec l'éditeur (téléphone ?), date du retour en présentiel (pour l'interro Internet).
+- Tinkercad : vérifier que les circuits des D2 sont visibles depuis l'espace classe (sinon, demander le lien de partage). D1 et D3 n'ont pas d'accès Tinkercad : en créer un si on veut leur faire faire des TP en simulation (Wokwi est une alternative sans compte).
 - QCM Pronote : l'enseignant ne le maîtrise pas encore. Proposer un guide pas à pas, ou des QCM prêts à saisir.
 - Dates des séances perdues pendant le blocus de début octobre, à saisir en `annulations:` dans les progressions.
 - Jours des créneaux de la 2nde Rapinoe (classe entière et TP) et date de fin des cours (supposée : 4 juin).

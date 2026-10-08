@@ -38,10 +38,6 @@
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/ELEVE_TD_TermSIN_CAN_QualiteAir.pdf",
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/PROF_TD_TermSIN_CAN_QualiteAir.pdf"
   ],
-  "sources/tp/TP_TermSIN_TMP36_Tinkercad.md": [
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/ELEVE_TP_TermSIN_TMP36_Tinkercad.pdf",
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/PROF_TP_TermSIN_TMP36_Tinkercad.pdf"
-  ],
   "sources/autonomie/AUTO_SNT_Web_Decouverte.md": [
     "2nde_SNT/S2_Le_Web/eleve/ELEVE_AUTO_SNT_Web_Decouverte.pdf",
     "2nde_SNT/S2_Le_Web/prof/PROF_AUTO_SNT_Web_Decouverte.pdf",
@@ -51,5 +47,17 @@
     "2nde_SNT/S2_Le_Web/eleve/ELEVE_AUTO_SNT_Web_PremierePage.pdf",
     "2nde_SNT/S2_Le_Web/prof/PROF_AUTO_SNT_Web_PremierePage.pdf",
     "2nde_SNT/S2_Le_Web/eleve/editeur_web.html"
+  ],
+  "sources/autonomie/AUTO_TermSIN_CAN_PasAPas.md": [
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/ELEVE_AUTO_TermSIN_CAN_PasAPas.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/PROF_AUTO_TermSIN_CAN_PasAPas.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/REPONSES_AUTO_TermSIN_CAN_PasAPas.docx",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/simulateur_can.html"
+  ],
+  "sources/autonomie/AUTO_TermSIN_TMP36_Tinkercad.md": [
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/ELEVE_AUTO_TermSIN_TMP36_Tinkercad.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/PROF_AUTO_TermSIN_TMP36_Tinkercad.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/REPONSES_AUTO_TermSIN_TMP36_Tinkercad.docx",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/station_temperature.ino"
   ]
 }

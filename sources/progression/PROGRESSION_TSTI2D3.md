@@ -37,6 +37,8 @@ journal:
     texte: "Blocus du lycée : plusieurs séances perdues début octobre dans toutes les classes (dates exactes à préciser), aucune note posée. Évaluations programmées avant les vacances de la Toussaint."
   - date: 2026-10-07
     texte: "Mise en forme de la progression. Mini-séquence SysML (T0) faite, non notée. CAN (T1) : cours complet fait. Heure commune avec D2 : révisions et CAN jusqu'à la Toussaint, puis séquence réseaux (C1)."
+  - date: 2026-10-09
+    texte: "Blocus : cours en distanciel. Heure commune avec D2 : remédiation CAN en autonomie (« Le CAN pas à pas »), non notée. L'interrogation CAN (sujet B) est reportée au retour en présentiel ; le TD noté sur le CO₂ reste prévu le mardi."
 ---
 
 ## Organisation

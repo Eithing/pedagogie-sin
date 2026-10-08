@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="560" height="380" fill="#f8fafc"/>
+  <!-- repere : x 70..470 pour 0..8 V (50 px/V), y 330..30 pour N 0..8 (37,5 px/code) -->
+  <g stroke="#e2e8f0">
+    <line x1="120" y1="30" x2="120" y2="330"/><line x1="170" y1="30" x2="170" y2="330"/><line x1="220" y1="30" x2="220" y2="330"/>
+    <line x1="270" y1="30" x2="270" y2="330"/><line x1="320" y1="30" x2="320" y2="330"/><line x1="370" y1="30" x2="370" y2="330"/>
+    <line x1="420" y1="30" x2="420" y2="330"/><line x1="470" y1="30" x2="470" y2="330"/>
+    <line x1="70" y1="292.5" x2="470" y2="292.5"/><line x1="70" y1="255" x2="470" y2="255"/><line x1="70" y1="217.5" x2="470" y2="217.5"/>
+    <line x1="70" y1="180" x2="470" y2="180"/><line x1="70" y1="142.5" x2="470" y2="142.5"/><line x1="70" y1="105" x2="470" y2="105"/>
+    <line x1="70" y1="67.5" x2="470" y2="67.5"/>
+  </g>
+  <line x1="70" y1="330" x2="490" y2="330" stroke="#334155" stroke-width="2"/>
+  <line x1="70" y1="330" x2="70" y2="20" stroke="#334155" stroke-width="2"/>
+  <g font-size="12" fill="#475569" text-anchor="middle">
+    <text x="70" y="348">0</text><text x="120" y="348">1</text><text x="170" y="348">2</text><text x="220" y="348">3</text><text x="270" y="348">4</text>
+    <text x="320" y="348">5</text><text x="370" y="348">6</text><text x="420" y="348">7</text><text x="470" y="348">8</text>
+  </g>
+  <text x="270" y="370" text-anchor="middle" font-size="13" fill="#1e293b">Tension d'entrée V<tspan font-size="10" dy="3">in</tspan><tspan dy="-3"> (V) — pleine échelle 8 V</tspan></text>
+  <g font-size="12" fill="#475569" text-anchor="end">
+    <text x="62" y="334">0</text><text x="62" y="296">1</text><text x="62" y="259">2</text><text x="62" y="221">3</text>
+    <text x="62" y="184">4</text><text x="62" y="146">5</text><text x="62" y="109">6</text><text x="62" y="71">7</text>
+  </g>
+  <text transform="translate(24 180) rotate(-90)" text-anchor="middle" font-size="13" fill="#1e293b">Code N (3 bits)</text>
+  <!-- escalier -->
+  <path d="M70 330 H120 V292.5 H170 V255 H220 V217.5 H270 V180 H320 V142.5 H370 V105 H420 V67.5 H470" fill="none" stroke="#2563eb" stroke-width="3.5"/>
+  <!-- marche q -->
+  <path d="M220 238 h50" stroke="#15803d" stroke-width="2"/><path d="M220 233 v10 M270 233 v10" stroke="#15803d" stroke-width="2"/>
+  <text x="245" y="232" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">q = 1 V</text>
+  <!-- exemple Vin = 5,3 V -->
+  <line x1="335" y1="330" x2="335" y2="142.5" stroke="#ea580c" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="70" y1="142.5" x2="335" y2="142.5" stroke="#ea580c" stroke-width="2" stroke-dasharray="5 4"/>
+  <circle cx="335" cy="142.5" r="6" fill="#ea580c"/>
+  <text x="345" y="134" font-size="13" font-weight="700" fill="#c2410c">Vin = 5,3 V → N = 5</text>
+  <text x="470" y="56" text-anchor="end" font-size="12" fill="#1d4ed8">code maximal : 7 = 2³ − 1</text>
+</svg>

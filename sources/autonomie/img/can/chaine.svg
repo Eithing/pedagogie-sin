@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="640" height="230" fill="#f8fafc"/>
+  <text x="320" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Le microcontrôleur ne comprend que des nombres : le CAN fait la traduction</text>
+  <!-- capteur -->
+  <rect x="20" y="60" width="150" height="110" rx="12" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="95" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">Capteur</text>
+  <path d="M38 140 C 58 100, 78 100, 95 125 S 132 150, 152 108" fill="none" stroke="#ea580c" stroke-width="3"/>
+  <text x="95" y="162" text-anchor="middle" font-size="12" fill="#c2410c">tension analogique</text>
+  <!-- fleche 1 -->
+  <path d="M172 115 h40" stroke="#475569" stroke-width="2.5"/><path d="M212 108 l10 7 l-10 7z" fill="#475569"/>
+  <text x="196" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#c2410c">1,234 V</text>
+  <!-- CAN -->
+  <rect x="226" y="52" width="170" height="126" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="311" y="76" text-anchor="middle" font-size="15" font-weight="800" fill="#1d4ed8">CAN</text>
+  <path d="M256 160 h20 v-14 h20 v-14 h20 v-14 h20 v-14 h20 v-14 h20" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <text x="311" y="172" text-anchor="middle" font-size="11" fill="#1d4ed8">découpe en marches de hauteur q</text>
+  <!-- fleche 2 -->
+  <path d="M398 115 h40" stroke="#475569" stroke-width="2.5"/><path d="M438 108 l10 7 l-10 7z" fill="#475569"/>
+  <text x="420" y="104" text-anchor="middle" font-size="13" font-weight="700" fill="#15803d">N = 123</text>
+  <!-- uC -->
+  <rect x="452" y="60" width="168" height="110" rx="12" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+  <text x="536" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">Microcontrôleur</text>
+  <text x="536" y="118" text-anchor="middle" font-size="18" font-family="Fira Code, Consolas, monospace" font-weight="700" fill="#15803d">0111 1011</text>
+  <text x="536" y="150" text-anchor="middle" font-size="12" fill="#15803d">un nombre entier (code)</text>
+  <text x="320" y="212" text-anchor="middle" font-size="12.5" fill="#64748b">Exemple : CAN 8 bits, pleine échelle 2,56 V, donc des marches de 10 mV : 1,234 V devient le code 123.</text>
+</svg>
