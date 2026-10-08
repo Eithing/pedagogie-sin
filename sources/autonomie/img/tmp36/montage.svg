@@ -1,44 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" font-family="Inter, Segoe UI, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 350" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="720" height="350" fill="#f8fafc"/>
+
+  <!-- Capteur TMP36 : trois broches vers la droite, dans l'ordre +Vs, Vout, GND -->
+  <path d="M50 80 h70 a20 20 0 0 1 20 20 v100 a20 20 0 0 1 -20 20 h-70 z" fill="#1e293b"/>
+  <text x="92" y="146" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">TMP36</text>
+  <text x="92" y="166" text-anchor="middle" fill="#cbd5e1" font-size="10">capteur de</text>
+  <text x="92" y="179" text-anchor="middle" fill="#cbd5e1" font-size="10">température</text>
+  <g stroke="#64748b" stroke-width="5" stroke-linecap="round">
+    <line x1="140" y1="110" x2="178" y2="110"/>
+    <line x1="140" y1="150" x2="178" y2="150"/>
+    <line x1="140" y1="190" x2="178" y2="190"/>
+  </g>
+  <g font-size="11" font-weight="700" fill="#334155" text-anchor="middle">
+    <text x="160" y="101">+Vs</text>
+    <text x="160" y="141">Vout</text>
+    <text x="160" y="181">GND</text>
+  </g>
+
+  <!-- Fils : horizontaux, sans croisement -->
+  <g fill="none" stroke-width="4" stroke-linecap="round">
+    <line x1="178" y1="110" x2="466" y2="110" stroke="#dc2626"/>
+    <line x1="178" y1="150" x2="466" y2="150" stroke="#2563eb"/>
+    <line x1="178" y1="190" x2="466" y2="190" stroke="#0f172a"/>
+  </g>
+  <g font-size="11" fill="#475569" text-anchor="middle">
+    <text x="400" y="102">alimentation 5 V</text>
+    <text x="400" y="142">tension mesurée Vout</text>
+    <text x="400" y="182">masse</text>
+  </g>
+
   <!-- Arduino Uno -->
-  <rect x="380" y="40" width="290" height="200" rx="12" fill="#0e7490"/>
-  <text x="525" y="30" text-anchor="middle" font-size="14" font-weight="700" fill="#0f172a">Arduino Uno (Tinkercad)</text>
-  <rect x="480" y="100" width="120" height="60" rx="4" fill="#1e293b"/>
-  <text x="540" y="135" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">ATmega328P</text>
-  <text x="540" y="180" text-anchor="middle" fill="#cffafe" font-size="11">CAN 10 bits, pleine échelle 5 V</text>
+  <text x="580" y="48" text-anchor="middle" font-size="14" font-weight="700" fill="#0f172a">Arduino Uno</text>
+  <rect x="470" y="60" width="220" height="190" rx="12" fill="#0e7490"/>
+  <g fill="#fbbf24">
+    <rect x="466" y="103" width="10" height="14" rx="2"/>
+    <rect x="466" y="143" width="10" height="14" rx="2"/>
+    <rect x="466" y="183" width="10" height="14" rx="2"/>
+  </g>
   <g fill="#fff" font-size="12" font-weight="700">
-    <text x="392" y="74">5V</text><text x="392" y="124">GND</text><text x="392" y="174">A0</text>
+    <text x="484" y="114">5V</text>
+    <text x="484" y="154">A0</text>
+    <text x="484" y="194">GND</text>
   </g>
-  <g fill="#fbbf24"><rect x="378" y="64" width="8" height="14"/><rect x="378" y="114" width="8" height="14"/><rect x="378" y="164" width="8" height="14"/></g>
-  <!-- LED L intégrée -->
-  <circle cx="640" cy="70" r="9" fill="#f97316"/>
-  <text x="640" y="95" text-anchor="middle" fill="#fff" font-size="10" font-weight="700">L (broche 13)</text>
-  <rect x="640" y="200" width="30" height="22" rx="2" fill="#94a3b8"/>
-  <text x="600" y="215" text-anchor="end" fill="#cffafe" font-size="10">USB → moniteur série</text>
+  <circle cx="655" cy="84" r="8" fill="#f97316" stroke="#fff" stroke-width="1.5"/>
+  <text x="640" y="88" text-anchor="end" fill="#fff" font-size="10" font-weight="700">LED L (broche 13)</text>
+  <rect x="560" y="118" width="110" height="52" rx="4" fill="#1e293b"/>
+  <text x="615" y="149" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">ATmega328P</text>
+  <text x="615" y="198" text-anchor="middle" fill="#cffafe" font-size="11">CAN 10 bits, PE = 5 V</text>
+  <rect x="690" y="214" width="16" height="22" rx="2" fill="#94a3b8"/>
+  <text x="680" y="230" text-anchor="end" fill="#cffafe" font-size="10">USB → moniteur série</text>
 
-  <!-- TMP36 -->
-  <path d="M90 110 h60 v60 a30 30 0 0 1 -60 0 z" fill="#1e293b"/>
-  <text x="120" y="150" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">TMP36</text>
-  <g stroke="#64748b" stroke-width="4"><line x1="100" y1="110" x2="100" y2="70"/><line x1="120" y1="110" x2="120" y2="70"/><line x1="140" y1="110" x2="140" y2="70"/></g>
-  <g font-size="11" fill="#0f172a" text-anchor="middle" font-weight="700">
-    <text x="92" y="62">+Vs</text><text x="120" y="50">Vout</text><text x="150" y="62">GND</text>
+  <!-- Multimetre en voltmetre entre Vout et GND -->
+  <g fill="none" stroke-width="2.5" stroke-dasharray="6 4">
+    <!-- fil V : saute par-dessus le fil de masse -->
+    <path d="M250 150 V180" stroke="#2563eb"/>
+    <path d="M250 200 V252" stroke="#2563eb"/>
+    <path d="M320 190 V252" stroke="#0f172a"/>
   </g>
+  <path d="M250 180 A10 10 0 0 1 250 200" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="250" cy="150" r="5" fill="#2563eb"/>
+  <circle cx="320" cy="190" r="5" fill="#0f172a"/>
+  <text x="243" y="244" text-anchor="end" font-size="11" font-weight="700" fill="#2563eb">V</text>
+  <text x="327" y="244" font-size="11" font-weight="700" fill="#0f172a">COM</text>
+  <rect x="225" y="252" width="120" height="84" rx="10" fill="#facc15" stroke="#a16207" stroke-width="2"/>
+  <rect x="237" y="262" width="96" height="30" rx="3" fill="#1e293b"/>
+  <text x="285" y="283" text-anchor="middle" fill="#4ade80" font-size="15" font-family="Consolas, monospace">?,??? V</text>
+  <text x="285" y="318" text-anchor="middle" fill="#713f12" font-size="12" font-weight="700">Multimètre (V)</text>
 
-  <!-- Fils -->
-  <g fill="none" stroke-width="3.5">
-    <path d="M100 70 V35 H330 V71 H378" stroke="#dc2626"/>
-    <path d="M140 70 V85 H300 V121 H378" stroke="#0f172a"/>
-    <path d="M120 70 V55 H230 V171 H378" stroke="#2563eb"/>
+  <!-- Aide au reglage -->
+  <g font-size="11" fill="#64748b">
+    <text x="40" y="262">Pendant la simulation, clique</text>
+    <text x="40" y="278">sur le TMP36 : un curseur règle</text>
+    <text x="40" y="294">la température (−40 à +125 °C).</text>
   </g>
-
-  <!-- Multimètre -->
-  <rect x="190" y="200" width="110" height="80" rx="10" fill="#facc15" stroke="#a16207" stroke-width="2"/>
-  <rect x="202" y="210" width="86" height="30" rx="3" fill="#1e293b"/>
-  <text x="245" y="231" text-anchor="middle" fill="#4ade80" font-size="15" font-family="Consolas, monospace">?.??? V</text>
-  <text x="245" y="265" text-anchor="middle" fill="#713f12" font-size="12" font-weight="700">Multimètre (V)</text>
-  <g fill="none" stroke-width="2" stroke-dasharray="5 3">
-    <path d="M230 171 V200" stroke="#2563eb"/>
-    <path d="M300 121 V240 H300" stroke="#0f172a"/>
-  </g>
-  <text x="30" y="250" font-size="11" fill="#64748b">Le curseur du TMP36 (clic pendant la simulation)</text>
-  <text x="30" y="265" font-size="11" fill="#64748b">règle la température de −40 °C à +125 °C.</text>
 </svg>
