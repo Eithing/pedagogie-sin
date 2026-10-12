@@ -2,6 +2,7 @@
 titre: Ma première page web — le contenu en HTML, le style en CSS
 niveau: SNT (2nde)
 sequence: S2
+court: Ma premiere page web
 type: autonomie
 duree: 55 min
 bareme: 20

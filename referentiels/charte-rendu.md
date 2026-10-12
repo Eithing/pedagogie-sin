@@ -85,6 +85,7 @@ Front matter facultatif pour personnaliser le cartouche : `illustration:` (image
 titre: [Titre de l'activité, sans préfixe « TP — »]
 niveau: [SNT / 1ère STI2D / Term STI2D SIN]
 sequence: [id de la séquence dans la progression : S2, T1, C0…]   # range les PDF dans output/<classe>/<séquence>/
+court: [nom court, 2 à 4 mots]   # nom du dossier du document : <séquence>_<Type>_<nom court>
 type: [tp / td / cadrage]
 duree: [X h YY min]
 bareme: 20

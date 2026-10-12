@@ -2,6 +2,7 @@
 titre: Surveiller la température d'une salle serveur — capteur TMP36 et CAN de l'Arduino
 niveau: Term STI2D SIN
 sequence: T1
+court: TMP36 salle serveur
 type: autonomie
 duree: 2 h 45 min
 bareme: 20

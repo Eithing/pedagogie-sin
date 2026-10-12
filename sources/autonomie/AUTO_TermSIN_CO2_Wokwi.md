@@ -2,6 +2,7 @@
 titre: Le voyant « Aérez ! » — du capteur de CO₂ au programme, sur Wokwi
 niveau: Term STI2D SIN
 sequence: T1
+court: Voyant Aerez CO2
 type: autonomie
 duree: 55 min
 illustration: img/co2/voyant.svg

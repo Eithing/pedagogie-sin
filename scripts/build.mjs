@@ -18,7 +18,7 @@
 // (source renommée ou supprimée, ancien rangement) sont effacés automatiquement.
 import fs from 'node:fs';
 import path from 'node:path';
-import { chargerConfig, listerSources, analyser, dossierClasse, dossierSequence, oublierSequences, RACINE } from './lib/commun.mjs';
+import { chargerConfig, listerSources, analyser, dossierClasse, dossierSequence, dossierDocument, oublierSequences, RACINE } from './lib/commun.mjs';
 import { variante, appliquerSujet } from './lib/document.mjs';
 import { rendreHtml } from './lib/render.mjs';
 import { rendreDiapos, rendreDeroule, corpsFiche } from './lib/seance.mjs';
@@ -43,6 +43,8 @@ const relSortie = (f) => path.relative(SORTIE(), f).split(path.sep).join('/');
 function sorties(doc, seance, progression, config, nom) {
   const classe = path.join(SORTIE(), dossierClasse(doc.meta, config));
   const dossier = progression ? classe : path.join(classe, dossierSequence(doc.meta, nom, config));
+  // Chaque document a son propre dossier dans eleve/, prof/ et slides/
+  const ici = (sous, fichier) => path.join(dossier, sous, dossierDocument(doc.meta, nom, config), fichier);
   const cache = (cle) => path.join(SORTIE(), '.cache', `${nom}.${cle}.html`);
   const s = [];
 
@@ -68,7 +70,7 @@ function sorties(doc, seance, progression, config, nom) {
           libelleVariante: seance ? 'Fiche d\'activités — corrigé enseignant' : undefined,
         }),
         fichierHtml: cache(`${cible}${suffixe}`),
-        pdf: path.join(dossier, cible, `${cible === 'prof' ? 'PROF' : 'ELEVE'}_${nom}${suffixe}.pdf`),
+        pdf: ici(cible, `${cible === 'prof' ? 'PROF' : 'ELEVE'}_${nom}${suffixe}.pdf`),
         libelle: `${cible === 'prof' ? 'CORRIGÉ PROF' : 'ÉLÈVE'}${v ? ` — SUJET ${v}` : ''}`,
       });
     }
@@ -76,12 +78,12 @@ function sorties(doc, seance, progression, config, nom) {
   if (seance) {
     s.push({
       cle: 'deroule', html: rendreDeroule(doc, seance.seance, config, seance.tActivite), fichierHtml: cache('deroule'),
-      pdf: path.join(dossier, 'prof', `DEROULE_${nom}.pdf`), libelle: 'DÉROULÉ ENSEIGNANT',
+      pdf: ici('prof', `DEROULE_${nom}.pdf`), libelle: 'DÉROULÉ ENSEIGNANT',
     });
     s.push({
       cle: 'slides', html: rendreDiapos(doc, seance.seance, config),
-      fichierHtml: path.join(dossier, 'slides', `${nom}.html`), garderHtml: true,
-      pdf: path.join(dossier, 'slides', `SLIDES_${nom}.pdf`), format: 'diapo',
+      fichierHtml: ici('slides', `${nom}.html`), garderHtml: true,
+      pdf: ici('slides', `SLIDES_${nom}.pdf`), format: 'diapo',
     });
   }
   return s;
@@ -109,7 +111,7 @@ async function construire(fichier, config, manifeste) {
 
   // Document réponse Word / LibreOffice (autonomie, « document_reponse: true »)
   if (doc.meta.document_reponse) {
-    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', `REPONSES_${nom}.docx`);
+    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', dossierDocument(doc.meta, nom, config), `REPONSES_${nom}.docx`);
     await genererDocx(doc, cible);
     produits.push(cible);
     console.log(`    → ${relSortie(cible)}`);
@@ -117,7 +119,7 @@ async function construire(fichier, config, manifeste) {
 
   // Fichiers joints (champ « fichiers: » : outils, données, code de départ) copiés tels quels avec la version élève
   for (const joint of [].concat(doc.meta.fichiers ?? [])) {
-    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', path.basename(joint));
+    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', dossierDocument(doc.meta, nom, config), path.basename(joint));
     fs.mkdirSync(path.dirname(cible), { recursive: true });
     fs.copyFileSync(path.resolve(path.dirname(fichier), joint), cible);
     produits.push(cible);

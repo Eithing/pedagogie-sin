@@ -2,6 +2,7 @@
 titre: Le CAN pas à pas — de la tension au code
 niveau: Term STI2D SIN
 sequence: T1
+court: CAN pas a pas
 type: autonomie
 duree: 55 min
 illustration: img/can/chaine.svg

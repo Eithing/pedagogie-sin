@@ -2,6 +2,7 @@
 titre: Mesurer le CO₂ d'une salle de classe — chaîne d'acquisition et CAN
 niveau: Term STI2D SIN
 sequence: T1
+court: CO2 salle de classe
 type: td
 duree: 55 min
 bareme: 20

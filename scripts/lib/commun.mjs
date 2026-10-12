@@ -70,6 +70,18 @@ export function dossierSequence(meta, nom, config) {
   return seqs.find((s) => s.ressources.some((r) => r.split(/[\s(]/)[0] === nom))?.dossier ?? 'Hors_sequence';
 }
 
+// Dossier propre à un document, dans eleve/, prof/ et slides/ : « <séquence>_<Type>_<nom court> »,
+// ex. T1_Distanciel_Voyant-Aerez-CO2. Nom court : champ « court: » du front matter,
+// sinon le nom du fichier sans le préfixe TYPE_Niveau_.
+const TYPES_DOSSIER = { tp: 'TP', td: 'TD', cours: 'Cours', evaluation: 'Eval', autonomie: 'Distanciel', cadrage: 'Cadrage' };
+const tiret = (t) => String(t).replace(/µ/g, 'u').replace(/₂/g, '2').normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '');
+export function dossierDocument(meta, nom, config) {
+  const seq = dossierSequence(meta, nom, config)?.split('_')[0] ?? 'HS';
+  const court = meta.court ?? nom.split('_').slice(2).join('-');
+  return [seq === 'Hors' ? 'HS' : seq, TYPES_DOSSIER[meta.type] ?? meta.type, tiret(court)].join('_');
+}
+
 // Lit, valide et affiche le diagnostic d'un fichier.
 export function analyser(fichier, config) {
   const rel = path.relative(RACINE, fichier);

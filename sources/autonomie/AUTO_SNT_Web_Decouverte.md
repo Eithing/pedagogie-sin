@@ -2,6 +2,7 @@
 titre: Le Web n'est pas Internet — histoire, liens hypertextes et URL
 niveau: SNT (2nde)
 sequence: S2
+court: Decouverte du Web
 type: autonomie
 duree: 55 min
 illustration: img/web/internet-web.svg
