@@ -6,6 +6,7 @@ Les sorties sont rangées **par classe puis par séquence** dans `output/<classe
 - Classe : `2nde_SNT`, `1ere_STI2D`, `Term_STI2D_SIN`, `Term_STI2D_2I2D` (voir `pipeline.config.json > classes`, ou champ `dossier:` du front matter).
 - Séquence : champ **`sequence:`** du front matter (identifiant de la progression : `S2`, `T1`, `C0`…), dont le nom de dossier vient du champ `court` de la progression ou du catalogue. À défaut : la séquence qui cite le document dans ses `ressources`, sinon `Hors_sequence/`.
 - Document : dans `eleve/`, `prof/` et `slides/`, **chaque document a son propre dossier**, nommé `<séquence>_<Type>_<nom court>`, par exemple `T1_Distanciel_Voyant-Aerez-CO2/`. Ce dossier contient le PDF, le document réponse .docx et les fichiers joints : tout ce qu'il faut déposer sur l'ENT est au même endroit. Le nom court vient du champ **`court:`** du front matter (2 à 4 mots), sinon du nom du fichier.
+- **Pronote** : le dossier `prof/` de chaque document contient `PRONOTE_<nom>.txt` (titre + description de séance pour le cahier de textes), tiré du champ **`pronote:`** du front matter.
 
 | Type | Sorties dans `output/<classe>/<séquence>/` |
 | :--- | :--- |
@@ -55,10 +56,11 @@ Le PDF est produit par Chrome en mode headless (Edge refuse ce mode sur ce poste
 
 - Après avoir créé ou modifié une source : lancer `npm run build -- <fichier>` et **corriger toutes les erreurs** de validation avant de rendre la main, ainsi que les diapos signalées « trop longues ». Les avertissements doivent être justifiés.
 - Nommage des sources : `<TYPE>_<Niveau>_<Sujet>.md`, ex. `TP_TermSIN_I2C_ESP32_Temperature.md`, `COURS_SNT_TCP_IP.md`.
-- Respecter la charte : front matter complet (dont `sequence:` et `court:`), pas de titre `#` dans le corps, `::: question N [x pt]` suivi de `::: reponse L`, somme des points = barème (TP/TD).
+- Respecter la charte : front matter complet (dont `sequence:`, `court:` et `pronote:`), pas de titre `#` dans le corps, `::: question N [x pt]` suivi de `::: reponse L`, somme des points = barème (TP/TD).
 - **Cours = séance rythmée, jamais descendante** : alternance exposés courts / activités / trace écrite, vérifiée par la chaîne (≥ 40 % d'activités, ≤ 10 min sans activité). Rédiger des blocs `::: dire` concrets pour la fiche de déroulé.
 - **Personnaliser** : mise en situation incarnée (lieu, acteurs, chiffres, incident), illustration SVG de contexte, schémas SVG pour les notions clés, `accroche` et `illustration` dans le front matter. Jamais de schéma ASCII.
 - **Ne jamais inventer de codes de compétences officiels** : citer uniquement les identifiants de `referentiels/bo/*.yaml` (ex. `CO5.8-SIN2`, `2.4.2c`, `INT.1`). Si un programme manque, le construire depuis le texte officiel du BO, mot pour mot.
+- **Champ `pronote:`** (obligatoire pour toute nouvelle séance) : `titre` au format « <séquence> <titre de la séquence> — <Type> : <sujet> », et `description` en **1 à 2 lignes** (séquence et modalité, notions travaillées, noté ou non). Écrit pour le cahier de textes et pour l'inspection. Si un document sert à plusieurs classes ou créneaux, utiliser une liste avec `pour:`.
 - **Progressions** : toute information sur ce qui s'est passé en classe (séquence finie, séance annulée, retard) se traduit par une mise à jour de la progression concernée via `/progression`, avec une ligne de journal.
 - Matériel : s'appuyer sur `materiel/labo-baggio.md` (simulation) ; vérifier que les composants existent dans le simulateur choisi, sinon le signaler.
 - Valeurs techniques (datasheets, normes, réglementation) : ne citer que des valeurs dont on est sûr ; sinon l'indiquer comme « à vérifier » dans un bloc `::: prof`.

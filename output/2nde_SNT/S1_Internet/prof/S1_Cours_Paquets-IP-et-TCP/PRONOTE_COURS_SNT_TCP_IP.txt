@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Internet — Paquets, adresses IP et protocole TCP
+
+Description :
+S1 Internet : séance rythmée (jeu des paquets débranché, quiz projeté) sur le découpage en paquets, l'adressage IP et le rôle de TCP.

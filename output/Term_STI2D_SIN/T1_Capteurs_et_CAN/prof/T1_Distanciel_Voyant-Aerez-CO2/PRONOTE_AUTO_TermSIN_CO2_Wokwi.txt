@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — TP : le voyant « Aérez ! » (CO₂, Wokwi)
+
+Description :
+T1 (distanciel) : du capteur de CO₂ au voyant d'aération, avec calculs guidés et programmation sur Wokwi (ESP32, MicroPython). Non noté, rendu obligatoire.

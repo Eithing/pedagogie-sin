@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — Interrogation sur le CAN
+
+Description :
+T1 : interrogation écrite de 30 min, deux sujets (A/B), sur la conversion analogique-numérique (quantum, code N, caractéristique de transfert, choix d'un CAN). Notée.

@@ -55,7 +55,7 @@ export function indexSequences(config) {
       const cle = `${classe}|${s.id}`;
       const deja = index.get(cle);
       const ressources = [...(deja?.ressources ?? []), ...[].concat(s.ressources ?? []).map(String)];
-      index.set(cle, { id: s.id, dossier: `${s.id}_${slug(s.court ?? s.titre ?? '')}`, ressources });
+      index.set(cle, { id: s.id, titre: s.titre ?? s.court ?? '', dossier: `${s.id}_${slug(s.court ?? s.titre ?? '')}`, ressources });
     }
   }
   return index;
@@ -82,6 +82,31 @@ export function dossierDocument(meta, nom, config) {
   return [seq === 'Hors' ? 'HS' : seq, TYPES_DOSSIER[meta.type] ?? meta.type, tiret(court)].join('_');
 }
 
+// Textes du cahier de textes Pronote (titre + description courte de la séance).
+// Champ « pronote: » du front matter : { titre, description } ou une liste, avec « pour: » quand un même
+// document sert à plusieurs classes ou créneaux. Sinon, texte construit automatiquement.
+const TYPES_PRONOTE = { tp: 'TP', td: 'TD', cours: 'Cours', evaluation: 'Évaluation', autonomie: 'Travail à distance', cadrage: 'Cadrage' };
+export function textesPronote(meta, nom, config) {
+  if (meta.pronote) return [].concat(meta.pronote);
+  const classe = dossierClasse(meta, config);
+  const seq = [...indexSequences(config).entries()].find(([k, s]) => k.startsWith(`${classe}|`) && s.dossier === dossierSequence(meta, nom, config))?.[1];
+  const entete = seq ? `${seq.id} ${seq.titre}` : '';
+  const note = meta.bareme != null && meta.type !== 'cours' ? 'Noté.' : 'Non noté.';
+  return [{
+    titre: [entete, `${TYPES_PRONOTE[meta.type] ?? meta.type} : ${meta.titre}`].filter(Boolean).join(' — '),
+    description: [meta.accroche, note].filter(Boolean).join(' '),
+  }];
+}
+export function fichierPronote(meta, nom, config) {
+  const blocs = textesPronote(meta, nom, config).map((t) => [
+    t.pour ? `=== ${t.pour} ===` : null,
+    'Titre de la séance :', t.titre, '',
+    'Description :', t.description,
+  ].filter((l) => l != null).join('\r\n'));
+  // BOM UTF-8 et fins de ligne Windows : le fichier s'ouvre proprement dans le Bloc-notes
+  return '﻿' + blocs.join('\r\n\r\n') + '\r\n';
+}
+
 // Lit, valide et affiche le diagnostic d'un fichier.
 export function analyser(fichier, config) {
   const rel = path.relative(RACINE, fichier);
@@ -98,6 +123,10 @@ export function analyser(fichier, config) {
     resume = ` (${seqs.length} séquences : ${seqs.filter((s) => s.etat === 'fait').length} réalisées, ${seqs.filter((s) => s.etat === 'en-cours').length} en cours)`;
   } else {
     res = valider(doc, config);
+    if (!doc.meta.pronote) res.avertissements.push({ ligne: null, msg: 'Champ « pronote: » absent (titre + description de séance) : texte Pronote construit automatiquement' });
+    for (const t of [].concat(doc.meta.pronote ?? [])) {
+      if (!t?.titre || !t?.description) res.erreurs.push({ ligne: null, msg: 'Champ « pronote: » : il faut un « titre » et une « description » (1 à 2 lignes)' });
+    }
     if (doc.meta.sequence && !dossierSequence(doc.meta, path.basename(fichier, '.md'), config)) {
       const connues = [...indexSequences(config).keys()].filter((k) => k.startsWith(`${dossierClasse(doc.meta, config)}|`)).map((k) => k.split('|')[1]);
       res.erreurs.push({ ligne: null, msg: `sequence « ${doc.meta.sequence} » inconnue dans les progressions de ${dossierClasse(doc.meta, config)} (connues : ${connues.join(', ') || 'aucune'})` });

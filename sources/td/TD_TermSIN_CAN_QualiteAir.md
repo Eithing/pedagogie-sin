@@ -3,6 +3,9 @@ titre: Mesurer le CO₂ d'une salle de classe — chaîne d'acquisition et CAN
 niveau: Term STI2D SIN
 sequence: T1
 court: CO2 salle de classe
+pronote:
+  titre: "T1 Acquérir une grandeur physique — TD : mesurer le CO₂ d'une salle de classe"
+  description: "T1 : chaîne d'acquisition d'un capteur de CO₂ (sensibilité, quantum, résolution, code au seuil, conditionnement). TD noté."
 type: td
 duree: 55 min
 bareme: 20

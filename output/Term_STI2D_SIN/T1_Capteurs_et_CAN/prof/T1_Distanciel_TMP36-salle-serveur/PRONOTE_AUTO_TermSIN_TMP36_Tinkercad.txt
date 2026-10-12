@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — TP : température d'une salle serveur (TMP36, Tinkercad)
+
+Description :
+T1 (distanciel) : chaîne d'acquisition de température simulée sur Tinkercad, programmation de la conversion et d'une alerte à seuil. TP noté (CO7.3-SIN1, CO5.8-SIN2).

@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Internet — Interrogation : paquets, routage et DNS
+
+Description :
+S1 Internet : interrogation écrite de 25 min, deux sujets (A/B), sur les paquets, les adresses IP, le routage et le DNS. Notée.

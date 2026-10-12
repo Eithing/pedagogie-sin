@@ -17,3 +17,6 @@ Inclus systématiquement le code C/C++ ou Python de départ pour l'élève et la
 3. Écrire la source dans `sources/tp/` (nommage et front matter : voir `CLAUDE.md`), avec `type: tp`, `illustration`, `accroche`, des points `[x pt]` sur chaque question et une somme égale à `bareme`.
 4. Lancer `npm run build -- sources/tp/<fichier>.md` et corriger toutes les erreurs jusqu'à obtenir les deux PDF.
 5. Indiquer à l'enseignant les chemins des PDF élève et prof, et tout point « à vérifier » (codes de compétences absents du référentiel, matériel hors inventaire, valeurs incertaines).
+
+## Cahier de textes Pronote
+Renseigner dans le front matter le champ `pronote:` avec un `titre` (« <séquence> <titre de la séquence> — <Type> : <sujet> ») et une `description` de 1 à 2 lignes (séquence et modalité, notions, noté ou non). La chaîne en tire `prof/<dossier>/PRONOTE_<nom>.txt`. Si le document sert à plusieurs classes ou créneaux, utiliser une liste d'entrées avec `pour:`.

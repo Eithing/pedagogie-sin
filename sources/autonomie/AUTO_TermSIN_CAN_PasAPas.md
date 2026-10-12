@@ -3,6 +3,13 @@ titre: Le CAN pas à pas — de la tension au code
 niveau: Term STI2D SIN
 sequence: T1
 court: CAN pas a pas
+pronote:
+  - pour: "TSTI2D1"
+    titre: "T1 Acquérir une grandeur physique — Le CAN pas à pas (remédiation)"
+    description: "T1 (distanciel) : remédiation sur la conversion analogique-numérique (quantum, code N, binaire et hexadécimal), avec un simulateur de CAN. Non noté, rendu obligatoire."
+  - pour: "TSTI2D2 + TSTI2D3 (heure commune)"
+    titre: "T1 Acquérir une grandeur physique — Le CAN pas à pas (remédiation, D2 + D3)"
+    description: "T1 (distanciel, heure commune) : remédiation sur la conversion analogique-numérique (quantum, code N, binaire et hexadécimal), avec un simulateur de CAN. Non noté, rendu obligatoire."
 type: autonomie
 duree: 55 min
 illustration: img/can/chaine.svg

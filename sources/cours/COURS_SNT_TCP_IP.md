@@ -3,6 +3,9 @@ titre: Comment une photo traverse Internet ? Paquets, adresses IP et TCP
 niveau: SNT (2nde)
 sequence: S1
 court: Paquets IP et TCP
+pronote:
+  titre: "Internet — Paquets, adresses IP et protocole TCP"
+  description: "S1 Internet : séance rythmée (jeu des paquets débranché, quiz projeté) sur le découpage en paquets, l'adressage IP et le rôle de TCP."
 type: cours
 duree: 55 min
 illustration: img/tcp-ip/couverture.svg

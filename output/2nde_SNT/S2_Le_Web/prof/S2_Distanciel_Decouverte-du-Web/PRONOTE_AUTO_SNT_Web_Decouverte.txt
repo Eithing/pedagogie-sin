@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Le Web — Le Web n'est pas Internet : histoire, liens hypertextes et URL
+
+Description :
+S2 Le Web (distanciel, continuité pédagogique) : distinguer Internet et le Web, repères historiques, liens hypertextes, décomposer une URL. Fiche autonome, rendu obligatoire.

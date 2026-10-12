@@ -3,6 +3,9 @@ titre: Conversion analogique-numérique
 niveau: Term STI2D SIN
 sequence: T1
 court: Interro CAN
+pronote:
+  titre: "T1 Acquérir une grandeur physique — Interrogation sur le CAN"
+  description: "T1 : interrogation écrite de 30 min, deux sujets (A/B), sur la conversion analogique-numérique (quantum, code N, caractéristique de transfert, choix d'un CAN). Notée."
 type: evaluation
 duree: 30 min
 bareme: 20

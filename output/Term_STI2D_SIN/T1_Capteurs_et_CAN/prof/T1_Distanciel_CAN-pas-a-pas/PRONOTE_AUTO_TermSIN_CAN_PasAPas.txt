@@ -1,0 +1,13 @@
+﻿=== TSTI2D1 ===
+Titre de la séance :
+T1 Acquérir une grandeur physique — Le CAN pas à pas (remédiation)
+
+Description :
+T1 (distanciel) : remédiation sur la conversion analogique-numérique (quantum, code N, binaire et hexadécimal), avec un simulateur de CAN. Non noté, rendu obligatoire.
+
+=== TSTI2D2 + TSTI2D3 (heure commune) ===
+Titre de la séance :
+T1 Acquérir une grandeur physique — Le CAN pas à pas (remédiation, D2 + D3)
+
+Description :
+T1 (distanciel, heure commune) : remédiation sur la conversion analogique-numérique (quantum, code N, binaire et hexadécimal), avec un simulateur de CAN. Non noté, rendu obligatoire.

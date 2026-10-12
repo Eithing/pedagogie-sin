@@ -3,6 +3,9 @@ titre: Ma première page web — le contenu en HTML, le style en CSS
 niveau: SNT (2nde)
 sequence: S2
 court: Ma premiere page web
+pronote:
+  titre: "Le Web — TP : ma première page web en HTML et CSS"
+  description: "S2 Le Web (distanciel) : créer une page web personnelle, en distinguant le contenu (HTML) du style (CSS). TP noté sur grille."
 type: autonomie
 duree: 55 min
 bareme: 20

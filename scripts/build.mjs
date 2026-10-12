@@ -18,7 +18,7 @@
 // (source renommée ou supprimée, ancien rangement) sont effacés automatiquement.
 import fs from 'node:fs';
 import path from 'node:path';
-import { chargerConfig, listerSources, analyser, dossierClasse, dossierSequence, dossierDocument, oublierSequences, RACINE } from './lib/commun.mjs';
+import { chargerConfig, listerSources, analyser, dossierClasse, dossierSequence, dossierDocument, fichierPronote, oublierSequences, RACINE } from './lib/commun.mjs';
 import { variante, appliquerSujet } from './lib/document.mjs';
 import { rendreHtml } from './lib/render.mjs';
 import { rendreDiapos, rendreDeroule, corpsFiche } from './lib/seance.mjs';
@@ -107,6 +107,15 @@ async function construire(fichier, config, manifeste) {
     produits.push(s.pdf);
     console.log(`    → ${relSortie(s.pdf)}`);
     if (debordements.length) console.log(`    avert.  contenu trop long (coupé) sur les diapos ${debordements.join(', ')} : alléger ou découper`);
+  }
+
+  // Texte du cahier de textes Pronote (titre + description), dans le dossier prof du document
+  if (!progression) {
+    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'prof', dossierDocument(doc.meta, nom, config), `PRONOTE_${nom}.txt`);
+    fs.mkdirSync(path.dirname(cible), { recursive: true });
+    fs.writeFileSync(cible, fichierPronote(doc.meta, nom, config));
+    produits.push(cible);
+    console.log(`    → ${relSortie(cible)}`);
   }
 
   // Document réponse Word / LibreOffice (autonomie, « document_reponse: true »)

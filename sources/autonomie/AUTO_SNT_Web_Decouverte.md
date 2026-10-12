@@ -3,6 +3,9 @@ titre: Le Web n'est pas Internet — histoire, liens hypertextes et URL
 niveau: SNT (2nde)
 sequence: S2
 court: Decouverte du Web
+pronote:
+  titre: "Le Web — Le Web n'est pas Internet : histoire, liens hypertextes et URL"
+  description: "S2 Le Web (distanciel, continuité pédagogique) : distinguer Internet et le Web, repères historiques, liens hypertextes, décomposer une URL. Fiche autonome, rendu obligatoire."
 type: autonomie
 duree: 55 min
 illustration: img/web/internet-web.svg

@@ -3,6 +3,9 @@ titre: Surveiller la température d'une salle serveur — capteur TMP36 et CAN d
 niveau: Term STI2D SIN
 sequence: T1
 court: TMP36 salle serveur
+pronote:
+  titre: "T1 Acquérir une grandeur physique — TP : température d'une salle serveur (TMP36, Tinkercad)"
+  description: "T1 (distanciel) : chaîne d'acquisition de température simulée sur Tinkercad, programmation de la conversion et d'une alerte à seuil. TP noté (CO7.3-SIN1, CO5.8-SIN2)."
 type: autonomie
 duree: 2 h 45 min
 bareme: 20

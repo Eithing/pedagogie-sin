@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — TD : mesurer le CO₂ d'une salle de classe
+
+Description :
+T1 : chaîne d'acquisition d'un capteur de CO₂ (sensibilité, quantum, résolution, code au seuil, conditionnement). TD noté.

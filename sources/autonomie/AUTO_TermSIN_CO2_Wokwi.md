@@ -3,6 +3,9 @@ titre: Le voyant « Aérez ! » — du capteur de CO₂ au programme, sur Wokwi
 niveau: Term STI2D SIN
 sequence: T1
 court: Voyant Aerez CO2
+pronote:
+  titre: "T1 Acquérir une grandeur physique — TP : le voyant « Aérez ! » (CO₂, Wokwi)"
+  description: "T1 (distanciel) : du capteur de CO₂ au voyant d'aération, avec calculs guidés et programmation sur Wokwi (ESP32, MicroPython). Non noté, rendu obligatoire."
 type: autonomie
 duree: 55 min
 illustration: img/co2/voyant.svg

@@ -17,3 +17,6 @@ Génère un **travail en autonomie** pour les séances à distance (blocus, abse
 4. `npm run build -- sources/autonomie/<fichier>.md` et corriger toutes les erreurs.
 5. Ajouter le document aux `ressources:` de la séquence et une ligne au `journal:` de la progression.
 6. Donner à l'enseignant la liste exacte de ce qu'il faut déposer sur l'ENT (PDF élève, document réponse .docx, fichiers joints).
+
+## Cahier de textes Pronote
+Renseigner dans le front matter le champ `pronote:` avec un `titre` (« <séquence> <titre de la séquence> — <Type> : <sujet> ») et une `description` de 1 à 2 lignes (séquence et modalité, notions, noté ou non). La chaîne en tire `prof/<dossier>/PRONOTE_<nom>.txt`. Si le document sert à plusieurs classes ou créneaux, utiliser une liste d'entrées avec `pour:`.

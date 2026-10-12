@@ -3,6 +3,9 @@ titre: "Internet : paquets, routage et DNS"
 niveau: SNT (2nde)
 sequence: S1
 court: Interro Internet
+pronote:
+  titre: "Internet — Interrogation : paquets, routage et DNS"
+  description: "S1 Internet : interrogation écrite de 25 min, deux sujets (A/B), sur les paquets, les adresses IP, le routage et le DNS. Notée."
 type: evaluation
 duree: 25 min
 bareme: 20

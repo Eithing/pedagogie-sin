@@ -16,3 +16,6 @@ Structure type d'une séance de 55 min : accroche + hypothèses → quiz « ce q
 3. Écrire la source dans `sources/cours/` (nommage : `COURS_<Niveau>_<Sujet>.md`) avec `type: cours`, `objectifs`, `prerequis`, `preparation`. Pour chaque étape, rédiger les blocs `::: dire` : ce que l'enseignant dit, les questions à poser à la classe, les transitions, la mise en commun. Les activités contiennent leurs questions et des corrigés complets.
 4. Lancer `npm run build -- sources/cours/<fichier>.md` et corriger toutes les erreurs (durées, rythme, images) et les diapos signalées comme trop longues.
 5. Indiquer à l'enseignant les chemins des 4 PDF et du HTML de projection, et tout point « à vérifier » (compétence absente du référentiel, outil hors inventaire, valeur incertaine).
+
+## Cahier de textes Pronote
+Renseigner dans le front matter le champ `pronote:` avec un `titre` (« <séquence> <titre de la séquence> — <Type> : <sujet> ») et une `description` de 1 à 2 lignes (séquence et modalité, notions, noté ou non). La chaîne en tire `prof/<dossier>/PRONOTE_<nom>.txt`. Si le document sert à plusieurs classes ou créneaux, utiliser une liste d'entrées avec `pour:`.
