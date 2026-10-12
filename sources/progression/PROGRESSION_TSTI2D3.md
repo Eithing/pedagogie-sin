@@ -40,7 +40,7 @@ journal:
   - date: 2026-10-09
     texte: "Blocus : cours en distanciel. Heure commune avec D2 : remédiation CAN en autonomie (« Le CAN pas à pas »), non notée. L'interrogation CAN (sujet B) est reportée au retour en présentiel ; le TD noté sur le CO₂ reste prévu le mardi."
   - date: 2026-10-13
-    texte: "Blocus, distanciel : TP noté « Voyant Aérez ! » sur Wokwi (sans compte), application de la remédiation CAN (note de travail). Le TD noté sur le CO₂ est reporté au retour en présentiel."
+    texte: "Blocus, distanciel : TP « Voyant Aérez ! » sur Wokwi (ESP32 en MicroPython, sans compte), application guidée de la remédiation CAN ; non noté, rendu obligatoire. Le TD noté sur le CO₂ est reporté au retour en présentiel."
 ---
 
 ## Organisation

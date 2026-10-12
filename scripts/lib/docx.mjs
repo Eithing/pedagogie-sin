@@ -12,17 +12,18 @@ const POLICE = 'Arial';
 // Formule LaTeX → texte lisible dans Word (fractions en a / b, exposants et indices simples)
 const EXPOSANTS = { 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹', n: 'ⁿ', '-': '⁻', '+': '⁺' };
 function texteMath(tex) {
-  // D'abord ce qui contient des accolades internes (texte, indices, {,}), puis les fractions
+  // D'abord ce qui contient des accolades internes (texte, indices, exposants, {,}, symboles),
+  // puis les fractions, en ne gardant les parenthèses que si un terme contient un espace
   let t = tex
     .replace(/\\(?:text|mathrm|operatorname)\{([^{}]*)\}/g, '$1')
-    .replace(/_\{([^{}]*)\}/g, '$1').replace(/\{,\}/g, ',');
-  for (let i = 0; i < 5; i++) t = t.replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, '($1) / ($2)');
-  return t
-    .replace(/\(([\w.,^ ]+)\) \/ \(([\w.,^ ]+)\)/g, (_, a, b) => `${/\s/.test(a.trim()) ? `(${a.trim()})` : a.trim()} / ${/\s/.test(b.trim()) ? `(${b.trim()})` : b.trim()}`)
+    .replace(/_\{([^{}]*)\}/g, '$1').replace(/\{,\}/g, ',')
+    .replace(/\^(?:\{([0-9n+-]+)\}|([0-9n]))/g, (_, a, b) => [...(a ?? b)].map((c) => EXPOSANTS[c] ?? c).join(''))
     .replace(/\\,/g, ' ')
     .replace(/\\times/g, '×').replace(/\\le(q)?/g, '≤').replace(/\\ge(q)?/g, '≥').replace(/\\approx/g, '≈')
-    .replace(/\\Delta\s*/g, 'Δ').replace(/\\cdot/g, '·')
-    .replace(/\^\{?([0-9n+-]+)\}?/g, (_, e) => [...e].map((c) => EXPOSANTS[c] ?? c).join(''))
+    .replace(/\\[lc]?dots/g, '…').replace(/\\Delta\s*/g, 'Δ').replace(/\\cdot/g, '·');
+  const terme = (x) => (/\s/.test(x.trim()) ? `(${x.trim()})` : x.trim());
+  for (let i = 0; i < 5; i++) t = t.replace(/\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}/g, (_, a, b) => `${terme(a)} / ${terme(b)}`);
+  return t
     .replace(/_\{([^{}]*)\}/g, '$1').replace(/_(\w)/g, '$1')
     .replace(/[{}]/g, '').replace(/\\/g, '').replace(/\s+/g, ' ').trim();
 }

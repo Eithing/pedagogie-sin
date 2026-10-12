@@ -20,13 +20,13 @@
   <text x="264" y="176" text-anchor="middle" font-size="11" fill="#c2410c">potentiomètre</text>
   <!-- fleche -->
   <path d="M336 121 h28" stroke="#475569" stroke-width="2.5"/><path d="M364 114 l10 7 l-10 7z" fill="#475569"/>
-  <text x="356" y="106" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">0–4 V</text>
+  <text x="356" y="106" text-anchor="middle" font-size="10" font-weight="700" fill="#c2410c">0–3 V</text>
   <!-- arduino -->
   <rect x="378" y="56" width="150" height="130" rx="10" fill="#0e7490"/>
-  <text x="453" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Arduino Uno</text>
-  <text x="453" y="112" text-anchor="middle" font-size="11" fill="#cffafe">CAN 10 bits, 5 V</text>
+  <text x="453" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">ESP32</text>
+  <text x="453" y="112" text-anchor="middle" font-size="11" fill="#cffafe">CAN 12 bits, 3,3 V</text>
   <text x="453" y="138" text-anchor="middle" font-size="12" font-family="Fira Code, Consolas, monospace" fill="#fff">N → V → ppm</text>
-  <text x="453" y="164" text-anchor="middle" font-size="11" fill="#cffafe">programme</text>
+  <text x="453" y="164" text-anchor="middle" font-size="11" fill="#cffafe">programme MicroPython</text>
   <!-- fleche -->
   <path d="M530 121 h28" stroke="#475569" stroke-width="2.5"/><path d="M558 114 l10 7 l-10 7z" fill="#475569"/>
   <!-- voyant -->

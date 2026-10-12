@@ -11,11 +11,11 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 - **Nouveau type `autonomie`** (distanciel, commande `/autonomie`) : plan de travail à cocher, dépôt ENT, aide ; fichiers joints (`fichiers:`).
 - **2nde, Web en distanciel (vendredi 9 octobre)** : `AUTO_SNT_Web_Decouverte` (classe entière, non noté, rendu obligatoire) et `AUTO_SNT_Web_PremierePage` (TP noté /20, demi-groupe, avec `editeur_web.html`, éditeur HTML/CSS sans compte). L'autre demi-groupe fera le TP à sa prochaine séance de TP.
 - **Terminales en distanciel (vendredi 9 octobre)** : `AUTO_TermSIN_CAN_PasAPas` (remédiation CAN, non notée, pour D1 et pour l'heure commune D2 + D3, avec `simulateur_can.html`) ; `AUTO_TermSIN_TMP36_Tinkercad` (TP noté /20 pour D2, individuel, captures d'écran, `station_temperature.ino`). Le TP TMP36 a quitté `sources/tp/` pour `sources/autonomie/`.
-- **Wokwi testé le 12/10** : un nouveau projet Arduino Uno s'ouvre sans compte (`wokwi.com/projects/new/arduino-uno`). On colle `diagram.json` et le programme dans les onglets. La compilation gratuite passe par une file d'attente d'environ 1,5 min. Sans compte, le travail n'est pas enregistré.
+- **Wokwi testé le 12/10** : en Arduino (C++), la compilation gratuite fait la queue plus de 70 s à chaque lancement, c'est trop long. **En MicroPython sur ESP32** (`wokwi.com/projects/new/micropython-esp32`), la simulation démarre en 5 s environ, sans compte : c'est le choix par défaut pour le distanciel. On colle `diagram.json` et `main.py` dans les onglets. Sans compte, le travail n'est pas enregistré.
 - Les documents réponse .docx convertissent les formules LaTeX en texte et les tableaux Markdown en vrais tableaux Word.
 - Évaluations avant la Toussaint :
   - 2nde : interro Internet (sujets A/B), **à la première heure en présentiel** (reportée à cause du blocus) ;
-  - D3 : TP noté à distance « Voyant Aérez ! » sur Wokwi, mardi 13 octobre (`AUTO_TermSIN_CO2_Wokwi`, note de travail) ; le **TD noté CO₂ est reporté au retour en présentiel** ;
+  - D3 : TP « Voyant Aérez ! » sur Wokwi, mardi 13 octobre (`AUTO_TermSIN_CO2_Wokwi`, **non noté**, rendu obligatoire, étape de calcul très guidée) ; le **TD noté CO₂ est reporté au retour en présentiel** ;
   - D1 : interro CAN, sujet A, **au retour en présentiel** (prévue le vendredi 16 octobre) ;
   - D2 + D3 : interro CAN, sujet B, heure commune, **au retour en présentiel** ;
   - D2 : TP noté Tinkercad TMP36, vendredi après-midi.
