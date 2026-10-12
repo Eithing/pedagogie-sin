@@ -59,5 +59,12 @@
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/PROF_AUTO_TermSIN_TMP36_Tinkercad.pdf",
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/REPONSES_AUTO_TermSIN_TMP36_Tinkercad.docx",
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/station_temperature.ino"
+  ],
+  "sources/autonomie/AUTO_TermSIN_CO2_Wokwi.md": [
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/ELEVE_AUTO_TermSIN_CO2_Wokwi.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/PROF_AUTO_TermSIN_CO2_Wokwi.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/REPONSES_AUTO_TermSIN_CO2_Wokwi.docx",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/diagram.json",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/voyant_co2.ino"
   ]
 }

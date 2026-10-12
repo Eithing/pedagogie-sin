@@ -39,6 +39,8 @@ journal:
     texte: "Mise en forme de la progression. Mini-séquence SysML (T0) faite, non notée. CAN (T1) : cours complet fait. Heure commune avec D2 : révisions et CAN jusqu'à la Toussaint, puis séquence réseaux (C1)."
   - date: 2026-10-09
     texte: "Blocus : cours en distanciel. Heure commune avec D2 : remédiation CAN en autonomie (« Le CAN pas à pas »), non notée. L'interrogation CAN (sujet B) est reportée au retour en présentiel ; le TD noté sur le CO₂ reste prévu le mardi."
+  - date: 2026-10-13
+    texte: "Blocus, distanciel : TP noté « Voyant Aérez ! » sur Wokwi (sans compte), application de la remédiation CAN (note de travail). Le TD noté sur le CO₂ est reporté au retour en présentiel."
 ---
 
 ## Organisation
