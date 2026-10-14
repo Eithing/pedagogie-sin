@@ -183,6 +183,8 @@ function afficher() {
 function verifier() {
   var e = serie[courant];
   var reponses = e.ex.champs.map(function (_, i) { return document.getElementById('r' + i).value; });
+  // Exercice termine (juste, ou correction affichee) : on ne verifie plus
+  if (e.fini) return;
   if (reponses.some(function (r) { return !String(r).trim(); })) return;
   e.essais++;
   var ok = e.ex.verifier(reponses).every(Boolean);
@@ -190,16 +192,25 @@ function verifier() {
   if (ok) {
     e.reussi = true;
     e.premier = e.essais === 1;
-    retour.innerHTML = '<div class="retour juste">✔ Juste ! ' + e.ex.corrige + '</div><button id="suivant" type="button">Exercice suivant →</button>';
-    document.getElementById('valider').remove();
-    document.getElementById('suivant').addEventListener('click', function () { courant++; afficher(); });
+    terminer('<div class="retour juste">✔ Juste ! ' + e.ex.corrige + '</div>');
   } else if (e.essais === 1) {
     retour.innerHTML = '<div class="retour faux">✘ Pas encore. Corrige et vérifie à nouveau.</div><div class="retour methode"><b>Méthode :</b> ' + e.ex.methode + '</div>';
   } else {
-    retour.innerHTML = '<div class="retour faux">✘ Toujours pas. Voici la correction, lis-la attentivement :</div><div class="retour methode">' + e.ex.corrige + '</div><button id="suivant" type="button">Exercice suivant →</button>';
-    document.getElementById('valider').remove();
-    document.getElementById('suivant').addEventListener('click', function () { courant++; afficher(); });
+    terminer('<div class="retour faux">✘ Toujours pas. Voici la correction, lis-la attentivement :</div><div class="retour methode">' + e.ex.corrige + '</div>');
   }
+}
+
+// Fin d'un exercice : champs verrouilles, bouton Verifier retire, bouton Exercice suivant actif
+// (la touche Entree passe aussi a l'exercice suivant)
+function terminer(message) {
+  serie[courant].fini = true;
+  zone.querySelectorAll('.champ input').forEach(function (i) { i.readOnly = true; });
+  var valider = document.getElementById('valider');
+  if (valider) valider.remove();
+  document.getElementById('retour').innerHTML = message + '<button id="suivant" type="button">Exercice suivant →</button>';
+  var suivant = document.getElementById('suivant');
+  suivant.addEventListener('click', function () { courant++; afficher(); });
+  suivant.focus();
 }
 
 function bilan() {
