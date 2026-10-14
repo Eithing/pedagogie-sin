@@ -2,7 +2,7 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
-## État au 12 octobre 2026
+## État au 14 octobre 2026
 
 ### Fait
 - Chaîne de production (Node + CSS + KaTeX → PDF via Chrome) : TP, TD, évaluations à sujets A/B, cours en séance rythmée (diapos + déroulé + fiche élève), progressions annuelles.
@@ -14,6 +14,13 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 - **2nde, Web en distanciel (vendredi 9 octobre)** : `AUTO_SNT_Web_Decouverte` (classe entière, non noté, rendu obligatoire) et `AUTO_SNT_Web_PremierePage` (TP noté /20, demi-groupe, avec `editeur_web.html`, éditeur HTML/CSS sans compte). L'autre demi-groupe fera le TP à sa prochaine séance de TP.
 - **Terminales en distanciel (vendredi 9 octobre)** : `AUTO_TermSIN_CAN_PasAPas` (remédiation CAN, non notée, pour D1 et pour l'heure commune D2 + D3, avec `simulateur_can.html`) ; `AUTO_TermSIN_TMP36_Tinkercad` (TP noté /20 pour D2, individuel, captures d'écran, `station_temperature.ino`). Le TP TMP36 a quitté `sources/tp/` pour `sources/autonomie/`.
 - **Wokwi testé le 12/10** : en Arduino (C++), la compilation gratuite fait la queue plus de 70 s à chaque lancement, c'est trop long. **En MicroPython sur ESP32** (`wokwi.com/projects/new/micropython-esp32`), la simulation démarre en 5 s environ, sans compte : c'est le choix par défaut pour le distanciel. On colle `diagram.json` et `main.py` dans les onglets. Sans compte, le travail n'est pas enregistré.
+- **Vendredi 16 octobre (distanciel, dernier jour avant la Toussaint, tout non noté, rendu obligatoire)** :
+  - 2nde : l'heure en classe entière est annulée ; le 2e groupe de TP fait `AUTO_SNT_Web_PremierePage` ;
+  - TSTI2D1 (12 h) : `AUTO_TermSIN_CO2_Wokwi`, le même TP que les D3 le 13/10 ;
+  - heure commune D2 + D3 (13 h) : `AUTO_TermSIN_CAN_Entrainement`, avec `entrainement_can.html`, un outil autocorrigé dont les valeurs sont tirées au hasard ;
+  - TSTI2D2 (3 h) : `AUTO_TermSIN_Cuve_Lissage` (moyenne glissante, compromis stabilité / temps de réaction, hystérésis), testé sur Wokwi.
+- `PRONOTE_<nom>.txt` contient aussi, pour les travaux en autonomie, un « Travail à faire » prêt à coller, tiré de la fiche.
+- **Attention sur le portable** : PowerShell 5.1 lit les fichiers en ANSI. Pour modifier une source, passer par Node ou par l'outil d'édition, jamais par `Get-Content` / `Set-Content`.
 - Les documents réponse .docx convertissent les formules LaTeX en texte et les tableaux Markdown en vrais tableaux Word.
 - Évaluations avant la Toussaint :
   - 2nde : interro Internet (sujets A/B), **à la première heure en présentiel** (reportée à cause du blocus) ;
@@ -32,7 +39,7 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 - **Convention CAN** : q = PE / 2ⁿ (les deux conventions acceptées à la correction).
 
 ### En attente (à demander ou à confirmer)
-- Retour sur les séances du 9/10 en distanciel : taux de rendu, difficultés avec l'éditeur (téléphone ?), date du retour en présentiel (pour l'interro Internet).
+- Retour sur les séances du 9, 13 et 16 octobre en distanciel : taux de rendu, difficultés avec l'éditeur (téléphone ?), date du retour en présentiel (pour l'interro Internet).
 - Tinkercad : vérifier que les circuits des D2 sont visibles depuis l'espace classe (sinon, demander le lien de partage). D1 et D3 n'ont pas d'accès Tinkercad : en créer un si on veut leur faire faire des TP en simulation (Wokwi est une alternative sans compte).
 - QCM Pronote : l'enseignant ne le maîtrise pas encore. Proposer un guide pas à pas, ou des QCM prêts à saisir.
 - Dates des séances perdues pendant le blocus de début octobre, à saisir en `annulations:` dans les progressions.

@@ -1,0 +1,26 @@
+﻿Titre de la séance :
+C0 Révisions et CAN en classe commune — Entraînement autocorrigé sur le CAN (D2 + D3)
+
+Description :
+C0 (distanciel, heure commune) : entraînement sur le CAN avec un outil autocorrigé (valeurs propres à chaque élève, méthode affichée en cas d'erreur), puis rédaction détaillée de deux exercices. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Entraînement CAN — des exercices à tes valeurs, corrigés en direct
+Douze exercices, tes propres valeurs, une correction immédiate. Objectif : être prêt pour l'interrogation au retour.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_CAN_Entrainement.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_CAN_Entrainement.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- entrainement_can.html
+
+✏️ Consignes :
+- Travail individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre.
+- Garde ton cahier ou une feuille de brouillon pour les calculs, et la calculatrice de l'ordinateur.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec la capture du bilan 📸 et tes deux exercices rédigés.
+- Dépôt dans le devoir « Entraînement CAN » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire : il prépare l'interrogation sur le CAN, au retour en classe.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : envoie-moi l'énoncé et ton calcul si tu bloques.

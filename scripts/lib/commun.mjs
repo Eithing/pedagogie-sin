@@ -103,8 +103,28 @@ export function fichierPronote(meta, nom, config) {
     'Titre de la séance :', t.titre, '',
     'Description :', t.description,
   ].filter((l) => l != null).join('\r\n'));
+  if (meta.type === 'autonomie') blocs.push(travailAFaire(meta, nom));
   // BOM UTF-8 et fins de ligne Windows : le fichier s'ouvre proprement dans le Bloc-notes
   return '﻿' + blocs.join('\r\n\r\n') + '\r\n';
+}
+
+// « Travail à faire » d'un travail en autonomie, tiré de la fiche : documents à joindre, consignes, rendu, aide
+function travailAFaire(meta, nom) {
+  const puces = (v) => [].concat(v ?? []).map((t) => `- ${t}`);
+  const documents = [
+    `ELEVE_${nom}.pdf (la fiche)`,
+    meta.document_reponse ? `REPONSES_${nom}.docx (le document réponse, à ouvrir avec Word ou LibreOffice)` : null,
+    ...[].concat(meta.fichiers ?? []).map((f) => path.basename(f)),
+  ].filter(Boolean);
+  return [
+    '=== Travail à faire (à coller dans Pronote) ===',
+    meta.titre,
+    meta.accroche ?? null,
+    '', '📄 Documents joints :', ...puces(documents),
+    '', '✏️ Consignes :', ...puces(meta.consignes),
+    '', '📤 À rendre :', ...puces(meta.rendu),
+    meta.aide ? '' : null, meta.aide ? '💬 Besoin d\'aide ?' : null, ...puces(meta.aide),
+  ].filter((l) => l != null).join('\r\n');
 }
 
 // Lit, valide et affiche le diagnostic d'un fichier.

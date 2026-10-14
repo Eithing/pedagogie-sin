@@ -4,8 +4,12 @@ niveau: Term STI2D SIN
 sequence: T1
 court: Voyant Aerez CO2
 pronote:
-  titre: "T1 Acquérir une grandeur physique — TP : le voyant « Aérez ! » (CO₂, Wokwi)"
-  description: "T1 (distanciel) : du capteur de CO₂ au voyant d'aération, avec calculs guidés et programmation sur Wokwi (ESP32, MicroPython). Non noté, rendu obligatoire."
+  - pour: "TSTI2D3 (mardi 13 octobre)"
+    titre: "T1 Acquérir une grandeur physique — TP : le voyant « Aérez ! » (CO₂, Wokwi)"
+    description: "T1 (distanciel) : du capteur de CO₂ au voyant d'aération, avec calculs guidés et programmation sur Wokwi (ESP32, MicroPython). Non noté, rendu obligatoire."
+  - pour: "TSTI2D1 (vendredi 16 octobre)"
+    titre: "T1 Acquérir une grandeur physique — TP : le voyant « Aérez ! » (CO₂, Wokwi)"
+    description: "T1 (distanciel) : application de la remédiation CAN, du capteur de CO₂ au voyant d'aération, avec calculs guidés et programmation sur Wokwi (ESP32, MicroPython). Non noté, rendu obligatoire."
 type: autonomie
 duree: 55 min
 illustration: img/co2/voyant.svg
@@ -13,7 +17,7 @@ accroche: Ta salle de classe sature en CO₂. Programme le voyant qui dira quand
 competences: [CO7.3-SIN1, CO5.8-SIN2, 2.4.2c, 5.3.1d]
 materiel: [Wokwi (ESP32 en MicroPython, potentiomètre, LED), ordinateur]
 document_reponse: true
-fichiers: [fichiers/diagram.json, fichiers/voyant_co2.py]
+fichiers: [fichiers/co2/diagram.json, fichiers/co2/voyant_co2.py]
 consignes:
   - "Travail individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre."
   - "Wokwi s'utilise sans compte, dans le navigateur. Aux étapes marquées 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse."
@@ -21,14 +25,14 @@ consignes:
 rendu:
   - "Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec tes calculs, tes lignes de code et les 3 captures d'écran 📸."
   - "Dépôt dans le devoir « Voyant CO₂ » de l'ENT, avant la date indiquée."
-  - "Ce travail n'est pas noté, mais il est obligatoire : il prépare le TD noté sur le CO₂, qui aura lieu en classe."
+  - "Ce travail n'est pas noté, mais il est obligatoire : il prépare les évaluations sur le CAN, qui auront lieu en classe."
 aide:
   - "Pendant l'heure, je suis disponible sur la messagerie de l'ENT. Envoie-moi une capture d'écran de ton écran Wokwi si quelque chose ne marche pas."
   - "Bloqué plus de 10 minutes sur une question ? Écris « bloqué » dans ta réponse, passe à la suivante et préviens-moi."
 ---
 
 ::: prof
-**Mise en œuvre (mardi 13 octobre, TSTI2D3, 1 h en distanciel)** : application pratique de la remédiation « Le CAN pas à pas » du vendredi. **Non noté**, rendu obligatoire. Déposer sur l'ENT ce PDF élève, le document réponse `REPONSES_AUTO_TermSIN_CO2_Wokwi.docx`, `diagram.json` et `voyant_co2.py` (dossier `eleve/`).
+**Mise en œuvre (1 h en distanciel)** : TSTI2D3 le mardi 13 octobre, puis **TSTI2D1 le vendredi 16 octobre** (12 h). Application pratique de la remédiation « Le CAN pas à pas » du 9 octobre. **Non noté**, rendu obligatoire. Déposer sur l'ENT ce PDF élève, le document réponse `REPONSES_AUTO_TermSIN_CO2_Wokwi.docx`, `diagram.json` et `voyant_co2.py` (dossier `eleve/`).
 
 **Pourquoi MicroPython** : un projet Arduino sur Wokwi passe par le serveur de compilation gratuit, avec plus de 70 s d'attente à chaque lancement. En **MicroPython sur ESP32**, le programme démarre en **5 secondes environ**, sans compilation ni compte. **Testé le 12 octobre** : circuit, programme de départ et corrigé fonctionnent ; le CAN simulé est linéaire (N = 4 095 à 3,3 V).
 

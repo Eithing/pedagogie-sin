@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entraînement CAN — STI2D SIN</title>
+<style>
+  :root {
+    --fond: #f1f5f9; --carte: #ffffff; --texte: #1e293b; --doux: #64748b; --bord: #cbd5e1;
+    --accent: #2563eb; --accent-pale: #dbeafe; --vert: #15803d; --vert-pale: #dcfce7;
+    --rouge: #b91c1c; --rouge-pale: #fee2e2; --orange: #c2410c; --orange-pale: #ffedd5;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--fond); color: var(--texte); }
+  header { padding: 12px 16px; background: var(--carte); border-bottom: 1px solid var(--bord); display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  header h1 { margin: 0; font-size: 18px; color: var(--accent); }
+  header label { font-size: 13px; color: var(--doux); }
+  header input { font: inherit; font-size: 14px; padding: 5px 8px; border: 1px solid var(--bord); border-radius: 6px; width: 150px; }
+  .espace { flex: 1; }
+  #progression { font-size: 14px; font-weight: 600; }
+  main { max-width: 760px; margin: 0 auto; padding: 16px; }
+  .carte { background: var(--carte); border: 1px solid var(--bord); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  .notion { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--accent); background: var(--accent-pale); padding: 3px 8px; border-radius: 4px; }
+  .enonce { font-size: 17px; line-height: 1.55; margin: 12px 0; }
+  .champ { display: flex; align-items: center; gap: 8px; margin: 8px 0; flex-wrap: wrap; }
+  .champ label { min-width: 190px; font-weight: 600; }
+  .champ input { font: inherit; font-size: 16px; padding: 6px 9px; border: 1.5px solid var(--bord); border-radius: 6px; width: 160px; }
+  .champ .unite { color: var(--doux); }
+  button { font: inherit; font-size: 15px; padding: 8px 16px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: #fff; font-weight: 600; cursor: pointer; margin-top: 10px; margin-right: 8px; }
+  button.secondaire { background: var(--carte); color: var(--accent); }
+  .retour { margin-top: 12px; padding: 10px 14px; border-radius: 8px; font-size: 15px; line-height: 1.5; }
+  .retour.juste { background: var(--vert-pale); color: var(--vert); }
+  .retour.faux { background: var(--rouge-pale); color: var(--rouge); }
+  .retour.methode { background: var(--orange-pale); color: var(--orange); }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { border: 1px solid var(--bord); padding: 7px 10px; text-align: left; }
+  th { background: var(--fond); }
+  .score { font-size: 28px; font-weight: 800; color: var(--accent); }
+  .petit { font-size: 13px; color: var(--doux); }
+  code { font-family: Consolas, monospace; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Entraînement CAN</h1>
+  <label>Nom <input id="nom" autocomplete="off"></label>
+  <label>Prénom <input id="prenom" autocomplete="off"></label>
+  <span class="espace"></span>
+  <span id="progression"></span>
+</header>
+<main id="zone"></main>
+<script>
+// Generateur d'exercices sur le CAN : valeurs tirees au hasard pour chaque eleve,
+// correction immediate, methode affichee apres une erreur, bilan final par notion.
+var NB_PAR_NOTION = 2;
+var hasard = function (t) { return t[Math.floor(Math.random() * t.length)]; };
+var entre = function (a, b) { return a + Math.random() * (b - a); };
+var fr = function (x, d) { return x.toLocaleString('fr-FR', { maximumFractionDigits: d === undefined ? 3 : d }); };
+var lire = function (s) { return Number(String(s).trim().replace(/\s/g, '').replace(',', '.').replace(/[^0-9.\-]/g, '')); };
+var procheDe = function (v, attendu, tol) { return isFinite(v) && Math.abs(v - attendu) <= Math.abs(attendu) * tol + 1e-9; };
+
+var NOTIONS = {
+  codes: {
+    titre: 'Nombre de codes',
+    creer: function () {
+      var n = hasard([4, 6, 8, 10, 12]);
+      return {
+        enonce: 'Un CAN a <b>' + n + ' bits</b>. Combien de codes différents peut-il fournir, et quel est le code maximal ?',
+        champs: [{ label: 'Nombre de codes', unite: '' }, { label: 'Code maximal', unite: '' }],
+        verifier: function (r) { return [lire(r[0]) === Math.pow(2, n), lire(r[1]) === Math.pow(2, n) - 1]; },
+        corrige: '2<sup>' + n + '</sup> = ' + fr(Math.pow(2, n)) + ' codes, de 0 à 2<sup>' + n + '</sup> − 1 = ' + fr(Math.pow(2, n) - 1) + '.',
+        methode: 'Un CAN de n bits fournit 2<sup>n</sup> codes, numérotés de 0 à 2<sup>n</sup> − 1.'
+      };
+    }
+  },
+  quantum: {
+    titre: 'Quantum',
+    creer: function () {
+      var n = hasard([8, 10, 12]), pe = hasard([2.5, 3.3, 4.096, 5]);
+      var q = pe / Math.pow(2, n) * 1000;
+      return {
+        enonce: 'Un CAN de <b>' + n + ' bits</b> a une pleine échelle <b>PE = ' + fr(pe) + ' V</b>. Calcule son quantum q, en mV.',
+        champs: [{ label: 'Quantum q', unite: 'mV' }],
+        verifier: function (r) { return [procheDe(lire(r[0]), q, 0.01)]; },
+        corrige: 'q = PE / 2<sup>' + n + '</sup> = ' + fr(pe) + ' / ' + fr(Math.pow(2, n)) + ' ≈ ' + fr(q / 1000, 6) + ' V ≈ <b>' + fr(q, 3) + ' mV</b>.',
+        methode: 'q = PE / 2<sup>n</sup>. Pour passer des volts aux millivolts, on multiplie par 1 000.'
+      };
+    }
+  },
+  code: {
+    titre: 'Tension → code N',
+    creer: function () {
+      var n = hasard([8, 10, 12]), pe = hasard([3.3, 5]);
+      var q = pe / Math.pow(2, n), vin = Math.round(entre(0.1, 0.95) * pe * 1000) / 1000;
+      var N = Math.floor(vin / q + 1e-9);
+      return {
+        enonce: 'CAN de <b>' + n + ' bits</b>, <b>PE = ' + fr(pe) + ' V</b>. La tension d\'entrée vaut <b>V<sub>in</sub> = ' + fr(vin) + ' V</b>. Quel code N le CAN fournit-il ?',
+        champs: [{ label: 'Code N', unite: '' }],
+        verifier: function (r) { return [Math.abs(lire(r[0]) - N) <= 1]; },
+        corrige: 'q = ' + fr(pe) + ' / ' + fr(Math.pow(2, n)) + ' ≈ ' + fr(q * 1000, 3) + ' mV ; V<sub>in</sub> / q = ' + fr(vin / q, 2) + ', donc <b>N = ' + fr(N) + '</b> (partie entière).',
+        methode: 'Calcule d\'abord q = PE / 2<sup>n</sup>, puis N = partie entière de V<sub>in</sub> / q (on garde ce qui est avant la virgule).'
+      };
+    }
+  },
+  tension: {
+    titre: 'Code N → tension',
+    creer: function () {
+      var n = hasard([8, 10, 12]), pe = hasard([3.3, 5]);
+      var q = pe / Math.pow(2, n), N = Math.floor(entre(0.1, 0.95) * Math.pow(2, n));
+      var v = N * q;
+      return {
+        enonce: 'CAN de <b>' + n + ' bits</b>, <b>PE = ' + fr(pe) + ' V</b>. Le microcontrôleur lit le code <b>N = ' + fr(N) + '</b>. Quelle tension approximative y a-t-il à l\'entrée ?',
+        champs: [{ label: 'Tension', unite: 'V' }],
+        verifier: function (r) { return [procheDe(lire(r[0]), v, 0.01)]; },
+        corrige: 'V ≈ N × q = ' + fr(N) + ' × ' + fr(q * 1000, 3) + ' mV ≈ <b>' + fr(v, 3) + ' V</b>.',
+        methode: 'V ≈ N × q, avec q = PE / 2<sup>n</sup>. Attention aux unités : q en volts pour obtenir V en volts.'
+      };
+    }
+  },
+  binaire: {
+    titre: 'Binaire et hexadécimal',
+    creer: function () {
+      var N = Math.floor(entre(17, 254));
+      var bin = N.toString(2).padStart(8, '0'), hex = N.toString(16).toUpperCase().padStart(2, '0');
+      return {
+        enonce: 'Écris le code <b>N = ' + N + '</b> en binaire sur 8 bits, puis en hexadécimal.',
+        champs: [{ label: 'Binaire (8 bits)', unite: '' }, { label: 'Hexadécimal', unite: '' }],
+        verifier: function (r) {
+          var b = String(r[0]).replace(/\s/g, ''), h = String(r[1]).replace(/\s/g, '').toUpperCase().replace(/^0X/, '');
+          return [b === bin, h.padStart(2, '0') === hex];
+        },
+        corrige: N + ' = <code>' + bin.slice(0, 4) + ' ' + bin.slice(4) + '</code> = <code>0x' + hex + '</code>.',
+        methode: 'Tableau des poids 128, 64, 32, 16, 8, 4, 2, 1 : de gauche à droite, écris 1 si le poids « rentre » dans ce qui reste (et retire-le), sinon 0. Pour l\'hexadécimal, découpe en 2 paquets de 4 bits (10 = A … 15 = F).'
+      };
+    }
+  },
+  bits: {
+    titre: 'Choisir le nombre de bits',
+    creer: function () {
+      var s = hasard([10, 20, 50]), d = hasard([0.05, 0.1, 0.2, 0.5]), pe = hasard([3.3, 5]);
+      var qmax = s * d / 1000, n = Math.ceil(Math.log2(pe / qmax) - 1e-9);
+      return {
+        enonce: 'Un capteur de température fournit <b>' + s + ' mV par °C</b>. On veut détecter des variations de <b>' + fr(d) + ' °C</b> avec un CAN de pleine échelle <b>' + fr(pe) + ' V</b>. Combien de bits faut-il au minimum ?',
+        champs: [{ label: 'Nombre de bits n', unite: 'bits' }],
+        verifier: function (r) { return [lire(r[0]) === n]; },
+        corrige: 'Il faut q ≤ ' + s + ' × ' + fr(d) + ' = ' + fr(s * d, 3) + ' mV. Avec n = ' + (n - 1) + ' : q = ' + fr(pe / Math.pow(2, n - 1) * 1000, 3) + ' mV (trop grand) ; avec <b>n = ' + n + '</b> : q = ' + fr(pe / Math.pow(2, n) * 1000, 3) + ' mV, ça convient.',
+        methode: 'Il faut q ≤ s × Δ (la variation de tension à détecter). Essaie n = 8, 9, 10… jusqu\'à ce que PE / 2<sup>n</sup> soit assez petit.'
+      };
+    }
+  }
+};
+
+// Serie d'exercices : NB_PAR_NOTION par notion, dans l'ordre des notions
+var serie, courant, debut;
+var zone = document.getElementById('zone');
+function nouvelleSerie() {
+  serie = [];
+  Object.keys(NOTIONS).forEach(function (cle) {
+    for (var i = 0; i < NB_PAR_NOTION; i++) serie.push({ cle: cle, ex: NOTIONS[cle].creer(), essais: 0, reussi: false, premier: false });
+  });
+  courant = 0;
+  debut = new Date();
+  afficher();
+}
+
+function afficher() {
+  document.getElementById('progression').textContent = courant < serie.length ? 'Exercice ' + (courant + 1) + ' / ' + serie.length : 'Terminé';
+  if (courant >= serie.length) return bilan();
+  var e = serie[courant];
+  var html = '<div class="carte"><span class="notion">' + NOTIONS[e.cle].titre + '</span>' +
+    '<p class="enonce">' + e.ex.enonce + '</p>';
+  e.ex.champs.forEach(function (c, i) {
+    html += '<div class="champ"><label for="r' + i + '">' + c.label + '</label><input id="r' + i + '" autocomplete="off"><span class="unite">' + c.unite + '</span></div>';
+  });
+  html += '<button id="valider" type="button">Vérifier</button><div id="retour"></div></div>' +
+    '<p class="petit">Écris tes calculs dans ton document réponse si tu en as besoin. Virgule ou point acceptés pour les nombres.</p>';
+  zone.innerHTML = html;
+  document.getElementById('r0').focus();
+  zone.querySelectorAll('input').forEach(function (i) { i.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') verifier(); }); });
+  document.getElementById('valider').addEventListener('click', verifier);
+}
+
+function verifier() {
+  var e = serie[courant];
+  var reponses = e.ex.champs.map(function (_, i) { return document.getElementById('r' + i).value; });
+  if (reponses.some(function (r) { return !String(r).trim(); })) return;
+  e.essais++;
+  var ok = e.ex.verifier(reponses).every(Boolean);
+  var retour = document.getElementById('retour');
+  if (ok) {
+    e.reussi = true;
+    e.premier = e.essais === 1;
+    retour.innerHTML = '<div class="retour juste">✔ Juste ! ' + e.ex.corrige + '</div><button id="suivant" type="button">Exercice suivant →</button>';
+    document.getElementById('valider').remove();
+    document.getElementById('suivant').addEventListener('click', function () { courant++; afficher(); });
+  } else if (e.essais === 1) {
+    retour.innerHTML = '<div class="retour faux">✘ Pas encore. Corrige et vérifie à nouveau.</div><div class="retour methode"><b>Méthode :</b> ' + e.ex.methode + '</div>';
+  } else {
+    retour.innerHTML = '<div class="retour faux">✘ Toujours pas. Voici la correction, lis-la attentivement :</div><div class="retour methode">' + e.ex.corrige + '</div><button id="suivant" type="button">Exercice suivant →</button>';
+    document.getElementById('valider').remove();
+    document.getElementById('suivant').addEventListener('click', function () { courant++; afficher(); });
+  }
+}
+
+function bilan() {
+  var nom = (document.getElementById('prenom').value + ' ' + document.getElementById('nom').value).trim() || '(nom non renseigné)';
+  var fin = new Date();
+  var duree = Math.round((fin - debut) / 60000);
+  var lignes = '', total = 0;
+  Object.keys(NOTIONS).forEach(function (cle) {
+    var ex = serie.filter(function (e) { return e.cle === cle; });
+    var premier = ex.filter(function (e) { return e.premier; }).length;
+    var reussi = ex.filter(function (e) { return e.reussi; }).length;
+    total += premier;
+    var etat = premier === ex.length ? '✔ maîtrisé' : reussi === ex.length ? 'à consolider' : 'à retravailler';
+    lignes += '<tr><td>' + NOTIONS[cle].titre + '</td><td>' + premier + ' / ' + ex.length + '</td><td>' + reussi + ' / ' + ex.length + '</td><td>' + etat + '</td></tr>';
+  });
+  zone.innerHTML = '<div class="carte"><h2 style="margin-top:0">Bilan de ' + nom + '</h2>' +
+    '<p class="score">' + total + ' / ' + serie.length + ' <span class="petit">justes du premier coup</span></p>' +
+    '<table><tr><th>Notion</th><th>Juste du 1er coup</th><th>Juste au final</th><th>État</th></tr>' + lignes + '</table>' +
+    '<p class="petit">Terminé le ' + fin.toLocaleDateString('fr-FR') + ' à ' + fin.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) + ' — durée : ' + duree + ' min.</p>' +
+    '<p><b>📸 Fais une capture d\'écran de ce bilan</b> (Windows + Maj + S) et colle-la dans ton document réponse.</p>' +
+    '<button id="recommencer" class="secondaire" type="button">Nouvelle série (nouvelles valeurs)</button></div>';
+  document.getElementById('recommencer').addEventListener('click', nouvelleSerie);
+}
+
+nouvelleSerie();
+</script>
+</body>
+</html>

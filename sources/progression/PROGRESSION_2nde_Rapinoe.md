@@ -156,6 +156,8 @@ journal:
     texte: "Mise en forme de la progression. Thème Internet en voie d'achèvement (séance TCP/IP réalisée) ; le Web suivra après les vacances de la Toussaint."
   - date: 2026-10-08
     texte: "Blocus : cours en distanciel. Thème Internet terminé (INT.3 et INT.4 traités à distance) ; l'interrogation Internet (sujets A/B) est reportée à la première heure en présentiel. Le Web démarre le 9 octobre en autonomie : fiche « Le Web n'est pas Internet » (classe entière) et TP noté « Ma première page web » (demi-groupe, éditeur web sans compte, Capytale n'étant pas disponible dans l'académie)."
+  - date: 2026-10-16
+    texte: "Blocus, distanciel : l'heure en classe entière est annulée. TP en demi-groupe : le 2e groupe fait « Ma première page web » (même TP que le 1er groupe le 9 octobre)."
 ---
 
 ## Intentions pédagogiques

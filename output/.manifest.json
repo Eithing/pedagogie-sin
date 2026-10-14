@@ -76,5 +76,20 @@
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Voyant-Aerez-CO2/REPONSES_AUTO_TermSIN_CO2_Wokwi.docx",
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Voyant-Aerez-CO2/diagram.json",
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Voyant-Aerez-CO2/voyant_co2.py"
+  ],
+  "sources/autonomie/AUTO_TermSIN_Cuve_Lissage.md": [
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Cuve-lissage-mesure/ELEVE_AUTO_TermSIN_Cuve_Lissage.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Distanciel_Cuve-lissage-mesure/PROF_AUTO_TermSIN_Cuve_Lissage.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Distanciel_Cuve-lissage-mesure/PRONOTE_AUTO_TermSIN_Cuve_Lissage.txt",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Cuve-lissage-mesure/REPONSES_AUTO_TermSIN_Cuve_Lissage.docx",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Cuve-lissage-mesure/diagram.json",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Cuve-lissage-mesure/niveau_cuve.py"
+  ],
+  "sources/autonomie/AUTO_TermSIN_CAN_Entrainement.md": [
+    "Term_STI2D_SIN/C0_Revisions_CAN/eleve/C0_Distanciel_Entrainement-CAN/ELEVE_AUTO_TermSIN_CAN_Entrainement.pdf",
+    "Term_STI2D_SIN/C0_Revisions_CAN/prof/C0_Distanciel_Entrainement-CAN/PROF_AUTO_TermSIN_CAN_Entrainement.pdf",
+    "Term_STI2D_SIN/C0_Revisions_CAN/prof/C0_Distanciel_Entrainement-CAN/PRONOTE_AUTO_TermSIN_CAN_Entrainement.txt",
+    "Term_STI2D_SIN/C0_Revisions_CAN/eleve/C0_Distanciel_Entrainement-CAN/REPONSES_AUTO_TermSIN_CAN_Entrainement.docx",
+    "Term_STI2D_SIN/C0_Revisions_CAN/eleve/C0_Distanciel_Entrainement-CAN/entrainement_can.html"
   ]
 }

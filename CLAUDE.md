@@ -6,7 +6,7 @@ Les sorties sont rangées **par classe puis par séquence** dans `output/<classe
 - Classe : `2nde_SNT`, `1ere_STI2D`, `Term_STI2D_SIN`, `Term_STI2D_2I2D` (voir `pipeline.config.json > classes`, ou champ `dossier:` du front matter).
 - Séquence : champ **`sequence:`** du front matter (identifiant de la progression : `S2`, `T1`, `C0`…), dont le nom de dossier vient du champ `court` de la progression ou du catalogue. À défaut : la séquence qui cite le document dans ses `ressources`, sinon `Hors_sequence/`.
 - Document : dans `eleve/`, `prof/` et `slides/`, **chaque document a son propre dossier**, nommé `<séquence>_<Type>_<nom court>`, par exemple `T1_Distanciel_Voyant-Aerez-CO2/`. Ce dossier contient le PDF, le document réponse .docx et les fichiers joints : tout ce qu'il faut déposer sur l'ENT est au même endroit. Le nom court vient du champ **`court:`** du front matter (2 à 4 mots), sinon du nom du fichier.
-- **Pronote** : le dossier `prof/` de chaque document contient `PRONOTE_<nom>.txt` (titre + description de séance pour le cahier de textes), tiré du champ **`pronote:`** du front matter.
+- **Pronote** : le dossier `prof/` de chaque document contient `PRONOTE_<nom>.txt` (titre + description de séance pour le cahier de textes), tiré du champ **`pronote:`** du front matter. Pour un travail en autonomie, le fichier contient aussi un « Travail à faire » prêt à coller (documents joints, consignes, rendu, aide), tiré de la fiche.
 
 | Type | Sorties dans `output/<classe>/<séquence>/` |
 | :--- | :--- |

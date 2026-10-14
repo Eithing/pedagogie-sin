@@ -38,6 +38,8 @@ journal:
     texte: "Mise en forme de la progression. Mini-séquence SysML (T0) faite, non notée. CAN (T1) : cours complet fait."
   - date: 2026-10-09
     texte: "Blocus : cours en distanciel. Remédiation CAN en autonomie (« Le CAN pas à pas », simulateur de CAN sans compte), non notée. Le cours était allé trop vite pour la majorité. L'interrogation CAN (sujet A) est reportée au retour en présentiel."
+  - date: 2026-10-16
+    texte: "Blocus, distanciel : TP « Voyant Aérez ! » sur Wokwi (ESP32 en MicroPython), application de la remédiation CAN. Non noté, rendu obligatoire."
 ---
 
 ## Organisation

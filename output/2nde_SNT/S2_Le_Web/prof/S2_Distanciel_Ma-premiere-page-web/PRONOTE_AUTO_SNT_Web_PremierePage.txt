@@ -3,3 +3,23 @@ Le Web — TP : ma première page web en HTML et CSS
 
 Description :
 S2 Le Web (distanciel) : créer une page web personnelle, en distinguant le contenu (HTML) du style (CSS). TP noté sur grille.
+
+=== Travail à faire (à coller dans Pronote) ===
+Ma première page web — le contenu en HTML, le style en CSS
+Crée ta propre page web sur un sujet qui te passionne, sans rien installer.
+
+📄 Documents joints :
+- ELEVE_AUTO_SNT_Web_PremierePage.pdf (la fiche)
+- editeur_web.html
+
+✏️ Consignes :
+- TP noté, individuel, à la maison, sur ordinateur. Suis les étapes dans l'ordre et coche-les au fur et à mesure.
+- Ta page porte sur un sujet que TU choisis, et tous les textes sont écrits par toi.
+
+📤 À rendre :
+- Ta page web : le fichier page_NOM_Prenom.html créé par le bouton « Télécharger ma page ».
+- Dépôt dans le devoir « Ma première page web » de l'ENT, avant la date indiquée.
+
+💬 Besoin d'aide ?
+- Pendant l'heure de TP, je suis disponible sur la messagerie de l'ENT : envoie-moi une capture d'écran de ton code si quelque chose ne s'affiche pas.
+- Tu n'as qu'un téléphone ? Préviens-moi dès le début de l'heure : on trouvera une solution.

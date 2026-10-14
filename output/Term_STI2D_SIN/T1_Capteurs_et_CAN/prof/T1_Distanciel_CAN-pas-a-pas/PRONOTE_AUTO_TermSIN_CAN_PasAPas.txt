@@ -11,3 +11,25 @@ T1 Acquérir une grandeur physique — Le CAN pas à pas (remédiation, D2 + D3)
 
 Description :
 T1 (distanciel, heure commune) : remédiation sur la conversion analogique-numérique (quantum, code N, binaire et hexadécimal), avec un simulateur de CAN. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Le CAN pas à pas — de la tension au code
+Une idée à la fois, un exemple résolu, puis à toi. Le simulateur te dit si tu as juste.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_CAN_PasAPas.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_CAN_PasAPas.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- simulateur_can.html
+
+✏️ Consignes :
+- Travail individuel, à l'ordinateur, pendant l'heure de cours. Une étape par page : ne passe à la suivante que quand tu as compris la précédente.
+- Pour chaque exercice : calcule d'abord à la main, PUIS vérifie avec le simulateur. Si le résultat est différent, relis l'exemple résolu.
+
+📤 À rendre :
+- Tes réponses aux questions 1 à 8 et le bilan complété : le fichier REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier.
+- Un seul dépôt, dans le devoir « CAN pas à pas » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire : il prépare l'interrogation sur le CAN, qui aura lieu en classe.
+
+💬 Besoin d'aide ?
+- Pendant l'heure de cours, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds tout de suite.
+- Bloqué sur un calcul ? Envoie-moi ton calcul, même faux : on trouvera l'erreur ensemble.

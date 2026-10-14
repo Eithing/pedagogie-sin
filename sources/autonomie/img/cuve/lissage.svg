@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="640" height="300" fill="#f8fafc"/>
+  <text x="320" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Mesure brute et mesure lissée par moyenne glissante</text>
+  <!-- axes : x 70..610 (temps), y 250 (60 cm) .. 50 (100 cm) -->
+  <line x1="70" y1="250" x2="615" y2="250" stroke="#334155" stroke-width="2"/>
+  <line x1="70" y1="250" x2="70" y2="44" stroke="#334155" stroke-width="2"/>
+  <text x="340" y="276" text-anchor="middle" font-size="12" fill="#1e293b">temps (une mesure toutes les 0,1 s)</text>
+  <text transform="translate(26 150) rotate(-90)" text-anchor="middle" font-size="12" fill="#1e293b">hauteur d'eau (cm)</text>
+  <g font-size="11" fill="#64748b" text-anchor="end">
+    <text x="62" y="254">60</text><text x="62" y="204">70</text><text x="62" y="154">80</text><text x="62" y="104">90</text><text x="62" y="54">100</text>
+  </g>
+  <g stroke="#e2e8f0"><line x1="70" y1="200" x2="610" y2="200"/><line x1="70" y1="100" x2="610" y2="100"/><line x1="70" y1="50" x2="610" y2="50"/></g>
+  <!-- seuil 80 cm -->
+  <line x1="70" y1="150" x2="610" y2="150" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <!-- brut : autour de 80 cm, +/- 7 cm -->
+  <polyline fill="none" stroke="#f97316" stroke-width="1.8" points="70,160 88,128 106,176 124,141 142,170 160,122 178,155 196,183 214,132 232,149 250,118 268,166 286,137 304,175 322,126 340,158 358,140 376,181 394,129 412,152 430,170 448,124 466,146 484,178 502,135 520,160 538,121 556,168 574,143 592,173 610,131"/>
+  <!-- filtre -->
+  <polyline fill="none" stroke="#2563eb" stroke-width="3.5" points="70,160 120,154 170,152 220,151 270,153 320,150 370,152 420,149 470,151 520,152 570,150 610,151"/>
+  <!-- legende -->
+  <rect x="96" y="56" width="236" height="62" rx="6" fill="#fff" stroke="#cbd5e1"/>
+  <line x1="106" y1="106" x2="132" y2="106" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="140" y="110" font-size="12" fill="#dc2626">seuil de la pompe : 80 cm</text>
+  <line x1="106" y1="70" x2="132" y2="70" stroke="#f97316" stroke-width="2"/>
+  <text x="140" y="74" font-size="12" fill="#c2410c">mesure brute (clapotis)</text>
+  <line x1="106" y1="88" x2="132" y2="88" stroke="#2563eb" stroke-width="3.5"/>
+  <text x="140" y="92" font-size="12" fill="#1d4ed8">moyenne des K dernières mesures</text>
+</svg>

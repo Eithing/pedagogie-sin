@@ -30,7 +30,7 @@ sequences:
     semaines: 7
     etat: en-cours
     evaluation: "Interrogation sur le CAN (sujet B, heure commune du vendredi 16 octobre) + TP noté Tinkercad « salle serveur, TMP36 » (vendredi après-midi)."
-    ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad]
+    ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad, AUTO_TermSIN_Cuve_Lissage]
   - { ref: T2, semaines: 7 }
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
@@ -43,6 +43,8 @@ journal:
     texte: "Mise en forme de la progression. Mini-séquence SysML (T0) faite, non notée. CAN (T1) : cours complet fait, puis exercices Tinkercad en TP (relevés de mesure, quantum). Heure commune avec D3 : révisions et CAN jusqu'à la Toussaint."
   - date: 2026-10-09
     texte: "Blocus : cours en distanciel. Heure commune avec D3 : remédiation CAN en autonomie (« Le CAN pas à pas »). Bloc de 3 h : TP TMP36 sur Tinkercad, noté, en version individuelle à distance (captures d'écran à la place des validations). L'interrogation CAN (sujet B) est reportée au retour en présentiel."
+  - date: 2026-10-16
+    texte: "Blocus, distanciel. Heure commune avec D3 : entraînement autocorrigé sur le CAN (valeurs propres à chaque élève). Bloc de 3 h : TP « lisser une mesure bruitée » (cuve d'eau de pluie, moyenne glissante, hystérésis) sur Wokwi. Non notés, rendu obligatoire."
 ---
 
 ## Organisation

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 250" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="640" height="250" fill="#f8fafc"/>
+  <text x="320" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Calculer, vérifier, comprendre son erreur, recommencer</text>
+
+  <!-- 1. exercice -->
+  <rect x="20" y="46" width="180" height="170" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="34" y="60" width="74" height="16" rx="3" fill="#dbeafe"/>
+  <text x="71" y="72" text-anchor="middle" font-size="9" font-weight="700" fill="#2563eb">QUANTUM</text>
+  <text x="34" y="98" font-size="11" fill="#1e293b">CAN de 10 bits,</text>
+  <text x="34" y="113" font-size="11" fill="#1e293b">PE = 3,3 V. Calcule q.</text>
+  <rect x="34" y="128" width="100" height="24" rx="4" fill="#fff" stroke="#94a3b8"/>
+  <text x="42" y="145" font-size="12" fill="#1e293b">3,22</text>
+  <text x="140" y="145" font-size="11" fill="#64748b">mV</text>
+  <rect x="34" y="166" width="70" height="26" rx="5" fill="#2563eb"/>
+  <text x="69" y="183" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Vérifier</text>
+  <text x="110" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">1. Tes valeurs à toi</text>
+
+  <path d="M206 131 h22" stroke="#475569" stroke-width="2.5"/><path d="M228 124 l10 7 l-10 7z" fill="#475569"/>
+
+  <!-- 2. correction -->
+  <rect x="244" y="46" width="160" height="170" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="256" y="62" width="136" height="40" rx="6" fill="#dcfce7"/>
+  <text x="266" y="80" font-size="12" font-weight="700" fill="#15803d">✔ Juste !</text>
+  <text x="266" y="95" font-size="10" fill="#15803d">q = 3,3 / 1 024</text>
+  <rect x="256" y="112" width="136" height="40" rx="6" fill="#fee2e2"/>
+  <text x="266" y="130" font-size="12" font-weight="700" fill="#b91c1c">✘ Pas encore</text>
+  <text x="266" y="145" font-size="10" fill="#b91c1c">réessaie…</text>
+  <rect x="256" y="162" width="136" height="40" rx="6" fill="#ffedd5"/>
+  <text x="266" y="180" font-size="11" font-weight="700" fill="#c2410c">Méthode :</text>
+  <text x="266" y="195" font-size="10" fill="#c2410c">q = PE / 2ⁿ</text>
+  <text x="324" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">2. Correction immédiate</text>
+
+  <path d="M410 131 h22" stroke="#475569" stroke-width="2.5"/><path d="M432 124 l10 7 l-10 7z" fill="#475569"/>
+
+  <!-- 3. bilan -->
+  <rect x="448" y="46" width="172" height="170" rx="10" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="534" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#2563eb">Bilan : 10 / 12</text>
+  <g font-size="10" fill="#334155">
+    <text x="460" y="94">Nombre de codes</text><text x="460" y="114">Quantum</text><text x="460" y="134">Tension → N</text>
+    <text x="460" y="154">N → tension</text><text x="460" y="174">Binaire, hexa</text><text x="460" y="194">Nombre de bits</text>
+  </g>
+  <g font-size="11" font-weight="700" text-anchor="end">
+    <text x="608" y="94" fill="#15803d">✔</text><text x="608" y="114" fill="#15803d">✔</text><text x="608" y="134" fill="#c2410c">½</text>
+    <text x="608" y="154" fill="#15803d">✔</text><text x="608" y="174" fill="#15803d">✔</text><text x="608" y="194" fill="#c2410c">½</text>
+  </g>
+  <text x="534" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#334155">3. Ce qu'il reste à revoir</text>
+</svg>

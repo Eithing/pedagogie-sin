@@ -1,0 +1,29 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — TP : lisser une mesure bruitée (cuve d'eau de pluie, Wokwi)
+
+Description :
+T1 (distanciel) : mesure de niveau perturbée par le clapotis, filtrage numérique par moyenne glissante, compromis stabilité / temps de réaction, commande de pompe avec hystérésis (ESP32, MicroPython). Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+La pompe qui s'affole — lisser une mesure bruitée par moyenne glissante
+Dès qu'il y a du vent, la pompe de la cuve démarre et s'arrête dix fois par minute. Le capteur n'est pas en panne. Alors quoi ?
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_Cuve_Lissage.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_Cuve_Lissage.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- diagram.json
+- niveau_cuve.py
+
+✏️ Consignes :
+- Travail individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre.
+- Wokwi s'utilise sans compte, dans le navigateur. Aux étapes marquées 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse.
+- Écris toujours la formule, puis le calcul, puis le résultat avec son unité.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec tes calculs, tes tableaux de mesures, tes lignes de code et les 4 captures d'écran 📸.
+- Dépôt dans le devoir « TP cuve » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire.
+
+💬 Besoin d'aide ?
+- Pendant les 3 h, je suis disponible sur la messagerie de l'ENT. Envoie-moi une capture d'écran de ton écran Wokwi si quelque chose ne marche pas.
+- Bloqué plus de 10 minutes sur une question ? Écris « bloqué » dans ta réponse, passe à la suite et préviens-moi.

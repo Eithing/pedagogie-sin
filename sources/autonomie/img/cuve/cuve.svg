@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 290" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="680" height="290" fill="#f8fafc"/>
+  <text x="340" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">La cuve d'eau de pluie du jardin pédagogique</text>
+
+  <!-- gouttiere et pluie -->
+  <path d="M40 52 h150" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M175 52 v28" stroke="#64748b" stroke-width="6"/>
+  <g stroke="#60a5fa" stroke-width="2" stroke-linecap="round">
+    <line x1="60" y1="36" x2="56" y2="44"/><line x1="90" y1="34" x2="86" y2="42"/><line x1="120" y1="36" x2="116" y2="44"/><line x1="150" y1="34" x2="146" y2="42"/>
+  </g>
+
+  <!-- cuve -->
+  <rect x="110" y="80" width="150" height="180" rx="8" fill="#fff" stroke="#475569" stroke-width="3"/>
+  <path d="M113 128 q12 -10 24 0 t24 0 t24 0 t24 0 t24 0 t24 0 V257 H113 Z" fill="#bfdbfe"/>
+  <path d="M113 128 q12 -10 24 0 t24 0 t24 0 t24 0 t24 0 t24 0" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="185" y="200" text-anchor="middle" font-size="12" fill="#1d4ed8">eau</text>
+  <text x="185" y="216" text-anchor="middle" font-size="11" fill="#1d4ed8">(0 à 100 cm)</text>
+  <!-- seuil 80 cm -->
+  <line x1="100" y1="116" x2="270" y2="116" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="96" y="120" text-anchor="end" font-size="11" font-weight="700" fill="#dc2626">80 cm</text>
+  <!-- clapotis -->
+  <text x="120" y="104" font-size="11" font-weight="700" fill="#2563eb">clapotis</text>
+
+  <!-- capteur -->
+  <rect x="226" y="66" width="22" height="20" rx="3" fill="#ea580c"/>
+  <line x1="237" y1="86" x2="237" y2="250" stroke="#ea580c" stroke-width="3"/>
+  <text x="252" y="62" font-size="11" font-weight="700" fill="#c2410c">capteur de niveau</text>
+
+  <!-- fil vers ESP32 -->
+  <path d="M248 76 H360" stroke="#475569" stroke-width="2.5"/><path d="M360 69 l10 7 l-10 7z" fill="#475569"/>
+  <text x="310" y="94" text-anchor="middle" font-size="11" fill="#c2410c">0 à 3 V</text>
+
+  <!-- ESP32 -->
+  <rect x="374" y="46" width="140" height="70" rx="10" fill="#0e7490"/>
+  <text x="444" y="72" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">ESP32</text>
+  <text x="444" y="92" text-anchor="middle" font-size="11" fill="#cffafe">CAN 12 bits, 3,3 V</text>
+  <text x="444" y="107" text-anchor="middle" font-size="11" fill="#cffafe">programme MicroPython</text>
+
+  <!-- vers pompe -->
+  <path d="M444 118 V170" stroke="#475569" stroke-width="2.5"/><path d="M437 170 l7 10 l7 -10z" fill="#475569"/>
+  <circle cx="444" cy="210" r="26" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="444" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#1d4ed8">Pompe</text>
+  <!-- tuyau vers 2e cuve -->
+  <path d="M260 240 H400 V210 H418" stroke="#2563eb" stroke-width="5" fill="none"/>
+  <path d="M470 210 H560 V150" stroke="#2563eb" stroke-width="5" fill="none"/>
+  <rect x="530" y="150" width="120" height="110" rx="8" fill="#fff" stroke="#475569" stroke-width="3"/>
+  <rect x="533" y="215" width="114" height="42" fill="#bfdbfe"/>
+  <text x="590" y="186" text-anchor="middle" font-size="12" fill="#334155">2e cuve</text>
+  <text x="590" y="202" text-anchor="middle" font-size="11" fill="#64748b">(arrosage)</text>
+
+  <text x="340" y="282" text-anchor="middle" font-size="12" fill="#64748b">Au-dessus de 80 cm, la pompe transfère l'eau vers la 2e cuve pour éviter le débordement.</text>
+</svg>

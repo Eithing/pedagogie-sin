@@ -3,3 +3,26 @@ T1 Acquérir une grandeur physique — TP : température d'une salle serveur (TM
 
 Description :
 T1 (distanciel) : chaîne d'acquisition de température simulée sur Tinkercad, programmation de la conversion et d'une alerte à seuil. TP noté (CO7.3-SIN1, CO5.8-SIN2).
+
+=== Travail à faire (à coller dans Pronote) ===
+Surveiller la température d'une salle serveur — capteur TMP36 et CAN de l'Arduino
+Une alerte avant que les serveurs ne chauffent.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_TMP36_Tinkercad.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_TMP36_Tinkercad.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- station_temperature.ino
+
+✏️ Consignes :
+- TP noté, individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre.
+- Les validations se font par captures d'écran 📸, à coller dans ton document réponse (touches Windows + Maj + S, puis Ctrl + V).
+- Rédige les calculs : formule, application numérique, résultat avec unité.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec tes calculs, ton tableau de mesures et les 4 captures d'écran 📸 demandées.
+- Ton circuit Tinkercad, enregistré sous le nom TMP36_NOM_Prenom (je le vois depuis la classe Tinkercad).
+- Dépôt dans le devoir « TP TMP36 » de l'ENT, avant la date indiquée.
+
+💬 Besoin d'aide ?
+- Pendant les 3 h de TP, je suis disponible sur la messagerie de l'ENT. Envoie-moi une capture d'écran de ton montage ou de ton code si quelque chose ne marche pas.
+- Bloqué plus de 10 minutes sur une question ? Écris « bloqué » dans ta réponse, passe à la suivante et préviens-moi.
