@@ -1,5 +1,5 @@
 ---
-titre: "Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)"
+titre: "Le lampadaire autonome : seuil jour / nuit et diagramme d'états"
 niveau: Term STI2D SIN
 sequence: T2
 court: Lampadaire diagramme etats
@@ -13,18 +13,18 @@ pronote:
 type: cours
 duree: 55 min
 illustration: img/lampadaire/couverture.svg
-accroche: "Douze lampadaires allumés à fond toute la nuit pour une allée vide : la commune veut que ça change."
+accroche: "Douze lampadaires allumés toute la nuit pour une allée vide : la commune veut que ça change."
 competences: [2.4.2c, 2.4.3a, 3.4.2b, 1.2.2d, CO4.2, CO3.3]
 objectifs:
-  - Calculer le quantum d'un CAN et le code N correspondant à une tension (révision)
-  - Fixer un seuil de détection jour / nuit à partir de la documentation d'un capteur
-  - Lire et compléter un diagramme d'états (états, transitions, événements, conditions)
-  - Dérouler un scénario d'utilisation sur un diagramme d'états
+  - Calculer un quantum et le code N associé à une tension (révision)
+  - Fixer un seuil jour / nuit à partir de la documentation du capteur
+  - Compléter un diagramme d'états
+  - Dérouler un scénario sur ce diagramme
 prerequis:
-  - "T1 : chaîne d'acquisition, quantum $q = \\text{PE} / 2^n$, code $N$, binaire et hexadécimal"
+  - "T1 : chaîne d'acquisition, quantum, code N, binaire et hexadécimal"
 preparation:
   - Imprimer la fiche d'activités (1 par élève), et en déposer le PDF sur l'ENT pour les absents
-  - "Ouvrir le HTML de projection des diapos dans Chrome — F : plein écran, T : minuteur"
+  - "Ouvrir les diapos (fichier HTML) dans Chrome : F pour le plein écran, T pour le minuteur"
   - Calculatrices autorisées
 ---
 
@@ -41,7 +41,7 @@ preparation:
 ::: slide 4 min | L'allée du lycée, la nuit
 ![](img/lampadaire/couverture.svg){width=62%}
 
-> L'allée qui mène au lycée compte **12 lampadaires de 60 W**, allumés à fond de 17 h 30 à 7 h 30 en hiver, même quand personne ne passe. La commune veut un éclairage **autonome** : en veille à 30 %, à fond seulement quand quelqu'un arrive.
+> L'allée qui mène au lycée compte 12 lampadaires de 60 W, allumés à fond de 17 h 30 à 7 h 30 en hiver, même quand personne ne passe. La commune veut un éclairage autonome : en veille à 30 %, à fond seulement quand quelqu'un arrive.
 :::
 
 ::: dire
@@ -50,7 +50,7 @@ preparation:
 :::
 
 ::: activite 5 min | Échauffement CAN | individuel | projeter
-Réponse à main levée, puis sur la fiche. C'est la révision de l'interrogation du vendredi 13 novembre.
+Répondez à main levée, puis cochez sur la fiche. Ces questions préparent l'interrogation du vendredi 13 novembre.
 :::
 
 ::: question 1
@@ -98,7 +98,7 @@ Noter au tableau le nombre de bonnes réponses par question. Si la question 3 po
 ::: slide 4 min | La chaîne d'information du lampadaire | fiche
 ![](img/lampadaire/chaine.svg){width=92%}
 
-- Le CAN de l'ESP32 : **12 bits**, pleine échelle **3,3 V**.
+- Le CAN de l'ESP32 : 12 bits, pleine échelle 3,3 V.
 - $q = \dfrac{\text{PE}}{2^n}$ et $N = \text{partie entière de } \dfrac{V}{q}$ ; dans l'autre sens, $V \approx N \times q$.
 :::
 
@@ -108,7 +108,7 @@ Noter au tableau le nombre de bonnes réponses par question. Si la question 3 po
 :::
 
 ::: activite 9 min | Régler le seuil jour / nuit | binome
-La documentation du capteur indique qu'à la **tombée de la nuit (10 lux)**, il fournit **2,75 V**. Le lampadaire doit passer en mode nuit à partir de ce niveau. Calculatrice autorisée.
+D'après sa documentation, le capteur fournit 2,75 V à la tombée de la nuit (10 lux). Le lampadaire doit passer en mode nuit à partir de ce niveau. Calculatrice autorisée.
 :::
 
 ::: question 4
@@ -120,11 +120,11 @@ $$q = \frac{3{,}3}{2^{12}} = \frac{3{,}3}{4\,096} \approx 0{,}806\text{ mV}$$
 :::
 
 ::: question 5
-Calculez le seuil $N_{seuil}$, code fourni par le CAN pour 2,75 V. Écrivez-le en hexadécimal.
+Calculez le seuil $N_{seuil}$, c'est-à-dire le code fourni par le CAN pour 2,75 V, puis écrivez-le en hexadécimal.
 :::
 
 ::: reponse 4
-$$N_{seuil} = \frac{2{,}75}{0{,}000\,805\,7} \approx 3\,413{,}3 \Rightarrow N_{seuil} = 3\,413$$
+$$N_{seuil} = \frac{2{,}75}{0{,}000\,805\,7} \approx 3\,413{,}2 \Rightarrow N_{seuil} = 3\,413$$
 En hexadécimal : $3\,413 = 13 \times 256 + 5 \times 16 + 5$ → `0xD55` (en binaire `1101 0101 0101`).
 :::
 
@@ -133,7 +133,7 @@ En hexadécimal : $3\,413 = 13 \times 256 + 5 \times 16 + 5$ → `0xD55` (en bin
 :::
 
 ::: reponse 3
-`0x3E8` $= 3 \times 256 + 14 \times 16 + 8 = 1\,000$, donc $V \approx 1\,000 \times 0{,}806\text{ mV} \approx 0{,}81\text{ V}$. C'est bien moins que 2,75 V : il fait **jour** (beaucoup de lumière → faible tension).
+`0x3E8` $= 3 \times 256 + 14 \times 16 + 8 = 1\,000$, donc $V \approx 1\,000 \times 0{,}806\text{ mV} \approx 0{,}81\text{ V}$. C'est bien moins que 2,75 V : il fait jour (beaucoup de lumière, donc faible tension).
 :::
 
 ::: dire
@@ -145,9 +145,9 @@ Correction au tableau par deux binômes. Insister sur la méthode, qui est celle
 ::: slide 4 min | Décrire un comportement : le diagramme d'états
 ![](img/lampadaire/minuterie.svg){width=80%}
 
-- Un **état** : une situation stable du système (ce qu'il fait tant que rien ne change).
-- Une **transition** : le passage d'un état à un autre, déclenché par un **événement**, éventuellement soumis à une **[condition]**.
-- C'est un diagramme **SysML** : on le dessine **avant** d'écrire le programme.
+- Un **état** : une situation stable du système, qui dure tant que rien ne change.
+- Une **transition** : le passage d'un état à un autre, déclenché par un **événement**, parfois soumis à une [condition].
+- C'est un diagramme SysML : on le dessine avant d'écrire le programme.
 :::
 
 ::: dire
@@ -155,16 +155,14 @@ Correction au tableau par deux binômes. Insister sur la méthode, qui est celle
 - Demander : « Que se passe-t-il si on appuie pendant que c'est déjà allumé ? Le diagramme ne le dit pas : c'est à décider. » Transition vers l'activité.
 :::
 
-:::: activite 10 min | Le diagramme d'états du lampadaire | binome
-**Cahier des charges** : le jour, lampe **éteinte** ; la nuit, **veille à 30 %** ; un piéton détecté → **100 %** pendant **60 s**, chaque nouvelle détection relançant les 60 s ; le jour revenu, elle s'éteint.
+::: activite 10 min | Le diagramme d'états du lampadaire | binome
+Cahier des charges : le jour, la lampe est éteinte. La nuit, elle reste en veille à 30 %. Quand un piéton est détecté, elle passe à 100 % pendant 60 s, et chaque nouvelle détection relance les 60 s. Au lever du jour, elle s'éteint.
 
-::: figure Diagramme d'états à compléter
-![](img/lampadaire/etats-vierge.svg){width=60%}
+![](img/lampadaire/etats-vierge.svg){width=100%}
 :::
-::::
 
 ::: question 7
-Complétez les transitions Ⓐ à Ⓔ du diagramme : écrivez l'événement qui déclenche chacune, avec la condition sur $N$ quand il y en a une.
+Pour chaque transition Ⓐ à Ⓔ du diagramme, écrivez sur une ligne l'événement qui la déclenche, avec la condition sur $N$ quand il y en a une.
 :::
 
 ::: reponse 5
@@ -176,7 +174,7 @@ Complétez les transitions Ⓐ à Ⓔ du diagramme : écrivez l'événement qui 
 :::
 
 ::: question 8
-Pourquoi la transition Ⓔ, qui revient sur le même état, est-elle utile ? Que se passerait-il sans elle quand un groupe d'élèves passe à la file ?
+La transition Ⓔ revient sur le même état. À quoi sert-elle ? Que se passerait-il sans elle quand plusieurs élèves passent l'un après l'autre ?
 :::
 
 ::: reponse 3
@@ -187,19 +185,23 @@ Sans Ⓔ, les 60 s comptent depuis le **premier** piéton : la lampe repasserait
 Faire venir un binôme au tableau pour compléter le diagramme projeté. Accepter des formulations différentes si l'événement est juste. Si un élève propose une transition Présence → Jour, la valider : on la laisse de côté pour simplifier.
 :::
 
-::: slide 2 min | Le diagramme d'états du lampadaire | fiche
-![](img/lampadaire/etats.svg)
+::: slide 2 min | Le diagramme d'états du lampadaire
+![](img/lampadaire/etats.svg){width=100%}
+:::
+
+::: dire
+Laisser la diapo affichée pendant que les binômes corrigent leur fiche en couleur.
 :::
 
 ::: activite 7 min | Dérouler un scénario | binome
-Une soirée de novembre : la nuit tombe à **17 h 40**. Inès passe dans l'allée à **18 h 05 min 00 s**, Tom à **18 h 05 min 40 s**. Le jour revient à **7 h 50**.
+Un soir de novembre, la nuit tombe à 17 h 40. Inès passe dans l'allée à 18 h 05 min 00 s, puis Tom à 18 h 05 min 40 s. Le jour revient à 7 h 50. À 100 %, la lampe consomme 60 W.
 :::
 
 ::: question 9
-Donnez l'état du lampadaire et sa puissance (60 W à 100 %) à : 17 h 20 · 17 h 50 · 18 h 05 min 30 s · 18 h 06 min 20 s · 18 h 07 min · 8 h 00.
+Donnez l'état du lampadaire et la puissance consommée à 17 h 20, 17 h 50, 18 h 05 min 30 s, 18 h 06 min 20 s, 18 h 07 min et 8 h 00.
 :::
 
-::: reponse 4
+::: reponse 6
 | Heure | État | Puissance |
 | :--- | :--- | :---: |
 | 17 h 20 | Jour | 0 W |
@@ -211,7 +213,7 @@ Donnez l'état du lampadaire et sa puissance (60 W à 100 %) à : 17 h 20 · 17 
 :::
 
 ::: question 10
-Sur une nuit de 14 h, on compte 1 h cumulée de présence. Comparez l'énergie consommée par un lampadaire toujours à fond et par le lampadaire autonome.
+On prend une nuit de 14 h, avec 1 h de présence au total. Comparez l'énergie consommée par un lampadaire allumé à fond toute la nuit et par le lampadaire autonome.
 :::
 
 ::: reponse 4
@@ -224,11 +226,11 @@ Sur une nuit de 14 h, on compte 1 h cumulée de présence. Comparez l'énergie c
 ## Faire le bilan
 
 ::: retenir 5 min
-- Un CAN de $n$ bits fournit [[$2^n$]] codes ; son quantum vaut [[$q = \text{PE} / 2^n$]] et le code vaut $N$ = partie entière de [[$V / q$]].
-- Un seuil s'exprime en **code** : le programme compare la valeur lue $N$ au seuil $N_{seuil}$, en tenant compte du [[sens]] de variation du capteur.
+- Un CAN de $n$ bits fournit [[2ⁿ]] codes ; son quantum vaut $q$ = [[PE / 2ⁿ]] et le code vaut $N$ = partie entière de [[V / q]].
+- Le seuil s'exprime en code : le programme compare la valeur lue $N$ au seuil $N_{seuil}$, en tenant compte du [[sens]] de variation du capteur.
 - Un diagramme d'[[états]] décrit le comportement d'un système : des états stables, reliés par des [[transitions]].
 - Une transition est déclenchée par un [[événement]], éventuellement soumis à une [[condition]] entre crochets.
-- On écrit le diagramme d'états **avant** le programme : il sert de cahier des charges au programmeur.
+- On écrit le diagramme d'états avant le programme : il sert de cahier des charges au programmeur.
 :::
 
 ::: dire

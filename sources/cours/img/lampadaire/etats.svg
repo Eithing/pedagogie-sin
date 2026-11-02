@@ -29,10 +29,10 @@
 
   <!-- Jour -> Veille (haut) -->
   <path d="M160 130 C 190 84, 250 84, 284 130" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
-  <text x="220" y="76" font-size="12.5" fill="#1d4ed8" text-anchor="middle">nuit détectée [N > N_seuil]</text>
+  <text x="220" y="76" font-size="12.5" fill="#1d4ed8" text-anchor="middle">nuit détectée [N &gt; N_seuil]</text>
   <!-- Veille -> Jour (bas) -->
   <path d="M284 206 C 250 254, 190 254, 160 206" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
-  <text x="220" y="272" font-size="12.5" fill="#1d4ed8" text-anchor="middle">jour détecté [N < N_seuil]</text>
+  <text x="220" y="272" font-size="12.5" fill="#1d4ed8" text-anchor="middle">jour détecté [N &lt; N_seuil]</text>
   <!-- Veille -> Presence (haut) -->
   <path d="M420 130 C 450 84, 510 84, 544 130" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
   <text x="480" y="76" font-size="12.5" fill="#c2410c" text-anchor="middle">présence détectée</text>

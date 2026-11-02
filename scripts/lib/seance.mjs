@@ -10,7 +10,7 @@ import { reperer, parseDuree } from './document.mjs';
 import { esc, rendre, argsBloc } from './markdown.mjs';
 import { page, liste } from './render.mjs';
 
-export const MODALITES = { individuel: 'Individuel', binome: 'En binôme', groupe: 'En groupe', classe: 'Classe entière' };
+export const MODALITES = { individuel: 'individuel', binome: 'en binôme', groupe: 'en groupe', classe: 'classe entière' };
 const DRAPEAUX = ['projeter', 'fiche'];
 const DUREE = /^(\d+)\s*min$/;
 
@@ -214,7 +214,14 @@ export function rendreDiapos(doc, seance, config) {
         ${e.modalite ? `<span class="act-modalite">${esc(MODALITES[e.modalite])}</span>` : ''}
         <span class="act-chrono" data-secondes="${e.duree * 60}" title="Clic ou touche T : démarrer / pause">${mmss(e.duree)}</span>
       </div>`;
-      out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: enColonnes(e.contenu, 'slides'), n, total, meta }));
+      // Questions non projetées une à une : rappelées sur la diapo de l'activité (sans images ni choix de QCM),
+      // sauf si la consigne contient déjà un schéma, qui a besoin de toute la place.
+      const rappel = e.projeter || !e.questions.length || /!\[/.test(e.contenu) ? '' : `<ol class="act-questions">${e.questions.map((q) => {
+        const num = q.args.match(/^\d+/)?.[0] ?? '';
+        const texte = q.contenu.split('\n').filter((l) => !/^\s*(!\[|- \[)/.test(l)).join('\n').trim();
+        return `<li value="${num}">${rendre(texte, 'slides')}</li>`;
+      }).join('')}</ol>`;
+      out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: enColonnes(e.contenu, 'slides') + rappel, n, total, meta }));
       if (e.projeter) e.questions.forEach((q, k) => {
         const num = q.args.match(/^\d+/)?.[0] ?? '';
         out.push(diapo({
@@ -276,8 +283,8 @@ export function rendreDeroule(doc, seance, config, tActivite) {
         const num = q.args.match(/^\d+/)?.[0] ?? '?';
         return `<div class="deroule-corrige"><strong>Q${num}</strong><div>${q.reponse ? rendre(q.reponse.contenu, 'prof') : '<em>pas de corrigé</em>'}</div></div>`;
       }).join('');
-      contenu = `<div class="deroule-lancer">▶ LANCER l'activité ${e.numero} — ${esc(e.titre)}
-          <span>${e.duree} min${e.modalite ? ` · ${esc(MODALITES[e.modalite])}` : ''}${e.projeter ? ' · questions projetées' : ''}</span></div>
+      contenu = `<div class="deroule-lancer">Lancer l'activité ${e.numero} : ${esc(e.titre)}
+          <span>${e.duree} min${e.modalite ? `, ${esc(MODALITES[e.modalite])}` : ''}${e.projeter ? ', questions projetées' : ''}</span></div>
         <details open><summary>Consigne</summary><div class="deroule-consigne">${rendre(e.contenu, 'prof')}</div></details>
         ${notes(e)}
         ${corriges ? `<div class="deroule-corriges"><div class="deroule-sous-titre">Réponses attendues</div>${corriges}</div>` : ''}`;
@@ -336,10 +343,11 @@ export function corpsFiche(seance) {
   const parts = [];
   for (const e of seance.etapes) {
     if (e.type === 'expose' && e.fiche) {
-      parts.push(`### ${e.titre}\n\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}`);
+      // Blocs insécables : un schéma de référence ou l'en-tête d'une activité ne sont jamais coupés en bas de page
+      parts.push(`<section class="bloc-insecable">\n\n### ${e.titre}\n\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}\n\n</section>`);
     } else if (e.type === 'activite') {
-      const meta = [`⏱ ${e.duree} min`, e.modalite && MODALITES[e.modalite]].filter(Boolean).join(' · ');
-      parts.push(`## Activité ${e.numero} — ${e.titre}\n\n<p class="act-meta">${esc(meta)}</p>\n\n${e.contenu}`);
+      const meta = [`${e.duree} min`, e.modalite && MODALITES[e.modalite]].filter(Boolean).join(', ');
+      parts.push(`<section class="bloc-insecable">\n\n## Activité ${e.numero} : ${e.titre}\n\n<p class="act-meta">${esc(meta)}</p>\n\n${e.contenu}\n\n</section>`);
       for (const q of e.questions) parts.push(q.brut + (q.reponse ? `\n\n${q.reponse.brut}` : ''));
     } else if (e.type === 'retenir') {
       parts.push(`:::: retenir\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}\n::::`);

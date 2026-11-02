@@ -28,7 +28,7 @@ export async function ouvrirNavigateur(config) {
 
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const STYLE_MARGE = 'font-family:Segoe UI,Arial,sans-serif;font-size:7.5pt;color:#64748b;width:100%;padding:0 15mm;display:flex;justify-content:space-between;';
+const STYLE_MARGE = 'font-family:Calibri,Arial,sans-serif;font-size:8pt;color:#5c5c5c;width:100%;padding:0 15mm;display:flex;justify-content:space-between;';
 
 // format 'a4' / 'a4-paysage' : document avec en-tête / pied de page ; 'diapo' : pages 16:9 sans marge.
 // Renvoie la liste des diapos dont le contenu déborde (format 'diapo').
