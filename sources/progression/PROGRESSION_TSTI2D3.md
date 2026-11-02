@@ -22,10 +22,15 @@ sequences:
   - { ref: T0, semaines: 4, etat: fait }
   - ref: T1
     semaines: 7
-    etat: en-cours
-    evaluation: "TD noté « CO₂ d'une salle de classe » (mardi 13 octobre) + interrogation sur le CAN (sujet B, heure commune du vendredi 16 octobre)."
+    etat: fait
+    fin: 2026-10-16
+    evaluation: "Interrogation sur le CAN (sujet B, heure commune du vendredi 13 novembre, reportée à cause du blocus). Le TD « CO₂ d'une salle de classe » n'est plus noté : il reste un exercice d'entraînement."
     ressources: [TD_TermSIN_CAN_QualiteAir, EVAL_TermSIN_CAN]
-  - { ref: T2, semaines: 7 }
+  - ref: T2
+    semaines: 7
+    etat: en-cours
+    debut: 2026-11-03
+    ressources: [COURS_TermSIN_Lampadaire_Etats]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -43,6 +48,8 @@ journal:
     texte: "Blocus, distanciel : TP « Voyant Aérez ! » sur Wokwi (ESP32 en MicroPython, sans compte), application guidée de la remédiation CAN ; non noté, rendu obligatoire. Le TD noté sur le CO₂ est reporté au retour en présentiel."
   - date: 2026-10-16
     texte: "Blocus, distanciel. Heure commune avec D2 : entraînement autocorrigé sur le CAN (valeurs propres à chaque élève). Non noté, rendu obligatoire."
+  - date: 2026-11-02
+    texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close ; le TD noté sur le CO₂ est abandonné comme note (une seule note de connaissances : l'interrogation CAN, sujet B, à l'heure commune du vendredi 13 novembre). T2 démarre le mardi 3 novembre par la séance « lampadaire autonome », qui commence par une reprise du CAN. Heure commune : C0 terminée, C1 (réseau local) démarre le 6 novembre."
 ---
 
 ## Organisation

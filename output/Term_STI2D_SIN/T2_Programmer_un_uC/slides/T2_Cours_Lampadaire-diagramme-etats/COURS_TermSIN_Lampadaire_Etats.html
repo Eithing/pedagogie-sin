@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/sources/cours/">
+<title>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états) — Diapos</title>
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/highlight.js/styles/github.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/700.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/800.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/fira-code/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/templates/style.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/templates/slides.css">
+</head>
+<body class="presentation" style="--accent:#2563eb">
+<main class="diapos">
+<section class="diapo diapo-couverture">
+  <div class="couverture-texte">
+    <div class="couverture-bandeau">Lycée César Baggio · Term STI2D SIN</div>
+    <h1>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</h1>
+    <p class="couverture-accroche">Douze lampadaires allumés à fond toute la nuit pour une allée vide : la commune veut que ça change.</p>
+    <ul class="couverture-objectifs"><li>Calculer le quantum d'un CAN et le code N correspondant à une tension (révision)</li><li>Fixer un seuil de détection jour / nuit à partir de la documentation d'un capteur</li><li>Lire et compléter un diagramme d'états (états, transitions, événements, conditions)</li><li>Dérouler un scénario d'utilisation sur un diagramme d'états</li></ul>
+  </div>
+  <img class="titre-illustration" src="img/lampadaire/couverture.svg" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 21</span></footer>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Se poser la question</h2></div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>2 / 21</span></footer>
+  <div class="diapo-progression" style="--p:9.523809523809524%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>L'allée du lycée, la nuit</h2></header>
+  <div class="diapo-corps"><p><img src="img/lampadaire/couverture.svg" alt="" width="62%"></p>
+<blockquote>
+<p>L'allée qui mène au lycée compte <strong>12 lampadaires de 60 W</strong>, allumés à fond de 17 h 30 à 7 h 30 en hiver, même quand personne ne passe. La commune veut un éclairage <strong>autonome</strong> : en veille à 30 %, à fond seulement quand quelqu'un arrive.</p>
+</blockquote>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>3 / 21</span></footer>
+  <div class="diapo-progression" style="--p:14.285714285714285%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 1</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
+      </div>Échauffement CAN</h2></header>
+  <div class="diapo-corps"><p>Réponse à main levée, puis sur la fiche. C'est la révision de l'interrogation du vendredi 13 novembre.</p>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>4 / 21</span></footer>
+  <div class="diapo-progression" style="--p:19.047619047619047%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 1</h2></header>
+  <div class="diapo-corps"><p>Un CAN de 12 bits peut fournir…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>12 codes différents</li>
+<li class="choix"><span class="case"></span>1 024 codes différents</li>
+<li class="choix"><span class="case"></span>4 096 codes différents</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>5 / 21</span></footer>
+  <div class="diapo-progression" style="--p:23.809523809523807%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 2</h2></header>
+  <div class="diapo-corps"><p>Le quantum d'un CAN, c'est…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>sa tension maximale</li>
+<li class="choix"><span class="case"></span>la plus petite variation de tension qui fait changer le code</li>
+<li class="choix"><span class="case"></span>son nombre de bits</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>6 / 21</span></footer>
+  <div class="diapo-progression" style="--p:28.57142857142857%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 3</h2></header>
+  <div class="diapo-corps"><p>Si l'on passe de 10 à 12 bits, à pleine échelle égale, le quantum est…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>multiplié par 4</li>
+<li class="choix"><span class="case"></span>divisé par 4</li>
+<li class="choix"><span class="case"></span>inchangé</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>7 / 21</span></footer>
+  <div class="diapo-progression" style="--p:33.33333333333333%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Reprise : du capteur au nombre</h2></div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>8 / 21</span></footer>
+  <div class="diapo-progression" style="--p:38.095238095238095%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>La chaîne d'information du lampadaire</h2></header>
+  <div class="diapo-corps"><p><img src="img/lampadaire/chaine.svg" alt="" width="92%"></p>
+<ul>
+<li>Le CAN de l'ESP32 : <strong>12 bits</strong>, pleine échelle <strong>3,3 V</strong>.</li>
+<li><eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mtext>PE</mtext><msup><mn>2</mn><mi>n</mi></msup></mfrac></mstyle></mrow><annotation encoding="application/x-tex">q = \dfrac{\text{PE}}{2^n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5904em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">PE</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></eq> et <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mrow><mtext>partie enti</mtext><mover accent="true"><mtext>e</mtext><mo>ˋ</mo></mover><mtext>re de </mtext></mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mi>V</mi><mi>q</mi></mfrac></mstyle></mrow><annotation encoding="application/x-tex">N = \text{partie entière de } \dfrac{V}{q}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.2408em;vertical-align:-0.8804em;"></span><span class="mord text"><span class="mord">partie enti</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6944em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord">e</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">ˋ</span></span></span></span></span></span></span><span class="mord">re de </span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0359em;">q</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.2222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></eq> ; dans l'autre sens, <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>≈</mo><mi>N</mi><mo>×</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">V \approx N \times q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.2222em;">V</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">q</span></span></span></span></eq>.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>9 / 21</span></footer>
+  <div class="diapo-progression" style="--p:42.857142857142854%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="540" title="Clic ou touche T : démarrer / pause">09:00</span>
+      </div>Régler le seuil jour / nuit</h2></header>
+  <div class="diapo-corps"><p>La documentation du capteur indique qu'à la <strong>tombée de la nuit (10 lux)</strong>, il fournit <strong>2,75 V</strong>. Le lampadaire doit passer en mode nuit à partir de ce niveau. Calculatrice autorisée.</p>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>10 / 21</span></footer>
+  <div class="diapo-progression" style="--p:47.61904761904761%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Du besoin au comportement : le diagramme d'états</h2></div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>11 / 21</span></footer>
+  <div class="diapo-progression" style="--p:52.38095238095239%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Décrire un comportement : le diagramme d'états</h2></header>
+  <div class="diapo-corps"><p><img src="img/lampadaire/minuterie.svg" alt="" width="80%"></p>
+<ul>
+<li>Un <strong>état</strong> : une situation stable du système (ce qu'il fait tant que rien ne change).</li>
+<li>Une <strong>transition</strong> : le passage d'un état à un autre, déclenché par un <strong>événement</strong>, éventuellement soumis à une <strong>[condition]</strong>.</li>
+<li>C'est un diagramme <strong>SysML</strong> : on le dessine <strong>avant</strong> d'écrire le programme.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>12 / 21</span></footer>
+  <div class="diapo-progression" style="--p:57.14285714285714%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="600" title="Clic ou touche T : démarrer / pause">10:00</span>
+      </div>Le diagramme d'états du lampadaire</h2></header>
+  <div class="diapo-corps"><p><strong>Cahier des charges</strong> : le jour, lampe <strong>éteinte</strong> ; la nuit, <strong>veille à 30 %</strong> ; un piéton détecté → <strong>100 %</strong> pendant <strong>60 s</strong>, chaque nouvelle détection relançant les 60 s ; le jour revenu, elle s'éteint.</p>
+<figure class="figure"><div class="figure-contenu">
+<p><img src="img/lampadaire/etats-vierge.svg" alt="" width="60%"></p>
+</div><figcaption>Diagramme d'états à compléter</figcaption></figure>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>13 / 21</span></footer>
+  <div class="diapo-progression" style="--p:61.904761904761905%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le diagramme d'états du lampadaire</h2></header>
+  <div class="diapo-corps"><p><img src="img/lampadaire/etats.svg" alt=""></p>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>14 / 21</span></footer>
+  <div class="diapo-progression" style="--p:66.66666666666666%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 4</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+      </div>Dérouler un scénario</h2></header>
+  <div class="diapo-corps"><p>Une soirée de novembre : la nuit tombe à <strong>17 h 40</strong>. Inès passe dans l'allée à <strong>18 h 05 min 00 s</strong>, Tom à <strong>18 h 05 min 40 s</strong>. Le jour revient à <strong>7 h 50</strong>.</p>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>15 / 21</span></footer>
+  <div class="diapo-progression" style="--p:71.42857142857143%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>16 / 21</span></footer>
+  <div class="diapo-progression" style="--p:76.19047619047619%"></div>
+</section>
+<section class="diapo diapo-retenir" >
+  <header class="diapo-titre"><h2>À retenir</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Un CAN de <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></eq> bits fournit <mark class="trou-rempli">$2^n$</mark> codes ; son quantum vaut <mark class="trou-rempli">$q = \text{PE} / 2^n$</mark> et le code vaut <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></eq> = partie entière de <mark class="trou-rempli">$V / q$</mark>.</li>
+<li>Un seuil s'exprime en <strong>code</strong> : le programme compare la valeur lue <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></eq> au seuil <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mrow><mi>s</mi><mi>e</mi><mi>u</mi><mi>i</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{seuil}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">se</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.0197em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></eq>, en tenant compte du <mark class="trou-rempli">sens</mark> de variation du capteur.</li>
+<li>Un diagramme d'<mark class="trou-rempli">états</mark> décrit le comportement d'un système : des états stables, reliés par des <mark class="trou-rempli">transitions</mark>.</li>
+<li>Une transition est déclenchée par un <mark class="trou-rempli">événement</mark>, éventuellement soumis à une <mark class="trou-rempli">condition</mark> entre crochets.</li>
+<li>On écrit le diagramme d'états <strong>avant</strong> le programme : il sert de cahier des charges au programmeur.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>17 / 21</span></footer>
+  <div class="diapo-progression" style="--p:80.95238095238095%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 5</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
+      </div>Quiz de sortie</h2></header>
+  <div class="diapo-corps"></div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>18 / 21</span></footer>
+  <div class="diapo-progression" style="--p:85.71428571428571%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 11</h2></header>
+  <div class="diapo-corps"><p>Le CAN de l'ESP32 lit <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn><mtext> </mtext><mn>900</mn></mrow><annotation encoding="application/x-tex">N = 3\,900</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">900</span></span></span></span></eq>. D'après le seuil calculé, le lampadaire est…</p>
+<ul class="qcm qcm">
+<li class="choix"><span class="case"></span>en mode jour</li>
+<li class="choix"><span class="case"></span>en mode nuit (veille ou présence)</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>19 / 21</span></footer>
+  <div class="diapo-progression" style="--p:90.47619047619048%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 12</h2></header>
+  <div class="diapo-corps"><p>Dans un diagramme d'états, ce qui fait passer d'un état à un autre est…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>une action</li>
+<li class="choix"><span class="case"></span>un événement (avec éventuellement une condition)</li>
+<li class="choix"><span class="case"></span>un bloc</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>20 / 21</span></footer>
+  <div class="diapo-progression" style="--p:95.23809523809523%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 13</h2></header>
+  <div class="diapo-corps"><p>Combien de codes un CAN de 8 bits fournit-il ? Quel serait son quantum sous 3,3 V ?</p>
+</div>
+  <footer class="diapo-pied"><span>Le lampadaire autonome : du capteur au comportement (reprise du CAN, diagramme d'états)</span><span>21 / 21</span></footer>
+  <div class="diapo-progression" style="--p:100%"></div>
+</section>
+</main>
+<script>
+const d=[...document.querySelectorAll('.diapo')];let i=0;
+const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
+function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
+const minuteurs=new Map();
+function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+ minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
+  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
+addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
+addEventListener('keydown',e=>{
+ if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){voir(i+1);e.preventDefault();}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){voir(i-1);e.preventDefault();}
+ else if(e.key==='Home')voir(0);else if(e.key==='End')voir(d.length-1);
+ else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+ else if(e.key==='t'||e.key==='T')chrono(d[i]);});
+addEventListener('click',e=>{if(e.target.closest('.act-chrono')){chrono(d[i]);return;}voir(e.clientX>innerWidth/3?i+1:i-1);});
+</script>
+</body>
+</html>

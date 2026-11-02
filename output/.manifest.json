@@ -91,5 +91,42 @@
     "Term_STI2D_SIN/C0_Revisions_CAN/prof/C0_Distanciel_Entrainement-CAN/PRONOTE_AUTO_TermSIN_CAN_Entrainement.txt",
     "Term_STI2D_SIN/C0_Revisions_CAN/eleve/C0_Distanciel_Entrainement-CAN/REPONSES_AUTO_TermSIN_CAN_Entrainement.docx",
     "Term_STI2D_SIN/C0_Revisions_CAN/eleve/C0_Distanciel_Entrainement-CAN/entrainement_can.html"
+  ],
+  "sources/cours/COURS_SNT_Web_Reprise.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_Cours_Reprise-du-Web/ELEVE_COURS_SNT_Web_Reprise.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Reprise-du-Web/PROF_COURS_SNT_Web_Reprise.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Reprise-du-Web/DEROULE_COURS_SNT_Web_Reprise.pdf",
+    "2nde_SNT/S2_Le_Web/slides/S2_Cours_Reprise-du-Web/COURS_SNT_Web_Reprise.html",
+    "2nde_SNT/S2_Le_Web/slides/S2_Cours_Reprise-du-Web/SLIDES_COURS_SNT_Web_Reprise.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Reprise-du-Web/PRONOTE_COURS_SNT_Web_Reprise.txt"
+  ],
+  "sources/tp/TP_SNT_Web_PagePerso.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_TP_Ma-page-web-en-classe/ELEVE_TP_SNT_Web_PagePerso.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_TP_Ma-page-web-en-classe/PROF_TP_SNT_Web_PagePerso.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_TP_Ma-page-web-en-classe/PRONOTE_TP_SNT_Web_PagePerso.txt",
+    "2nde_SNT/S2_Le_Web/eleve/S2_TP_Ma-page-web-en-classe/editeur_web.html"
+  ],
+  "sources/cours/COURS_TermSIN_Lampadaire_Etats.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Cours_Lampadaire-diagramme-etats/ELEVE_COURS_TermSIN_Lampadaire_Etats.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-diagramme-etats/PROF_COURS_TermSIN_Lampadaire_Etats.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-diagramme-etats/DEROULE_COURS_TermSIN_Lampadaire_Etats.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-diagramme-etats/COURS_TermSIN_Lampadaire_Etats.html",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-diagramme-etats/SLIDES_COURS_TermSIN_Lampadaire_Etats.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-diagramme-etats/PRONOTE_COURS_TermSIN_Lampadaire_Etats.txt"
+  ],
+  "sources/cours/COURS_TermSIN_Reseau_Parking.md": [
+    "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Cours_Reseau-du-parking/ELEVE_COURS_TermSIN_Reseau_Parking.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Reseau-du-parking/PROF_COURS_TermSIN_Reseau_Parking.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Reseau-du-parking/DEROULE_COURS_TermSIN_Reseau_Parking.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/slides/C1_Cours_Reseau-du-parking/COURS_TermSIN_Reseau_Parking.html",
+    "Term_STI2D_SIN/C1_Reseau_local/slides/C1_Cours_Reseau-du-parking/SLIDES_COURS_TermSIN_Reseau_Parking.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Reseau-du-parking/PRONOTE_COURS_TermSIN_Reseau_Parking.txt"
+  ],
+  "sources/tp/TP_TermSIN_Lampadaire_Wokwi.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/ELEVE_TP_TermSIN_Lampadaire_Wokwi.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Lampadaire-Wokwi/PROF_TP_TermSIN_Lampadaire_Wokwi.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Lampadaire-Wokwi/PRONOTE_TP_TermSIN_Lampadaire_Wokwi.txt",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/diagram.json",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/lampadaire.py"
   ]
 }

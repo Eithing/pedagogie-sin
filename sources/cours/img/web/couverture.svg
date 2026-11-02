@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="640" height="400" fill="#f8fafc"/>
+  <!-- Téléphone -->
+  <rect x="40" y="60" width="170" height="300" rx="22" fill="#1e293b"/>
+  <rect x="52" y="82" width="146" height="256" rx="8" fill="#ffffff"/>
+  <text x="125" y="108" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Lycée — infos</text>
+  <rect x="64" y="122" width="122" height="10" rx="3" fill="#e2e8f0"/>
+  <rect x="64" y="140" width="96" height="10" rx="3" fill="#e2e8f0"/>
+  <rect x="64" y="168" width="122" height="38" rx="8" fill="#0d9488"/>
+  <text x="125" y="192" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Menu de la cantine</text>
+  <rect x="64" y="222" width="110" height="10" rx="3" fill="#e2e8f0"/>
+  <rect x="64" y="240" width="122" height="10" rx="3" fill="#e2e8f0"/>
+  <!-- Doigt (clic) -->
+  <circle cx="160" cy="200" r="16" fill="#ea580c" fill-opacity="0.25" stroke="#ea580c" stroke-width="2"/>
+  <text x="125" y="300" font-size="12" fill="#475569" text-anchor="middle">un clic…</text>
+
+  <!-- Nuage Internet -->
+  <path d="M262 214 q-6 -40 36 -42 q16 -34 58 -20 q34 -22 60 10 q40 0 36 40 q4 34 -36 34 h-120 q-40 0 -34 -22z" fill="#e0f2f1" stroke="#0d9488" stroke-width="2"/>
+  <text x="335" y="212" font-size="15" font-weight="700" fill="#0f766e" text-anchor="middle">Internet</text>
+  <text x="335" y="232" font-size="12" fill="#0f766e" text-anchor="middle">+ le Web</text>
+  <path d="M212 200 C 236 200 242 200 262 200" stroke="#ea580c" stroke-width="3" fill="none" marker-end="url(#f)"/>
+  <path d="M452 200 C 470 200 478 200 494 200" stroke="#ea580c" stroke-width="3" fill="none" marker-end="url(#f)"/>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <!-- Page affichée -->
+  <rect x="496" y="110" width="120" height="180" rx="10" fill="#ffffff" stroke="#15803d" stroke-width="2.5"/>
+  <text x="556" y="138" font-size="13" font-weight="700" fill="#15803d" text-anchor="middle">Menu</text>
+  <text x="556" y="156" font-size="12" fill="#334155" text-anchor="middle">lundi</text>
+  <text x="510" y="184" font-size="12" fill="#334155">• carottes</text>
+  <text x="510" y="204" font-size="12" fill="#334155">• poulet frites</text>
+  <text x="510" y="224" font-size="12" fill="#334155">• yaourt</text>
+  <text x="556" y="270" font-size="12" fill="#15803d" text-anchor="middle">la page s'affiche</text>
+
+  <text x="320" y="42" font-size="20" font-weight="800" fill="#0f172a" text-anchor="middle">Un clic, une page… en 0,3 seconde</text>
+  <text x="320" y="330" font-size="14" fill="#334155" text-anchor="middle">Que s'est-il passé entre le clic et l'affichage ?</text>
+</svg>

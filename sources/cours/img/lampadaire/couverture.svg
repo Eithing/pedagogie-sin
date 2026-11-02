@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="640" height="400" fill="#0f172a"/>
+  <circle cx="560" cy="64" r="28" fill="#e2e8f0"/>
+  <circle cx="572" cy="56" r="26" fill="#0f172a"/>
+  <!-- Sol et allée -->
+  <rect y="300" width="640" height="100" fill="#1e293b"/>
+  <path d="M0 330 L640 316 L640 352 L0 372z" fill="#334155"/>
+  <!-- Lampadaire 1 : veille 30 % -->
+  <path d="M90 300 L90 150 Q90 136 104 136 L132 136" stroke="#94a3b8" stroke-width="6" fill="none"/>
+  <rect x="122" y="132" width="34" height="10" rx="4" fill="#94a3b8"/>
+  <path d="M126 142 L94 300 L190 300 L152 142z" fill="#fde68a" fill-opacity="0.18"/>
+  <text x="139" y="122" font-size="13" fill="#bfdbfe" text-anchor="middle">30 %</text>
+  <!-- Lampadaire 2 : présence 100 % -->
+  <path d="M300 300 L300 150 Q300 136 314 136 L342 136" stroke="#94a3b8" stroke-width="6" fill="none"/>
+  <rect x="332" y="132" width="34" height="10" rx="4" fill="#fbbf24"/>
+  <path d="M336 142 L280 300 L420 300 L362 142z" fill="#fde68a" fill-opacity="0.55"/>
+  <text x="349" y="122" font-size="13" font-weight="700" fill="#fdba74" text-anchor="middle">100 %</text>
+  <!-- Piéton -->
+  <circle cx="352" cy="236" r="9" fill="#ea580c"/>
+  <path d="M352 246 L352 276 M352 256 L340 266 M352 256 L364 264 M352 276 L342 298 M352 276 L362 298" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+  <!-- Lampadaire 3 : veille 30 % -->
+  <path d="M510 300 L510 150 Q510 136 524 136 L552 136" stroke="#94a3b8" stroke-width="6" fill="none"/>
+  <rect x="542" y="132" width="34" height="10" rx="4" fill="#94a3b8"/>
+  <path d="M546 142 L514 300 L610 300 L572 142z" fill="#fde68a" fill-opacity="0.18"/>
+  <text x="559" y="122" font-size="13" fill="#bfdbfe" text-anchor="middle">30 %</text>
+
+  <text x="320" y="42" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">L'allée du lycée, 22 h</text>
+  <text x="320" y="68" font-size="14" fill="#cbd5e1" text-anchor="middle">Allumée à fond quand quelqu'un passe, en veille le reste de la nuit</text>
+</svg>

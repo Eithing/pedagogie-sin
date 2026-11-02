@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="720" height="330" fill="#ffffff"/>
+  <text x="360" y="26" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">Diagramme d'états du lampadaire</text>
+
+  <!-- Etat initial -->
+  <circle cx="30" cy="92" r="9" fill="#0f172a"/>
+  <path d="M38 98 L84 128" stroke="#334155" stroke-width="2" marker-end="url(#p)"/>
+
+  
+  <rect x="20" y="130" width="160" height="76" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+  <text x="100" y="160" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Jour</text>
+  <line x1="32" y1="170" x2="168" y2="170" stroke="#64748b" stroke-width="1"/>
+  <text x="100" y="192" font-size="13" fill="#334155" text-anchor="middle">lampe éteinte (0 %)</text>
+  
+  <rect x="280" y="130" width="160" height="76" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="360" y="160" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Veille de nuit</text>
+  <line x1="292" y1="170" x2="428" y2="170" stroke="#2563eb" stroke-width="1"/>
+  <text x="360" y="192" font-size="13" fill="#334155" text-anchor="middle">lampe à 30 %</text>
+  
+  <rect x="540" y="130" width="160" height="76" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="620" y="160" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Présence</text>
+  <line x1="552" y1="170" x2="688" y2="170" stroke="#ea580c" stroke-width="1"/>
+  <text x="620" y="192" font-size="13" fill="#334155" text-anchor="middle">lampe à 100 %</text>
+
+  <!-- Jour -> Veille (haut) -->
+  <path d="M160 130 C 190 84, 250 84, 284 130" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="220" y="76" font-size="12.5" fill="#1d4ed8" text-anchor="middle">Ⓐ ……………………</text>
+  <!-- Veille -> Jour (bas) -->
+  <path d="M284 206 C 250 254, 190 254, 160 206" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="220" y="272" font-size="12.5" fill="#1d4ed8" text-anchor="middle">Ⓑ ……………………</text>
+  <!-- Veille -> Presence (haut) -->
+  <path d="M420 130 C 450 84, 510 84, 544 130" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="480" y="76" font-size="12.5" fill="#c2410c" text-anchor="middle">Ⓒ ……………………</text>
+  <!-- Presence -> Veille (bas) -->
+  <path d="M544 206 C 510 254, 450 254, 420 206" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="480" y="272" font-size="12.5" fill="#c2410c" text-anchor="middle">Ⓓ ……………………</text>
+  <!-- Boucle sur Presence -->
+  <path d="M600 130 C 590 70, 690 70, 680 140" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="640" y="56" font-size="12.5" fill="#c2410c" text-anchor="middle">Ⓔ ……………………</text>
+
+  <text x="360" y="312" font-size="12" fill="#475569" text-anchor="middle">Une transition s'écrit : événement [condition] / action.</text>
+</svg>

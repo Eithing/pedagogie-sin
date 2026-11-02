@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Le Web — TP : ma page web en HTML et CSS (en classe)
+
+Description :
+S2 Le Web, TP en demi-groupe au lycée : créer une page web personnelle en séparant le contenu (HTML) du style (CSS), avec liens hypertextes et image sous licence. Noté sur grille (note de travail).

@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Le Web — Séance : du clic à la page (URL, client / serveur, HTTP)
+
+Description :
+S2 Le Web, retour en présentiel : reprise de la découverte faite à distance (Internet et le Web, URL), puis dialogue client / serveur et requête HTTP ; révision express d'Internet avant l'interrogation. Non noté.

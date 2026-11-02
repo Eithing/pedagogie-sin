@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="700" height="280" fill="#ffffff"/>
+  <text x="350" y="24" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">Chaîne d'information du lampadaire</text>
+
+  <!-- Bandeaux fonctions -->
+  <text x="110" y="52" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">ACQUÉRIR</text>
+  <text x="400" y="52" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">TRAITER</text>
+  <text x="615" y="52" font-size="12" font-weight="700" fill="#ea580c" text-anchor="middle">AGIR</text>
+
+  <!-- Capteur de lumiere -->
+  <rect x="20" y="70" width="140" height="62" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="90" y="96" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Capteur de lumière</text>
+  <text x="90" y="116" font-size="12" fill="#334155" text-anchor="middle">plus il fait sombre,</text>
+  <text x="90" y="129" font-size="12" fill="#334155" text-anchor="middle">plus V est grande</text>
+  <!-- PIR -->
+  <rect x="20" y="170" width="140" height="62" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="90" y="196" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Détecteur PIR</text>
+  <text x="90" y="216" font-size="12" fill="#334155" text-anchor="middle">présence : 0 ou 1</text>
+
+  <!-- CAN -->
+  <path d="M160 101 L222 101" stroke="#334155" stroke-width="2" marker-end="url(#f)"/>
+  <text x="191" y="93" font-size="12" fill="#1d4ed8" text-anchor="middle">tension V</text>
+  <rect x="224" y="70" width="96" height="62" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="272" y="96" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">CAN</text>
+  <text x="272" y="116" font-size="12" fill="#334155" text-anchor="middle">12 bits, 3,3 V</text>
+
+  <!-- Programme -->
+  <path d="M320 101 L382 101" stroke="#334155" stroke-width="2" marker-end="url(#f)"/>
+  <text x="351" y="93" font-size="12" fill="#1d4ed8" text-anchor="middle">code N</text>
+  <path d="M160 201 L382 201" stroke="#334155" stroke-width="2" marker-end="url(#f)"/>
+  <text x="272" y="193" font-size="12" fill="#1d4ed8" text-anchor="middle">entrée logique</text>
+  <rect x="384" y="70" width="150" height="162" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <text x="459" y="100" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Microcontrôleur</text>
+  <text x="459" y="118" font-size="12" fill="#334155" text-anchor="middle">ESP32</text>
+  <text x="459" y="148" font-size="12" fill="#334155" text-anchor="middle">le programme</text>
+  <text x="459" y="164" font-size="12" fill="#334155" text-anchor="middle">compare N au seuil,</text>
+  <text x="459" y="180" font-size="12" fill="#334155" text-anchor="middle">lit le PIR, compte</text>
+  <text x="459" y="196" font-size="12" fill="#334155" text-anchor="middle">le temps et choisit</text>
+  <text x="459" y="212" font-size="12" fill="#334155" text-anchor="middle">l'état du lampadaire</text>
+
+  <!-- Lampe -->
+  <path d="M534 151 L566 151" stroke="#334155" stroke-width="2" marker-end="url(#f)"/>
+  <text x="550" y="143" font-size="12" fill="#c2410c" text-anchor="middle">PWM</text>
+  <rect x="568" y="110" width="112" height="82" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="624" y="140" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Lampe LED</text>
+  <text x="624" y="160" font-size="12" fill="#334155" text-anchor="middle">0 %, 30 %</text>
+  <text x="624" y="176" font-size="12" fill="#334155" text-anchor="middle">ou 100 %</text>
+
+  <text x="350" y="266" font-size="12" fill="#475569" text-anchor="middle">q = PE / 2ⁿ  et  N = partie entière de V / q</text>
+</svg>

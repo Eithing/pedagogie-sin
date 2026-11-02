@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+C1 Mettre en réseau des objets — Séance : le réseau du parking connecté (constituants, adresses MAC et IP, masque, Filius)
+
+Description :
+C1, heure commune D2 + D3, retour en présentiel : constituants d'un réseau local (switch, routeur), adresses MAC et IPv4, masque /24, puis construction du réseau sur Filius et test par ping. Non noté ; échauffement CAN avant l'interrogation du 13 novembre.

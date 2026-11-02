@@ -17,7 +17,7 @@ consignes:
 ---
 
 ::: prof
-**Mise en œuvre (vendredi 16 octobre)** : sujet **A** pour TSTI2D1 (1re heure), sujet **B** pour l'heure commune TSTI2D2 + TSTI2D3 (2e heure). Les deux sujets ont la même structure et le même barème ; les valeurs changent, ce qui neutralise la transmission des réponses entre les deux heures.
+**Mise en œuvre (vendredi 13 novembre, reportée deux fois à cause du blocus)** : sujet **A** pour TSTI2D1 (12 h), sujet **B** pour l'heure commune TSTI2D2 + TSTI2D3 (13 h). Révisions faites la semaine du 2 novembre : échauffements et calculs de la séance « lampadaire » (D1, D3), échauffement de la séance « parking connecté » (heure commune), partie A du TP lampadaire (D2). Les deux sujets ont la même structure et le même barème ; les valeurs changent, ce qui neutralise la transmission des réponses entre les deux heures.
 
 **Convention** : quantum $q = \dfrac{\text{PE}}{2^n}$ et code $N$ = partie entière de $\dfrac{V_{in}}{q}$, comme dans la documentation Arduino. Si le cours a utilisé $2^n - 1$, les résultats diffèrent de moins de 0,5 % : accepter les deux conventions si elles sont appliquées de façon cohérente.
 

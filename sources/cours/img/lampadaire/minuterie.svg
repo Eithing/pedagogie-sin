@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 220" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="560" height="220" fill="#ffffff"/>
+  <text x="280" y="22" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">Exemple : la minuterie de l'escalier du bâtiment B</text>
+  <circle cx="34" cy="112" r="9" fill="#0f172a"/>
+  <path d="M43 112 L86 112" stroke="#334155" stroke-width="2" marker-end="url(#p)"/>
+  <rect x="88" y="80" width="150" height="66" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+  <text x="163" y="108" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Éteinte</text>
+  <text x="163" y="130" font-size="12" fill="#334155" text-anchor="middle">lampe = 0</text>
+  <rect x="370" y="80" width="150" height="66" rx="18" fill="#fff7ed" stroke="#ea580c" stroke-width="2.5"/>
+  <text x="445" y="108" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Allumée</text>
+  <text x="445" y="130" font-size="12" fill="#334155" text-anchor="middle">lampe = 1</text>
+  <path d="M238 96 C 280 60, 330 60, 370 96" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="304" y="56" font-size="12.5" fill="#c2410c" text-anchor="middle">appui sur le bouton</text>
+  <path d="M370 132 C 330 168, 280 168, 238 132" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#p)"/>
+  <text x="304" y="184" font-size="12.5" fill="#c2410c" text-anchor="middle">après 3 min</text>
+  <text x="280" y="210" font-size="12" fill="#475569" text-anchor="middle">état = rectangle arrondi · transition = flèche + événement qui la déclenche</text>
+</svg>

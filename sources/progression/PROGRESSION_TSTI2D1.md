@@ -20,9 +20,14 @@ sequences:
   - { ref: T0, semaines: 4, etat: fait }
   - ref: T1
     semaines: 7
+    etat: fait
+    fin: 2026-10-16
+    evaluation: "Interrogation sur le CAN (sujet A), vendredi 13 novembre (reportée à cause du blocus)."
+  - ref: T2
+    semaines: 7
     etat: en-cours
-    evaluation: "Interrogation sur le CAN (sujet A), vendredi 16 octobre."
-  - { ref: T2, semaines: 7 }
+    debut: 2026-11-06
+    ressources: [COURS_TermSIN_Lampadaire_Etats]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -40,6 +45,8 @@ journal:
     texte: "Blocus : cours en distanciel. Remédiation CAN en autonomie (« Le CAN pas à pas », simulateur de CAN sans compte), non notée. Le cours était allé trop vite pour la majorité. L'interrogation CAN (sujet A) est reportée au retour en présentiel."
   - date: 2026-10-16
     texte: "Blocus, distanciel : TP « Voyant Aérez ! » sur Wokwi (ESP32 en MicroPython), application de la remédiation CAN. Non noté, rendu obligatoire."
+  - date: 2026-11-02
+    texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close (cours fait avant le blocus, remédiation à distance) ; l'interrogation CAN (sujet A) est fixée au vendredi 13 novembre. T2 démarre le 6 novembre par la séance « lampadaire autonome », qui commence par une reprise du CAN."
 ---
 
 ## Organisation

@@ -1,0 +1,13 @@
+﻿=== TSTI2D3 (mardi 3 novembre) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Séance : le lampadaire autonome (reprise du CAN, diagramme d'états)
+
+Description :
+T2, retour en présentiel : reprise du CAN sur le capteur de lumière d'un lampadaire (quantum, seuil, code N), puis description de son comportement par un diagramme d'états. Non noté ; prépare l'interrogation CAN du vendredi 13 novembre.
+
+=== TSTI2D1 (vendredi 6 novembre) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Séance : le lampadaire autonome (reprise du CAN, diagramme d'états)
+
+Description :
+T2, retour en présentiel : reprise du CAN sur le capteur de lumière d'un lampadaire (quantum, seuil, code N), puis description de son comportement par un diagramme d'états. Non noté ; prépare l'interrogation CAN du vendredi 13 novembre.

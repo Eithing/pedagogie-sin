@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T2 Traiter l'information par programme — TP : le lampadaire autonome sur ESP32 (Wokwi)
+
+Description :
+T2, TP de 3 h au lycée : reprise du CAN sur un capteur de lumière (code, tension, seuil), hystérésis, détecteur de présence et temporisation non bloquante, programmation d'un diagramme d'états en MicroPython sur Wokwi. Non noté (barème d'auto-évaluation).

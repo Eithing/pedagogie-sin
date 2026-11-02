@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/sources/cours/">
+<title>Du clic à la page : le Web, l'URL et le dialogue client / serveur — Diapos</title>
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/highlight.js/styles/github.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/700.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/800.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/fira-code/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/templates/style.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/templates/slides.css">
+</head>
+<body class="presentation" style="--accent:#0d9488">
+<main class="diapos">
+<section class="diapo diapo-couverture">
+  <div class="couverture-texte">
+    <div class="couverture-bandeau">Lycée César Baggio · SNT (2nde)</div>
+    <h1>Du clic à la page : le Web, l'URL et le dialogue client / serveur</h1>
+    <p class="couverture-accroche">Tu cliques sur « Menu de la cantine » et la page s'affiche en 0,3 seconde. Qui a parlé à qui ?</p>
+    <ul class="couverture-objectifs"><li>Distinguer Internet (le réseau) et le Web (un service qui l'utilise)</li><li>Décomposer une URL et reconnaître une adresse sécurisée</li><li>Décrire les étapes entre un clic et l'affichage d'une page (DNS, requête, réponse)</li><li>Lire une requête HTTP et identifier la page demandée et ses paramètres</li></ul>
+  </div>
+  <img class="titre-illustration" src="img/web/couverture.svg" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 25</span></footer>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Repartir de ce qu'on sait</h2></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>2 / 25</span></footer>
+  <div class="diapo-progression" style="--p:8%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Un clic, une page</h2></header>
+  <div class="diapo-corps"><p><img src="img/web/couverture.svg" alt="" width="78%"></p>
+<blockquote>
+<p>Lundi, 11 h 50. Inès clique sur « Menu de la cantine » sur son téléphone. La page s'affiche en <strong>0,3 seconde</strong>. Qui a parlé à qui pendant ce temps ?</p>
+</blockquote>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>3 / 25</span></footer>
+  <div class="diapo-progression" style="--p:12%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 1</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Internet : ce que je sais encore</h2></header>
+  <div class="diapo-corps"><p>Répondez à main levée, puis cochez sur la fiche. C'est la révision de l'interrogation de la semaine prochaine.</p>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>4 / 25</span></footer>
+  <div class="diapo-progression" style="--p:16%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 1</h2></header>
+  <div class="diapo-corps"><p>Une photo envoyée sur Internet voyage…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>en un seul bloc</li>
+<li class="choix"><span class="case"></span>découpée en paquets qui portent l'adresse IP du destinataire</li>
+<li class="choix"><span class="case"></span>uniquement par satellite</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>5 / 25</span></footer>
+  <div class="diapo-progression" style="--p:20%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 2</h2></header>
+  <div class="diapo-corps"><p>Quel protocole remet les paquets dans l'ordre et redemande ceux qui sont perdus ?</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>IP</li>
+<li class="choix"><span class="case"></span>TCP</li>
+<li class="choix"><span class="case"></span>DNS</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>6 / 25</span></footer>
+  <div class="diapo-progression" style="--p:24%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 3</h2></header>
+  <div class="diapo-corps"><p>Un serveur DNS sert à…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>stocker les pages web</li>
+<li class="choix"><span class="case"></span>traduire un nom de domaine en adresse IP</li>
+<li class="choix"><span class="case"></span>accélérer la connexion</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>7 / 25</span></footer>
+  <div class="diapo-progression" style="--p:28.000000000000004%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 4</h2></header>
+  <div class="diapo-corps"><p><code>192.168.1.256</code> est-elle une adresse IPv4 valide ?</p>
+<ul class="qcm qcm">
+<li class="choix"><span class="case"></span>oui</li>
+<li class="choix"><span class="case"></span>non</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>8 / 25</span></footer>
+  <div class="diapo-progression" style="--p:32%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Le Web n'est pas Internet</h2></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>9 / 25</span></footer>
+  <div class="diapo-progression" style="--p:36%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Internet transporte, le Web est transporté</h2></header>
+  <div class="diapo-corps"><div class="colonnes"><div><p><img src="../autonomie/img/web/internet-web.svg" alt="" width="70%"></p>
+</div><div><ul>
+<li><strong>Internet</strong> : le réseau de réseaux (routeurs, câbles, TCP/IP).</li>
+<li><strong>Le Web</strong> : <em>un</em> service d'Internet, des <strong>pages</strong> reliées par des <strong>liens hypertextes</strong>.</li>
+<li>Trois inventions de <strong>Tim Berners-Lee</strong> (CERN, <strong>1989</strong>) : <strong>HTML</strong> (écrire les pages), <strong>URL</strong> (leur adresse), <strong>HTTP</strong> (les demander).</li>
+<li><strong>1993</strong> : le CERN rend le Web <strong>libre et gratuit</strong> → il se répand partout.</li>
+</ul>
+</div></div></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>10 / 25</span></footer>
+  <div class="diapo-progression" style="--p:40%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Internet ou Web ?</h2></header>
+  <div class="diapo-corps"><p>Pour chaque usage, dites s'il passe par le <strong>Web</strong> (des pages, dans un navigateur) ou seulement par <strong>Internet</strong> (sans pages web).</p>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>11 / 25</span></footer>
+  <div class="diapo-progression" style="--p:44%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Lire une adresse : l'URL</h2></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>12 / 25</span></footer>
+  <div class="diapo-progression" style="--p:48%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Les parties d'une URL</h2></header>
+  <div class="diapo-corps"><p><img src="../autonomie/img/web/url.svg" alt=""></p>
+<ul>
+<li><strong>Protocole</strong> : <code>https</code> = HTTP <strong>sécurisé</strong> (échanges chiffrés), le cadenas du navigateur.</li>
+<li><strong>Nom de domaine</strong> : le serveur qui héberge la page, traduit en adresse IP par le <strong>DNS</strong>.</li>
+<li><strong>Chemin</strong> : la page demandée sur ce serveur.</li>
+<li><strong>Paramètres</strong> (après le <code>?</code>) : des précisions envoyées au serveur, sous la forme <code>nom=valeur</code>.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>13 / 25</span></footer>
+  <div class="diapo-progression" style="--p:52%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Décomposer des URL</h2></header>
+  <div class="diapo-corps"></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>14 / 25</span></footer>
+  <div class="diapo-progression" style="--p:56.00000000000001%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Le dialogue client / serveur</h2></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>15 / 25</span></footer>
+  <div class="diapo-progression" style="--p:60%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 4</span>
+        <span class="act-modalite">Classe entière</span>
+        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+      </div>Le clic, au ralenti</h2></header>
+  <div class="diapo-corps"><p>Quatre volontaires jouent la scène devant la classe : <strong>le navigateur d'Inès</strong>, <strong>le serveur DNS</strong>, <strong>le serveur web de la cantine</strong> et <strong>l'écran du téléphone</strong>. Les autres notent, dans l'ordre, chaque message échangé : qui parle, à qui, pour dire quoi.</p>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>16 / 25</span></footer>
+  <div class="diapo-progression" style="--p:64%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le modèle client / serveur et HTTP</h2></header>
+  <div class="diapo-corps"><p><img src="img/web/dialogue-http.svg" alt="" width="88%"></p>
+<ul>
+<li>Le <strong>client</strong> (le navigateur) <strong>demande</strong> ; le <strong>serveur</strong> <strong>répond</strong>.</li>
+<li>La demande est une <strong>requête HTTP</strong> ; la réponse contient un <strong>code</strong> (<code>200 OK</code> : tout va bien, <code>404 Not Found</code> : page introuvable) et le <strong>code HTML</strong> de la page.</li>
+<li>Le serveur <strong>envoie</strong> la page ; le navigateur l'<strong>affiche</strong> : il lit le HTML et le CSS.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>17 / 25</span></footer>
+  <div class="diapo-progression" style="--p:68%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 5</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Lire une requête HTTP</h2></header>
+  <div class="diapo-corps"><p>Voici la requête envoyée par le navigateur d'Inès, telle qu'on la voit dans les outils de développement du navigateur.</p>
+<pre class="hljs langue-text"><code>GET /menu.html?jour=lundi HTTP/1.1
+Host: cantine.lycee-exemple.fr
+User-Agent: Mozilla/5.0 (Android 14) Firefox/131.0
+Accept-Language: fr
+</code></pre>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>18 / 25</span></footer>
+  <div class="diapo-progression" style="--p:72%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>19 / 25</span></footer>
+  <div class="diapo-progression" style="--p:76%"></div>
+</section>
+<section class="diapo diapo-retenir" >
+  <header class="diapo-titre"><h2>À retenir</h2></header>
+  <div class="diapo-corps"><ul>
+<li><strong>Internet</strong> est un réseau de réseaux ; le <strong>Web</strong> est un <mark class="trou-rempli">service</mark> d'Internet, formé de pages reliées par des liens <mark class="trou-rempli">hypertextes</mark>.</li>
+<li>Le Web a été inventé en <mark class="trou-rempli">1989</mark> au CERN par Tim Berners-Lee, à partir de trois éléments : <mark class="trou-rempli">HTML</mark>, l'URL et <mark class="trou-rempli">HTTP</mark>.</li>
+<li>Une URL se décompose en : protocole (<code>https</code> = <mark class="trou-rempli">sécurisé</mark>), <mark class="trou-rempli">nom de domaine</mark> (traduit en adresse IP par le DNS), chemin, et <mark class="trou-rempli">paramètres</mark> après le <code>?</code>.</li>
+<li>Dans le modèle <mark class="trou-rempli">client / serveur</mark>, le navigateur envoie une <mark class="trou-rempli">requête</mark> HTTP ; le serveur renvoie un code (<code>200</code>, <code>404</code>…) et le code HTML de la page, que le navigateur affiche.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>20 / 25</span></footer>
+  <div class="diapo-progression" style="--p:80%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 6</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="240" title="Clic ou touche T : démarrer / pause">04:00</span>
+      </div>Quiz de sortie</h2></header>
+  <div class="diapo-corps"></div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>21 / 25</span></footer>
+  <div class="diapo-progression" style="--p:84%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 6</span> Question 12</h2></header>
+  <div class="diapo-corps"><p>Dans <code>https://fr.wikipedia.org/wiki/Judo</code>, le nom de domaine est…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span><code>https</code></li>
+<li class="choix"><span class="case"></span><code>fr.wikipedia.org</code></li>
+<li class="choix"><span class="case"></span><code>/wiki/Judo</code></li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>22 / 25</span></footer>
+  <div class="diapo-progression" style="--p:88%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 6</span> Question 13</h2></header>
+  <div class="diapo-corps"><p>Le code <code>404</code> renvoyé par un serveur signifie…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>la page est sécurisée</li>
+<li class="choix"><span class="case"></span>la page demandée est introuvable</li>
+<li class="choix"><span class="case"></span>le serveur est en panne</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>23 / 25</span></footer>
+  <div class="diapo-progression" style="--p:92%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 6</span> Question 14</h2></header>
+  <div class="diapo-corps"><p>Jouer en ligne sur une console, c'est utiliser…</p>
+<ul class="qcm qcm">
+<li class="choix"><span class="case"></span>Internet, sans forcément le Web</li>
+<li class="choix"><span class="case"></span>le Web, sans Internet</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>24 / 25</span></footer>
+  <div class="diapo-progression" style="--p:96%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>La semaine prochaine</h2></header>
+  <div class="diapo-corps"><ul>
+<li><strong>Interrogation sur le thème Internet</strong> (25 min) : paquets, IP et TCP, adresses IPv4, DNS, routage. Révisez avec la fiche « Paquets, adresses IP et TCP » et les questions 1 à 4 d'aujourd'hui.</li>
+<li><strong>TP en demi-groupe</strong> : votre page web en HTML et CSS, au lycée.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du clic à la page : le Web, l'URL et le dialogue client / serveur</span><span>25 / 25</span></footer>
+  <div class="diapo-progression" style="--p:100%"></div>
+</section>
+</main>
+<script>
+const d=[...document.querySelectorAll('.diapo')];let i=0;
+const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
+function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
+const minuteurs=new Map();
+function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+ minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
+  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
+addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
+addEventListener('keydown',e=>{
+ if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){voir(i+1);e.preventDefault();}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){voir(i-1);e.preventDefault();}
+ else if(e.key==='Home')voir(0);else if(e.key==='End')voir(d.length-1);
+ else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+ else if(e.key==='t'||e.key==='T')chrono(d[i]);});
+addEventListener('click',e=>{if(e.target.closest('.act-chrono')){chrono(d[i]);return;}voir(e.clientX>innerWidth/3?i+1:i-1);});
+</script>
+</body>
+</html>

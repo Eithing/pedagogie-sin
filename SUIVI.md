@@ -2,6 +2,20 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## État au 2 novembre 2026 (rentrée de la Toussaint)
+
+### Semaine du 2 novembre : retour en présentiel
+- **Constat** : environ 3 élèves sur 4 n'ont rien rendu du travail à distance. Les tensions continuent et beaucoup d'élèves sont absents, mais il faut faire cours en présentiel au maximum. Chaque fiche d'activités est donc autosuffisante, pour être déposée sur l'ENT à l'intention des absents.
+- **PC fixe reformaté** et réinstallé le 2 novembre : Node 24, Git, Chrome, `npm install`. Sur ce poste, `npm` marche directement (politique d'exécution RemoteSigned). Reste à faire une fois : `git push` pour se connecter à GitHub.
+- **2nde** :
+  - `COURS_SNT_Web_Reprise` (classe entière) : révision express d'Internet, reprise de la découverte du Web (Internet ≠ Web, repères, URL), puis client / serveur et requête HTTP, avec un jeu de rôle « le clic au ralenti » ;
+  - `TP_SNT_Web_PagePerso` : le TP « page web » refait au lycée en demi-groupe, noté sur grille (note de travail) ; ceux qui l'avaient rendu passent à « Pour aller plus loin ».
+- **D1 (vendredi 12 h) et D3 (mardi)** : `COURS_TermSIN_Lampadaire_Etats`, une même séance pour les deux classes. Elle ouvre T2 (lampadaire autonome) par une reprise du CAN (seuil jour / nuit), puis le diagramme d'états.
+- **Heure commune D2 + D3** : `COURS_TermSIN_Reseau_Parking`, qui ouvre C1 : switch / routeur, adresses MAC et IP, masque /24, puis Filius et ping (**vérifier que Filius est installé au labo**).
+- **D2, bloc de 3 h** : `TP_TermSIN_Lampadaire_Wokwi` (MicroPython, capteur de lumière + PIR, hystérésis, machine à états, temporisation non bloquante). Non noté. **À tester une fois sur Wokwi** : les codes N du corrigé sont calculés d'après la documentation du module, pas mesurés.
+- **Évaluations de la semaine du 9 novembre** : interro Internet (2nde, sujets A/B, heure en classe entière) ; interro CAN le **vendredi 13 novembre** (sujet A pour D1 à 12 h, sujet B pour l'heure commune D2 + D3 à 13 h). Le **TD noté CO₂ des D3 est abandonné** comme note.
+- Progressions : T1 et C0 closes au 16 octobre ; T2 en cours depuis le 3 novembre (D3) ou le 6 novembre (D1, D2) ; C1 en cours depuis le 6 novembre.
+
 ## État au 14 octobre 2026
 
 ### Fait
@@ -39,7 +53,9 @@ Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, porta
 - **Convention CAN** : q = PE / 2ⁿ (les deux conventions acceptées à la correction).
 
 ### En attente (à demander ou à confirmer)
-- Retour sur les séances du 9, 13 et 16 octobre en distanciel : taux de rendu, difficultés avec l'éditeur (téléphone ?), date du retour en présentiel (pour l'interro Internet).
+- Bilan de la semaine du 2 novembre : comment se sont passées les séances, qui était absent, et faut-il décaler les interros du 9 au 13 novembre ?
+- 2nde : jour et heure exacts de l'heure en classe entière et du TP, et quel demi-groupe a TP cette semaine.
+- Les D1 : que faire du TP « Voyant Aérez ! » donné à distance (le reprendre en classe ou l'abandonner) ?
 - Tinkercad : vérifier que les circuits des D2 sont visibles depuis l'espace classe (sinon, demander le lien de partage). D1 et D3 n'ont pas d'accès Tinkercad : en créer un si on veut leur faire faire des TP en simulation (Wokwi est une alternative sans compte).
 - QCM Pronote : l'enseignant ne le maîtrise pas encore. Proposer un guide pas à pas, ou des QCM prêts à saisir.
 - Dates des séances perdues pendant le blocus de début octobre, à saisir en `annulations:` dans les progressions.

@@ -165,6 +165,7 @@ sequences:
         - "Calcul d'adresses de réseau ; circulation des trames"
     outils: [Filius, Packet Tracer]
     evaluation: "TP noté en binôme : configurer un réseau simulé selon un cahier des charges."
+    ressources: [COURS_TermSIN_Reseau_Parking]
 
   - id: C2
     titre: Échanger des données en client/serveur
@@ -219,8 +220,8 @@ pistes_partagees:
     creneaux:
       - { jour: vendredi, heures: 1, libelle: "Vendredi midi, 1 h, TSTI2D2 + TSTI2D3 regroupées (26 élèves, labo, 1 poste pour 2)" }
     sequences:
-      - { ref: C0, semaines: 7, etat: en-cours }
-      - { ref: C1, semaines: 7 }
+      - { ref: C0, semaines: 7, etat: fait, fin: 2026-10-16 }
+      - { ref: C1, semaines: 7, etat: en-cours, debut: 2026-11-06 }
       - { ref: C2, semaines: 7 }
       - { ref: C3, semaines: 6 }
       - { ref: C4, semaines: fin }

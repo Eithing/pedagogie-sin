@@ -28,10 +28,15 @@ sequences:
   - { ref: T0, semaines: 4, etat: fait }
   - ref: T1
     semaines: 7
-    etat: en-cours
-    evaluation: "Interrogation sur le CAN (sujet B, heure commune du vendredi 16 octobre) + TP noté Tinkercad « salle serveur, TMP36 » (vendredi après-midi)."
+    etat: fait
+    fin: 2026-10-16
+    evaluation: "Interrogation sur le CAN (sujet B, heure commune du vendredi 13 novembre, reportée à cause du blocus) + TP noté Tinkercad « salle serveur, TMP36 » (à distance, le 9 octobre)."
     ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad, AUTO_TermSIN_Cuve_Lissage]
-  - { ref: T2, semaines: 7 }
+  - ref: T2
+    semaines: 7
+    etat: en-cours
+    debut: 2026-11-06
+    ressources: [TP_TermSIN_Lampadaire_Wokwi]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -45,6 +50,8 @@ journal:
     texte: "Blocus : cours en distanciel. Heure commune avec D3 : remédiation CAN en autonomie (« Le CAN pas à pas »). Bloc de 3 h : TP TMP36 sur Tinkercad, noté, en version individuelle à distance (captures d'écran à la place des validations). L'interrogation CAN (sujet B) est reportée au retour en présentiel."
   - date: 2026-10-16
     texte: "Blocus, distanciel. Heure commune avec D3 : entraînement autocorrigé sur le CAN (valeurs propres à chaque élève). Bloc de 3 h : TP « lisser une mesure bruitée » (cuve d'eau de pluie, moyenne glissante, hystérésis) sur Wokwi. Non notés, rendu obligatoire."
+  - date: 2026-11-02
+    texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close ; l'interrogation CAN (sujet B) est fixée à l'heure commune du vendredi 13 novembre. Heure commune : C0 terminée, C1 (réseau local) démarre le 6 novembre. Bloc de 3 h du 6 novembre : TP « lampadaire autonome » sur Wokwi (T2), dont la partie A reprend le CAN ; non noté."
 ---
 
 ## Organisation

@@ -17,6 +17,8 @@ consignes:
 ---
 
 ::: prof
+**Date** : heure en classe entière de la semaine du 9 novembre (annoncée lors de la séance « Du clic à la page », qui en fait la révision express).
+
 **Mise en œuvre** : distribuer le sujet A et le sujet B en alternance selon les rangs. Les deux sujets ont la même structure, la même difficulté et le même barème ; seuls les exemples changent.
 **Contenus évalués** : ceux vus en cours et en TP (séance TCP/IP, TP Filius, TP DNS / routage), soit INT.1 et INT.2. Le pair-à-pair et les réseaux physiques (INT.3, INT.4) ne sont pas évalués ici.
 :::

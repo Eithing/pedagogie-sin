@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/sources/cours/">
+<title>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque — Diapos</title>
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/highlight.js/styles/github.min.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/700.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/inter/800.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/node_modules/@fontsource/fira-code/400.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/templates/style.css">
+<link rel="stylesheet" href="file:///C:/Users/Eithing-Desktop/Documents/Sources_Dev/pedagogie-sin/templates/slides.css">
+</head>
+<body class="presentation" style="--accent:#2563eb">
+<main class="diapos">
+<section class="diapo diapo-couverture">
+  <div class="couverture-texte">
+    <div class="couverture-bandeau">Lycée César Baggio · Term STI2D SIN</div>
+    <h1>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</h1>
+    <p class="couverture-accroche">40 places, 40 capteurs, un écran à l'accueil qui affiche « 37 places libres ». Comment les relier ?</p>
+    <ul class="couverture-objectifs"><li>Distinguer le rôle d'un switch et d'un routeur dans un réseau local</li><li>Distinguer l'adresse physique (MAC) et l'adresse logique (IPv4)</li><li>Déterminer si deux machines sont sur le même réseau à l'aide du masque</li><li>Configurer un réseau simulé sur Filius et le tester avec la commande ping</li></ul>
+  </div>
+  <img class="titre-illustration" src="img/reseau/parking.svg" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 21</span></footer>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Se poser la question</h2></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>2 / 21</span></footer>
+  <div class="diapo-progression" style="--p:9.523809523809524%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le parking connecté du lycée</h2></header>
+  <div class="diapo-corps"><p><img src="img/reseau/parking.svg" alt="" width="82%"></p>
+<blockquote>
+<p>La région finance un <strong>parking connecté</strong> : un capteur sur chacune des <strong>40 places</strong>, et un écran à l'accueil qui affiche en direct le nombre de places libres. Les capteurs et le poste de l'accueil ne sont pas dans le même réseau.</p>
+</blockquote>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>3 / 21</span></footer>
+  <div class="diapo-progression" style="--p:14.285714285714285%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 1</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
+      </div>Échauffement CAN</h2></header>
+  <div class="diapo-corps"><p>Trois questions de révision pour l'interrogation du vendredi 13 novembre.</p>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>4 / 21</span></footer>
+  <div class="diapo-progression" style="--p:19.047619047619047%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 1</h2></header>
+  <div class="diapo-corps"><p>Le capteur de présence d'une place fournit une tension convertie par un CAN de <strong>8 bits</strong>, de pleine échelle <strong>5 V</strong>. Son quantum vaut environ…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>0,625 V</li>
+<li class="choix"><span class="case"></span>19,5 mV</li>
+<li class="choix"><span class="case"></span>5 mV</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>5 / 21</span></footer>
+  <div class="diapo-progression" style="--p:23.809523809523807%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 2</h2></header>
+  <div class="diapo-corps"><p>Le code <code>0x80</code> vaut en décimal…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>80</li>
+<li class="choix"><span class="case"></span>128</li>
+<li class="choix"><span class="case"></span>256</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>6 / 21</span></footer>
+  <div class="diapo-progression" style="--p:28.57142857142857%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 1</span> Question 3</h2></header>
+  <div class="diapo-corps"><p>La pleine échelle d'un CAN, c'est…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>l'étendue de la tension d'entrée qu'il peut convertir</li>
+<li class="choix"><span class="case"></span>le nombre de codes de sortie</li>
+<li class="choix"><span class="case"></span>la plus petite variation détectable</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>7 / 21</span></footer>
+  <div class="diapo-progression" style="--p:33.33333333333333%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Les constituants d'un réseau local</h2></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>8 / 21</span></footer>
+  <div class="diapo-progression" style="--p:38.095238095238095%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Switch, routeur, adresses</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Chaque appareil a une <strong>carte réseau</strong> avec une <strong>adresse MAC</strong> (physique), gravée en usine : 48 bits, écrits en hexadécimal, par exemple <code>24:6F:28:A1:3C:05</code>.</li>
+<li>Le <strong>switch</strong> relie les appareils d'un <strong>même réseau</strong> : il lit l'<strong>adresse MAC</strong> et envoie la trame au bon port.</li>
+<li>Le <strong>routeur</strong> relie des <strong>réseaux différents</strong> : il lit l'<strong>adresse IP</strong> de destination et transmet le paquet vers l'autre réseau.</li>
+<li>L'<strong>adresse IP</strong> (logique) est donnée par l'administrateur ou par un serveur DHCP : elle dépend du <strong>réseau</strong> où se trouve l'appareil.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>9 / 21</span></footer>
+  <div class="diapo-progression" style="--p:42.857142857142854%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Lire le schéma du parking</h2></header>
+  <div class="diapo-corps"><p>Utilisez le schéma du parking (diapo d'accroche, reproduit sur la fiche).</p>
+<p><img src="img/reseau/parking.svg" alt="" width="80%"></p>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>10 / 21</span></footer>
+  <div class="diapo-progression" style="--p:47.61904761904761%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Adresse IP et masque</h2></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>11 / 21</span></footer>
+  <div class="diapo-progression" style="--p:52.38095238095239%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le masque : quelle partie désigne le réseau ?</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Masque <code>255.255.255.0</code>, noté <strong>/24</strong> : les <strong>24 premiers bits</strong> (3 premiers nombres) désignent le <strong>réseau</strong>, les 8 derniers la <strong>machine</strong>.</li>
+<li><strong>Adresse du réseau</strong> = adresse IP <strong>ET</strong> masque, bit à bit : <code>192.168.20.37</code> ET <code>255.255.255.0</code> = <code>192.168.20.0</code>.</li>
+<li>Dans un /24 : 256 adresses, mais la première (<code>.0</code>, le réseau) et la dernière (<code>.255</code>, la diffusion) sont réservées → <strong>254 machines</strong>.</li>
+<li>Deux machines du <strong>même réseau</strong> communiquent directement (switch) ; sinon il faut passer par un <strong>routeur</strong> (la passerelle).</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>12 / 21</span></footer>
+  <div class="diapo-progression" style="--p:57.14285714285714%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+      </div>Adresser le parking</h2></header>
+  <div class="diapo-corps"></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>13 / 21</span></footer>
+  <div class="diapo-progression" style="--p:61.904761904761905%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Simuler le réseau</h2></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>14 / 21</span></footer>
+  <div class="diapo-progression" style="--p:66.66666666666666%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 4</span>
+        <span class="act-modalite">En binôme</span>
+        <span class="act-chrono" data-secondes="960" title="Clic ou touche T : démarrer / pause">16:00</span>
+      </div>Le réseau du parking sur Filius</h2></header>
+  <div class="diapo-corps"><ol>
+<li><strong>Mode conception</strong> (marteau) : 4 ordinateurs, 1 switch, des câbles. Double-clic sur chaque ordinateur : <strong>nom</strong>, <strong>adresse IP</strong>, <strong>masque</strong> <code>255.255.255.0</code>.</li>
+<li><strong>Mode simulation</strong> (triangle vert) : sur Supervision, installez <strong>Ligne de commande</strong>, puis tapez <code>ping 192.168.20.11</code>.</li>
+<li>Passez P03 en <code>192.168.21.13</code>, puis, depuis Supervision : <code>ping 192.168.20.13</code> et <code>ping 192.168.21.13</code>.</li>
+</ol>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>15 / 21</span></footer>
+  <div class="diapo-progression" style="--p:71.42857142857143%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>16 / 21</span></footer>
+  <div class="diapo-progression" style="--p:76.19047619047619%"></div>
+</section>
+<section class="diapo diapo-retenir" >
+  <header class="diapo-titre"><h2>À retenir</h2></header>
+  <div class="diapo-corps"><ul>
+<li>L'adresse <mark class="trou-rempli">MAC</mark> est l'adresse physique de la carte réseau (48 bits) ; l'adresse <mark class="trou-rempli">IP</mark> est l'adresse logique, qui dépend du réseau (32 bits en IPv4).</li>
+<li>Le <mark class="trou-rempli">switch</mark> relie les machines d'un même réseau ; le <mark class="trou-rempli">routeur</mark> relie des réseaux différents.</li>
+<li>Le <mark class="trou-rempli">masque</mark> indique quelle partie de l'adresse IP désigne le réseau : adresse du réseau = adresse IP <mark class="trou-rempli">ET</mark> masque.</li>
+<li>Deux machines communiquent directement si elles ont la même adresse de <mark class="trou-rempli">réseau</mark> ; sinon, il faut passer par une passerelle.</li>
+<li>La commande <mark class="trou-rempli">ping</mark> vérifie qu'une machine répond sur le réseau.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>17 / 21</span></footer>
+  <div class="diapo-progression" style="--p:80.95238095238095%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 5</span>
+        <span class="act-modalite">Individuel</span>
+        <span class="act-chrono" data-secondes="240" title="Clic ou touche T : démarrer / pause">04:00</span>
+      </div>Quiz de sortie</h2></header>
+  <div class="diapo-corps"></div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>18 / 21</span></footer>
+  <div class="diapo-progression" style="--p:85.71428571428571%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 10</h2></header>
+  <div class="diapo-corps"><p>Pour relier le réseau du parking au réseau de l'accueil, il faut…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>un switch</li>
+<li class="choix"><span class="case"></span>un routeur</li>
+<li class="choix"><span class="case"></span>un deuxième capteur</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>19 / 21</span></footer>
+  <div class="diapo-progression" style="--p:90.47619047619048%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 11</h2></header>
+  <div class="diapo-corps"><p><code>192.168.20.200</code> et <code>192.168.20.7</code>, masque <code>/24</code>, sont-elles dans le même réseau ?</p>
+<ul class="qcm qcm">
+<li class="choix"><span class="case"></span>oui</li>
+<li class="choix"><span class="case"></span>non</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>20 / 21</span></footer>
+  <div class="diapo-progression" style="--p:95.23809523809523%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 12</h2></header>
+  <div class="diapo-corps"><p>L'adresse <code>192.168.20.255</code> peut-elle être donnée à un capteur dans ce réseau ?</p>
+<ul class="qcm qcm">
+<li class="choix"><span class="case"></span>oui</li>
+<li class="choix"><span class="case"></span>non</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le parking connecté : constituants d'un réseau, adresses MAC et IP, masque</span><span>21 / 21</span></footer>
+  <div class="diapo-progression" style="--p:100%"></div>
+</section>
+</main>
+<script>
+const d=[...document.querySelectorAll('.diapo')];let i=0;
+const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
+function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
+const minuteurs=new Map();
+function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+ minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
+  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
+addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
+addEventListener('keydown',e=>{
+ if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){voir(i+1);e.preventDefault();}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){voir(i-1);e.preventDefault();}
+ else if(e.key==='Home')voir(0);else if(e.key==='End')voir(d.length-1);
+ else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+ else if(e.key==='t'||e.key==='T')chrono(d[i]);});
+addEventListener('click',e=>{if(e.target.closest('.act-chrono')){chrono(d[i]);return;}voir(e.clientX>innerWidth/3?i+1:i-1);});
+</script>
+</body>
+</html>
