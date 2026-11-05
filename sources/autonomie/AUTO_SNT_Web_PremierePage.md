@@ -4,8 +4,8 @@ niveau: SNT (2nde)
 sequence: S2
 court: Ma premiere page web
 pronote:
-  titre: "Le Web — TP à distance : ma première page web en HTML et CSS"
-  description: "S2 Le Web (distanciel, blocus) : créer une page web personnelle, en distinguant le contenu (HTML) du style (CSS). TP noté sur grille ; ceux qui ont déjà rendu leur page peuvent l'améliorer."
+  titre: "Le Web — TP : ma première page web en HTML et CSS"
+  description: "S2 Le Web (distanciel) : créer une page web personnelle, en distinguant le contenu (HTML) du style (CSS). TP noté sur grille."
 type: autonomie
 duree: 55 min
 bareme: 20
@@ -25,17 +25,13 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre (TP en demi-groupe, distanciel : 9 et 16 octobre, puis de nouveau le vendredi 6 novembre, 8 h - 9 h)** : déposer sur l'ENT ce PDF élève **et le fichier `editeur_web.html`** (dans le même dossier de sortie, `eleve/`). Créer un devoir « Ma première page web » qui accepte les fichiers `.html`, ou rouvrir celui d'octobre, puisque la plupart des élèves n'ont rien rendu.
+**Mise en œuvre (vendredi 9 octobre, TP en demi-groupe, distanciel)** : déposer sur l'ENT ce PDF élève **et le fichier `editeur_web.html`** (dans le même dossier de sortie, `eleve/`). Créer un devoir « Ma première page web » qui accepte les fichiers `.html`. L'autre demi-groupe fera ce TP à sa prochaine séance de TP.
 
 **L'éditeur** est un simple fichier HTML, sans compte ni installation. Il fonctionne même sans connexion, sauf pour les images prises sur Internet. Il garde le travail dans le navigateur de l'élève et le bouton « Télécharger ma page » produit un fichier `page_NOM_Prenom.html`. Le bouton « Ouvrir une page… » permet de reprendre un fichier déjà téléchargé. **Le tester une fois avant de le diffuser.** Sur téléphone, l'ouverture d'un fichier HTML téléchargé dépend du navigateur (à vérifier) : prévoir de laisser l'élève finir au lycée.
 
 **Correction** : ouvrir chaque fichier déposé dans Chrome (double-clic) pour voir la page, puis clic droit → « Afficher le code source » pour lire le code. Le sujet est choisi par l'élève et le code de chaque page est personnel : deux pages identiques se repèrent tout de suite.
 
 **Note de travail** : coefficient réduit, conformément à ce qui a été annoncé aux élèves. La note du thème Internet reste l'interrogation sur table (sujets A/B) faite au retour en classe.
-:::
-
-::: info Tu as déjà rendu ta page en octobre ?
-Rouvre ton fichier avec le bouton « Ouvrir une page… » de l'éditeur, vérifie chaque point du barème à la fin de cette fiche, améliore ce que tu peux, puis dépose la nouvelle version.
 :::
 
 ## Étape 1 — Ouvrir l'éditeur (5 min)

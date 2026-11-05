@@ -1,0 +1,29 @@
+﻿=== 2nde, TP en demi-groupe (vendredi 6 novembre, 8 h - 9 h) ===
+Titre de la séance :
+Le Web — TP à distance : les moteurs de recherche, principes et usages
+
+Description :
+S2 Le Web (distanciel, blocus) : fabriquer un petit index à la main, comprendre le classement des résultats, comparer deux moteurs et analyser une source avec esprit critique. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Mener l'enquête — comment fonctionne un moteur de recherche ?
+En 0,3 seconde, un moteur te propose des milliers de pages. Qui décide de ce que tu vois en premier ?
+
+📄 Documents joints :
+- ELEVE_AUTO_SNT_Web_MoteursRecherche.pdf (la fiche)
+- REPONSES_AUTO_SNT_Web_MoteursRecherche.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+
+✏️ Consignes :
+- Travail individuel, à distance, pendant l'heure de TP. Suis les étapes dans l'ordre, une par page.
+- Garde ce PDF ouvert d'un côté et ton document réponse de l'autre. Il te faut seulement un navigateur.
+- À l'étape 3, tu choisis toi-même le sujet de ta recherche : ton travail est donc personnel.
+
+📤 À rendre :
+- Tes réponses aux questions 1 à 10 et le bilan complété : le fichier REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier.
+- Un seul dépôt, dans le devoir « Moteurs de recherche » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds dès que possible.
+- Bloqué plus de 5 minutes ? Écris « bloqué » à cette question et passe à la suivante.
+- Tu n'as qu'un téléphone ? Tu peux tout faire avec son navigateur et répondre dans ton cahier.

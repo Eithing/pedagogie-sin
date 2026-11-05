@@ -163,5 +163,11 @@
     "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Distanciel_Reseau-du-parking-a-distance/PRONOTE_AUTO_TermSIN_Reseau_Parking.txt",
     "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Reseau-du-parking-a-distance/REPONSES_AUTO_TermSIN_Reseau_Parking.docx",
     "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Reseau-du-parking-a-distance/reseau_parking.html"
+  ],
+  "sources/autonomie/AUTO_SNT_Web_MoteursRecherche.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_Distanciel_Moteurs-de-recherche/ELEVE_AUTO_SNT_Web_MoteursRecherche.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Distanciel_Moteurs-de-recherche/PROF_AUTO_SNT_Web_MoteursRecherche.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Distanciel_Moteurs-de-recherche/PRONOTE_AUTO_SNT_Web_MoteursRecherche.txt",
+    "2nde_SNT/S2_Le_Web/eleve/S2_Distanciel_Moteurs-de-recherche/REPONSES_AUTO_SNT_Web_MoteursRecherche.docx"
   ]
 }
