@@ -14,7 +14,7 @@ accroche: "Allumé à fond quand quelqu'un passe, en veille le reste de la nuit 
 competences: [CO5.8-SIN2, CO7.3-SIN1, CO6.5-SIN1, CO7.2, CO3.3]
 materiel: [Wokwi (ESP32 en MicroPython, sans compte), ordinateur]
 document_reponse: true
-fichiers: [../tp/fichiers/lampadaire/diagram.json, ../tp/fichiers/lampadaire/lampadaire.py]
+fichiers: [../tp/fichiers/lampadaire/diagram_lampadaire.json, ../tp/fichiers/lampadaire/lampadaire.py]
 consignes:
   - "Travail individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre. Fais une pause entre deux étapes."
   - "Wokwi s'utilise sans compte, dans le navigateur. À l'étape marquée 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse."
@@ -29,7 +29,7 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre (TSTI2D2, vendredi 6 novembre après-midi, 3 h, distanciel)** : version en autonomie et individuelle de `TP_TermSIN_Lampadaire_Wokwi`. Déposer sur l'ENT ce PDF, le document réponse `REPONSES_AUTO_TermSIN_Lampadaire_Wokwi.docx`, `diagram.json` et `lampadaire.py` (dossier `eleve/`). **Non noté**, rendu obligatoire.
+**Mise en œuvre (TSTI2D2, vendredi 6 novembre après-midi, 3 h, distanciel)** : version en autonomie et individuelle de `TP_TermSIN_Lampadaire_Wokwi`. Déposer sur l'ENT ce PDF, le document réponse `REPONSES_AUTO_TermSIN_Lampadaire_Wokwi.docx`, `diagram_lampadaire.json` et `lampadaire.py` (dossier `eleve/`). **Non noté**, rendu obligatoire.
 
 **Testé sur Wokwi le 5 novembre** : circuit et programme corrigé fonctionnent en MicroPython, sans compte, avec N = 1 001 à 500 lux (conforme au calcul), le curseur de lumière, « Simulate motion » (sortie à 1 pendant 5 s environ), puis le retour en veille après la temporisation. Les autres valeurs de N du corrigé sont calculées.
 
@@ -38,7 +38,7 @@ aide:
 
 ::: info Comment répondre et rendre ton travail
 1. Télécharge sur l'ENT **`REPONSES_AUTO_TermSIN_Lampadaire_Wokwi.docx`** et ouvre-le avec Word ou LibreOffice Writer. Enregistre-le tout de suite sous le nom **`REPONSES_NOM_Prenom`**, puis enregistre régulièrement.
-2. Télécharge aussi **`diagram.json`** (le circuit) et **`lampadaire.py`** (le programme de départ), que tu ouvriras avec le Bloc-notes.
+2. Télécharge aussi **`diagram_lampadaire.json`** (le circuit) et **`lampadaire.py`** (le programme de départ), que tu ouvriras avec le Bloc-notes.
 
 **Attention** : sans compte, Wokwi **n'enregistre pas** ton travail. Copie ton programme dans ton document réponse à la fin de chaque étape, et ne ferme pas l'onglet Wokwi.
 
@@ -95,7 +95,7 @@ Dans Wokwi, **clique sur le détecteur PIR** pendant la simulation, puis sur « 
 
 ::: info Pour démarrer dans Wokwi
 1. Ouvre `wokwi.com/projects/new/micropython-esp32`. Aucun compte n'est nécessaire.
-2. Ouvre `diagram.json` (le fichier téléchargé) avec le Bloc-notes, copie tout, puis colle-le à la place du contenu de l'onglet `diagram.json` de Wokwi.
+2. Ouvre `diagram_lampadaire.json` (le fichier téléchargé) avec le Bloc-notes, copie tout, puis colle-le à la place du contenu de l'onglet `diagram.json` de Wokwi.
 3. Fais de même avec `lampadaire.py`, dans l'onglet `main.py` de Wokwi.
 4. Lance la simulation (▶) : le moniteur série affiche `N = …` toutes les 0,2 s.
 5. **Tu ne vois pas les capteurs ?** Ils sont à gauche de la carte : fais glisser le fond du schéma avec la souris, ou dézoome avec la molette.

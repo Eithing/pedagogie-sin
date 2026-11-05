@@ -12,7 +12,7 @@ Allumé à fond quand quelqu'un passe, en veille le reste de la nuit : c'est toi
 📄 Documents joints :
 - ELEVE_AUTO_TermSIN_Lampadaire_Wokwi.pdf (la fiche)
 - REPONSES_AUTO_TermSIN_Lampadaire_Wokwi.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
-- diagram.json
+- diagram_lampadaire.json
 - lampadaire.py
 
 ✏️ Consignes :

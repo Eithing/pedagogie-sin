@@ -126,7 +126,7 @@
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/ELEVE_TP_TermSIN_Lampadaire_Wokwi.pdf",
     "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Lampadaire-Wokwi/PROF_TP_TermSIN_Lampadaire_Wokwi.pdf",
     "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Lampadaire-Wokwi/PRONOTE_TP_TermSIN_Lampadaire_Wokwi.txt",
-    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/diagram.json",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/diagram_lampadaire.json",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/lampadaire.py"
   ],
   "sources/revision/REVISION_SNT_Internet.md": [
@@ -154,7 +154,7 @@
     "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Distanciel_Lampadaire-Wokwi-a-distance/PROF_AUTO_TermSIN_Lampadaire_Wokwi.pdf",
     "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Distanciel_Lampadaire-Wokwi-a-distance/PRONOTE_AUTO_TermSIN_Lampadaire_Wokwi.txt",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-Wokwi-a-distance/REPONSES_AUTO_TermSIN_Lampadaire_Wokwi.docx",
-    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-Wokwi-a-distance/diagram.json",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-Wokwi-a-distance/diagram_lampadaire.json",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-Wokwi-a-distance/lampadaire.py"
   ],
   "sources/autonomie/AUTO_TermSIN_Reseau_Parking.md": [

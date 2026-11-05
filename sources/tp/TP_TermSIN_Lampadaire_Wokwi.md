@@ -12,8 +12,8 @@ bareme: 20
 illustration: ../cours/img/lampadaire/couverture.svg
 accroche: "Allumé à fond quand quelqu'un passe, en veille le reste de la nuit : c'est vous qui l'écrivez."
 competences: [CO5.8-SIN2, CO7.3-SIN1, CO6.5-SIN1, CO7.2, CO3.3]
-materiel: [Poste élève avec Chrome, Wokwi en MicroPython sur ESP32 (sans compte), "Fichiers fournis : diagram.json et lampadaire.py"]
-fichiers: [fichiers/lampadaire/diagram.json, fichiers/lampadaire/lampadaire.py]
+materiel: [Poste élève avec Chrome, Wokwi en MicroPython sur ESP32 (sans compte), "Fichiers fournis : diagram_lampadaire.json et lampadaire.py"]
+fichiers: [fichiers/lampadaire/diagram_lampadaire.json, fichiers/lampadaire/lampadaire.py]
 ---
 
 ::: prof
@@ -21,7 +21,7 @@ fichiers: [fichiers/lampadaire/diagram.json, fichiers/lampadaire/lampadaire.py]
 
 **Évaluation** : TP **non noté**, le barème sert d'auto-évaluation. Beaucoup d'élèves n'ont rien rendu à distance : l'objectif est de remettre tout le monde au travail sur poste.
 
-**Wokwi** : MicroPython sur ESP32 (`wokwi.com/projects/new/micropython-esp32`), qui démarre en quelques secondes ; en C++ Arduino, la compilation gratuite fait la queue plus d'une minute. Sans compte, le travail n'est pas enregistré : les élèves copient leur programme dans un fichier texte à la fin de chaque partie. Déposer `diagram.json` et `lampadaire.py` (dossier `eleve/`) sur l'ENT ou dans le dossier partagé.
+**Wokwi** : MicroPython sur ESP32 (`wokwi.com/projects/new/micropython-esp32`), qui démarre en quelques secondes ; en C++ Arduino, la compilation gratuite fait la queue plus d'une minute. Sans compte, le travail n'est pas enregistré : les élèves copient leur programme dans un fichier texte à la fin de chaque partie. Déposer `diagram_lampadaire.json` et `lampadaire.py` (dossier `eleve/`) sur l'ENT ou dans le dossier partagé.
 
 **À tester une fois avant la séance** : les valeurs attendues des corrigés (codes N selon l'éclairement) sont **calculées** d'après la documentation Wokwi du module « photoresistor sensor » (photorésistance en série avec $10\text{ k}\Omega$, `rl10` = 50 kΩ, `gamma` = 0,7, alimentation 3,3 V) et un CAN idéal. Le CAN simulé peut donner quelques unités d'écart : seules comptent la méthode et la cohérence.
 :::
@@ -33,7 +33,7 @@ fichiers: [fichiers/lampadaire/diagram.json, fichiers/lampadaire/lampadaire.py]
 | **Classe** | Terminale STI2D — Spécialité 2I2D, enseignement spécifique SIN (TSTI2D2) |
 | **Durée** | 3 h, en binôme |
 | **Prérequis** | T1 : quantum, code $N$, binaire et hexadécimal ; Python de base (variables, `if`, `while`) ; hystérésis (TP « cuve d'eau de pluie ») |
-| **Matériel** | Un poste par binôme, Chrome, Wokwi (sans compte) ; fichiers `diagram.json` et `lampadaire.py` |
+| **Matériel** | Un poste par binôme, Chrome, Wokwi (sans compte) ; fichiers `diagram_lampadaire.json` et `lampadaire.py` |
 | **Documents ressources** | DR1 : documentation du capteur de lumière · DR2 : diagramme d'états du lampadaire · DR3 : mémo MicroPython |
 
 | Code | Compétence | Questions |
@@ -94,7 +94,7 @@ Dans Wokwi, **cliquez sur le détecteur PIR** pendant la simulation, puis sur «
 
 ## 2. Travail demandé
 
-**Pour démarrer (10 min)** : ouvrez `wokwi.com/projects/new/micropython-esp32`. Dans l'onglet `diagram.json`, collez tout le contenu du fichier fourni ; dans l'onglet `main.py`, collez `lampadaire.py`. Lancez la simulation (▶) : le moniteur série affiche `N = …` toutes les 0,2 s.
+**Pour démarrer (10 min)** : ouvrez `wokwi.com/projects/new/micropython-esp32`. Dans l'onglet `diagram.json`, collez tout le contenu du fichier `diagram_lampadaire.json` ; dans l'onglet `main.py`, collez `lampadaire.py`. Lancez la simulation (▶) : le moniteur série affiche `N = …` toutes les 0,2 s.
 
 ### Partie A — Mesurer la lumière (reprise du CAN, 50 min)
 
