@@ -36,7 +36,7 @@ sequences:
     semaines: 7
     etat: en-cours
     debut: 2026-11-06
-    ressources: [TP_TermSIN_Lampadaire_Wokwi]
+    ressources: [TP_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Wokwi]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -52,6 +52,8 @@ journal:
     texte: "Blocus, distanciel. Heure commune avec D3 : entraînement autocorrigé sur le CAN (valeurs propres à chaque élève). Bloc de 3 h : TP « lisser une mesure bruitée » (cuve d'eau de pluie, moyenne glissante, hystérésis) sur Wokwi. Non notés, rendu obligatoire."
   - date: 2026-11-02
     texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close ; l'interrogation CAN (sujet B) est fixée à l'heure commune du vendredi 13 novembre. Heure commune : C0 terminée, C1 (réseau local) démarre le 6 novembre. Bloc de 3 h du 6 novembre : TP « lampadaire autonome » sur Wokwi (T2), dont la partie A reprend le CAN ; non noté."
+  - date: 2026-11-06
+    texte: "Blocus, distanciel. Heure commune avec D3 : fiche « Le parking connecté » avec un simulateur sans installation à la place de Filius. Bloc de 3 h : TP lampadaire sur Wokwi, individuel, testé le 5 novembre. Non notés, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
 ---
 
 ## Organisation

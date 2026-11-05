@@ -18,7 +18,7 @@ consignes:
 ---
 
 ::: prof
-**Date** : semaine du 9 novembre, sur un créneau de 1 h. Prévoir 30 min, 40 min au plus pour les élèves les plus lents. La fiche de révision est dans le même dossier.
+**Date** : vendredi 13 novembre, sur un créneau de 1 h. Prévoir 30 min, 40 min au plus pour les élèves les plus lents. La fiche de révision est dans le même dossier.
 
 **Mise en œuvre** : distribuer le sujet A et le sujet B en alternance selon les rangs. Les deux sujets ont la même structure, la même difficulté et le même barème ; seuls les exemples changent.
 **Contenus évalués** : ceux vus en cours et en TP (séance TCP/IP, TP Filius, TP DNS / routage), soit INT.1 et INT.2. Le pair-à-pair et les réseaux physiques (INT.3, INT.4) ne sont pas évalués ici.
@@ -86,20 +86,25 @@ Pour chaque question, cocher la bonne réponse.
 1 point par bonne réponse. {{IP : acheminer grâce aux adresses ; routeur : choisit le voisin ; `ping` ; paquets.|TCP : vérifier et remettre dans l'ordre ; DNS : nom → adresse IP ; `traceroute` ; adresses + morceau des données.}}
 :::
 
-::: question 2 [3 pt]
+:::: question 2 [3 pt]
 Une adresse IPv4 est formée de 4 nombres compris entre 0 et 255, séparés par des points. Cocher les adresses **valides**, puis justifier pour **une** adresse non valide.
 
 - [{{x| }}] `{{172.16.10.4|256.10.1.1}}`
 - [{{ |x}}] `{{192.168.1.300|192.168.0.25}}`
 - [x] `{{10.0.0.1|172.20.4.1}}`
 - [ ] `{{8.8.8|10.1.1.1.5}}`
-:::
 
-::: reponse 3
+**Justification**, pour une adresse non valide :
+
+::: zone 2
+:::
+::::
+
+::: reponse 0
 Valides : {{`172.16.10.4` et `10.0.0.1`|`192.168.0.25` et `172.20.4.1`}} (2 × 0,5 pt). Non valides : {{`192.168.1.300` (300 > 255) et `8.8.8` (seulement 3 nombres)|`256.10.1.1` (256 > 255) et `10.1.1.1.5` (5 nombres)}} (2 × 0,5 pt). Justification correcte : 1 pt.
 :::
 
-::: question 3 [3 pt]
+:::: question 3 [3 pt]
 Un élève tape la commande suivante sur son ordinateur :
 
 ```text
@@ -113,10 +118,16 @@ Address :  {{192.0.2.17|198.51.100.42}}
 
 **a)** Quel est le rôle du serveur DNS interrogé ?
 
-**b)** Quelle adresse IP le navigateur va-t-il contacter pour afficher le site ?
+::: zone 2
 :::
 
-::: reponse 4
+**b)** Quelle adresse IP le navigateur va-t-il contacter pour afficher le site ?
+
+::: zone 1
+:::
+::::
+
+::: reponse 0
 **a)** Le serveur DNS **traduit le nom de domaine** (adresse symbolique, facile à retenir) **en adresse IP** (adresse numérique utilisée par le réseau). (1,5 pt)
 
 **b)** `{{192.0.2.17|198.51.100.42}}`. (1,5 pt) Accepter une réponse qui cite la bonne ligne « Address » ; refuser `192.168.1.1`, qui est l'adresse du serveur DNS (la box).
@@ -124,19 +135,28 @@ Address :  {{192.0.2.17|198.51.100.42}}
 
 ## Partie 2 — Routage
 
-::: question 4 [5 pt]
+:::: question 4 [5 pt]
 Le schéma représente une partie d'Internet. Chaque cercle est un routeur, chaque trait une liaison.
 
 ![](img/internet/reseau.svg)
 
 **a)** Donner le chemin qui traverse **le moins de routeurs** pour aller {{du Lycée|de la Maison}} au Serveur web. Combien de routeurs traverse-t-il ?
 
-**b)** Le routeur **{{R4|R5}}** tombe en panne. Le message peut-il encore arriver ? Si oui, par quel chemin ?
-
-**c)** Quel routeur, s'il tombe en panne, empêche **tout** message d'aller {{du Lycée|de la Maison}} au Serveur web ? Justifier.
+::: zone 2
 :::
 
-::: reponse 4
+**b)** Le routeur **{{R4|R5}}** tombe en panne. Le message peut-il encore arriver ? Si oui, par quel chemin ?
+
+::: zone 2
+:::
+
+**c)** Quel routeur, s'il tombe en panne, empêche **tout** message d'aller {{du Lycée|de la Maison}} au Serveur web ? Justifier.
+
+::: zone 2
+:::
+::::
+
+::: reponse 0
 **a)** {{Lycée → R1 → R2 → R4 → R7 → Serveur : **4 routeurs**.|Maison → R3 → R5 → R6 → R7 → Serveur : **4 routeurs**.}} (2 pt : 1 pour le chemin, 1 pour le nombre)
 
 **b)** **Oui.** {{Par exemple Lycée → R1 → R2 → R5 → R6 → R7 → Serveur (ou R1 → R3 → R5 → R6 → R7) : 5 routeurs.|Par exemple Maison → R3 → R1 → R2 → R4 → R7 → Serveur : 5 routeurs.}} Les routeurs voisins envoient les paquets par un autre chemin. (2 pt)

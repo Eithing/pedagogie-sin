@@ -30,7 +30,7 @@ sequences:
       - "TP DNS et routage : retrouver l'adresse IP d'un site à partir de son nom, suivre le chemin des paquets"
       - "Réseaux physiques (fibre, 4G, Wi-Fi…) et ordre de grandeur du trafic ; pair-à-pair et usages illicites"
     outils: [Filius, navigateur, activités débranchées]
-    evaluation: "Interrogation de 30 min (sujets A / B), heure en classe entière de la semaine du 9 novembre (reportée à cause du blocus) : QCM, adresses IPv4, DNS, routage, TCP."
+    evaluation: "Interrogation de 30 min (sujets A / B), vendredi 13 novembre (reportée à cause du blocus) : QCM, adresses IPv4, DNS, routage, TCP."
     ressources: [COURS_SNT_TCP_IP, EVAL_SNT_Internet]
     etat: fait
     debut: 2026-09-01
@@ -51,7 +51,7 @@ sequences:
       - "Régler cookies et confidentialité du navigateur ; visualiser les traqueurs"
     outils: [navigateur (outils de développement), éditeur web maison (fichier HTML, sans compte)]
     evaluation: "Production : page web personnelle évaluée sur grille (TP en autonomie, note de travail) ; QCM de fin de thème."
-    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso]
+    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso]
     semaines: 4
     etat: en-cours
     debut: 2026-10-09
@@ -159,7 +159,9 @@ journal:
   - date: 2026-10-16
     texte: "Blocus, distanciel : l'heure en classe entière est annulée. TP en demi-groupe : le 2e groupe fait « Ma première page web » (même TP que le 1er groupe le 9 octobre)."
   - date: 2026-11-02
-    texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance : le début du Web est repris en classe. Séance « Du clic à la page » (reprise de la découverte du Web, URL, puis client / serveur et HTTP, avec une révision express d'Internet) et TP « Ma page web » refait au lycée en demi-groupe. L'interrogation Internet est fixée à la semaine du 9 novembre."
+    texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance : le début du Web est repris en classe. Séance « Du clic à la page » (reprise de la découverte du Web, URL, puis client / serveur et HTTP, avec une révision express d'Internet) et TP « Ma page web » refait au lycée en demi-groupe. L'interrogation Internet est fixée au vendredi 13 novembre."
+  - date: 2026-11-06
+    texte: "Blocus, distanciel. TP en demi-groupe (8 h) : « Ma première page web », repris à distance. Classe entière (9 h) : fiche « Du clic à la page » (reprise d'Internet et du Web, URL, client / serveur, HTTP), non notée, rendu obligatoire. Fiche de révision déposée pour l'interrogation Internet du vendredi 13 novembre."
 ---
 
 ## Intentions pédagogiques

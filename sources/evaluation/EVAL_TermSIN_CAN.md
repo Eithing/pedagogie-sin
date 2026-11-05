@@ -79,29 +79,41 @@ Cocher la bonne réponse.
 
 ## Partie 2 — Calculs
 
-::: question 2 [3 pt]
+:::: question 2 [3 pt]
 Un CAN de **{{8|10}} bits** a une pleine échelle de **{{5|3,3}} V**.
 
 **a)** Combien de codes différents peut-il fournir ? Quelles sont la plus petite et la plus grande valeur du code $N$ ?
 
-**b)** Calculer son quantum $q$, en mV.
+::: zone 2
 :::
 
-::: reponse 4
+**b)** Calculer son quantum $q$, en mV.
+
+::: zone 2
+:::
+::::
+
+::: reponse 0
 **a)** $2^{ {{8|10}} } = {{256|1\,024}}$ codes, de $N = 0$ à $N = {{255|1\,023}}$. (1 pt)
 
 **b)** $q = \dfrac{\text{PE}}{2^n} = \dfrac{ {{5|3{,}3}} }{ {{256|1\,024}} } \approx {{19{,}5|3{,}22}}\text{ mV}$ (valeur exacte {{19,53|3,223}} mV). (2 pt)
 :::
 
-::: question 3 [3 pt]
+:::: question 3 [3 pt]
 La tension d'entrée vaut $V_{in} = {{2{,}0|1{,}5}}\text{ V}$.
 
 **a)** Calculer le code $N$ fourni par le CAN de la question 2.
 
-**b)** Écrire ce code en binaire sur {{8|10}} bits, puis en hexadécimal.
+::: zone 2
 :::
 
-::: reponse 4
+**b)** Écrire ce code en binaire sur {{8|10}} bits, puis en hexadécimal.
+
+::: zone 2
+:::
+::::
+
+::: reponse 0
 **a)** $N = \dfrac{V_{in}}{q} = \dfrac{ {{2{,}0|1{,}5}} }{ {{0{,}019\,53|0{,}003\,223}} } \approx {{102{,}4|465{,}4}}$, donc $N = {{102|465}}$ (partie entière). (1 pt)
 
 **b)** {{$102 = 64 + 32 + 4 + 2$ → `0110 0110` → `0x66`|$465 = 256 + 128 + 64 + 16 + 1$ → `01 1101 0001` → `0x1D1`}}. (1 pt binaire, 1 pt hexadécimal)
@@ -119,19 +131,28 @@ $V_{in} \approx N \times q = {{200 \times 19{,}53\text{ mV} \approx 3{,}91\text{
 
 ## Partie 3 — Caractéristique de transfert
 
-::: question 5 [3 pt]
+:::: question 5 [3 pt]
 On étudie un CAN de **3 bits** dont la caractéristique de transfert est donnée ci-dessous ; son quantum vaut $q = {{0{,}5|0{,}25}}\text{ V}$.
 
 ![](img/can/escalier.svg){width=70%}
 
 **a)** Quel code $N$ fournit-il pour $V_{in} = {{1{,}3|1{,}1}}\text{ V}$ ?
 
-**b)** Quelle est l'erreur maximale commise entre la tension réelle et la tension représentée par le code ?
-
-**c)** En déduire sa valeur pleine échelle.
+::: zone 2
 :::
 
-::: reponse 3
+**b)** Quelle est l'erreur maximale commise entre la tension réelle et la tension représentée par le code ?
+
+::: zone 1
+:::
+
+**c)** En déduire sa valeur pleine échelle.
+
+::: zone 2
+:::
+::::
+
+::: reponse 0
 **a)** $\dfrac{ {{1{,}3|1{,}1}} }{ {{0{,}5|0{,}25}} } = {{2{,}6|4{,}4}}$ → $N = {{2|4}}$. (1 pt)
 
 **b)** L'erreur de quantification est au plus égale à un quantum : {{0,5|0,25}} V. (1 pt)
@@ -141,17 +162,26 @@ On étudie un CAN de **3 bits** dont la caractéristique de transfert est donné
 
 ## Partie 4 — Le CNA
 
-::: question 6 [3 pt]
+:::: question 6 [3 pt]
 On utilise maintenant un **CNA de {{8|10}} bits**, de pleine échelle **{{5|3,3}} V**.
 
 **a)** Quelle est sa grandeur d'entrée ? Sa grandeur de sortie ?
 
-**b)** Calculer la tension de sortie $V_s$ pour le code $N$ = `{{0x80|0x200}}`.
-
-**c)** Quel code faut-il envoyer pour obtenir une tension de sortie d'environ 1 V ?
+::: zone 2
 :::
 
-::: reponse 5
+**b)** Calculer la tension de sortie $V_s$ pour le code $N$ = `{{0x80|0x200}}`.
+
+::: zone 2
+:::
+
+**c)** Quel code faut-il envoyer pour obtenir une tension de sortie d'environ 1 V ?
+
+::: zone 2
+:::
+::::
+
+::: reponse 0
 **a)** Entrée : un nombre binaire (code numérique). Sortie : une tension analogique. (1 pt)
 
 **b)** $q = \dfrac{ {{5|3{,}3}} }{ {{256|1\,024}} } \approx {{19{,}53|3{,}223}}\text{ mV}$ et $N = {{128|512}}$, donc $V_s = N \times q = {{2{,}5|1{,}65}}\text{ V}$. (1 pt)

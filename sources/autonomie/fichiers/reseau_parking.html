@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulateur réseau du parking</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Calibri, "Segoe UI", Arial, sans-serif; font-size: 16px; color: #1a1a1a; background: #f4f4f4; }
+  header { background: #fff; border-bottom: 1px solid #999; padding: 10px 16px; }
+  h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; color: #555; }
+  main { max-width: 860px; margin: 0 auto; padding: 14px 16px 30px; }
+  section { background: #fff; border: 1px solid #999; padding: 12px 14px; margin-bottom: 14px; }
+  h2 { margin: 0 0 8px; font-size: 16px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #bbb; padding: 5px 7px; text-align: left; }
+  th { background: #ececec; }
+  input { font: inherit; padding: 4px 6px; border: 1px solid #888; width: 100%; font-family: Consolas, monospace; }
+  input.faux { border-color: #b91c1c; background: #fef2f2; }
+  code, .mac { font-family: Consolas, monospace; }
+  .mac { color: #555; font-size: 14px; }
+  .ligne { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .ligne input { width: 190px; }
+  button { font: inherit; padding: 5px 14px; border: 1px solid #1a1a1a; background: #1a1a1a; color: #fff; cursor: pointer; }
+  button.secondaire { background: #fff; color: #1a1a1a; }
+  pre { background: #1a1a1a; color: #e5e5e5; padding: 10px 12px; min-height: 130px; margin: 10px 0 0; white-space: pre-wrap; font-family: Consolas, monospace; font-size: 14px; }
+  .aide { color: #555; font-size: 14px; margin: 6px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Simulateur réseau du parking</h1>
+  <p>Quatre machines sont reliées au même switch. Fonctionne sans compte, sans installation et sans connexion.</p>
+</header>
+<main>
+  <section>
+    <h2>1. Configurer les machines</h2>
+    <table>
+      <thead><tr><th>Machine</th><th>Adresse MAC (fixe)</th><th>Adresse IP</th><th>Masque</th></tr></thead>
+      <tbody id="machines"></tbody>
+    </table>
+    <p class="aide">Une case en rouge contient une valeur qui n'est pas une adresse IPv4 ou un masque valide.</p>
+  </section>
+  <section>
+    <h2>2. Tester avec la commande ping, depuis le poste Supervision</h2>
+    <div class="ligne">
+      <label for="destination"><code>ping</code></label>
+      <input id="destination" placeholder="adresse IP à tester" autocomplete="off">
+      <button id="lancer" type="button">Lancer le ping</button>
+      <button id="effacer" class="secondaire" type="button">Effacer l'écran</button>
+    </div>
+    <pre id="console" aria-live="polite"></pre>
+  </section>
+</main>
+<script>
+// Simulation d'un reseau local : switch unique, aucune passerelle.
+// Le poste Supervision ping une adresse : on compare les adresses de reseau (IP ET masque).
+var MACHINES = [
+  { nom: 'P01', mac: '24:6F:28:A1:3C:01' },
+  { nom: 'P02', mac: '24:6F:28:A1:3C:02' },
+  { nom: 'P03', mac: '24:6F:28:A1:3C:03' },
+  { nom: 'Supervision', mac: '3C:52:82:0F:7D:10' }
+];
+
+function lireIp(texte) {
+  var morceaux = String(texte).trim().split('.');
+  if (morceaux.length !== 4) return null;
+  var octets = [];
+  for (var i = 0; i < 4; i++) {
+    if (!/^\d{1,3}$/.test(morceaux[i])) return null;
+    var v = Number(morceaux[i]);
+    if (v > 255) return null;
+    octets.push(v);
+  }
+  return octets;
+}
+
+function lireMasque(texte) {
+  var octets = lireIp(texte);
+  if (!octets) return null;
+  var bits = octets.map(function (o) { return ('00000000' + o.toString(2)).slice(-8); }).join('');
+  return /^1+0+$/.test(bits) ? octets : null;
+}
+
+function reseau(ip, masque) {
+  return ip.map(function (o, i) { return o & masque[i]; }).join('.');
+}
+
+var corps = document.getElementById('machines');
+MACHINES.forEach(function (m, i) {
+  var tr = document.createElement('tr');
+  tr.innerHTML = '<td><strong>' + m.nom + '</strong></td><td class="mac">' + m.mac + '</td>' +
+    '<td><input id="ip' + i + '" autocomplete="off" aria-label="Adresse IP de ' + m.nom + '"></td>' +
+    '<td><input id="masque' + i + '" autocomplete="off" aria-label="Masque de ' + m.nom + '"></td>';
+  corps.appendChild(tr);
+});
+
+function config(i) {
+  return {
+    nom: MACHINES[i].nom,
+    ipTexte: document.getElementById('ip' + i).value.trim(),
+    ip: lireIp(document.getElementById('ip' + i).value),
+    masque: lireMasque(document.getElementById('masque' + i).value)
+  };
+}
+
+function marquer() {
+  MACHINES.forEach(function (_m, i) {
+    var champIp = document.getElementById('ip' + i);
+    var champMasque = document.getElementById('masque' + i);
+    champIp.classList.toggle('faux', champIp.value.trim() !== '' && !lireIp(champIp.value));
+    champMasque.classList.toggle('faux', champMasque.value.trim() !== '' && !lireMasque(champMasque.value));
+  });
+}
+corps.addEventListener('input', marquer);
+
+var ecran = document.getElementById('console');
+function afficher(lignes) { ecran.textContent += lignes.join('\n') + '\n\n'; ecran.scrollTop = ecran.scrollHeight; }
+
+function ping() {
+  var texte = document.getElementById('destination').value.trim();
+  var entete = '> ping ' + texte;
+  var source = config(3);
+  if (!source.ip || !source.masque) {
+    return afficher([entete, 'Erreur : renseigne d\'abord une adresse IP et un masque valides pour le poste Supervision.']);
+  }
+  var cible = lireIp(texte);
+  if (!cible) return afficher([entete, 'Erreur : « ' + texte + ' » n\'est pas une adresse IPv4 valide.']);
+
+  var echec = function (message) { return afficher([entete, message, '4 paquets envoyés, 0 reçu.']); };
+  if (reseau(cible, source.masque) !== reseau(source.ip, source.masque)) {
+    return echec('Réseau inaccessible : cette adresse n\'est pas dans le réseau de Supervision (' + reseau(source.ip, source.masque) + '), et aucune passerelle n\'est configurée.');
+  }
+  var trouvees = [];
+  MACHINES.forEach(function (_m, i) {
+    var c = config(i);
+    if (c.ip && c.masque && c.ip.join('.') === cible.join('.')) trouvees.push(c);
+  });
+  if (!trouvees.length) return echec('Hôte inaccessible : aucune machine du réseau ne répond à cette adresse.');
+  if (trouvees.length > 1) return echec('Conflit : plusieurs machines ont la même adresse IP (' + trouvees.map(function (c) { return c.nom; }).join(', ') + ').');
+  var dest = trouvees[0];
+  if (reseau(source.ip, dest.masque) !== reseau(dest.ip, dest.masque)) {
+    return echec('Pas de réponse : ' + dest.nom + ' a reçu la demande, mais avec son masque, il ne voit pas Supervision dans son réseau.');
+  }
+  var lignes = [entete];
+  for (var k = 0; k < 4; k++) lignes.push('Réponse de ' + texte + ' (' + dest.nom + ') : temps=' + (1 + Math.floor(Math.random() * 4)) + ' ms');
+  lignes.push('4 paquets envoyés, 4 reçus.');
+  afficher(lignes);
+}
+
+document.getElementById('lancer').addEventListener('click', ping);
+document.getElementById('destination').addEventListener('keydown', function (e) { if (e.key === 'Enter') ping(); });
+document.getElementById('effacer').addEventListener('click', function () { ecran.textContent = ''; });
+</script>
+</body>
+</html>

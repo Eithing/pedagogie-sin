@@ -1,8 +1,8 @@
 ﻿Titre de la séance :
-Le Web — TP : ma première page web en HTML et CSS
+Le Web — TP à distance : ma première page web en HTML et CSS
 
 Description :
-S2 Le Web (distanciel) : créer une page web personnelle, en distinguant le contenu (HTML) du style (CSS). TP noté sur grille.
+S2 Le Web (distanciel, blocus) : créer une page web personnelle, en distinguant le contenu (HTML) du style (CSS). TP noté sur grille ; ceux qui ont déjà rendu leur page peuvent l'améliorer.
 
 === Travail à faire (à coller dans Pronote) ===
 Ma première page web — le contenu en HTML, le style en CSS

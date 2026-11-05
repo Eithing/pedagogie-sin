@@ -1,0 +1,27 @@
+﻿=== TSTI2D1 (vendredi 6 novembre) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Travail à distance : le lampadaire autonome (reprise du CAN, diagramme d'états)
+
+Description :
+T2 (distanciel, blocus) : reprise du CAN sur le capteur de lumière d'un lampadaire (quantum, seuil, code N), puis description de son comportement par un diagramme d'états. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Le lampadaire autonome — seuil jour / nuit et diagramme d'états
+Douze lampadaires allumés toute la nuit pour une allée vide. Tu vas leur apprendre à décider seuls.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_Lampadaire_Etats.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_Lampadaire_Etats.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+
+✏️ Consignes :
+- Travail individuel, à distance, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page. Calculatrice autorisée.
+- Écris toujours la formule, puis le calcul, puis le résultat avec son unité : c'est ce qui sera attendu à l'évaluation.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier, avec les questions 1 à 10 et le bilan.
+- Dépôt dans le devoir « Lampadaire autonome » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire : il prépare l'évaluation sur le CAN et le CNA du vendredi 13 novembre.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds dès que possible.
+- Bloqué plus de 5 minutes ? Écris « bloqué » à cette question et passe à la suivante.

@@ -27,7 +27,7 @@ sequences:
     semaines: 7
     etat: en-cours
     debut: 2026-11-06
-    ressources: [COURS_TermSIN_Lampadaire_Etats]
+    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -47,6 +47,8 @@ journal:
     texte: "Blocus, distanciel : TP « Voyant Aérez ! » sur Wokwi (ESP32 en MicroPython), application de la remédiation CAN. Non noté, rendu obligatoire."
   - date: 2026-11-02
     texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close (cours fait avant le blocus, remédiation à distance) ; l'interrogation CAN (sujet A) est fixée au vendredi 13 novembre. T2 démarre le 6 novembre par la séance « lampadaire autonome », qui commence par une reprise du CAN."
+  - date: 2026-11-06
+    texte: "Blocus, distanciel : fiche « Le lampadaire autonome » en autonomie (reprise du CAN, diagramme d'états), non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
 ---
 
 ## Organisation

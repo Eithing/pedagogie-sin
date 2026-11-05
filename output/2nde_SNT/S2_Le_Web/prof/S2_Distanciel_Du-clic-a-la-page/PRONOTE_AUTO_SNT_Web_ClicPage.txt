@@ -1,0 +1,27 @@
+﻿Titre de la séance :
+Le Web — Travail à distance : du clic à la page (URL, client / serveur, HTTP)
+
+Description :
+S2 Le Web (distanciel, blocus) : reprise d'Internet et du Web, décomposition d'une URL, puis dialogue client / serveur et lecture d'une requête HTTP. Fiche autonome, non notée, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Du clic à la page — URL, client, serveur et requête HTTP
+Tu cliques sur « Menu de la cantine » et la page s'affiche en 0,3 seconde. Qui a parlé à qui ?
+
+📄 Documents joints :
+- ELEVE_AUTO_SNT_Web_ClicPage.pdf (la fiche)
+- REPONSES_AUTO_SNT_Web_ClicPage.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+
+✏️ Consignes :
+- Travail individuel, à distance, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.
+- Garde ce PDF ouvert d'un côté et ton document réponse de l'autre.
+- Pas besoin d'avoir fait la fiche précédente sur le Web : tout est repris ici.
+
+📤 À rendre :
+- Tes réponses aux questions 1 à 11 et le bilan complété : le fichier REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier.
+- Un seul dépôt, dans le devoir « Du clic à la page » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire : la première étape prépare l'évaluation sur Internet du vendredi 13 novembre.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds dès que possible.
+- Bloqué plus de 5 minutes ? Écris « bloqué » à cette question et passe à la suivante.

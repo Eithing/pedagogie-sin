@@ -50,6 +50,8 @@ journal:
     texte: "Blocus, distanciel. Heure commune avec D2 : entraînement autocorrigé sur le CAN (valeurs propres à chaque élève). Non noté, rendu obligatoire."
   - date: 2026-11-02
     texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close ; le TD noté sur le CO₂ est abandonné comme note (une seule note de connaissances : l'interrogation CAN, sujet B, à l'heure commune du vendredi 13 novembre). T2 démarre le mardi 3 novembre par la séance « lampadaire autonome », qui commence par une reprise du CAN. Heure commune : C0 terminée, C1 (réseau local) démarre le 6 novembre."
+  - date: 2026-11-06
+    texte: "Blocus, distanciel. Heure commune avec D2 : fiche « Le parking connecté » avec un simulateur sans installation à la place de Filius. Non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
 ---
 
 ## Organisation

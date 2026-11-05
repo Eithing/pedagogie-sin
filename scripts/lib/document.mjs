@@ -252,7 +252,15 @@ function grouperQuestions(corps) {
 }
 
 export function variante(corps, cible, config) {
-  if (cible === 'prof') return grouperQuestions(corps);
+  if (cible === 'prof') {
+    // Les lignes placées sous une sous-question ne servent qu'à la version élève
+    const { lignes, blocs } = reperer(corps);
+    const retirer = new Set();
+    for (const b of blocs.filter((x) => x.nom === 'zone' && x.fin != null)) {
+      for (let i = b.debut; i <= b.fin; i++) retirer.add(i);
+    }
+    return grouperQuestions(lignes.filter((_l, i) => !retirer.has(i)).join('\n'));
+  }
   const { lignes, blocs } = reperer(corps);
   const sortie = [];
   const remplacements = new Map();

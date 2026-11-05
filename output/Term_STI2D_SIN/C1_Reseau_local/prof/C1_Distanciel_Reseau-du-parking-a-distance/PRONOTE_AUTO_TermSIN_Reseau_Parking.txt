@@ -1,0 +1,29 @@
+﻿=== TSTI2D2 + TSTI2D3, heure commune (vendredi 6 novembre) ===
+Titre de la séance :
+C1 Mettre en réseau des objets — Travail à distance : le réseau du parking connecté
+
+Description :
+C1 (distanciel, blocus) : constituants d'un réseau local (switch, routeur), adresses MAC et IPv4, masque /24, puis test d'un réseau par ping sur un simulateur sans compte. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Le parking connecté — switch, routeur, adresses MAC et IP, masque
+40 places, 40 capteurs, un écran à l'accueil qui affiche « 37 places libres ». Comment les relier ?
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_Reseau_Parking.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_Reseau_Parking.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- reseau_parking.html
+
+✏️ Consignes :
+- Travail individuel, à distance, sur ordinateur, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.
+- Le simulateur est un simple fichier à ouvrir par un double-clic : ni compte, ni installation.
+- À l'étape marquée 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec les questions 1 à 9, le bilan et la capture d'écran 📸.
+- Dépôt dans le devoir « Réseau du parking » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : envoie-moi une capture d'écran si le simulateur ne donne pas ce que tu attends.
+- Tu n'as qu'un téléphone ? Préviens-moi dès le début de l'heure, et fais les questions 1 à 7, qui ne demandent pas le simulateur.
