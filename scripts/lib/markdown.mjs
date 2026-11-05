@@ -96,7 +96,7 @@ export function creerMarkdown() {
     return `<section class="question"><header class="question-titre"><span>Question ${q.numero ?? ''}</span>${pts}</header><div class="question-corps">\n`;
   }, '</div></section>\n');
   bloc(md, 'reponse', () => '<section class="reponse"><header class="reponse-titre">Corrigé</header><div class="reponse-corps">\n', '</div></section>\n');
-  bloc(md, 'zone', (a) => `<div class="zone-reponse" style="--lignes:${Number(a[0]) || 6}" aria-label="Zone de réponse"></div>\n`, '');
+  bloc(md, 'zone', (a) => `<div class="zone-reponse" aria-label="Zone de réponse">${'<div class="ligne-reponse"></div>'.repeat(Number(a[0]) || 6)}</div>\n`, '');
 
   // --- Notes enseignant ---
   bloc(md, 'prof', () => '<aside class="note-prof"><header>Note enseignant</header>\n', '</aside>\n');

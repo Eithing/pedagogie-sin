@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'autonomie', 'cadrage', 'progression'];
+export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'autonomie', 'cadrage', 'progression', 'revision'];
 export const NOTES = ['tp', 'td', 'evaluation']; // documents notés : points et barème obligatoires
 // Un travail en autonomie (distanciel) est noté seulement s'il porte un barème.
 export const estNote = (meta) => NOTES.includes(meta.type) || (meta.type === 'autonomie' && meta.bareme != null);
@@ -115,7 +115,7 @@ export function valider(doc, config) {
   const A = (ligne, msg) => avert.push({ ligne: ligne == null ? null : ligne + decalage + 1, msg });
 
   // Front matter
-  for (const champ of ['titre', 'niveau', 'type', 'duree', 'competences']) {
+  for (const champ of ['titre', 'niveau', 'type', ...(meta.type === 'revision' ? [] : ['duree']), 'competences']) {
     if (meta[champ] == null || meta[champ] === '' || (Array.isArray(meta[champ]) && !meta[champ].length)) {
       E(null, `Front matter : champ « ${champ} » manquant`);
     }
@@ -232,8 +232,27 @@ export function appliquerSujet(corps, v, variantes) {
   return lignes.filter((_l, i) => !retirer.has(i)).join('\n');
 }
 
+// Enveloppe chaque question et sa réponse (corrigé ou zone) : le bloc n'est jamais coupé en bas de page.
+function grouperQuestions(corps) {
+  const { lignes, blocs } = reperer(corps);
+  const avant = new Set();
+  const apres = new Set();
+  for (const q of blocs.filter((b) => b.nom === 'question' && b.fin != null)) {
+    let i = q.fin + 1;
+    while (i < lignes.length && !lignes[i].trim()) i++;
+    const suite = blocs.find((b) => b.debut === i && ['reponse', 'zone'].includes(b.nom) && b.fin != null);
+    avant.add(q.debut);
+    apres.add(suite ? suite.fin : q.fin);
+  }
+  return lignes.flatMap((l, i) => [
+    ...(avant.has(i) ? ['<div class="bloc-question">', ''] : []),
+    l,
+    ...(apres.has(i) ? ['', '</div>'] : []),
+  ]).join('\n');
+}
+
 export function variante(corps, cible, config) {
-  if (cible === 'prof') return corps;
+  if (cible === 'prof') return grouperQuestions(corps);
   const { lignes, blocs } = reperer(corps);
   const sortie = [];
   const remplacements = new Map();
@@ -254,7 +273,7 @@ export function variante(corps, cible, config) {
     if (remplacements.has(i)) sortie.push(...remplacements.get(i));
     else if (!masque[i]) sortie.push(l);
   });
-  return sortie.join('\n');
+  return grouperQuestions(sortie.join('\n'));
 }
 
 const fmt = (n) => String(Math.round(n * 100) / 100).replace('.', ',');

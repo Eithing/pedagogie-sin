@@ -30,7 +30,7 @@ sequences:
     semaines: 7
     etat: fait
     fin: 2026-10-16
-    evaluation: "Interrogation sur le CAN (sujet B, heure commune du vendredi 13 novembre, reportée à cause du blocus) + TP noté Tinkercad « salle serveur, TMP36 » (à distance, le 9 octobre)."
+    evaluation: "Interrogation sur le CAN et le CNA (sujet B, 40 min, heure commune du vendredi 13 novembre, reportée à cause du blocus) + TP noté Tinkercad « salle serveur, TMP36 » (à distance, le 9 octobre)."
     ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad, AUTO_TermSIN_Cuve_Lissage]
   - ref: T2
     semaines: 7

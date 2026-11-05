@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Internet — Fiche de révision : paquets, IP, TCP, DNS et routage
+
+Description :
+S1 Internet : fiche de révision distribuée avant l'évaluation (paquets, adresses IPv4, rôles d'IP et de TCP, DNS, routage, commandes réseau). Non noté.

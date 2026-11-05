@@ -142,8 +142,7 @@ blockquote {
   margin: 12px 0 4px;
   break-inside: avoid;
 }
-.question:has(+ .zone-reponse), .question:has(+ .reponse) { break-after: avoid; }
-.question + .zone-reponse, .question + .reponse { break-before: avoid; }
+.bloc-question { break-inside: avoid; }
 .question-titre {
   display: flex;
   gap: 8px;
@@ -176,16 +175,13 @@ blockquote {
 
 /* ---------- Zone de réponse (version élève) ---------- */
 .zone-reponse {
-  height: calc(var(--lignes) * var(--pas-ligne));
   margin: 2px 0 12px;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent calc(var(--pas-ligne) - 1px),
-    var(--ligne-reponse) calc(var(--pas-ligne) - 1px),
-    var(--ligne-reponse) var(--pas-ligne)
-  );
   break-inside: avoid;
+}
+.ligne-reponse {
+  height: var(--pas-ligne);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--ligne-reponse);
 }
 
 /* ---------- Encadrés ---------- */
@@ -338,7 +334,7 @@ img { max-width: 100%; }
 .doc-corps .contexte-corps img { max-height: 55mm; }
 .saut-page { break-before: page; }
 .bloc-insecable { break-inside: avoid; }
-.bloc-insecable:has(+ .question) { break-after: avoid; }
+.bloc-insecable:has(+ .bloc-question) { break-after: avoid; }
 
 /* ==========================================================================
    Fiche de déroulé (enseignant)
@@ -428,6 +424,18 @@ table.deroule tbody tr { break-inside: auto; }
 .plan-etapes li em { margin-left: auto; font-style: normal; color: var(--texte-doux); white-space: nowrap; }
 .plan-etapes .case { flex: none; width: 3.5mm; height: 3.5mm; border: 1px solid var(--texte); background: #fff; }
 .plan-rendu ul, .plan-aide ul { margin: 0; padding-left: 4mm; font-size: 10pt; }
+
+/* ---------- Fiche de révision : compacte, pour tenir sur un recto-verso ---------- */
+body.document.type-revision { font-size: 10pt; line-height: 1.28; }
+.type-revision .doc-entete { margin-bottom: 8px; padding: 5px 12px 6px; }
+.type-revision .doc-titre { font-size: 14pt; margin: 4px 0 2px; }
+.type-revision h2 { font-size: 11.5pt; margin: 9px 0 4px; }
+.type-revision .document p, .type-revision .doc-corps p, .type-revision .doc-corps ul, .type-revision .doc-corps ol { margin: 3px 0; }
+.type-revision .doc-corps table { font-size: 9.5pt; margin: 4px 0; }
+.type-revision .doc-corps td, .type-revision .doc-corps th { padding: 2px 6px; }
+.type-revision .encadre { margin: 6px 0; padding: 2px 8px 3px; }
+.type-revision pre.hljs { margin: 4px 0; padding: 4px 8px; font-size: 8.5pt; }
+.type-revision .doc-corps img { margin: 3px auto; }
 
 /* ---------- Sauts de page ---------- */
 /* « \newpage » dans la source ; en autonomie, chaque étape commence une nouvelle page */

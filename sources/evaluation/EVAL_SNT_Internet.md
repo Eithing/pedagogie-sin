@@ -3,21 +3,22 @@ titre: "Internet : paquets, routage et DNS"
 niveau: SNT (2nde)
 sequence: S1
 court: Interro Internet
+rangement: Eval/2nde
 pronote:
   titre: "Internet — Interrogation : paquets, routage et DNS"
-  description: "S1 Internet : interrogation écrite de 25 min, deux sujets (A/B), sur les paquets, les adresses IP, le routage et le DNS. Notée."
+  description: "S1 Internet : interrogation écrite de 30 min, deux sujets (A/B), sur les paquets, les adresses IP, le routage et le DNS. Notée."
 type: evaluation
-duree: 25 min
+duree: 30 min
 bareme: 20
 variantes: [A, B]
 competences: [INT.1, INT.2]
 consignes:
-  - "Durée : 25 minutes. Répondre directement sur le sujet."
-  - "Pour les QCM, cocher une seule case."
+  - "Durée : 30 minutes. Répondre directement sur le sujet."
+  - "Question 1 : cocher une seule case par item. Question 2 : cocher toutes les adresses valides."
 ---
 
 ::: prof
-**Date** : heure en classe entière de la semaine du 9 novembre (annoncée lors de la séance « Du clic à la page », qui en fait la révision express).
+**Date** : semaine du 9 novembre, sur un créneau de 1 h. Prévoir 30 min, 40 min au plus pour les élèves les plus lents. La fiche de révision est dans le même dossier.
 
 **Mise en œuvre** : distribuer le sujet A et le sujet B en alternance selon les rangs. Les deux sujets ont la même structure, la même difficulté et le même barème ; seuls les exemples changent.
 **Contenus évalués** : ceux vus en cours et en TP (séance TCP/IP, TP Filius, TP DNS / routage), soit INT.1 et INT.2. Le pair-à-pair et les réseaux physiques (INT.3, INT.4) ne sont pas évalués ici.

@@ -12,6 +12,8 @@
 //                       prof/DEROULE_<nom>.pdf, eleve/ELEVE_<nom>.pdf, prof/PROF_<nom>.pdf
 //   Autonomie         : eleve/ELEVE_<nom>.pdf, prof/PROF_<nom>.pdf (+ plan de travail, dépôt ENT)
 //   Progression       : PROGRESSION_<classe>.pdf à la racine du dossier de la classe (pas de séquence)
+//   Révision          : <nom>.pdf (fiche unique, sans version prof)
+//   Champ « rangement: Eval/2nde » : toutes les sorties du document à plat dans output/Eval/2nde
 //   Fichiers joints (front matter « fichiers: ») : copiés dans eleve/
 //   Document réponse (« document_reponse: true ») : eleve/REPONSES_<nom>.docx
 // output/.manifest.json mémorise ce que chaque source a produit : les fichiers devenus inutiles
@@ -39,14 +41,28 @@ const lireManifeste = () => { try { return JSON.parse(fs.readFileSync(MANIFESTE(
 const ecrireManifeste = (m) => fs.writeFileSync(MANIFESTE(), JSON.stringify(m, null, 2));
 const relSortie = (f) => path.relative(SORTIE(), f).split(path.sep).join('/');
 
+// Dossier d'un document pour une version donnée (eleve, prof, slides).
+// Champ « rangement: Eval/2nde » du front matter : tout est rangé à plat dans output/Eval/2nde.
+function dossierDe(meta, nom, config, sous) {
+  if (meta.rangement) return path.join(SORTIE(), meta.rangement);
+  return path.join(SORTIE(), dossierClasse(meta, config), dossierSequence(meta, nom, config), sous, dossierDocument(meta, nom, config));
+}
+
 // Une sortie = { cle, html, fichierHtml, pdf, format, libelle }
 function sorties(doc, seance, progression, config, nom) {
   const classe = path.join(SORTIE(), dossierClasse(doc.meta, config));
   const dossier = progression ? classe : path.join(classe, dossierSequence(doc.meta, nom, config));
   // Chaque document a son propre dossier dans eleve/, prof/ et slides/
-  const ici = (sous, fichier) => path.join(dossier, sous, dossierDocument(doc.meta, nom, config), fichier);
+  const ici = (sous, fichier) => path.join(dossierDe(doc.meta, nom, config, sous), fichier);
   const cache = (cle) => path.join(SORTIE(), '.cache', `${nom}.${cle}.html`);
   const s = [];
+
+  if (doc.meta.type === 'revision') {
+    return [{
+      cle: 'revision', html: rendreHtml({ meta: doc.meta, corps: variante(doc.corps, 'eleve', config), cible: 'eleve', config, fichierSource: doc.fichier }),
+      fichierHtml: cache('revision'), pdf: ici('eleve', `${nom}.pdf`), libelle: 'FICHE DE RÉVISION',
+    }];
+  }
 
   if (progression) {
     return [{
@@ -111,7 +127,7 @@ async function construire(fichier, config, manifeste) {
 
   // Texte du cahier de textes Pronote (titre + description), dans le dossier prof du document
   if (!progression) {
-    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'prof', dossierDocument(doc.meta, nom, config), `PRONOTE_${nom}.txt`);
+    const cible = path.join(dossierDe(doc.meta, nom, config, 'prof'), `PRONOTE_${nom}.txt`);
     fs.mkdirSync(path.dirname(cible), { recursive: true });
     fs.writeFileSync(cible, fichierPronote(doc.meta, nom, config));
     produits.push(cible);
@@ -120,7 +136,7 @@ async function construire(fichier, config, manifeste) {
 
   // Document réponse Word / LibreOffice (autonomie, « document_reponse: true »)
   if (doc.meta.document_reponse) {
-    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', dossierDocument(doc.meta, nom, config), `REPONSES_${nom}.docx`);
+    const cible = path.join(dossierDe(doc.meta, nom, config, 'eleve'), `REPONSES_${nom}.docx`);
     await genererDocx(doc, cible);
     produits.push(cible);
     console.log(`    → ${relSortie(cible)}`);
@@ -128,7 +144,7 @@ async function construire(fichier, config, manifeste) {
 
   // Fichiers joints (champ « fichiers: » : outils, données, code de départ) copiés tels quels avec la version élève
   for (const joint of [].concat(doc.meta.fichiers ?? [])) {
-    const cible = path.join(SORTIE(), dossierClasse(doc.meta, config), dossierSequence(doc.meta, nom, config), 'eleve', dossierDocument(doc.meta, nom, config), path.basename(joint));
+    const cible = path.join(dossierDe(doc.meta, nom, config, 'eleve'), path.basename(joint));
     fs.mkdirSync(path.dirname(cible), { recursive: true });
     fs.copyFileSync(path.resolve(path.dirname(fichier), joint), cible);
     produits.push(cible);

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 150" width="700" height="150" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="700" height="150" fill="#ffffff"/>
+
+  <g font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">
+    <rect x="10" y="45" width="100" height="56" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="60" y="78">Capteur</text>
+    <rect x="165" y="45" width="80" height="56" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="205" y="78">CAN</text>
+    <rect x="300" y="45" width="110" height="56" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="355" y="70">Micro-</text>
+    <text x="355" y="87">contrôleur</text>
+    <rect x="465" y="45" width="80" height="56" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="505" y="78">CNA</text>
+    <rect x="600" y="45" width="90" height="56" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="645" y="70">Actionneur</text>
+    <text x="645" y="87" font-weight="400" font-size="12">ou haut-parleur</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="2" marker-end="url(#f)">
+    <line x1="110" y1="73" x2="163" y2="73"/>
+    <line x1="245" y1="73" x2="298" y2="73"/>
+    <line x1="410" y1="73" x2="463" y2="73"/>
+    <line x1="545" y1="73" x2="598" y2="73"/>
+  </g>
+
+  <g font-size="12" fill="#334155" text-anchor="middle">
+    <text x="137" y="36">tension</text>
+    <text x="137" y="124">analogique</text>
+    <text x="272" y="36">code N</text>
+    <text x="272" y="124">numérique</text>
+    <text x="437" y="36">code N</text>
+    <text x="437" y="124">numérique</text>
+    <text x="572" y="36">tension</text>
+    <text x="572" y="124">analogique</text>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — Fiche de révision : CAN et CNA
+
+Description :
+T1 : fiche de révision distribuée avant l'évaluation sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, caractéristique de transfert, choix du nombre de bits). Non noté.

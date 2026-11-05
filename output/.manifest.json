@@ -25,18 +25,18 @@
     "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_TP_I2C-ESP32-temperature/PRONOTE_TP_TermSIN_I2C_ESP32_Temperature.txt"
   ],
   "sources/evaluation/EVAL_SNT_Internet.md": [
-    "2nde_SNT/S1_Internet/eleve/S1_Eval_Interro-Internet/ELEVE_EVAL_SNT_Internet_A.pdf",
-    "2nde_SNT/S1_Internet/prof/S1_Eval_Interro-Internet/PROF_EVAL_SNT_Internet_A.pdf",
-    "2nde_SNT/S1_Internet/eleve/S1_Eval_Interro-Internet/ELEVE_EVAL_SNT_Internet_B.pdf",
-    "2nde_SNT/S1_Internet/prof/S1_Eval_Interro-Internet/PROF_EVAL_SNT_Internet_B.pdf",
-    "2nde_SNT/S1_Internet/prof/S1_Eval_Interro-Internet/PRONOTE_EVAL_SNT_Internet.txt"
+    "Eval/2nde/ELEVE_EVAL_SNT_Internet_A.pdf",
+    "Eval/2nde/PROF_EVAL_SNT_Internet_A.pdf",
+    "Eval/2nde/ELEVE_EVAL_SNT_Internet_B.pdf",
+    "Eval/2nde/PROF_EVAL_SNT_Internet_B.pdf",
+    "Eval/2nde/PRONOTE_EVAL_SNT_Internet.txt"
   ],
   "sources/evaluation/EVAL_TermSIN_CAN.md": [
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Eval_Interro-CAN/ELEVE_EVAL_TermSIN_CAN_A.pdf",
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Eval_Interro-CAN/PROF_EVAL_TermSIN_CAN_A.pdf",
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Eval_Interro-CAN/ELEVE_EVAL_TermSIN_CAN_B.pdf",
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Eval_Interro-CAN/PROF_EVAL_TermSIN_CAN_B.pdf",
-    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Eval_Interro-CAN/PRONOTE_EVAL_TermSIN_CAN.txt"
+    "Eval/Terminale/ELEVE_EVAL_TermSIN_CAN_A.pdf",
+    "Eval/Terminale/PROF_EVAL_TermSIN_CAN_A.pdf",
+    "Eval/Terminale/ELEVE_EVAL_TermSIN_CAN_B.pdf",
+    "Eval/Terminale/PROF_EVAL_TermSIN_CAN_B.pdf",
+    "Eval/Terminale/PRONOTE_EVAL_TermSIN_CAN.txt"
   ],
   "sources/td/TD_TermSIN_CAN_QualiteAir.md": [
     "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_TD_CO2-salle-de-classe/ELEVE_TD_TermSIN_CAN_QualiteAir.pdf",
@@ -128,5 +128,13 @@
     "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Lampadaire-Wokwi/PRONOTE_TP_TermSIN_Lampadaire_Wokwi.txt",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/diagram.json",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Lampadaire-Wokwi/lampadaire.py"
+  ],
+  "sources/revision/REVISION_SNT_Internet.md": [
+    "Eval/2nde/REVISION_SNT_Internet.pdf",
+    "Eval/2nde/PRONOTE_REVISION_SNT_Internet.txt"
+  ],
+  "sources/revision/REVISION_TermSIN_CAN_CNA.md": [
+    "Eval/Terminale/REVISION_TermSIN_CAN_CNA.pdf",
+    "Eval/Terminale/PRONOTE_REVISION_TermSIN_CAN_CNA.txt"
   ]
 }

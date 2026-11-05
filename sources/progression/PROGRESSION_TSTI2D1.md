@@ -22,7 +22,7 @@ sequences:
     semaines: 7
     etat: fait
     fin: 2026-10-16
-    evaluation: "Interrogation sur le CAN (sujet A), vendredi 13 novembre (reportée à cause du blocus)."
+    evaluation: "Interrogation sur le CAN et le CNA (sujet A, 40 min), vendredi 13 novembre (reportée à cause du blocus)."
   - ref: T2
     semaines: 7
     etat: en-cours

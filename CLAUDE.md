@@ -14,6 +14,9 @@ Les sorties sont rangées **par classe puis par séquence** dans `output/<classe
 | `cours` (séance) | `slides/SLIDES_<nom>.pdf` + `slides/<nom>.html` (projection : ←/→, F plein écran, T minuteur) · `prof/DEROULE_<nom>.pdf` (fiche de suivi de séance) · `eleve/ELEVE_` et `prof/PROF_<nom>.pdf` (fiche d'activités) |
 | `autonomie` (distanciel) | `eleve/ELEVE_<nom>.pdf` avec **plan de travail** (étapes à cocher, ce qu'il faut déposer sur l'ENT, comment obtenir de l'aide) · `prof/PROF_<nom>.pdf` · `eleve/REPONSES_<nom>.docx` si `document_reponse: true` (l'élève répond sous Word ou LibreOffice) · fichiers joints (`fichiers:`) copiés dans `eleve/` · une étape par page · noté seulement si `bareme:` est présent |
 | `progression` | `PROGRESSION_<classe>.pdf` à la racine de `output/<classe>/` (A4 paysage : frise annuelle, séquences, couverture du BO, journal) |
+| `revision` | `<nom>.pdf` : fiche de révision unique, sans version prof, sources dans `sources/revision/` |
+
+Champ **`rangement:`** du front matter (ex. `rangement: Eval/2nde`) : toutes les sorties du document sont rangées à plat dans ce dossier de `output/`. C'est le cas des évaluations et de leurs fiches de révision (`output/Eval/2nde/`, `output/Eval/Terminale/`). Ne jamais copier un fichier à la main dans `output/` : la génération complète efface ce qu'aucune source ne produit.
 
 `output/.manifest.json` mémorise ce que chaque source produit : une génération complète supprime d'elle-même les fichiers devenus inutiles (source renommée ou supprimée, ancien rangement).
 
@@ -21,7 +24,7 @@ Les sorties sont rangées **par classe puis par séquence** dans `output/<classe
 
 | Chemin | Contenu |
 | :--- | :--- |
-| `sources/{tp,td,cours,evaluation,autonomie,cadrage}/` | **Sources Markdown** — les seuls fichiers à écrire à la main |
+| `sources/{tp,td,cours,evaluation,autonomie,cadrage,revision}/` | **Sources Markdown** — les seuls fichiers à écrire à la main |
 | `sources/progression/` | Progressions annuelles (une par classe) + `_catalogue_TermSIN.yaml` (séquences communes aux Terminales et heure commune D2 + D3) |
 | `sources/<type>/img/<sujet>/` | Illustrations SVG (dessinées par Claude) et photos fournies par l'enseignant |
 | `output/` | Fichiers générés — ne jamais éditer |

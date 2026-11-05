@@ -1,27 +1,30 @@
 ---
-titre: Conversion analogique-numérique
+titre: Conversions analogique-numérique et numérique-analogique
 niveau: Term STI2D SIN
 sequence: T1
-court: Interro CAN
+court: Interro CAN CNA
+rangement: Eval/Terminale
 pronote:
-  titre: "T1 Acquérir une grandeur physique — Interrogation sur le CAN"
-  description: "T1 : interrogation écrite de 30 min, deux sujets (A/B), sur la conversion analogique-numérique (quantum, code N, caractéristique de transfert, choix d'un CAN). Notée."
+  titre: "T1 Acquérir une grandeur physique — Interrogation sur le CAN et le CNA"
+  description: "T1 : interrogation écrite de 40 min, deux sujets (A/B), sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, caractéristique de transfert, choix du nombre de bits). Notée."
 type: evaluation
-duree: 30 min
+duree: 40 min
 bareme: 20
 variantes: [A, B]
 competences: [2.4.2c, 5.3.1d, 2.4.3a, CO7.3-SIN1]
 consignes:
-  - "Durée : 30 minutes. Calculatrice autorisée. Répondre directement sur le sujet."
+  - "Durée : 40 minutes. Calculatrice autorisée. Répondre directement sur le sujet."
   - "Donner les résultats avec leur unité ; 3 chiffres significatifs suffisent."
 ---
 
 ::: prof
-**Mise en œuvre (vendredi 13 novembre, reportée deux fois à cause du blocus)** : sujet **A** pour TSTI2D1 (12 h), sujet **B** pour l'heure commune TSTI2D2 + TSTI2D3 (13 h). Révisions faites la semaine du 2 novembre : échauffements et calculs de la séance « lampadaire » (D1, D3), échauffement de la séance « parking connecté » (heure commune), partie A du TP lampadaire (D2). Les deux sujets ont la même structure et le même barème ; les valeurs changent, ce qui neutralise la transmission des réponses entre les deux heures.
+**Mise en œuvre (vendredi 13 novembre, sur un créneau de 1 h ; reportée deux fois à cause du blocus)** : sujet **A** pour TSTI2D1 (12 h), sujet **B** pour l'heure commune TSTI2D2 + TSTI2D3 (13 h). Prévoir 40 min, 45 min au plus. Révisions faites la semaine du 2 novembre : échauffements et calculs de la séance « lampadaire » (D1, D3), échauffement de la séance « parking connecté » (heure commune), partie A du TP lampadaire (D2). Les deux sujets ont la même structure et le même barème ; les valeurs changent, ce qui neutralise la transmission des réponses entre les deux heures.
 
 **Convention** : quantum $q = \dfrac{\text{PE}}{2^n}$ et code $N$ = partie entière de $\dfrac{V_{in}}{q}$, comme dans la documentation Arduino. Si le cours a utilisé $2^n - 1$, les résultats diffèrent de moins de 0,5 % : accepter les deux conventions si elles sont appliquées de façon cohérente.
 
 **Contenus évalués (BO 2.4.2 / 5.3.1)** : grandeur d'entrée, grandeur de sortie, caractéristique de transfert, nombre de bits, résolution, quantum, valeur pleine échelle.
+
+**CNA (question 6)** : ajouté à la demande de l'enseignant. Le programme enregistré dans le projet ne cite que le CAN (2.4.2c, 5.3.1d) : aucun identifiant du BO n'est donc associé à cette question. Elle n'utilise que $V_s = N \times q$. Si le CNA n'a pas été vu dans une classe, neutraliser la question et noter sur 17.
 :::
 
 ## Partie 1 — Vocabulaire
@@ -76,7 +79,7 @@ Cocher la bonne réponse.
 
 ## Partie 2 — Calculs
 
-::: question 2 [4 pt]
+::: question 2 [3 pt]
 Un CAN de **{{8|10}} bits** a une pleine échelle de **{{5|3,3}} V**.
 
 **a)** Combien de codes différents peut-il fournir ? Quelles sont la plus petite et la plus grande valeur du code $N$ ?
@@ -85,12 +88,12 @@ Un CAN de **{{8|10}} bits** a une pleine échelle de **{{5|3,3}} V**.
 :::
 
 ::: reponse 4
-**a)** $2^{ {{8|10}} } = {{256|1\,024}}$ codes, de $N = 0$ à $N = {{255|1\,023}}$. (2 pt)
+**a)** $2^{ {{8|10}} } = {{256|1\,024}}$ codes, de $N = 0$ à $N = {{255|1\,023}}$. (1 pt)
 
 **b)** $q = \dfrac{\text{PE}}{2^n} = \dfrac{ {{5|3{,}3}} }{ {{256|1\,024}} } \approx {{19{,}5|3{,}22}}\text{ mV}$ (valeur exacte {{19,53|3,223}} mV). (2 pt)
 :::
 
-::: question 3 [4 pt]
+::: question 3 [3 pt]
 La tension d'entrée vaut $V_{in} = {{2{,}0|1{,}5}}\text{ V}$.
 
 **a)** Calculer le code $N$ fourni par le CAN de la question 2.
@@ -99,7 +102,7 @@ La tension d'entrée vaut $V_{in} = {{2{,}0|1{,}5}}\text{ V}$.
 :::
 
 ::: reponse 4
-**a)** $N = \dfrac{V_{in}}{q} = \dfrac{ {{2{,}0|1{,}5}} }{ {{0{,}019\,53|0{,}003\,223}} } \approx {{102{,}4|465{,}4}}$, donc $N = {{102|465}}$ (partie entière). (2 pt)
+**a)** $N = \dfrac{V_{in}}{q} = \dfrac{ {{2{,}0|1{,}5}} }{ {{0{,}019\,53|0{,}003\,223}} } \approx {{102{,}4|465{,}4}}$, donc $N = {{102|465}}$ (partie entière). (1 pt)
 
 **b)** {{$102 = 64 + 32 + 4 + 2$ → `0110 0110` → `0x66`|$465 = 256 + 128 + 64 + 16 + 1$ → `01 1101 0001` → `0x1D1`}}. (1 pt binaire, 1 pt hexadécimal)
 :::
@@ -136,9 +139,29 @@ On étudie un CAN de **3 bits** dont la caractéristique de transfert est donné
 **c)** $\text{PE} = 2^3 \times q = 8 \times {{0{,}5|0{,}25}} = {{4|2}}\text{ V}$. (1 pt)
 :::
 
-## Partie 4 — Choisir un CAN
+## Partie 4 — Le CNA
 
 ::: question 6 [3 pt]
+On utilise maintenant un **CNA de {{8|10}} bits**, de pleine échelle **{{5|3,3}} V**.
+
+**a)** Quelle est sa grandeur d'entrée ? Sa grandeur de sortie ?
+
+**b)** Calculer la tension de sortie $V_s$ pour le code $N$ = `{{0x80|0x200}}`.
+
+**c)** Quel code faut-il envoyer pour obtenir une tension de sortie d'environ 1 V ?
+:::
+
+::: reponse 5
+**a)** Entrée : un nombre binaire (code numérique). Sortie : une tension analogique. (1 pt)
+
+**b)** $q = \dfrac{ {{5|3{,}3}} }{ {{256|1\,024}} } \approx {{19{,}53|3{,}223}}\text{ mV}$ et $N = {{128|512}}$, donc $V_s = N \times q = {{2{,}5|1{,}65}}\text{ V}$. (1 pt)
+
+**c)** $N = \dfrac{1}{ {{0{,}019\,53|0{,}003\,223}} } \approx {{51{,}2|310{,}3}}$, soit $N = {{51|310}}$. (1 pt)
+:::
+
+## Partie 5 — Choisir un CAN
+
+::: question 7 [2 pt]
 Un capteur de température fournit une tension de **0 V à 0 °C** jusqu'à **{{5 V à 100 °C|3,3 V à 50 °C}}** (relation linéaire). On veut distinguer des variations de **{{0,1|0,02}} °C**. La pleine échelle du CAN vaut {{5|3,3}} V.
 
 Quel nombre de bits minimal faut-il ? Justifier par un calcul.
@@ -149,5 +172,5 @@ Sensibilité du capteur : $s = {{\dfrac{5}{100} = 50\text{ mV/°C}|\dfrac{3{,}3}
 
 Quantum maximal : $q \le s \times {{0{,}1|0{,}02}} = {{5|1{,}32}}\text{ mV}$. (1 pt)
 
-$\dfrac{ {{5|3{,}3}} }{2^n} \le {{0{,}005|0{,}001\,32}}$ → $2^n \ge {{1\,000|2\,500}}$ → $n = {{10|12}}$ bits ($2^{ {{10|12}} } = {{1\,024|4\,096}}$). (2 pt)
+$\dfrac{ {{5|3{,}3}} }{2^n} \le {{0{,}005|0{,}001\,32}}$ → $2^n \ge {{1\,000|2\,500}}$ → $n = {{10|12}}$ bits ($2^{ {{10|12}} } = {{1\,024|4\,096}}$). (1 pt)
 :::

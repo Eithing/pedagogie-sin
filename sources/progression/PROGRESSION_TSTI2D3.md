@@ -24,7 +24,7 @@ sequences:
     semaines: 7
     etat: fait
     fin: 2026-10-16
-    evaluation: "Interrogation sur le CAN (sujet B, heure commune du vendredi 13 novembre, reportée à cause du blocus). Le TD « CO₂ d'une salle de classe » n'est plus noté : il reste un exercice d'entraînement."
+    evaluation: "Interrogation sur le CAN et le CNA (sujet B, 40 min, heure commune du vendredi 13 novembre, reportée à cause du blocus). Le TD « CO₂ d'une salle de classe » n'est plus noté : il reste un exercice d'entraînement."
     ressources: [TD_TermSIN_CAN_QualiteAir, EVAL_TermSIN_CAN]
   - ref: T2
     semaines: 7

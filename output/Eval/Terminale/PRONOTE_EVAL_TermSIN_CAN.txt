@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+T1 Acquérir une grandeur physique — Interrogation sur le CAN et le CNA
+
+Description :
+T1 : interrogation écrite de 40 min, deux sujets (A/B), sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, caractéristique de transfert, choix du nombre de bits). Notée.

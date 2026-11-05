@@ -30,7 +30,7 @@ sequences:
       - "TP DNS et routage : retrouver l'adresse IP d'un site à partir de son nom, suivre le chemin des paquets"
       - "Réseaux physiques (fibre, 4G, Wi-Fi…) et ordre de grandeur du trafic ; pair-à-pair et usages illicites"
     outils: [Filius, navigateur, activités débranchées]
-    evaluation: "Interrogation de 25 min (sujets A / B), heure en classe entière de la semaine du 9 novembre (reportée à cause du blocus) : QCM, adresses IPv4, DNS, routage, TCP."
+    evaluation: "Interrogation de 30 min (sujets A / B), heure en classe entière de la semaine du 9 novembre (reportée à cause du blocus) : QCM, adresses IPv4, DNS, routage, TCP."
     ressources: [COURS_SNT_TCP_IP, EVAL_SNT_Internet]
     etat: fait
     debut: 2026-09-01

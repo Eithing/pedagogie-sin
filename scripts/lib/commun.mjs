@@ -85,7 +85,7 @@ export function dossierDocument(meta, nom, config) {
 // Textes du cahier de textes Pronote (titre + description courte de la séance).
 // Champ « pronote: » du front matter : { titre, description } ou une liste, avec « pour: » quand un même
 // document sert à plusieurs classes ou créneaux. Sinon, texte construit automatiquement.
-const TYPES_PRONOTE = { tp: 'TP', td: 'TD', cours: 'Cours', evaluation: 'Évaluation', autonomie: 'Travail à distance', cadrage: 'Cadrage' };
+const TYPES_PRONOTE = { tp: 'TP', td: 'TD', cours: 'Cours', evaluation: 'Évaluation', autonomie: 'Travail à distance', cadrage: 'Cadrage', revision: 'Fiche de révision' };
 export function textesPronote(meta, nom, config) {
   if (meta.pronote) return [].concat(meta.pronote);
   const classe = dossierClasse(meta, config);
