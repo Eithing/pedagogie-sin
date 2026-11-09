@@ -51,7 +51,7 @@ sequences:
       - "Régler cookies et confidentialité du navigateur ; visualiser les traqueurs"
     outils: [navigateur (outils de développement), éditeur web maison (fichier HTML, sans compte)]
     evaluation: "Production : page web personnelle évaluée sur grille (TP en autonomie, note de travail) ; QCM de fin de thème."
-    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso]
+    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso]
     semaines: 4
     etat: en-cours
     debut: 2026-10-09
@@ -163,7 +163,7 @@ journal:
   - date: 2026-11-06
     texte: "Blocus, distanciel. TP en demi-groupe (8 h) : moteurs de recherche (index à la main, classement, comparaison de deux moteurs, analyse critique d'une source), non noté, rendu obligatoire ; les deux groupes ont déjà fait « Ma première page web » avant les vacances. Classe entière (9 h) : fiche « Du clic à la page » (reprise d'Internet et du Web, URL, client / serveur, HTTP), non notée, rendu obligatoire. Fiche de révision déposée pour l'interrogation Internet du vendredi 13 novembre."
   - date: 2026-11-09
-    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation Internet ; à distance, révision guidée d'Internet (« Préparer l'évaluation sur Internet, pas à pas ») et l'interrogation est reportée au retour. TP de 8 h : le 2e demi-groupe fait le TP sur les moteurs de recherche."
+    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation Internet ; à distance, suite du thème Web avec « Cookies et confidentialité » (WEB.9), et l'interrogation est reportée au retour ; une révision guidée d'Internet reste sur l'ENT, en facultatif. TP de 8 h : le 2e demi-groupe fait le TP sur les moteurs de recherche."
 ---
 
 ## Intentions pédagogiques

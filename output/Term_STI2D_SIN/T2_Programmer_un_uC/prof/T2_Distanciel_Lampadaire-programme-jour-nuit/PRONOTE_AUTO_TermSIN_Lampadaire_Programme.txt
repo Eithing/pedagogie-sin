@@ -1,0 +1,38 @@
+﻿=== TSTI2D3 (mardi 10 novembre) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Travail à distance : du diagramme d'états au programme, le jour et la nuit (Wokwi)
+
+Description :
+T2 (distanciel, blocus) : premier programme du lampadaire en MicroPython sur Wokwi, guidé pas à pas : lire un capteur, comparer à un seuil, décider avec if / elif / else. Non noté, rendu obligatoire.
+
+=== TSTI2D1 (vendredi 13 novembre, si distanciel) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Travail à distance : du diagramme d'états au programme, le jour et la nuit (Wokwi)
+
+Description :
+T2 (distanciel, blocus) : premier programme du lampadaire en MicroPython sur Wokwi, guidé pas à pas : lire un capteur, comparer à un seuil, décider avec if / elif / else. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Du diagramme d'états au programme — le jour et la nuit, pas à pas
+Le diagramme d'états dit ce que le lampadaire doit faire. Aujourd'hui, tu l'écris en programme, ligne par ligne.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_Lampadaire_Programme.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_Lampadaire_Programme.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- circuit_lampadaire_jour_nuit.json
+- lampadaire_jour_nuit.py
+
+✏️ Consignes :
+- Travail individuel, à distance, sur ordinateur, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.
+- Wokwi s'utilise sans compte, dans le navigateur. Aux étapes marquées 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse.
+- Tu n'as jamais programmé en Python ? Pas de problème : chaque ligne à écrire est expliquée, avec un exemple juste avant.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec les questions 1 à 6, ton programme final et les 2 captures d'écran 📸.
+- Dépôt dans le devoir « Lampadaire : jour et nuit » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT. Envoie-moi une capture d'écran de ton écran Wokwi si quelque chose ne marche pas.
+- Message rouge dans le moniteur série ? Regarde le numéro de ligne indiqué : c'est souvent un « : » oublié à la fin d'un if, ou un décalage (indentation) qui n'est pas le même que dans l'exemple.
+- Tu n'as qu'un téléphone ? Préviens-moi dès le début de l'heure, et fais les questions 1, 2 et 3, qui ne demandent pas Wokwi.

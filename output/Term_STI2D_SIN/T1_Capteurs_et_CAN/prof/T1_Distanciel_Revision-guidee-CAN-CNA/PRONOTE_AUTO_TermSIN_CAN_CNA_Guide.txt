@@ -1,23 +1,9 @@
-﻿=== TSTI2D3 (mardi 10 novembre) ===
+﻿=== Toutes les Terminales (révision facultative) ===
 Titre de la séance :
-T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas
+T1 Acquérir une grandeur physique — Révision facultative : préparer l'évaluation CAN et CNA, pas à pas
 
 Description :
-T1 (distanciel, blocus) : révision guidée du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), méthodes et exemples résolus, puis entraînement autocorrigé. Non noté, rendu obligatoire.
-
-=== TSTI2D1 (vendredi 13 novembre, si distanciel) ===
-Titre de la séance :
-T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas
-
-Description :
-T1 (distanciel, blocus) : révision guidée du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), méthodes et exemples résolus, puis entraînement autocorrigé. Non noté, rendu obligatoire.
-
-=== TSTI2D2 (vendredi 13 novembre après-midi, 1re heure, si distanciel) ===
-Titre de la séance :
-T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas
-
-Description :
-T1 (distanciel, blocus) : révision guidée du CAN et du CNA, méthodes et exemples résolus, puis entraînement autocorrigé ; les 2 h suivantes, suite du TP lampadaire sur Wokwi. Non noté, rendu obligatoire.
+T1 : révision guidée et facultative du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), avec un entraînement autocorrigé, à faire en autonomie avant l'évaluation.
 
 === Travail à faire (à coller dans Pronote) ===
 Préparer l'évaluation CAN et CNA, pas à pas

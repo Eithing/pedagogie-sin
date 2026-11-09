@@ -189,5 +189,19 @@
     "2nde_SNT/S1_Internet/prof/S1_Distanciel_Revision-guidee-Internet/PROF_AUTO_SNT_Internet_Guide.pdf",
     "2nde_SNT/S1_Internet/prof/S1_Distanciel_Revision-guidee-Internet/PRONOTE_AUTO_SNT_Internet_Guide.txt",
     "2nde_SNT/S1_Internet/eleve/S1_Distanciel_Revision-guidee-Internet/REPONSES_AUTO_SNT_Internet_Guide.docx"
+  ],
+  "sources/autonomie/AUTO_TermSIN_Lampadaire_Programme.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/ELEVE_AUTO_TermSIN_Lampadaire_Programme.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Distanciel_Lampadaire-programme-jour-nuit/PROF_AUTO_TermSIN_Lampadaire_Programme.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Distanciel_Lampadaire-programme-jour-nuit/PRONOTE_AUTO_TermSIN_Lampadaire_Programme.txt",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/REPONSES_AUTO_TermSIN_Lampadaire_Programme.docx",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/circuit_lampadaire_jour_nuit.json",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/lampadaire_jour_nuit.py"
+  ],
+  "sources/autonomie/AUTO_SNT_Web_Cookies.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_Distanciel_Cookies-et-confidentialite/ELEVE_AUTO_SNT_Web_Cookies.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Distanciel_Cookies-et-confidentialite/PROF_AUTO_SNT_Web_Cookies.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Distanciel_Cookies-et-confidentialite/PRONOTE_AUTO_SNT_Web_Cookies.txt",
+    "2nde_SNT/S2_Le_Web/eleve/S2_Distanciel_Cookies-et-confidentialite/REPONSES_AUTO_SNT_Web_Cookies.docx"
   ]
 }

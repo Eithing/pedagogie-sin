@@ -1,9 +1,9 @@
-﻿=== 2nde, classe entière (vendredi 13 novembre, si distanciel) ===
+﻿=== 2nde (révision facultative) ===
 Titre de la séance :
-Internet — Travail à distance : préparer l'évaluation, pas à pas
+Internet — Révision facultative : préparer l'évaluation, pas à pas
 
 Description :
-S1 Internet (distanciel, blocus) : révision guidée des paquets, des protocoles IP et TCP, des adresses IPv4, du DNS et du routage, avec méthodes, exemples résolus et exercices corrigés. Non noté, rendu obligatoire.
+S1 Internet : révision guidée et facultative des paquets, des protocoles IP et TCP, des adresses IPv4, du DNS et du routage, avec méthodes, exemples résolus et exercices corrigés, à faire en autonomie avant l'évaluation.
 
 === Travail à faire (à coller dans Pronote) ===
 Préparer l'évaluation sur Internet, pas à pas

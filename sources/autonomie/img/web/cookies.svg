@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250" width="700" height="250" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#ea580c"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="700" height="250" fill="#ffffff"/>
+
+  <!-- Navigateur -->
+  <rect x="20" y="60" width="200" height="140" rx="8" fill="#f1f5f9" stroke="#0d9488" stroke-width="2"/>
+  <text x="120" y="86" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Ton navigateur</text>
+  <rect x="40" y="100" width="160" height="84" rx="6" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="120" y="118" font-size="12" fill="#334155" text-anchor="middle">Cookies enregistrés :</text>
+  <text x="120" y="140" font-size="12" fill="#0f766e" text-anchor="middle">panier = 2 articles</text>
+  <text x="120" y="158" font-size="12" fill="#0f766e" text-anchor="middle">langue = fr</text>
+  <text x="120" y="176" font-size="12" fill="#c2410c" text-anchor="middle">pub_id = 8F3A21</text>
+
+  <!-- Site visite -->
+  <rect x="460" y="30" width="220" height="80" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+  <text x="570" y="58" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Le site que tu visites</text>
+  <text x="570" y="78" font-size="12" fill="#334155" text-anchor="middle">cookies « internes » : panier,</text>
+  <text x="570" y="95" font-size="12" fill="#334155" text-anchor="middle">langue, connexion</text>
+
+  <!-- Traqueur tiers -->
+  <rect x="460" y="150" width="220" height="80" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+  <text x="570" y="178" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Une régie publicitaire</text>
+  <text x="570" y="198" font-size="12" fill="#334155" text-anchor="middle">cookie « tiers » : te reconnaît</text>
+  <text x="570" y="215" font-size="12" fill="#334155" text-anchor="middle">sur tous les sites où elle est présente</text>
+
+  <line x1="456" y1="72" x2="224" y2="92" stroke="#475569" stroke-width="2" marker-end="url(#g)"/>
+  <text x="340" y="70" font-size="12" fill="#475569" text-anchor="middle">① le site dépose ses cookies</text>
+  <line x1="456" y1="190" x2="224" y2="172" stroke="#ea580c" stroke-width="2" marker-end="url(#o)"/>
+  <text x="340" y="205" font-size="12" fill="#c2410c" text-anchor="middle">② la pub du site dépose le sien</text>
+  <text x="350" y="20" font-size="13" font-weight="700" fill="#0f172a" text-anchor="middle">Un cookie : un petit fichier texte déposé dans ton navigateur par un site</text>
+  <text x="350" y="244" font-size="12" fill="#475569" text-anchor="middle">À chaque visite, le navigateur renvoie le cookie au site qui l'a déposé : c'est ainsi qu'il te reconnaît.</text>
+</svg>

@@ -4,15 +4,9 @@ niveau: Term STI2D SIN
 sequence: T1
 court: Revision guidee CAN CNA
 pronote:
-  - pour: "TSTI2D3 (mardi 10 novembre)"
-    titre: "T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas"
-    description: "T1 (distanciel, blocus) : révision guidée du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), méthodes et exemples résolus, puis entraînement autocorrigé. Non noté, rendu obligatoire."
-  - pour: "TSTI2D1 (vendredi 13 novembre, si distanciel)"
-    titre: "T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas"
-    description: "T1 (distanciel, blocus) : révision guidée du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), méthodes et exemples résolus, puis entraînement autocorrigé. Non noté, rendu obligatoire."
-  - pour: "TSTI2D2 (vendredi 13 novembre après-midi, 1re heure, si distanciel)"
-    titre: "T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas"
-    description: "T1 (distanciel, blocus) : révision guidée du CAN et du CNA, méthodes et exemples résolus, puis entraînement autocorrigé ; les 2 h suivantes, suite du TP lampadaire sur Wokwi. Non noté, rendu obligatoire."
+  pour: "Toutes les Terminales (révision facultative)"
+  titre: "T1 Acquérir une grandeur physique — Révision facultative : préparer l'évaluation CAN et CNA, pas à pas"
+  description: "T1 : révision guidée et facultative du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), avec un entraînement autocorrigé, à faire en autonomie avant l'évaluation."
 type: autonomie
 duree: 55 min
 illustration: ../revision/img/can/chaine-can-cna.svg
@@ -34,7 +28,7 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre** : TSTI2D3 le mardi 10 novembre (1 h, distanciel). À réutiliser le vendredi 13 novembre si le blocus continue : TSTI2D1 (12 h), et TSTI2D2 pour la première heure du bloc de 3 h (les 2 h suivantes : suite du TP lampadaire sur Wokwi). Déposer sur l'ENT ce PDF, le document réponse `REPONSES_AUTO_TermSIN_CAN_CNA_Guide.docx` et l'outil `entrainement_can_cna.html` (dossier `eleve/`), ainsi que la fiche `REVISION_TermSIN_CAN_CNA.pdf` (dossier `output/Eval/Terminale/`).
+**Mise en œuvre** : révision **facultative**, laissée à disposition des trois classes sur l'ENT. Décision du 9 novembre : on ne prend plus de temps de cours sur le CAN et le CNA, les élèves ont tout ce qu'il faut pour réviser seuls. Déposer sur l'ENT ce PDF, le document réponse `REPONSES_AUTO_TermSIN_CAN_CNA_Guide.docx` et l'outil `entrainement_can_cna.html` (dossier `eleve/`), ainsi que la fiche `REVISION_TermSIN_CAN_CNA.pdf` (dossier `output/Eval/Terminale/`).
 
 **Pourquoi si guidé** : la semaine du 2 novembre, presque rien n'a été rendu. Chaque notion de l'évaluation suit le même plan (méthode, exemple résolu, exercice aux mêmes étapes, réponses en fin de fiche), et l'outil autocorrigé donne des valeurs différentes à chaque élève : la capture du bilan ne se copie pas.
 

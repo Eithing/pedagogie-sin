@@ -28,7 +28,7 @@ sequences:
     semaines: 7
     etat: en-cours
     debut: 2026-11-06
-    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats]
+    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -51,7 +51,7 @@ journal:
   - date: 2026-11-06
     texte: "Blocus, distanciel : fiche « Le lampadaire autonome » en autonomie (reprise du CAN, diagramme d'états), non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
   - date: 2026-11-09
-    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation CAN et CNA (sujet A) ; à distance, révision guidée « Préparer l'évaluation CAN et CNA, pas à pas », avec un entraînement autocorrigé, et l'interrogation est reportée au retour."
+    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation CAN et CNA (sujet A) ; à distance, suite de T2 avec « Du diagramme d'états au programme : le jour et la nuit » sur Wokwi, et l'interrogation est reportée au retour. On ne reprend plus de temps sur le CAN et le CNA : une révision guidée facultative reste sur l'ENT."
 ---
 
 ## Organisation

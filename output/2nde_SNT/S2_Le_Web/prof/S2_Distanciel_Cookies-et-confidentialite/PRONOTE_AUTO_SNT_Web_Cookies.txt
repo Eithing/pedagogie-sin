@@ -1,0 +1,28 @@
+﻿=== 2nde, classe entière (vendredi 13 novembre, si distanciel) ===
+Titre de la séance :
+Le Web — Travail à distance : cookies et confidentialité, régler son navigateur
+
+Description :
+S2 Le Web (distanciel, blocus) : rôle des cookies et des traqueurs, bannières de consentement, limites de la navigation privée, réglages de confidentialité du navigateur. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Cookies et confidentialité — qui te suit quand tu navigues ?
+Tu regardes des baskets sur un site, et elles te suivent ensuite partout en publicité. Comment ce site sait-il que c'est toi ?
+
+📄 Documents joints :
+- ELEVE_AUTO_SNT_Web_Cookies.pdf (la fiche)
+- REPONSES_AUTO_SNT_Web_Cookies.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+
+✏️ Consignes :
+- Travail individuel, à distance, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.
+- Il te faut seulement un navigateur (Chrome, Firefox, Edge ou Safari), sur ordinateur ou sur téléphone.
+- Aux étapes 2 et 3, tu enquêtes sur un site que tu choisis : ton travail est donc personnel.
+
+📤 À rendre :
+- Tes réponses aux questions 1 à 9 et le bilan complété : le fichier REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier.
+- Un seul dépôt, dans le devoir « Cookies et confidentialité » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds dès que possible.
+- Tu ne trouves pas un réglage dans ton navigateur ? Les menus changent d'un navigateur à l'autre : écris ce que tu as cherché et passe à la suite.

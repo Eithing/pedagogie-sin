@@ -55,7 +55,7 @@ journal:
   - date: 2026-11-06
     texte: "Blocus, distanciel. Heure commune avec D3 : fiche « Le parking connecté » avec un simulateur sans installation à la place de Filius. Bloc de 3 h : TP lampadaire sur Wokwi, individuel, testé le 5 novembre. Non notés, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
   - date: 2026-11-09
-    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre à distance : heure commune « Relier deux réseaux, routeur et passerelle » (nouveau simulateur), puis bloc de 3 h : révision guidée CAN et CNA (1 h) et suite du TP lampadaire sur Wokwi (2 h). En présentiel : interrogation CAN et CNA (sujet B) à l'heure commune."
+    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre à distance : heure commune « Relier deux réseaux, routeur et passerelle » (nouveau simulateur), puis bloc de 3 h : suite du TP lampadaire sur Wokwi. Révision guidée CAN et CNA laissée en facultatif sur l'ENT. En présentiel : interrogation CAN et CNA (sujet B) à l'heure commune."
 ---
 
 ## Organisation

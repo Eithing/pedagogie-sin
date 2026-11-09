@@ -4,9 +4,9 @@ niveau: SNT (2nde)
 sequence: S1
 court: Revision guidee Internet
 pronote:
-  pour: "2nde, classe entière (vendredi 13 novembre, si distanciel)"
-  titre: "Internet — Travail à distance : préparer l'évaluation, pas à pas"
-  description: "S1 Internet (distanciel, blocus) : révision guidée des paquets, des protocoles IP et TCP, des adresses IPv4, du DNS et du routage, avec méthodes, exemples résolus et exercices corrigés. Non noté, rendu obligatoire."
+  pour: "2nde (révision facultative)"
+  titre: "Internet — Révision facultative : préparer l'évaluation, pas à pas"
+  description: "S1 Internet : révision guidée et facultative des paquets, des protocoles IP et TCP, des adresses IPv4, du DNS et du routage, avec méthodes, exemples résolus et exercices corrigés, à faire en autonomie avant l'évaluation."
 type: autonomie
 duree: 55 min
 illustration: ../cours/img/tcp-ip/couverture.svg
@@ -28,7 +28,7 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre (vendredi 13 novembre, classe entière, si le blocus continue)** : l'évaluation sur table ne peut pas avoir lieu. Cette fiche reprend, une par une, les notions évaluées (INT.1, INT.2), avec méthode, exemple résolu et exercice aux mêmes étapes. Déposer sur l'ENT ce PDF et le document réponse `REPONSES_AUTO_SNT_Internet_Guide.docx` (dossier `eleve/`). La fiche `REVISION_SNT_Internet.pdf` a été déposée le 6 novembre.
+**Mise en œuvre** : révision **facultative**, laissée à disposition sur l'ENT (décision du 9 novembre : on avance dans le thème Web, les élèves ont la fiche de révision). Cette fiche reprend, une par une, les notions évaluées (INT.1, INT.2), avec méthode, exemple résolu et exercice aux mêmes étapes. Déposer sur l'ENT ce PDF et le document réponse `REPONSES_AUTO_SNT_Internet_Guide.docx` (dossier `eleve/`). La fiche `REVISION_SNT_Internet.pdf` a été déposée le 6 novembre.
 
 **Valeurs** : différentes de celles des sujets A et B de l'évaluation et de la fiche de révision.
 
