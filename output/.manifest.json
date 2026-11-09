@@ -169,5 +169,25 @@
     "2nde_SNT/S2_Le_Web/prof/S2_Distanciel_Moteurs-de-recherche/PROF_AUTO_SNT_Web_MoteursRecherche.pdf",
     "2nde_SNT/S2_Le_Web/prof/S2_Distanciel_Moteurs-de-recherche/PRONOTE_AUTO_SNT_Web_MoteursRecherche.txt",
     "2nde_SNT/S2_Le_Web/eleve/S2_Distanciel_Moteurs-de-recherche/REPONSES_AUTO_SNT_Web_MoteursRecherche.docx"
+  ],
+  "sources/autonomie/AUTO_TermSIN_CAN_CNA_Guide.md": [
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Revision-guidee-CAN-CNA/ELEVE_AUTO_TermSIN_CAN_CNA_Guide.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Distanciel_Revision-guidee-CAN-CNA/PROF_AUTO_TermSIN_CAN_CNA_Guide.pdf",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/prof/T1_Distanciel_Revision-guidee-CAN-CNA/PRONOTE_AUTO_TermSIN_CAN_CNA_Guide.txt",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Revision-guidee-CAN-CNA/REPONSES_AUTO_TermSIN_CAN_CNA_Guide.docx",
+    "Term_STI2D_SIN/T1_Capteurs_et_CAN/eleve/T1_Distanciel_Revision-guidee-CAN-CNA/entrainement_can_cna.html"
+  ],
+  "sources/autonomie/AUTO_TermSIN_Reseau_Routeur.md": [
+    "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Routeur-et-passerelle/ELEVE_AUTO_TermSIN_Reseau_Routeur.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Distanciel_Routeur-et-passerelle/PROF_AUTO_TermSIN_Reseau_Routeur.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Distanciel_Routeur-et-passerelle/PRONOTE_AUTO_TermSIN_Reseau_Routeur.txt",
+    "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Routeur-et-passerelle/REPONSES_AUTO_TermSIN_Reseau_Routeur.docx",
+    "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Routeur-et-passerelle/reseau_routeur.html"
+  ],
+  "sources/autonomie/AUTO_SNT_Internet_Guide.md": [
+    "2nde_SNT/S1_Internet/eleve/S1_Distanciel_Revision-guidee-Internet/ELEVE_AUTO_SNT_Internet_Guide.pdf",
+    "2nde_SNT/S1_Internet/prof/S1_Distanciel_Revision-guidee-Internet/PROF_AUTO_SNT_Internet_Guide.pdf",
+    "2nde_SNT/S1_Internet/prof/S1_Distanciel_Revision-guidee-Internet/PRONOTE_AUTO_SNT_Internet_Guide.txt",
+    "2nde_SNT/S1_Internet/eleve/S1_Distanciel_Revision-guidee-Internet/REPONSES_AUTO_SNT_Internet_Guide.docx"
   ]
 }

@@ -1,0 +1,29 @@
+﻿=== 2nde, classe entière (vendredi 13 novembre, si distanciel) ===
+Titre de la séance :
+Internet — Travail à distance : préparer l'évaluation, pas à pas
+
+Description :
+S1 Internet (distanciel, blocus) : révision guidée des paquets, des protocoles IP et TCP, des adresses IPv4, du DNS et du routage, avec méthodes, exemples résolus et exercices corrigés. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Préparer l'évaluation sur Internet, pas à pas
+Une méthode, un exemple, puis à toi : en une heure, tu sais répondre à chaque question de l'évaluation.
+
+📄 Documents joints :
+- ELEVE_AUTO_SNT_Internet_Guide.pdf (la fiche)
+- REPONSES_AUTO_SNT_Internet_Guide.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+
+✏️ Consignes :
+- Travail individuel, à distance, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.
+- Chaque étape suit le même plan : je lis ce qu'il faut savoir, je regarde l'exemple résolu, puis je fais pareil. Les réponses sont à la fin de la fiche : vérifie après chaque étape, pas avant.
+- Garde aussi sous la main la fiche de révision « Internet : l'essentiel pour l'évaluation », déposée la semaine dernière.
+
+📤 À rendre :
+- Tes réponses aux questions 1 à 9 et le bilan complété : le fichier REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier.
+- Un seul dépôt, dans le devoir « Révision Internet » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire : il prépare l'évaluation sur Internet, qui aura lieu au retour en classe.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds dès que possible.
+- Bloqué plus de 5 minutes ? Relis l'exemple résolu de l'étape et refais-le avec les nouvelles valeurs. Si ça ne marche toujours pas, écris « bloqué » et passe à la suite.
+- Tu n'as qu'un téléphone ? Tout se fait sans ordinateur : réponds dans ton cahier.

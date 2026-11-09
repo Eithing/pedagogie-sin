@@ -1,0 +1,29 @@
+﻿=== TSTI2D2 + TSTI2D3, heure commune (vendredi 13 novembre, si distanciel) ===
+Titre de la séance :
+C1 Mettre en réseau des objets — Travail à distance : relier deux réseaux, le routeur et la passerelle
+
+Description :
+C1 (distanciel, blocus) : rappel guidé sur le switch, le routeur et le masque, puis rôle de la passerelle, configuration et test de deux réseaux reliés par un routeur sur un simulateur sans compte. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Relier deux réseaux — le routeur et la passerelle, pas à pas
+Les capteurs du parking marchent, mais l'écran de l'accueil n'affiche rien. Il manque une seule ligne de configuration.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_Reseau_Routeur.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_Reseau_Routeur.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- reseau_routeur.html
+
+✏️ Consignes :
+- Travail individuel, à distance, sur ordinateur, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.
+- Pas besoin d'avoir fait la fiche du parking de la semaine dernière : l'étape 1 reprend l'essentiel.
+- Le simulateur est un simple fichier à ouvrir par un double-clic : ni compte, ni installation. À l'étape marquée 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec les questions 1 à 8, le bilan et la capture d'écran 📸.
+- Dépôt dans le devoir « Routeur et passerelle » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : envoie-moi une capture d'écran du simulateur si tu es bloqué.
+- Tu n'as qu'un téléphone ? Préviens-moi dès le début de l'heure, et fais les questions 1 à 4, qui ne demandent pas le simulateur.

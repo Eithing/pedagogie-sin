@@ -2,6 +2,16 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## Semaine du 9 novembre 2026 : distanciel jusqu'à nouvel ordre
+
+- **Constat** : très peu de travail rendu les 3 et 6 novembre. Les fiches de cette semaine sont donc **très guidées** : chaque notion suit le même plan (méthode, exemple résolu, exercice aux mêmes étapes) et les réponses sont en fin de fiche pour que l'élève se corrige.
+- **Mardi 10 novembre, D3** : `AUTO_TermSIN_CAN_CNA_Guide` (révision guidée CAN et CNA) avec `entrainement_can_cna.html`, l'entraînement d'octobre complété par deux notions sur le CNA et renommé pour Pronote. Testé dans Chrome le 9 novembre.
+- **Vendredi 13 novembre, présentiel ou distanciel (pas encore connu)** :
+  - en présentiel : les évaluations prévues (Internet pour les 2nde, CAN et CNA pour D1 et pour l'heure commune D2 + D3) ; pour le TP de 2nde et le bloc de 3 h des D2, les mêmes fiches qu'à distance, faites en classe ;
+  - à distance : 2nde TP (2e demi-groupe) `AUTO_SNT_Web_MoteursRecherche` ; 2nde classe entière `AUTO_SNT_Internet_Guide` ; D1 `AUTO_TermSIN_CAN_CNA_Guide` ; heure commune `AUTO_TermSIN_Reseau_Routeur` avec le nouveau simulateur `reseau_routeur.html` (routeur et passerelle, testé dans Chrome) ; D2 3 h : `AUTO_TermSIN_CAN_CNA_Guide` (1 h) puis suite de `AUTO_TermSIN_Lampadaire_Wokwi` (2 h). Les évaluations sont alors reportées au retour.
+- **Pronote** : un fichier déjà déposé (même nom) ne peut pas être renvoyé. Pour une fiche réutilisée (moteurs de recherche, lampadaire Wokwi), rattacher le document déjà présent dans Pronote.
+- En attente : confirmer l'alternance des demi-groupes de TP en 2nde (supposée : une semaine sur deux, le 2e groupe le 13 novembre).
+
 ## État au 2 novembre 2026 (rentrée de la Toussaint)
 
 ### Semaine du 2 novembre : retour en présentiel

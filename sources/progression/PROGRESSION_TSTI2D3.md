@@ -25,7 +25,7 @@ sequences:
     etat: fait
     fin: 2026-10-16
     evaluation: "Interrogation sur le CAN et le CNA (sujet B, 40 min, heure commune du vendredi 13 novembre, reportée à cause du blocus). Le TD « CO₂ d'une salle de classe » n'est plus noté : il reste un exercice d'entraînement."
-    ressources: [TD_TermSIN_CAN_QualiteAir, EVAL_TermSIN_CAN]
+    ressources: [TD_TermSIN_CAN_QualiteAir, EVAL_TermSIN_CAN, AUTO_TermSIN_CAN_CNA_Guide]
   - ref: T2
     semaines: 7
     etat: en-cours
@@ -52,6 +52,8 @@ journal:
     texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close ; le TD noté sur le CO₂ est abandonné comme note (une seule note de connaissances : l'interrogation CAN, sujet B, à l'heure commune du vendredi 13 novembre). T2 démarre le mardi 3 novembre par la séance « lampadaire autonome », qui commence par une reprise du CAN. Heure commune : C0 terminée, C1 (réseau local) démarre le 6 novembre."
   - date: 2026-11-06
     texte: "Blocus, distanciel. Heure commune avec D2 : fiche « Le parking connecté » avec un simulateur sans installation à la place de Filius. Non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
+  - date: 2026-11-09
+    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu les 3 et 6 novembre. Mardi 10 novembre : révision guidée « Préparer l'évaluation CAN et CNA, pas à pas », avec un entraînement autocorrigé. Vendredi 13 novembre, heure commune : interrogation CAN et CNA (sujet B) en présentiel, sinon « Relier deux réseaux, routeur et passerelle » à distance."
 ---
 
 ## Organisation

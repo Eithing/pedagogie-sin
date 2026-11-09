@@ -165,7 +165,7 @@ sequences:
         - "Calcul d'adresses de réseau ; circulation des trames"
     outils: [Filius, Packet Tracer]
     evaluation: "TP noté en binôme : configurer un réseau simulé selon un cahier des charges."
-    ressources: [COURS_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Parking]
+    ressources: [COURS_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Routeur]
 
   - id: C2
     titre: Échanger des données en client/serveur

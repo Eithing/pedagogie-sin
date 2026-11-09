@@ -1,0 +1,43 @@
+﻿=== TSTI2D3 (mardi 10 novembre) ===
+Titre de la séance :
+T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas
+
+Description :
+T1 (distanciel, blocus) : révision guidée du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), méthodes et exemples résolus, puis entraînement autocorrigé. Non noté, rendu obligatoire.
+
+=== TSTI2D1 (vendredi 13 novembre, si distanciel) ===
+Titre de la séance :
+T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas
+
+Description :
+T1 (distanciel, blocus) : révision guidée du CAN et du CNA (nombre de codes, quantum, tension et code, binaire et hexadécimal), méthodes et exemples résolus, puis entraînement autocorrigé. Non noté, rendu obligatoire.
+
+=== TSTI2D2 (vendredi 13 novembre après-midi, 1re heure, si distanciel) ===
+Titre de la séance :
+T1 Acquérir une grandeur physique — Travail à distance : préparer l'évaluation CAN et CNA, pas à pas
+
+Description :
+T1 (distanciel, blocus) : révision guidée du CAN et du CNA, méthodes et exemples résolus, puis entraînement autocorrigé ; les 2 h suivantes, suite du TP lampadaire sur Wokwi. Non noté, rendu obligatoire.
+
+=== Travail à faire (à coller dans Pronote) ===
+Préparer l'évaluation CAN et CNA, pas à pas
+Une méthode, un exemple, puis à toi : en une heure, tu sais faire chaque calcul de l'évaluation.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_CAN_CNA_Guide.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_CAN_CNA_Guide.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- entrainement_can_cna.html
+
+✏️ Consignes :
+- Travail individuel, à distance, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page. Calculatrice autorisée.
+- Chaque étape suit le même plan : je lis la méthode, je regarde l'exemple résolu, puis je fais pareil avec d'autres valeurs. Les réponses sont à la fin de la fiche : vérifie après chaque étape, pas avant.
+- Garde aussi sous la main la fiche de révision « CAN et CNA : l'essentiel pour l'évaluation », déposée la semaine dernière.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier, avec les questions 1 à 9 et la capture d'écran 📸 du bilan de l'entraînement.
+- Dépôt dans le devoir « Révision CAN et CNA » de l'ENT, avant la date indiquée.
+- Ce travail n'est pas noté, mais il est obligatoire : il prépare l'évaluation sur le CAN et le CNA.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT : pose ta question, je réponds dès que possible.
+- Bloqué plus de 5 minutes ? Relis l'exemple résolu de l'étape, ligne par ligne, et refais-le en changeant juste les nombres. Si ça ne marche toujours pas, écris « bloqué » et passe à la suite.

@@ -22,6 +22,7 @@ sequences:
     semaines: 7
     etat: fait
     fin: 2026-10-16
+    ressources: [AUTO_TermSIN_CAN_CNA_Guide]
     evaluation: "Interrogation sur le CAN et le CNA (sujet A, 40 min), vendredi 13 novembre (reportée à cause du blocus)."
   - ref: T2
     semaines: 7
@@ -49,6 +50,8 @@ journal:
     texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close (cours fait avant le blocus, remédiation à distance) ; l'interrogation CAN (sujet A) est fixée au vendredi 13 novembre. T2 démarre le 6 novembre par la séance « lampadaire autonome », qui commence par une reprise du CAN."
   - date: 2026-11-06
     texte: "Blocus, distanciel : fiche « Le lampadaire autonome » en autonomie (reprise du CAN, diagramme d'états), non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
+  - date: 2026-11-09
+    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation CAN et CNA (sujet A) ; à distance, révision guidée « Préparer l'évaluation CAN et CNA, pas à pas », avec un entraînement autocorrigé, et l'interrogation est reportée au retour."
 ---
 
 ## Organisation

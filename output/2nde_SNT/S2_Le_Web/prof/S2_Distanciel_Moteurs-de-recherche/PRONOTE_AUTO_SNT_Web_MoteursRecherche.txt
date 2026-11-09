@@ -5,6 +5,13 @@ Le Web — TP à distance : les moteurs de recherche, principes et usages
 Description :
 S2 Le Web (distanciel, blocus) : fabriquer un petit index à la main, comprendre le classement des résultats, comparer deux moteurs et analyser une source avec esprit critique. Non noté, rendu obligatoire.
 
+=== 2nde, TP de l'autre demi-groupe (vendredi 13 novembre, 8 h - 9 h) ===
+Titre de la séance :
+Le Web — TP : les moteurs de recherche, principes et usages
+
+Description :
+S2 Le Web, TP en demi-groupe (à distance ou au lycée) : fabriquer un petit index à la main, comprendre le classement des résultats, comparer deux moteurs et analyser une source avec esprit critique. Non noté, rendu obligatoire.
+
 === Travail à faire (à coller dans Pronote) ===
 Mener l'enquête — comment fonctionne un moteur de recherche ?
 En 0,3 seconde, un moteur te propose des milliers de pages. Qui décide de ce que tu vois en premier ?

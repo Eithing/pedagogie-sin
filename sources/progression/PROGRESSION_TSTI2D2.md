@@ -31,7 +31,7 @@ sequences:
     etat: fait
     fin: 2026-10-16
     evaluation: "Interrogation sur le CAN et le CNA (sujet B, 40 min, heure commune du vendredi 13 novembre, reportée à cause du blocus) + TP noté Tinkercad « salle serveur, TMP36 » (à distance, le 9 octobre)."
-    ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad, AUTO_TermSIN_Cuve_Lissage]
+    ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad, AUTO_TermSIN_Cuve_Lissage, AUTO_TermSIN_CAN_CNA_Guide]
   - ref: T2
     semaines: 7
     etat: en-cours
@@ -54,6 +54,8 @@ journal:
     texte: "Retour en présentiel après la Toussaint. Environ trois élèves sur quatre n'ont rien rendu à distance. T1 est close ; l'interrogation CAN (sujet B) est fixée à l'heure commune du vendredi 13 novembre. Heure commune : C0 terminée, C1 (réseau local) démarre le 6 novembre. Bloc de 3 h du 6 novembre : TP « lampadaire autonome » sur Wokwi (T2), dont la partie A reprend le CAN ; non noté."
   - date: 2026-11-06
     texte: "Blocus, distanciel. Heure commune avec D3 : fiche « Le parking connecté » avec un simulateur sans installation à la place de Filius. Bloc de 3 h : TP lampadaire sur Wokwi, individuel, testé le 5 novembre. Non notés, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
+  - date: 2026-11-09
+    texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre à distance : heure commune « Relier deux réseaux, routeur et passerelle » (nouveau simulateur), puis bloc de 3 h : révision guidée CAN et CNA (1 h) et suite du TP lampadaire sur Wokwi (2 h). En présentiel : interrogation CAN et CNA (sujet B) à l'heure commune."
 ---
 
 ## Organisation

@@ -4,9 +4,12 @@ niveau: SNT (2nde)
 sequence: S2
 court: Moteurs de recherche
 pronote:
-  pour: "2nde, TP en demi-groupe (vendredi 6 novembre, 8 h - 9 h)"
-  titre: "Le Web — TP à distance : les moteurs de recherche, principes et usages"
-  description: "S2 Le Web (distanciel, blocus) : fabriquer un petit index à la main, comprendre le classement des résultats, comparer deux moteurs et analyser une source avec esprit critique. Non noté, rendu obligatoire."
+  - pour: "2nde, TP en demi-groupe (vendredi 6 novembre, 8 h - 9 h)"
+    titre: "Le Web — TP à distance : les moteurs de recherche, principes et usages"
+    description: "S2 Le Web (distanciel, blocus) : fabriquer un petit index à la main, comprendre le classement des résultats, comparer deux moteurs et analyser une source avec esprit critique. Non noté, rendu obligatoire."
+  - pour: "2nde, TP de l'autre demi-groupe (vendredi 13 novembre, 8 h - 9 h)"
+    titre: "Le Web — TP : les moteurs de recherche, principes et usages"
+    description: "S2 Le Web, TP en demi-groupe (à distance ou au lycée) : fabriquer un petit index à la main, comprendre le classement des résultats, comparer deux moteurs et analyser une source avec esprit critique. Non noté, rendu obligatoire."
 type: autonomie
 duree: 55 min
 illustration: img/web/moteur.svg
