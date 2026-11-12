@@ -71,7 +71,7 @@ function entete(meta, cible, config, libelleVariante) {
         <div class="champ"><span>Prénom</span></div>
         <div class="champ"><span>Classe</span></div>
         <div class="champ"><span>Date</span></div>
-        ${evaluable ? `<div class="doc-note"><span></span><span>/ ${esc(bareme)}</span></div>` : ''}
+        ${evaluable && !meta.note_masquee ? `<div class="doc-note"><span></span><span>/ ${esc(bareme)}</span></div>` : ''}
       </div>`
     : `<div class="doc-corrige">${esc(libelleVariante ?? 'Document enseignant — corrigé et barème')}</div>`;
   const illu = meta.illustration ? `<img class="doc-illustration" src="${esc(meta.illustration)}" alt="">` : '';

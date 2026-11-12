@@ -1,29 +1,30 @@
 ---
-titre: TP noté — le lampadaire qui voit les piétons, du diagramme d'états au programme validé
+titre: Le lampadaire qui voit les piétons — du diagramme d'états au programme validé
 niveau: Term STI2D SIN
 sequence: T2
-court: Lampadaire pieton note
+court: Lampadaire pieton
 pronote:
   pour: "TSTI2D2 (vendredi 13 novembre, 3 h, distanciel)"
-  titre: "T2 Traiter l'information par programme — TP noté à distance : le lampadaire qui voit les piétons (Wokwi)"
-  description: "T2 (distanciel, blocus) : détecteur de présence, temporisation non bloquante, programmation et validation du diagramme d'états, amélioration personnelle et bilan énergétique, en MicroPython sur Wokwi. Noté /20 sur grille."
+  titre: "T2 Traiter l'information par programme — TP à distance : le lampadaire qui voit les piétons (Wokwi)"
+  description: "T2 (distanciel, blocus) : détecteur de présence, temporisation non bloquante, programmation et validation du diagramme d'états, amélioration personnelle et bilan énergétique, en MicroPython sur Wokwi. Rendu obligatoire."
 type: autonomie
 duree: 3 h 00 min
 bareme: 20
+points_masques: true
+note_masquee: true
 illustration: ../cours/img/lampadaire/couverture.svg
-accroche: "Tu as déjà le jour et la nuit. Il manque le piéton : c'est lui qui rapporte les points."
+accroche: "Tu as déjà le jour et la nuit. Il manque le piéton : à toi de le programmer."
 competences: [CO5.8-SIN2, CO6.5-SIN1, CO7.3-SIN2, 2.4.3b]
 materiel: [Wokwi (ESP32 en MicroPython, sans compte), ordinateur]
 document_reponse: true
 fichiers: [../tp/fichiers/lampadaire/diagram_lampadaire.json, fichiers/lampadaire_pieton/lampadaire_pieton.py]
 consignes:
-  - "TP noté, individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre. Fais une pause entre deux étapes."
+  - "TP individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre. Fais une pause entre deux étapes."
   - "Tes réglages dépendent de J, ton jour de naissance (de 1 à 31) : tes captures d'écran sont donc différentes de celles de tes camarades. Je vérifie J dans Pronote."
   - "Wokwi s'utilise sans compte. Aux étapes marquées 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse. Wokwi n'enregistre rien : copie ton programme dans ton document au fur et à mesure."
 rendu:
   - "Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec « J = … » en haut, tes réponses, ton programme final complet et les 4 captures d'écran 📸."
-  - "Dépôt dans le devoir « TP lampadaire noté » de l'ENT, avant la fin du créneau de 3 h."
-  - "Ce TP est noté sur 20."
+  - "Dépôt dans le devoir « TP lampadaire » de l'ENT, avant la fin du créneau de 3 h."
 aide:
   - "Pendant les 3 h, je suis disponible sur la messagerie de l'ENT. Envoie-moi une capture d'écran de ton écran Wokwi si quelque chose ne marche pas : je t'aide à trouver l'erreur, je ne donne pas le programme."
   - "Message rouge dans le moniteur série ? Regarde le numéro de ligne indiqué : c'est souvent un « : » oublié à la fin d'un if ou d'un elif, ou un décalage (indentation) différent des lignes voisines."
@@ -31,7 +32,9 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre (vendredi 13 novembre, bloc de 3 h des D2, distanciel)** : suite notée de `AUTO_TermSIN_Lampadaire_Wokwi`, dont les D2 ont fait les étapes 1 à 3 le 6 novembre (CAN, jour / nuit, hystérésis). Le programme de départ `lampadaire_pieton.py` contient donc déjà la conversion et les états JOUR et VEILLE avec hystérésis : un élève qui n'a rien rendu le 6 novembre peut faire ce TP. Déposer sur l'ENT ce PDF, `REPONSES_AUTO_TermSIN_Lampadaire_Pieton.docx`, `diagram_lampadaire.json` et `lampadaire_pieton.py`. **Pronote** : `diagram_lampadaire.json` a déjà été déposé le 6 novembre, rattacher le document existant au lieu de le renvoyer.
+**Mise en œuvre (vendredi 13 novembre, bloc de 3 h des D2, distanciel)** : suite de `AUTO_TermSIN_Lampadaire_Wokwi`, dont les D2 ont fait les étapes 1 à 3 le 6 novembre (CAN, jour / nuit, hystérésis). Le programme de départ `lampadaire_pieton.py` contient donc déjà la conversion et les états JOUR et VEILLE avec hystérésis : un élève qui n'a rien rendu le 6 novembre peut faire ce TP. Déposer sur l'ENT ce PDF, `REPONSES_AUTO_TermSIN_Lampadaire_Pieton.docx`, `diagram_lampadaire.json` et `lampadaire_pieton.py`. **Pronote** : `diagram_lampadaire.json` a déjà été déposé le 6 novembre, rattacher le document existant au lieu de le renvoyer.
+
+**Note** : la décision de noter ou non ce TP n'est pas prise. La version élève ne dit rien de la notation : ni points, ni barème, ni case de note (`points_masques` et `note_masquee`). La grille ci-dessous reste disponible.
 
 **Contre la copie** : le niveau de veille ($10 + J$ %) et la durée d'essai ($10 + u$ secondes, $u$ = chiffre des unités de $J$) apparaissent dans le programme, dans le moniteur série et dans le bilan énergétique ; l'étape 5 est une amélioration choisie par l'élève. Deux copies avec les mêmes constantes ou la même amélioration codée à l'identique : 0 aux questions concernées.
 
@@ -44,7 +47,7 @@ aide:
 3. Télécharge aussi **`diagram_lampadaire.json`** (le circuit) et **`lampadaire_pieton.py`** (le programme de départ). Tu les ouvriras avec le Bloc-notes pour les copier dans Wokwi.
 4. Aux étapes marquées **📸**, fais une capture d'écran et colle-la sous la question.
 
-Une réponse que tu n'as pas trouvée s'écrit « je n'ai pas trouvé », avec ce que tu as essayé : une démarche rapporte des points.
+Une réponse que tu n'as pas trouvée s'écrit « je n'ai pas trouvé », avec ce que tu as essayé : ta démarche compte.
 :::
 
 ## Étape 1 — Reprendre le lampadaire avec mes valeurs (20 min)
@@ -260,7 +263,7 @@ Complète ce bilan dans ton document réponse, où il est déjà recopié.
 - Un protocole de test vérifie [[chaque transition]] du cahier des charges.
 :::
 
-**Enregistre ton document réponse** et **dépose-le sur l'ENT**, dans le devoir « TP lampadaire noté », avec ton programme final complet et les 4 captures.
+**Enregistre ton document réponse** et **dépose-le sur l'ENT**, dans le devoir « TP lampadaire », avec ton programme final complet et les 4 captures.
 
 ::: prof
 **Tableau de correction par $J$** (question 1 : réglages ; question 7 : énergie et économie).
@@ -300,6 +303,7 @@ Complète ce bilan dans ton document réponse, où il est déjà recopié.
 | 31 | 41 % | 11 s | 4 558 Wh | 55 % |
 :::
 
+::: prof
 ## Barème & grille d'évaluation
 
 | Compétence | Questions | Critères | Points |
@@ -309,3 +313,4 @@ Complète ce bilan dans ton document réponse, où il est déjà recopié.
 | **CO6.5-SIN1** — Interpréter une simulation et conclure | Q5, Q7 | Protocole couvrant chaque transition, observations relevées, bilan énergétique personnel et conclusion | 5 |
 | **CO5.8-SIN2** — Faire évoluer une solution | Q6 | Amélioration choisie, décrite, programmée et prouvée | 4 |
 | **Total** | | | **20** |
+:::
