@@ -164,6 +164,8 @@ journal:
     texte: "Blocus, distanciel. TP en demi-groupe (8 h) : moteurs de recherche (index à la main, classement, comparaison de deux moteurs, analyse critique d'une source), non noté, rendu obligatoire ; les deux groupes ont déjà fait « Ma première page web » avant les vacances. Classe entière (9 h) : fiche « Du clic à la page » (reprise d'Internet et du Web, URL, client / serveur, HTTP), non notée, rendu obligatoire. Fiche de révision déposée pour l'interrogation Internet du vendredi 13 novembre."
   - date: 2026-11-09
     texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation Internet ; à distance, suite du thème Web avec « Cookies et confidentialité » (WEB.9), et l'interrogation est reportée au retour ; une révision guidée d'Internet reste sur l'ENT, en facultatif. TP de 8 h : le 2e demi-groupe fait le TP sur les moteurs de recherche."
+  - date: 2026-11-13
+    texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre : TP du 2e demi-groupe noté sur grille (`AUTO_SNT_Web_MoteursRecherche_Note`, enquête personnelle sur deux moteurs et une source) ; classe entière : interrogation Internet à distance, notée (`AUTO_SNT_Internet_Distance`, valeurs propres à chaque élève tirées du jour de naissance). La fiche « cookies » est reportée."
 ---
 
 ## Intentions pédagogiques

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="460" height="260" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="460" height="260" fill="#ffffff"/>
+  <g font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">
+    <rect x="66" y="40" width="60" height="44" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="96" y="68">A</text>
+    <rect x="300" y="40" width="70" height="44" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="335" y="68">B</text>
+    <rect x="300" y="170" width="70" height="44" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="335" y="198">C</text>
+    <rect x="66" y="170" width="60" height="44" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+    <text x="96" y="198">D</text>
+  </g>
+  <g stroke="#334155" stroke-width="2" fill="none" marker-end="url(#f)">
+    <line x1="126" y1="62" x2="297" y2="62"/>
+    <line x1="96" y1="84" x2="96" y2="167"/>
+    <line x1="300" y1="80" x2="130" y2="174"/>
+    <line x1="300" y1="182" x2="129" y2="182"/>
+    <line x1="126" y1="204" x2="297" y2="204"/>
+    <line x1="335" y1="170" x2="335" y2="87"/>
+  </g>
+  <text x="230" y="20" font-size="13" fill="#475569" text-anchor="middle">Une flèche de X vers Y : la page X contient un lien vers la page Y.</text>
+</svg>

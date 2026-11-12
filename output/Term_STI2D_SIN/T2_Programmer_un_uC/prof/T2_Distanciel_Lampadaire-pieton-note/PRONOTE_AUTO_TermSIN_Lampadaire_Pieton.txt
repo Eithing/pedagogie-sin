@@ -1,0 +1,31 @@
+﻿=== TSTI2D2 (vendredi 13 novembre, 3 h, distanciel) ===
+Titre de la séance :
+T2 Traiter l'information par programme — TP noté à distance : le lampadaire qui voit les piétons (Wokwi)
+
+Description :
+T2 (distanciel, blocus) : détecteur de présence, temporisation non bloquante, programmation et validation du diagramme d'états, amélioration personnelle et bilan énergétique, en MicroPython sur Wokwi. Noté /20 sur grille.
+
+=== Travail à faire (à coller dans Pronote) ===
+TP noté — le lampadaire qui voit les piétons, du diagramme d'états au programme validé
+Tu as déjà le jour et la nuit. Il manque le piéton : c'est lui qui rapporte les points.
+
+📄 Documents joints :
+- ELEVE_AUTO_TermSIN_Lampadaire_Pieton.pdf (la fiche)
+- REPONSES_AUTO_TermSIN_Lampadaire_Pieton.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+- diagram_lampadaire.json
+- lampadaire_pieton.py
+
+✏️ Consignes :
+- TP noté, individuel, à distance, sur ordinateur. Une étape par page : suis-les dans l'ordre. Fais une pause entre deux étapes.
+- Tes réglages dépendent de J, ton jour de naissance (de 1 à 31) : tes captures d'écran sont donc différentes de celles de tes camarades. Je vérifie J dans Pronote.
+- Wokwi s'utilise sans compte. Aux étapes marquées 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse. Wokwi n'enregistre rien : copie ton programme dans ton document au fur et à mesure.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), avec « J = … » en haut, tes réponses, ton programme final complet et les 4 captures d'écran 📸.
+- Dépôt dans le devoir « TP lampadaire noté » de l'ENT, avant la fin du créneau de 3 h.
+- Ce TP est noté sur 20.
+
+💬 Besoin d'aide ?
+- Pendant les 3 h, je suis disponible sur la messagerie de l'ENT. Envoie-moi une capture d'écran de ton écran Wokwi si quelque chose ne marche pas : je t'aide à trouver l'erreur, je ne donne pas le programme.
+- Message rouge dans le moniteur série ? Regarde le numéro de ligne indiqué : c'est souvent un « : » oublié à la fin d'un if ou d'un elif, ou un décalage (indentation) différent des lignes voisines.
+- Bloqué plus de 15 minutes ? Écris ce que tu as essayé dans ta réponse, passe à la suite et préviens-moi.

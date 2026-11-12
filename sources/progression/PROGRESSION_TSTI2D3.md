@@ -54,6 +54,8 @@ journal:
     texte: "Blocus, distanciel. Heure commune avec D2 : fiche « Le parking connecté » avec un simulateur sans installation à la place de Filius. Non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
   - date: 2026-11-09
     texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu les 3 et 6 novembre. Mardi 10 novembre : suite de T2, « Du diagramme d'états au programme : le jour et la nuit » sur Wokwi. On ne reprend plus de temps sur le CAN et le CNA : une révision guidée facultative reste sur l'ENT. Vendredi 13 novembre, heure commune : interrogation CAN et CNA (sujet B) en présentiel, sinon « Relier deux réseaux, routeur et passerelle » à distance."
+  - date: 2026-11-13
+    texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre, heure commune : interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`), à la place du sujet B. La fiche « routeur et passerelle » est reportée."
 ---
 
 ## Organisation

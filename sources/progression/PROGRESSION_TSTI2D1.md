@@ -52,6 +52,8 @@ journal:
     texte: "Blocus, distanciel : fiche « Le lampadaire autonome » en autonomie (reprise du CAN, diagramme d'états), non notée, rendu obligatoire. Fiche de révision déposée pour l'évaluation du vendredi 13 novembre."
   - date: 2026-11-09
     texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation CAN et CNA (sujet A) ; à distance, suite de T2 avec « Du diagramme d'états au programme : le jour et la nuit » sur Wokwi, et l'interrogation est reportée au retour. On ne reprend plus de temps sur le CAN et le CNA : une révision guidée facultative reste sur l'ENT."
+  - date: 2026-11-13
+    texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre, 12 h : interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`, valeurs propres à chaque élève tirées du jour de naissance), à la place du sujet A sur table. Le premier programme du lampadaire est reporté."
 ---
 
 ## Organisation

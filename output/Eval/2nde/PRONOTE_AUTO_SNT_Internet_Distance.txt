@@ -1,0 +1,28 @@
+﻿=== 2nde, classe entière (vendredi 13 novembre, 9 h, distanciel) ===
+Titre de la séance :
+Internet — Interrogation à distance : paquets, routage et DNS
+
+Description :
+S1 Internet (distanciel, blocus) : interrogation de 35 min sur les paquets, les adresses IP, le DNS, le routage et TCP, avec des valeurs propres à chaque élève. Notée /20.
+
+=== Travail à faire (à coller dans Pronote) ===
+Interrogation à distance — Internet : paquets, routage et DNS
+Ton sujet dépend de ton jour de naissance : personne n'a exactement les mêmes réponses que toi.
+
+📄 Documents joints :
+- ELEVE_AUTO_SNT_Internet_Distance.pdf (la fiche)
+- REPONSES_AUTO_SNT_Internet_Distance.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
+
+✏️ Consignes :
+- Interrogation notée, individuelle, à distance, pendant l'heure de cours : 35 minutes de travail, puis le dépôt. Suis les étapes dans l'ordre, une par page.
+- Plusieurs questions utilisent ton nombre J, ton jour de naissance (de 1 à 31). Je vérifie J dans Pronote.
+- Fiche de révision et cours autorisés. Réponds avec tes propres mots : deux réponses recopiées l'une sur l'autre ne rapportent aucun point.
+
+📤 À rendre :
+- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier, avec « J = … » écrit tout en haut.
+- Un seul dépôt, dans le devoir « Interro Internet » de l'ENT, avant la fin de l'heure : l'heure de dépôt est enregistrée.
+- Ce travail est noté sur 20.
+
+💬 Besoin d'aide ?
+- Pendant l'heure, je suis disponible sur la messagerie de l'ENT pour un problème technique ou une consigne pas claire. Je ne donne pas les réponses.
+- Tu n'as qu'un téléphone ? Tu peux tout faire : lis ce PDF et réponds dans ton cahier, puis dépose des photos.

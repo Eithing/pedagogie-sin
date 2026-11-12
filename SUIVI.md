@@ -2,6 +2,17 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## Vendredi 13 novembre 2026 : tout est noté, à distance (préparé le 12 novembre)
+
+- **Décision de l'enseignant** : toujours en distanciel, il faut des notes. Les 5 créneaux du vendredi sont notés /20, avec un barème dans chaque version prof. Les fiches non notées prévues pour ce jour (cookies, lampadaire programme pour D1, routeur et passerelle) sont **reportées**.
+- **Principe contre la copie** : les valeurs dépendent du **jour de naissance J** de l'élève (à vérifier dans Pronote), et la version prof contient un tableau des réponses attendues pour J = 1 à 31. Les parties personnelles (recherche choisie, amélioration du programme) sont notées sur grille.
+  - 2nde, TP du 2e demi-groupe (8 h) : `AUTO_SNT_Web_MoteursRecherche_Note`, avec des exemples différents de la fiche du 6 novembre (nouvelle figure `img/web/liens-pages-note.svg`) et sans réponses en fin de fiche ; 11 points sur l'enquête personnelle.
+  - 2nde, classe entière (9 h) : `AUTO_SNT_Internet_Distance`, dans `output/Eval/2nde/`.
+  - D1 (12 h) et heure commune D2 + D3 (13 h) : `AUTO_TermSIN_CAN_CNA_Distance`, dans `output/Eval/Terminale/`. Les sujets A et B sur table restent pour le retour.
+  - D2, 3 h : `AUTO_TermSIN_Lampadaire_Pieton` (suite notée du TP du 6 novembre : état PRÉSENCE, temporisation non bloquante, protocole de test, amélioration personnelle, bilan énergétique), avec `lampadaire_pieton.py`. **Pas relancé dans Wokwi** : à tester une fois. Pronote : rattacher `diagram_lampadaire.json`, déjà déposé le 6 novembre.
+- Portable : Node.js LTS installé le 12 novembre (`C:\Program Files\nodejs`, à ajouter au PATH d'un terminal déjà ouvert) ; Chrome absent, la chaîne utilise Edge, ce qui marche.
+- À faire après le 13 : relever les taux de rendu ; décider si la note du TP de 2nde compte comme celle du TP « première page web » du 1er groupe (9 octobre).
+
 ## Semaine du 9 novembre 2026 : distanciel jusqu'à nouvel ordre
 
 - **Constat** : très peu de travail rendu les 3 et 6 novembre. Les fiches de cette semaine sont donc **très guidées** : chaque notion suit le même plan (méthode, exemple résolu, exercice aux mêmes étapes) et les réponses sont en fin de fiche pour que l'élève se corrige.
