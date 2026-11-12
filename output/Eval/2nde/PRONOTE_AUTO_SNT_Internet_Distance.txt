@@ -3,7 +3,7 @@ Titre de la séance :
 Internet — Interrogation à distance : paquets, routage et DNS
 
 Description :
-S1 Internet (distanciel, blocus) : interrogation de 35 min sur les paquets, les adresses IP, le DNS, le routage et TCP, avec des valeurs propres à chaque élève. Notée /20.
+S1 Internet (distanciel, blocus) : interrogation notée /20, individuelle et sans IA, sur les paquets, les adresses IP, le DNS, le routage et TCP, avec des valeurs propres à chaque élève. Une heure au plus, rendu dans le Casier de l'ENT.
 
 === Travail à faire (à coller dans Pronote) ===
 Interrogation à distance — Internet : paquets, routage et DNS
@@ -14,15 +14,16 @@ Ton sujet dépend de ton jour de naissance : personne n'a exactement les mêmes 
 - REPONSES_AUTO_SNT_Internet_Distance.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
 
 ✏️ Consignes :
-- Interrogation notée, individuelle, à distance, pendant l'heure de cours : 35 minutes de travail, puis le dépôt. Suis les étapes dans l'ordre, une par page.
+- Interrogation notée, individuelle, à distance. Prévois environ 35 minutes de travail et n'y consacre pas plus d'une heure en tout, dépôt compris.
+- L'intelligence artificielle (ChatGPT, assistants, traducteurs…) est interdite : une réponse qui en vient vaut zéro. Fiche de révision et cours autorisés.
 - Plusieurs questions utilisent ton nombre J, ton jour de naissance (de 1 à 31). Je vérifie J dans Pronote.
-- Fiche de révision et cours autorisés. Réponds avec tes propres mots : deux réponses recopiées l'une sur l'autre ne rapportent aucun point.
+- Réponds avec tes propres mots : deux réponses recopiées l'une sur l'autre ne rapportent aucun point.
 
 📤 À rendre :
-- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier, avec « J = … » écrit tout en haut.
-- Un seul dépôt, dans le devoir « Interro Internet » de l'ENT, avant la fin de l'heure : l'heure de dépôt est enregistrée.
-- Ce travail est noté sur 20.
+- Au choix : le document réponse REPONSES_NOM_Prenom (Word ou LibreOffice) ; ou ce sujet imprimé et rempli à la main, en photo ou scanné ; ou ta copie écrite sur une feuille, en photo. Écris « J = … » tout en haut.
+- Un seul dépôt, dans l'application Casier de l'ENT, avant la fin de l'heure.
+- Ce travail est noté.
 
 💬 Besoin d'aide ?
 - Pendant l'heure, je suis disponible sur la messagerie de l'ENT pour un problème technique ou une consigne pas claire. Je ne donne pas les réponses.
-- Tu n'as qu'un téléphone ? Tu peux tout faire : lis ce PDF et réponds dans ton cahier, puis dépose des photos.
+- Tu n'as qu'un téléphone ? Tu peux tout faire : lis ce PDF, écris ta copie sur une feuille, puis dépose des photos dans le Casier.

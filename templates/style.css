@@ -154,6 +154,7 @@ blockquote {
 .question-points { font-weight: 400; font-size: 10pt; color: var(--texte-doux); }
 .question-points::before { content: '('; }
 .question-points::after { content: ')'; }
+.points-masques .question-points { display: none; }
 .question-corps > :first-child { margin-top: 1px; }
 
 /* ---------- Corrigé (version prof) ---------- */

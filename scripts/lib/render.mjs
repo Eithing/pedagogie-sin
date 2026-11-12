@@ -103,7 +103,8 @@ export function rendreHtml({ meta, corps, cible, config, fichierSource, libelleV
     titre: `${meta.titre} — ${cible === 'prof' ? 'Prof' : 'Élève'}`,
     corps: `${entete(meta, cible, config, libelleVariante)}\n${meta.type === 'autonomie' ? planTravail(meta, corps) : ''}\n<main class="doc-corps">\n${contenu}\n</main>`,
     meta, config, fichierSource,
-    classes: `document variante-${cible} type-${esc(meta.type ?? 'doc')}`,
+    // « points_masques: true » : les points de chaque question n'apparaissent pas dans la version élève
+    classes: `document variante-${cible} type-${esc(meta.type ?? 'doc')}${meta.points_masques && cible === 'eleve' ? ' points-masques' : ''}`,
   });
 }
 
