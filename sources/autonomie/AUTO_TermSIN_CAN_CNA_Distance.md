@@ -7,32 +7,34 @@ rangement: Eval/Terminale
 pronote:
   - pour: "TSTI2D1 (vendredi 13 novembre, 12 h, distanciel)"
     titre: "T1 Acquérir une grandeur physique — Interrogation à distance : le CAN et le CNA"
-    description: "T1 (distanciel, blocus) : interrogation de 45 min sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Notée /20."
+    description: "T1 (distanciel, blocus) : interrogation notée /20, individuelle et sans IA, sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Une heure au plus, rendu dans le Casier de l'ENT."
   - pour: "TSTI2D2 + TSTI2D3, heure commune (vendredi 13 novembre, 13 h, distanciel)"
     titre: "T1 Acquérir une grandeur physique — Interrogation à distance : le CAN et le CNA"
-    description: "T1 (distanciel, blocus) : interrogation de 45 min sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Notée /20."
+    description: "T1 (distanciel, blocus) : interrogation notée /20, individuelle et sans IA, sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Une heure au plus, rendu dans le Casier de l'ENT."
 type: autonomie
 duree: 55 min
 bareme: 20
+points_masques: true
 illustration: ../revision/img/can/chaine-can-cna.svg
 accroche: "Tes valeurs dépendent de ton jour de naissance : personne n'a exactement le même sujet que toi."
 competences: [2.4.2c, 5.3.1d, 2.4.3a, CO7.3-SIN1]
 document_reponse: true
 consignes:
-  - "Interrogation notée, individuelle, à distance, pendant l'heure de cours : 45 minutes de travail, puis le dépôt. Suis les étapes dans l'ordre, une par page."
+  - "Interrogation notée, individuelle, à distance. Prévois environ 45 minutes de travail et n'y consacre pas plus d'une heure en tout, dépôt compris."
+  - "L'intelligence artificielle (ChatGPT, assistants…) est interdite : une réponse qui en vient vaut zéro. Calculatrice, cours et fiche de révision autorisés."
   - "Tous tes calculs utilisent ton nombre J, ton jour de naissance (de 1 à 31). Je vérifie J dans Pronote."
-  - "Calculatrice autorisée. Fiche de révision et cours autorisés. Pour chaque calcul, écris la formule, puis le calcul avec tes valeurs, puis le résultat avec son unité."
+  - "Pour chaque calcul, écris la formule, puis le calcul avec tes valeurs, puis le résultat avec son unité."
 rendu:
-  - "Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier, avec « J = … » écrit tout en haut."
-  - "Un seul dépôt, dans le devoir « Interro CAN CNA » de l'ENT, avant la fin de l'heure : l'heure de dépôt est enregistrée."
-  - "Ce travail est noté sur 20."
+  - "Au choix : le document réponse REPONSES_NOM_Prenom (Word ou LibreOffice) ; ou ce sujet imprimé et rempli à la main, en photo ou scanné ; ou ta copie écrite sur une feuille, en photo. Écris « J = … » tout en haut."
+  - "Un seul dépôt, dans l'application Casier de l'ENT, avant la fin de l'heure."
+  - "Ce travail est noté."
 aide:
   - "Pendant l'heure, je suis disponible sur la messagerie de l'ENT pour un problème technique ou une consigne pas claire. Je ne donne pas les réponses."
   - "Bloqué sur une question ? Écris ce que tu as essayé, puis passe à la suivante : une démarche juste rapporte des points, même si le résultat est faux."
 ---
 
 ::: prof
-**Mise en œuvre (vendredi 13 novembre, distanciel)** : TSTI2D1 à 12 h, heure commune TSTI2D2 + TSTI2D3 à 13 h. Elle remplace les sujets A et B sur table (`EVAL_TermSIN_CAN`), qui restent disponibles pour le retour en classe. Déposer sur l'ENT ce PDF et `REPONSES_AUTO_TermSIN_CAN_CNA_Distance.docx`, dans un devoir « Interro CAN CNA » qui ferme à la fin de l'heure et accepte les .docx, les .odt et les photos.
+**Mise en œuvre (vendredi 13 novembre, distanciel)** : TSTI2D1 à 12 h, heure commune TSTI2D2 + TSTI2D3 à 13 h. Elle remplace les sujets A et B sur table (`EVAL_TermSIN_CAN`), qui restent disponibles pour le retour en classe. Déposer sur l'ENT ce PDF et `REPONSES_AUTO_TermSIN_CAN_CNA_Distance.docx`. Les copies reviennent dans l'application **Casier** de l'ENT. Les points de chaque question et le barème ne figurent pas dans la version élève (`points_masques: true`) : ils sont seulement ici.
 
 **Contre la copie** : toutes les valeurs dépendent du jour de naissance $J$ de l'élève, donc deux élèves n'ont en général pas les mêmes résultats. Vérifier $J$ dans Pronote (fiche élève, date de naissance). Une copie dont les résultats correspondent à un autre $J$ que celui de l'élève : 0 aux questions concernées. Seule la question 1 est commune à tous (3 points).
 
@@ -42,20 +44,28 @@ aide:
 :::
 
 ::: info Comment répondre et rendre ton travail
-1. Télécharge **`REPONSES_AUTO_TermSIN_CAN_CNA_Distance.docx`** sur l'ENT et ouvre-le avec Word ou LibreOffice. Enregistre-le tout de suite sous le nom **`REPONSES_NOM_Prenom`**. Tu peux aussi répondre dans ton cahier et déposer des **photos nettes**, une par page, avec le numéro de chaque question.
-2. **Tout en haut**, écris : **« Je suis né(e) le J = … »**.
-3. Pour chaque calcul : la **formule**, le **calcul avec tes valeurs**, le **résultat avec son unité**. Une démarche juste rapporte des points même si le résultat est faux.
-4. **Dépose avant la fin de l'heure.** Un dépôt en retard n'est pas accepté sans raison valable.
+Tu as **trois possibilités**, au choix :
+
+1. **À l'ordinateur** : télécharge **`REPONSES_AUTO_TermSIN_CAN_CNA_Distance.docx`** sur l'ENT, ouvre-le avec Word ou LibreOffice, réponds sous chaque question et enregistre-le sous le nom **`REPONSES_NOM_Prenom`**.
+2. **Sur ce sujet imprimé** : écris tes réponses sur les lignes, puis prends chaque page en photo (ou scanne-la).
+3. **Sur une copie** : écris tes réponses sur une feuille, avec le **numéro de chaque question**, puis prends des **photos nettes**.
+
+**Dans tous les cas** :
+
+- **tout en haut**, écris **« Je suis né(e) le J = … »** (exemple : né(e) le 23 mars → $J = 23$) ;
+- pour chaque calcul, écris la **formule**, le **calcul avec tes valeurs** et le **résultat avec son unité** : une démarche juste rapporte des points même si le résultat est faux ;
+- travaille **seul**, **sans intelligence artificielle**, et n'y passe **pas plus d'une heure** ;
+- **dépose ton travail dans l'application Casier de l'ENT** avant la fin de l'heure.
 :::
 
 ## Étape 1 — Mes valeurs personnelles (5 min)
 
 Ton nombre $J$ est le **jour** de ta date de naissance. Exemple : né(e) le 23 mars → $J = 23$.
 
-Calcule tes valeurs et recopie-les en haut de ton document réponse. Tu t'en serviras dans toute l'interrogation.
+Calcule tes cinq valeurs avec les formules ci-dessous, et recopie-les en haut de ta copie. Tu t'en serviras dans toute l'interrogation. La colonne de droite montre la méthode avec $J = 0$ : ce ne sont pas tes valeurs.
 
 :::: doc DR1 | Mes valeurs (à recopier)
-| Valeur | Formule | Exemple avec $J = 0$ (n'existe pas) |
+| Valeur | Formule | Méthode avec $J = 0$ |
 | :--- | :--- | :--- |
 | Tension d'entrée $V_{in}$ (question 2) | $V_{in} = 1 + \dfrac{J}{10}$ en V | $1 + 0 = 1{,}0$ V |
 | Code reçu $N_3$ (question 3) | $N_3 = 30 \times J + 50$ | $50$ |
@@ -74,7 +84,7 @@ Calcule tes valeurs et recopie-les en haut de ton document réponse. Tu t'en ser
 - Un CAN de $n$ bits fournit $2^n$ codes, de $N = 0$ à $N = 2^n - 1$.
 - Quantum : $q = \dfrac{\text{PE}}{2^n}$. Code : $N$ = partie entière de $\dfrac{V_{in}}{q}$.
 - CNA : tension de sortie $V_s = N \times q$.
-- Pour passer en hexadécimal : regroupe les bits par 4 en partant de la droite ; `1010` = A, `1011` = B, `1100` = C, `1101` = D, `1110` = E, `1111` = F.
+- Pour passer en hexadécimal : regroupe les bits **par 4 en partant de la droite** (sur 10 bits, le groupe de gauche n'a que 2 bits), puis traduis chaque groupe : `0000` à `1001` donnent 0 à 9, puis `1010` = A, `1011` = B, `1100` = C, `1101` = D, `1110` = E, `1111` = F.
 ::::
 
 ## Étape 2 — Le CAN (20 min)
@@ -82,9 +92,15 @@ Calcule tes valeurs et recopie-les en haut de ton document réponse. Tu t'en ser
 On utilise un **CAN de 10 bits**, de pleine échelle **PE = 5 V**.
 
 :::: question 1 [3 pt]
-**a)** Combien de codes différents ce CAN peut-il fournir ? Quel est le plus grand code $N$ ?
+**a)** Combien de codes différents ce CAN peut-il fournir ? Quel est le plus grand code $N$ possible ?
 
-**b)** **Calculer** son quantum $q$, en mV (3 chiffres significatifs).
+::: zone 2
+:::
+
+**b)** **Calcule** son quantum $q$, en mV, avec 3 chiffres significatifs.
+
+::: zone 2
+:::
 ::::
 
 ::: reponse 0
@@ -94,11 +110,17 @@ On utilise un **CAN de 10 bits**, de pleine échelle **PE = 5 V**.
 :::
 
 :::: question 2 [4 pt]
-La tension d'entrée vaut **ta** tension $V_{in}$ (DR1).
+Le CAN de la question 1 reçoit **ta** tension d'entrée $V_{in}$, calculée dans le DR1.
 
-**a)** **Calculer** le code $N$ fourni par le CAN.
+**a)** **Calcule** le code $N$ qu'il fournit.
 
-**b)** **Écrire** ce code en binaire sur 10 bits, puis en hexadécimal. Montre ta méthode (puissances de 2 ou divisions successives).
+::: zone 3
+:::
+
+**b)** **Écris** ce code $N$ en binaire sur 10 bits, puis en hexadécimal (voir le DR2). Montre ta méthode : tableau des puissances de 2, ou divisions successives par 2.
+
+::: zone 4
+:::
 ::::
 
 ::: reponse 0
@@ -107,9 +129,19 @@ La tension d'entrée vaut **ta** tension $V_{in}$ (DR1).
 **b)** Binaire sur 10 bits et hexadécimal : voir le tableau A. (1,5 pt binaire, 1 pt hexadécimal ; méthode visible exigée)
 :::
 
-::: question 3 [3 pt]
-Le CAN fournit maintenant **ton** code $N_3$ (DR1). **Calculer** la tension d'entrée correspondante, puis **expliquer** pourquoi on ne connaît cette tension qu'à un quantum près.
+:::: question 3 [3 pt]
+Le même CAN fournit maintenant le code $N_3$, calculé dans le DR1.
+
+**a)** **Calcule** la tension d'entrée qui correspond à ce code, environ.
+
+::: zone 2
 :::
+
+**b)** **Explique** pourquoi on ne connaît cette tension qu'à un quantum près. Aide : quelles tensions donnent toutes le même code ?
+
+::: zone 3
+:::
+::::
 
 ::: reponse 0
 $V_{in} \approx N_3 \times q$ : voir le tableau A. (2 pt)
@@ -117,12 +149,12 @@ $V_{in} \approx N_3 \times q$ : voir le tableau A. (2 pt)
 Toutes les tensions comprises entre $N_3 \times q$ et $(N_3 + 1) \times q$ donnent le même code : le CAN ne peut pas les distinguer, d'où une incertitude d'un quantum (environ 4,88 mV). (1 pt)
 :::
 
-::: question 4 [2 pt]
-Un camarade applique une tension plus grande que **ta** tension $V_{in}$ de seulement **3 mV**. Son CAN lui donne-t-il le **même code** que le tien ? **Justifier** par un calcul.
+::: question 4 [3 pt]
+On augmente **ta** tension $V_{in}$ de seulement **3 mV** : le CAN reçoit maintenant $V_{in} + 0{,}003$ V. Fournit-il le **même code** $N$ qu'à la question 2 ? **Justifie** par un calcul, puis explique ton résultat en comparant 3 mV au quantum.
 :::
 
-::: reponse 0
-On calcule $\dfrac{V_{in} + 0{,}003}{q}$ et on compare sa partie entière à $N$ (tableau A, colonne Q4). (1 pt calcul, 1 pt conclusion)
+::: reponse 4
+On calcule $\dfrac{V_{in} + 0{,}003}{q}$ et on compare sa partie entière à $N$ (tableau A, colonne Q4). (1 pt calcul, 1 pt conclusion, 1 pt comparaison de 3 mV au quantum)
 
 Attendu : 3 mV est plus petit que le quantum, donc le code ne change **pas toujours** ; il change seulement si $V_{in}$ était proche de la marche suivante. Accepter « même code » ou « code + 1 » s'il est justifié par le calcul.
 :::
@@ -132,11 +164,20 @@ Attendu : 3 mV est plus petit que le quantum, donc le code ne change **pas toujo
 On utilise maintenant un **CNA de 8 bits**, de pleine échelle **5 V**.
 
 :::: question 5 [4 pt]
-**a)** Quelle est la grandeur d'**entrée** d'un CNA ? Sa grandeur de **sortie** ?
+**a)** Quelle est la grandeur d'**entrée** d'un CNA ? Et sa grandeur de **sortie** ?
 
-**b)** On envoie au CNA **ton** code $N_5$ (DR1). **Écrire** ce code en hexadécimal (8 bits), puis **calculer** la tension de sortie $V_s$.
+::: zone 2
+:::
 
-**c)** Quel code faut-il envoyer pour obtenir **ta** tension $V_{cible}$ (DR1) ? Donner l'entier le plus proche.
+**b)** On envoie au CNA le code $N_5$, calculé dans le DR1. **Écris** ce code en hexadécimal sur 8 bits. Ensuite, **calcule** le quantum de ce CNA, puis sa tension de sortie $V_s$.
+
+::: zone 3
+:::
+
+**c)** Quel code faut-il envoyer au CNA pour obtenir en sortie **ta** tension $V_{cible}$ (DR1) ? Donne l'entier le plus proche.
+
+::: zone 2
+:::
 ::::
 
 ::: reponse 0
@@ -148,10 +189,10 @@ On utilise maintenant un **CNA de 8 bits**, de pleine échelle **5 V**.
 :::
 
 ::: question 6 [3 pt]
-Un capteur de température fournit **0 V à 0 °C** et **5 V à 100 °C** (relation linéaire). On veut distinguer des variations de **ton** écart $\Delta T$ (DR1), avec un CAN de pleine échelle 5 V. **Quel nombre de bits minimal** faut-il ? **Justifier** par un calcul.
+Un capteur de température fournit **0 V à 0 °C** et **5 V à 100 °C** (relation linéaire). On veut que le CAN, de pleine échelle 5 V, puisse distinguer deux températures qui ne diffèrent que de **ton** écart $\Delta T$ (DR1). **Quel nombre de bits minimal** faut-il ? **Justifie** par un calcul.
 :::
 
-::: reponse 0
+::: reponse 5
 Sensibilité : $s = \dfrac{5}{100} = 50\text{ mV/°C}$. (1 pt)
 
 Il faut $q \le s \times \Delta T$, puis $\dfrac{5}{2^n} \le s \times \Delta T$ : (1 pt démarche, 1 pt résultat)
@@ -160,15 +201,7 @@ Il faut $q \le s \times \Delta T$, puis $\dfrac{5}{2^n} \le s \times \Delta T$ :
 - $\Delta T = 0{,}02$ °C : $q \le 1$ mV → $2^n \ge 5\,000$ → **13 bits**.
 :::
 
-## Étape 4 — Relire, puis déposer (5 min)
-
-::: question 7 [1 pt]
-**Relis-toi** : $J$ est écrit en haut, chaque calcul a sa formule et son unité. Puis **dépose** ton travail dans le devoir « Interro CAN CNA » de l'ENT, avant la fin de l'heure.
-:::
-
-::: reponse 0
-$J$ écrit, formule, calcul et unité présents dans la plupart des calculs, dépôt dans les délais. (1 pt)
-:::
+**Avant de déposer**, relis-toi : $J$ est écrit tout en haut, et chaque calcul a sa formule et son unité. Puis dépose ton travail dans l'application **Casier** de l'ENT.
 
 ::: prof
 **Tableau A — questions 2 à 4** (CAN 10 bits, PE = 5 V, $q = 4{,}8828$ mV). Q4 : « oui » si le code reste le même avec 3 mV de plus ; sinon, le code obtenu.
@@ -244,13 +277,14 @@ $J$ écrit, formule, calcul et unité présents dans la plupart des calculs, dé
 | 31 | 184 | `0xB8` | 3,594 V | 2,05 V | 105 | 0,1 °C | 10 |
 :::
 
+::: prof
 ## Barème
 
 | Compétence | Questions | Critères | Points |
 | :--- | :--- | :--- | :---: |
-| **2.4.2c / 5.3.1d** — Caractériser un CAN | Q1, Q3, Q4 | Nombre de codes, quantum, tension retrouvée à partir d'un code, effet de la quantification justifié par le calcul | 8 |
+| **2.4.2c / 5.3.1d** — Caractériser un CAN | Q1, Q3, Q4 | Nombre de codes, quantum, tension retrouvée à partir d'un code, effet de la quantification justifié par le calcul | 9 |
 | **2.4.3a** — Encodage binaire et hexadécimal | Q2 | Code juste, conversions binaire et hexadécimale avec méthode visible | 4 |
 | CNA (hors programme enregistré) | Q5 | Grandeurs d'entrée et de sortie, $V_s = N \times q$, code pour une tension visée | 4 |
 | **CO7.3-SIN1** — Choisir un constituant d'une chaîne d'acquisition | Q6 | Sensibilité, condition $q \le s \times \Delta T$, nombre de bits justifié | 3 |
-| Présentation et dépôt | Q7 | $J$ écrit, formule, calcul et unité, dépôt à l'heure | 1 |
 | **Total** | | | **20** |
+:::

@@ -3,14 +3,14 @@ Titre de la séance :
 T1 Acquérir une grandeur physique — Interrogation à distance : le CAN et le CNA
 
 Description :
-T1 (distanciel, blocus) : interrogation de 45 min sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Notée /20.
+T1 (distanciel, blocus) : interrogation notée /20, individuelle et sans IA, sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Une heure au plus, rendu dans le Casier de l'ENT.
 
 === TSTI2D2 + TSTI2D3, heure commune (vendredi 13 novembre, 13 h, distanciel) ===
 Titre de la séance :
 T1 Acquérir une grandeur physique — Interrogation à distance : le CAN et le CNA
 
 Description :
-T1 (distanciel, blocus) : interrogation de 45 min sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Notée /20.
+T1 (distanciel, blocus) : interrogation notée /20, individuelle et sans IA, sur le CAN et le CNA (quantum, code N, binaire et hexadécimal, CNA, choix du nombre de bits), avec des valeurs propres à chaque élève. Une heure au plus, rendu dans le Casier de l'ENT.
 
 === Travail à faire (à coller dans Pronote) ===
 Interrogation à distance — le CAN et le CNA, avec tes valeurs personnelles
@@ -21,14 +21,15 @@ Tes valeurs dépendent de ton jour de naissance : personne n'a exactement le mê
 - REPONSES_AUTO_TermSIN_CAN_CNA_Distance.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
 
 ✏️ Consignes :
-- Interrogation notée, individuelle, à distance, pendant l'heure de cours : 45 minutes de travail, puis le dépôt. Suis les étapes dans l'ordre, une par page.
+- Interrogation notée, individuelle, à distance. Prévois environ 45 minutes de travail et n'y consacre pas plus d'une heure en tout, dépôt compris.
+- L'intelligence artificielle (ChatGPT, assistants…) est interdite : une réponse qui en vient vaut zéro. Calculatrice, cours et fiche de révision autorisés.
 - Tous tes calculs utilisent ton nombre J, ton jour de naissance (de 1 à 31). Je vérifie J dans Pronote.
-- Calculatrice autorisée. Fiche de révision et cours autorisés. Pour chaque calcul, écris la formule, puis le calcul avec tes valeurs, puis le résultat avec son unité.
+- Pour chaque calcul, écris la formule, puis le calcul avec tes valeurs, puis le résultat avec son unité.
 
 📤 À rendre :
-- Ton document réponse REPONSES_NOM_Prenom (Word ou LibreOffice), ou des photos nettes de ton cahier, avec « J = … » écrit tout en haut.
-- Un seul dépôt, dans le devoir « Interro CAN CNA » de l'ENT, avant la fin de l'heure : l'heure de dépôt est enregistrée.
-- Ce travail est noté sur 20.
+- Au choix : le document réponse REPONSES_NOM_Prenom (Word ou LibreOffice) ; ou ce sujet imprimé et rempli à la main, en photo ou scanné ; ou ta copie écrite sur une feuille, en photo. Écris « J = … » tout en haut.
+- Un seul dépôt, dans l'application Casier de l'ENT, avant la fin de l'heure.
+- Ce travail est noté.
 
 💬 Besoin d'aide ?
 - Pendant l'heure, je suis disponible sur la messagerie de l'ENT pour un problème technique ou une consigne pas claire. Je ne donne pas les réponses.
