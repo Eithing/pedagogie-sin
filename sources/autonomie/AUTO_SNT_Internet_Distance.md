@@ -103,7 +103,7 @@ Une adresse IPv4 est formée de **4 nombres compris entre 0 et 255**, séparés 
 :::
 
 :::: question 3 [3 pt]
-Un élève tape la commande suivante. Dans **ta** copie, remplace l'adresse du site par la tienne : `198.51.100.` suivi de $(J + 10)$.
+Un élève tape la commande suivante. Dans la dernière ligne, l'adresse IP du site se termine par $(J + 10)$ : pour ton sujet, **remplace $(J + 10)$ par le résultat de ce calcul**. Exemple : si $J = 23$, l'adresse du site est `198.51.100.33`.
 
 ```text
 > nslookup www.mediatheque-exemple.fr
@@ -119,7 +119,7 @@ Address :  198.51.100.(J + 10)
 ::: zone 2
 :::
 
-**b)** **Quelle adresse IP** le navigateur va-t-il contacter pour afficher le site ? Écris **ta** réponse en entier.
+**b)** **Quelle adresse IP** le navigateur va-t-il contacter pour afficher le site ? Écris l'adresse complète, avec ton calcul de $J + 10$.
 
 ::: zone 1
 :::
@@ -185,12 +185,22 @@ c) Justification attendue : tous les chemins passent par ce routeur (seule liais
 
 ## Étape 4 — Paquets et TCP (7 min)
 
-::: question 5 [2 pt]
-Tu envoies une photo découpée en $(J + 5)$ paquets, numérotés de 1 à $J + 5$. Le paquet numéro $J$ n'arrive jamais. **Écris** tes deux nombres, puis **explique** ce qui se passe et quel protocole s'en charge.
+:::: question 5 [2 pt]
+Tu envoies une photo découpée en $(J + 5)$ paquets, numérotés à partir de 1. Le paquet qui porte le numéro $J$ n'arrive jamais.
+
+**a)** Avec ton nombre $J$ : combien de paquets ta photo compte-t-elle, et quel est le numéro du paquet perdu ? Exemple : si $J = 23$, la photo compte 28 paquets et le paquet n° 23 est perdu.
+
+::: zone 1
 :::
 
-::: reponse 4
-Nombres justes ($J + 5$ paquets, paquet $J$ perdu) : 0,5 pt. Le destinataire voit, grâce aux **numéros**, qu'il manque le paquet $J$ et ne confirme pas sa réception : l'expéditeur **renvoie seulement ce paquet**. C'est le protocole **TCP**. (1,5 pt)
+**b)** **Explique** ce qui se passe ensuite, et quel protocole s'en charge.
+
+::: zone 3
+:::
+::::
+
+::: reponse 0
+a) Nombres justes ($J + 5$ paquets, paquet $J$ perdu) : 0,5 pt. b) Le destinataire voit, grâce aux **numéros**, qu'il manque le paquet $J$ et ne confirme pas sa réception : l'expéditeur **renvoie seulement ce paquet**. C'est le protocole **TCP**. (1,5 pt)
 :::
 
 ::: question 6 [2 pt]
