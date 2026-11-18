@@ -1,0 +1,13 @@
+﻿=== 2nde, TP du 1er demi-groupe (vendredi 20 novembre, 8 h) ===
+Titre de la séance :
+Le Web — TP : dans les coulisses d'une page web (code source, requêtes HTTP, URL, cookies)
+
+Description :
+S2 Le Web, TP en demi-groupe au lycée : lire et modifier le code d'une page avec les outils du navigateur, observer les requêtes HTTP, décomposer une URL et vérifier une page sécurisée, inspecter les cookies d'un site. Noté /20.
+
+=== 2nde, TP du 2e demi-groupe (vendredi 27 novembre, 8 h) ===
+Titre de la séance :
+Le Web — TP : dans les coulisses d'une page web (code source, requêtes HTTP, URL, cookies)
+
+Description :
+S2 Le Web, TP en demi-groupe au lycée, avant l'interrogation : lire et modifier le code d'une page avec les outils du navigateur, observer les requêtes HTTP, décomposer une URL et vérifier une page sécurisée, inspecter les cookies d'un site. Noté /20.

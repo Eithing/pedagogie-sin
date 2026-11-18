@@ -83,7 +83,7 @@ sequences:
         - "TP « Surveillance HACCP d'une chambre froide » : acquisition I2C sur ESP32 et alarme à hystérésis"
         - "Analyseur logique virtuel de Wokwi, trames lues dans PulseView"
     outils: [Wokwi, PulseView]
-    ressources: ["TP_TermSIN_I2C_ESP32_Temperature (à adapter en simulation)"]
+    ressources: [TP_TermSIN_I2C_Wokwi]
     evaluation: "Évaluation écrite : décodage de trames ; TP noté pour la classe à 4 h."
 
   - id: T4
@@ -165,7 +165,7 @@ sequences:
         - "Calcul d'adresses de réseau ; circulation des trames"
     outils: [Filius, Packet Tracer]
     evaluation: "TP noté en binôme : configurer un réseau simulé selon un cahier des charges."
-    ressources: [COURS_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Routeur]
+    ressources: [COURS_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Parking, AUTO_TermSIN_Reseau_Routeur, COURS_TermSIN_Reseau_Routeur]
 
   - id: C2
     titre: Échanger des données en client/serveur
@@ -221,7 +221,7 @@ pistes_partagees:
       - { jour: vendredi, heures: 1, libelle: "Vendredi midi, 1 h, TSTI2D2 + TSTI2D3 regroupées (26 élèves, labo, 1 poste pour 2)" }
     sequences:
       - { ref: C0, semaines: 7, etat: fait, fin: 2026-10-16 }
-      - { ref: C1, semaines: 7, etat: en-cours, debut: 2026-11-06 }
+      - { ref: C1, semaines: 7, etat: en-cours, debut: 2026-11-06, fin: 2026-12-04 }
       - { ref: C2, semaines: 7 }
       - { ref: C3, semaines: 6 }
       - { ref: C4, semaines: fin }

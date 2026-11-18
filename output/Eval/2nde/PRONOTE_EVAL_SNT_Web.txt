@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Le Web — Interrogation : tout le thème
+
+Description :
+S2 Le Web : interrogation écrite de 30 min (45 min avec tiers-temps), deux sujets (A/B), sur tout le thème : histoire, licences, HTML et CSS, URL, requête HTTP et client / serveur, moteurs de recherche, cookies. Notée.

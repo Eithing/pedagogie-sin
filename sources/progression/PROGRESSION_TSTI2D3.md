@@ -30,6 +30,7 @@ sequences:
     semaines: 7
     etat: en-cours
     debut: 2026-11-03
+    fin: 2026-12-04
     ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
@@ -56,6 +57,8 @@ journal:
     texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu les 3 et 6 novembre. Mardi 10 novembre : suite de T2, « Du diagramme d'états au programme : le jour et la nuit » sur Wokwi. On ne reprend plus de temps sur le CAN et le CNA : une révision guidée facultative reste sur l'ENT. Vendredi 13 novembre, heure commune : interrogation CAN et CNA (sujet B) en présentiel, sinon « Relier deux réseaux, routeur et passerelle » à distance."
   - date: 2026-11-13
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre, heure commune : interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`), à la place du sujet B. La fiche « routeur et passerelle » est reportée."
+  - date: 2026-11-18
+    texte: "Plan de rattrapage : T2 resserrée, fin le 4 décembre, puis T3 dès le 8 décembre. Heure commune : C1 se termine le 4 décembre (séance notée « routeur et passerelle » le 20 novembre, TP noté de configuration le 4 décembre), C2 commence le 11 décembre. Tous les TP et toutes les activités sont désormais notés."
 ---
 
 ## Organisation

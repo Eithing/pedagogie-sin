@@ -1,0 +1,6 @@
+﻿=== TSTI2D2 (vendredi 20 novembre, 3 h) ===
+Titre de la séance :
+T3 Faire dialoguer les constituants — TP : la chambre froide surveillée, liaison série et bus I2C (Wokwi)
+
+Description :
+T3, TP de 3 h au lycée : typologie des communications, décodage d'une trame série (UART, ASCII) et d'une trame I2C, lecture d'un capteur I2C sur ESP32 (scan, registres, complément à 2) et alarme à hystérésis en MicroPython sur Wokwi. Noté /20.

@@ -28,7 +28,8 @@ sequences:
     semaines: 7
     etat: en-cours
     debut: 2026-11-06
-    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme]
+    fin: 2026-12-04
+    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_Programme]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -54,6 +55,8 @@ journal:
     texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre : en présentiel, interrogation CAN et CNA (sujet A) ; à distance, suite de T2 avec « Du diagramme d'états au programme : le jour et la nuit » sur Wokwi, et l'interrogation est reportée au retour. On ne reprend plus de temps sur le CAN et le CNA : une révision guidée facultative reste sur l'ENT."
   - date: 2026-11-13
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre, 12 h : interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`, valeurs propres à chaque élève tirées du jour de naissance), à la place du sujet A sur table. Le premier programme du lampadaire est reporté."
+  - date: 2026-11-18
+    texte: "Plan de rattrapage : T2 resserrée, fin le 4 décembre, puis T3 (liaisons série et bus) dès le 11 décembre. Vendredi 20 novembre, retour en présentiel : séance « du diagramme d'états au programme » (lampadaire jour / nuit sur Wokwi), fiche d'activités notée /20. Tous les TP et toutes les activités sont désormais notés."
 ---
 
 ## Organisation

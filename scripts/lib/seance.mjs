@@ -48,6 +48,7 @@ export function decouper(doc) {
 
   const etapes = [];
   const avant = { dire: [], prof: [] };
+  const bareme = []; // blocs « ::: prof Barème » : recopiés à la fin de la fiche d'activités prof
   const erreurs = [];
   let courante = null;
   let nActivite = 0;
@@ -76,6 +77,7 @@ export function decouper(doc) {
         break;
       case 'dire':
       case 'prof':
+        if (b.nom === 'prof' && /^bar[eè]me/i.test(b.args.trim())) bareme.push(contenu(b));
         (courante ?? avant)[b.nom].push(contenu(b));
         break;
       case 'question':
@@ -101,7 +103,7 @@ export function decouper(doc) {
     e.diapos = [++diapo];
     if (e.type === 'activite' && e.projeter) e.questions.forEach(() => e.diapos.push(++diapo));
   }
-  return { etapes, avant, hors, erreurs, total: t, nbDiapos: diapo };
+  return { etapes, avant, bareme, hors, erreurs, total: t, nbDiapos: diapo };
 }
 
 export function validerSeance(doc, config) {
@@ -353,5 +355,7 @@ export function corpsFiche(seance) {
       parts.push(`:::: retenir\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}\n::::`);
     }
   }
+  // Barème d'une séance notée : version prof seulement (le bloc « prof » disparaît de la version élève)
+  for (const b of seance.bareme ?? []) parts.push(`:::: prof\n### Barème\n\n${b}\n::::`);
   return parts.join('\n\n');
 }

@@ -2,6 +2,20 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## Vendredi 20 novembre 2026 : retour en présentiel, plan de rattrapage (préparé le 18 novembre)
+
+- **Décisions de l'enseignant** : coller au programme et rattraper le retard ; **tous les TP et toutes les activités sont notés**. Les progressions sont resserrées (journal du 18 novembre dans chaque progression).
+- **Chaîne** : une séance de cours peut maintenant être notée : `bareme: 20` dans le front matter, des points sur toutes les questions, barème dans un bloc `::: prof Barème` (il s'imprime dans le déroulé et à la fin de la fiche d'activités prof). Modifications dans `scripts/lib/document.mjs` (`estNote`) et `scripts/lib/seance.mjs` ; règle ajoutée à la charte.
+- **2nde** : le Web se termine le 27 novembre, les réseaux sociaux commencent le 4 décembre.
+  - 20/11, 8 h, 1er demi-groupe : `TP_SNT_Web_Coulisses` (outils de développement : code source, HTML / CSS modifiés en direct, requêtes HTTP, URL et certificat, cookies), noté /20. **Vérifier que F12 n'est pas bloqué sur les postes du labo.** Le 2e groupe le fait le 27/11 à 8 h, avant l'interro.
+  - 20/11, 9 h, classe entière : `COURS_SNT_Web_Synthese` (tout le thème WEB.1 à WEB.9, cookies et licences compris), fiche notée /20 ; distribuer `REVISION_SNT_Web` (`output/Eval/2nde/`).
+  - 27/11, 9 h : `EVAL_SNT_Web`, sujets A / B, 30 min (45 min pour les PAI), dans `output/Eval/2nde/`.
+- **Terminales** :
+  - D1, 20/11, 12 h : `COURS_TermSIN_Lampadaire_Programme` (jour / nuit puis piéton, if / elif / else sur Wokwi), fiche notée /20, seul ou à deux selon les présents. Fichiers Wokwi : ceux de la fiche D3 du 10/11 (`T2_Distanciel_Lampadaire-programme-jour-nuit/`). T2 se termine le 4/12 pour D1 et D3, puis T3.
+  - Heure commune D2 + D3, 20/11 : `COURS_TermSIN_Reseau_Routeur` (simulateur `reseau_routeur.html`), fiche notée /20. C1 se termine le 4/12 (TP noté de configuration d'un réseau **à préparer**), C2 commence le 11/12.
+  - D2, 20/11, 3 h : `TP_TermSIN_I2C_Wokwi` (T3 : typologie, trame UART à décoder, trame I2C, MPU6050 sur Wokwi : scan, WHO_AM_I, complément à 2, alarme à hystérésis), noté /20. Il remplace le TP TMP102, qui supposait du matériel. **Circuit et corrigé pas lancés dans Wokwi : à tester une fois** (broches du MPU6050, réglage de la température, valeurs négatives).
+- À préparer ensuite : séances du 27/11 pour les Terminales, TP noté C1 du 4/12, début des réseaux sociaux (2nde) le 4/12.
+
 ## Vendredi 13 novembre 2026 : tout est noté, à distance (préparé le 12 novembre)
 
 - **Décision de l'enseignant** : toujours en distanciel, il faut des notes. Les 5 créneaux du vendredi sont notés /20, avec un barème dans chaque version prof. Les fiches non notées prévues pour ce jour (cookies, lampadaire programme pour D1, routeur et passerelle) sont **reportées**.

@@ -34,10 +34,15 @@ sequences:
     ressources: [EVAL_TermSIN_CAN, AUTO_TermSIN_TMP36_Tinkercad, AUTO_TermSIN_Cuve_Lissage, AUTO_TermSIN_CAN_CNA_Guide]
   - ref: T2
     semaines: 7
-    etat: en-cours
+    etat: fait
     debut: 2026-11-06
-    ressources: [TP_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Wokwi]
-  - { ref: T3, semaines: 6 }
+    fin: 2026-11-13
+    ressources: [TP_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Pieton]
+  - ref: T3
+    semaines: 6
+    etat: en-cours
+    debut: 2026-11-20
+    ressources: [TP_TermSIN_I2C_Wokwi]
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
   - { ref: P, piste: projet, semaines: fin }
@@ -58,6 +63,8 @@ journal:
     texte: "Blocus : distanciel jusqu'à nouvel ordre, et peu de travail rendu le 6 novembre. Vendredi 13 novembre à distance : heure commune « Relier deux réseaux, routeur et passerelle » (nouveau simulateur), puis bloc de 3 h : suite du TP lampadaire sur Wokwi. Révision guidée CAN et CNA laissée en facultatif sur l'ENT. En présentiel : interrogation CAN et CNA (sujet B) à l'heure commune."
   - date: 2026-11-13
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre : heure commune, interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`), à la place du sujet B ; bloc de 3 h : TP noté « le lampadaire qui voit les piétons » (`AUTO_TermSIN_Lampadaire_Pieton`, temporisation non bloquante, machine à états, amélioration personnelle). La fiche « routeur et passerelle » est reportée."
+  - date: 2026-11-18
+    texte: "Plan de rattrapage : T2 close le 13 novembre (lampadaire complet, TP « piéton »). T3 commence le 20 novembre avec le TP noté « chambre froide surveillée » (liaison série, bus I2C, alarme à hystérésis, Wokwi), avant D1 et D3. Heure commune : C1 se termine le 4 décembre (séance notée « routeur et passerelle » le 20 novembre), C2 commence le 11 décembre. Tous les TP et toutes les activités sont désormais notés."
 ---
 
 ## Organisation

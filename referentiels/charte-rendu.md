@@ -49,7 +49,7 @@ Utiliser les verbes d'action adaptés à la taxonomie de Bloom selon le niveau, 
 
 | Balise | Rôle | Version élève | Version prof |
 | :--- | :--- | :--- | :--- |
-| `::: question N [x pt]` | Question numérotée 1, 2, 3… sans trou ; points obligatoires en TP / TD, absents en cours | affichée | affichée |
+| `::: question N [x pt]` | Question numérotée 1, 2, 3… sans trou ; points obligatoires en TP / TD et dans une séance notée (`bareme:`), absents sinon en cours | affichée | affichée |
 | `::: reponse L` | Corrigé de la question qui précède ; `L` = lignes de la zone élève (défaut 6, **0** pour un QCM) | `L` lignes vides | encadré vert « Corrigé » |
 | `- [ ] choix` / `- [x] bon choix` | QCM (dans une question) | cases vides | bonne réponse cochée |
 | `[[mot]]` | Texte à trous (traces écrites, bilans) | trait à compléter | mot surligné |
@@ -160,6 +160,7 @@ Un cours n'est **jamais descendant** : c'est une séance qui alterne exposés co
 * **Rythme vérifié automatiquement** (`pipeline.config.json > rythme`) : au moins 40 % du temps en activités, jamais plus de 10 min d'affilée sans activité, au moins une trace écrite `::: retenir`.
 * Varier les formats d'activité : quiz projeté de démarrage et de sortie, jeu de rôle débranché, exercice en binôme, simulation (outils de `materiel/labo-baggio.md`), mise en commun.
 * Front matter supplémentaire : `objectifs`, `prerequis`, `preparation` (liste de cases à cocher « avant la séance » sur la fiche de déroulé).
+* **Séance notée** : ajouter `bareme: 20` au front matter et des points à **toutes** les questions (`::: question N [x pt]`), dont la somme vaut le barème. La fiche d'activités élève porte alors la case « / 20 ». Le barème s'écrit dans un bloc `::: prof Barème` (tableau par activité) : il apparaît dans la fiche de déroulé et à la fin de la fiche d'activités prof, jamais dans la version élève. Une validation sur écran s'écrit « ☐ Validé par le professeur sur l'écran : … » dans la question.
 
 ```markdown
 ---

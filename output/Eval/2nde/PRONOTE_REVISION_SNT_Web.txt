@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+Le Web — Fiche de révision : histoire, droit d'auteur, HTML et CSS, URL, HTTP, moteurs de recherche, cookies
+
+Description :
+S2 Le Web : fiche de révision distribuée le 20 novembre pour l'interrogation du 27 novembre (tout le thème, WEB.1 à WEB.9). Non noté.

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "SIN",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": { "env": "micropython-20260406-v1.28.0" } },
+    { "type": "wokwi-mpu6050", "id": "capteur1", "top": 40, "left": -230, "attrs": { "temperature": "-18" } },
+    { "type": "wokwi-led", "id": "led1", "top": 10, "left": 200, "attrs": { "color": "red", "label": "Alarme" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 100, "left": 150, "rotate": 90, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "capteur1:VCC", "esp:3V3", "red", [] ],
+    [ "capteur1:GND", "esp:GND.1", "black", [] ],
+    [ "capteur1:SCL", "esp:22", "green", [] ],
+    [ "capteur1:SDA", "esp:21", "blue", [] ],
+    [ "esp:2", "r1:1", "orange", [] ],
+    [ "r1:2", "led1:A", "orange", [] ],
+    [ "led1:C", "esp:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}

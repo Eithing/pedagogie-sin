@@ -1,0 +1,6 @@
+﻿=== TSTI2D2 + TSTI2D3, heure commune (vendredi 20 novembre, 13 h) ===
+Titre de la séance :
+C1 Mettre en réseau des objets — Séance : relier deux réseaux, le routeur et la passerelle
+
+Description :
+C1, heure commune D2 + D3, retour en présentiel : rôle du routeur, adresse de réseau et masque /24, passerelle par défaut, configuration et dépannage de deux réseaux sur un simulateur. Fiche d'activités notée /20.

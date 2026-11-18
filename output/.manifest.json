@@ -229,5 +229,52 @@
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-pieton/REPONSES_AUTO_TermSIN_Lampadaire_Pieton.docx",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-pieton/diagram_lampadaire.json",
     "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-pieton/lampadaire_pieton.py"
+  ],
+  "sources/cours/COURS_TermSIN_Lampadaire_Programme.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Cours_Lampadaire-programme/ELEVE_COURS_TermSIN_Lampadaire_Programme.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-programme/PROF_COURS_TermSIN_Lampadaire_Programme.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-programme/DEROULE_COURS_TermSIN_Lampadaire_Programme.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-programme/COURS_TermSIN_Lampadaire_Programme.html",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-programme/SLIDES_COURS_TermSIN_Lampadaire_Programme.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-programme/PRONOTE_COURS_TermSIN_Lampadaire_Programme.txt"
+  ],
+  "sources/cours/COURS_TermSIN_Reseau_Routeur.md": [
+    "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Cours_Routeur-et-passerelle/ELEVE_COURS_TermSIN_Reseau_Routeur.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Routeur-et-passerelle/PROF_COURS_TermSIN_Reseau_Routeur.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Routeur-et-passerelle/DEROULE_COURS_TermSIN_Reseau_Routeur.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/slides/C1_Cours_Routeur-et-passerelle/COURS_TermSIN_Reseau_Routeur.html",
+    "Term_STI2D_SIN/C1_Reseau_local/slides/C1_Cours_Routeur-et-passerelle/SLIDES_COURS_TermSIN_Reseau_Routeur.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Routeur-et-passerelle/PRONOTE_COURS_TermSIN_Reseau_Routeur.txt"
+  ],
+  "sources/tp/TP_TermSIN_I2C_Wokwi.md": [
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_TP_Chambre-froide-I2C/ELEVE_TP_TermSIN_I2C_Wokwi.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_TP_Chambre-froide-I2C/PROF_TP_TermSIN_I2C_Wokwi.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_TP_Chambre-froide-I2C/PRONOTE_TP_TermSIN_I2C_Wokwi.txt",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_TP_Chambre-froide-I2C/diagram_chambre_froide.json",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_TP_Chambre-froide-I2C/chambre_froide.py"
+  ],
+  "sources/revision/REVISION_SNT_Web.md": [
+    "Eval/2nde/REVISION_SNT_Web.pdf",
+    "Eval/2nde/PRONOTE_REVISION_SNT_Web.txt"
+  ],
+  "sources/cours/COURS_SNT_Web_Synthese.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_Cours_Synthese-du-Web/ELEVE_COURS_SNT_Web_Synthese.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Synthese-du-Web/PROF_COURS_SNT_Web_Synthese.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Synthese-du-Web/DEROULE_COURS_SNT_Web_Synthese.pdf",
+    "2nde_SNT/S2_Le_Web/slides/S2_Cours_Synthese-du-Web/COURS_SNT_Web_Synthese.html",
+    "2nde_SNT/S2_Le_Web/slides/S2_Cours_Synthese-du-Web/SLIDES_COURS_SNT_Web_Synthese.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Synthese-du-Web/PRONOTE_COURS_SNT_Web_Synthese.txt"
+  ],
+  "sources/tp/TP_SNT_Web_Coulisses.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_TP_Coulisses-d-une-page/ELEVE_TP_SNT_Web_Coulisses.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_TP_Coulisses-d-une-page/PROF_TP_SNT_Web_Coulisses.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_TP_Coulisses-d-une-page/PRONOTE_TP_SNT_Web_Coulisses.txt"
+  ],
+  "sources/evaluation/EVAL_SNT_Web.md": [
+    "Eval/2nde/ELEVE_EVAL_SNT_Web_A.pdf",
+    "Eval/2nde/PROF_EVAL_SNT_Web_A.pdf",
+    "Eval/2nde/ELEVE_EVAL_SNT_Web_B.pdf",
+    "Eval/2nde/PROF_EVAL_SNT_Web_B.pdf",
+    "Eval/2nde/PRONOTE_EVAL_SNT_Web.txt"
   ]
 }

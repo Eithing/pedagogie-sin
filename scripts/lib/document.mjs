@@ -6,8 +6,9 @@ import matter from 'gray-matter';
 
 export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'autonomie', 'cadrage', 'progression', 'revision'];
 export const NOTES = ['tp', 'td', 'evaluation']; // documents notés : points et barème obligatoires
-// Un travail en autonomie (distanciel) est noté seulement s'il porte un barème.
-export const estNote = (meta) => NOTES.includes(meta.type) || (meta.type === 'autonomie' && meta.bareme != null);
+// Un travail en autonomie (distanciel) ou une séance de cours (fiche d'activités notée)
+// est noté seulement s'il porte un barème.
+export const estNote = (meta) => NOTES.includes(meta.type) || (['autonomie', 'cours'].includes(meta.type) && meta.bareme != null);
 export const BLOCS = [
   'question', 'reponse', 'zone', 'prof', 'dire',
   'info', 'attention', 'rappel', 'contexte', 'problematique', 'retenir', 'doc', 'figure',
@@ -172,7 +173,9 @@ export function valider(doc, config) {
     } else if (Math.abs(total - bareme) > 1e-9) {
       E(null, `Somme des points des questions = ${fmt(total)} ≠ barème ${bareme}`);
     }
-    if (meta.type !== 'evaluation' && !/^##.*bar[eè]me/im.test(corps)) A(null, 'Pas de section « Barème » (titre `##` contenant « Barème »)');
+    // Une séance de cours notée met son barème dans un bloc « prof » (un titre « ## » y serait une phase de la séance)
+    const sectionBareme = meta.type === 'cours' ? /^:{3,}\s*prof\s+bar[eè]me/im : /^##.*bar[eè]me/im;
+    if (meta.type !== 'evaluation' && !sectionBareme.test(corps)) A(null, meta.type === 'cours' ? 'Pas de bloc « ::: prof Barème »' : 'Pas de section « Barème » (titre `##` contenant « Barème »)');
   }
 
   // Tabulation hors code : presque toujours un « \t » mal échappé (\times, \text… devenus « imes », « ext »)

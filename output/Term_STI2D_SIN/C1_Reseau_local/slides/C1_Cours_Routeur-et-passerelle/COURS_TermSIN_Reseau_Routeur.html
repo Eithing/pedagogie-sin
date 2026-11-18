@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="file:///C:/Users/eithi/Documents/pedagogie-sin/sources/cours/">
+<title>Relier deux réseaux : le routeur et la passerelle — Diapos</title>
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/highlight.js/styles/github.min.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/400.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/600.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/700.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/800.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/fira-code/400.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/templates/style.css">
+<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/templates/slides.css">
+</head>
+<body class="presentation" style="--accent:#2563eb">
+<main class="diapos">
+<section class="diapo diapo-couverture">
+  <div class="couverture-texte">
+    <div class="couverture-bandeau">Lycée César Baggio · Term STI2D SIN</div>
+    <h1>Relier deux réseaux : le routeur et la passerelle</h1>
+    <p class="couverture-accroche">Les capteurs du parking marchent, mais l'écran de l'accueil n'affiche rien. Il manque une seule ligne de configuration.</p>
+    <ul class="couverture-objectifs"><li>Déterminer si deux machines sont dans le même réseau à partir du masque /24</li><li>Expliquer le rôle du routeur et de la passerelle par défaut</li><li>Configurer deux réseaux reliés par un routeur et les tester par ping</li><li>Diagnostiquer une erreur de passerelle</li></ul>
+  </div>
+  <img class="titre-illustration" src="img/reseau/parking.svg" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 18</span></footer>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Se poser la question</h2></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>2 / 18</span></footer>
+  <div class="diapo-progression" style="--p:11.11111111111111%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>L'écran de l'accueil reste vide</h2></header>
+  <div class="diapo-corps"><p><img src="img/reseau/parking.svg" alt="" width="82%"></p>
+<blockquote>
+<p>Les 40 capteurs et le poste de supervision communiquent. Mais l'écran de l'<strong>accueil</strong>, sur un <strong>autre réseau</strong>, n'affiche rien. Le technicien jure que tous les câbles sont branchés.</p>
+</blockquote>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>3 / 18</span></footer>
+  <div class="diapo-progression" style="--p:16.666666666666664%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 1</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+      </div>Même réseau ?</h2></header>
+  <div class="diapo-corps"><p>Masque <code>255.255.255.0</code> (<strong>/24</strong>) : les <strong>3 premiers nombres</strong> de l'adresse désignent le <strong>réseau</strong>, le dernier désigne la <strong>machine</strong>.</p>
+<ol class="act-questions"><li value="1"><p>Ces machines sont-elles dans le même réseau ? Répondez par oui ou non et écrivez le réseau de chacune.</p>
+<p><strong>a)</strong> <code>192.168.20.11</code> et <code>192.168.20.2</code> · <strong>b)</strong> <code>192.168.20.2</code> et <code>10.0.0.25</code> · <strong>c)</strong> <code>10.0.0.1</code> et <code>10.0.0.25</code></p>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>4 / 18</span></footer>
+  <div class="diapo-progression" style="--p:22.22222222222222%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>La passerelle</h2></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>5 / 18</span></footer>
+  <div class="diapo-progression" style="--p:27.77777777777778%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le routeur et la passerelle</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Le <strong>routeur</strong> relie des <strong>réseaux différents</strong> : il a une carte, donc une <strong>adresse IP, dans chaque réseau</strong> (ici <code>192.168.20.1</code> et <code>10.0.0.1</code>).</li>
+<li>Une machine qui veut joindre une adresse <strong>hors de son réseau</strong> confie le paquet à sa <strong>passerelle</strong> : l'adresse du <strong>routeur de son côté</strong>.</li>
+<li><strong>Règle</strong> : la passerelle est <strong>toujours dans le même réseau que la machine</strong>.</li>
+<li>Pour un échange entre deux réseaux, il faut une passerelle <strong>des deux côtés</strong> : l'aller et le retour.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>6 / 18</span></footer>
+  <div class="diapo-progression" style="--p:33.33333333333333%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-secondes="540" title="Clic ou touche T : démarrer / pause">09:00</span>
+      </div>Trouver la passerelle</h2></header>
+  <div class="diapo-corps"><p>Utilisez le schéma du parking et la règle de la diapo.</p>
+<ol class="act-questions"><li value="2"><p>Le routeur Ⓑ a deux adresses : <code>192.168.20.1</code> et <code>10.0.0.1</code>. Expliquez pourquoi.</p>
+</li><li value="3"><p>Le poste de l'accueil a l'adresse <code>10.0.0.25</code>. Quelle passerelle doit-il avoir ? Justifiez avec la règle.</p>
+</li><li value="4"><p>Le capteur P01 (<code>192.168.20.11</code>) envoie une mesure à Supervision (<code>192.168.20.2</code>). Passe-t-il par la passerelle ? Pourquoi ?</p>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>7 / 18</span></footer>
+  <div class="diapo-progression" style="--p:38.88888888888889%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Configurer et dépanner</h2></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>8 / 18</span></footer>
+  <div class="diapo-progression" style="--p:44.44444444444444%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le simulateur</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Ouvrez <strong><code>reseau_routeur.html</code></strong> par un double-clic : ni compte, ni installation.</li>
+<li>Remplissez le tableau <strong>sans passerelle</strong>, puis faites les tests <strong>dans l'ordre</strong>.</li>
+<li>Poste de l'accueil : adresse propre au binôme, <code>10.0.0.</code> suivi du <strong>jour de naissance de l'un de vous + 20</strong> (né le 7 : <code>10.0.0.27</code>).</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>9 / 18</span></footer>
+  <div class="diapo-progression" style="--p:50%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Les adresses à saisir</h2></header>
+  <div class="diapo-corps"><table>
+<thead>
+<tr>
+<th style="text-align:left">Machine</th>
+<th style="text-align:left">Adresse IP</th>
+<th style="text-align:left">Masque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Capteur P01</td>
+<td style="text-align:left"><code>192.168.20.11</code></td>
+<td style="text-align:left"><code>255.255.255.0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Supervision</td>
+<td style="text-align:left"><code>192.168.20.2</code></td>
+<td style="text-align:left"><code>255.255.255.0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Routeur, côté parking</td>
+<td style="text-align:left"><code>192.168.20.1</code></td>
+<td style="text-align:left"><code>255.255.255.0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Routeur, côté accueil</td>
+<td style="text-align:left"><code>10.0.0.1</code></td>
+<td style="text-align:left"><code>255.255.255.0</code></td>
+</tr>
+<tr>
+<td style="text-align:left">Poste de l'accueil</td>
+<td style="text-align:left"><code>10.0.0.</code> (jour de naissance + 20)</td>
+<td style="text-align:left"><code>255.255.255.0</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>10 / 18</span></footer>
+  <div class="diapo-progression" style="--p:55.55555555555556%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">en binôme</span>
+        <span class="act-chrono" data-secondes="840" title="Clic ou touche T : démarrer / pause">14:00</span>
+      </div>Configurer et tester</h2></header>
+  <div class="diapo-corps"><p>Tests depuis <strong>Supervision</strong>, dans l'ordre :</p>
+<ol>
+<li><code>ping 192.168.20.11</code> ;</li>
+<li><code>ping</code> vers <strong>votre</strong> poste de l'accueil ;</li>
+<li>passerelle de Supervision : <code>192.168.20.1</code>, puis le même ping ;</li>
+<li>passerelle du poste de l'accueil (question 3), puis le même ping.</li>
+</ol>
+<ol class="act-questions"><li value="5"><p>Notez le résultat des tests 1 et 2. Pourquoi le premier marche-t-il et pas le deuxième ?</p>
+</li><li value="6"><p>Test 3 : la demande arrive au poste de l'accueil, mais le ping échoue encore. Que manque-t-il ? Expliquez.</p>
+</li><li value="7"><p>Test 4 : notez le résultat et l'adresse de votre poste de l'accueil.</p>
+<p>☐ Validé par le professeur sur l'écran : ping réussi vers le poste de l'accueil du binôme.</p>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>11 / 18</span></footer>
+  <div class="diapo-progression" style="--p:61.111111111111114%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 4</span>
+        <span class="act-modalite">en binôme</span>
+        <span class="act-chrono" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Trouver la panne</h2></header>
+  <div class="diapo-corps"><p>Un technicien règle la passerelle du <strong>capteur P01</strong> sur <code>10.0.0.1</code>. Faites de même, choisissez « Depuis : Capteur P01 », puis lancez un ping vers votre poste de l'accueil.</p>
+<ol class="act-questions"><li value="8"><p>Quel message obtenez-vous ? Expliquez l'erreur du technicien avec la règle, puis corrigez la passerelle de P01.</p>
+<p>☐ Validé par le professeur sur l'écran : ping réussi depuis P01 après correction.</p>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>12 / 18</span></footer>
+  <div class="diapo-progression" style="--p:66.66666666666666%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>13 / 18</span></footer>
+  <div class="diapo-progression" style="--p:72.22222222222221%"></div>
+</section>
+<section class="diapo diapo-retenir" >
+  <header class="diapo-titre"><h2>À retenir</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Le <mark class="trou-rempli">routeur</mark> relie des réseaux différents ; il a une adresse IP dans <mark class="trou-rempli">chaque</mark> réseau.</li>
+<li>Pour joindre une machine d'un autre réseau, une machine envoie le paquet à sa <mark class="trou-rempli">passerelle</mark>.</li>
+<li>La passerelle est toujours dans le <mark class="trou-rempli">même</mark> réseau que la machine.</li>
+<li>Pour qu'un échange réussisse entre deux réseaux, il faut une passerelle des <mark class="trou-rempli">deux</mark> côtés : l'aller et le retour.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>14 / 18</span></footer>
+  <div class="diapo-progression" style="--p:77.77777777777779%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 5</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-secondes="240" title="Clic ou touche T : démarrer / pause">04:00</span>
+      </div>Quiz de sortie</h2></header>
+  <div class="diapo-corps"><p>Répondez sur votre fiche.</p>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>15 / 18</span></footer>
+  <div class="diapo-progression" style="--p:83.33333333333334%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 9</h2></header>
+  <div class="diapo-corps"><p>Une machine <code>172.16.5.40/24</code> doit sortir de son réseau. Sa passerelle peut être…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span><code>172.16.5.1</code></li>
+<li class="choix"><span class="case"></span><code>172.16.6.1</code></li>
+<li class="choix"><span class="case"></span><code>10.0.0.1</code></li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>16 / 18</span></footer>
+  <div class="diapo-progression" style="--p:88.88888888888889%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 10</h2></header>
+  <div class="diapo-corps"><p>Deux machines du même réseau /24 communiquent…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>directement, par le switch</li>
+<li class="choix"><span class="case"></span>seulement par la passerelle</li>
+<li class="choix"><span class="case"></span>seulement si le routeur est allumé</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>17 / 18</span></footer>
+  <div class="diapo-progression" style="--p:94.44444444444444%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 11</h2></header>
+  <div class="diapo-corps"><p>Un routeur qui relie trois réseaux a…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>une seule adresse IP</li>
+<li class="choix"><span class="case"></span>trois adresses IP, une par réseau</li>
+<li class="choix"><span class="case"></span>aucune adresse IP</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Relier deux réseaux : le routeur et la passerelle</span><span>18 / 18</span></footer>
+  <div class="diapo-progression" style="--p:100%"></div>
+</section>
+</main>
+<script>
+const d=[...document.querySelectorAll('.diapo')];let i=0;
+const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
+function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
+const minuteurs=new Map();
+function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+ minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
+  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
+addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
+addEventListener('keydown',e=>{
+ if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){voir(i+1);e.preventDefault();}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){voir(i-1);e.preventDefault();}
+ else if(e.key==='Home')voir(0);else if(e.key==='End')voir(d.length-1);
+ else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+ else if(e.key==='t'||e.key==='T')chrono(d[i]);});
+addEventListener('click',e=>{if(e.target.closest('.act-chrono')){chrono(d[i]);return;}voir(e.clientX>innerWidth/3?i+1:i-1);});
+</script>
+</body>
+</html>

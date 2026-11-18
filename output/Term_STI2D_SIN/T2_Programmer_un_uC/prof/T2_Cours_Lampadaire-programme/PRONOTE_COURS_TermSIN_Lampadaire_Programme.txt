@@ -1,0 +1,6 @@
+﻿=== TSTI2D1 (vendredi 20 novembre, 12 h) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Séance : du diagramme d'états au programme, le lampadaire jour / nuit (Wokwi)
+
+Description :
+T2, retour en présentiel : premier programme du lampadaire en MicroPython sur Wokwi (lire un capteur, comparer à un seuil, décider avec if / elif / else). Fiche d'activités notée /20.
