@@ -69,4 +69,5 @@ Le PDF est produit par Chrome en mode headless (Edge refuse ce mode sur ce poste
 - Valeurs techniques (datasheets, normes, réglementation) : ne citer que des valeurs dont on est sûr ; sinon l'indiquer comme « à vérifier » dans un bloc `::: prof`.
 - Le code fourni aux élèves doit compiler tel quel (sauf les zones `TODO`) ; la solution complète va dans la réponse. Commentaires du code sans accents.
 - **Noms de fichiers uniques pour Pronote** : Pronote refuse un fichier dont le nom existe déjà. Tout fichier destiné aux élèves (`fichiers:`, fichiers joints) porte donc un nom propre au document, jamais générique : `diagram_lampadaire.json` et non `diagram.json`, `lampadaire.py` et non `main.py`. Avant d'en ajouter un, vérifier que son nom n'existe pas déjà dans `sources/*/fichiers/`.
+- **Messages à un groupe d'élèves** (mail, annonce adressés à plusieurs élèves) : **vouvoiement**. Les fiches et documents de travail, lus par un élève seul, restent au tutoiement.
 - Ne pas éditer les fichiers de `output/` : ils sont régénérés.
