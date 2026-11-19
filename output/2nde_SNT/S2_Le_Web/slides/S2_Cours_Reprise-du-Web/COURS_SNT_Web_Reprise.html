@@ -3,17 +3,671 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<base href="file:///C:/Users/eithi/Documents/pedagogie-sin/sources/cours/">
 <title>Du clic à la page : le Web, l'URL et le dialogue client / serveur — Diapos</title>
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/katex/dist/katex.min.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/highlight.js/styles/github.min.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/400.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/600.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/700.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/inter/800.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/node_modules/@fontsource/fira-code/400.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/templates/style.css">
-<link rel="stylesheet" href="file:///C:/Users/eithi/Documents/pedagogie-sin/templates/slides.css">
+
+<style>
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}
+</style>
+
+
+
+
+
+<style>
+/* ==========================================================================
+   Feuille de style des documents SIN (aperçu HTML + PDF A4)
+   Mise en page sobre de fiche de cours : texte noir, cadres fins, peu de couleur.
+   --accent est fourni par la chaîne selon le niveau (pipeline.config.json > themes) ;
+   il ne sert qu'aux filets et à quelques repères.
+   ========================================================================== */
+
+:root {
+  --accent: #2563eb;
+  --texte: #1a1a1a;
+  --texte-doux: #5c5c5c;
+  --bordure: #9a9a9a;
+  --filet: #c8c8c8;
+  --fond-code: #f4f4f4;
+  --ligne-reponse: #bdbdbd;
+  --pas-ligne: 8mm;
+  --activite: #b45309;
+  --retenir: #1d6b38;
+  --violet: #5b3e96;
+}
+
+body {
+  --accent-fonce: color-mix(in srgb, var(--accent) 70%, black);
+  --accent-pale: color-mix(in srgb, var(--accent) 6%, white);
+  --accent-doux: color-mix(in srgb, var(--accent) 22%, white);
+  --activite-pale: color-mix(in srgb, var(--activite) 6%, white);
+  --retenir-pale: color-mix(in srgb, var(--retenir) 6%, white);
+  --violet-pale: color-mix(in srgb, var(--violet) 6%, white);
+  counter-reset: figure;
+}
+
+html { background: #e5e5e5; }
+
+body.document {
+  font-family: Calibri, Carlito, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--texte);
+  background: #fff;
+  max-width: 180mm;
+  margin: 0 auto;
+  padding: 12mm 15mm;
+  box-sizing: border-box;
+}
+
+@media print {
+  html { background: none; }
+  body.document { max-width: none; margin: 0; padding: 0; }
+}
+
+/* ---------- Cartouche généré depuis le front matter ---------- */
+.doc-entete {
+  border: 1px solid var(--texte);
+  padding: 8px 12px 10px;
+  margin-bottom: 16px;
+}
+.doc-entete.avec-illustration {
+  display: grid;
+  grid-template-columns: 1fr 40mm;
+  column-gap: 14px;
+}
+.doc-entete.avec-illustration > .doc-identite,
+.doc-entete.avec-illustration > .doc-corrige { grid-column: 1 / -1; }
+.doc-illustration { width: 100%; max-height: 34mm; object-fit: contain; align-self: center; }
+.doc-bandeau {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 9.5pt;
+  color: var(--texte-doux);
+  border-bottom: 1px solid var(--filet);
+  padding-bottom: 3px;
+}
+.doc-type { color: var(--texte); font-weight: 700; }
+.doc-titre {
+  font-size: 16pt;
+  line-height: 1.2;
+  color: #000;
+  margin: 8px 0 4px;
+}
+.doc-accroche { margin: 0 0 6px; font-style: italic; color: var(--texte-doux); }
+.doc-meta { display: flex; flex-wrap: wrap; gap: 2px 18px; margin: 0; font-size: 9.5pt; color: var(--texte-doux); }
+.doc-meta div { display: flex; gap: 5px; }
+.doc-meta dt { font-weight: 700; color: var(--texte); }
+.doc-meta dt::after { content: ' :'; }
+.doc-meta dd { margin: 0; }
+.doc-identite {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.6fr 0.6fr auto;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 10pt;
+}
+.champ { border-bottom: 1px dotted var(--texte); padding-top: 12px; }
+.champ span::after { content: ' :'; }
+.doc-note {
+  border: 1px solid var(--texte);
+  min-width: 26mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 4px 6px;
+  font-weight: 700;
+}
+.doc-corrige {
+  margin-top: 8px;
+  padding-top: 5px;
+  border-top: 1px solid var(--filet);
+  color: var(--retenir);
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+/* ---------- Titres ---------- */
+.document h1, .document h2, .document h3, .document h4 { break-after: avoid; }
+.document h2 {
+  font-size: 13pt;
+  color: #000;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--texte);
+  margin: 20px 0 8px;
+}
+.document h3 {
+  font-size: 11.5pt;
+  color: #000;
+  margin: 16px 0 6px;
+}
+.document h4 { font-size: 11pt; margin: 12px 0 4px; }
+hr { border: none; border-top: 1px solid var(--filet); margin: 16px 0; }
+.document p, .document ul, .document ol { margin: 5px 0; }
+blockquote {
+  margin: 8px 0;
+  padding: 2px 12px;
+  border-left: 2px solid var(--bordure);
+  font-style: italic;
+}
+.act-meta { color: var(--texte-doux); font-style: italic; font-size: 10pt; margin-top: -4px !important; break-after: avoid; }
+
+/* ---------- Questions ---------- */
+/* Une question reste sur la même page que sa zone de réponse (élève) ou son corrigé (prof). */
+.question {
+  margin: 12px 0 4px;
+  break-inside: avoid;
+}
+.bloc-question { break-inside: avoid; }
+.question-titre {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-weight: 700;
+  color: #000;
+  break-after: avoid;
+}
+.question-points { font-weight: 400; font-size: 10pt; color: var(--texte-doux); }
+.question-points::before { content: '('; }
+.question-points::after { content: ')'; }
+.points-masques .question-points { display: none; }
+.variante-eleve .act-duree { display: none; }
+.question-corps > :first-child { margin-top: 1px; }
+
+/* ---------- Corrigé (version prof) ---------- */
+.reponse {
+  margin: 4px 0 12px;
+  border: 1px solid var(--retenir);
+  padding: 3px 10px 6px;
+  color: #10361d;
+  break-inside: avoid;
+}
+.reponse-titre, .note-prof > header, .note-dire > header, .encadre > header,
+.contexte > header, .problematique > header, .retenir > header {
+  font-size: 10pt;
+  font-weight: 700;
+}
+.reponse-titre { color: var(--retenir); }
+.reponse-titre::after { content: ' :'; }
+.reponse pre.hljs { background: #fff; }
+
+/* ---------- Zone de réponse (version élève) ---------- */
+.zone-reponse {
+  margin: 2px 0 12px;
+  break-inside: avoid;
+}
+.ligne-reponse {
+  height: var(--pas-ligne);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--ligne-reponse);
+}
+
+/* ---------- Encadrés ---------- */
+.note-prof, .note-dire, .encadre, .problematique {
+  margin: 10px 0;
+  padding: 4px 10px 6px;
+  border: 1px solid var(--bordure);
+  break-inside: avoid;
+}
+.note-prof > header, .note-dire > header, .encadre > header { color: #000; }
+.note-prof { border-color: var(--violet); }
+.note-prof > header { color: var(--violet); }
+.encadre-attention { border-color: var(--activite); }
+.encadre-attention > header { color: var(--activite); }
+
+.contexte {
+  margin: 10px 0;
+  border: 1px solid var(--texte);
+  padding: 4px 10px 8px;
+  break-inside: avoid;
+}
+.contexte > header { color: #000; }
+.contexte-corps::after { content: ''; display: block; clear: both; }
+.contexte-corps p:has(> img:only-child) { float: right; width: 40%; margin: 2px 0 6px 14px; }
+
+.problematique {
+  border-width: 1px 0;
+  border-color: var(--texte);
+  padding: 6px 2px;
+  font-style: italic;
+}
+.problematique > header { font-style: normal; }
+
+.retenir {
+  margin: 14px 0;
+  border: 1.5px solid var(--texte);
+  padding: 4px 12px 8px;
+  break-inside: avoid;
+}
+.retenir > header {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 2px;
+}
+
+.doc-ressource {
+  margin: 10px 0;
+  border: 1px solid var(--bordure);
+  break-inside: avoid;
+}
+.doc-ressource > header {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 10px;
+  border-bottom: 1px solid var(--bordure);
+  font-weight: 700;
+  font-size: 10pt;
+}
+.dr-code::after { content: ' —'; }
+.dr-corps { padding: 3px 10px 6px; font-size: 10pt; }
+
+/* ---------- Figures ---------- */
+.figure { margin: 10px 0; text-align: center; break-inside: avoid; counter-increment: figure; }
+.figure img { max-width: 100%; }
+.figure figcaption { font-size: 9.5pt; font-style: italic; color: var(--texte-doux); margin-top: 3px; }
+.figure figcaption::before { content: 'Figure ' counter(figure) ' : '; font-style: normal; }
+
+/* ---------- Texte à trous & QCM ---------- */
+.trou {
+  display: inline-block;
+  width: calc(var(--car) * 0.75em + 1.5em);
+  border-bottom: 1px dotted var(--texte);
+  height: 1.1em;
+  vertical-align: baseline;
+}
+.trou-rempli {
+  background: none;
+  color: var(--retenir);
+  font-weight: 700;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+ul.qcm, ol.qcm { list-style: none; padding-left: 4px; }
+.choix { display: flex; gap: 8px; align-items: baseline; margin: 2px 0; }
+.case {
+  flex: none;
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  border: 1px solid var(--texte);
+  position: relative;
+  top: 0.12em;
+}
+.case.coche::after {
+  content: '';
+  position: absolute;
+  left: 0.25em; top: 0.02em;
+  width: 0.25em; height: 0.5em;
+  border: solid var(--retenir);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.choix.bon { color: var(--retenir); font-weight: 700; }
+
+/* ---------- Code ---------- */
+code, pre { font-family: Consolas, 'Fira Code', monospace; font-variant-ligatures: none; }
+:not(pre) > code {
+  background: var(--fond-code);
+  padding: 0 3px;
+  font-size: 0.92em;
+}
+pre.hljs {
+  background: var(--fond-code);
+  border: 1px solid #dcdcdc;
+  padding: 6px 10px;
+  font-size: 9pt;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 6px 0;
+}
+pre.hljs code { background: none; padding: 0; }
+
+/* ---------- Tableaux ---------- */
+.document table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 10pt;
+}
+.document th {
+  background: #ececec;
+  color: #000;
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid var(--bordure);
+  padding: 4px 7px;
+}
+.document td { border: 1px solid var(--bordure); padding: 4px 7px; vertical-align: top; }
+.document tr { break-inside: avoid; }
+
+/* ---------- Mathématiques ---------- */
+.katex { font-size: 1.05em; }
+eqn, section.eqno { display: block; text-align: center; margin: 6px 0; break-inside: avoid; }
+
+/* ---------- Divers ---------- */
+img { max-width: 100%; }
+.doc-corps img { max-height: 70mm; display: block; margin: 6px auto; }
+.doc-corps .contexte-corps img { max-height: 55mm; }
+.saut-page { break-before: page; }
+.bloc-insecable { break-inside: avoid; }
+.bloc-insecable:has(+ .bloc-question) { break-after: avoid; }
+
+/* ==========================================================================
+   Fiche de déroulé (enseignant)
+   ========================================================================== */
+.frise { display: flex; height: 26px; border: 1px solid var(--texte); margin: 4px 0; }
+.frise-seg {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-right: 1px solid var(--texte); font-size: 8pt; line-height: 1.1; min-width: 0;
+}
+.frise-seg:last-child { border-right: 0; }
+.frise-seg small { font-size: 7pt; color: var(--texte-doux); }
+.frise-expose, .frise-phase { background: #fff; }
+.frise-activite { background: #d9d9d9; font-weight: 700; }
+.frise-retenir { background: #a6a6a6; font-weight: 700; }
+.frise-legende { display: flex; gap: 16px; font-size: 8.5pt; color: var(--texte-doux); margin-bottom: 10px; }
+.frise-legende span::before { content: ''; display: inline-block; width: 10px; height: 10px; border: 1px solid var(--texte); margin-right: 5px; vertical-align: -1px; }
+.l-expose::before { background: #fff; }
+.l-activite::before { background: #d9d9d9; }
+.l-retenir::before { background: #a6a6a6; }
+
+.prepa { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+.bloc-prepa h3 { font-size: 10pt !important; margin: 4px 0 !important; }
+.bloc-prepa ul { padding-left: 16px; margin: 0; font-size: 9.5pt; }
+.liste-cases { list-style: none; padding-left: 0 !important; }
+.liste-cases li { display: flex; gap: 6px; align-items: baseline; }
+
+table.deroule { font-size: 9.5pt; }
+table.deroule th:nth-child(1) { width: 19mm; }
+table.deroule th:nth-child(2) { width: 13mm; }
+table.deroule th:nth-child(4) { width: 7mm; text-align: center; }
+table.deroule tbody tr { break-inside: auto; }
+.col-temps small { display: block; color: var(--texte-doux); }
+.col-diapo { color: var(--texte-doux); }
+.col-check { text-align: center; }
+.ligne-phase td {
+  background: #ececec;
+  color: #000;
+  font-weight: 700;
+}
+.ligne-activite td:first-child { border-left: 3px solid var(--texte); }
+.deroule-titre { font-weight: 700; margin-bottom: 2px; }
+.deroule-dire ul, .deroule-dire ol { margin: 2px 0; padding-left: 16px; }
+.deroule-dire p { margin: 2px 0; }
+.deroule-lancer { font-weight: 700; margin-bottom: 4px; }
+.deroule-lancer span { display: block; font-weight: 400; font-style: italic; font-size: 9pt; color: var(--texte-doux); }
+.deroule details summary { font-size: 9pt; font-weight: 700; color: var(--texte-doux); }
+.deroule-consigne { font-size: 9pt; color: #333; border-left: 1px solid var(--bordure); padding-left: 8px; margin: 2px 0 6px; }
+.deroule-consigne img { max-height: 40mm; }
+.deroule-sous-titre { font-size: 9pt; font-weight: 700; margin-top: 4px; }
+.deroule-corrige { display: grid; grid-template-columns: 8mm 1fr; gap: 4px; font-size: 9pt; border-top: 1px dotted var(--bordure); padding-top: 2px; }
+.deroule-corrige > div > :first-child, .deroule-corrige p { margin: 0 0 2px; }
+.deroule-trace { font-size: 9.5pt; }
+.deroule-corrige table { width: auto; }
+.deroule .note-prof { margin: 4px 0; padding: 2px 8px 4px; font-size: 9pt; }
+
+/* ---------- Évaluations : sujet et consignes ---------- */
+.doc-sujet {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 0 8px;
+  margin-right: 10px;
+  font-size: 0.85em;
+  vertical-align: 1px;
+}
+.doc-consignes { margin: 6px 0 0; padding-left: 16px; font-size: 9.5pt; color: #333; }
+.doc-consignes li { margin: 0; }
+
+/* ---------- Travail en autonomie : plan de travail ---------- */
+.plan-travail {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3mm;
+  margin: 0 0 5mm;
+  break-inside: avoid;
+}
+.plan-travail h2 {
+  font-size: 10.5pt;
+  margin: 0 0 1.5mm;
+  border: 0;
+  padding: 0;
+}
+.plan-travail > div { border: 1px solid var(--bordure); padding: 2.5mm 3.5mm; }
+.plan-etapes { grid-row: span 2; border-color: var(--texte) !important; }
+.plan-etapes ol { list-style: none; margin: 0; padding: 0; }
+.plan-etapes li { display: flex; align-items: center; gap: 2.5mm; padding: 1mm 0; border-bottom: 1px dotted var(--bordure); }
+.plan-etapes li:last-child { border-bottom: 0; }
+.plan-etapes li em { margin-left: auto; font-style: normal; color: var(--texte-doux); white-space: nowrap; }
+.plan-etapes .case { flex: none; width: 3.5mm; height: 3.5mm; border: 1px solid var(--texte); background: #fff; }
+.plan-rendu ul, .plan-aide ul { margin: 0; padding-left: 4mm; font-size: 10pt; }
+
+/* ---------- Fiche de révision : compacte, pour tenir sur un recto-verso ---------- */
+body.document.type-revision { font-size: 10pt; line-height: 1.28; }
+.type-revision .doc-entete { margin-bottom: 8px; padding: 5px 12px 6px; }
+.type-revision .doc-titre { font-size: 14pt; margin: 4px 0 2px; }
+.type-revision h2 { font-size: 11.5pt; margin: 9px 0 4px; }
+.type-revision .document p, .type-revision .doc-corps p, .type-revision .doc-corps ul, .type-revision .doc-corps ol { margin: 3px 0; }
+.type-revision .doc-corps table { font-size: 9.5pt; margin: 4px 0; }
+.type-revision .doc-corps td, .type-revision .doc-corps th { padding: 2px 6px; }
+.type-revision .encadre { margin: 6px 0; padding: 2px 8px 3px; }
+.type-revision pre.hljs { margin: 4px 0; padding: 4px 8px; font-size: 8.5pt; }
+.type-revision .doc-corps img { margin: 3px auto; }
+
+/* ---------- Sauts de page ---------- */
+/* « \newpage » dans la source ; en autonomie, chaque étape commence une nouvelle page */
+.saut-page { break-after: page; height: 0; }
+.type-autonomie .doc-corps > h2 { break-before: page; }
+@media screen {
+  .saut-page { border-top: 1px dashed var(--bordure); margin: 8mm 0; }
+}
+
+</style>
+<style>
+/* ==========================================================================
+   Diapositives 16:9 (1280 x 720 px)
+   Écran : une diapo à la fois, mise à l'échelle (←/→, F plein écran, T minuteur).
+   Impression / PDF : une diapo par page.
+   ========================================================================== */
+
+body.presentation {
+  margin: 0;
+  background: #0f172a;
+  font-family: Calibri, Carlito, Arial, sans-serif;
+  color: var(--texte);
+  overflow: hidden;
+}
+
+.diapo {
+  width: 1280px;
+  height: 720px;
+  box-sizing: border-box;
+  padding: 44px 64px 52px;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+@media screen {
+  .diapo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--echelle, 1));
+  }
+  .diapo.active { display: flex; }
+}
+
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body.presentation { background: #fff; overflow: visible; }
+  .diapo { display: flex; position: relative; break-after: page; }
+}
+
+/* ---------- Titre de diapo ---------- */
+.diapo-titre { flex: none; margin-bottom: 22px; }
+.diapo-titre h2 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #000;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.diapo-corps { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+.diapo-corps > *, .colonnes > div > * { flex: none; }
+
+/* Les images prennent la place restante (texte prioritaire), sans jamais déborder. */
+.diapo-corps > p:has(> img:only-child),
+.colonnes > div > p:has(> img:only-child) {
+  flex: 1 1 0;
+  min-height: 140px;
+  position: relative;
+  margin: 0 0 14px;
+}
+.diapo-corps > p:has(> img:only-child) > img,
+.colonnes > div > p:has(> img:only-child) > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+.diapo-corps > :first-child { margin-top: 0; }
+.diapo-corps p, .diapo-corps ul, .diapo-corps ol { margin: 0 0 14px; }
+.diapo-corps li { margin: 6px 0; }
+.diapo-corps strong { color: #000; }
+.diapo-corps img { max-width: 100%; max-height: 520px; display: block; margin: 0 auto; }
+.diapo-corps h3 { font-size: 30px; color: #000; margin: 0 0 10px; }
+.diapo-corps table { border-collapse: collapse; font-size: 21px; margin: 8px 0; }
+.diapo-corps th, .diapo-corps td { border: 1px solid var(--bordure); padding: 6px 14px; text-align: left; }
+.diapo-corps th { background: #ececec; color: #000; }
+.diapo-corps pre.hljs { font-size: 19px; }
+.diapo-corps :not(pre) > code { font-size: 0.9em; }
+.diapo-corps blockquote { font-size: 30px; font-style: normal; border-left: 4px solid var(--accent); padding: 6px 22px; }
+.diapo-corps .figure figcaption { font-size: 16px; }
+.diapo-corps .figure figcaption::before { content: none; }
+
+.colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; flex: 1 1 0; min-height: 0; }
+.colonnes > div { min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+
+/* ---------- Pied et barre de progression ---------- */
+.diapo-pied {
+  position: absolute;
+  left: 64px; right: 64px; bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+.diapo-progression {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 3px;
+  width: var(--p);
+  background: var(--bordure);
+}
+.diapo { position: relative; }
+@media screen { .diapo { position: fixed; } }
+
+/* ---------- Couverture ---------- */
+.diapo-couverture {
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  border-top: 10px solid var(--accent);
+}
+.couverture-texte { flex: 1.2; }
+.couverture-bandeau { font-size: 20px; color: var(--texte-doux); }
+.diapo-couverture h1 { font-size: 52px; line-height: 1.1; font-weight: 700; color: #000; margin: 14px 0 18px; }
+.couverture-accroche { font-size: 27px; font-style: italic; color: var(--texte-doux); margin: 0 0 22px; }
+.couverture-objectifs { font-size: 21px; margin: 0; padding-left: 26px; }
+.couverture-objectifs li { margin: 4px 0; }
+.titre-illustration {
+  flex: 1;
+  max-width: 46%;
+  max-height: 560px;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+/* ---------- Intercalaire de phase ---------- */
+.diapo-phase { justify-content: center; }
+.diapo-phase .diapo-corps { display: flex; align-items: center; flex: none; }
+.diapo-phase h2 {
+  color: #000;
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* ---------- Activité ---------- */
+.diapo-activite, .diapo-question { border-top: 10px solid var(--activite); }
+.diapo-activite .diapo-titre h2, .diapo-question .diapo-titre h2 { border-bottom-color: var(--activite); }
+.act-bandeau {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--texte-doux);
+  margin-bottom: 8px;
+}
+.act-num { font-weight: 700; color: var(--activite); }
+.act-modalite { margin-left: -8px; }
+.act-modalite::before { content: '· '; }
+.act-chrono {
+  margin-left: auto;
+  font-size: 44px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #000;
+  border: 2px solid var(--texte);
+  padding: 0 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.act-chrono.en-cours { background: var(--activite-pale); }
+.act-chrono.bientot { color: #b45309; border-color: #b45309; }
+.act-chrono.fini { background: #dc2626; border-color: #dc2626; color: #fff; }
+.diapo-question .diapo-titre h2 { font-size: 34px; }
+.diapo-question .act-num { font-size: 22px; font-weight: 400; vertical-align: middle; margin-right: 10px; }
+.diapo-question .diapo-corps { font-size: 30px; }
+.act-questions { font-size: 25px; margin: 6px 0 0 !important; padding-left: 52px; }
+.act-questions li { margin: 4px 0 !important; }
+.act-questions li::marker { content: 'Q' counter(list-item) '. '; font-weight: 700; }
+.act-questions p { margin: 0 !important; }
+.diapo-question .choix { font-size: 30px; margin: 14px 0; }
+
+/* ---------- À retenir ---------- */
+.diapo-retenir { border-top: 10px solid var(--retenir); }
+.diapo-retenir .diapo-titre h2 { border-bottom-color: var(--retenir); }
+.diapo-retenir .diapo-corps { font-size: 24px; }
+
+/* ---------- Éléments partagés avec les documents ---------- */
+.diapo .encadre, .diapo .problematique, .diapo .doc-ressource, .diapo .contexte { font-size: 22px; }
+.diapo .problematique { font-size: 28px; padding: 14px 22px; }
+.diapo .reponse, .diapo .note-prof, .diapo .note-dire { display: none; }
+
+</style>
 </head>
 <body class="presentation" style="--accent:#0d9488">
 <main class="diapos">
@@ -24,7 +678,7 @@
     <p class="couverture-accroche">Tu cliques sur « Menu de la cantine » et la page s'affiche en 0,3 seconde. Qui a parlé à qui ?</p>
     <ul class="couverture-objectifs"><li>Distinguer Internet (le réseau) et le Web (un service qui l'utilise)</li><li>Décomposer une URL et reconnaître une adresse sécurisée</li><li>Décrire les étapes entre un clic et l'affichage d'une page (DNS, requête, réponse)</li><li>Lire une requête HTTP et identifier la page demandée et ses paramètres</li></ul>
   </div>
-  <img class="titre-illustration" src="img/web/couverture.svg" alt="">
+  <img class="titre-illustration" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDAwIiBmb250LWZhbWlseT0iSW50ZXIsIFNlZ29lIFVJLCBzYW5zLXNlcmlmIj4NCiAgPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNmOGZhZmMiLz4NCiAgPCEtLSBUw6lsw6lwaG9uZSAtLT4NCiAgPHJlY3QgeD0iNDAiIHk9IjYwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjMwMCIgcng9IjIyIiBmaWxsPSIjMWUyOTNiIi8+DQogIDxyZWN0IHg9IjUyIiB5PSI4MiIgd2lkdGg9IjE0NiIgaGVpZ2h0PSIyNTYiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmIi8+DQogIDx0ZXh0IHg9IjEyNSIgeT0iMTA4IiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGYxNzJhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5MeWPDqWUg4oCUIGluZm9zPC90ZXh0Pg0KICA8cmVjdCB4PSI2NCIgeT0iMTIyIiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjEwIiByeD0iMyIgZmlsbD0iI2UyZThmMCIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMTQwIiB3aWR0aD0iOTYiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjZTJlOGYwIi8+DQogIDxyZWN0IHg9IjY0IiB5PSIxNjgiIHdpZHRoPSIxMjIiIGhlaWdodD0iMzgiIHJ4PSI4IiBmaWxsPSIjMGQ5NDg4Ii8+DQogIDx0ZXh0IHg9IjEyNSIgeT0iMTkyIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5NZW51IGRlIGxhIGNhbnRpbmU8L3RleHQ+DQogIDxyZWN0IHg9IjY0IiB5PSIyMjIiIHdpZHRoPSIxMTAiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjZTJlOGYwIi8+DQogIDxyZWN0IHg9IjY0IiB5PSIyNDAiIHdpZHRoPSIxMjIiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjZTJlOGYwIi8+DQogIDwhLS0gRG9pZ3QgKGNsaWMpIC0tPg0KICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIyMDAiIHI9IjE2IiBmaWxsPSIjZWE1ODBjIiBmaWxsLW9wYWNpdHk9IjAuMjUiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIyIi8+DQogIDx0ZXh0IHg9IjEyNSIgeT0iMzAwIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj51biBjbGlj4oCmPC90ZXh0Pg0KDQogIDwhLS0gTnVhZ2UgSW50ZXJuZXQgLS0+DQogIDxwYXRoIGQ9Ik0yNjIgMjE0IHEtNiAtNDAgMzYgLTQyIHExNiAtMzQgNTggLTIwIHEzNCAtMjIgNjAgMTAgcTQwIDAgMzYgNDAgcTQgMzQgLTM2IDM0IGgtMTIwIHEtNDAgMCAtMzQgLTIyeiIgZmlsbD0iI2UwZjJmMSIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgPHRleHQgeD0iMzM1IiB5PSIyMTIiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwZjc2NmUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkludGVybmV0PC90ZXh0Pg0KICA8dGV4dCB4PSIzMzUiIHk9IjIzMiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzBmNzY2ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+KyBsZSBXZWI8L3RleHQ+DQogIDxwYXRoIGQ9Ik0yMTIgMjAwIEMgMjM2IDIwMCAyNDIgMjAwIDI2MiAyMDAiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBtYXJrZXItZW5kPSJ1cmwoI2YpIi8+DQogIDxwYXRoIGQ9Ik00NTIgMjAwIEMgNDcwIDIwMCA0NzggMjAwIDQ5NCAyMDAiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBtYXJrZXItZW5kPSJ1cmwoI2YpIi8+DQogIDxkZWZzPg0KICAgIDxtYXJrZXIgaWQ9ImYiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOCIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvIj4NCiAgICAgIDxwYXRoIGQ9Ik0wIDAgTDEwIDUgTDAgMTB6IiBmaWxsPSIjZWE1ODBjIi8+DQogICAgPC9tYXJrZXI+DQogIDwvZGVmcz4NCg0KICA8IS0tIFBhZ2UgYWZmaWNow6llIC0tPg0KICA8cmVjdCB4PSI0OTYiIHk9IjExMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxODAiIHJ4PSIxMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjIuNSIvPg0KICA8dGV4dCB4PSI1NTYiIHk9IjEzOCIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE1ODAzZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TWVudTwvdGV4dD4NCiAgPHRleHQgeD0iNTU2IiB5PSIxNTYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMzMzQxNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmx1bmRpPC90ZXh0Pg0KICA8dGV4dCB4PSI1MTAiIHk9IjE4NCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzMzNDE1NSI+4oCiIGNhcm90dGVzPC90ZXh0Pg0KICA8dGV4dCB4PSI1MTAiIHk9IjIwNCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzMzNDE1NSI+4oCiIHBvdWxldCBmcml0ZXM8L3RleHQ+DQogIDx0ZXh0IHg9IjUxMCIgeT0iMjI0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzM0MTU1Ij7igKIgeWFvdXJ0PC90ZXh0Pg0KICA8dGV4dCB4PSI1NTYiIHk9IjI3MCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzE1ODAzZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+bGEgcGFnZSBzJ2FmZmljaGU8L3RleHQ+DQoNCiAgPHRleHQgeD0iMzIwIiB5PSI0MiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VW4gY2xpYywgdW5lIHBhZ2XigKYgZW4gMCwzIHNlY29uZGU8L3RleHQ+DQogIDx0ZXh0IHg9IjMyMCIgeT0iMzMwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMzM0MTU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5RdWUgcydlc3QtaWwgcGFzc8OpIGVudHJlIGxlIGNsaWMgZXQgbCdhZmZpY2hhZ2UgPzwvdGV4dD4NCjwvc3ZnPg0K" alt="">
   <footer class="diapo-pied"><span>55 min</span><span>1 / 25</span></footer>
 </section>
 <section class="diapo diapo-phase" >
@@ -35,7 +689,7 @@
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>Un clic, une page</h2></header>
-  <div class="diapo-corps"><p><img src="img/web/couverture.svg" alt="" width="78%"></p>
+  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDAwIiBmb250LWZhbWlseT0iSW50ZXIsIFNlZ29lIFVJLCBzYW5zLXNlcmlmIj4NCiAgPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNmOGZhZmMiLz4NCiAgPCEtLSBUw6lsw6lwaG9uZSAtLT4NCiAgPHJlY3QgeD0iNDAiIHk9IjYwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjMwMCIgcng9IjIyIiBmaWxsPSIjMWUyOTNiIi8+DQogIDxyZWN0IHg9IjUyIiB5PSI4MiIgd2lkdGg9IjE0NiIgaGVpZ2h0PSIyNTYiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmIi8+DQogIDx0ZXh0IHg9IjEyNSIgeT0iMTA4IiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGYxNzJhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5MeWPDqWUg4oCUIGluZm9zPC90ZXh0Pg0KICA8cmVjdCB4PSI2NCIgeT0iMTIyIiB3aWR0aD0iMTIyIiBoZWlnaHQ9IjEwIiByeD0iMyIgZmlsbD0iI2UyZThmMCIvPg0KICA8cmVjdCB4PSI2NCIgeT0iMTQwIiB3aWR0aD0iOTYiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjZTJlOGYwIi8+DQogIDxyZWN0IHg9IjY0IiB5PSIxNjgiIHdpZHRoPSIxMjIiIGhlaWdodD0iMzgiIHJ4PSI4IiBmaWxsPSIjMGQ5NDg4Ii8+DQogIDx0ZXh0IHg9IjEyNSIgeT0iMTkyIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5NZW51IGRlIGxhIGNhbnRpbmU8L3RleHQ+DQogIDxyZWN0IHg9IjY0IiB5PSIyMjIiIHdpZHRoPSIxMTAiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjZTJlOGYwIi8+DQogIDxyZWN0IHg9IjY0IiB5PSIyNDAiIHdpZHRoPSIxMjIiIGhlaWdodD0iMTAiIHJ4PSIzIiBmaWxsPSIjZTJlOGYwIi8+DQogIDwhLS0gRG9pZ3QgKGNsaWMpIC0tPg0KICA8Y2lyY2xlIGN4PSIxNjAiIGN5PSIyMDAiIHI9IjE2IiBmaWxsPSIjZWE1ODBjIiBmaWxsLW9wYWNpdHk9IjAuMjUiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIyIi8+DQogIDx0ZXh0IHg9IjEyNSIgeT0iMzAwIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj51biBjbGlj4oCmPC90ZXh0Pg0KDQogIDwhLS0gTnVhZ2UgSW50ZXJuZXQgLS0+DQogIDxwYXRoIGQ9Ik0yNjIgMjE0IHEtNiAtNDAgMzYgLTQyIHExNiAtMzQgNTggLTIwIHEzNCAtMjIgNjAgMTAgcTQwIDAgMzYgNDAgcTQgMzQgLTM2IDM0IGgtMTIwIHEtNDAgMCAtMzQgLTIyeiIgZmlsbD0iI2UwZjJmMSIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgPHRleHQgeD0iMzM1IiB5PSIyMTIiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwZjc2NmUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkludGVybmV0PC90ZXh0Pg0KICA8dGV4dCB4PSIzMzUiIHk9IjIzMiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzBmNzY2ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+KyBsZSBXZWI8L3RleHQ+DQogIDxwYXRoIGQ9Ik0yMTIgMjAwIEMgMjM2IDIwMCAyNDIgMjAwIDI2MiAyMDAiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBtYXJrZXItZW5kPSJ1cmwoI2YpIi8+DQogIDxwYXRoIGQ9Ik00NTIgMjAwIEMgNDcwIDIwMCA0NzggMjAwIDQ5NCAyMDAiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBtYXJrZXItZW5kPSJ1cmwoI2YpIi8+DQogIDxkZWZzPg0KICAgIDxtYXJrZXIgaWQ9ImYiIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iOCIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjciIG1hcmtlckhlaWdodD0iNyIgb3JpZW50PSJhdXRvIj4NCiAgICAgIDxwYXRoIGQ9Ik0wIDAgTDEwIDUgTDAgMTB6IiBmaWxsPSIjZWE1ODBjIi8+DQogICAgPC9tYXJrZXI+DQogIDwvZGVmcz4NCg0KICA8IS0tIFBhZ2UgYWZmaWNow6llIC0tPg0KICA8cmVjdCB4PSI0OTYiIHk9IjExMCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxODAiIHJ4PSIxMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjIuNSIvPg0KICA8dGV4dCB4PSI1NTYiIHk9IjEzOCIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzE1ODAzZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TWVudTwvdGV4dD4NCiAgPHRleHQgeD0iNTU2IiB5PSIxNTYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMzMzQxNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmx1bmRpPC90ZXh0Pg0KICA8dGV4dCB4PSI1MTAiIHk9IjE4NCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzMzNDE1NSI+4oCiIGNhcm90dGVzPC90ZXh0Pg0KICA8dGV4dCB4PSI1MTAiIHk9IjIwNCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzMzNDE1NSI+4oCiIHBvdWxldCBmcml0ZXM8L3RleHQ+DQogIDx0ZXh0IHg9IjUxMCIgeT0iMjI0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjMzM0MTU1Ij7igKIgeWFvdXJ0PC90ZXh0Pg0KICA8dGV4dCB4PSI1NTYiIHk9IjI3MCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzE1ODAzZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+bGEgcGFnZSBzJ2FmZmljaGU8L3RleHQ+DQoNCiAgPHRleHQgeD0iMzIwIiB5PSI0MiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VW4gY2xpYywgdW5lIHBhZ2XigKYgZW4gMCwzIHNlY29uZGU8L3RleHQ+DQogIDx0ZXh0IHg9IjMyMCIgeT0iMzMwIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMzM0MTU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5RdWUgcydlc3QtaWwgcGFzc8OpIGVudHJlIGxlIGNsaWMgZXQgbCdhZmZpY2hhZ2UgPzwvdGV4dD4NCjwvc3ZnPg0K" alt="" width="78%"></p>
 <blockquote>
 <p>Lundi, 11 h 50. Inès clique sur « Menu de la cantine » sur son téléphone. La page s'affiche en <strong>0,3 seconde</strong>. Qui a parlé à qui pendant ce temps ?</p>
 </blockquote>
@@ -109,7 +763,7 @@
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>Internet transporte, le Web est transporté</h2></header>
-  <div class="diapo-corps"><div class="colonnes"><div><p><img src="../autonomie/img/web/internet-web.svg" alt="" width="70%"></p>
+  <div class="diapo-corps"><div class="colonnes"><div><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzMwIiBmb250LWZhbWlseT0iSW50ZXIsIFNlZ29lIFVJLCBzYW5zLXNlcmlmIj4NCiAgPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzMzAiIGZpbGw9IiNmOGZhZmMiLz4NCiAgPHRleHQgeD0iMzIwIiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFlMjkzYiI+SW50ZXJuZXQsIGNlIHNvbnQgbGVzIHJvdXRlcy4gTGUgV2ViLCBjJ2VzdCB1biBzZXJ2aWNlIHF1aSBsZXMgZW1wcnVudGUuPC90ZXh0Pg0KICA8IS0tIHNlcnZpY2VzIC0tPg0KICA8ZyBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4NCiAgICA8cmVjdCB4PSIzMCIgeT0iNTIiIHdpZHRoPSIxNTAiIGhlaWdodD0iNzgiIHJ4PSIxMCIgZmlsbD0iI2NjZmJmMSIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjMiLz4NCiAgICA8dGV4dCB4PSIxMDUiIHk9IjgwIiBmaWxsPSIjMGY3NjZlIiBmb250LXNpemU9IjE3Ij5MZSBXZWI8L3RleHQ+DQogICAgPHRleHQgeD0iMTA1IiB5PSIxMDIiIGZpbGw9IiMwZjc2NmUiIGZvbnQtd2VpZ2h0PSI0MDAiIGZvbnQtc2l6ZT0iMTIiPnBhZ2VzIHJlbGnDqWVzIHBhcjwvdGV4dD4NCiAgICA8dGV4dCB4PSIxMDUiIHk9IjExOCIgZmlsbD0iIzBmNzY2ZSIgZm9udC13ZWlnaHQ9IjQwMCIgZm9udC1zaXplPSIxMiI+ZGVzIGxpZW5zIGh5cGVydGV4dGVzPC90ZXh0Pg0KICAgIDxyZWN0IHg9IjIwMCIgeT0iNjQiIHdpZHRoPSIxMjAiIGhlaWdodD0iNTQiIHJ4PSIxMCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSIyNjAiIHk9Ijk2IiBmaWxsPSIjMzM0MTU1Ij5Db3VycmllciAobWFpbCk8L3RleHQ+DQogICAgPHJlY3QgeD0iMzM1IiB5PSI2NCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI1NCIgcng9IjEwIiBmaWxsPSIjZmZmIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPg0KICAgIDx0ZXh0IHg9IjM5NSIgeT0iOTYiIGZpbGw9IiMzMzQxNTUiPlZpc2lvLCBhcHBlbHM8L3RleHQ+DQogICAgPHJlY3QgeD0iNDcwIiB5PSI2NCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSI1NCIgcng9IjEwIiBmaWxsPSIjZmZmIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIvPg0KICAgIDx0ZXh0IHg9IjU0MCIgeT0iOTYiIGZpbGw9IiMzMzQxNTUiPkpldXggZW4gbGlnbmU8L3RleHQ+DQogIDwvZz4NCiAgPGcgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjUgNCI+DQogICAgPGxpbmUgeDE9IjEwNSIgeTE9IjEzMCIgeDI9IjEwNSIgeTI9IjE3NiIvPjxsaW5lIHgxPSIyNjAiIHkxPSIxMTgiIHgyPSIyNjAiIHkyPSIxNzYiLz4NCiAgICA8bGluZSB4MT0iMzk1IiB5MT0iMTE4IiB4Mj0iMzk1IiB5Mj0iMTc2Ii8+PGxpbmUgeDE9IjU0MCIgeTE9IjExOCIgeDI9IjU0MCIgeTI9IjE3NiIvPg0KICA8L2c+DQogIDwhLS0gaW50ZXJuZXQgLS0+DQogIDxyZWN0IHg9IjMwIiB5PSIxNzYiIHdpZHRoPSI1ODAiIGhlaWdodD0iMTM0IiByeD0iMTQiIGZpbGw9IiNlMGU3ZmYiIHN0cm9rZT0iIzRmNDZlNSIgc3Ryb2tlLXdpZHRoPSIzIi8+DQogIDx0ZXh0IHg9IjMyMCIgeT0iMjA0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMzczMGEzIj5JbnRlcm5ldCA6IGxlIHLDqXNlYXUgZGVzIHLDqXNlYXV4ICh0aMOobWUgMSk8L3RleHQ+DQogIDwhLS0gbGlhaXNvbnMgZW50cmUgcm91dGV1cnMsIGRlc3NpbmVlcyBhdmFudCBsZXMgbm9ldWRzIC0tPg0KICA8ZyBzdHJva2U9IiM0ZjQ2ZTUiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiPg0KICAgIDxsaW5lIHgxPSI5MCIgeTE9IjI0OCIgeDI9IjE5MCIgeTI9IjIzNiIvPg0KICAgIDxsaW5lIHgxPSIxOTAiIHkxPSIyMzYiIHgyPSIyOTAiIHkyPSIyNTQiLz4NCiAgICA8bGluZSB4MT0iMjkwIiB5MT0iMjU0IiB4Mj0iMzkwIiB5Mj0iMjM2Ii8+DQogICAgPGxpbmUgeDE9IjM5MCIgeTE9IjIzNiIgeDI9IjQ4MCIgeTI9IjI1NCIvPg0KICAgIDxsaW5lIHgxPSI0ODAiIHkxPSIyNTQiIHgyPSI1NjAiIHkyPSIyNDAiLz4NCiAgICA8bGluZSB4MT0iMTkwIiB5MT0iMjM2IiB4Mj0iMzkwIiB5Mj0iMjM2Ii8+DQogIDwvZz4NCiAgPGcgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNGY0NmU1IiBzdHJva2Utd2lkdGg9IjIuNSI+DQogICAgPGNpcmNsZSBjeD0iOTAiIGN5PSIyNDgiIHI9IjExIi8+PGNpcmNsZSBjeD0iMTkwIiBjeT0iMjM2IiByPSIxMSIvPjxjaXJjbGUgY3g9IjI5MCIgY3k9IjI1NCIgcj0iMTEiLz4NCiAgICA8Y2lyY2xlIGN4PSIzOTAiIGN5PSIyMzYiIHI9IjExIi8+PGNpcmNsZSBjeD0iNDgwIiBjeT0iMjU0IiByPSIxMSIvPjxjaXJjbGUgY3g9IjU2MCIgY3k9IjI0MCIgcj0iMTEiLz4NCiAgPC9nPg0KICA8dGV4dCB4PSIzMjAiIHk9IjI5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxMi41IiBmaWxsPSIjMzczMGEzIj5yb3V0ZXVycywgY8OiYmxlcywgZmlicmUsIDRHLzVHLCBXaS1GaeKApiBldCBsZSBwcm90b2NvbGUgVENQL0lQPC90ZXh0Pg0KPC9zdmc+DQo=" alt="" width="70%"></p>
 </div><div><ul>
 <li><strong>Internet</strong> : le réseau de réseaux (routeurs, câbles, TCP/IP).</li>
 <li><strong>Le Web</strong> : <em>un</em> service d'Internet, des <strong>pages</strong> reliées par des <strong>liens hypertextes</strong>.</li>
@@ -141,7 +795,7 @@
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>Les parties d'une URL</h2></header>
-  <div class="diapo-corps"><p><img src="../autonomie/img/web/url.svg" alt=""></p>
+  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMjAwIiBmb250LWZhbWlseT0iSW50ZXIsIFNlZ29lIFVJLCBzYW5zLXNlcmlmIj4NCiAgPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNmOGZhZmMiLz4NCiAgPHRleHQgeD0iMzIwIiB5PSIyOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFlMjkzYiI+RMOpY29tcG9zZXIgdW5lIFVSTCAoYWRyZXNzZSBkJ3VuZSBwYWdlIHdlYik8L3RleHQ+DQogIDxnIGZvbnQtZmFtaWx5PSJGaXJhIENvZGUsIENvbnNvbGFzLCBtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTkiIGZvbnQtd2VpZ2h0PSI2MDAiPg0KICAgIDxyZWN0IHg9IjIyIiB5PSI1NiIgd2lkdGg9IjkyIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0iI2RjZmNlNyIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSI2OCIgeT0iODMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxNTgwM2QiPmh0dHBzPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjEyNiIgeT0iODMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM2NDc0OGIiPjovLzwvdGV4dD4NCiAgICA8cmVjdCB4PSIxNDgiIHk9IjU2IiB3aWR0aD0iMTkwIiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0iI2RiZWFmZSIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSIyNDMiIHk9IjgzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMWQ0ZWQ4Ij5mci53aWtpcGVkaWEub3JnPC90ZXh0Pg0KICAgIDxyZWN0IHg9IjM0NiIgeT0iNTYiIHdpZHRoPSIxMzgiIGhlaWdodD0iNDAiIHJ4PSI2IiBmaWxsPSIjZmZlZGQ1IiBzdHJva2U9IiNlYTU4MGMiIHN0cm9rZS13aWR0aD0iMiIvPg0KICAgIDx0ZXh0IHg9IjQxNSIgeT0iODMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNjMjQxMGMiPi93L2luZGV4LnBocDwvdGV4dD4NCiAgICA8cmVjdCB4PSI0OTIiIHk9IjU2IiB3aWR0aD0iMTI4IiBoZWlnaHQ9IjQwIiByeD0iNiIgZmlsbD0iI2YzZThmZiIgc3Ryb2tlPSIjN2MzYWVkIiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSI1NTYiIHk9IjgzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNmQyOGQ5IiBmb250LXNpemU9IjE1Ij4/c2VhcmNoPXdlYjwvdGV4dD4NCiAgPC9nPg0KICA8ZyBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4NCiAgICA8dGV4dCB4PSI2OCIgeT0iMTI0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTU4MDNkIj5wcm90b2NvbGU8L3RleHQ+DQogICAgPHRleHQgeD0iNjgiIHk9IjE0MiIgZmlsbD0iIzMzNDE1NSI+Y29tbWVudCBvbjwvdGV4dD48dGV4dCB4PSI2OCIgeT0iMTU4IiBmaWxsPSIjMzM0MTU1Ij5jb21tdW5pcXVlPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjY4IiB5PSIxNzQiIGZpbGw9IiMzMzQxNTUiPihzID0gc8OpY3VyaXPDqSk8L3RleHQ+DQogICAgPHRleHQgeD0iMjQzIiB5PSIxMjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxZDRlZDgiPm5vbSBkZSBkb21haW5lPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjI0MyIgeT0iMTQyIiBmaWxsPSIjMzM0MTU1Ij5sZSBzZXJ2ZXVyIHF1aSBow6liZXJnZSBsYSBwYWdlPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjI0MyIgeT0iMTU4IiBmaWxsPSIjMzM0MTU1Ij4odHJhZHVpdCBlbiBhZHJlc3NlIElQIHBhciBsZSBETlMpPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjQxNSIgeT0iMTI0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjYzI0MTBjIj5jaGVtaW48L3RleHQ+DQogICAgPHRleHQgeD0iNDE1IiB5PSIxNDIiIGZpbGw9IiMzMzQxNTUiPm/DuSBzZSB0cm91dmUgbGEgcmVzc291cmNlPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjQxNSIgeT0iMTU4IiBmaWxsPSIjMzM0MTU1Ij5zdXIgbGUgc2VydmV1cjwvdGV4dD4NCiAgICA8dGV4dCB4PSI1NTYiIHk9IjEyNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzZkMjhkOSI+cGFyYW3DqHRyZXM8L3RleHQ+DQogICAgPHRleHQgeD0iNTU2IiB5PSIxNDIiIGZpbGw9IiMzMzQxNTUiPmRvbm7DqWVzIGVudm95w6llczwvdGV4dD4NCiAgICA8dGV4dCB4PSI1NTYiIHk9IjE1OCIgZmlsbD0iIzMzNDE1NSI+KGljaSA6IGxhIHJlY2hlcmNoZSk8L3RleHQ+DQogIDwvZz4NCjwvc3ZnPg0K" alt=""></p>
 <ul>
 <li><strong>Protocole</strong> : <code>https</code> = HTTP <strong>sécurisé</strong> (échanges chiffrés), le cadenas du navigateur.</li>
 <li><strong>Nom de domaine</strong> : le serveur qui héberge la page, traduit en adresse IP par le <strong>DNS</strong>.</li>
@@ -184,7 +838,7 @@
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>Le modèle client / serveur et HTTP</h2></header>
-  <div class="diapo-corps"><p><img src="img/web/dialogue-http.svg" alt="" width="88%"></p>
+  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzYwIiBmb250LWZhbWlseT0iSW50ZXIsIFNlZ29lIFVJLCBzYW5zLXNlcmlmIj4NCiAgPGRlZnM+DQogICAgPG1hcmtlciBpZD0iYSIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI5IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8iPg0KICAgICAgPHBhdGggZD0iTTAgMCBMMTAgNSBMMCAxMHoiIGZpbGw9IiNlYTU4MGMiLz4NCiAgICA8L21hcmtlcj4NCiAgICA8bWFya2VyIGlkPSJ2IiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjkiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI3IiBtYXJrZXJIZWlnaHQ9IjciIG9yaWVudD0iYXV0byI+DQogICAgICA8cGF0aCBkPSJNMCAwIEwxMCA1IEwwIDEweiIgZmlsbD0iIzE1ODAzZCIvPg0KICAgIDwvbWFya2VyPg0KICA8L2RlZnM+DQogIDxyZWN0IHdpZHRoPSI2NDAiIGhlaWdodD0iMzYwIiBmaWxsPSIjZmZmZmZmIi8+DQoNCiAgPCEtLSBBY3RldXJzIC0tPg0KICA8cmVjdCB4PSIzMCIgeT0iMTQiIHdpZHRoPSIxNTAiIGhlaWdodD0iNTAiIHJ4PSIxMCIgZmlsbD0iIzBkOTQ4OCIvPg0KICA8dGV4dCB4PSIxMDUiIHk9IjM2IiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5OYXZpZ2F0ZXVyPC90ZXh0Pg0KICA8dGV4dCB4PSIxMDUiIHk9IjU0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjY2NmYmYxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5sZSBjbGllbnQ8L3RleHQ+DQogIDxyZWN0IHg9IjI0NSIgeT0iMTQiIHdpZHRoPSIxNTAiIGhlaWdodD0iNTAiIHJ4PSIxMCIgZmlsbD0iIzQ3NTU2OSIvPg0KICA8dGV4dCB4PSIzMjAiIHk9IjM2IiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TZXJ2ZXVyIEROUzwvdGV4dD4NCiAgPHRleHQgeD0iMzIwIiB5PSI1NCIgZm9udC1zaXplPSIxMiIgZmlsbD0iI2UyZThmMCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+bCdhbm51YWlyZTwvdGV4dD4NCiAgPHJlY3QgeD0iNDYwIiB5PSIxNCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSI1MCIgcng9IjEwIiBmaWxsPSIjNDc1NTY5Ii8+DQogIDx0ZXh0IHg9IjUzNSIgeT0iMzYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNlcnZldXIgd2ViPC90ZXh0Pg0KICA8dGV4dCB4PSI1MzUiIHk9IjU0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjZTJlOGYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ow6liZXJnZSBsZSBzaXRlPC90ZXh0Pg0KDQogIDwhLS0gTGlnbmVzIGRlIHZpZSAtLT4NCiAgPGxpbmUgeDE9IjEwNSIgeTE9IjY0IiB4Mj0iMTA1IiB5Mj0iMzQwIiBzdHJva2U9IiM5NGEzYjgiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiA1Ii8+DQogIDxsaW5lIHgxPSIzMjAiIHkxPSI2NCIgeDI9IjMyMCIgeTI9IjM0MCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjYgNSIvPg0KICA8bGluZSB4MT0iNTM1IiB5MT0iNjQiIHgyPSI1MzUiIHkyPSIzNDAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI2IDUiLz4NCg0KICA8IS0tIDEgLS0+DQogIDxsaW5lIHgxPSIxMDgiIHkxPSIxMDAiIHgyPSIzMTYiIHkyPSIxMDAiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjYSkiLz4NCiAgPHRleHQgeD0iMjEyIiB5PSI5MiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzlhMzQxMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+4pGgIElQIGRlIGNhbnRpbmUubHljZWUtZXhlbXBsZS5mciA/PC90ZXh0Pg0KICA8IS0tIDIgLS0+DQogIDxsaW5lIHgxPSIzMTYiIHkxPSIxNDAiIHgyPSIxMDgiIHkyPSIxNDAiIHN0cm9rZT0iIzE1ODAzZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjdikiLz4NCiAgPHRleHQgeD0iMjEyIiB5PSIxMzIiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMxNjY1MzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKRoSBjJ2VzdCAxOTIuMC4yLjgwPC90ZXh0Pg0KICA8IS0tIDMgLS0+DQogIDxsaW5lIHgxPSIxMDgiIHkxPSIxOTAiIHgyPSI1MzEiIHkyPSIxOTAiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjYSkiLz4NCiAgPHRleHQgeD0iMzIwIiB5PSIxODIiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM5YTM0MTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPuKRoiByZXF1w6p0ZSBIVFRQIDogR0VUIC9tZW51Lmh0bWw/am91cj1sdW5kaTwvdGV4dD4NCiAgPCEtLSA0IC0tPg0KICA8bGluZSB4MT0iNTMxIiB5MT0iMjQwIiB4Mj0iMTA4IiB5Mj0iMjQwIiBzdHJva2U9IiMxNTgwM2QiIHN0cm9rZS13aWR0aD0iMi41IiBtYXJrZXItZW5kPSJ1cmwoI3YpIi8+DQogIDx0ZXh0IHg9IjMyMCIgeT0iMjMyIiBmb250LXNpemU9IjEyIiBmaWxsPSIjMTY2NTM0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ikaMgcsOpcG9uc2UgSFRUUCA6IDIwMCBPSyArIGxlIGNvZGUgSFRNTCBkZSBsYSBwYWdlPC90ZXh0Pg0KICA8IS0tIDUgLS0+DQogIDxyZWN0IHg9IjM0IiB5PSIyNjgiIHdpZHRoPSIxNDIiIGhlaWdodD0iNTQiIHJ4PSI4IiBmaWxsPSIjZWNmZGY1IiBzdHJva2U9IiMxNTgwM2QiIHN0cm9rZS13aWR0aD0iMS41Ii8+DQogIDx0ZXh0IHg9IjEwNSIgeT0iMjkwIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTY2NTM0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7ikaQgbGUgbmF2aWdhdGV1cjwvdGV4dD4NCiAgPHRleHQgeD0iMTA1IiB5PSIzMDgiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMxNjY1MzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmFmZmljaGUgbGEgcGFnZTwvdGV4dD4NCiAgPHRleHQgeD0iNDMwIiB5PSIzMDAiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM0NzU1NjkiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRvdXMgY2VzIG1lc3NhZ2VzIHZveWFnZW50IGRhbnMgZGVzIHBhcXVldHM8L3RleHQ+DQogIDx0ZXh0IHg9IjQzMCIgeT0iMzE4IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDc1NTY5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UQ1AvSVAsIGNvbW1lIGF1IHRow6htZSBJbnRlcm5ldC48L3RleHQ+DQo8L3N2Zz4NCg==" alt="" width="88%"></p>
 <ul>
 <li>Le <strong>client</strong> (le navigateur) <strong>demande</strong> ; le <strong>serveur</strong> <strong>répond</strong>.</li>
 <li>La demande est une <strong>requête HTTP</strong> ; la réponse contient un <strong>code</strong> (<code>200 OK</code> : tout va bien, <code>404 Not Found</code> : page introuvable) et le <strong>code HTML</strong> de la page.</li>

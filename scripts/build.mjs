@@ -27,6 +27,7 @@ import { rendreDiapos, rendreDeroule, corpsFiche } from './lib/seance.mjs';
 import { rendreProgression } from './lib/progression.mjs';
 import { ouvrirNavigateur, genererPdf } from './lib/pdf.mjs';
 import { genererDocx } from './lib/docx.mjs';
+import { htmlAutonome } from './lib/autonome.mjs';
 
 const args = process.argv.slice(2);
 const htmlSeul = args.includes('--html');
@@ -113,7 +114,8 @@ async function construire(fichier, config, manifeste) {
   const produits = [];
   for (const s of sorties(doc, seance, progression, config, nom)) {
     fs.mkdirSync(path.dirname(s.fichierHtml), { recursive: true });
-    fs.writeFileSync(s.fichierHtml, s.html);
+    // HTML conservé (projection des diapos) : autonome, pour l'ouvrir sur n'importe quel ordinateur
+    fs.writeFileSync(s.fichierHtml, s.garderHtml ? htmlAutonome(s.html) : s.html);
     if (s.garderHtml) produits.push(s.fichierHtml);
     if (htmlSeul) { console.log(`    → ${relSortie(s.fichierHtml)}`); continue; }
 

@@ -2,6 +2,10 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 19 novembre 2026 : diapos projetables sur n'importe quel ordinateur
+
+- Le HTML de projection des diapos (`slides/<nom>.html`, avec le minuteur T et le plein écran F) est maintenant **autonome** : styles recopiés dans la page, images et polices des formules intégrées, plus aucun lien vers le poste qui l'a généré (`scripts/lib/autonome.mjs`). Il s'ouvre depuis une clé USB ou l'ENT, sur le PC de la salle. Taille : 50 Ko environ, 450 Ko avec des formules. Testé hors du projet. Le PDF `SLIDES_<nom>.pdf` reste la solution de secours.
+
 ## 19 novembre 2026 : versions élèves sans les infos du professeur
 
 - **Décision de l'enseignant** : le barème, les points et les durées sont pour le professeur. La chaîne les retire désormais de **toutes** les versions élèves (`sansInfosProf` dans `scripts/lib/render.mjs` ; durée des activités de séance masquée par `style.css`). La case « / 20 » reste. Le champ `points_masques` devient inutile. Règle ajoutée à la charte ; tout a été régénéré.
