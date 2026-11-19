@@ -134,13 +134,17 @@ $\dfrac{9\,600}{10} = 960$ caractères par seconde au plus : 30 caractères par 
 ### Étape 3 — Lire une trame I2C (20 min)
 
 ::: question 4 [2 pt]
-La figure du DR3 montre le premier octet envoyé par l'ESP32 au capteur de la vraie chambre froide. **Relever** l'adresse 7 bits, en binaire puis en hexadécimal, et le sens de l'échange. Qui fournit l'horloge SCL ? Qui envoie le bit ACK ?
+Sur la figure du DR3, l'ESP32 écrit au capteur d'adresse `0x48` : son premier octet est `1001 0000` = `0x90`. Un deuxième capteur, placé dans la réserve, a l'adresse `0x49`.
+
+**a)** **Écrire** le premier octet que l'ESP32 envoie pour **lire** ce deuxième capteur, en binaire puis en hexadécimal. Justifier le dernier bit.
+
+**b)** Qui fournit l'horloge SCL ? À quoi sert le bit ACK, et qui l'envoie ici ?
 :::
 
 ::: reponse 5
-Adresse `1001000` = `0x48` ; R/W = 0 : **écriture** (le maître envoie). (1 pt)
+**a)** Adresse `0x49` = `1001001`, suivie de R/W = **1** (lecture) : `1001 0011` = `0x93`. (1 pt)
 
-L'horloge SCL est fournie par le **maître** (l'ESP32) ; l'ACK est envoyé par l'**esclave** (le capteur), qui confirme qu'il a reçu l'octet. (1 pt)
+**b)** SCL est fournie par le **maître** (l'ESP32). L'ACK confirme que l'octet a été reçu ; ici, c'est l'**esclave** (le capteur) qui l'envoie, puisqu'il reçoit l'octet d'adresse. (1 pt)
 :::
 
 ### Étape 4 — Sur Wokwi : trouver et identifier le capteur (35 min)
@@ -251,6 +255,6 @@ Pour finir : copiez votre programme complet dans un fichier texte `chambre_froid
 | :--- | :--- | :--- | :---: |
 | **3.4.3a** — Typologie des communications | Q1 | Synchrone / asynchrone, sens des échanges, bus maître / esclaves justifiés | 2 |
 | **3.4.3b / 2.4.3a** — Liaison série, ASCII | Q2, Q3 | Bits relevés et remis dans l'ordre, hexadécimal, caractère ASCII ; durée de trame et débit | 5 |
-| **5.3.4b** — Bus I2C | Q4, Q5 | Adresse et sens lus sur la trame, rôle du maître et de l'ACK, adresse retrouvée par le scan | 4 |
+| **5.3.4b** — Bus I2C | Q4, Q5 | Premier octet d'une lecture construit, rôle du maître et de l'ACK, adresse retrouvée par le scan | 4 |
 | **CO5.8-SIN1 / CO7.3-SIN2** — Programmer et expérimenter | Q6 à Q9 | Lecture de registre, complément à 2, conversion juste, alarme à hystérésis testée, validations à l'écran | 9 |
 | **Total** | | | **20** |

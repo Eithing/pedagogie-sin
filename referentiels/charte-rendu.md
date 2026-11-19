@@ -45,6 +45,8 @@ Utiliser les verbes d'action adaptés à la taxonomie de Bloom selon le niveau, 
 
 ## 4. Balises
 
+**Version élève** : le barème, les points de chaque question et toutes les durées (durée du document, des étapes et des activités) sont des informations pour le professeur. La chaîne les retire automatiquement de la version élève (section dont le titre contient « Barème », « (x min) » en fin de titre, durées du plan de travail et des activités) ; ils restent dans la version prof et dans le déroulé. Seule la case « / 20 » reste sur la fiche élève d'un travail noté, pour y écrire la note. Pour une évaluation, la durée laissée aux élèves s'écrit dans les `consignes`.
+
 ### 4.1 Questions et corrigés (tous types)
 
 | Balise | Rôle | Version élève | Version prof |

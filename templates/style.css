@@ -155,6 +155,7 @@ blockquote {
 .question-points::before { content: '('; }
 .question-points::after { content: ')'; }
 .points-masques .question-points { display: none; }
+.variante-eleve .act-duree { display: none; }
 .question-corps > :first-child { margin-top: 1px; }
 
 /* ---------- Corrigé (version prof) ---------- */

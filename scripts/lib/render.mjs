@@ -48,14 +48,14 @@ ${script ? `<script>${script}</script>` : ''}
 
 // Travail en autonomie : plan de travail (étapes = titres ##, durée entre parenthèses en fin de titre),
 // ce qu'il faut déposer et comment obtenir de l'aide.
-function planTravail(meta, corps) {
+function planTravail(meta, corps, cible) {
   const etapes = corps.replace(SANS_CODE, '$1').split('\n').filter((l) => /^##\s/.test(l)).map((l) => {
     const m = l.replace(/^##\s+/, '').match(/^(.*?)\s*(?:\((\d+\s*min)\))?\s*$/);
     return { titre: m[1], duree: m[2] };
   }).filter((e) => !/bar[eè]me/i.test(e.titre));
   const liste = (v) => [].concat(v ?? []).map((t) => `<li>${esc(t)}</li>`).join('');
   return `<section class="plan-travail">
-    <div class="plan-etapes"><h2>Mon plan de travail</h2><ol>${etapes.map((e) => `<li><span class="case"></span><span>${esc(e.titre)}</span>${e.duree ? `<em>${esc(e.duree)}</em>` : ''}</li>`).join('')}</ol></div>
+    <div class="plan-etapes"><h2>Mon plan de travail</h2><ol>${etapes.map((e) => `<li><span class="case"></span><span>${esc(e.titre)}</span>${e.duree && cible === 'prof' ? `<em>${esc(e.duree)}</em>` : ''}</li>`).join('')}</ol></div>
     <div class="plan-rendu"><h2>À déposer sur l'ENT</h2><ul>${liste(meta.rendu)}</ul></div>
     ${meta.aide ? `<div class="plan-aide"><h2>Besoin d'aide ?</h2><ul>${liste(meta.aide)}</ul></div>` : ''}
   </section>`;
@@ -86,7 +86,7 @@ function entete(meta, cible, config, libelleVariante) {
       <h1 class="doc-titre">${meta.sujet ? `<span class="doc-sujet">Sujet ${esc(meta.sujet)}</span>` : ''}${esc(meta.titre)}</h1>
       ${meta.accroche ? `<p class="doc-accroche">${esc(meta.accroche)}</p>` : ''}
       <dl class="doc-meta">
-        ${meta.duree ? `<div><dt>Durée</dt><dd>${esc(meta.duree)}</dd></div>` : ''}
+        ${meta.duree && cible !== 'eleve' ? `<div><dt>Durée</dt><dd>${esc(meta.duree)}</dd></div>` : ''}
         ${meta.competences ? `<div><dt>Compétences</dt><dd>${esc(liste(meta.competences))}</dd></div>` : ''}
       </dl>
       ${meta.consignes ? `<ul class="doc-consignes">${[].concat(meta.consignes).map((c) => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
@@ -96,15 +96,37 @@ function entete(meta, cible, config, libelleVariante) {
   </header>`;
 }
 
+// Version élève : ni barème, ni points, ni durées, qui sont des informations pour le professeur.
+// Retire la section « Barème » (titre ## ou ### jusqu'au titre suivant de même niveau ou plus haut)
+// et la durée « (x min) » en fin de titre.
+export function sansInfosProf(corps) {
+  const sortie = [];
+  let niveauBareme = null;
+  let dansCode = false;
+  for (const l of corps.split(/\r?\n/)) {
+    if (/^\s*(`{3,}|~{3,})/.test(l)) dansCode = !dansCode;
+    const titre = dansCode ? null : l.match(/^(#{2,4})\s+(.*)$/);
+    if (titre) {
+      const niveau = titre[1].length;
+      if (niveauBareme != null && niveau <= niveauBareme) niveauBareme = null;
+      if (niveauBareme == null && /bar[eè]me/i.test(titre[2])) { niveauBareme = niveau; continue; }
+    }
+    if (niveauBareme != null) continue;
+    sortie.push(titre ? l.replace(/\s*\(\d+\s*min\)\s*$/, '') : l);
+  }
+  return sortie.join('\n');
+}
+
 // Document A4 (TP, TD, cadrage, fiche d'activités d'un cours)
 export function rendreHtml({ meta, corps, cible, config, fichierSource, libelleVariante }) {
+  if (cible === 'eleve') corps = sansInfosProf(corps);
   const contenu = rendre(corps, cible);
   return page({
     titre: `${meta.titre} — ${cible === 'prof' ? 'Prof' : 'Élève'}`,
-    corps: `${entete(meta, cible, config, libelleVariante)}\n${meta.type === 'autonomie' ? planTravail(meta, corps) : ''}\n<main class="doc-corps">\n${contenu}\n</main>`,
+    corps: `${entete(meta, cible, config, libelleVariante)}\n${meta.type === 'autonomie' ? planTravail(meta, corps, cible) : ''}\n<main class="doc-corps">\n${contenu}\n</main>`,
     meta, config, fichierSource,
-    // « points_masques: true » : les points de chaque question n'apparaissent pas dans la version élève
-    classes: `document variante-${cible} type-${esc(meta.type ?? 'doc')}${meta.points_masques && cible === 'eleve' ? ' points-masques' : ''}`,
+    // Les points de chaque question n'apparaissent jamais dans la version élève
+    classes: `document variante-${cible} type-${esc(meta.type ?? 'doc')}${cible === 'eleve' ? ' points-masques' : ''}`,
   });
 }
 

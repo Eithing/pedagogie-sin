@@ -2,6 +2,12 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 19 novembre 2026 : versions élèves sans les infos du professeur
+
+- **Décision de l'enseignant** : le barème, les points et les durées sont pour le professeur. La chaîne les retire désormais de **toutes** les versions élèves (`sansInfosProf` dans `scripts/lib/render.mjs` ; durée des activités de séance masquée par `style.css`). La case « / 20 » reste. Le champ `points_masques` devient inutile. Règle ajoutée à la charte ; tout a été régénéré.
+- `TP_TermSIN_I2C_Wokwi`, question 4 : la figure de la trame I2C donnait déjà la réponse. La question demande maintenant de construire le premier octet d'une **lecture** à l'adresse `0x49` (`0x93`).
+- **Portable** : Edge ne se lance plus en mode sans fenêtre (Edge en cours de mise à jour). **Google Chrome installé le 19 novembre** : la chaîne l'utilise en priorité.
+
 ## Vendredi 20 novembre 2026 : retour en présentiel, plan de rattrapage (préparé le 18 novembre)
 
 - **Décisions de l'enseignant** : coller au programme et rattraper le retard ; **tous les TP et toutes les activités sont notés**. Les progressions sont resserrées (journal du 18 novembre dans chaque progression).

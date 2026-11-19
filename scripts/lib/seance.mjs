@@ -348,8 +348,9 @@ export function corpsFiche(seance) {
       // Blocs insécables : un schéma de référence ou l'en-tête d'une activité ne sont jamais coupés en bas de page
       parts.push(`<section class="bloc-insecable">\n\n### ${e.titre}\n\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}\n\n</section>`);
     } else if (e.type === 'activite') {
-      const meta = [`${e.duree} min`, e.modalite && MODALITES[e.modalite]].filter(Boolean).join(', ');
-      parts.push(`<section class="bloc-insecable">\n\n## Activité ${e.numero} : ${e.titre}\n\n<p class="act-meta">${esc(meta)}</p>\n\n${e.contenu}\n\n</section>`);
+      // La durée n'apparaît que dans la version prof (masquée dans la version élève par la feuille de style)
+      const duree = `<span class="act-duree">${e.duree} min${e.modalite ? ', ' : ''}</span>`;
+      parts.push(`<section class="bloc-insecable">\n\n## Activité ${e.numero} : ${e.titre}\n\n<p class="act-meta">${duree}${esc(e.modalite ? MODALITES[e.modalite] : '')}</p>\n\n${e.contenu}\n\n</section>`);
       for (const q of e.questions) parts.push(q.brut + (q.reponse ? `\n\n${q.reponse.brut}` : ''));
     } else if (e.type === 'retenir') {
       parts.push(`:::: retenir\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}\n::::`);
