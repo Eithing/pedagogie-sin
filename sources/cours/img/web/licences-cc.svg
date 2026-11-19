@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">Licences Creative Commons : l'auteur dit ce qu'on a le droit de faire</text>
+  <!-- BY -->
+  <rect x="20" y="56" width="170" height="200" rx="12" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <circle cx="105" cy="104" r="32" fill="#15803d"/>
+  <text x="105" y="114" text-anchor="middle" font-size="26" font-weight="800" fill="#ffffff">BY</text>
+  <text x="105" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#166534">Citer l'auteur</text>
+  <text x="105" y="192" text-anchor="middle" font-size="13" fill="#334155">toujours présent :</text>
+  <text x="105" y="210" text-anchor="middle" font-size="13" fill="#334155">nom de l'auteur</text>
+  <text x="105" y="228" text-anchor="middle" font-size="13" fill="#334155">et de la licence</text>
+  <!-- NC -->
+  <rect x="205" y="56" width="170" height="200" rx="12" fill="#fee2e2" stroke="#dc2626" stroke-width="3"/>
+  <circle cx="290" cy="104" r="32" fill="#dc2626"/>
+  <text x="290" y="114" text-anchor="middle" font-size="26" font-weight="800" fill="#ffffff">NC</text>
+  <text x="290" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#991b1b">Pas commercial</text>
+  <text x="290" y="192" text-anchor="middle" font-size="13" fill="#334155">interdit pour vendre</text>
+  <text x="290" y="210" text-anchor="middle" font-size="13" fill="#334155">ou faire de la pub</text>
+  <text x="290" y="228" text-anchor="middle" font-size="13" fill="#334155">(boutique, entreprise)</text>
+  <!-- ND -->
+  <rect x="390" y="56" width="170" height="200" rx="12" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/>
+  <circle cx="475" cy="104" r="32" fill="#ea580c"/>
+  <text x="475" y="114" text-anchor="middle" font-size="26" font-weight="800" fill="#ffffff">ND</text>
+  <text x="475" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#9a3412">Pas de modification</text>
+  <text x="475" y="192" text-anchor="middle" font-size="13" fill="#334155">ni recadrer, ni recolorier,</text>
+  <text x="475" y="210" text-anchor="middle" font-size="13" fill="#334155">ni découper :</text>
+  <text x="475" y="228" text-anchor="middle" font-size="13" fill="#334155">l'œuvre telle quelle</text>
+  <!-- SA -->
+  <rect x="575" y="56" width="170" height="200" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="660" cy="104" r="32" fill="#2563eb"/>
+  <text x="660" y="114" text-anchor="middle" font-size="26" font-weight="800" fill="#ffffff">SA</text>
+  <text x="660" y="166" text-anchor="middle" font-size="17" font-weight="700" fill="#1e40af">Partager pareil</text>
+  <text x="660" y="192" text-anchor="middle" font-size="13" fill="#334155">si je modifie, je dois</text>
+  <text x="660" y="210" text-anchor="middle" font-size="13" fill="#334155">partager mon travail</text>
+  <text x="660" y="228" text-anchor="middle" font-size="13" fill="#334155">sous la même licence</text>
+  <text x="380" y="286" text-anchor="middle" font-size="15" font-weight="600" fill="#0f172a">Sans licence : droit d'auteur complet. Trouvé en ligne ne veut pas dire libre.</text>
+</svg>

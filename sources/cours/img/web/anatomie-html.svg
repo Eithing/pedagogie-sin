@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="760" height="320" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">HTML : des balises qui entourent le contenu</text>
+  <!-- ligne de code -->
+  <rect x="20" y="58" width="720" height="64" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <g font-family="Fira Code, Consolas, monospace" font-size="25" font-weight="600">
+    <text x="38" y="99"><tspan fill="#2563eb">&lt;a</tspan><tspan fill="#0f172a"> </tspan><tspan fill="#ea580c">href</tspan><tspan fill="#0f172a">=</tspan><tspan fill="#15803d">"https://www.ffjudo.com"</tspan><tspan fill="#2563eb">&gt;</tspan><tspan fill="#7c3aed">Fédération</tspan><tspan fill="#2563eb">&lt;/a&gt;</tspan></text>
+  </g>
+  <!-- etiquettes -->
+  <g font-size="14" text-anchor="middle">
+    <line x1="58" y1="126" x2="58" y2="156" stroke="#2563eb" stroke-width="2"/>
+    <text x="58" y="174" font-weight="700" fill="#1d4ed8">balise</text>
+    <text x="58" y="192" fill="#1d4ed8">ouvrante</text>
+    <line x1="140" y1="126" x2="140" y2="156" stroke="#ea580c" stroke-width="2"/>
+    <text x="140" y="174" font-weight="700" fill="#c2410c">attribut</text>
+    <line x1="340" y1="126" x2="340" y2="156" stroke="#15803d" stroke-width="2"/>
+    <text x="340" y="174" font-weight="700" fill="#15803d">valeur</text>
+    <text x="340" y="192" fill="#15803d">(ici l'URL du lien)</text>
+    <line x1="560" y1="126" x2="560" y2="156" stroke="#7c3aed" stroke-width="2"/>
+    <text x="560" y="174" font-weight="700" fill="#6d28d9">contenu</text>
+    <text x="560" y="192" fill="#6d28d9">ce qu'on voit</text>
+    <line x1="680" y1="126" x2="680" y2="156" stroke="#2563eb" stroke-width="2"/>
+    <text x="680" y="174" font-weight="700" fill="#1d4ed8">balise</text>
+    <text x="680" y="192" fill="#1d4ed8">fermante (/)</text>
+  </g>
+  <!-- balises courantes -->
+  <g font-size="15">
+    <rect x="20" y="216" width="720" height="88" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <g font-family="Fira Code, Consolas, monospace" font-weight="700" fill="#1d4ed8">
+      <text x="40" y="250">&lt;h1&gt;</text>
+      <text x="40" y="284">&lt;p&gt;</text>
+      <text x="390" y="250">&lt;a href="…"&gt;</text>
+      <text x="390" y="284">&lt;img src="…" alt="…"&gt;</text>
+    </g>
+    <g fill="#334155">
+      <text x="110" y="250">grand titre</text>
+      <text x="110" y="284">paragraphe</text>
+      <text x="530" y="250">lien hypertexte</text>
+      <text x="610" y="284">image</text>
+    </g>
+  </g>
+</svg>

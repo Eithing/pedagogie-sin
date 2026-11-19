@@ -334,6 +334,7 @@ eqn, section.eqno { display: block; text-align: center; margin: 6px 0; break-ins
 img { max-width: 100%; }
 .doc-corps img { max-height: 70mm; display: block; margin: 6px auto; }
 .doc-corps .contexte-corps img { max-height: 55mm; }
+.doc-corps .memo-tableau img { max-height: 48mm; }
 .saut-page { break-before: page; }
 .bloc-insecable { break-inside: avoid; }
 .bloc-insecable:has(+ .bloc-question) { break-after: avoid; }

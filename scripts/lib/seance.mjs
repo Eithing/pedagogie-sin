@@ -5,6 +5,8 @@
 //   ::: slide 3 min | Titre | fiche  -> exposé projeté (« fiche » : recopié sur la fiche élève)
 //   ::: activite 8 min | Titre | binome | projeter
 //   ::: retenir 5 min                -> trace écrite (à trous côté élève)
+//   ::: tableau Titre | fiche        -> résumé projeté pendant l'activité qui précède, à la place de la
+//                                       consigne et des questions (« fiche » : recopié sur la fiche élève)
 // Les blocs dire / prof s'attachent à l'étape qui précède ; question / reponse à l'activité qui précède.
 import { reperer, parseDuree } from './document.mjs';
 import { esc, rendre, argsBloc } from './markdown.mjs';
@@ -74,6 +76,10 @@ export function decouper(doc) {
       case 'retenir':
         courante = { ...base, type: 'retenir', titre: a.titre || 'À retenir' };
         etapes.push(courante);
+        break;
+      case 'tableau':
+        if (courante?.type !== 'activite') erreurs.push({ ligne: ligne(b.debut), msg: 'Bloc tableau hors activité : le placer juste après un bloc `::: activite`' });
+        else courante.tableau = { titre: a.titre, contenu: contenu(b), fiche: a.drapeaux.has('fiche') };
         break;
       case 'dire':
       case 'prof':
@@ -218,12 +224,13 @@ export function rendreDiapos(doc, seance, config) {
       </div>`;
       // Questions non projetées une à une : rappelées sur la diapo de l'activité (sans images ni choix de QCM),
       // sauf si la consigne contient déjà un schéma, qui a besoin de toute la place.
-      const rappel = e.projeter || !e.questions.length || /!\[/.test(e.contenu) ? '' : `<ol class="act-questions">${e.questions.map((q) => {
+      // Bloc « tableau » : la diapo n'affiche que ce résumé, ni consigne ni questions (elles sont sur la fiche).
+      const rappel = e.tableau || e.projeter || !e.questions.length || /!\[/.test(e.contenu) ? '' : `<ol class="act-questions">${e.questions.map((q) => {
         const num = q.args.match(/^\d+/)?.[0] ?? '';
         const texte = q.contenu.split('\n').filter((l) => !/^\s*(!\[|- \[)/.test(l)).join('\n').trim();
         return `<li value="${num}">${rendre(texte, 'slides')}</li>`;
       }).join('')}</ol>`;
-      out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: enColonnes(e.contenu, 'slides') + rappel, n, total, meta }));
+      out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: e.tableau ? enColonnes(e.tableau.contenu, 'slides') : enColonnes(e.contenu, 'slides') + rappel, n, total, meta }));
       if (e.projeter) e.questions.forEach((q, k) => {
         const num = q.args.match(/^\d+/)?.[0] ?? '';
         out.push(diapo({
@@ -350,6 +357,7 @@ export function corpsFiche(seance) {
     } else if (e.type === 'activite') {
       // La durée n'apparaît que dans la version prof (masquée dans la version élève par la feuille de style)
       const duree = `<span class="act-duree">${e.duree} min${e.modalite ? ', ' : ''}</span>`;
+      if (e.tableau?.fiche) parts.push(`<section class="bloc-insecable memo-tableau">\n\n### ${e.tableau.titre || "L'essentiel"}\n\n${e.tableau.contenu.replace(/^\|\|\|\s*$/gm, '')}\n\n</section>`);
       parts.push(`<section class="bloc-insecable">\n\n## Activité ${e.numero} : ${e.titre}\n\n<p class="act-meta">${duree}${esc(e.modalite ? MODALITES[e.modalite] : '')}</p>\n\n${e.contenu}\n\n</section>`);
       for (const q of e.questions) parts.push(q.brut + (q.reponse ? `\n\n${q.reponse.brut}` : ''));
     } else if (e.type === 'retenir') {

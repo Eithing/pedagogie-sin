@@ -12,9 +12,9 @@ export const estNote = (meta) => NOTES.includes(meta.type) || (['autonomie', 'co
 export const BLOCS = [
   'question', 'reponse', 'zone', 'prof', 'dire',
   'info', 'attention', 'rappel', 'contexte', 'problematique', 'retenir', 'doc', 'figure',
-  'slide', 'activite', 'variante',
+  'slide', 'activite', 'variante', 'tableau',
 ];
-const BLOCS_SEANCE = ['slide', 'activite', 'dire'];
+const BLOCS_SEANCE = ['slide', 'activite', 'dire', 'tableau'];
 
 export const SANS_CODE = /(^|\n)(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\2[ \t]*(?=\n|$)/g;
 

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="760" height="400" fill="#ffffff"/>
+  <!-- HTML -->
+  <rect x="10" y="10" width="740" height="118" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="28" y="40" font-size="18" font-weight="800" fill="#1d4ed8">HTML = le contenu</text>
+  <g font-family="Fira Code, Consolas, monospace" font-size="22" font-weight="600">
+    <text x="28" y="80"><tspan fill="#2563eb">&lt;a</tspan><tspan fill="#0f172a"> </tspan><tspan fill="#ea580c">href</tspan><tspan fill="#0f172a">=</tspan><tspan fill="#15803d">"URL"</tspan><tspan fill="#2563eb">&gt;</tspan><tspan fill="#7c3aed">texte du lien</tspan><tspan fill="#2563eb">&lt;/a&gt;</tspan></text>
+  </g>
+  <g font-size="14" font-weight="700">
+    <text x="28" y="110" fill="#1d4ed8">balise</text>
+    <text x="96" y="110" fill="#c2410c">attribut</text>
+    <text x="180" y="110" fill="#15803d">valeur</text>
+    <text x="250" y="110" fill="#6d28d9">contenu affiché</text>
+  </g>
+  <g font-family="Fira Code, Consolas, monospace" font-size="15" font-weight="700" fill="#1d4ed8">
+    <text x="470" y="40">&lt;h1&gt;</text><text x="470" y="66">&lt;p&gt;</text><text x="470" y="92">&lt;a&gt;</text><text x="470" y="118">&lt;img&gt;</text>
+  </g>
+  <g font-size="15" fill="#334155">
+    <text x="540" y="40">grand titre</text><text x="540" y="66">paragraphe</text><text x="540" y="92">lien hypertexte</text><text x="540" y="118">image</text>
+  </g>
+  <!-- CSS -->
+  <rect x="10" y="140" width="740" height="104" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="28" y="170" font-size="18" font-weight="800" fill="#c2410c">CSS = le style</text>
+  <g font-family="Fira Code, Consolas, monospace" font-size="26" font-weight="600">
+    <text x="28" y="212"><tspan fill="#2563eb">h1</tspan><tspan fill="#0f172a"> { </tspan><tspan fill="#ea580c">color</tspan><tspan fill="#0f172a">: </tspan><tspan fill="#15803d">red</tspan><tspan fill="#0f172a">; }</tspan></text>
+  </g>
+  <g font-size="14" font-weight="700">
+    <text x="28" y="236" fill="#1d4ed8">sélecteur</text>
+    <text x="118" y="236" fill="#c2410c">propriété</text>
+    <text x="222" y="236" fill="#15803d">valeur</text>
+  </g>
+  <text x="400" y="200" font-size="15" fill="#334155">sélecteur { propriété: valeur; }</text>
+  <text x="400" y="224" font-size="15" fill="#334155">ne pas oublier : accolades, deux-points, point-virgule</text>
+  <!-- URL -->
+  <rect x="10" y="256" width="740" height="134" rx="12" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <text x="28" y="286" font-size="18" font-weight="800" fill="#334155">URL = l'adresse</text>
+  <g font-family="Fira Code, Consolas, monospace" font-size="19" font-weight="600">
+    <rect x="28" y="300" width="84" height="38" rx="6" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="70" y="326" text-anchor="middle" fill="#15803d">https</text>
+    <text x="126" y="326" text-anchor="middle" fill="#64748b">://</text>
+    <rect x="146" y="300" width="186" height="38" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="239" y="326" text-anchor="middle" fill="#1d4ed8">www.site.fr</text>
+    <rect x="340" y="300" width="140" height="38" rx="6" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="410" y="326" text-anchor="middle" fill="#c2410c">/page</text>
+    <rect x="488" y="300" width="244" height="38" rx="6" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="610" y="326" text-anchor="middle" fill="#6d28d9">?a=1&amp;b=2</text>
+  </g>
+  <g font-size="14" text-anchor="middle" font-weight="700">
+    <text x="70" y="360" fill="#15803d">protocole</text>
+    <text x="70" y="378" fill="#15803d" font-weight="400">s = chiffré</text>
+    <text x="239" y="360" fill="#1d4ed8">nom de domaine</text>
+    <text x="239" y="378" fill="#1d4ed8" font-weight="400">le serveur</text>
+    <text x="410" y="360" fill="#c2410c">chemin</text>
+    <text x="410" y="378" fill="#c2410c" font-weight="400">la page sur le serveur</text>
+    <text x="610" y="360" fill="#6d28d9">paramètres</text>
+    <text x="610" y="378" fill="#6d28d9" font-weight="400">séparés par &amp;</text>
+  </g>
+</svg>

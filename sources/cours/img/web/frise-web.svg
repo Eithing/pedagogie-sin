@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="380" y="32" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">Le Web : quatre dates à connaître</text>
+  <!-- axe -->
+  <line x1="40" y1="150" x2="720" y2="150" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M716 140 l20 10 l-20 10z" fill="#94a3b8"/>
+  <!-- 1965 -->
+  <circle cx="100" cy="150" r="14" fill="#7c3aed"/>
+  <text x="100" y="112" text-anchor="middle" font-size="26" font-weight="800" fill="#6d28d9">1965</text>
+  <rect x="20" y="180" width="160" height="96" rx="10" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="100" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="#6d28d9">Ted Nelson</text>
+  <text x="100" y="228" text-anchor="middle" font-size="14" fill="#334155">invente le mot</text>
+  <text x="100" y="250" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">hypertexte</text>
+  <!-- 1989 -->
+  <circle cx="290" cy="150" r="18" fill="#0d9488"/>
+  <text x="290" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="#0f766e">1989</text>
+  <rect x="200" y="180" width="180" height="96" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+  <text x="290" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="#0f766e">Tim Berners-Lee, CERN</text>
+  <text x="290" y="228" text-anchor="middle" font-size="14" fill="#334155">invente le Web :</text>
+  <text x="290" y="250" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">HTML · URL · HTTP</text>
+  <!-- 1991 -->
+  <circle cx="480" cy="150" r="14" fill="#2563eb"/>
+  <text x="480" y="112" text-anchor="middle" font-size="26" font-weight="800" fill="#1d4ed8">1991</text>
+  <rect x="400" y="180" width="160" height="96" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="480" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="#1d4ed8">Premier site</text>
+  <text x="480" y="228" text-anchor="middle" font-size="14" fill="#334155">ouvert au public</text>
+  <text x="480" y="250" text-anchor="middle" font-size="14" fill="#334155">(info.cern.ch)</text>
+  <!-- 1993 -->
+  <circle cx="650" cy="150" r="14" fill="#ea580c"/>
+  <text x="650" y="112" text-anchor="middle" font-size="26" font-weight="800" fill="#c2410c">1993</text>
+  <rect x="575" y="180" width="160" height="96" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+  <text x="655" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="#c2410c">Domaine public</text>
+  <text x="655" y="228" text-anchor="middle" font-size="14" fill="#334155">le CERN donne le Web</text>
+  <text x="655" y="250" text-anchor="middle" font-size="14" fill="#334155">à tout le monde</text>
+  <text x="380" y="62" text-anchor="middle" font-size="14" fill="#475569">Internet existe déjà (le réseau) : le Web est un service qui l'utilise.</text>
+</svg>

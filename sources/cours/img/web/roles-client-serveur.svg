@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#ea580c"/>
+    </marker>
+    <marker id="v" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#15803d"/>
+    </marker>
+  </defs>
+  <rect width="760" height="320" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#0f172a">Qui fait quoi ? Le serveur fabrique, le client affiche</text>
+  <!-- client -->
+  <rect x="20" y="52" width="250" height="250" rx="12" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+  <text x="145" y="84" text-anchor="middle" font-size="20" font-weight="800" fill="#0f766e">Client</text>
+  <text x="145" y="106" text-anchor="middle" font-size="14" fill="#0f766e">le navigateur de l'élève</text>
+  <g font-size="15" fill="#0f172a">
+    <text x="42" y="146">• envoie la requête</text>
+    <text x="42" y="178">• affiche la page (HTML)</text>
+    <text x="42" y="210">• applique le style (CSS)</text>
+    <text x="42" y="242">• exécute le JavaScript</text>
+    <text x="56" y="262" font-size="13" fill="#475569">(animations, menus)</text>
+  </g>
+  <!-- serveur -->
+  <rect x="490" y="52" width="250" height="250" rx="12" fill="#e2e8f0" stroke="#475569" stroke-width="3"/>
+  <text x="615" y="84" text-anchor="middle" font-size="20" font-weight="800" fill="#334155">Serveur</text>
+  <text x="615" y="106" text-anchor="middle" font-size="14" fill="#334155">l'ordinateur qui héberge le site</text>
+  <g font-size="15" fill="#0f172a">
+    <text x="510" y="146">• reçoit la requête</text>
+    <text x="510" y="178">• trouve ou fabrique la page</text>
+    <text x="524" y="198" font-size="13" fill="#475569">(PHP, base de données)</text>
+    <text x="510" y="230">• répond par un code</text>
+    <text x="524" y="250" font-size="13" fill="#475569">et la page</text>
+  </g>
+  <!-- echanges -->
+  <line x1="276" y1="140" x2="484" y2="140" stroke="#ea580c" stroke-width="3" marker-end="url(#o)"/>
+  <text x="380" y="128" text-anchor="middle" font-size="14" font-weight="700" fill="#c2410c">requête HTTP</text>
+  <text x="380" y="160" text-anchor="middle" font-family="Fira Code, Consolas, monospace" font-size="13" fill="#9a3412">GET /page?param=…</text>
+  <line x1="484" y1="214" x2="276" y2="214" stroke="#15803d" stroke-width="3" marker-end="url(#v)"/>
+  <text x="380" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#15803d">réponse HTTP</text>
+  <g font-family="Fira Code, Consolas, monospace" font-size="14" font-weight="700" text-anchor="middle">
+    <rect x="300" y="228" width="160" height="28" rx="6" fill="#dcfce7"/>
+    <text x="380" y="247" fill="#15803d">200 OK : voilà</text>
+    <rect x="300" y="262" width="160" height="28" rx="6" fill="#fee2e2"/>
+    <text x="380" y="281" fill="#b91c1c">404 : introuvable</text>
+  </g>
+</svg>
