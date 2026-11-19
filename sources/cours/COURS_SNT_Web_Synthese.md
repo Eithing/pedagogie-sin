@@ -8,6 +8,7 @@ pronote:
   titre: "Le Web — Séance de synthèse : tout le thème avant l'interrogation"
   description: "S2 Le Web, retour en présentiel : synthèse de tout le thème (histoire, droit d'auteur et licences, HTML / CSS, URL, HTTP et client / serveur, moteurs de recherche, cookies et navigation privée) pour préparer l'interrogation du 27 novembre. Fiche d'activités notée /20."
 type: cours
+fiche_docx: true
 duree: 55 min
 bareme: 20
 illustration: img/web/couverture.svg

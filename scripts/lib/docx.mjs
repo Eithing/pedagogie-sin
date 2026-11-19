@@ -3,7 +3,7 @@
 // Une section par question (énoncé rappelé en gris, zone « Ma réponse »), puis les bilans à trous.
 import fs from 'node:fs';
 import path from 'node:path';
-import { Document, Packer, Paragraph, TextRun, HeadingLevel, BorderStyle, Table, TableRow, TableCell, WidthType } from 'docx';
+import { Document, Packer, Paragraph, TextRun, HeadingLevel, BorderStyle, Table, TableRow, TableCell, WidthType, ImageRun, AlignmentType } from 'docx';
 import { reperer } from './document.mjs';
 
 const GRIS = '64748B';
@@ -135,3 +135,133 @@ export async function genererDocx(doc, cheminSortie) {
   fs.writeFileSync(cheminSortie, await Packer.toBuffer(document));
 }
 
+
+// ---------------------------------------------------------------------------
+// Fiche élève éditable (champ « fiche_docx: true ») : ELEVE_<nom>.docx, même contenu que le PDF élève
+// (titres, consignes, questions, lignes de réponse, trace écrite à trous, schémas en images PNG).
+// L'enseignant peut la retoucher sous Word ou LibreOffice. Les points ne sont pas affichés.
+// ---------------------------------------------------------------------------
+
+const VERT = '0F766E';
+
+// Image (SVG, PNG, JPG) → PNG net, rendu par le navigateur de la chaîne
+async function imagePng(navigateur, fichier) {
+  const ext = path.extname(fichier).toLowerCase();
+  const mime = ext === '.svg' ? 'image/svg+xml' : ext === '.png' ? 'image/png' : 'image/jpeg';
+  const url = `data:${mime};base64,${fs.readFileSync(fichier).toString('base64')}`;
+  // SVG sans largeur explicite : taille tirée du viewBox (sinon le navigateur le réduit à 300 × 150)
+  const vb = ext === '.svg' ? fs.readFileSync(fichier, 'utf8').match(/viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/) : null;
+  const page = await navigateur.newPage();
+  try {
+    await page.setViewport({ width: 1600, height: 1200, deviceScaleFactor: 2 });
+    await page.setContent(`<body style="margin:0;background:#fff"><img id="i" src="${url}" style="display:block"></body>`);
+    const taille = await page.evaluate(async (vb) => {
+      const i = document.getElementById('i'); await i.decode();
+      let [w, h] = vb ?? [i.naturalWidth || 760, i.naturalHeight || 400];
+      if (w > 1500) { h = (h * 1500) / w; w = 1500; }
+      i.style.width = `${w}px`; i.style.height = `${h}px`;
+      return { w, h };
+    }, vb ? [Number(vb[1]), Number(vb[2])] : null);
+    const data = await (await page.$('#i')).screenshot({ type: 'png' });
+    return { data, ...taille };
+  } finally { await page.close(); }
+}
+
+export async function genererFicheDocx({ meta, corps, fichierSource, navigateur, cheminSortie }) {
+  const enfants = [
+    new Paragraph({ children: [new TextRun({ text: `${meta.niveau ?? ''}`, font: POLICE, size: 18, color: GRIS })] }),
+    new Paragraph({ heading: HeadingLevel.TITLE, children: [new TextRun({ text: meta.titre, font: POLICE, size: 32, bold: true })], spacing: { after: 120 } }),
+  ];
+  if (meta.accroche) enfants.push(new Paragraph({ children: [new TextRun({ text: meta.accroche, font: POLICE, size: 20, italics: true, color: GRIS })], spacing: { after: 160 } }));
+  enfants.push(new Paragraph({
+    children: ['Nom : ', 'Prénom : ', 'Classe : ', 'Date : '].map((t) => new TextRun({ text: `${t}…………………………   `, font: POLICE, size: 20, bold: true })),
+    spacing: { after: 200 },
+  }));
+  for (const c of [].concat(meta.consignes ?? [])) enfants.push(new Paragraph({ children: runs(`• ${c}`), spacing: { after: 40 } }));
+
+  const lignes = corps.split(/\r?\n/);
+  const pile = [];
+  const cache = (nom) => pile.some((b) => ['prof', 'dire', 'reponse'].includes(b));
+  let code = false;
+  let tab = [];
+  const vider = () => { if (tab.length) enfants.push(tableau(tab), new Paragraph({ children: [] })); tab = []; };
+  const encadre = (titre, couleur) => new Paragraph({
+    children: [new TextRun({ text: titre, bold: true, font: POLICE, size: 22, color: couleur })],
+    border: { left: { style: BorderStyle.SINGLE, size: 18, color: couleur, space: 8 } }, spacing: { before: 160, after: 60 },
+  });
+
+  for (const brut of lignes) {
+    const l = brut.trim();
+    if (/^(`{3,}|~{3,})/.test(l)) { vider(); if (!cache()) code = !code; continue; }
+    if (code) {
+      if (!cache()) enfants.push(new Paragraph({ children: [new TextRun({ text: brut.replace(/\t/g, '  '), font: 'Consolas', size: 19 })], shading: { fill: 'F6F8FA' }, spacing: { after: 0 } }));
+      continue;
+    }
+    const ouv = l.match(/^:{3,}\s*([\wéè-]+)\s*(.*)$/);
+    if (ouv) {
+      vider();
+      const [, nom, args] = ouv;
+      pile.push(nom);
+      if (cache()) continue;
+      if (nom === 'question') {
+        const n = args.match(/^\d+/)?.[0] ?? '';
+        enfants.push(new Paragraph({ children: [new TextRun({ text: `Question ${n}`, bold: true, font: POLICE, size: 22, color: VERT })], spacing: { before: 200, after: 60 }, keepNext: true }));
+      } else if (nom === 'zone') {
+        const n = Number(args) || 3;
+        // Une ligne pointillée par ligne de réponse ; un séparateur sans bordure empêche Word de fusionner les bordures
+        for (let k = 0; k < n; k++) enfants.push(
+          new Paragraph({ children: [new TextRun({ text: '', font: POLICE, size: 22 })], border: { bottom: { style: BorderStyle.DOTTED, size: 4, color: '94A3B8', space: 4 } }, spacing: { before: 120, after: 0 } }),
+          new Paragraph({ children: [new TextRun({ text: '', size: 4 })], spacing: { before: 0, after: 0, line: 60, lineRule: 'exact' } }),
+        );
+      } else if (nom === 'retenir') enfants.push(encadre('À retenir', '15803D'));
+      else if (!['variante', 'activite', 'slide'].includes(nom)) enfants.push(encadre(args.split('|')[0].trim() || nom.charAt(0).toUpperCase() + nom.slice(1), '2563EB'));
+      continue;
+    }
+    if (/^:{3,}\s*$/.test(l)) { vider(); pile.pop(); continue; }
+    if (cache()) continue;
+    if (l.startsWith('|')) { tab.push(l); continue; }
+    vider();
+    if (!l) continue;
+    // Balises HTML de mise en page : ignorées, sauf la ligne de modalité d'une activité (sans la durée)
+    if (/^<\/?(section|div)\b[^>]*>$/.test(l)) continue;
+    if (/^<p class="act-meta">/.test(l)) {
+      const t = l.replace(/<span class="act-duree">.*?<\/span>/, '').replace(/<[^>]+>/g, '').trim();
+      if (t) enfants.push(new Paragraph({ children: [new TextRun({ text: t, italics: true, font: POLICE, size: 19, color: GRIS })], spacing: { after: 80 } }));
+      continue;
+    }
+    const img = l.match(/^!\[[^\]]*\]\(([^)\s]+)\)/);
+    if (img) {
+      const f = path.resolve(path.dirname(fichierSource), img[1]);
+      if (navigateur && fs.existsSync(f)) {
+        const { data, w, h } = await imagePng(navigateur, f);
+        const k = Math.min(620 / w, 330 / h);
+        enfants.push(new Paragraph({ children: [new ImageRun({ type: 'png', data, transformation: { width: Math.round(w * k), height: Math.round(h * k) } })], alignment: AlignmentType.CENTER, spacing: { before: 80, after: 120 } }));
+      }
+      continue;
+    }
+    const titre = l.match(/^(#{2,4})\s+(.*)$/);
+    if (titre) {
+      const niv = titre[1].length;
+      enfants.push(new Paragraph({
+        heading: niv === 2 ? HeadingLevel.HEADING_1 : HeadingLevel.HEADING_2,
+        children: [new TextRun({ text: titre[2].replace(/\*\*/g, ''), bold: true, font: POLICE, size: niv === 2 ? 28 : 24, color: niv === 2 ? '0F172A' : '334155' })],
+        spacing: { before: niv === 2 ? 320 : 200, after: 80 }, keepNext: true,
+      }));
+      continue;
+    }
+    let texte = l;
+    if (/^- \[[ xX]\]\s/.test(l)) texte = `☐ ${l.replace(/^- \[[ xX]\]\s/, '')}`;
+    else if (/^[-*]\s/.test(l)) texte = `• ${l.slice(2)}`;
+    else if (/^>\s?/.test(l)) texte = l.replace(/^>\s?/, '');
+    enfants.push(new Paragraph({ children: runs(texte.replace(/<[^>]+>/g, '')), spacing: { after: 60 } }));
+  }
+  vider();
+
+  const document = new Document({
+    creator: 'SNT', title: meta.titre,
+    styles: { default: { document: { run: { font: POLICE, size: 21 } } } },
+    sections: [{ properties: { page: { margin: { top: 900, bottom: 900, left: 1000, right: 1000 } } }, children: enfants }],
+  });
+  fs.mkdirSync(path.dirname(cheminSortie), { recursive: true });
+  fs.writeFileSync(cheminSortie, await Packer.toBuffer(document));
+}

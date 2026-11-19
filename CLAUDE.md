@@ -16,6 +16,8 @@ Les sorties sont rangées **par classe puis par séquence** dans `output/<classe
 | `progression` | `PROGRESSION_<classe>.pdf` à la racine de `output/<classe>/` (A4 paysage : frise annuelle, séquences, couverture du BO, journal) |
 | `revision` | `<nom>.pdf` : fiche de révision unique, sans version prof, sources dans `sources/revision/` |
 
+Champ **`fiche_docx: true`** du front matter (cours, TP, TD, autonomie) : la fiche élève est aussi produite en Word éditable, `eleve/ELEVE_<nom>.docx` (même contenu que le PDF, schémas en images, sans points), pour la retoucher sous Word ou LibreOffice.
+
 Champ **`rangement:`** du front matter (ex. `rangement: Eval/2nde`) : toutes les sorties du document sont rangées à plat dans ce dossier de `output/`. C'est le cas des évaluations et de leurs fiches de révision (`output/Eval/2nde/`, `output/Eval/Terminale/`). Ne jamais copier un fichier à la main dans `output/` : la génération complète efface ce qu'aucune source ne produit.
 
 `output/.manifest.json` mémorise ce que chaque source produit : une génération complète supprime d'elle-même les fichiers devenus inutiles (source renommée ou supprimée, ancien rangement).

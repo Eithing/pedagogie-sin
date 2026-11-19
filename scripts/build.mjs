@@ -16,6 +16,7 @@
 //   Champ « rangement: Eval/2nde » : toutes les sorties du document à plat dans output/Eval/2nde
 //   Fichiers joints (front matter « fichiers: ») : copiés dans eleve/
 //   Document réponse (« document_reponse: true ») : eleve/REPONSES_<nom>.docx
+//   Fiche élève éditable (« fiche_docx: true ») : eleve/ELEVE_<nom>.docx, à retoucher sous Word / LibreOffice
 // output/.manifest.json mémorise ce que chaque source a produit : les fichiers devenus inutiles
 // (source renommée ou supprimée, ancien rangement) sont effacés automatiquement.
 import fs from 'node:fs';
@@ -26,7 +27,7 @@ import { rendreHtml } from './lib/render.mjs';
 import { rendreDiapos, rendreDeroule, corpsFiche } from './lib/seance.mjs';
 import { rendreProgression } from './lib/progression.mjs';
 import { ouvrirNavigateur, genererPdf } from './lib/pdf.mjs';
-import { genererDocx } from './lib/docx.mjs';
+import { genererDocx, genererFicheDocx } from './lib/docx.mjs';
 import { htmlAutonome } from './lib/autonome.mjs';
 
 const args = process.argv.slice(2);
@@ -140,6 +141,16 @@ async function construire(fichier, config, manifeste) {
   if (doc.meta.document_reponse) {
     const cible = path.join(dossierDe(doc.meta, nom, config, 'eleve'), `REPONSES_${nom}.docx`);
     await genererDocx(doc, cible);
+    produits.push(cible);
+    console.log(`    → ${relSortie(cible)}`);
+  }
+
+  // Fiche élève éditable Word / LibreOffice (« fiche_docx: true »), même contenu que le PDF élève
+  if (doc.meta.fiche_docx && !htmlSeul && !doc.meta.variantes) {
+    const cible = path.join(dossierDe(doc.meta, nom, config, 'eleve'), `ELEVE_${nom}.docx`);
+    navigateur ??= await ouvrirNavigateur(config);
+    const fiche = seance ? corpsFiche(seance.seance) : doc.corps;
+    await genererFicheDocx({ meta: doc.meta, corps: variante(fiche, 'eleve', config), fichierSource: doc.fichier, navigateur, cheminSortie: cible });
     produits.push(cible);
     console.log(`    → ${relSortie(cible)}`);
   }
