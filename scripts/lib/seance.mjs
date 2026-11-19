@@ -79,7 +79,8 @@ export function decouper(doc) {
         break;
       case 'tableau':
         if (courante?.type !== 'activite') erreurs.push({ ligne: ligne(b.debut), msg: 'Bloc tableau hors activité : le placer juste après un bloc `::: activite`' });
-        else courante.tableau = { titre: a.titre, contenu: contenu(b), fiche: a.drapeaux.has('fiche') };
+        // Plusieurs blocs tableau : une diapo chacun, avec le même minuteur
+        else (courante.tableaux ??= []).push({ titre: a.titre, contenu: contenu(b), fiche: a.drapeaux.has('fiche') });
         break;
       case 'dire':
       case 'prof':
@@ -108,6 +109,7 @@ export function decouper(doc) {
     t += e.duree;
     e.diapos = [++diapo];
     if (e.type === 'activite' && e.projeter) e.questions.forEach(() => e.diapos.push(++diapo));
+    if (e.type === 'activite') (e.tableaux ?? []).slice(1).forEach(() => e.diapos.push(++diapo));
   }
   return { etapes, avant, bareme, hors, erreurs, total: t, nbDiapos: diapo };
 }
@@ -175,12 +177,13 @@ const d=[...document.querySelectorAll('.diapo')];let i=0;
 const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
 function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
 const minuteurs=new Map();
-function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
- if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
- let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+function chrono(x){const c0=x.querySelector('.act-chrono');if(!c0)return;
+ const g=[...document.querySelectorAll('.act-chrono[data-act="'+c0.dataset.act+'"]')],c=g[0]||c0,tous=g.length?g:[c0];
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);tous.forEach(y=>y.classList.remove('en-cours'));return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;tous.forEach(y=>y.classList.add('en-cours'));
  minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
-  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
-  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+  const t=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  tous.forEach(y=>{y.textContent=t;y.classList.toggle('bientot',s>0&&s<=60);y.classList.toggle('fini',s<=0);});},1000));}
 addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
 addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
 addEventListener('keydown',e=>{
@@ -220,17 +223,18 @@ export function rendreDiapos(doc, seance, config) {
       const bandeau = `<div class="act-bandeau">
         <span class="act-num">Activité ${e.numero}</span>
         ${e.modalite ? `<span class="act-modalite">${esc(MODALITES[e.modalite])}</span>` : ''}
-        <span class="act-chrono" data-secondes="${e.duree * 60}" title="Clic ou touche T : démarrer / pause">${mmss(e.duree)}</span>
+        <span class="act-chrono" data-act="${e.numero}" data-secondes="${e.duree * 60}" title="Clic ou touche T : démarrer / pause">${mmss(e.duree)}</span>
       </div>`;
       // Questions non projetées une à une : rappelées sur la diapo de l'activité (sans images ni choix de QCM),
       // sauf si la consigne contient déjà un schéma, qui a besoin de toute la place.
       // Bloc « tableau » : la diapo n'affiche que ce résumé, ni consigne ni questions (elles sont sur la fiche).
-      const rappel = e.tableau || e.projeter || !e.questions.length || /!\[/.test(e.contenu) ? '' : `<ol class="act-questions">${e.questions.map((q) => {
+      const rappel = e.tableaux || e.projeter || !e.questions.length || /!\[/.test(e.contenu) ? '' : `<ol class="act-questions">${e.questions.map((q) => {
         const num = q.args.match(/^\d+/)?.[0] ?? '';
         const texte = q.contenu.split('\n').filter((l) => !/^\s*(!\[|- \[)/.test(l)).join('\n').trim();
         return `<li value="${num}">${rendre(texte, 'slides')}</li>`;
       }).join('')}</ol>`;
-      out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: e.tableau ? enColonnes(e.tableau.contenu, 'slides') : enColonnes(e.contenu, 'slides') + rappel, n, total, meta }));
+      if (e.tableaux) e.tableaux.forEach((tb, k) => out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: enColonnes(tb.contenu, 'slides'), n: e.diapos[k], total, meta })));
+      else out.push(diapo({ classe: 'diapo-activite', titre: `${bandeau}${esc(e.titre)}`, corps: enColonnes(e.contenu, 'slides') + rappel, n, total, meta }));
       if (e.projeter) e.questions.forEach((q, k) => {
         const num = q.args.match(/^\d+/)?.[0] ?? '';
         out.push(diapo({
@@ -357,7 +361,7 @@ export function corpsFiche(seance) {
     } else if (e.type === 'activite') {
       // La durée n'apparaît que dans la version prof (masquée dans la version élève par la feuille de style)
       const duree = `<span class="act-duree">${e.duree} min${e.modalite ? ', ' : ''}</span>`;
-      if (e.tableau?.fiche) parts.push(`<section class="bloc-insecable memo-tableau">\n\n### ${e.tableau.titre || "L'essentiel"}\n\n${e.tableau.contenu.replace(/^\|\|\|\s*$/gm, '')}\n\n</section>`);
+      for (const tb of (e.tableaux ?? []).filter((x) => x.fiche)) parts.push(`<section class="bloc-insecable memo-tableau">\n\n### ${tb.titre || "L'essentiel"}\n\n${tb.contenu.replace(/^\|\|\|\s*$/gm, '')}\n\n</section>`);
       parts.push(`<section class="bloc-insecable">\n\n## Activité ${e.numero} : ${e.titre}\n\n<p class="act-meta">${duree}${esc(e.modalite ? MODALITES[e.modalite] : '')}</p>\n\n${e.contenu}\n\n</section>`);
       for (const q of e.questions) parts.push(q.brut + (q.reponse ? `\n\n${q.reponse.brut}` : ''));
     } else if (e.type === 'retenir') {

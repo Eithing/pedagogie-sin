@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10z" fill="#0d9488"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="480" fill="#ffffff"/>
+  <!-- code -->
+  <text x="20" y="40" font-size="22" font-weight="800" fill="#0f172a">Le code HTML (monclub.html)</text>
+  <rect x="20" y="58" width="700" height="250" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <g font-family="Fira Code, Consolas, monospace" font-size="23" font-weight="600">
+    <text x="40" y="120"><tspan fill="#2563eb">&lt;h1&gt;</tspan><tspan fill="#7c3aed">Mon club de judo</tspan><tspan fill="#2563eb">&lt;/h1&gt;</tspan></text>
+    <text x="40" y="190"><tspan fill="#2563eb">&lt;p&gt;</tspan><tspan fill="#7c3aed">Entraînement le mercredi.</tspan><tspan fill="#2563eb">&lt;/p&gt;</tspan></text>
+    <text x="40" y="260"><tspan fill="#2563eb">&lt;a</tspan> <tspan fill="#ea580c">href</tspan><tspan fill="#0f172a">=</tspan><tspan fill="#15803d">"https://www.ffjudo.com"</tspan><tspan fill="#2563eb">&gt;</tspan><tspan fill="#7c3aed">Fédération</tspan><tspan fill="#2563eb">&lt;/a&gt;</tspan></text>
+  </g>
+  <g font-size="16" font-weight="700">
+    <text x="40" y="350" fill="#1d4ed8">■ balises</text>
+    <text x="170" y="350" fill="#c2410c">■ attribut</text>
+    <text x="300" y="350" fill="#15803d">■ valeur</text>
+    <text x="420" y="350" fill="#6d28d9">■ contenu affiché</text>
+  </g>
+  <!-- fleche -->
+  <line x1="728" y1="183" x2="768" y2="183" stroke="#0d9488" stroke-width="5" marker-end="url(#fl)"/>
+  <!-- rendu -->
+  <text x="780" y="40" font-size="22" font-weight="800" fill="#0f172a">Ce que le navigateur affiche</text>
+  <rect x="780" y="58" width="400" height="300" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <path d="M780 70 a12 12 0 0 1 12 -12 h376 a12 12 0 0 1 12 12 v30 h-400z" fill="#e2e8f0"/>
+  <circle cx="802" cy="80" r="6" fill="#f87171"/><circle cx="822" cy="80" r="6" fill="#fbbf24"/><circle cx="842" cy="80" r="6" fill="#34d399"/>
+  <rect x="862" y="69" width="306" height="22" rx="11" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="876" y="85" font-size="13" fill="#475569">monclub.html</text>
+  <text x="800" y="150" font-family="Times New Roman, serif" font-size="32" font-weight="700" fill="#000000">Mon club de judo</text>
+  <text x="800" y="200" font-family="Times New Roman, serif" font-size="19" fill="#000000">Entraînement le mercredi.</text>
+  <text x="800" y="250" font-family="Times New Roman, serif" font-size="19" fill="#0000ee">Fédération</text>
+  <line x1="800" y1="254" x2="879" y2="254" stroke="#0000ee" stroke-width="1.5"/>
+  <g font-size="14" font-weight="700" fill="#1d4ed8">
+    <text x="1100" y="144">← h1</text>
+    <text x="1100" y="195">← p</text>
+    <text x="1100" y="245">← a</text>
+  </g>
+  <text x="980" y="310" text-anchor="middle" font-size="14" fill="#475569">un clic sur « Fédération » ouvre ffjudo.com</text>
+  <text x="980" y="334" text-anchor="middle" font-size="13" fill="#64748b">(pas de CSS : style par défaut)</text>
+  <text x="600" y="430" text-anchor="middle" font-size="18" fill="#334155">Les balises ne s'affichent pas : elles disent au navigateur <tspan font-weight="700">quoi</tspan> afficher et <tspan font-weight="700">comment</tspan> le ranger.</text>
+</svg>

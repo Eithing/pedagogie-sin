@@ -202,6 +202,10 @@ a) **Oui** : BY demande seulement de citer l'auteur. b) **Non** : NC interdit l'
 ![](img/web/memo-code-url.svg)
 :::
 
+::: tableau Le code et son rendu
+![](img/web/rendu-judo.svg)
+:::
+
 ::: question 5 [2 pt]
 **a)** Que fait la troisième ligne ? **b)** Écrivez la règle CSS qui met le grand titre en bleu (`blue`).
 :::
@@ -219,6 +223,8 @@ Protocole `https` ; domaine `www.meteo-lille.fr` ; chemin `/previsions` ; param�
 :::
 
 ::: dire
+**Deux diapos pendant l'activité** : le résumé HTML / CSS / URL, puis le code de l'activité à gauche et la page affichée à droite (flèche → pour passer de l'une à l'autre, le minuteur continue). Montrer la seconde si des élèves ne voient pas ce que produit la troisième ligne.
+
 **Pendant** : erreurs fréquentes à surveiller : oublier le point-virgule ou les accolades en CSS ; mettre `www` dans le protocole ; compter `?ville=roubaix&jour=3` comme un seul paramètre.
 :::
 
