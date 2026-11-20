@@ -6,7 +6,7 @@ court: Routeur et passerelle
 pronote:
   pour: "TSTI2D2 + TSTI2D3, heure commune (vendredi 20 novembre, 13 h)"
   titre: "C1 Mettre en réseau des objets — Séance : relier deux réseaux, le routeur et la passerelle"
-  description: "C1, heure commune D2 + D3, retour en présentiel : rôle du routeur, adresse de réseau et masque /24, passerelle par défaut, configuration et dépannage de deux réseaux sur un simulateur. Fiche d'activités notée /20."
+  description: "C1, heure commune D2 + D3, retour en présentiel : rôle du routeur, adresse de réseau et masque /24, passerelle par défaut ; configuration et dépannage de deux réseaux sur un simulateur projeté, prévisions et explications sur papier. Fiche d'activités notée /20."
 type: cours
 duree: 55 min
 bareme: 20
@@ -22,14 +22,14 @@ prerequis:
   - "C1 : switch, routeur, adresses MAC et IP, masque (séance du parking connecté)"
 preparation:
   - Imprimer la fiche d'activités (1 par élève) ; déposer le PDF sur l'ENT pour les absents
-  - "Copier `reseau_routeur.html` (dossier `output/Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Routeur-et-passerelle/`) dans le dossier partagé du labo, ou le déposer sur l'ENT : il s'ouvre par un double-clic, sans installation ni compte"
+  - "Ouvrir sur le poste du professeur `reseau_routeur.html` (dossier `output/Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Distanciel_Routeur-et-passerelle/`), dans un second onglet : c'est le professeur qui le manipule au tableau, les élèves n'utilisent pas de PC"
   - "Ouvrir le HTML de projection des diapos — F : plein écran, T : minuteur"
 ---
 
 ::: prof
-**Heure commune D2 + D3, vendredi 20 novembre (26 élèves, labo, 1 poste pour 2) : retour en présentiel.** La fiche à distance « routeur et passerelle » a été remplacée par l'interrogation CAN le 13 novembre : cette séance la reprend en classe. **La fiche d'activités est notée /20** ; elle clôt presque C1 (fin prévue le 4 décembre avec le TP noté de configuration d'un réseau).
+**Heure commune D2 + D3, vendredi 20 novembre (26 élèves, fiche papier, simulateur projeté) : retour en présentiel.** La fiche à distance « routeur et passerelle » a été remplacée par l'interrogation CAN le 13 novembre : cette séance la reprend en classe. **La fiche d'activités est notée /20** ; elle clôt presque C1 (fin prévue le 4 décembre avec le TP noté de configuration d'un réseau).
 
-**Simulateur** : `reseau_routeur.html` (testé dans Chrome). Les points « validé par le professeur » se donnent en passant dans les rangs, sur l'écran du binôme : cocher la case de la fiche et parapher. Le poste de l'accueil a une adresse propre à chaque binôme (jour de naissance de l'un des deux + 20) : deux écrans identiques signalent une copie.
+**Sans PC pour les élèves** (choix du 20 novembre) : tout se fait sur la fiche. Le simulateur `reseau_routeur.html` (testé dans Chrome) est **projeté et manipulé par le professeur**. Pour chaque test, les élèves écrivent d'abord leur **prévision**, puis le professeur lance le ping et ils notent le **résultat** et l'explication. Ne lancer le test qu'une fois que tout le monde a écrit sa prévision. Le poste de l'accueil a l'adresse `10.0.0.25`.
 :::
 
 ::: prof Barème
@@ -37,8 +37,8 @@ preparation:
 | :--- | :--- | :--- | :---: |
 | 1. Même réseau ? | Q1 | Adresse de réseau avec le masque /24 | 3 |
 | 2. Trouver la passerelle | Q2 à Q4 | Rôle du routeur, choix de la passerelle justifié, cas sans passerelle | 5 |
-| 3. Configurer et tester | Q5 à Q7 | Tests interprétés, passerelle des deux côtés, ping réussi validé à l'écran | 6 |
-| 4. Trouver la panne | Q8 | Message lu, erreur expliquée par la règle, correction validée | 3 |
+| 3. Configurer et tester | Q5 à Q7 | Prévisions et tests interprétés, passerelle des deux côtés, tableau des passerelles | 6 |
+| 4. Trouver la panne | Q8 | Message lu, erreur expliquée par la règle, correction et résultat attendu | 3 |
 | 5. Quiz de sortie | Q9 à Q11 | Routeur, passerelle, même réseau | 3 |
 | **Total** | | | **20** |
 :::
@@ -114,40 +114,41 @@ Le capteur P01 (`192.168.20.11`) envoie une mesure à Supervision (`192.168.20.2
 
 ## Configurer et dépanner
 
-::: slide 1 min | Le simulateur
-- Ouvrez **`reseau_routeur.html`** par un double-clic : ni compte, ni installation.
-- Remplissez le tableau **sans passerelle**, puis faites les tests **dans l'ordre**.
-- Poste de l'accueil : adresse propre au binôme, `10.0.0.` suivi du **jour de naissance de l'un de vous + 20** (né le 7 : `10.0.0.27`).
+::: slide 1 min | Le simulateur, au tableau
+- Le professeur configure le réseau sur le simulateur **projeté** : pas de PC pour vous.
+- Avant chaque test : écrivez votre **prévision** (le ping réussit ou échoue, et pourquoi).
+- Après le test : notez le **résultat** affiché, puis corrigez votre explication si besoin.
 :::
 
-::: slide 2 min | Les adresses à saisir | fiche
+::: slide 2 min | Les adresses du réseau | fiche
 | Machine | Adresse IP | Masque |
 | :--- | :--- | :--- |
 | Capteur P01 | `192.168.20.11` | `255.255.255.0` |
 | Supervision | `192.168.20.2` | `255.255.255.0` |
 | Routeur, côté parking | `192.168.20.1` | `255.255.255.0` |
 | Routeur, côté accueil | `10.0.0.1` | `255.255.255.0` |
-| Poste de l'accueil | `10.0.0.` (jour de naissance + 20) | `255.255.255.0` |
+| Poste de l'accueil | `10.0.0.25` | `255.255.255.0` |
 :::
 
 ::: dire
-Montrer une fois sur le poste du professeur : saisie d'une adresse, choix « Depuis : … », bouton ping, lecture du message. Puis passer dans les rangs.
+- Basculer sur l'onglet du simulateur. Saisir les adresses du tableau **sans passerelle**, en lisant chaque adresse à voix haute.
+- Montrer une fois : choix « Depuis : … », bouton ping, lecture du message.
 :::
 
-::: activite 14 min | Configurer et tester | binome
-Tests depuis **Supervision**, dans l'ordre :
+::: activite 14 min | Configurer et tester | individuel
+Pings depuis **Supervision** : **prévision d'abord**, résultat ensuite.
 
-1. `ping 192.168.20.11` ;
-2. `ping` vers **votre** poste de l'accueil ;
-3. passerelle de Supervision : `192.168.20.1`, puis le même ping ;
-4. passerelle du poste de l'accueil (question 3), puis le même ping.
+1. vers `192.168.20.11` ;
+2. vers `10.0.0.25` (accueil) ;
+3. idem, passerelle de Supervision : `192.168.20.1` ;
+4. idem, passerelle de l'accueil réglée.
 :::
 
 ::: question 5 [2 pt]
-Notez le résultat des tests 1 et 2. Pourquoi le premier marche-t-il et pas le deuxième ?
+Tests 1 et 2 : écrivez votre prévision, puis le résultat affiché. Pourquoi le premier marche-t-il et pas le deuxième ?
 :::
 
-::: reponse 3
+::: reponse 4
 Test 1 : réponses de P01, même réseau (1 pt). Test 2 : « Réseau inaccessible » : le poste de l'accueil est dans un autre réseau et Supervision n'a pas de passerelle (1 pt).
 :::
 
@@ -160,32 +161,28 @@ La **réponse** ne peut pas revenir : le poste de l'accueil doit répondre à Su
 :::
 
 ::: question 7 [2 pt]
-Test 4 : notez le résultat et l'adresse de votre poste de l'accueil.
-
-☐ Validé par le professeur sur l'écran : ping réussi vers le poste de l'accueil du binôme.
+Test 4 : notez le résultat affiché. Puis complétez la passerelle de chaque machine pour que tout le réseau fonctionne : capteur P01, Supervision, poste de l'accueil.
 :::
 
-::: reponse 2
-Réponses « via la passerelle 192.168.20.1 », avec l'adresse personnelle du binôme (1 pt) ; validé sur l'écran (1 pt).
+::: reponse 4
+Réponses du poste de l'accueil « via la passerelle 192.168.20.1 » (0,5 pt). P01 : `192.168.20.1` ; Supervision : `192.168.20.1` ; poste de l'accueil : `10.0.0.1` (0,5 pt par passerelle juste).
 :::
 
-::: activite 6 min | Trouver la panne | binome
-Un technicien règle la passerelle du **capteur P01** sur `10.0.0.1`. Faites de même, choisissez « Depuis : Capteur P01 », puis lancez un ping vers votre poste de l'accueil.
+::: activite 6 min | Trouver la panne | individuel
+Un technicien règle la passerelle du **capteur P01** sur `10.0.0.1`. Le professeur fait de même, puis lance un ping **depuis le capteur P01** vers le poste de l'accueil.
 :::
 
 ::: question 8 [3 pt]
-Quel message obtenez-vous ? Expliquez l'erreur du technicien avec la règle, puis corrigez la passerelle de P01.
-
-☐ Validé par le professeur sur l'écran : ping réussi depuis P01 après correction.
+Quel message s'affiche ? Expliquez l'erreur du technicien avec la règle, donnez la bonne passerelle de P01, puis le résultat attendu du ping après correction.
 :::
 
-::: reponse 3
-« Passerelle inaccessible » (0,5 pt) : `10.0.0.1` n'est **pas dans le réseau de P01** ; la passerelle doit être la carte du routeur de son côté (1 pt) : `192.168.20.1` (0,5 pt). Ping réussi après correction, validé (1 pt).
+::: reponse 4
+« Passerelle inaccessible » (0,5 pt) : `10.0.0.1` n'est **pas dans le réseau de P01** ; la passerelle doit être la carte du routeur de son côté (1 pt) : `192.168.20.1` (0,5 pt). Après correction, le ping réussit : réponses du poste de l'accueil (1 pt).
 :::
 
 ::: dire
-- Erreurs fréquentes : masque oublié, faute de frappe dans une adresse, passerelle mise dans le mauvais champ.
-- Binômes en avance : trouver une **autre** erreur de configuration qui donne « Réseau inaccessible », et l'expliquer au dos de la fiche.
+- Faire écrire le message et l'explication **avant** de corriger la passerelle à l'écran, puis relancer le ping pour vérifier devant la classe.
+- Élèves en avance : trouver une **autre** erreur de configuration qui donne « Réseau inaccessible », et l'expliquer au dos de la fiche. La tester au tableau à la fin si le temps le permet.
 :::
 
 ## Faire le bilan
