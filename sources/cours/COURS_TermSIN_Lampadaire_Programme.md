@@ -126,24 +126,43 @@ Pour dire « s'il fait nuit » en Python, quelle ligne est juste ? Entourez-la, 
 
 ## Programmer et tester
 
-::: slide 3 min | Démarrer dans Wokwi
-1. Ouvrez `wokwi.com/projects/new/micropython-esp32` : pas de compte.
-2. Onglet `diagram.json` : tout remplacer par le contenu de **`circuit_lampadaire_jour_nuit.json`**.
-3. Onglet `main.py` : tout remplacer par **`lampadaire_jour_nuit.py`**.
-4. ▶ : le moniteur série affiche `N = …`. **Clic sur le capteur de lumière** : un curseur règle l'éclairement.
+::: slide 2 min | Ouvrir Wokwi et charger les fichiers | fiche
+1. Ouvrez **Google Chrome** (ou Edge). Dans la **barre d'adresse** (pas dans Google), tapez `wokwi.com/projects/new/micropython-esp32`, puis Entrée. **Pas de compte** : si une fenêtre propose de se connecter, fermez-la.
+2. À gauche, le **code**, avec deux onglets : `main.py` et `diagram.json`. À droite, le **schéma** (la carte ESP32).
+3. Récupérez les deux fichiers du professeur (ENT ou dossier partagé du labo). **Clic droit** sur `circuit_lampadaire_jour_nuit.json` → **Ouvrir avec** → **Bloc-notes**, puis **Ctrl + A** (tout sélectionner) et **Ctrl + C** (copier).
+4. Dans Wokwi, cliquez sur l'onglet `diagram.json`, puis **Ctrl + A** et **Ctrl + V** (coller) : la carte, le capteur de lumière, le détecteur PIR et la lampe apparaissent.
+5. Même chose avec `lampadaire_jour_nuit.py`, collé dans l'onglet `main.py`.
+:::
+
+::: slide 2 min | Lancer, régler, modifier | fiche
+- **▶ vert**, au-dessus du schéma : la simulation démarre en quelques secondes. Le **moniteur série**, sous le schéma, affiche `N = …` deux fois par seconde.
+- **Régler la lumière** : pendant la simulation, cliquez sur le **capteur de lumière** (petit module à gauche de la carte) : un curseur règle l'éclairement en **lux**. Vous ne voyez pas les capteurs ? Faites glisser le fond du schéma, ou dézoomez avec la molette.
+- **Modifier le code** : arrêtez d'abord la simulation (**■**), modifiez dans l'onglet `main.py`, puis relancez avec **▶**.
+- **Wokwi n'enregistre rien** sans compte : recopiez vos lignes sur la fiche au fur et à mesure.
 :::
 
 ::: dire
-Montrer une fois les quatre étapes en direct sur le poste du professeur, puis laisser faire. Les capteurs sont à gauche de la carte : faire glisser le fond ou dézoomer.
+Montrer une fois toutes les étapes en direct sur le poste du professeur, en lisant chaque clic à voix haute, puis laisser faire. Passer d'abord voir les postes qui n'ont pas encore la carte à l'écran au bout de 3 minutes : le plus souvent, le fichier a été collé dans le mauvais onglet.
 :::
 
-::: activite 12 min | Le jour et la nuit | binome
+::: activite 11 min | Le jour et la nuit | binome
 Seul ou à deux sur un poste, mais **chacun remplit sa fiche**.
 
-1. Lancez la simulation, relevez $N$ (question 4).
-2. Remplacez `N_SEUIL = 0` par `N_SEUIL = 3413`.
-3. À la place de la ligne `regler_lampe(0)` sous `# TODO etape 4`, écrivez la décision jour / nuit, avec le même décalage que les lignes voisines. Relancez et testez.
-4. **Appelez le professeur** pour faire valider votre écran.
+1. Lancez la simulation (▶), réglez la lumière, relevez $N$ (question 4).
+2. Arrêtez (■). En haut de `main.py`, remplacez `N_SEUIL = 0` par `N_SEUIL = 3413`.
+3. Plus bas, sous `# TODO etape 4`, **remplacez** la ligne `regler_lampe(0)` par la décision jour / nuit (diapo « if et else »), avec le même décalage que les lignes voisines.
+4. Relancez (▶), testez de jour (500 lux) puis de nuit (5 lux).
+5. **Appelez le professeur** pour faire valider votre écran.
+:::
+
+::: tableau Si ça ne marche pas | fiche
+| Ce que je vois | Ce que je fais |
+| :--- | :--- |
+| Un message rouge `SyntaxError`, avec un numéro de ligne (`line 24`) | Je regarde cette ligne : il manque souvent les deux-points `:` à la fin du `if` ou du `else`, ou j'ai écrit `=` au lieu de `==`. |
+| Un message `IndentationError` | Les lignes sous `if` et sous `else` doivent être décalées de **4 espaces de plus** que le `if`. |
+| Rien ne s'affiche sous le schéma | La simulation n'est pas lancée : je clique sur **▶**. |
+| La lampe ne change jamais | Je vérifie `N_SEUIL = 3413` et le sens de la comparaison : `n > N_SEUIL`. |
+| La carte n'apparaît pas | Le fichier `.json` doit être collé dans l'onglet `diagram.json`, pas dans `main.py`. |
 :::
 
 ::: question 4 [2 pt]
@@ -188,7 +207,15 @@ else:                            # sinon (le jour)
 ::: activite 10 min | Le piéton | binome
 Modifiez vos lignes : lampe à **100 %** la nuit **et** si quelqu'un passe (`presence == 1`), à 30 % la nuit sans personne, éteinte le jour.
 
-Test : de nuit, cliquez sur le **détecteur PIR**, puis sur **« Simulate motion »** : sa sortie passe à 1 pendant 5 s environ. **Appelez le professeur** pour faire valider.
+Arrêtez la simulation (■) avant de modifier, puis relancez (▶) et testez. **Appelez le professeur** pour faire valider.
+:::
+
+::: tableau Tester le piéton | fiche
+1. Simulation lancée (▶), lumière réglée vers **5 lux** : c'est la nuit, la lampe est à 30 %.
+2. Cliquez sur le **détecteur PIR** (le module blanc à dôme, à gauche de la carte), puis sur le bouton **« Simulate motion »**.
+3. Dans le moniteur série : `presence = 1` pendant **5 s environ**, et la lampe doit briller **à fond**.
+4. Ensuite `presence = 0` : la lampe revient à 30 %.
+5. Refaites le test **de jour** (500 lux) : la lampe doit rester éteinte, même avec un piéton.
 :::
 
 ::: question 6 [3 pt]

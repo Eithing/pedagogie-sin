@@ -362,6 +362,7 @@ eqn, section.eqno { display: block; text-align: center; margin: 6px 0; break-ins
 img { max-width: 100%; }
 .doc-corps img { max-height: 70mm; display: block; margin: 6px auto; }
 .doc-corps .contexte-corps img { max-height: 55mm; }
+.doc-corps .memo-tableau img { max-height: 48mm; }
 .saut-page { break-before: page; }
 .bloc-insecable { break-inside: avoid; }
 .bloc-insecable:has(+ .bloc-question) { break-after: avoid; }
@@ -682,13 +683,13 @@ body.presentation {
     <ul class="couverture-objectifs"><li>Traduire des règles de fonctionnement en conditions (if / elif / else)</li><li>Comparer une mesure à un seuil pour prendre une décision</li><li>Programmer et tester la commande d'une lampe sur un microcontrôleur simulé</li></ul>
   </div>
   <img class="titre-illustration" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNDAwIiBmb250LWZhbWlseT0iSW50ZXIsIFNlZ29lIFVJLCBzYW5zLXNlcmlmIj4NCiAgPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiMwZjE3MmEiLz4NCiAgPGNpcmNsZSBjeD0iNTYwIiBjeT0iNjQiIHI9IjI4IiBmaWxsPSIjZTJlOGYwIi8+DQogIDxjaXJjbGUgY3g9IjU3MiIgY3k9IjU2IiByPSIyNiIgZmlsbD0iIzBmMTcyYSIvPg0KICA8IS0tIFNvbCBldCBhbGzDqWUgLS0+DQogIDxyZWN0IHk9IjMwMCIgd2lkdGg9IjY0MCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMxZTI5M2IiLz4NCiAgPHBhdGggZD0iTTAgMzMwIEw2NDAgMzE2IEw2NDAgMzUyIEwwIDM3MnoiIGZpbGw9IiMzMzQxNTUiLz4NCiAgPCEtLSBMYW1wYWRhaXJlIDEgOiB2ZWlsbGUgMzAgJSAtLT4NCiAgPHBhdGggZD0iTTkwIDMwMCBMOTAgMTUwIFE5MCAxMzYgMTA0IDEzNiBMMTMyIDEzNiIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz4NCiAgPHJlY3QgeD0iMTIyIiB5PSIxMzIiIHdpZHRoPSIzNCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiM5NGEzYjgiLz4NCiAgPHBhdGggZD0iTTEyNiAxNDIgTDk0IDMwMCBMMTkwIDMwMCBMMTUyIDE0MnoiIGZpbGw9IiNmZGU2OGEiIGZpbGwtb3BhY2l0eT0iMC4xOCIvPg0KICA8dGV4dCB4PSIxMzkiIHk9IjEyMiIgZm9udC1zaXplPSIxMyIgZmlsbD0iI2JmZGJmZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MzAgJTwvdGV4dD4NCiAgPCEtLSBMYW1wYWRhaXJlIDIgOiBwcsOpc2VuY2UgMTAwICUgLS0+DQogIDxwYXRoIGQ9Ik0zMDAgMzAwIEwzMDAgMTUwIFEzMDAgMTM2IDMxNCAxMzYgTDM0MiAxMzYiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSI2IiBmaWxsPSJub25lIi8+DQogIDxyZWN0IHg9IjMzMiIgeT0iMTMyIiB3aWR0aD0iMzQiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZmJiZjI0Ii8+DQogIDxwYXRoIGQ9Ik0zMzYgMTQyIEwyODAgMzAwIEw0MjAgMzAwIEwzNjIgMTQyeiIgZmlsbD0iI2ZkZTY4YSIgZmlsbC1vcGFjaXR5PSIwLjU1Ii8+DQogIDx0ZXh0IHg9IjM0OSIgeT0iMTIyIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZmRiYTc0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4xMDAgJTwvdGV4dD4NCiAgPCEtLSBQacOpdG9uIC0tPg0KICA8Y2lyY2xlIGN4PSIzNTIiIGN5PSIyMzYiIHI9IjkiIGZpbGw9IiNlYTU4MGMiLz4NCiAgPHBhdGggZD0iTTM1MiAyNDYgTDM1MiAyNzYgTTM1MiAyNTYgTDM0MCAyNjYgTTM1MiAyNTYgTDM2NCAyNjQgTTM1MiAyNzYgTDM0MiAyOTggTTM1MiAyNzYgTDM2MiAyOTgiIHN0cm9rZT0iI2VhNTgwYyIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4NCiAgPCEtLSBMYW1wYWRhaXJlIDMgOiB2ZWlsbGUgMzAgJSAtLT4NCiAgPHBhdGggZD0iTTUxMCAzMDAgTDUxMCAxNTAgUTUxMCAxMzYgNTI0IDEzNiBMNTUyIDEzNiIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9Im5vbmUiLz4NCiAgPHJlY3QgeD0iNTQyIiB5PSIxMzIiIHdpZHRoPSIzNCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiM5NGEzYjgiLz4NCiAgPHBhdGggZD0iTTU0NiAxNDIgTDUxNCAzMDAgTDYxMCAzMDAgTDU3MiAxNDJ6IiBmaWxsPSIjZmRlNjhhIiBmaWxsLW9wYWNpdHk9IjAuMTgiLz4NCiAgPHRleHQgeD0iNTU5IiB5PSIxMjIiIGZvbnQtc2l6ZT0iMTMiIGZpbGw9IiNiZmRiZmUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjMwICU8L3RleHQ+DQoNCiAgPHRleHQgeD0iMzIwIiB5PSI0MiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2ZmZmZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TCdhbGzDqWUgZHUgbHljw6llLCAyMiBoPC90ZXh0Pg0KICA8dGV4dCB4PSIzMjAiIHk9IjY4IiBmb250LXNpemU9IjE0IiBmaWxsPSIjY2JkNWUxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5BbGx1bcOpZSDDoCBmb25kIHF1YW5kIHF1ZWxxdSd1biBwYXNzZSwgZW4gdmVpbGxlIGxlIHJlc3RlIGRlIGxhIG51aXQ8L3RleHQ+DQo8L3N2Zz4NCg==" alt="">
-  <footer class="diapo-pied"><span>55 min</span><span>1 / 18</span></footer>
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 19</span></footer>
 </section>
 <section class="diapo diapo-phase" >
   
   <div class="diapo-corps"><h2>Se poser la question</h2></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>2 / 18</span></footer>
-  <div class="diapo-progression" style="--p:11.11111111111111%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>2 / 19</span></footer>
+  <div class="diapo-progression" style="--p:10.526315789473683%"></div>
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>L'allée du lycée, 22 h</h2></header>
@@ -697,27 +698,27 @@ body.presentation {
 <p>Aujourd'hui, on programme une <strong>version simplifiée</strong>, sans les 60 secondes : le jour, lampe <strong>éteinte</strong> ; la nuit, lampe à <strong>30 %</strong> ; la nuit, si quelqu'un passe, lampe à <strong>100 %</strong>.</p>
 </blockquote>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>3 / 18</span></footer>
-  <div class="diapo-progression" style="--p:16.666666666666664%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>3 / 19</span></footer>
+  <div class="diapo-progression" style="--p:15.789473684210526%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 1</span>
         <span class="act-modalite">individuel</span>
-        <span class="act-chrono" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
+        <span class="act-chrono" data-act="1" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
       </div>Échauffement : que fait la lampe ?</h2></header>
   <div class="diapo-corps"><p>Appliquez les trois règles de la diapo. Rappel : la nuit tombe quand <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>&gt;</mo><mn>3</mn><mtext> </mtext><mn>413</mn></mrow><annotation encoding="application/x-tex">N &gt; 3\,413</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">413</span></span></span></span></eq>.</p>
 <ol class="act-questions"><li value="1"><p>À combien est la lampe dans chaque cas ?</p>
 <p><strong>a)</strong> <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>1</mn><mtext> </mtext><mn>000</mn></mrow><annotation encoding="application/x-tex">N = 1\,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span></eq>, personne · <strong>b)</strong> <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn><mtext> </mtext><mn>800</mn></mrow><annotation encoding="application/x-tex">N = 3\,800</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">800</span></span></span></span></eq>, personne · <strong>c)</strong> <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>3</mn><mtext> </mtext><mn>800</mn></mrow><annotation encoding="application/x-tex">N = 3\,800</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">800</span></span></span></span></eq>, quelqu'un passe · <strong>d)</strong> <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>=</mo><mn>1</mn><mtext> </mtext><mn>000</mn></mrow><annotation encoding="application/x-tex">N = 1\,000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">000</span></span></span></span></eq>, quelqu'un passe</p>
 </li></ol></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>4 / 18</span></footer>
-  <div class="diapo-progression" style="--p:22.22222222222222%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>4 / 19</span></footer>
+  <div class="diapo-progression" style="--p:21.052631578947366%"></div>
 </section>
 <section class="diapo diapo-phase" >
   
   <div class="diapo-corps"><h2>Décider avec if et else</h2></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>5 / 18</span></footer>
-  <div class="diapo-progression" style="--p:27.77777777777778%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>5 / 19</span></footer>
+  <div class="diapo-progression" style="--p:26.31578947368421%"></div>
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>Décider en Python : if et else</h2></header>
@@ -732,14 +733,14 @@ body.presentation {
 <li><code>==</code> <strong>compare</strong> (est-ce égal ?) ; <code>=</code> <strong>range</strong> une valeur dans une variable. On compare aussi avec <code>&gt;</code> et <code>&lt;</code>.</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>6 / 18</span></footer>
-  <div class="diapo-progression" style="--p:33.33333333333333%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>6 / 19</span></footer>
+  <div class="diapo-progression" style="--p:31.57894736842105%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 2</span>
         <span class="act-modalite">individuel</span>
-        <span class="act-chrono" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
+        <span class="act-chrono" data-act="2" data-secondes="420" title="Clic ou touche T : démarrer / pause">07:00</span>
       </div>Lire avant d'écrire</h2></header>
   <div class="diapo-corps"><p>Voici le début du programme de départ, puis la boucle qui se répète sans arrêt.</p>
 <pre class="hljs langue-python"><code>N_SEUIL = <span class="hljs-number">0</span>   <span class="hljs-comment"># TODO : seuil jour / nuit</span>
@@ -753,46 +754,79 @@ body.presentation {
 </li><li value="3"><p>Pour dire « s'il fait nuit » en Python, quelle ligne est juste ? Entourez-la, puis justifiez avec le sens de variation de <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></eq>.</p>
 <p><code>if n = N_SEUIL:</code> · <code>if n &gt; N_SEUIL:</code> · <code>if n &lt; N_SEUIL:</code></p>
 </li></ol></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>7 / 18</span></footer>
-  <div class="diapo-progression" style="--p:38.88888888888889%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>7 / 19</span></footer>
+  <div class="diapo-progression" style="--p:36.84210526315789%"></div>
 </section>
 <section class="diapo diapo-phase" >
   
   <div class="diapo-corps"><h2>Programmer et tester</h2></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>8 / 18</span></footer>
-  <div class="diapo-progression" style="--p:44.44444444444444%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>8 / 19</span></footer>
+  <div class="diapo-progression" style="--p:42.10526315789473%"></div>
 </section>
 <section class="diapo " >
-  <header class="diapo-titre"><h2>Démarrer dans Wokwi</h2></header>
+  <header class="diapo-titre"><h2>Ouvrir Wokwi et charger les fichiers</h2></header>
   <div class="diapo-corps"><ol>
-<li>Ouvrez <code>wokwi.com/projects/new/micropython-esp32</code> : pas de compte.</li>
-<li>Onglet <code>diagram.json</code> : tout remplacer par le contenu de <strong><code>circuit_lampadaire_jour_nuit.json</code></strong>.</li>
-<li>Onglet <code>main.py</code> : tout remplacer par <strong><code>lampadaire_jour_nuit.py</code></strong>.</li>
-<li>▶ : le moniteur série affiche <code>N = …</code>. <strong>Clic sur le capteur de lumière</strong> : un curseur règle l'éclairement.</li>
+<li>Ouvrez <strong>Google Chrome</strong> (ou Edge). Dans la <strong>barre d'adresse</strong> (pas dans Google), tapez <code>wokwi.com/projects/new/micropython-esp32</code>, puis Entrée. <strong>Pas de compte</strong> : si une fenêtre propose de se connecter, fermez-la.</li>
+<li>À gauche, le <strong>code</strong>, avec deux onglets : <code>main.py</code> et <code>diagram.json</code>. À droite, le <strong>schéma</strong> (la carte ESP32).</li>
+<li>Récupérez les deux fichiers du professeur (ENT ou dossier partagé du labo). <strong>Clic droit</strong> sur <code>circuit_lampadaire_jour_nuit.json</code> → <strong>Ouvrir avec</strong> → <strong>Bloc-notes</strong>, puis <strong>Ctrl + A</strong> (tout sélectionner) et <strong>Ctrl + C</strong> (copier).</li>
+<li>Dans Wokwi, cliquez sur l'onglet <code>diagram.json</code>, puis <strong>Ctrl + A</strong> et <strong>Ctrl + V</strong> (coller) : la carte, le capteur de lumière, le détecteur PIR et la lampe apparaissent.</li>
+<li>Même chose avec <code>lampadaire_jour_nuit.py</code>, collé dans l'onglet <code>main.py</code>.</li>
 </ol>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>9 / 18</span></footer>
-  <div class="diapo-progression" style="--p:50%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>9 / 19</span></footer>
+  <div class="diapo-progression" style="--p:47.368421052631575%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Lancer, régler, modifier</h2></header>
+  <div class="diapo-corps"><ul>
+<li><strong>▶ vert</strong>, au-dessus du schéma : la simulation démarre en quelques secondes. Le <strong>moniteur série</strong>, sous le schéma, affiche <code>N = …</code> deux fois par seconde.</li>
+<li><strong>Régler la lumière</strong> : pendant la simulation, cliquez sur le <strong>capteur de lumière</strong> (petit module à gauche de la carte) : un curseur règle l'éclairement en <strong>lux</strong>. Vous ne voyez pas les capteurs ? Faites glisser le fond du schéma, ou dézoomez avec la molette.</li>
+<li><strong>Modifier le code</strong> : arrêtez d'abord la simulation (<strong>■</strong>), modifiez dans l'onglet <code>main.py</code>, puis relancez avec <strong>▶</strong>.</li>
+<li><strong>Wokwi n'enregistre rien</strong> sans compte : recopiez vos lignes sur la fiche au fur et à mesure.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>10 / 19</span></footer>
+  <div class="diapo-progression" style="--p:52.63157894736842%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 3</span>
         <span class="act-modalite">en binôme</span>
-        <span class="act-chrono" data-secondes="720" title="Clic ou touche T : démarrer / pause">12:00</span>
+        <span class="act-chrono" data-act="3" data-secondes="660" title="Clic ou touche T : démarrer / pause">11:00</span>
       </div>Le jour et la nuit</h2></header>
-  <div class="diapo-corps"><p>Seul ou à deux sur un poste, mais <strong>chacun remplit sa fiche</strong>.</p>
-<ol>
-<li>Lancez la simulation, relevez <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></eq> (question 4).</li>
-<li>Remplacez <code>N_SEUIL = 0</code> par <code>N_SEUIL = 3413</code>.</li>
-<li>À la place de la ligne <code>regler_lampe(0)</code> sous <code># TODO etape 4</code>, écrivez la décision jour / nuit, avec le même décalage que les lignes voisines. Relancez et testez.</li>
-<li><strong>Appelez le professeur</strong> pour faire valider votre écran.</li>
-</ol>
-<ol class="act-questions"><li value="4"><p>Relevez <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></eq> pour environ <strong>500 lux</strong> (jour), puis environ <strong>5 lux</strong> (nuit). Dans quel sens <eq><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></eq> varie-t-il quand la nuit tombe ?</p>
-</li><li value="5"><p>Recopiez vos lignes de décision : la nuit, lampe à 30 % ; le jour, lampe éteinte.</p>
-<p>☐ Validé par le professeur sur l'écran : la lampe s'allume faiblement de nuit et s'éteint de jour.</p>
-</li></ol></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>10 / 18</span></footer>
-  <div class="diapo-progression" style="--p:55.55555555555556%"></div>
+  <div class="diapo-corps"><table>
+<thead>
+<tr>
+<th style="text-align:left">Ce que je vois</th>
+<th style="text-align:left">Ce que je fais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Un message rouge <code>SyntaxError</code>, avec un numéro de ligne (<code>line 24</code>)</td>
+<td style="text-align:left">Je regarde cette ligne : il manque souvent les deux-points <code>:</code> à la fin du <code>if</code> ou du <code>else</code>, ou j'ai écrit <code>=</code> au lieu de <code>==</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">Un message <code>IndentationError</code></td>
+<td style="text-align:left">Les lignes sous <code>if</code> et sous <code>else</code> doivent être décalées de <strong>4 espaces de plus</strong> que le <code>if</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">Rien ne s'affiche sous le schéma</td>
+<td style="text-align:left">La simulation n'est pas lancée : je clique sur <strong>▶</strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left">La lampe ne change jamais</td>
+<td style="text-align:left">Je vérifie <code>N_SEUIL = 3413</code> et le sens de la comparaison : <code>n &gt; N_SEUIL</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">La carte n'apparaît pas</td>
+<td style="text-align:left">Le fichier <code>.json</code> doit être collé dans l'onglet <code>diagram.json</code>, pas dans <code>main.py</code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>11 / 19</span></footer>
+  <div class="diapo-progression" style="--p:57.89473684210527%"></div>
 </section>
 <section class="diapo " >
   <header class="diapo-titre"><h2>Un cas de plus : elif et and</h2></header>
@@ -809,29 +843,31 @@ body.presentation {
 <li>Python teste les cas <strong>dans l'ordre</strong> et s'arrête au <strong>premier vrai</strong>.</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>11 / 18</span></footer>
-  <div class="diapo-progression" style="--p:61.111111111111114%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>12 / 19</span></footer>
+  <div class="diapo-progression" style="--p:63.1578947368421%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 4</span>
         <span class="act-modalite">en binôme</span>
-        <span class="act-chrono" data-secondes="600" title="Clic ou touche T : démarrer / pause">10:00</span>
+        <span class="act-chrono" data-act="4" data-secondes="600" title="Clic ou touche T : démarrer / pause">10:00</span>
       </div>Le piéton</h2></header>
-  <div class="diapo-corps"><p>Modifiez vos lignes : lampe à <strong>100 %</strong> la nuit <strong>et</strong> si quelqu'un passe (<code>presence == 1</code>), à 30 % la nuit sans personne, éteinte le jour.</p>
-<p>Test : de nuit, cliquez sur le <strong>détecteur PIR</strong>, puis sur <strong>« Simulate motion »</strong> : sa sortie passe à 1 pendant 5 s environ. <strong>Appelez le professeur</strong> pour faire valider.</p>
-<ol class="act-questions"><li value="6"><p>Recopiez vos lignes <code>if</code>, <code>elif</code> et <code>else</code>.</p>
-<p>☐ Validé par le professeur sur l'écran : 100 % de nuit avec <code>presence = 1</code>.</p>
-</li><li value="7"><p>Pourquoi faut-il écrire le cas « nuit <strong>et</strong> présence » <strong>avant</strong> le cas « nuit » ? Que se passerait-il si on les inversait ?</p>
-</li></ol></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>12 / 18</span></footer>
-  <div class="diapo-progression" style="--p:66.66666666666666%"></div>
+  <div class="diapo-corps"><ol>
+<li>Simulation lancée (▶), lumière réglée vers <strong>5 lux</strong> : c'est la nuit, la lampe est à 30 %.</li>
+<li>Cliquez sur le <strong>détecteur PIR</strong> (le module blanc à dôme, à gauche de la carte), puis sur le bouton <strong>« Simulate motion »</strong>.</li>
+<li>Dans le moniteur série : <code>presence = 1</code> pendant <strong>5 s environ</strong>, et la lampe doit briller <strong>à fond</strong>.</li>
+<li>Ensuite <code>presence = 0</code> : la lampe revient à 30 %.</li>
+<li>Refaites le test <strong>de jour</strong> (500 lux) : la lampe doit rester éteinte, même avec un piéton.</li>
+</ol>
+</div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>13 / 19</span></footer>
+  <div class="diapo-progression" style="--p:68.42105263157895%"></div>
 </section>
 <section class="diapo diapo-phase" >
   
   <div class="diapo-corps"><h2>Faire le bilan</h2></div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>13 / 18</span></footer>
-  <div class="diapo-progression" style="--p:72.22222222222221%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>14 / 19</span></footer>
+  <div class="diapo-progression" style="--p:73.68421052631578%"></div>
 </section>
 <section class="diapo diapo-retenir" >
   <header class="diapo-titre"><h2>À retenir</h2></header>
@@ -842,19 +878,19 @@ body.presentation {
 <li>Les cas sont testés dans l'<mark class="trou-rempli">ordre</mark> : le cas le plus précis s'écrit en premier.</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>14 / 18</span></footer>
-  <div class="diapo-progression" style="--p:77.77777777777779%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>15 / 19</span></footer>
+  <div class="diapo-progression" style="--p:78.94736842105263%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 5</span>
         <span class="act-modalite">individuel</span>
-        <span class="act-chrono" data-secondes="180" title="Clic ou touche T : démarrer / pause">03:00</span>
+        <span class="act-chrono" data-act="5" data-secondes="180" title="Clic ou touche T : démarrer / pause">03:00</span>
       </div>Quiz de sortie</h2></header>
   <div class="diapo-corps"><p>Répondez sur votre fiche.</p>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>15 / 18</span></footer>
-  <div class="diapo-progression" style="--p:83.33333333333334%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>16 / 19</span></footer>
+  <div class="diapo-progression" style="--p:84.21052631578947%"></div>
 </section>
 <section class="diapo diapo-question" >
   <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 8</h2></header>
@@ -865,8 +901,8 @@ body.presentation {
 <li class="choix"><span class="case"></span><code>if n =&gt; N_SEUIL:</code></li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>16 / 18</span></footer>
-  <div class="diapo-progression" style="--p:88.88888888888889%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>17 / 19</span></footer>
+  <div class="diapo-progression" style="--p:89.47368421052632%"></div>
 </section>
 <section class="diapo diapo-question" >
   <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 9</h2></header>
@@ -877,8 +913,8 @@ body.presentation {
 <li class="choix"><span class="case"></span>lampe à 100 %</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>17 / 18</span></footer>
-  <div class="diapo-progression" style="--p:94.44444444444444%"></div>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>18 / 19</span></footer>
+  <div class="diapo-progression" style="--p:94.73684210526315%"></div>
 </section>
 <section class="diapo diapo-question" >
   <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 10</h2></header>
@@ -889,7 +925,7 @@ body.presentation {
 <li class="choix"><span class="case"></span>afficher une valeur</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>18 / 18</span></footer>
+  <footer class="diapo-pied"><span>Du diagramme d'états au programme : le lampadaire, le jour et la nuit</span><span>19 / 19</span></footer>
   <div class="diapo-progression" style="--p:100%"></div>
 </section>
 </main>
@@ -898,12 +934,13 @@ const d=[...document.querySelectorAll('.diapo')];let i=0;
 const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
 function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
 const minuteurs=new Map();
-function chrono(x){const c=x.querySelector('.act-chrono');if(!c)return;
- if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);c.classList.remove('en-cours');return;}
- let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;c.classList.add('en-cours');
+function chrono(x){const c0=x.querySelector('.act-chrono');if(!c0)return;
+ const g=[...document.querySelectorAll('.act-chrono[data-act="'+c0.dataset.act+'"]')],c=g[0]||c0,tous=g.length?g:[c0];
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);tous.forEach(y=>y.classList.remove('en-cours'));return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;tous.forEach(y=>y.classList.add('en-cours'));
  minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
-  c.textContent=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
-  c.classList.toggle('bientot',s>0&&s<=60);c.classList.toggle('fini',s<=0);},1000));}
+  const t=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  tous.forEach(y=>{y.textContent=t;y.classList.toggle('bientot',s>0&&s<=60);y.classList.toggle('fini',s<=0);});},1000));}
 addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
 addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
 addEventListener('keydown',e=>{

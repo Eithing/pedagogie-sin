@@ -2,6 +2,12 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 20 novembre 2026 : plus de guidage pour les Terminales
+
+- À la demande de l'enseignant (les élèves manquaient d'instructions), pas-à-pas ajoutés, projetés pendant les activités et imprimés sur la fiche (blocs `tableau … | fiche`) :
+  - `COURS_TermSIN_Lampadaire_Programme` (D1) : deux diapos « Ouvrir Wokwi et charger les fichiers » et « Lancer, régler, modifier » (navigateur, adresse, onglets, Bloc-notes, Ctrl + A / C / V, ▶ / ■, moniteur série, réglage de la lumière) ; tableau « Si ça ne marche pas » (SyntaxError, IndentationError, simulation non lancée…) ; « Tester le piéton » pas à pas. Activité 3 : 12 → 11 min.
+  - `COURS_TermSIN_Reseau_Routeur` (D2 + D3, sur papier) : méthodes « réseau d'une adresse /24 », « passerelle d'une machine » (exemple résolu), « prévoir un ping en trois questions », et « lire le message du simulateur » (messages exacts de `reseau_routeur.html`).
+
 ## 19 novembre 2026 : diapos projetables sur n'importe quel ordinateur
 
 - Le HTML de projection des diapos (`slides/<nom>.html`, avec le minuteur T et le plein écran F) est maintenant **autonome** : styles recopiés dans la page, images et polices des formules intégrées, plus aucun lien vers le poste qui l'a généré (`scripts/lib/autonome.mjs`). Il s'ouvre depuis une clé USB ou l'ENT, sur le PC de la salle. Taille : 50 Ko environ, 450 Ko avec des formules. Testé hors du projet. Le PDF `SLIDES_<nom>.pdf` reste la solution de secours.

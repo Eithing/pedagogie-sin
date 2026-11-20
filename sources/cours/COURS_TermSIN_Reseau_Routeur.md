@@ -57,7 +57,14 @@ preparation:
 :::
 
 ::: activite 7 min | Même réseau ? | individuel
-Masque `255.255.255.0` (**/24**) : les **3 premiers nombres** de l'adresse désignent le **réseau**, le dernier désigne la **machine**.
+Masque `255.255.255.0` (**/24**) : les **3 premiers nombres** de l'adresse désignent le **réseau**, le dernier désigne la **machine**. Suivez la méthode, puis répondez à la question 1.
+:::
+
+::: tableau Méthode : le réseau d'une adresse /24 | fiche
+1. J'écris l'adresse : `192.168.20.37`.
+2. Je garde les **3 premiers nombres** : `192.168.20`.
+3. Je remplace le dernier par **0** : le réseau est `192.168.20.0`.
+4. **Même réseau** = mêmes 3 premiers nombres. `192.168.20.37` et `192.168.20.200` : **oui**. `192.168.20.37` et `192.168.21.37` : **non** (20 ≠ 21).
 :::
 
 ::: question 1 [3 pt]
@@ -85,7 +92,15 @@ a) oui, `192.168.20.0` ; b) non, `192.168.20.0` et `10.0.0.0` ; c) oui, `10.0.0.
 :::
 
 ::: activite 9 min | Trouver la passerelle | individuel
-Utilisez le schéma du parking et la règle de la diapo.
+Utilisez le schéma du parking, la règle de la diapo et la méthode ci-dessous.
+:::
+
+::: tableau Méthode : la passerelle d'une machine | fiche
+1. Je trouve le **réseau de la machine** (méthode de l'activité 1).
+2. Parmi les adresses du **routeur**, je prends **celle qui est dans ce réseau**.
+3. Je vérifie : la passerelle commence par les **mêmes 3 nombres** que la machine.
+
+**Exemple résolu** : Supervision `192.168.20.2` → réseau `192.168.20.0`. Le routeur a `192.168.20.1` et `10.0.0.1`. Seule `192.168.20.1` est dans le réseau de Supervision : c'est sa passerelle.
 :::
 
 ::: question 2 [2 pt]
@@ -142,6 +157,21 @@ Pings depuis **Supervision** : **prévision d'abord**, résultat ensuite.
 2. vers `10.0.0.25` (accueil) ;
 3. idem, passerelle de Supervision : `192.168.20.1` ;
 4. idem, passerelle de l'accueil réglée.
+:::
+
+::: tableau Prévoir un ping, en trois questions | fiche
+1. Les deux machines sont-elles dans le **même réseau** ? **Oui** → le ping **réussit** (le switch suffit). **Non** → question 2.
+2. La machine de **départ** a-t-elle une **passerelle**, dans **son** réseau ? **Non** → **échec**. **Oui** → le paquet traverse le routeur : question 3.
+3. La machine d'**arrivée** a-t-elle une passerelle pour **répondre** ? **Non** → **échec** : la demande arrive, mais la réponse ne revient pas. **Oui** → le ping **réussit**.
+:::
+
+::: tableau Lire le message du simulateur | fiche
+| Message affiché | Ce qu'il veut dire |
+| :--- | :--- |
+| « Réponse de … » (4 fois) | Le ping a **réussi** : aller et retour. |
+| « Réseau inaccessible » | La machine de départ veut sortir de son réseau, mais **n'a pas de passerelle**. |
+| « … a bien reçu la demande …, mais sa réponse ne peut pas revenir » | L'aller marche ; la machine d'arrivée **n'a pas de passerelle** pour répondre. |
+| « Passerelle inaccessible » | La passerelle indiquée **n'est pas dans le réseau** de la machine. |
 :::
 
 ::: question 5 [2 pt]
