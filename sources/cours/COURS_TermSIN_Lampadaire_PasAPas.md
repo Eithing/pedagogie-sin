@@ -19,6 +19,7 @@ competences: [CO5.8-SIN2, 2.4.3b, 4.3.5b, 4.3.5c]
 objectifs:
   - Exécuter à la main un programme simple (boucle, if / else) sur des valeurs données
   - Repérer et corriger les trois erreurs les plus fréquentes en Python
+  - Reconnaître une variable, une affectation, une condition et une boucle
   - Programmer, en suivant le professeur, le lampadaire jour / nuit puis le piéton sur Wokwi
 prerequis:
   - "T1 : code N d'un CAN, seuil en code (N augmente quand il fait sombre)"
@@ -55,7 +56,7 @@ preparation:
 
 ## Pourquoi on programme
 
-::: slide 3 min | L'allée du lycée, 22 h
+::: slide 2 min | L'allée du lycée, 22 h
 ![](img/lampadaire/couverture.svg){width=86%}
 
 - La nuit, le lampadaire **veille à 30 %** ; quand quelqu'un passe, il éclaire **à fond**.
@@ -68,7 +69,7 @@ preparation:
 **Peut ajouter** : demander qui a déjà vu un éclairage qui s'allume au passage (couloir, escalier d'immeuble, parking, jardin). Tout le monde en a croisé un.
 :::
 
-::: slide 3 min | Un programme : lire, décider, agir… et recommencer | fiche
+::: slide 2 min | Un programme : lire, décider, agir… et recommencer | fiche
 ![](img/lampadaire/chaine.svg){width=90%}
 
 1. **Lire** le capteur de lumière : un nombre $N$, **grand quand il fait sombre**.
@@ -83,7 +84,71 @@ preparation:
 **Insister** : $N$ **monte** quand il fait **sombre** (le capteur a été choisi comme ça en T1). C'est contre-intuitif, et c'est la source de la moitié des erreurs.
 :::
 
-::: activite 8 min | Être le microcontrôleur | individuel
+::: slide 6 min | Python : les grandes lignes pour démarrer
+<div style="zoom:1.45">
+
+```python
+seuil = 3413              # 1. une variable : une boite avec un nom
+n = capteur.read()        # 2. lire : le resultat va dans la boite n
+print("N =", n)           # 3. afficher a l'ecran
+if n > seuil:             # 4. decider : si...
+    regler_lampe(30)      #    decale = dans le si
+else:                     #    sinon...
+    regler_lampe(0)
+```
+
+</div>
+
+- Python lit **de haut en bas**, une ligne à la fois ; après **#**, il ignore : c'est un **commentaire**.
+- **=** range la valeur de droite dans la boîte de gauche ; **==** pose la question « est-ce égal ? ».
+- `while True:` : on **recommence** sans arrêt les lignes décalées.
+:::
+
+::: tableau Mémo Python | papier
+| Idée | Comment on l'écrit | Ce que ça veut dire |
+| :--- | :--- | :--- |
+| Variable | `age = 17` | Une boîte nommée `age` qui contient 17. `age = 18` remplace le contenu. |
+| Types | `17` · `3.5` · `"nuit"` · `True` | entier · nombre à virgule (avec un **point**) · texte (entre guillemets) · vrai / faux |
+| Nom | `n_seuil` | Sans espace ni accent. Majuscule et minuscule comptent : `N` et `n` sont deux boîtes. |
+| Calcul | `+` `-` `*` `/` | `age = age + 1` ajoute 1 au contenu de la boîte. |
+| Commentaire | `# explication` | Python ne lit pas la suite de la ligne. |
+| Afficher | `print("age :", age)` | Écrit le texte, puis le contenu de la boîte. |
+| Comparer | `==` `!=` `>` `<` `>=` `<=` | égal, différent, plus grand, plus petit, plus grand ou égal, plus petit ou égal : la réponse est vrai ou faux |
+| Combiner | `and` · `or` | les deux vrais · au moins un vrai |
+| Décider | `if …:` `elif …:` `else:` | si · sinon, si · sinon (avec les deux-points) |
+| Répéter | `while True:` | recommence sans arrêt les lignes décalées |
+| Fonction | `regler_lampe(30)` | Lance une action qui a un nom ; entre parenthèses, la valeur qu'on lui donne. |
+
+**Exemple complet** (le décalage de 4 espaces montre quelles lignes vont ensemble) :
+
+```python
+temperature = 25
+if temperature > 30:
+    print("trop chaud")
+elif temperature > 18:
+    print("bien")        # c'est cette ligne qui s'execute
+else:
+    print("trop froid")
+```
+:::
+
+::: dire
+**Pour commencer (30 s)** : « Certains ont déjà fait du Python, d'autres repartent de zéro : on reprend tout, six minutes. Un programme, c'est une liste de consignes que la carte lit **de haut en bas**, une par une. Tout ce que je montre est sur le **mémo** de votre fiche : pas besoin de recopier. »
+
+**Ligne 1, la variable (1 min 30)** : « Une variable, c'est une **boîte avec une étiquette**. J'écris `seuil = 3413` : je range 3413 dans la boîte `seuil`. Le `=` ne veut pas dire "égal", il veut dire "**range dans**". Si j'écris ensuite `seuil = 3000`, l'ancienne valeur est perdue. »
+
+**À faire deviner (1 min)** : écrire au tableau `a = 5`, puis `a = a + 2`, puis `print(a)`. « Qu'est-ce qui s'affiche ? » Réponse : **7**. « Python calcule d'abord ce qui est **à droite**, 5 + 2, puis range le résultat dans la boîte `a`. »
+
+**Lignes 2 et 3, lire et afficher (1 min)** : « `capteur.read()` demande sa mesure au capteur ; le nombre va dans la boîte `n`. `print` l'affiche à l'écran : c'est notre fenêtre sur ce que la carte a dans la tête. Entre guillemets, c'est du **texte** ; sans guillemets, c'est le **contenu de la boîte**. »
+
+**Lignes 4 à 7, décider (1 min 30)** : « `if`, c'est **si**. Si n est plus grand que le seuil, j'allume à 30 % ; `else`, **sinon**, j'éteins. Les deux-points veulent dire "alors". Les quatre espaces disent **qui obéit au si** : ce qui est décalé dépend de lui. »
+
+**Pour finir (30 s)** : « `while True` veut dire "recommence sans arrêt" : c'est ce qui fait que le lampadaire surveille toute la nuit. Maintenant, c'est vous la carte : activité 1. »
+
+**Si un élève demande** : « `=` ou `==` ? » : un seul range, deux posent la question « est-ce égal ? ». « Les mots après `#` ? » : des notes pour nous, Python les ignore. « Pourquoi `seuil` ici et `N_SEUIL` dans le programme ? » : le nom de la boîte est libre ; en majuscules, c'est l'habitude pour une valeur qui ne change pas.
+:::
+
+::: activite 7 min | Être le microcontrôleur | individuel
 Vous êtes la carte ESP32. Exécutez ce programme **à la main**, ligne par ligne, pour chaque valeur de $N$ lue.
 
 ```python
@@ -133,7 +198,7 @@ Complétez le tableau : pour chaque tour de boucle, la comparaison et la lampe.
 | Piège | Faux | Juste |
 | :--- | :--- | :--- |
 | Les **deux-points** à la fin de `if` et `else` | `if n > N_SEUIL` | `if n > N_SEUIL:` |
-| Le **décalage** (4 espaces) des lignes « à faire » | `regler_lampe(30)` collé à gauche | `    regler_lampe(30)` |
+| Le **décalage** (4 espaces) des lignes « à faire » | `regler_lampe(30)` collé à gauche | `␣␣␣␣regler_lampe(30)` (␣ = 1 espace) |
 | **Comparer** avec `==`, **ranger** avec `=` | `if presence = 1:` | `if presence == 1:` |
 :::
 
@@ -143,21 +208,23 @@ Complétez le tableau : pour chaque tour de boucle, la comparaison et la lampe.
 **Peut ajouter** : l'anecdote du « bug » de 1947 (fiche contexte) pour dédramatiser l'erreur.
 :::
 
-::: activite 6 min | La chasse aux erreurs | individuel
-Chaque ligne ci-dessous contient **une** erreur. Python refuse de lancer le programme.
+::: activite 5 min | La chasse aux erreurs | individuel
+Trois morceaux de programme, **une** erreur dans chacun. Python refuse de les lancer.
 
 ```python
-if n > N_SEUIL
-if presence = 1:
-if n > N_SEUIL:
+if n > N_SEUIL           # morceau a
+    regler_lampe(30)
+
+if presence = 1:         # morceau b
+    regler_lampe(100)
+
+if n > N_SEUIL:          # morceau c
 regler_lampe(30)
 ```
 :::
 
 ::: question 2 [3 pt]
-Pour chaque erreur, nommez le piège, puis réécrivez la ligne juste.
-
-**a)** `if n > N_SEUIL` · **b)** `if presence = 1:` · **c)** la ligne `regler_lampe(30)` sous `if n > N_SEUIL:`
+Pour **a)**, **b)** et **c)**, nommez le piège, puis réécrivez la ligne juste.
 :::
 
 ::: reponse 4
@@ -185,7 +252,7 @@ On suit le professeur, **geste par geste**. Seul ou à deux sur un poste, mais *
 1. Chargez le circuit et le programme (diapo précédente). ▶ : le moniteur série affiche `N = …`.
 2. Cliquez sur le **capteur de lumière**, réglez 500 lux puis 5 lux : relevez $N$ (question 3).
 3. ■ Arrêtez. Remplacez `N_SEUIL = 0` par `N_SEUIL = 3413`.
-4. Sous `# TODO etape 4`, remplacez `regler_lampe(0)` par les 4 lignes de l'activité 1.
+4. Plus bas, **dans la boucle**, sous `# TODO etape 4`, remplacez `regler_lampe(0)` par les 4 lignes de l'activité 1.
 5. ▶ Relancez, testez de jour puis de nuit, et **appelez le professeur**.
 :::
 
@@ -247,7 +314,7 @@ Python teste les cas **dans l'ordre** et s'arrête au **premier vrai** : le cas 
 **À dire** : « C'est l'aiguillage d'une gare : le train prend la **première** voie ouverte. Si la voie "nuit" est avant la voie "nuit et piéton", le train ne verra jamais la seconde. »
 :::
 
-::: activite 8 min | Le piéton | individuel
+::: activite 7 min | Le piéton | individuel
 D'abord **sur la fiche**, sans regarder la diapo : complétez le programme. Puis, s'il reste du temps, testez-le sur Wokwi (détecteur PIR → **Simulate motion**).
 :::
 
@@ -270,7 +337,7 @@ Trous : `and`, `100`, `elif`, `else` (2 pt). $n = 3\,800$, présence : premier c
 
 ## Faire le bilan
 
-::: retenir 5 min
+::: retenir 4 min
 - Un programme de microcontrôleur tourne en [[boucle]] : lire, décider, agir, recommencer.
 - `if` veut dire [[si]], `elif` [[sinon si]], `else` [[sinon]] ; ces lignes finissent par deux-points.
 - Les lignes « à faire » sont décalées de [[4 espaces]].

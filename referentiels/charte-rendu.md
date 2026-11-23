@@ -155,7 +155,7 @@ Un cours n'est **jamais descendant** : c'est une séance qui alterne exposés co
 | `::: question N` / `::: reponse L` | Questions de l'activité qui précède | 1 diapo par question si `projeter` | réponses attendues | questions + zones |
 | `::: retenir 5 min` | Trace écrite à `[[trous]]` | diapo complétée | texte complété | texte à trous |
 | `::: dire` | Ce que l'enseignant dit / fait à cette étape | — | sous l'étape | — |
-| `::: tableau Titre \| fiche` | Résumé qui reste projeté pendant l'activité qui précède : ni consigne ni questions à l'écran | remplace le contenu de la diapo d'activité (plusieurs blocs : une diapo chacun, même minuteur) | — | avant l'activité si `fiche` |
+| `::: tableau Titre \| fiche` | Résumé qui reste projeté pendant l'activité qui précède : ni consigne ni questions à l'écran | remplace le contenu de la diapo d'activité (plusieurs blocs : une diapo chacun, même minuteur ; drapeau `papier` au lieu de `fiche` : imprimé sur la fiche seulement, jamais projeté, possible aussi après un slide) | — | avant l'activité si `fiche` |
 | `::: prof` | Note de préparation ou de vigilance | — | encadré « Note » | — |
 
 * **Modalités** d'activité : `individuel`, `binome`, `groupe`, `classe`. **Drapeaux** : `projeter` (questions projetées une par une, réponse à main levée), `fiche` sur un slide (son contenu est recopié sur la fiche élève, utile pour un schéma de référence).

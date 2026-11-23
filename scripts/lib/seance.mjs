@@ -7,13 +7,14 @@
 //   ::: retenir 5 min                -> trace écrite (à trous côté élève)
 //   ::: tableau Titre | fiche        -> résumé projeté pendant l'activité qui précède, à la place de la
 //                                       consigne et des questions (« fiche » : recopié sur la fiche élève)
+//   ::: tableau Titre | papier       -> imprimé sur la fiche seulement, après un slide ou une activité
 // Les blocs dire / prof s'attachent à l'étape qui précède ; question / reponse à l'activité qui précède.
 import { reperer, parseDuree } from './document.mjs';
 import { esc, rendre, argsBloc } from './markdown.mjs';
 import { page, liste } from './render.mjs';
 
 export const MODALITES = { individuel: 'individuel', binome: 'en binôme', groupe: 'en groupe', classe: 'classe entière' };
-const DRAPEAUX = ['projeter', 'fiche'];
+const DRAPEAUX = ['projeter', 'fiche', 'papier'];
 const DUREE = /^(\d+)\s*min$/;
 
 function lireArgs(args) {
@@ -78,6 +79,12 @@ export function decouper(doc) {
         etapes.push(courante);
         break;
       case 'tableau':
+        // « papier » : imprimé sur la fiche, jamais projeté ; se place après un slide ou une activité
+        if (a.drapeaux.has('papier')) {
+          if (['expose', 'activite'].includes(courante?.type)) (courante.papiers ??= []).push({ titre: a.titre, contenu: contenu(b) });
+          else erreurs.push({ ligne: ligne(b.debut), msg: 'Bloc tableau papier isolé : le placer après un slide ou une activité' });
+          break;
+        }
         if (courante?.type !== 'activite') erreurs.push({ ligne: ligne(b.debut), msg: 'Bloc tableau hors activité : le placer juste après un bloc `::: activite`' });
         // Plusieurs blocs tableau : une diapo chacun, avec le même minuteur
         else (courante.tableaux ??= []).push({ titre: a.titre, contenu: contenu(b), fiche: a.drapeaux.has('fiche') });
@@ -355,6 +362,13 @@ export function rendreDeroule(doc, seance, config, tActivite) {
 export function corpsFiche(seance) {
   const parts = [];
   for (const e of seance.etapes) {
+    for (const tb of e.papiers ?? []) parts.push(`<section class="bloc-insecable memo-tableau">
+
+### ${tb.titre}
+
+${tb.contenu}
+
+</section>`);
     if (e.type === 'expose' && e.fiche) {
       // Blocs insécables : un schéma de référence ou l'en-tête d'une activité ne sont jamais coupés en bas de page
       parts.push(`<section class="bloc-insecable">\n\n### ${e.titre}\n\n${e.contenu.replace(/^\|\|\|\s*$/gm, '')}\n\n</section>`);
