@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+S2 Le Web — Séance : le voyage d'un clic, de l'adresse à la page affichée
+
+Description :
+S2, classe entière, reprise guidée avant l'interrogation du 4 décembre : décomposer une URL, jouer la requête et la réponse HTTP (client, DNS, serveur), lire un code HTML comme le navigateur. Fiche d'activités notée /20.

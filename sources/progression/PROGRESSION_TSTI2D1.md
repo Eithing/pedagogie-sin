@@ -29,7 +29,7 @@ sequences:
     etat: en-cours
     debut: 2026-11-06
     fin: 2026-12-04
-    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_Programme]
+    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_PasAPas]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -57,6 +57,8 @@ journal:
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre, 12 h : interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`, valeurs propres à chaque élève tirées du jour de naissance), à la place du sujet A sur table. Le premier programme du lampadaire est reporté."
   - date: 2026-11-18
     texte: "Plan de rattrapage : T2 resserrée, fin le 4 décembre, puis T3 (liaisons série et bus) dès le 11 décembre. Vendredi 20 novembre, retour en présentiel : séance « du diagramme d'états au programme » (lampadaire jour / nuit sur Wokwi), fiche d'activités notée /20. Tous les TP et toutes les activités sont désormais notés."
+  - date: 2026-11-23
+    texte: "La séance du 20 novembre a peu produit : trop de consignes à la fois, le sens du programme échappait aux élèves. Vendredi 27 novembre : reprise lente des mêmes notions, « le lampadaire pas à pas » (exécuter le programme à la main, chasse aux erreurs, Wokwi geste par geste avec le professeur, le piéton écrit d'abord sur la fiche), fiche notée /20, qui peut remplacer la note du 20 novembre."
 ---
 
 ## Organisation

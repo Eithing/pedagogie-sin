@@ -20,7 +20,7 @@ materiel: [Poste élève avec Chrome, Edge ou Firefox, outils de développement 
 ---
 
 ::: prof
-**Mise en œuvre** : TP en demi-groupe, au lycée, **noté /20**. Le 1er groupe le vendredi 20 novembre, le 2e groupe le **27 novembre à 8 h**, juste avant l'interrogation de 9 h : le TP sert alors aussi de révision. Les deux groupes ont le même sujet ; les étapes 2, 3 et 5 portent sur une recherche et un site **choisis par l'élève**, qui ne se recopient pas.
+**Mise en œuvre** : TP en demi-groupe, au lycée, **noté /20**. Le 1er groupe le vendredi 20 novembre, le 2e groupe le **27 novembre à 8 h**, une semaine avant l'interrogation, reportée au 4 décembre : le TP sert alors aussi de révision. Les deux groupes ont le même sujet ; les étapes 2, 3 et 5 portent sur une recherche et un site **choisis par l'élève**, qui ne se recopient pas.
 
 **Notions** : WEB.4 (modifier une page HTML), WEB.7 (code exécuté par le client, envoyé par le serveur), WEB.6 (requête HTTP et paramètres), WEB.5 (URL, page sécurisée), WEB.9 (cookies, réglages du navigateur).
 

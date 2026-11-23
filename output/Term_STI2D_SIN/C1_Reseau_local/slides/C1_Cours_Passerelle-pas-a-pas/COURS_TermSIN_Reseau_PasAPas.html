@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La passerelle pas à pas : de la box de la maison au réseau du parking — Diapos</title>
+
+<style>
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}
+</style>
+
+
+
+
+
+<style>
+/* ==========================================================================
+   Feuille de style des documents SIN (aperçu HTML + PDF A4)
+   Mise en page sobre de fiche de cours : texte noir, cadres fins, peu de couleur.
+   --accent est fourni par la chaîne selon le niveau (pipeline.config.json > themes) ;
+   il ne sert qu'aux filets et à quelques repères.
+   ========================================================================== */
+
+:root {
+  --accent: #2563eb;
+  --texte: #1a1a1a;
+  --texte-doux: #5c5c5c;
+  --bordure: #9a9a9a;
+  --filet: #c8c8c8;
+  --fond-code: #f4f4f4;
+  --ligne-reponse: #bdbdbd;
+  --pas-ligne: 8mm;
+  --activite: #b45309;
+  --retenir: #1d6b38;
+  --violet: #5b3e96;
+}
+
+body {
+  --accent-fonce: color-mix(in srgb, var(--accent) 70%, black);
+  --accent-pale: color-mix(in srgb, var(--accent) 6%, white);
+  --accent-doux: color-mix(in srgb, var(--accent) 22%, white);
+  --activite-pale: color-mix(in srgb, var(--activite) 6%, white);
+  --retenir-pale: color-mix(in srgb, var(--retenir) 6%, white);
+  --violet-pale: color-mix(in srgb, var(--violet) 6%, white);
+  counter-reset: figure;
+}
+
+html { background: #e5e5e5; }
+
+body.document {
+  font-family: Calibri, Carlito, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.4;
+  color: var(--texte);
+  background: #fff;
+  max-width: 180mm;
+  margin: 0 auto;
+  padding: 12mm 15mm;
+  box-sizing: border-box;
+}
+
+@media print {
+  html { background: none; }
+  body.document { max-width: none; margin: 0; padding: 0; }
+}
+
+/* ---------- Cartouche généré depuis le front matter ---------- */
+.doc-entete {
+  border: 1px solid var(--texte);
+  padding: 8px 12px 10px;
+  margin-bottom: 16px;
+}
+.doc-entete.avec-illustration {
+  display: grid;
+  grid-template-columns: 1fr 40mm;
+  column-gap: 14px;
+}
+.doc-entete.avec-illustration > .doc-identite,
+.doc-entete.avec-illustration > .doc-corrige { grid-column: 1 / -1; }
+.doc-illustration { width: 100%; max-height: 34mm; object-fit: contain; align-self: center; }
+.doc-bandeau {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 9.5pt;
+  color: var(--texte-doux);
+  border-bottom: 1px solid var(--filet);
+  padding-bottom: 3px;
+}
+.doc-type { color: var(--texte); font-weight: 700; }
+.doc-titre {
+  font-size: 16pt;
+  line-height: 1.2;
+  color: #000;
+  margin: 8px 0 4px;
+}
+.doc-accroche { margin: 0 0 6px; font-style: italic; color: var(--texte-doux); }
+.doc-meta { display: flex; flex-wrap: wrap; gap: 2px 18px; margin: 0; font-size: 9.5pt; color: var(--texte-doux); }
+.doc-meta div { display: flex; gap: 5px; }
+.doc-meta dt { font-weight: 700; color: var(--texte); }
+.doc-meta dt::after { content: ' :'; }
+.doc-meta dd { margin: 0; }
+.doc-identite {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.6fr 0.6fr auto;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 10pt;
+}
+.champ { border-bottom: 1px dotted var(--texte); padding-top: 12px; }
+.champ span::after { content: ' :'; }
+.doc-note {
+  border: 1px solid var(--texte);
+  min-width: 26mm;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 4px 6px;
+  font-weight: 700;
+}
+.doc-corrige {
+  margin-top: 8px;
+  padding-top: 5px;
+  border-top: 1px solid var(--filet);
+  color: var(--retenir);
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+/* ---------- Titres ---------- */
+.document h1, .document h2, .document h3, .document h4 { break-after: avoid; }
+.document h2 {
+  font-size: 13pt;
+  color: #000;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--texte);
+  margin: 20px 0 8px;
+}
+.document h3 {
+  font-size: 11.5pt;
+  color: #000;
+  margin: 16px 0 6px;
+}
+.document h4 { font-size: 11pt; margin: 12px 0 4px; }
+hr { border: none; border-top: 1px solid var(--filet); margin: 16px 0; }
+.document p, .document ul, .document ol { margin: 5px 0; }
+blockquote {
+  margin: 8px 0;
+  padding: 2px 12px;
+  border-left: 2px solid var(--bordure);
+  font-style: italic;
+}
+.act-meta { color: var(--texte-doux); font-style: italic; font-size: 10pt; margin-top: -4px !important; break-after: avoid; }
+
+/* ---------- Questions ---------- */
+/* Une question reste sur la même page que sa zone de réponse (élève) ou son corrigé (prof). */
+.question {
+  margin: 12px 0 4px;
+  break-inside: avoid;
+}
+.bloc-question { break-inside: avoid; }
+.question-titre {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-weight: 700;
+  color: #000;
+  break-after: avoid;
+}
+.question-points { font-weight: 400; font-size: 10pt; color: var(--texte-doux); }
+.question-points::before { content: '('; }
+.question-points::after { content: ')'; }
+.points-masques .question-points { display: none; }
+.variante-eleve .act-duree { display: none; }
+.question-corps > :first-child { margin-top: 1px; }
+
+/* ---------- Corrigé (version prof) ---------- */
+.reponse {
+  margin: 4px 0 12px;
+  border: 1px solid var(--retenir);
+  padding: 3px 10px 6px;
+  color: #10361d;
+  break-inside: avoid;
+}
+.reponse-titre, .note-prof > header, .note-dire > header, .encadre > header,
+.contexte > header, .problematique > header, .retenir > header {
+  font-size: 10pt;
+  font-weight: 700;
+}
+.reponse-titre { color: var(--retenir); }
+.reponse-titre::after { content: ' :'; }
+.reponse pre.hljs { background: #fff; }
+
+/* ---------- Zone de réponse (version élève) ---------- */
+.zone-reponse {
+  margin: 2px 0 12px;
+  break-inside: avoid;
+}
+.ligne-reponse {
+  height: var(--pas-ligne);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--ligne-reponse);
+}
+
+/* ---------- Encadrés ---------- */
+.note-prof, .note-dire, .encadre, .problematique {
+  margin: 10px 0;
+  padding: 4px 10px 6px;
+  border: 1px solid var(--bordure);
+  break-inside: avoid;
+}
+.note-prof > header, .note-dire > header, .encadre > header { color: #000; }
+.note-prof { border-color: var(--violet); }
+.note-prof > header { color: var(--violet); }
+.encadre-attention { border-color: var(--activite); }
+.encadre-attention > header { color: var(--activite); }
+
+.contexte {
+  margin: 10px 0;
+  border: 1px solid var(--texte);
+  padding: 4px 10px 8px;
+  break-inside: avoid;
+}
+.contexte > header { color: #000; }
+.contexte-corps::after { content: ''; display: block; clear: both; }
+.contexte-corps p:has(> img:only-child) { float: right; width: 40%; margin: 2px 0 6px 14px; }
+
+.problematique {
+  border-width: 1px 0;
+  border-color: var(--texte);
+  padding: 6px 2px;
+  font-style: italic;
+}
+.problematique > header { font-style: normal; }
+
+.retenir {
+  margin: 14px 0;
+  border: 1.5px solid var(--texte);
+  padding: 4px 12px 8px;
+  break-inside: avoid;
+}
+.retenir > header {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 2px;
+}
+
+.doc-ressource {
+  margin: 10px 0;
+  border: 1px solid var(--bordure);
+  break-inside: avoid;
+}
+.doc-ressource > header {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 10px;
+  border-bottom: 1px solid var(--bordure);
+  font-weight: 700;
+  font-size: 10pt;
+}
+.dr-code::after { content: ' —'; }
+.dr-corps { padding: 3px 10px 6px; font-size: 10pt; }
+
+/* ---------- Figures ---------- */
+.figure { margin: 10px 0; text-align: center; break-inside: avoid; counter-increment: figure; }
+.figure img { max-width: 100%; }
+.figure figcaption { font-size: 9.5pt; font-style: italic; color: var(--texte-doux); margin-top: 3px; }
+.figure figcaption::before { content: 'Figure ' counter(figure) ' : '; font-style: normal; }
+
+/* ---------- Texte à trous & QCM ---------- */
+.trou {
+  display: inline-block;
+  width: calc(var(--car) * 0.75em + 1.5em);
+  border-bottom: 1px dotted var(--texte);
+  height: 1.1em;
+  vertical-align: baseline;
+}
+.trou-rempli {
+  background: none;
+  color: var(--retenir);
+  font-weight: 700;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+ul.qcm, ol.qcm { list-style: none; padding-left: 4px; }
+.choix { display: flex; gap: 8px; align-items: baseline; margin: 2px 0; }
+.case {
+  flex: none;
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  border: 1px solid var(--texte);
+  position: relative;
+  top: 0.12em;
+}
+.case.coche::after {
+  content: '';
+  position: absolute;
+  left: 0.25em; top: 0.02em;
+  width: 0.25em; height: 0.5em;
+  border: solid var(--retenir);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.choix.bon { color: var(--retenir); font-weight: 700; }
+
+/* ---------- Code ---------- */
+code, pre { font-family: Consolas, 'Fira Code', monospace; font-variant-ligatures: none; }
+:not(pre) > code {
+  background: var(--fond-code);
+  padding: 0 3px;
+  font-size: 0.92em;
+}
+pre.hljs {
+  background: var(--fond-code);
+  border: 1px solid #dcdcdc;
+  padding: 6px 10px;
+  font-size: 9pt;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 6px 0;
+}
+pre.hljs code { background: none; padding: 0; }
+
+/* ---------- Tableaux ---------- */
+.document table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 10pt;
+}
+.document th {
+  background: #ececec;
+  color: #000;
+  font-weight: 700;
+  text-align: left;
+  border: 1px solid var(--bordure);
+  padding: 4px 7px;
+}
+.document td { border: 1px solid var(--bordure); padding: 4px 7px; vertical-align: top; }
+.document tr { break-inside: avoid; }
+
+/* ---------- Mathématiques ---------- */
+.katex { font-size: 1.05em; }
+eqn, section.eqno { display: block; text-align: center; margin: 6px 0; break-inside: avoid; }
+
+/* ---------- Divers ---------- */
+img { max-width: 100%; }
+.doc-corps img { max-height: 70mm; display: block; margin: 6px auto; }
+.doc-corps .contexte-corps img { max-height: 55mm; }
+.doc-corps .memo-tableau img { max-height: 48mm; }
+.saut-page { break-before: page; }
+.bloc-insecable { break-inside: avoid; }
+.bloc-insecable:has(+ .bloc-question) { break-after: avoid; }
+
+/* ==========================================================================
+   Fiche de déroulé (enseignant)
+   ========================================================================== */
+.frise { display: flex; height: 26px; border: 1px solid var(--texte); margin: 4px 0; }
+.frise-seg {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  border-right: 1px solid var(--texte); font-size: 8pt; line-height: 1.1; min-width: 0;
+}
+.frise-seg:last-child { border-right: 0; }
+.frise-seg small { font-size: 7pt; color: var(--texte-doux); }
+.frise-expose, .frise-phase { background: #fff; }
+.frise-activite { background: #d9d9d9; font-weight: 700; }
+.frise-retenir { background: #a6a6a6; font-weight: 700; }
+.frise-legende { display: flex; gap: 16px; font-size: 8.5pt; color: var(--texte-doux); margin-bottom: 10px; }
+.frise-legende span::before { content: ''; display: inline-block; width: 10px; height: 10px; border: 1px solid var(--texte); margin-right: 5px; vertical-align: -1px; }
+.l-expose::before { background: #fff; }
+.l-activite::before { background: #d9d9d9; }
+.l-retenir::before { background: #a6a6a6; }
+
+.prepa { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; }
+.bloc-prepa h3 { font-size: 10pt !important; margin: 4px 0 !important; }
+.bloc-prepa ul { padding-left: 16px; margin: 0; font-size: 9.5pt; }
+.liste-cases { list-style: none; padding-left: 0 !important; }
+.liste-cases li { display: flex; gap: 6px; align-items: baseline; }
+
+table.deroule { font-size: 9.5pt; }
+table.deroule th:nth-child(1) { width: 19mm; }
+table.deroule th:nth-child(2) { width: 13mm; }
+table.deroule th:nth-child(4) { width: 7mm; text-align: center; }
+table.deroule tbody tr { break-inside: auto; }
+.col-temps small { display: block; color: var(--texte-doux); }
+.col-diapo { color: var(--texte-doux); }
+.col-check { text-align: center; }
+.ligne-phase td {
+  background: #ececec;
+  color: #000;
+  font-weight: 700;
+}
+.ligne-activite td:first-child { border-left: 3px solid var(--texte); }
+.deroule-titre { font-weight: 700; margin-bottom: 2px; }
+.deroule-dire ul, .deroule-dire ol { margin: 2px 0; padding-left: 16px; }
+.deroule-dire p { margin: 2px 0; }
+.deroule-lancer { font-weight: 700; margin-bottom: 4px; }
+.deroule-lancer span { display: block; font-weight: 400; font-style: italic; font-size: 9pt; color: var(--texte-doux); }
+.deroule details summary { font-size: 9pt; font-weight: 700; color: var(--texte-doux); }
+.deroule-consigne { font-size: 9pt; color: #333; border-left: 1px solid var(--bordure); padding-left: 8px; margin: 2px 0 6px; }
+.deroule-consigne img { max-height: 40mm; }
+.deroule-sous-titre { font-size: 9pt; font-weight: 700; margin-top: 4px; }
+.deroule-corrige { display: grid; grid-template-columns: 8mm 1fr; gap: 4px; font-size: 9pt; border-top: 1px dotted var(--bordure); padding-top: 2px; }
+.deroule-corrige > div > :first-child, .deroule-corrige p { margin: 0 0 2px; }
+.deroule-trace { font-size: 9.5pt; }
+.deroule-corrige table { width: auto; }
+.deroule .note-prof { margin: 4px 0; padding: 2px 8px 4px; font-size: 9pt; }
+
+/* ---------- Évaluations : sujet et consignes ---------- */
+.doc-sujet {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 0 8px;
+  margin-right: 10px;
+  font-size: 0.85em;
+  vertical-align: 1px;
+}
+.doc-consignes { margin: 6px 0 0; padding-left: 16px; font-size: 9.5pt; color: #333; }
+.doc-consignes li { margin: 0; }
+
+/* ---------- Travail en autonomie : plan de travail ---------- */
+.plan-travail {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3mm;
+  margin: 0 0 5mm;
+  break-inside: avoid;
+}
+.plan-travail h2 {
+  font-size: 10.5pt;
+  margin: 0 0 1.5mm;
+  border: 0;
+  padding: 0;
+}
+.plan-travail > div { border: 1px solid var(--bordure); padding: 2.5mm 3.5mm; }
+.plan-etapes { grid-row: span 2; border-color: var(--texte) !important; }
+.plan-etapes ol { list-style: none; margin: 0; padding: 0; }
+.plan-etapes li { display: flex; align-items: center; gap: 2.5mm; padding: 1mm 0; border-bottom: 1px dotted var(--bordure); }
+.plan-etapes li:last-child { border-bottom: 0; }
+.plan-etapes li em { margin-left: auto; font-style: normal; color: var(--texte-doux); white-space: nowrap; }
+.plan-etapes .case { flex: none; width: 3.5mm; height: 3.5mm; border: 1px solid var(--texte); background: #fff; }
+.plan-rendu ul, .plan-aide ul { margin: 0; padding-left: 4mm; font-size: 10pt; }
+
+/* ---------- Fiche de révision : compacte, pour tenir sur un recto-verso ---------- */
+body.document.type-revision { font-size: 10pt; line-height: 1.28; }
+.type-revision .doc-entete { margin-bottom: 8px; padding: 5px 12px 6px; }
+.type-revision .doc-titre { font-size: 14pt; margin: 4px 0 2px; }
+.type-revision h2 { font-size: 11.5pt; margin: 9px 0 4px; }
+.type-revision .document p, .type-revision .doc-corps p, .type-revision .doc-corps ul, .type-revision .doc-corps ol { margin: 3px 0; }
+.type-revision .doc-corps table { font-size: 9.5pt; margin: 4px 0; }
+.type-revision .doc-corps td, .type-revision .doc-corps th { padding: 2px 6px; }
+.type-revision .encadre { margin: 6px 0; padding: 2px 8px 3px; }
+.type-revision pre.hljs { margin: 4px 0; padding: 4px 8px; font-size: 8.5pt; }
+.type-revision .doc-corps img { margin: 3px auto; }
+
+/* ---------- Sauts de page ---------- */
+/* « \newpage » dans la source ; en autonomie, chaque étape commence une nouvelle page */
+.saut-page { break-after: page; height: 0; }
+.type-autonomie .doc-corps > h2 { break-before: page; }
+@media screen {
+  .saut-page { border-top: 1px dashed var(--bordure); margin: 8mm 0; }
+}
+
+</style>
+<style>
+/* ==========================================================================
+   Diapositives 16:9 (1280 x 720 px)
+   Écran : une diapo à la fois, mise à l'échelle (←/→, F plein écran, T minuteur).
+   Impression / PDF : une diapo par page.
+   ========================================================================== */
+
+body.presentation {
+  margin: 0;
+  background: #0f172a;
+  font-family: Calibri, Carlito, Arial, sans-serif;
+  color: var(--texte);
+  overflow: hidden;
+}
+
+.diapo {
+  width: 1280px;
+  height: 720px;
+  box-sizing: border-box;
+  padding: 44px 64px 52px;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 28px;
+  line-height: 1.35;
+}
+
+@media screen {
+  .diapo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(var(--echelle, 1));
+  }
+  .diapo.active { display: flex; }
+}
+
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body.presentation { background: #fff; overflow: visible; }
+  .diapo { display: flex; position: relative; break-after: page; }
+}
+
+/* ---------- Titre de diapo ---------- */
+.diapo-titre { flex: none; margin-bottom: 22px; }
+.diapo-titre h2 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #000;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.diapo-corps { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; }
+.diapo-corps > *, .colonnes > div > * { flex: none; }
+
+/* Les images prennent la place restante (texte prioritaire), sans jamais déborder. */
+.diapo-corps > p:has(> img:only-child),
+.colonnes > div > p:has(> img:only-child) {
+  flex: 1 1 0;
+  min-height: 140px;
+  position: relative;
+  margin: 0 0 14px;
+}
+.diapo-corps > p:has(> img:only-child) > img,
+.colonnes > div > p:has(> img:only-child) > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+.diapo-corps > :first-child { margin-top: 0; }
+.diapo-corps p, .diapo-corps ul, .diapo-corps ol { margin: 0 0 14px; }
+.diapo-corps li { margin: 6px 0; }
+.diapo-corps strong { color: #000; }
+.diapo-corps img { max-width: 100%; max-height: 520px; display: block; margin: 0 auto; }
+.diapo-corps h3 { font-size: 30px; color: #000; margin: 0 0 10px; }
+.diapo-corps table { border-collapse: collapse; font-size: 21px; margin: 8px 0; }
+.diapo-corps th, .diapo-corps td { border: 1px solid var(--bordure); padding: 6px 14px; text-align: left; }
+.diapo-corps th { background: #ececec; color: #000; }
+.diapo-corps pre.hljs { font-size: 19px; }
+.diapo-corps :not(pre) > code { font-size: 0.9em; }
+.diapo-corps blockquote { font-size: 30px; font-style: normal; border-left: 4px solid var(--accent); padding: 6px 22px; }
+.diapo-corps .figure figcaption { font-size: 16px; }
+.diapo-corps .figure figcaption::before { content: none; }
+
+.colonnes { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; flex: 1 1 0; min-height: 0; }
+.colonnes > div { min-width: 0; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+
+/* ---------- Pied et barre de progression ---------- */
+.diapo-pied {
+  position: absolute;
+  left: 64px; right: 64px; bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+.diapo-progression {
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 3px;
+  width: var(--p);
+  background: var(--bordure);
+}
+.diapo { position: relative; }
+@media screen { .diapo { position: fixed; } }
+
+/* ---------- Couverture ---------- */
+.diapo-couverture {
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  border-top: 10px solid var(--accent);
+}
+.couverture-texte { flex: 1.2; }
+.couverture-bandeau { font-size: 20px; color: var(--texte-doux); }
+.diapo-couverture h1 { font-size: 52px; line-height: 1.1; font-weight: 700; color: #000; margin: 14px 0 18px; }
+.couverture-accroche { font-size: 27px; font-style: italic; color: var(--texte-doux); margin: 0 0 22px; }
+.couverture-objectifs { font-size: 21px; margin: 0; padding-left: 26px; }
+.couverture-objectifs li { margin: 4px 0; }
+.titre-illustration {
+  flex: 1;
+  max-width: 46%;
+  max-height: 560px;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+/* ---------- Intercalaire de phase ---------- */
+.diapo-phase { justify-content: center; }
+.diapo-phase .diapo-corps { display: flex; align-items: center; flex: none; }
+.diapo-phase h2 {
+  color: #000;
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* ---------- Activité ---------- */
+.diapo-activite, .diapo-question { border-top: 10px solid var(--activite); }
+.diapo-activite .diapo-titre h2, .diapo-question .diapo-titre h2 { border-bottom-color: var(--activite); }
+.act-bandeau {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--texte-doux);
+  margin-bottom: 8px;
+}
+.act-num { font-weight: 700; color: var(--activite); }
+.act-modalite { margin-left: -8px; }
+.act-modalite::before { content: '· '; }
+.act-chrono {
+  margin-left: auto;
+  font-size: 44px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #000;
+  border: 2px solid var(--texte);
+  padding: 0 16px;
+  cursor: pointer;
+  user-select: none;
+}
+.act-chrono.en-cours { background: var(--activite-pale); }
+.act-chrono.bientot { color: #b45309; border-color: #b45309; }
+.act-chrono.fini { background: #dc2626; border-color: #dc2626; color: #fff; }
+.diapo-question .diapo-titre h2 { font-size: 34px; }
+.diapo-question .act-num { font-size: 22px; font-weight: 400; vertical-align: middle; margin-right: 10px; }
+.diapo-question .diapo-corps { font-size: 30px; }
+.act-questions { font-size: 25px; margin: 6px 0 0 !important; padding-left: 52px; }
+.act-questions li { margin: 4px 0 !important; }
+.act-questions li::marker { content: 'Q' counter(list-item) '. '; font-weight: 700; }
+.act-questions p { margin: 0 !important; }
+.diapo-question .choix { font-size: 30px; margin: 14px 0; }
+
+/* ---------- À retenir ---------- */
+.diapo-retenir { border-top: 10px solid var(--retenir); }
+.diapo-retenir .diapo-titre h2 { border-bottom-color: var(--retenir); }
+.diapo-retenir .diapo-corps { font-size: 24px; }
+
+/* ---------- Éléments partagés avec les documents ---------- */
+.diapo .encadre, .diapo .problematique, .diapo .doc-ressource, .diapo .contexte { font-size: 22px; }
+.diapo .problematique { font-size: 28px; padding: 14px 22px; }
+.diapo .reponse, .diapo .note-prof, .diapo .note-dire { display: none; }
+
+</style>
+</head>
+<body class="presentation" style="--accent:#2563eb">
+<main class="diapos">
+<section class="diapo diapo-couverture">
+  <div class="couverture-texte">
+    <div class="couverture-bandeau">Lycée César Baggio · Term STI2D SIN</div>
+    <h1>La passerelle pas à pas : de la box de la maison au réseau du parking</h1>
+    <p class="couverture-accroche">Votre box est un routeur. Votre téléphone a une passerelle. Aujourd'hui, on joue le trajet d'un paquet, enveloppe en main.</p>
+    <ul class="couverture-objectifs"><li>Lire une adresse IP /24 comme une adresse postale (la rue, puis le numéro)</li><li>Décider si un paquet va directement à son destinataire ou passe par la passerelle</li><li>Compléter une fiche de configuration (réseau, passerelle) et repérer une passerelle fausse</li><li>Expliquer pourquoi il faut une passerelle des deux côtés (l'aller et le retour)</li></ul>
+  </div>
+  <img class="titre-illustration" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUyMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTIwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHRleHQgeD0iNjAwIiB5PSI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q2hleiB2b3VzLCBpbCB5IGEgZMOpasOgIHVuIHJvdXRldXIgOiBsYSBib3g8L3RleHQ+CiAgPCEtLSBtYWlzb24gLS0+CiAgPHJlY3QgeD0iMzAiIHk9IjcwIiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjQyMCIgcng9IjE4IiBmaWxsPSIjZWNmZGY1IiBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNiIvPgogIDx0ZXh0IHg9IjUwIiB5PSIxMDQiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjc2NmUiPkxhIG1haXNvbiA6IHLDqXNlYXUgMTkyLjE2OC4xLjAgKGxhIMKrIHJ1ZSDCuyk8L3RleHQ+CiAgPCEtLSBhcHBhcmVpbHMgLS0+CiAgPGcgZm9udC1zaXplPSIxNyI+CiAgICA8cmVjdCB4PSI2MCIgeT0iMTQwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjkwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+VMOpbMOpcGhvbmU8L3RleHQ+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjIwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMwZjc2NmUiPjE5Mi4xNjguMS4yMzwvdGV4dD4KICAgIDxyZWN0IHg9IjYwIiB5PSIyNjAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5PcmRpbmF0ZXVyPC90ZXh0PgogICAgPHRleHQgeD0iMTY1IiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMTA8L3RleHQ+CiAgICA8cmVjdCB4PSI2MCIgeT0iMzgwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjkwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjQxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q29uc29sZSBkZSBqZXU8L3RleHQ+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjQ0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMwZjc2NmUiPjE5Mi4xNjguMS4zMTwvdGV4dD4KICA8L2c+CiAgPCEtLSBsaWVucyAtLT4KICA8ZyBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iNCI+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMTg1IiB4Mj0iNDcwIiB5Mj0iMjkwIi8+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMzA1IiB4Mj0iNDcwIiB5Mj0iMzA1Ii8+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iNDI1IiB4Mj0iNDcwIiB5Mj0iMzIwIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjM3MCIgeT0iMjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMGY3NjZlIiB0cmFuc2Zvcm09InJvdGF0ZSgyNyAzNzAgMjMyKSI+bcOqbWUgcnVlIDogZGlyZWN0PC90ZXh0PgogIDwhLS0gYm94IC0tPgogIDxyZWN0IHg9IjQ3MCIgeT0iMjMwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjE1MCIgcng9IjE2IiBmaWxsPSIjZWE1ODBjIi8+CiAgPHRleHQgeD0iNTkwIiB5PSIyNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiPkxhIGJveDwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjI5NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZmZmZiI+PSB1biByb3V0ZXVyPC90ZXh0PgogIDxyZWN0IHg9IjQ4MiIgeT0iMzEwIiB3aWR0aD0iMjE2IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZjdlZCIvPgogIDx0ZXh0IHg9IjU5MCIgeT0iMzMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOWEzNDEyIj5jw7R0w6kgbWFpc29uIChsYSBwYXNzZXJlbGxlKTwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjM1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiM5YTM0MTIiPjE5Mi4xNjguMS4xPC90ZXh0PgogIDwhLS0gaW50ZXJuZXQgLS0+CiAgPGxpbmUgeDE9IjcxMCIgeTE9IjMwNSIgeDI9IjkwMCIgeTI9IjMwNSIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8dGV4dCB4PSI4MDUiIHk9IjI5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzFkNGVkOCI+YXV0cmUgcsOpc2VhdTwvdGV4dD4KICA8dGV4dCB4PSI4MDUiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzFkNGVkOCI+Y8O0dMOpIEludGVybmV0IDogdW5lPC90ZXh0PgogIDx0ZXh0IHg9IjgwNSIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5hdXRyZSBhZHJlc3NlIElQPC90ZXh0PgogIDxlbGxpcHNlIGN4PSIxMDMwIiBjeT0iMzA1IiByeD0iMTQwIiByeT0iOTUiIGZpbGw9IiNlZmY2ZmYiIHN0cm9rZT0iIzI1NjNlYiIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHRleHQgeD0iMTAzMCIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5JbnRlcm5ldDwvdGV4dD4KICA8dGV4dCB4PSIxMDMwIiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZTQwYWYiPllvdVR1YmUsIFByb25vdGXigKY8L3RleHQ+CiAgPCEtLSBsZWdlbmRlIC0tPgogIDx0ZXh0IHg9IjYwMCIgeT0iNTEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzM0MTU1Ij5Qb3VyIHNvcnRpciBkZSBsYSBtYWlzb24sIGNoYXF1ZSBhcHBhcmVpbCBjb25maWUgc2VzIHBhcXVldHMgw6AgbGEgYm94IDogYydlc3Qgc2EgPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNjMjQxMGMiPnBhc3NlcmVsbGU8L3RzcGFuPi48L3RleHQ+Cjwvc3ZnPgo=" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 19</span></footer>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Partir de la maison</h2></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>2 / 19</span></footer>
+  <div class="diapo-progression" style="--p:10.526315789473683%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Chez vous, il y a déjà un routeur</h2></header>
+  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUyMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTIwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHRleHQgeD0iNjAwIiB5PSI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q2hleiB2b3VzLCBpbCB5IGEgZMOpasOgIHVuIHJvdXRldXIgOiBsYSBib3g8L3RleHQ+CiAgPCEtLSBtYWlzb24gLS0+CiAgPHJlY3QgeD0iMzAiIHk9IjcwIiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjQyMCIgcng9IjE4IiBmaWxsPSIjZWNmZGY1IiBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNiIvPgogIDx0ZXh0IHg9IjUwIiB5PSIxMDQiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjc2NmUiPkxhIG1haXNvbiA6IHLDqXNlYXUgMTkyLjE2OC4xLjAgKGxhIMKrIHJ1ZSDCuyk8L3RleHQ+CiAgPCEtLSBhcHBhcmVpbHMgLS0+CiAgPGcgZm9udC1zaXplPSIxNyI+CiAgICA8cmVjdCB4PSI2MCIgeT0iMTQwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjkwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+VMOpbMOpcGhvbmU8L3RleHQ+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjIwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMwZjc2NmUiPjE5Mi4xNjguMS4yMzwvdGV4dD4KICAgIDxyZWN0IHg9IjYwIiB5PSIyNjAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5PcmRpbmF0ZXVyPC90ZXh0PgogICAgPHRleHQgeD0iMTY1IiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMTA8L3RleHQ+CiAgICA8cmVjdCB4PSI2MCIgeT0iMzgwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjkwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjQxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q29uc29sZSBkZSBqZXU8L3RleHQ+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjQ0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMwZjc2NmUiPjE5Mi4xNjguMS4zMTwvdGV4dD4KICA8L2c+CiAgPCEtLSBsaWVucyAtLT4KICA8ZyBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iNCI+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMTg1IiB4Mj0iNDcwIiB5Mj0iMjkwIi8+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMzA1IiB4Mj0iNDcwIiB5Mj0iMzA1Ii8+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iNDI1IiB4Mj0iNDcwIiB5Mj0iMzIwIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjM3MCIgeT0iMjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMGY3NjZlIiB0cmFuc2Zvcm09InJvdGF0ZSgyNyAzNzAgMjMyKSI+bcOqbWUgcnVlIDogZGlyZWN0PC90ZXh0PgogIDwhLS0gYm94IC0tPgogIDxyZWN0IHg9IjQ3MCIgeT0iMjMwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjE1MCIgcng9IjE2IiBmaWxsPSIjZWE1ODBjIi8+CiAgPHRleHQgeD0iNTkwIiB5PSIyNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiPkxhIGJveDwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjI5NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZmZmZiI+PSB1biByb3V0ZXVyPC90ZXh0PgogIDxyZWN0IHg9IjQ4MiIgeT0iMzEwIiB3aWR0aD0iMjE2IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZjdlZCIvPgogIDx0ZXh0IHg9IjU5MCIgeT0iMzMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOWEzNDEyIj5jw7R0w6kgbWFpc29uIChsYSBwYXNzZXJlbGxlKTwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjM1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiM5YTM0MTIiPjE5Mi4xNjguMS4xPC90ZXh0PgogIDwhLS0gaW50ZXJuZXQgLS0+CiAgPGxpbmUgeDE9IjcxMCIgeTE9IjMwNSIgeDI9IjkwMCIgeTI9IjMwNSIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8dGV4dCB4PSI4MDUiIHk9IjI5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzFkNGVkOCI+YXV0cmUgcsOpc2VhdTwvdGV4dD4KICA8dGV4dCB4PSI4MDUiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzFkNGVkOCI+Y8O0dMOpIEludGVybmV0IDogdW5lPC90ZXh0PgogIDx0ZXh0IHg9IjgwNSIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5hdXRyZSBhZHJlc3NlIElQPC90ZXh0PgogIDxlbGxpcHNlIGN4PSIxMDMwIiBjeT0iMzA1IiByeD0iMTQwIiByeT0iOTUiIGZpbGw9IiNlZmY2ZmYiIHN0cm9rZT0iIzI1NjNlYiIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHRleHQgeD0iMTAzMCIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5JbnRlcm5ldDwvdGV4dD4KICA8dGV4dCB4PSIxMDMwIiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZTQwYWYiPllvdVR1YmUsIFByb25vdGXigKY8L3RleHQ+CiAgPCEtLSBsZWdlbmRlIC0tPgogIDx0ZXh0IHg9IjYwMCIgeT0iNTEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzM0MTU1Ij5Qb3VyIHNvcnRpciBkZSBsYSBtYWlzb24sIGNoYXF1ZSBhcHBhcmVpbCBjb25maWUgc2VzIHBhcXVldHMgw6AgbGEgYm94IDogYydlc3Qgc2EgPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNjMjQxMGMiPnBhc3NlcmVsbGU8L3RzcGFuPi48L3RleHQ+Cjwvc3ZnPgo=" alt="" width="92%"></p>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>3 / 19</span></footer>
+  <div class="diapo-progression" style="--p:15.789473684210526%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 1</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="1" data-secondes="480" title="Clic ou touche T : démarrer / pause">08:00</span>
+      </div>Rue et numéro</h2></header>
+  <div class="diapo-corps"><table>
+<thead>
+<tr>
+<th style="text-align:left">Adresse IP</th>
+<th style="text-align:left">La <strong>rue</strong> (le réseau) : les 3 premiers nombres, puis <code>.0</code></th>
+<th style="text-align:left">Le <strong>numéro</strong> (la machine) : le dernier nombre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>192.168.1.23</code></td>
+<td style="text-align:left"><code>192.168.1.0</code></td>
+<td style="text-align:left">23</td>
+</tr>
+</tbody>
+</table>
+<p>Deux machines dans la <strong>même rue</strong> se parlent <strong>directement</strong> (le switch, c'est le facteur de la rue).</p>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>4 / 19</span></footer>
+  <div class="diapo-progression" style="--p:21.052631578947366%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Jouer le trajet d'un paquet</h2></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>5 / 19</span></footer>
+  <div class="diapo-progression" style="--p:26.31578947368421%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Le facteur ne sort pas de sa rue</h2></header>
+  <div class="diapo-corps"><ul>
+<li><strong>Même rue</strong> : la lettre va <strong>directement</strong> au destinataire.</li>
+<li><strong>Autre rue</strong> : on dépose la lettre au <strong>bureau de poste de sa rue</strong>, qui la fait passer de l'autre côté.</li>
+<li>En réseau, ce bureau de poste, c'est le <strong>routeur</strong> : il a <strong>une adresse dans chaque rue</strong>.</li>
+<li>L'adresse du routeur <strong>dans sa propre rue</strong>, c'est la <strong>passerelle</strong> de la machine.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>6 / 19</span></footer>
+  <div class="diapo-progression" style="--p:31.57894736842105%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">classe entière</span>
+        <span class="act-chrono" data-act="2" data-secondes="720" title="Clic ou touche T : démarrer / pause">12:00</span>
+      </div>Le jeu des enveloppes</h2></header>
+  <div class="diapo-corps"><ol>
+<li>L'expéditeur regarde l'adresse du destinataire : <strong>même rue</strong> que lui ?</li>
+<li><strong>Oui</strong> : il lui donne l'enveloppe directement.</li>
+<li><strong>Non</strong> : il la donne au routeur, à la main <strong>de sa rue</strong> (sa passerelle).</li>
+<li>Le routeur passe l'enveloppe à son autre main, qui la remet au destinataire.</li>
+</ol>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>7 / 19</span></footer>
+  <div class="diapo-progression" style="--p:36.84210526315789%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Écrire la configuration</h2></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>8 / 19</span></footer>
+  <div class="diapo-progression" style="--p:42.10526315789473%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>La règle d'or de la passerelle</h2></header>
+  <div class="diapo-corps"><ul>
+<li>La passerelle d'une machine est <strong>toujours dans sa rue</strong> : même réseau qu'elle.</li>
+<li>Elle ne sert qu'à <strong>sortir</strong> de la rue : dans la rue, on n'en a pas besoin.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Machine</th>
+<th style="text-align:left">Adresse</th>
+<th style="text-align:left">Passerelle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Supervision</td>
+<td style="text-align:left"><code>192.168.20.2</code></td>
+<td style="text-align:left"><code>192.168.20.1</code> ✔</td>
+</tr>
+<tr>
+<td style="text-align:left">Supervision</td>
+<td style="text-align:left"><code>192.168.20.2</code></td>
+<td style="text-align:left"><code>10.0.0.1</code> ✘ (pas dans sa rue)</td>
+</tr>
+</tbody>
+</table>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>9 / 19</span></footer>
+  <div class="diapo-progression" style="--p:47.368421052631575%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="3" data-secondes="600" title="Clic ou touche T : démarrer / pause">10:00</span>
+      </div>La fiche de configuration</h2></header>
+  <div class="diapo-corps"><p>Vous êtes le technicien qui installe quatre nouveaux appareils. Utilisez la règle d'or.</p>
+<ol class="act-questions"><li value="3"><p>Complétez la fiche de configuration.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Machine</th>
+<th style="text-align:left">Adresse IP</th>
+<th style="text-align:left">Réseau (la rue)</th>
+<th style="text-align:left">Passerelle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Capteur P02</td>
+<td style="text-align:left"><code>192.168.20.12</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Caisse</td>
+<td style="text-align:left"><code>10.0.0.30</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Imprimante</td>
+<td style="text-align:left"><code>10.0.0.40</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Caméra</td>
+<td style="text-align:left"><code>192.168.20.50</code></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</li><li value="4"><p>Un technicien a réglé la passerelle de la caméra (<code>192.168.20.50</code>) sur <code>10.0.0.1</code>.</p>
+<p><strong>a)</strong> Quelle règle n'a-t-il pas respectée ? <strong>b)</strong> Quelle est la bonne passerelle ? <strong>c)</strong> Malgré l'erreur, la caméra peut-elle envoyer ses images à Supervision (<code>192.168.20.2</code>) ? Pourquoi ?</p>
+</li></ol></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>10 / 19</span></footer>
+  <div class="diapo-progression" style="--p:52.63157894736842%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>L'aller et le retour</h2></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>11 / 19</span></footer>
+  <div class="diapo-progression" style="--p:57.89473684210527%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Un message, c'est un aller et un retour</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Un <code>ping</code> : une <strong>demande</strong> part, une <strong>réponse</strong> doit revenir.</li>
+<li>L'aller utilise la passerelle de l'<strong>expéditeur</strong>, le retour celle du <strong>destinataire</strong>.</li>
+<li>Il faut donc une passerelle <strong>des deux côtés</strong>.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>12 / 19</span></footer>
+  <div class="diapo-progression" style="--p:63.1578947368421%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 4</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="4" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>L'aller et le retour</h2></header>
+  <div class="diapo-corps"><p>Supervision a la passerelle <code>192.168.20.1</code>. Le poste de l'accueil (<code>10.0.0.25</code>) n'a <strong>aucune passerelle</strong>. Supervision envoie un ping au poste de l'accueil.</p>
+<ol class="act-questions"><li value="5"><p><strong>a)</strong> La demande arrive-t-elle au poste de l'accueil ? <strong>b)</strong> La réponse revient-elle à Supervision ? Pourquoi ? <strong>c)</strong> Que faut-il régler, et sur quelle valeur ?</p>
+</li></ol></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>13 / 19</span></footer>
+  <div class="diapo-progression" style="--p:68.42105263157895%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>14 / 19</span></footer>
+  <div class="diapo-progression" style="--p:73.68421052631578%"></div>
+</section>
+<section class="diapo diapo-retenir" >
+  <header class="diapo-titre"><h2>À retenir</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Une adresse IP /24 se lit comme une adresse postale : la <mark class="trou-rempli">rue</mark> (le réseau, 3 premiers nombres), puis le <mark class="trou-rempli">numéro</mark> (la machine).</li>
+<li>Dans la même rue, les machines se parlent <mark class="trou-rempli">directement</mark>, par le switch.</li>
+<li>Pour sortir de sa rue, une machine confie ses paquets à sa <mark class="trou-rempli">passerelle</mark> : l'adresse du routeur de son côté.</li>
+<li>La passerelle est toujours dans la <mark class="trou-rempli">même</mark> rue que la machine.</li>
+<li>Pour un aller et un retour entre deux rues, il faut une passerelle des <mark class="trou-rempli">deux</mark> côtés.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>15 / 19</span></footer>
+  <div class="diapo-progression" style="--p:78.94736842105263%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 5</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="5" data-secondes="180" title="Clic ou touche T : démarrer / pause">03:00</span>
+      </div>Quiz de sortie</h2></header>
+  <div class="diapo-corps"><p>Répondez sur votre fiche.</p>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>16 / 19</span></footer>
+  <div class="diapo-progression" style="--p:84.21052631578947%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 6</h2></header>
+  <div class="diapo-corps"><p><code>172.16.5.40</code> et <code>172.16.5.7</code> (masque /24) sont…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>dans la même rue : ils se parlent directement</li>
+<li class="choix"><span class="case"></span>dans deux rues différentes</li>
+<li class="choix"><span class="case"></span>impossibles à comparer sans le routeur</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>17 / 19</span></footer>
+  <div class="diapo-progression" style="--p:89.47368421052632%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 7</h2></header>
+  <div class="diapo-corps"><p>La passerelle de <code>172.16.5.40</code> peut être…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span><code>172.16.5.1</code></li>
+<li class="choix"><span class="case"></span><code>172.16.6.1</code></li>
+<li class="choix"><span class="case"></span><code>10.0.0.1</code></li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>18 / 19</span></footer>
+  <div class="diapo-progression" style="--p:94.73684210526315%"></div>
+</section>
+<section class="diapo diapo-question" >
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 8</h2></header>
+  <div class="diapo-corps"><p>À la maison, le routeur qui sert de passerelle à votre téléphone, c'est…</p>
+<ul class="qcm qcm qcm">
+<li class="choix"><span class="case"></span>l'antenne 4G</li>
+<li class="choix"><span class="case"></span>la box</li>
+<li class="choix"><span class="case"></span>le serveur de YouTube</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>La passerelle pas à pas : de la box de la maison au réseau du parking</span><span>19 / 19</span></footer>
+  <div class="diapo-progression" style="--p:100%"></div>
+</section>
+</main>
+<script>
+const d=[...document.querySelectorAll('.diapo')];let i=0;
+const ech=()=>document.documentElement.style.setProperty('--echelle',Math.min(innerWidth/1280,innerHeight/720));
+function voir(n){i=Math.max(0,Math.min(d.length-1,n));d.forEach((x,k)=>x.classList.toggle('active',k===i));try{history.replaceState(null,'',location.href.split('#')[0]+'#'+(i+1));}catch(_){}}
+const minuteurs=new Map();
+function chrono(x){const c0=x.querySelector('.act-chrono');if(!c0)return;
+ const g=[...document.querySelectorAll('.act-chrono[data-act="'+c0.dataset.act+'"]')],c=g[0]||c0,tous=g.length?g:[c0];
+ if(minuteurs.has(c)){clearInterval(minuteurs.get(c));minuteurs.delete(c);tous.forEach(y=>y.classList.remove('en-cours'));return;}
+ let s=c.dataset.reste?+c.dataset.reste:+c.dataset.secondes;tous.forEach(y=>y.classList.add('en-cours'));
+ minuteurs.set(c,setInterval(()=>{s--;c.dataset.reste=s;const a=Math.abs(s);
+  const t=(s<0?'+':'')+String(Math.floor(a/60)).padStart(2,'0')+':'+String(a%60).padStart(2,'0');
+  tous.forEach(y=>{y.textContent=t;y.classList.toggle('bientot',s>0&&s<=60);y.classList.toggle('fini',s<=0);});},1000));}
+addEventListener('resize',ech);ech();voir((parseInt(location.hash.slice(1))||1)-1);
+addEventListener('hashchange',()=>voir((parseInt(location.hash.slice(1))||1)-1));
+addEventListener('keydown',e=>{
+ if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){voir(i+1);e.preventDefault();}
+ else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){voir(i-1);e.preventDefault();}
+ else if(e.key==='Home')voir(0);else if(e.key==='End')voir(d.length-1);
+ else if(e.key==='f'||e.key==='F'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
+ else if(e.key==='t'||e.key==='T')chrono(d[i]);});
+addEventListener('click',e=>{if(e.target.closest('.act-chrono')){chrono(d[i]);return;}voir(e.clientX>innerWidth/3?i+1:i-1);});
+</script>
+</body>
+</html>

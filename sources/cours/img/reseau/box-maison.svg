@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="1200" height="520" fill="#ffffff"/>
+  <text x="600" y="40" text-anchor="middle" font-size="26" font-weight="800" fill="#0f172a">Chez vous, il y a déjà un routeur : la box</text>
+  <!-- maison -->
+  <rect x="30" y="70" width="680" height="420" rx="18" fill="#ecfdf5" stroke="#0d9488" stroke-width="3" stroke-dasharray="10 6"/>
+  <text x="50" y="104" font-size="20" font-weight="800" fill="#0f766e">La maison : réseau 192.168.1.0 (la « rue »)</text>
+  <!-- appareils -->
+  <g font-size="17">
+    <rect x="60" y="140" width="210" height="90" rx="12" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+    <text x="165" y="175" text-anchor="middle" font-weight="800" fill="#0f172a">Téléphone</text>
+    <text x="165" y="205" text-anchor="middle" font-family="Consolas, monospace" fill="#0f766e">192.168.1.23</text>
+    <rect x="60" y="260" width="210" height="90" rx="12" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+    <text x="165" y="295" text-anchor="middle" font-weight="800" fill="#0f172a">Ordinateur</text>
+    <text x="165" y="325" text-anchor="middle" font-family="Consolas, monospace" fill="#0f766e">192.168.1.10</text>
+    <rect x="60" y="380" width="210" height="90" rx="12" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+    <text x="165" y="415" text-anchor="middle" font-weight="800" fill="#0f172a">Console de jeu</text>
+    <text x="165" y="445" text-anchor="middle" font-family="Consolas, monospace" fill="#0f766e">192.168.1.31</text>
+  </g>
+  <!-- liens -->
+  <g stroke="#0d9488" stroke-width="4">
+    <line x1="270" y1="185" x2="470" y2="290"/>
+    <line x1="270" y1="305" x2="470" y2="305"/>
+    <line x1="270" y1="425" x2="470" y2="320"/>
+  </g>
+  <text x="370" y="232" text-anchor="middle" font-size="15" fill="#0f766e" transform="rotate(27 370 232)">même rue : direct</text>
+  <!-- box -->
+  <rect x="470" y="230" width="240" height="150" rx="16" fill="#ea580c"/>
+  <text x="590" y="268" text-anchor="middle" font-size="22" font-weight="800" fill="#ffffff">La box</text>
+  <text x="590" y="294" text-anchor="middle" font-size="16" fill="#ffffff">= un routeur</text>
+  <rect x="482" y="310" width="216" height="56" rx="8" fill="#fff7ed"/>
+  <text x="590" y="332" text-anchor="middle" font-size="14" fill="#9a3412">côté maison (la passerelle)</text>
+  <text x="590" y="355" text-anchor="middle" font-size="17" font-weight="700" font-family="Consolas, monospace" fill="#9a3412">192.168.1.1</text>
+  <!-- internet -->
+  <line x1="710" y1="305" x2="900" y2="305" stroke="#2563eb" stroke-width="5"/>
+  <text x="805" y="290" text-anchor="middle" font-size="15" fill="#1d4ed8">autre réseau</text>
+  <text x="805" y="330" text-anchor="middle" font-size="15" fill="#1d4ed8">côté Internet : une</text>
+  <text x="805" y="350" text-anchor="middle" font-size="15" fill="#1d4ed8">autre adresse IP</text>
+  <ellipse cx="1030" cy="305" rx="140" ry="95" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="1030" y="295" text-anchor="middle" font-size="24" font-weight="800" fill="#1d4ed8">Internet</text>
+  <text x="1030" y="325" text-anchor="middle" font-size="15" fill="#1e40af">YouTube, Pronote…</text>
+  <!-- legende -->
+  <text x="600" y="512" text-anchor="middle" font-size="18" fill="#334155">Pour sortir de la maison, chaque appareil confie ses paquets à la box : c'est sa <tspan font-weight="800" fill="#c2410c">passerelle</tspan>.</text>
+</svg>

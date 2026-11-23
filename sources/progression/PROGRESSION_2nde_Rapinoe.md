@@ -50,12 +50,12 @@ sequences:
       - "Indexer à la main quelques textes puis répondre à une requête ; comparer plusieurs moteurs de recherche"
       - "Régler cookies et confidentialité du navigateur ; visualiser les traqueurs"
     outils: [navigateur (outils de développement), éditeur web maison (fichier HTML, sans compte)]
-    evaluation: "Interrogation de 30 min (sujets A / B, 45 min avec tiers-temps), vendredi 27 novembre. Notes de TP : page web (9 octobre), moteurs de recherche (13 novembre), coulisses d'une page (20 et 27 novembre) ; fiche de synthèse notée (20 novembre)."
-    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_MoteursRecherche_Note, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso, COURS_SNT_Web_Synthese, TP_SNT_Web_Coulisses, REVISION_SNT_Web, EVAL_SNT_Web]
+    evaluation: "Interrogation de 30 min (sujets A / B, 45 min avec tiers-temps), vendredi 4 décembre (reportée du 27 novembre). Notes de TP : page web (9 octobre), moteurs de recherche (13 novembre), coulisses d'une page (20 et 27 novembre) ; fiche de synthèse notée (20 novembre)."
+    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_MoteursRecherche_Note, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso, COURS_SNT_Web_Synthese, TP_SNT_Web_Coulisses, COURS_SNT_Web_PasAPas, REVISION_SNT_Web, EVAL_SNT_Web]
     semaines: 4
     etat: en-cours
     debut: 2026-10-09
-    fin: 2026-11-27
+    fin: 2026-12-04
 
   - id: S3
     titre: Les réseaux sociaux
@@ -169,6 +169,8 @@ journal:
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre : TP du 2e demi-groupe noté sur grille (`AUTO_SNT_Web_MoteursRecherche_Note`, enquête personnelle sur deux moteurs et une source) ; classe entière : interrogation Internet à distance, notée (`AUTO_SNT_Internet_Distance`, valeurs propres à chaque élève tirées du jour de naissance). La fiche « cookies » est reportée."
   - date: 2026-11-18
     texte: "Retour en présentiel prévu le 20 novembre ; il faut rattraper le retard. Le Web se termine le 27 novembre : séance de synthèse notée (20 novembre, avec la fiche de révision), TP noté « coulisses d'une page » (1er groupe le 20, 2e groupe le 27 avant l'interrogation), interrogation Web de 30 min le 27 novembre. Les cookies, vus seulement à distance, sont repris dans la synthèse. Les réseaux sociaux commencent le 4 décembre. Tous les TP et toutes les activités sont désormais notés."
+  - date: 2026-11-23
+    texte: "Le 20 novembre, la synthèse est allée trop vite : les élèves étaient perdus. L'interrogation Web est reportée au 4 décembre. Vendredi 27 novembre, 9 h : séance de reprise très guidée « le voyage d'un clic » (URL, DNS, requête et réponse HTTP jouées en classe, lire un code HTML), fiche notée /20, qui peut remplacer la note de la synthèse. Le TP du 2e demi-groupe reste le 27 à 8 h. Les réseaux sociaux commencent le 11 décembre."
 ---
 
 ## Intentions pédagogiques

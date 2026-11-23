@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
 
-export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'autonomie', 'cadrage', 'progression', 'revision'];
+export const TYPES = ['tp', 'td', 'evaluation', 'cours', 'autonomie', 'cadrage', 'progression', 'revision', 'contexte'];
 export const NOTES = ['tp', 'td', 'evaluation']; // documents notés : points et barème obligatoires
 // Un travail en autonomie (distanciel) ou une séance de cours (fiche d'activités notée)
 // est noté seulement s'il porte un barème.
@@ -116,7 +116,7 @@ export function valider(doc, config) {
   const A = (ligne, msg) => avert.push({ ligne: ligne == null ? null : ligne + decalage + 1, msg });
 
   // Front matter
-  for (const champ of ['titre', 'niveau', 'type', ...(meta.type === 'revision' ? [] : ['duree']), 'competences']) {
+  for (const champ of ['titre', 'niveau', 'type', ...(['revision', 'contexte'].includes(meta.type) ? [] : ['duree']), 'competences']) {
     if (meta[champ] == null || meta[champ] === '' || (Array.isArray(meta[champ]) && !meta[champ].length)) {
       E(null, `Front matter : champ « ${champ} » manquant`);
     }

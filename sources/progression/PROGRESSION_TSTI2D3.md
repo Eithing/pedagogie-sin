@@ -31,7 +31,7 @@ sequences:
     etat: en-cours
     debut: 2026-11-03
     fin: 2026-12-04
-    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme]
+    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_PasAPas]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -59,6 +59,8 @@ journal:
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre, heure commune : interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`), à la place du sujet B. La fiche « routeur et passerelle » est reportée."
   - date: 2026-11-18
     texte: "Plan de rattrapage : T2 resserrée, fin le 4 décembre, puis T3 dès le 8 décembre. Heure commune : C1 se termine le 4 décembre (séance notée « routeur et passerelle » le 20 novembre, TP noté de configuration le 4 décembre), C2 commence le 11 décembre. Tous les TP et toutes les activités sont désormais notés."
+  - date: 2026-11-23
+    texte: "Le 20 novembre, l'heure commune « routeur et passerelle » est restée abstraite pour les élèves. Mardi 24 novembre : « le lampadaire pas à pas » (première séance en présentiel sur le programme : exécuter le programme à la main, chasse aux erreurs, Wokwi geste par geste avec le professeur), fiche notée /20. Vendredi 27 novembre, heure commune : reprise sur papier « la passerelle pas à pas » (la box de la maison, jeu des enveloppes), notée /20, qui peut remplacer la note du 20 novembre."
 ---
 
 ## Organisation

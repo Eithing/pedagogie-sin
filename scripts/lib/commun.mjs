@@ -73,7 +73,7 @@ export function dossierSequence(meta, nom, config) {
 // Dossier propre à un document, dans eleve/, prof/ et slides/ : « <séquence>_<Type>_<nom court> »,
 // ex. T1_Distanciel_Voyant-Aerez-CO2. Nom court : champ « court: » du front matter,
 // sinon le nom du fichier sans le préfixe TYPE_Niveau_.
-const TYPES_DOSSIER = { tp: 'TP', td: 'TD', cours: 'Cours', evaluation: 'Eval', autonomie: 'Distanciel', cadrage: 'Cadrage' };
+const TYPES_DOSSIER = { tp: 'TP', td: 'TD', cours: 'Cours', evaluation: 'Eval', autonomie: 'Distanciel', cadrage: 'Cadrage', contexte: 'Contexte' };
 const tiret = (t) => String(t).replace(/µ/g, 'u').replace(/₂/g, '2').normalize('NFD').replace(/[̀-ͯ]/g, '')
   .replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '');
 export function dossierDocument(meta, nom, config) {
@@ -143,7 +143,7 @@ export function analyser(fichier, config) {
     resume = ` (${seqs.length} séquences : ${seqs.filter((s) => s.etat === 'fait').length} réalisées, ${seqs.filter((s) => s.etat === 'en-cours').length} en cours)`;
   } else {
     res = valider(doc, config);
-    if (!doc.meta.pronote) res.avertissements.push({ ligne: null, msg: 'Champ « pronote: » absent (titre + description de séance) : texte Pronote construit automatiquement' });
+    if (!doc.meta.pronote && doc.meta.type !== 'contexte') res.avertissements.push({ ligne: null, msg: 'Champ « pronote: » absent (titre + description de séance) : texte Pronote construit automatiquement' });
     for (const t of [].concat(doc.meta.pronote ?? [])) {
       if (!t?.titre || !t?.description) res.erreurs.push({ ligne: null, msg: 'Champ « pronote: » : il faut un « titre » et une « description » (1 à 2 lignes)' });
     }

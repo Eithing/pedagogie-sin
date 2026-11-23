@@ -66,6 +66,14 @@ function sorties(doc, seance, progression, config, nom) {
     }];
   }
 
+  // Fiche enseignant « contexte » : un seul PDF, dans prof/ (pas de version élève)
+  if (doc.meta.type === 'contexte') {
+    return [{
+      cle: 'contexte', html: rendreHtml({ meta: doc.meta, corps: variante(doc.corps, 'prof', config), cible: 'prof', config, fichierSource: doc.fichier }),
+      fichierHtml: cache('contexte'), pdf: ici('prof', `${nom}.pdf`), libelle: 'FICHE ENSEIGNANT',
+    }];
+  }
+
   if (progression) {
     return [{
       cle: 'progression', html: rendreProgression(doc, progression, config), fichierHtml: cache('progression'),
@@ -129,7 +137,7 @@ async function construire(fichier, config, manifeste) {
   }
 
   // Texte du cahier de textes Pronote (titre + description), dans le dossier prof du document
-  if (!progression) {
+  if (!progression && doc.meta.type !== 'contexte') {
     const cible = path.join(dossierDe(doc.meta, nom, config, 'prof'), `PRONOTE_${nom}.txt`);
     fs.mkdirSync(path.dirname(cible), { recursive: true });
     fs.writeFileSync(cible, fichierPronote(doc.meta, nom, config));

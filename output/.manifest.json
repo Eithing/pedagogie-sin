@@ -277,5 +277,50 @@
     "Eval/2nde/ELEVE_EVAL_SNT_Web_B.pdf",
     "Eval/2nde/PROF_EVAL_SNT_Web_B.pdf",
     "Eval/2nde/PRONOTE_EVAL_SNT_Web.txt"
+  ],
+  "sources/cours/COURS_TermSIN_Lampadaire_PasAPas.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Cours_Lampadaire-pas-a-pas/ELEVE_COURS_TermSIN_Lampadaire_PasAPas.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-pas-a-pas/PROF_COURS_TermSIN_Lampadaire_PasAPas.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-pas-a-pas/DEROULE_COURS_TermSIN_Lampadaire_PasAPas.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-pas-a-pas/COURS_TermSIN_Lampadaire_PasAPas.html",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-pas-a-pas/SLIDES_COURS_TermSIN_Lampadaire_PasAPas.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-pas-a-pas/PRONOTE_COURS_TermSIN_Lampadaire_PasAPas.txt"
+  ],
+  "sources/cours/COURS_TermSIN_Reseau_PasAPas.md": [
+    "Term_STI2D_SIN/C1_Reseau_local/eleve/C1_Cours_Passerelle-pas-a-pas/ELEVE_COURS_TermSIN_Reseau_PasAPas.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Passerelle-pas-a-pas/PROF_COURS_TermSIN_Reseau_PasAPas.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Passerelle-pas-a-pas/DEROULE_COURS_TermSIN_Reseau_PasAPas.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/slides/C1_Cours_Passerelle-pas-a-pas/COURS_TermSIN_Reseau_PasAPas.html",
+    "Term_STI2D_SIN/C1_Reseau_local/slides/C1_Cours_Passerelle-pas-a-pas/SLIDES_COURS_TermSIN_Reseau_PasAPas.pdf",
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Cours_Passerelle-pas-a-pas/PRONOTE_COURS_TermSIN_Reseau_PasAPas.txt"
+  ],
+  "sources/cours/COURS_TermSIN_I2C_PasAPas.md": [
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_Cours_I2C-pas-a-pas/ELEVE_COURS_TermSIN_I2C_PasAPas.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_Cours_I2C-pas-a-pas/PROF_COURS_TermSIN_I2C_PasAPas.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_Cours_I2C-pas-a-pas/DEROULE_COURS_TermSIN_I2C_PasAPas.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/slides/T3_Cours_I2C-pas-a-pas/COURS_TermSIN_I2C_PasAPas.html",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/slides/T3_Cours_I2C-pas-a-pas/SLIDES_COURS_TermSIN_I2C_PasAPas.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_Cours_I2C-pas-a-pas/PRONOTE_COURS_TermSIN_I2C_PasAPas.txt"
+  ],
+  "sources/cours/COURS_SNT_Web_PasAPas.md": [
+    "2nde_SNT/S2_Le_Web/eleve/S2_Cours_Voyage-d-un-clic/ELEVE_COURS_SNT_Web_PasAPas.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Voyage-d-un-clic/PROF_COURS_SNT_Web_PasAPas.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Voyage-d-un-clic/DEROULE_COURS_SNT_Web_PasAPas.pdf",
+    "2nde_SNT/S2_Le_Web/slides/S2_Cours_Voyage-d-un-clic/COURS_SNT_Web_PasAPas.html",
+    "2nde_SNT/S2_Le_Web/slides/S2_Cours_Voyage-d-un-clic/SLIDES_COURS_SNT_Web_PasAPas.pdf",
+    "2nde_SNT/S2_Le_Web/prof/S2_Cours_Voyage-d-un-clic/PRONOTE_COURS_SNT_Web_PasAPas.txt",
+    "2nde_SNT/S2_Le_Web/eleve/S2_Cours_Voyage-d-un-clic/ELEVE_COURS_SNT_Web_PasAPas.docx"
+  ],
+  "sources/contexte/CONTEXTE_TermSIN_Lampadaire_PasAPas.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Contexte_Lampadaire-pas-a-pas/CONTEXTE_TermSIN_Lampadaire_PasAPas.pdf"
+  ],
+  "sources/contexte/CONTEXTE_SNT_Web_PasAPas.md": [
+    "2nde_SNT/S2_Le_Web/prof/S2_Contexte_Voyage-d-un-clic/CONTEXTE_SNT_Web_PasAPas.pdf"
+  ],
+  "sources/contexte/CONTEXTE_TermSIN_I2C_PasAPas.md": [
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_Contexte_I2C-pas-a-pas/CONTEXTE_TermSIN_I2C_PasAPas.pdf"
+  ],
+  "sources/contexte/CONTEXTE_TermSIN_Reseau_PasAPas.md": [
+    "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Contexte_Passerelle-pas-a-pas/CONTEXTE_TermSIN_Reseau_PasAPas.pdf"
   ]
 }

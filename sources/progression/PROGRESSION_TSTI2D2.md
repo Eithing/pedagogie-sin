@@ -42,7 +42,7 @@ sequences:
     semaines: 6
     etat: en-cours
     debut: 2026-11-20
-    ressources: [TP_TermSIN_I2C_Wokwi]
+    ressources: [TP_TermSIN_I2C_Wokwi, COURS_TermSIN_I2C_PasAPas]
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
   - { ref: P, piste: projet, semaines: fin }
@@ -65,6 +65,8 @@ journal:
     texte: "Toujours en distanciel, et besoin de notes. Vendredi 13 novembre : heure commune, interrogation CAN et CNA à distance, notée (`AUTO_TermSIN_CAN_CNA_Distance`), à la place du sujet B ; bloc de 3 h : TP noté « le lampadaire qui voit les piétons » (`AUTO_TermSIN_Lampadaire_Pieton`, temporisation non bloquante, machine à états, amélioration personnelle). La fiche « routeur et passerelle » est reportée."
   - date: 2026-11-18
     texte: "Plan de rattrapage : T2 close le 13 novembre (lampadaire complet, TP « piéton »). T3 commence le 20 novembre avec le TP noté « chambre froide surveillée » (liaison série, bus I2C, alarme à hystérésis, Wokwi), avant D1 et D3. Heure commune : C1 se termine le 4 décembre (séance notée « routeur et passerelle » le 20 novembre), C2 commence le 11 décembre. Tous les TP et toutes les activités sont désormais notés."
+  - date: 2026-11-23
+    texte: "Le 20 novembre, peu de travail : le TP « chambre froide » apportait trop de notions d'un coup ; l'heure commune « routeur et passerelle » est restée abstraite. Vendredi 27 novembre : heure commune, reprise sur papier « la passerelle pas à pas » (la box de la maison, jeu des enveloppes), notée /20 et pouvant remplacer la note du 20 ; bloc de 3 h, une heure de reprise « comment deux puces se parlent » (trame série, appel en classe pour l'I2C, complément à 2), notée /20, puis deux heures pour finir le TP du 20 novembre."
 ---
 
 ## Organisation

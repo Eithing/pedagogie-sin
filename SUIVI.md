@@ -2,6 +2,20 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## Semaine du 23 novembre 2026 : reprendre les élèves par la main (première ébauche, à retravailler avec l'enseignant)
+
+- **Constat de l'enseignant (20 novembre)** : les Terminales ont peu travaillé ; les 2nde étaient perdus, la synthèse est allée trop vite. Les élèves ne comprennent pas **à quoi sert** ce qu'on fait : il manque du contexte.
+- **Décisions** : les Terminales **reprennent les mêmes notions plus lentement** (on n'avance pas dans la progression cette semaine) ; l'**interrogation Web des 2nde est reportée au 4 décembre** (réseaux sociaux à partir du 11 décembre). Chaque fiche de reprise est notée /20 et peut remplacer la note du 20 novembre (à confirmer par l'enseignant).
+- **Principe commun des séances** : une image concrète comme fil rouge, d'abord **sans ordinateur** (jeu de rôle, exécution à la main), puis un exemple fait par le professeur, puis le même exercice seul (« je fais, on fait, vous faites ») ; sur Wokwi, geste par geste, mains levées.
+- **Nouvelles séances** (`sources/cours/`) :
+  - mardi 24, D3, et vendredi 27, 12 h, D1 : `COURS_TermSIN_Lampadaire_PasAPas` (être le microcontrôleur sur papier, chasse aux trois erreurs Python, Wokwi ensemble, le piéton écrit d'abord sur la fiche) ;
+  - vendredi 27, heure commune D2 + D3 : `COURS_TermSIN_Reseau_PasAPas`, sur papier (la box de la maison, l'adresse postale « rue + numéro », **jeu des enveloppes** : 6 cartes machines et un élève routeur, fiche de configuration, aller et retour), nouvelle figure `img/reseau/box-maison.svg` ;
+  - vendredi 27, D2, 1re heure du bloc : `COURS_TermSIN_I2C_PasAPas` (décoder une trame série, **l'appel en classe** pour l'I2C, complément à 2 avec le compteur kilométrique ; trame et octets différents du TP), puis 2 h pour finir `TP_TermSIN_I2C_Wokwi` ;
+  - vendredi 27, 9 h, 2nde : `COURS_SNT_Web_PasAPas`, « le voyage d'un clic » (URL, DNS, requête et réponse HTTP **jouées par trois élèves**, être le navigateur devant un code HTML), avec `fiche_docx: true`. Le TP « coulisses » du 2e demi-groupe reste à 8 h.
+- **Nouveau type `contexte`** (`sources/contexte/`, sortie `prof/<séq>_Contexte_<court>/CONTEXTE_<nom>.pdf`, ni version élève ni Pronote) : une fiche enseignant par séance, avec la phrase à dire aux élèves, comment amener la séance, le fil rouge (image), des **anecdotes vraies** (premier bug de 1947, LO d'ARPANET, épuisement des adresses IPv4, Baudot, Philips et l'I2C, Ariane 501, Gangnam Style, naissance du Web au CERN, info.cern.ch…), à quoi ça leur sert, les blocages fréquents et le plan B. Modifs : `TYPES` (`document.mjs`), `sorties` et Pronote (`build.mjs`), `TYPES_DOSSIER` et avertissement Pronote (`commun.mjs`), en-tête (`render.mjs`).
+- **À vérifier avant d'en parler** : l'adresse de la box selon l'opérateur (fiche contexte réseau).
+- **À faire ensuite** : retravailler ces ébauches avec l'enseignant ; décider si la note de reprise remplace celle du 20 ; TP noté C1 du 4/12 ; séances du 4/12 pour les Terminales ; début des réseaux sociaux le 11/12.
+
 ## 20 novembre 2026 : plus de guidage pour les Terminales
 
 - À la demande de l'enseignant (les élèves manquaient d'instructions), pas-à-pas ajoutés, projetés pendant les activités et imprimés sur la fiche (blocs `tableau … | fiche`) :

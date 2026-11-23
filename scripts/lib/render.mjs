@@ -9,7 +9,7 @@ import { estNote, SANS_CODE } from './document.mjs';
 const require = createRequire(import.meta.url);
 export const RACINE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-export const LIBELLES_TYPE = { tp: 'Travaux pratiques', td: 'Travaux dirigés', evaluation: 'Évaluation', cours: 'Cours', autonomie: 'Travail en autonomie', cadrage: 'Document de cadrage', revision: 'Fiche de révision' };
+export const LIBELLES_TYPE = { tp: 'Travaux pratiques', td: 'Travaux dirigés', evaluation: 'Évaluation', cours: 'Cours', autonomie: 'Travail en autonomie', cadrage: 'Document de cadrage', revision: 'Fiche de révision', contexte: 'Fiche enseignant : amener la séance' };
 
 const lien = (fichier) => pathToFileURL(fichier).href;
 const FEUILLES_BASE = () => [
@@ -65,7 +65,7 @@ function entete(meta, cible, config, libelleVariante) {
   const type = meta.type ?? '';
   const evaluable = estNote(meta);
   const bareme = meta.bareme ?? config.baremeTotalParDefaut;
-  const identite = type === 'revision' ? '' : cible === 'eleve'
+  const identite = ['revision', 'contexte'].includes(type) ? '' : cible === 'eleve'
     ? `<div class="doc-identite">
         <div class="champ"><span>Nom</span></div>
         <div class="champ"><span>Prénom</span></div>

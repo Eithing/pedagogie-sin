@@ -6,12 +6,12 @@ court: Revision Web
 rangement: Eval/2nde
 pronote:
   titre: "Le Web — Fiche de révision : histoire, droit d'auteur, HTML et CSS, URL, HTTP, moteurs de recherche, cookies"
-  description: "S2 Le Web : fiche de révision distribuée le 20 novembre pour l'interrogation du 27 novembre (tout le thème, WEB.1 à WEB.9). Non noté."
+  description: "S2 Le Web : fiche de révision distribuée le 20 novembre pour l'interrogation du 4 décembre (reportée du 27 novembre), sur tout le thème (WEB.1 à WEB.9). Non noté."
 type: revision
 competences: [WEB.1, WEB.2, WEB.3, WEB.4, WEB.5, WEB.6, WEB.7, WEB.8, WEB.9]
 ---
 
-::: info Ce qu'il faut savoir faire pour l'interrogation du vendredi 27 novembre
+::: info Ce qu'il faut savoir faire pour l'interrogation du vendredi 4 décembre
 Distinguer Internet et le Web · citer les grandes dates du Web · dire ce qu'on a le droit de faire avec une image ou un texte trouvé en ligne · reconnaître et compléter des balises HTML et une règle CSS · décomposer une URL et reconnaître une page sécurisée · lire une requête HTTP et sa réponse · dire ce qui est fait par le client et par le serveur · expliquer comment un moteur classe les pages et juger une source · expliquer le rôle des cookies et les limites de la navigation privée.
 :::
 

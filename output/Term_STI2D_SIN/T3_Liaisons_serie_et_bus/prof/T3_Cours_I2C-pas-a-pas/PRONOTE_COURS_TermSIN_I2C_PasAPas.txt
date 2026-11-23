@@ -1,0 +1,6 @@
+﻿=== TSTI2D2 (vendredi 27 novembre, 1re heure du bloc de 3 h) ===
+Titre de la séance :
+T3 Faire dialoguer les constituants — Séance : comment deux puces se parlent, trame série et bus I2C pas à pas
+
+Description :
+T3, reprise guidée avant de finir le TP « chambre froide » : décoder une trame série, jouer le bus I2C (l'appel en classe), passer de deux octets à une température (complément à 2). Fiche d'activités notée /20.
