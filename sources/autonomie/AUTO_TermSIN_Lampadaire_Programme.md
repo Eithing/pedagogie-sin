@@ -16,7 +16,7 @@ illustration: ../cours/img/lampadaire/couverture.svg
 accroche: "Le diagramme d'états dit ce que le lampadaire doit faire. Aujourd'hui, tu l'écris en programme, ligne par ligne."
 competences: [CO5.8-SIN2, 2.4.3b, 4.3.5b, 4.3.5c, 3.4.2b]
 document_reponse: true
-fichiers: [fichiers/lampadaire_jour_nuit/circuit_lampadaire_jour_nuit.json, fichiers/lampadaire_jour_nuit/lampadaire_jour_nuit.py]
+fichiers: [fichiers/lampadaire_jour_nuit/circuit_lampadaire_jour_nuitv2.json, fichiers/lampadaire_jour_nuit/lampadaire_jour_nuitv2.py]
 consignes:
   - "Travail individuel, à distance, sur ordinateur, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page."
   - "Wokwi s'utilise sans compte, dans le navigateur. Aux étapes marquées 📸, fais une capture d'écran (Windows + Maj + S) et colle-la (Ctrl + V) dans ton document réponse."
@@ -32,7 +32,7 @@ aide:
 ---
 
 ::: prof
-**Mise en œuvre** : TSTI2D3 le mardi 10 novembre (1 h, distanciel) ; TSTI2D1 le vendredi 13 novembre si le blocus continue. Suite de la séance sur le diagramme d'états du lampadaire. On ne revient plus sur le calcul du CAN : le seuil $N_{seuil} = 3\,413$ est donné. Déposer sur l'ENT ce PDF, le document réponse `REPONSES_AUTO_TermSIN_Lampadaire_Programme.docx`, `circuit_lampadaire_jour_nuit.json` et `lampadaire_jour_nuit.py` (dossier `eleve/`). Ces fichiers portent des noms propres à cette fiche, pour que Pronote les accepte.
+**Mise en œuvre** : TSTI2D3 le mardi 10 novembre (1 h, distanciel) ; TSTI2D1 le vendredi 13 novembre si le blocus continue. Suite de la séance sur le diagramme d'états du lampadaire. On ne revient plus sur le calcul du CAN : le seuil $N_{seuil} = 3\,413$ est donné. Déposer sur l'ENT ce PDF, le document réponse `REPONSES_AUTO_TermSIN_Lampadaire_Programme.docx`, `circuit_lampadaire_jour_nuitv2.json` et `lampadaire_jour_nuitv2.py` (dossier `eleve/`). Ces fichiers portent des noms propres à cette fiche, pour que Pronote les accepte.
 
 **Très guidé** : chaque structure (`if`, `else`, `elif`, `and`) est présentée sur un exemple qui n'est pas le lampadaire (la minuterie de l'escalier), puis l'élève l'applique. Les D2 ont le TP complet (`AUTO_TermSIN_Lampadaire_Wokwi`), avec la temporisation non bloquante ; ici, il n'y a pas de temporisation.
 
@@ -41,7 +41,7 @@ aide:
 
 ::: info Comment répondre et rendre ton travail
 1. Télécharge sur l'ENT **`REPONSES_AUTO_TermSIN_Lampadaire_Programme.docx`** et ouvre-le avec Word ou LibreOffice Writer. Enregistre-le sous le nom **`REPONSES_NOM_Prenom`**.
-2. Télécharge aussi **`circuit_lampadaire_jour_nuit.json`** (le circuit) et **`lampadaire_jour_nuit.py`** (le programme de départ). Tu les ouvriras avec le Bloc-notes à l'étape 2.
+2. Télécharge aussi **`circuit_lampadaire_jour_nuitv2.json`** (le circuit) et **`lampadaire_jour_nuitv2.py`** (le programme de départ). Tu les ouvriras avec le Bloc-notes à l'étape 2.
 
 **Attention** : sans compte, Wokwi **n'enregistre pas** ton travail. Copie ton programme dans ton document réponse avant de fermer l'onglet.
 
@@ -73,8 +73,8 @@ a) 0 % (jour) ; b) 30 % (nuit) ; c) 100 % (nuit et présence) ; d) 0 % (c'est le
 ## Étape 2 — Démarrer dans Wokwi (10 min)
 
 1. Ouvre `wokwi.com/projects/new/micropython-esp32`. Aucun compte n'est nécessaire.
-2. Ouvre **`circuit_lampadaire_jour_nuit.json`** avec le Bloc-notes, copie tout, puis colle-le **à la place** du contenu de l'onglet `diagram.json` de Wokwi.
-3. Ouvre **`lampadaire_jour_nuit.py`** avec le Bloc-notes, copie tout, puis colle-le **à la place** du contenu de l'onglet `main.py`.
+2. Ouvre **`circuit_lampadaire_jour_nuitv2.json`** avec le Bloc-notes, copie tout, puis colle-le **à la place** du contenu de l'onglet `diagram.json` de Wokwi.
+3. Ouvre **`lampadaire_jour_nuitv2.py`** avec le Bloc-notes, copie tout, puis colle-le **à la place** du contenu de l'onglet `main.py`.
 4. Clique sur ▶ : le moniteur série, en bas, affiche `N = …` deux fois par seconde.
 5. **Tu ne vois pas les capteurs ?** Ils sont à gauche de la carte : fais glisser le fond du schéma avec la souris, ou dézoome avec la molette.
 6. Pendant la simulation, **clique sur le capteur de lumière** : un curseur permet de changer l'éclairement (en lux). Il n'est pas très précis : une valeur proche suffit.

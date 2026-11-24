@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "SIN",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20260406-v1.28.0" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 22.4,
+      "left": -344.8,
+      "attrs": { "lux": "500" }
+    },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": 170, "left": -220, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 10,
+      "left": 200,
+      "attrs": { "color": "yellow", "label": "Lampe" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 100,
+      "left": 150,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ldr1:VCC", "esp:3V3", "red", [ "v-9.6", "h177.41" ] ],
+    [ "ldr1:GND", "esp:GND.1", "black", [ "h57.6", "v105.2" ] ],
+    [ "ldr1:AO", "esp:34", "green", [] ],
+    [ "pir1:VCC", "esp:3V3", "red", [ "v45.2", "h107.02", "v-278.4" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v16.4", "h135.56", "v-124.8" ] ],
+    [ "pir1:OUT", "esp:27", "blue", [ "v26", "h116.48", "v-163.2" ] ],
+    [ "esp:2", "r1:1", "orange", [ "h52.84", "v-87.2" ] ],
+    [ "r1:2", "led1:A", "orange", [] ],
+    [ "led1:C", "esp:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}

@@ -1,4 +1,4 @@
-# lampadaire_jour_nuit.py - PROGRAMME DE DEPART
+# lampadaire_jour_nuitv2.py - PROGRAMME DE DEPART
 # A copier dans Wokwi : onglet "main.py", tout remplacer par ce programme.
 # Capteur de lumiere sur la broche 34, detecteur de presence (PIR) sur la broche 27, lampe sur la broche 2.
 from machine import ADC, Pin, PWM

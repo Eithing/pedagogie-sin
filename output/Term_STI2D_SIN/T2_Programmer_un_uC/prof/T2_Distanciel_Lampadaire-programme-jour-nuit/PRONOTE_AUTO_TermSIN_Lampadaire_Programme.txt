@@ -19,8 +19,8 @@ Le diagramme d'états dit ce que le lampadaire doit faire. Aujourd'hui, tu l'éc
 📄 Documents joints :
 - ELEVE_AUTO_TermSIN_Lampadaire_Programme.pdf (la fiche)
 - REPONSES_AUTO_TermSIN_Lampadaire_Programme.docx (le document réponse, à ouvrir avec Word ou LibreOffice)
-- circuit_lampadaire_jour_nuit.json
-- lampadaire_jour_nuit.py
+- circuit_lampadaire_jour_nuitv2.json
+- lampadaire_jour_nuitv2.py
 
 ✏️ Consignes :
 - Travail individuel, à distance, sur ordinateur, pendant l'heure de cours. Suis les étapes dans l'ordre, une par page.

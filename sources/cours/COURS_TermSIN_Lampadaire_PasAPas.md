@@ -6,10 +6,10 @@ court: Lampadaire pas a pas
 pronote:
   - pour: "TSTI2D3 (mardi 24 novembre)"
     titre: "T2 Traiter l'information par programme — Séance : le lampadaire pas à pas, lire, décider, agir (Wokwi)"
-    description: "T2, séance très guidée : exécuter un programme à la main, repérer les erreurs de syntaxe, puis programmer ensemble le lampadaire jour / nuit et le piéton (if / elif / else) sur Wokwi. Fiche d'activités notée /20."
+    description: "T2, séance très guidée : exécuter un programme à la main, repérer les erreurs de syntaxe, puis programmer ensemble le lampadaire jour / nuit sur Wokwi, puis ajouter un cas au programme (if / elif / else). Fiche d'activités notée /20."
   - pour: "TSTI2D1 (vendredi 27 novembre, 12 h)"
     titre: "T2 Traiter l'information par programme — Séance : le lampadaire pas à pas, reprise guidée (Wokwi)"
-    description: "T2, reprise guidée de la séance du 20 novembre : exécuter un programme à la main, repérer les erreurs de syntaxe, programmer ensemble le lampadaire jour / nuit et le piéton (if / elif / else). Fiche d'activités notée /20."
+    description: "T2, reprise guidée de la séance du 20 novembre : exécuter un programme à la main, repérer les erreurs de syntaxe, programmer ensemble le lampadaire jour / nuit, puis ajouter un cas au programme (if / elif / else). Fiche d'activités notée /20."
 type: cours
 duree: 55 min
 bareme: 20
@@ -20,13 +20,14 @@ objectifs:
   - Exécuter à la main un programme simple (boucle, if / else) sur des valeurs données
   - Repérer et corriger les trois erreurs les plus fréquentes en Python
   - Reconnaître une variable, une affectation, une condition et une boucle
-  - Programmer, en suivant le professeur, le lampadaire jour / nuit puis le piéton sur Wokwi
+  - Programmer, en suivant le professeur, le lampadaire jour / nuit sur Wokwi
+  - Modifier un programme pour ajouter un cas (elif) à la bonne place
 prerequis:
   - "T1 : code N d'un CAN, seuil en code (N augmente quand il fait sombre)"
   - "T2 : diagramme d'états du lampadaire"
 preparation:
   - Imprimer la fiche d'activités (1 par élève) ; déposer le PDF sur l'ENT pour les absents
-  - "Mettre à disposition `circuit_lampadaire_jour_nuit.json` et `lampadaire_jour_nuit.py` (dossier `output/Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/`) sur l'ENT ou dans le dossier partagé du labo"
+  - "Mettre à disposition `circuit_lampadaire_jour_nuitv2.json` et `lampadaire_jour_nuitv2.py` (dossier `output/Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/`) sur l'ENT ou dans le dossier partagé du labo"
   - "Ouvrir à l'avance, sur le poste du professeur, Wokwi avec le circuit chargé : c'est lui qu'on projette pendant l'activité 3"
   - "Lire la fiche « contexte » de la séance (`CONTEXTE_TermSIN_Lampadaire_PasAPas`) : accroche, anecdotes, déblocages"
 ---
@@ -36,7 +37,7 @@ preparation:
 
 1. **sans ordinateur** : on joue le microcontrôleur sur papier (activité 1), on chasse les erreurs (activité 2) ;
 2. **tous ensemble** sur Wokwi : le professeur projette et fait chaque geste, la classe le refait **au même moment** (« je fais, vous faites ») ; on n'avance que quand toutes les mains sont levées ;
-3. **seuls** : le piéton, d'abord écrit sur la fiche, puis testé.
+3. **seuls** : une variante du programme (le crépuscule), d'abord écrite sur la fiche, puis testée.
 
 **D1** : les élèves ont déjà la fiche du 20 novembre. La note de cette séance peut **remplacer** celle du 20 si elle est meilleure : à annoncer en début d'heure, c'est motivant.
 
@@ -48,8 +49,8 @@ preparation:
 | :--- | :--- | :--- | :---: |
 | 1. Être le microcontrôleur | Q1 | Exécuter if / else à la main sur 4 valeurs | 4 |
 | 2. La chasse aux erreurs | Q2 | Trois erreurs trouvées et corrigées | 3 |
-| 3. Le jour et la nuit, ensemble | Q3, Q4 | Relevés et sens de variation ; lignes jour / nuit écrites et validées | 6 |
-| 4. Le piéton | Q5 | if / elif / else complété, ordre des cas | 4 |
+| 3. Le jour et la nuit, ensemble | Q3, Q4 | Relevés et sens de variation ; seuil et condition écrits dans le programme, testés et validés | 6 |
+| 4. Variante : le crépuscule | Q5 | Seuil et `elif` ajoutés à la bonne place, programme vérifié à la main | 4 |
 | 5. Quiz de sortie | Q6 à Q8 | Syntaxe et sens des conditions | 3 |
 | **Total** | | | **20** |
 :::
@@ -235,8 +236,8 @@ a) deux-points oubliés : `if n > N_SEUIL:` ; b) `=` range, il faut comparer : `
 
 ::: slide 2 min | Wokwi en quatre gestes | fiche
 1. **Barre d'adresse** (pas Google) : `wokwi.com/projects/new/micropython-esp32`. Pas de compte : fermez la fenêtre de connexion.
-2. Ouvrez `circuit_lampadaire_jour_nuit.json` avec le **Bloc-notes**, **Ctrl + A**, **Ctrl + C** ; dans Wokwi, onglet `diagram.json`, **Ctrl + A**, **Ctrl + V**.
-3. Même chose : `lampadaire_jour_nuit.py` dans l'onglet `main.py`.
+2. Ouvrez `circuit_lampadaire_jour_nuitv2.json` avec le **Bloc-notes**, **Ctrl + A**, **Ctrl + C** ; dans Wokwi, onglet `diagram.json`, **Ctrl + A**, **Ctrl + V**.
+3. Même chose : `lampadaire_jour_nuitv2.py` dans l'onglet `main.py`.
 4. **▶** lance, **■** arrête. On modifie le code **seulement à l'arrêt**.
 :::
 
@@ -247,13 +248,13 @@ a) deux-points oubliés : `if n > N_SEUIL:` ; b) `=` range, il faut comparer : `
 :::
 
 ::: activite 12 min | Le jour et la nuit, ensemble | binome
-On suit le professeur, **geste par geste**. Seul ou à deux sur un poste, mais **chacun remplit sa fiche**.
+On suit le professeur, **geste par geste** ; **chacun remplit sa fiche**.
 
 1. Chargez le circuit et le programme (diapo précédente). ▶ : le moniteur série affiche `N = …`.
 2. Cliquez sur le **capteur de lumière**, réglez 500 lux puis 5 lux : relevez $N$ (question 3).
-3. ■ Arrêtez. Remplacez `N_SEUIL = 0` par `N_SEUIL = 3413`.
-4. Plus bas, **dans la boucle**, sous `# TODO etape 4`, remplacez `regler_lampe(0)` par les 4 lignes de l'activité 1.
-5. ▶ Relancez, testez de jour puis de nuit, et **appelez le professeur**.
+3. ■ Arrêtez. En haut, **réglez le seuil** : `N_SEUIL = 3413`.
+4. Dans la boucle, **ajoutez la condition** : remplacez `regler_lampe(0)` par un `if / else` (question 4).
+5. ▶ Testez à 500 lux puis à 5 lux, et **appelez le professeur**.
 :::
 
 ::: tableau Si ça ne marche pas | fiche
@@ -275,19 +276,39 @@ Environ 1 000 à 500 lux et environ 3 650 à 5 lux (à quelques dizaines près) 
 :::
 
 ::: question 4 [4 pt]
-Recopiez vos 4 lignes de décision.
+Dans le programme, la lampe reste toujours éteinte. Modifiez-le pour que la lumière **change selon $N$** :
 
-☐ Validé par le professeur sur l'écran : lampe à 30 % de nuit, éteinte de jour.
+| Situation | Ce que le programme compare | Ce que la lampe doit faire |
+| :--- | :--- | :--- |
+| Il fait nuit | $N$ est plus grand que le seuil | éclairer à 30 % |
+| Il fait jour | sinon | rester éteinte (0 %) |
+
+**a)** Réglez le seuil, puis écrivez ici la ligne modifiée.
+
+**b)** Ajoutez la condition `if / else` dans la boucle, puis écrivez ici les lignes ajoutées (avec les deux-points et le décalage).
+
+**c)** Lancez et testez, puis montrez l'écran au professeur.
+
+☐ Validé par le professeur : lampe éteinte à 500 lux, à 30 % à 5 lux.
 :::
 
-::: reponse 4
+::: reponse 6
+a)
+
+```python
+N_SEUIL = 3413
+```
+
+b)
+
 ```python
     if n > N_SEUIL:
         regler_lampe(30)
     else:
         regler_lampe(0)
 ```
-Lignes justes, deux-points et décalage compris (2 pt) ; fonctionnement validé sur l'écran (2 pt).
+
+Seuil réglé (0,5 pt) ; condition juste, deux-points et décalage compris (1,5 pt) ; c) fonctionnement validé sur l'écran (2 pt).
 :::
 
 ::: dire
@@ -295,9 +316,9 @@ Lignes justes, deux-points et décalage compris (2 pt) ; fonctionnement validé 
 - Au bout de 3 minutes, passer d'abord aux postes sans carte à l'écran : presque toujours, le fichier est collé dans le mauvais onglet.
 :::
 
-## Un cas de plus : le piéton
+## Un cas de plus
 
-::: slide 2 min | elif : « sinon, si »
+::: slide 2 min | elif : « sinon, si » (le piéton)
 ```python
 if n > N_SEUIL and presence == 1:   # nuit ET quelqu'un
     regler_lampe(100)
@@ -314,25 +335,79 @@ Python teste les cas **dans l'ordre** et s'arrête au **premier vrai** : le cas 
 **À dire** : « C'est l'aiguillage d'une gare : le train prend la **première** voie ouverte. Si la voie "nuit" est avant la voie "nuit et piéton", le train ne verra jamais la seconde. »
 :::
 
-::: activite 7 min | Le piéton | individuel
-D'abord **sur la fiche**, sans regarder la diapo : complétez le programme. Puis, s'il reste du temps, testez-le sur Wokwi (détecteur PIR → **Simulate motion**).
+::: activite 7 min | Variante : le crépuscule | individuel
+Au **crépuscule** (plus vraiment jour, pas encore nuit), la lampe s'allume doucement : **10 %**. Modifiez le programme du piéton, d'abord **sur la fiche** (question 5), puis sur Wokwi s'il reste du temps.
 :::
 
-::: question 5 [4 pt]
-Complétez les trous, puis répondez : avec $n = 3\,800$ et `presence = 1`, que fait la lampe ? Pourquoi le cas « nuit et piéton » est-il écrit en premier ?
+::: tableau Le programme à modifier
+```python
+N_SEUIL = 3413
 
-```text
-if n > N_SEUIL ...... presence == 1:
-    regler_lampe(......)
-...... n > N_SEUIL:
-    regler_lampe(30)
-......:
-    regler_lampe(0)
+while True:                             # (lecture de n et presence)
+    if n > N_SEUIL and presence == 1:   # nuit et pieton
+        regler_lampe(100)
+    elif n > N_SEUIL:                   # nuit
+        regler_lampe(30)
+    else:                               # jour
+        regler_lampe(0)
 ```
 :::
 
-::: reponse 5
-Trous : `and`, `100`, `elif`, `else` (2 pt). $n = 3\,800$, présence : premier cas vrai, lampe à **100 %** (1 pt). Si « nuit » était testé d'abord, il serait vrai dès qu'il fait nuit et la lampe resterait à 30 % même avec un piéton (1 pt).
+::: question 5 [4 pt]
+C'est le crépuscule quand $N$ est plus grand que $2\,500$, mais ne dépasse pas $3\,413$. Programme à modifier :
+
+```python
+N_SEUIL = 3413
+
+while True:                             # (lecture de n et presence)
+    if n > N_SEUIL and presence == 1:   # nuit et pieton
+        regler_lampe(100)
+    elif n > N_SEUIL:                   # nuit
+        regler_lampe(30)
+    else:                               # jour
+        regler_lampe(0)
+```
+
+**a)** Écrivez la ligne qui crée une variable `N_CREPUSCULE` contenant 2 500.
+
+**b)** Écrivez les **deux lignes** à ajouter dans la boucle pour allumer la lampe à 10 % au crépuscule.
+
+**c)** Après quelle ligne du programme faut-il les placer ?
+
+**d)** Vérifiez votre programme à la main : complétez le tableau.
+
+| `n` lu | `presence` | Lampe (%) |
+| :---: | :---: | :---: |
+| 950 | 0 | |
+| 3 000 | 0 | |
+| 3 800 | 0 | |
+| 3 800 | 1 | |
+
+Sur Wokwi (s'il reste du temps) : remplacez le `if / else` de la question 4 par ce programme complété, puis testez à 500, 20 et 5 lux. Pour le piéton : détecteur PIR, **Simulate motion**.
+:::
+
+::: reponse 6
+```python
+N_CREPUSCULE = 2500          # a) en haut, sous N_SEUIL
+
+    # b) et c) apres regler_lampe(30), avant le else
+    elif n > N_CREPUSCULE:
+        regler_lampe(10)
+```
+
+a) 0,5 pt · b) 1,5 pt · c) après `regler_lampe(30)`, avant `else` (1 pt) · d) 0 %, 10 %, 30 %, 100 % (1 pt ; 0,25 par ligne).
+
+Pas besoin d'écrire `n <= N_SEUIL` : si on arrive à ce `elif`, les deux cas « nuit » sont déjà faux. Placé **avant** le cas « nuit », le crépuscule prendrait sa place : la lampe resterait à 10 % toute la nuit sans piéton.
+:::
+
+::: dire
+**À dire** : « Le programme connaît déjà trois cas. On en ajoute un quatrième. Posez-vous deux questions : **quelle condition** j'écris, et **à quel endroit** je la mets, puisque Python s'arrête au premier cas vrai. »
+
+**Pour débloquer** : « Trouvez la ligne du cas "nuit". Vos deux lignes lui ressemblent : qu'est-ce qui change ? Le nom du seuil et le pourcentage. »
+
+**Le piège** : 3 800 est aussi plus grand que 2 500. Si le crépuscule est testé avant la nuit, la lampe reste à 10 % en pleine nuit.
+
+**Sur Wokwi** : à 20 lux, $N$ vaut environ 3 100 : c'est le crépuscule.
 :::
 
 ## Faire le bilan

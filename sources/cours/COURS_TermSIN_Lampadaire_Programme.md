@@ -22,7 +22,7 @@ prerequis:
   - "T2 : diagramme d'états du lampadaire (séance ou fiche du 6 novembre)"
 preparation:
   - Imprimer la fiche d'activités (1 par élève) ; déposer le PDF sur l'ENT pour les absents
-  - "Mettre à disposition des élèves `circuit_lampadaire_jour_nuit.json` et `lampadaire_jour_nuit.py` (dossier `output/Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/`), sur l'ENT ou dans le dossier partagé du labo"
+  - "Mettre à disposition des élèves `circuit_lampadaire_jour_nuitv2.json` et `lampadaire_jour_nuitv2.py` (dossier `output/Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Distanciel_Lampadaire-programme-jour-nuit/`), sur l'ENT ou dans le dossier partagé du labo"
   - "Tester une fois le programme corrigé sur Wokwi (MicroPython sur ESP32), sur un poste du labo"
   - "Ouvrir le HTML de projection des diapos — F : plein écran, T : minuteur"
 ---
@@ -129,9 +129,9 @@ Pour dire « s'il fait nuit » en Python, quelle ligne est juste ? Entourez-la, 
 ::: slide 2 min | Ouvrir Wokwi et charger les fichiers | fiche
 1. Ouvrez **Google Chrome** (ou Edge). Dans la **barre d'adresse** (pas dans Google), tapez `wokwi.com/projects/new/micropython-esp32`, puis Entrée. **Pas de compte** : si une fenêtre propose de se connecter, fermez-la.
 2. À gauche, le **code**, avec deux onglets : `main.py` et `diagram.json`. À droite, le **schéma** (la carte ESP32).
-3. Récupérez les deux fichiers du professeur (ENT ou dossier partagé du labo). **Clic droit** sur `circuit_lampadaire_jour_nuit.json` → **Ouvrir avec** → **Bloc-notes**, puis **Ctrl + A** (tout sélectionner) et **Ctrl + C** (copier).
+3. Récupérez les deux fichiers du professeur (ENT ou dossier partagé du labo). **Clic droit** sur `circuit_lampadaire_jour_nuitv2.json` → **Ouvrir avec** → **Bloc-notes**, puis **Ctrl + A** (tout sélectionner) et **Ctrl + C** (copier).
 4. Dans Wokwi, cliquez sur l'onglet `diagram.json`, puis **Ctrl + A** et **Ctrl + V** (coller) : la carte, le capteur de lumière, le détecteur PIR et la lampe apparaissent.
-5. Même chose avec `lampadaire_jour_nuit.py`, collé dans l'onglet `main.py`.
+5. Même chose avec `lampadaire_jour_nuitv2.py`, collé dans l'onglet `main.py`.
 :::
 
 ::: slide 2 min | Lancer, régler, modifier | fiche
