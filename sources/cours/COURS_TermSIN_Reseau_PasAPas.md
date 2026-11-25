@@ -1,221 +1,210 @@
 ---
-titre: "La passerelle pas à pas : de la box de la maison au réseau du parking"
+titre: "Panne au parking : l'enquête réseau"
 niveau: Term STI2D SIN
 sequence: C1
 court: Passerelle pas a pas
 pronote:
   pour: "TSTI2D2 + TSTI2D3, heure commune (vendredi 27 novembre)"
-  titre: "C1 Mettre en réseau des objets — Séance : la passerelle pas à pas, de la box de la maison au réseau du parking"
-  description: "C1, heure commune D2 + D3, reprise guidée sur papier : adresse IP « rue + numéro », rôle du routeur et de la passerelle joués en classe (jeu des enveloppes), fiche de configuration, aller et retour. Fiche d'activités notée /20."
+  titre: "C1 Mettre en réseau des objets — Séance : panne au parking, l'enquête réseau (routeur et passerelle)"
+  description: "C1, heure commune D2 + D3, reprise sur papier : adresse IP « rue + numéro », jeu des enveloppes (routeur et passerelle), puis enquête par équipes pour localiser deux pannes de configuration. Fiche d'activités notée /20."
 type: cours
 duree: 55 min
 bareme: 20
 illustration: img/reseau/box-maison.svg
-accroche: "Votre box est un routeur. Votre téléphone a une passerelle. Aujourd'hui, on joue le trajet d'un paquet, enveloppe en main."
+accroche: "L'écran de l'accueil est figé. Six machines, cinq indices, deux pannes. À vous de trouver les coupables."
 competences: [2.4.4b, 5.3.4a, 3.4.3c, CO3.2]
 objectifs:
   - Lire une adresse IP /24 comme une adresse postale (la rue, puis le numéro)
   - Décider si un paquet va directement à son destinataire ou passe par la passerelle
-  - Compléter une fiche de configuration (réseau, passerelle) et repérer une passerelle fausse
+  - Localiser une panne de réseau à partir de résultats de ping
   - Expliquer pourquoi il faut une passerelle des deux côtés (l'aller et le retour)
 prerequis:
   - "C1 : switch, routeur, adresse IP, masque /24 (séances du parking connecté et du 20 novembre)"
 preparation:
   - Imprimer la fiche d'activités (1 par élève) ; déposer le PDF sur l'ENT pour les absents
-  - "Jeu des enveloppes : préparer 6 cartes A5 (une adresse IP écrite en gros par carte, voir le bloc prof de l'activité 2), 2 cartes pour le routeur, et 4 enveloppes (ou feuilles pliées)"
+  - "Jeu des enveloppes : préparer 6 cartes A5 (une adresse IP par carte, voir le bloc prof de l'activité 2), 2 cartes pour le routeur, et 4 enveloppes (ou feuilles pliées)"
   - "Pousser les tables pour faire deux « rues » de part et d'autre d'un couloir, le routeur au milieu"
-  - "Ouvrir le HTML de projection des diapos — F : plein écran, T : minuteur"
+  - "Enquête : former des équipes de 4 (tables en îlots après le jeu)"
   - "Lire la fiche « contexte » de la séance (`CONTEXTE_TermSIN_Reseau_PasAPas`)"
 ---
 
 ::: prof
-**Pourquoi cette séance.** Le 20 novembre, la séance « routeur et passerelle » est restée abstraite : les élèves ne voyaient pas à quoi servaient ces adresses. On repart du **concret** (la box de la maison, l'adresse postale), on **joue** le trajet d'un paquet avec des enveloppes, et on n'écrit qu'ensuite. Tout se fait **sur papier** ; aucun PC.
+**Pourquoi cette séance.** Le 20 novembre, « routeur et passerelle » est resté abstrait. Ici, tout sert à **résoudre une affaire** : on apprend les règles (la rue, la passerelle), on les joue avec les enveloppes, puis on enquête par équipes. Aucun PC. Chacun remplit **sa** fiche.
 
-**Fil rouge** : une adresse IP /24 se lit comme une adresse postale : les trois premiers nombres sont la **rue** (le réseau), le dernier est le **numéro** (la machine). Le facteur de la rue (le switch) distribue dans la rue ; pour une autre rue, on dépose la lettre au **bureau de poste de sa rue** (la passerelle, c'est-à-dire la carte du routeur de son côté).
+**Fil rouge** : les trois premiers nombres sont la **rue** (le réseau), le dernier est le **numéro** (la machine). Pour une autre rue, on dépose la lettre au **bureau de poste de sa rue** (la passerelle).
 
-**Note** : la note de cette séance peut remplacer celle du 20 novembre si elle est meilleure (à annoncer en début d'heure).
+**Les deux coupables** : le poste de l'accueil n'a **pas de passerelle** (l'aller passe, le retour non) ; la caméra a une passerelle **de l'autre rue** (`10.0.0.1`).
 :::
 
 ::: prof Barème
 | Activité | Questions | Ce qui est évalué | Points |
 | :--- | :--- | :--- | :---: |
-| 1. Rue et numéro | Q1 | Réseau et machine d'une adresse /24 | 3 |
-| 2. Le jeu des enveloppes | Q2 | Trajet direct ou par la passerelle, adresse du routeur utilisée | 4 |
-| 3. La fiche de configuration | Q3, Q4 | Réseau et passerelle de 4 machines ; passerelle fausse repérée et corrigée | 7 |
-| 4. L'aller et le retour | Q5 | Passerelle des deux côtés | 3 |
+| 1. Rue et numéro | Q1 | Réseau et machine d'une adresse /24 | 2 |
+| 2. Le jeu des enveloppes | Q2 | Trajet direct ou par la passerelle | 4 |
+| 3. L'enquête | Q3, Q4 | Lecture des indices, hypothèses justifiées | 7 |
+| 4. Le verdict | Q5 | Réparation, aller et retour | 4 |
 | 5. Quiz de sortie | Q6 à Q8 | Rue, passerelle, routeur | 3 |
 | **Total** | | | **20** |
 :::
 
-## Partir de la maison
+## L'affaire
 
-::: slide 4 min | Chez vous, il y a déjà un routeur
-![](img/reseau/box-maison.svg){width=92%}
+::: slide 3 min | Vendredi, 18 h : l'écran de l'accueil est figé
+![](img/reseau/box-maison.svg){width=70%}
+
+- Le poste de Supervision n'arrive plus à joindre l'**accueil** du parking.
+- Câbles branchés, machines allumées : **où est la panne ?**
+- L'outil du détective : le routeur, le même genre d'appareil que votre box.
 :::
 
 ::: dire
-**À dire** : « Levez la main si vous avez une box à la maison. Vous avez tous un **routeur** chez vous : c'est elle. Votre téléphone, en Wi-Fi, a une adresse qui commence souvent par 192.168. Et pour aller sur YouTube, il passe toujours par la box. Aujourd'hui, on comprend **pourquoi**. »
-
-**Peut ajouter** : sur un iPhone, *Réglages → Wi-Fi → ⓘ* affiche l'« Adresse IP » et le « Routeur » ; sur Android, c'est dans les détails du réseau Wi-Fi (le chemin dépend du modèle). Proposer de regarder **chez soi** ce soir : le « Routeur » affiché, c'est la passerelle.
+**À dire** : « Le technicien est en congé, l'agent d'accueil ne voit plus les places libres, et la file de voitures s'allonge. Vous avez une heure. Pour résoudre l'affaire, il vous faut deux règles : la rue, et le bureau de poste. »
 :::
 
-::: activite 8 min | Rue et numéro | individuel
-Une adresse IP avec le masque **/24** (`255.255.255.0`) se lit comme une adresse postale.
-:::
-
-::: tableau Méthode : couper l'adresse en deux | fiche
-| Adresse IP | La **rue** (le réseau) : les 3 premiers nombres, puis `.0` | Le **numéro** (la machine) : le dernier nombre |
+::: slide 2 min | Règle n° 1 : la rue et le numéro | fiche
+| Adresse IP (masque /24) | La **rue** (réseau) | Le **numéro** (machine) |
 | :--- | :--- | :--- |
 | `192.168.1.23` | `192.168.1.0` | 23 |
 
-Deux machines dans la **même rue** se parlent **directement** (le switch, c'est le facteur de la rue).
+Dans la **même rue**, on se parle **directement** (le switch est le facteur de la rue).
 :::
 
-::: question 1 [3 pt]
-Pour chaque adresse, écrivez la rue (le réseau) et le numéro (la machine).
+::: activite 5 min | Rue et numéro | individuel
+Écrivez la rue et le numéro de chaque machine.
+:::
 
-**a)** `192.168.20.11` · **b)** `10.0.0.25` · **c)** `192.168.20.2`
-
-Lesquelles sont dans la même rue ?
+::: question 1 [2 pt]
+Donnez la rue et le numéro de : **a)** `192.168.20.11` · **b)** `10.0.0.25` · **c)** `192.168.20.2`. Lesquelles sont dans la même rue ?
 :::
 
 ::: reponse 3
-a) rue `192.168.20.0`, numéro 11 ; b) rue `10.0.0.0`, numéro 25 ; c) rue `192.168.20.0`, numéro 2 (0,5 pt chacune). a) et c) sont dans la même rue (1,5 pt).
+a) `192.168.20.0`, 11 · b) `10.0.0.0`, 25 · c) `192.168.20.0`, 2 (0,5 pt chacune). a) et c) (0,5 pt).
 :::
 
-## Jouer le trajet d'un paquet
+## Jouer le trajet
 
-::: slide 3 min | Le facteur ne sort pas de sa rue | fiche
-- **Même rue** : la lettre va **directement** au destinataire.
-- **Autre rue** : on dépose la lettre au **bureau de poste de sa rue**, qui la fait passer de l'autre côté.
-- En réseau, ce bureau de poste, c'est le **routeur** : il a **une adresse dans chaque rue**.
-- L'adresse du routeur **dans sa propre rue**, c'est la **passerelle** de la machine.
+::: slide 2 min | Règle n° 2 : le bureau de poste de ma rue | fiche
+- **Autre rue** : on confie la lettre au **routeur**, qui a **une adresse dans chaque rue**.
+- L'adresse du routeur **dans ma rue**, c'est ma **passerelle**.
+- La passerelle est donc **toujours dans la même rue** que la machine.
 :::
 
 ::: dire
-**À dire** : « Le facteur de votre rue ne livre que votre rue. Pour une lettre à Marseille, vous ne marchez pas jusqu'à Marseille : vous la déposez à la poste **de votre quartier**. »
-
-**Insister** : le routeur a **deux** adresses, une par rue. Chaque machine utilise celle de **sa** rue.
+**À dire** : « Pour une lettre à Marseille, vous ne marchez pas jusqu'à Marseille : vous la déposez à la poste **de votre quartier**. »
 :::
 
-::: activite 12 min | Le jeu des enveloppes | classe
-Six élèves jouent les machines, un élève joue le routeur, les autres sont **contrôleurs** : ils notent le trajet de chaque enveloppe (question 2).
+::: activite 14 min | Le jeu des enveloppes | classe
+Six élèves jouent les machines, un élève joue le routeur, les autres sont **contrôleurs** : ils notent chaque trajet (question 2).
 :::
 
 ::: prof
-**Les cartes à préparer** (une adresse par carte, écrite en gros) :
+**Les cartes à préparer** :
 
-- **Rue du parking** (`192.168.20.0`), d'un côté du couloir : Capteur P01 `192.168.20.11` · Supervision `192.168.20.2` · Caméra `192.168.20.50`.
-- **Rue de l'accueil** (`10.0.0.0`), de l'autre côté : Poste de l'accueil `10.0.0.25` · Caisse `10.0.0.30` · Imprimante `10.0.0.40`.
-- **Routeur**, debout dans le couloir : deux cartes, une dans chaque main : `192.168.20.1` (vers le parking) et `10.0.0.1` (vers l'accueil).
+- **Rue du parking** (`192.168.20.0`) : Capteur P01 `192.168.20.11` · Supervision `192.168.20.2` · Caméra `192.168.20.50`.
+- **Rue de l'accueil** (`10.0.0.0`) : Poste de l'accueil `10.0.0.25` · Caisse `10.0.0.30` · Imprimante `10.0.0.40`.
+- **Routeur**, dans le couloir, une carte dans chaque main : `192.168.20.1` (vers le parking) et `10.0.0.1` (vers l'accueil).
 
-**Règle du jeu** : l'expéditeur écrit sur l'enveloppe l'adresse du destinataire. S'il est dans sa rue, il la lui donne. Sinon, il la donne à la main du routeur **tournée vers sa rue**, qui la passe à l'autre main, puis au destinataire. Le routeur refuse une enveloppe tendue par une machine d'une autre rue que la main qu'on lui tend.
-
-Faire jouer les quatre envois de la question 2, **lentement**, en faisant dire à voix haute à chaque fois : « Même rue ? » Faire tourner les rôles si le temps le permet.
+**Jouer les quatre envois de la question 2**, lentement, en faisant dire à toute la classe : « Même rue ? » Puis un envoi **piégé** : la Supervision tend l'enveloppe à la mauvaise main (`10.0.0.1`) ; le routeur refuse. Cela prépare l'enquête.
 :::
 
 ::: tableau Les règles du jeu | fiche
-1. L'expéditeur regarde l'adresse du destinataire : **même rue** que lui ?
-2. **Oui** : il lui donne l'enveloppe directement.
-3. **Non** : il la donne au routeur, à la main **de sa rue** (sa passerelle).
-4. Le routeur passe l'enveloppe à son autre main, qui la remet au destinataire.
+1. **Même rue** que le destinataire : je donne l'enveloppe directement.
+2. **Autre rue** : je la donne au routeur, à la main **de ma rue** (ma passerelle).
+3. Le routeur la passe à son autre main, qui la remet au destinataire.
 :::
 
 ::: question 2 [4 pt]
-Pour chaque envoi : direct ou par le routeur ? Si c'est par le routeur, quelle adresse du routeur l'expéditeur utilise-t-il ?
+Pour chaque envoi : direct ou par le routeur ? Si routeur, quelle adresse du routeur l'expéditeur utilise-t-il ?
 
 | Envoi | Direct ou routeur ? | Adresse du routeur utilisée |
 | :--- | :---: | :---: |
-| P01 → Supervision | | |
-| Supervision → Poste de l'accueil | | |
-| Poste de l'accueil → Supervision (la réponse) | | |
-| Caisse → Imprimante | | |
+| P01 (`192.168.20.11`) → Supervision (`192.168.20.2`) | | |
+| Supervision → Accueil (`10.0.0.25`) | | |
+| Accueil → Supervision (la réponse) | | |
+| Caisse (`10.0.0.30`) → Imprimante (`10.0.0.40`) | | |
 :::
 
 ::: reponse 0
-P01 → Supervision : direct ; Supervision → accueil : routeur, `192.168.20.1` ; accueil → Supervision : routeur, `10.0.0.1` ; Caisse → Imprimante : direct. (1 pt par ligne)
+Direct · routeur, `192.168.20.1` · routeur, `10.0.0.1` · direct. (1 pt par ligne)
 :::
 
-::: dire
-Après le jeu, faire remarquer : « Pour l'aller, Supervision a utilisé `192.168.20.1`. Pour le retour, l'accueil a utilisé `10.0.0.1`. **Une passerelle de chaque côté.** » On y revient à l'activité 4.
+## Enquêter
+
+::: slide 2 min | Un ping : un aller ET un retour | fiche
+- Un `ping` envoie une **demande** et attend une **réponse**.
+- « Échec » veut dire : la demande **ou** la réponse s'est perdue.
+- L'aller utilise la passerelle de l'**expéditeur**, le retour celle du **destinataire**.
 :::
 
-## Écrire la configuration
-
-::: slide 2 min | La règle d'or de la passerelle | fiche
-- La passerelle d'une machine est **toujours dans sa rue** : même réseau qu'elle.
-- Elle ne sert qu'à **sortir** de la rue : dans la rue, on n'en a pas besoin.
-
-| Machine | Adresse | Passerelle |
-| :--- | :--- | :--- |
-| Supervision | `192.168.20.2` | `192.168.20.1` ✔ |
-| Supervision | `192.168.20.2` | `10.0.0.1` ✘ (pas dans sa rue) |
+::: activite 14 min | L'enquête | groupe
+En équipe : lisez les cinq indices. Pour chacun, écrivez ce qu'il **innocente** ou ce qu'il **accuse**. Il y a **deux** machines mal configurées.
 :::
 
-::: activite 10 min | La fiche de configuration | individuel
-Vous êtes le technicien qui installe quatre nouveaux appareils. Utilisez la règle d'or.
+::: tableau Le dossier : cinq indices | fiche
+| Indice | Test | Résultat |
+| :---: | :--- | :--- |
+| A | Supervision (`192.168.20.2`) → Accueil (`10.0.0.25`) | échec |
+| B | Supervision → Caisse (`10.0.0.30`) | réussi |
+| C | Caisse → Accueil | réussi |
+| D | Pendant le test A, on voit la demande **arriver** à l'Accueil | aucune réponse ne revient |
+| E | Caméra (`192.168.20.50`) → Supervision : réussi | Caméra → Caisse : échec |
+:::
+
+::: prof
+**Relances** : « B marche : qui pouvez-vous rayer de la liste ? » · « C marche : l'accueil est-il allumé et branché ? Dans quelle rue est la caisse ? » · « D : l'aller est bon. Qu'est-ce qui manque au retour ? » · « E : la caméra parle dans sa rue, pas en dehors. »
 :::
 
 ::: question 3 [4 pt]
-Complétez la fiche de configuration.
-
-| Machine | Adresse IP | Réseau (la rue) | Passerelle |
-| :--- | :--- | :--- | :--- |
-| Capteur P02 | `192.168.20.12` | | |
-| Caisse | `10.0.0.30` | | |
-| Imprimante | `10.0.0.40` | | |
-| Caméra | `192.168.20.50` | | |
+Que nous apprend chaque indice ? **B** : …  **C** : …  **D** : …  **E** : …
 :::
 
-::: reponse 0
-P02 et Caméra : réseau `192.168.20.0`, passerelle `192.168.20.1` ; Caisse et Imprimante : réseau `10.0.0.0`, passerelle `10.0.0.1`. (0,5 pt par case)
+::: reponse 7
+B : la Supervision, sa passerelle, le routeur et la caisse (avec sa passerelle) fonctionnent. C : l'accueil est allumé et communique dans sa rue. D : l'aller passe, le problème est au retour. E : la caméra fonctionne dans sa rue, mais ne sort pas. (1 pt par indice)
 :::
 
 ::: question 4 [3 pt]
-Un technicien a réglé la passerelle de la caméra (`192.168.20.50`) sur `10.0.0.1`.
+Quelles sont les **deux** machines coupables ? Pour chacune, quel réglage soupçonnez-vous ? Justifiez avec les indices.
+:::
 
-**a)** Quelle règle n'a-t-il pas respectée ? **b)** Quelle est la bonne passerelle ? **c)** Malgré l'erreur, la caméra peut-elle envoyer ses images à Supervision (`192.168.20.2`) ? Pourquoi ?
+::: reponse 5
+Le poste de l'accueil (0,5 pt) et la caméra (0,5 pt) : leur **passerelle** est absente ou fausse (1 pt). Indices C et D pour l'accueil, E pour la caméra, B innocentant le routeur (1 pt).
+:::
+
+::: activite 5 min | Le verdict | classe
+Chaque équipe annonce ses coupables. Puis on ouvre la configuration : réparez-la.
+:::
+
+::: tableau La configuration relevée sur place
+| Machine | Adresse | Passerelle |
+| :--- | :--- | :--- |
+| Supervision | `192.168.20.2` | `192.168.20.1` |
+| Caméra | `192.168.20.50` | `10.0.0.1` |
+| Accueil | `10.0.0.25` | *(vide)* |
+| Caisse | `10.0.0.30` | `10.0.0.1` |
+:::
+
+::: question 5 [4 pt]
+**a)** Donnez la bonne passerelle de chaque machine coupable. **b)** Pourquoi la demande arrivait-elle à l'accueil, mais pas la réponse à la Supervision ?
 :::
 
 ::: reponse 4
-a) La passerelle doit être dans la rue de la machine ; `10.0.0.1` est dans la rue de l'accueil (1 pt). b) `192.168.20.1` (1 pt). c) **Oui** : Supervision est dans la même rue, l'envoi est direct, la passerelle ne sert pas (1 pt).
-:::
-
-## L'aller et le retour
-
-::: slide 2 min | Un message, c'est un aller et un retour | fiche
-- Un `ping` : une **demande** part, une **réponse** doit revenir.
-- L'aller utilise la passerelle de l'**expéditeur**, le retour celle du **destinataire**.
-- Il faut donc une passerelle **des deux côtés**.
+a) Accueil : `10.0.0.1` (1 pt) ; caméra : `192.168.20.1`, dans sa rue (1 pt). b) La Supervision a une passerelle, l'aller passe (1 pt) ; l'accueil n'en a pas, sa réponse ne peut pas sortir de sa rue (1 pt).
 :::
 
 ::: dire
-**À dire** : « Vous envoyez un SMS, votre ami répond. Si son téléphone ne sait pas sortir de son réseau, vous ne recevrez jamais la réponse… et vous croirez que **votre** message s'est perdu. »
-:::
-
-::: activite 6 min | L'aller et le retour | individuel
-Supervision a la passerelle `192.168.20.1`. Le poste de l'accueil (`10.0.0.25`) n'a **aucune passerelle**. Supervision envoie un ping au poste de l'accueil.
-:::
-
-::: question 5 [3 pt]
-**a)** La demande arrive-t-elle au poste de l'accueil ? **b)** La réponse revient-elle à Supervision ? Pourquoi ? **c)** Que faut-il régler, et sur quelle valeur ?
-:::
-
-::: reponse 4
-a) Oui : Supervision a une passerelle, le routeur fait passer la demande (1 pt). b) Non : pour répondre, l'accueil doit sortir de sa rue, et il n'a pas de passerelle (1 pt). c) Passerelle du poste de l'accueil : `10.0.0.1` (1 pt).
+« Retenez l'affaire : quand un ping échoue, pensez **aussi** au retour. »
 :::
 
 ## Faire le bilan
 
-::: retenir 5 min
-- Une adresse IP /24 se lit comme une adresse postale : la [[rue]] (le réseau, 3 premiers nombres), puis le [[numéro]] (la machine).
-- Dans la même rue, les machines se parlent [[directement]], par le switch.
-- Pour sortir de sa rue, une machine confie ses paquets à sa [[passerelle]] : l'adresse du routeur de son côté.
-- La passerelle est toujours dans la [[même]] rue que la machine.
-- Pour un aller et un retour entre deux rues, il faut une passerelle des [[deux]] côtés.
+::: retenir 4 min
+- Une adresse IP /24 : la [[rue]] (le réseau, 3 premiers nombres), puis le [[numéro]] (la machine).
+- Dans la même rue, les machines se parlent [[directement]].
+- Pour sortir de sa rue, une machine passe par sa [[passerelle]], toujours dans la [[même]] rue qu'elle.
+- Un ping est un aller et un retour : il faut une passerelle des [[deux]] côtés.
 :::
 
-::: activite 3 min | Quiz de sortie | individuel | projeter
+::: activite 4 min | Quiz de sortie | individuel | projeter
 Répondez sur votre fiche.
 :::
 
@@ -256,5 +245,5 @@ La **box** : elle relie le réseau de la maison à Internet.
 :::
 
 ::: dire
-Ramasser les fiches. Annoncer : « Le 4 décembre, **TP noté** : vous configurez tout le réseau du parking. Ce soir, regardez l'adresse et le "routeur" de votre téléphone en Wi-Fi : vous saurez lire ce que vous voyez. »
+Ramasser les fiches. Annoncer : « Le 4 décembre, **TP noté** : vous configurez tout le réseau du parking. »
 :::

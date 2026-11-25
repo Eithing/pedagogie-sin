@@ -12,6 +12,10 @@ accroche: "Pour D3 (mardi 24 novembre) et D1 (vendredi 27 novembre, 12 h). À li
 « Aujourd'hui, vous écrivez la décision d'un objet qui fonctionne tout seul, nuit après nuit, sans que personne ne le touche : c'est ça, l'informatique embarquée. »
 :::
 
+::: info D1, vendredi 27 novembre : version « enquête »
+Avec les D1, la séance est `COURS_TermSIN_Lampadaire_Panne` : on part du message du gardien (lampe éteinte la nuit, allumée le jour) au lieu de la diapo de l'allée. Le fil rouge, les anecdotes et les déblocages de cette fiche restent valables.
+:::
+
 ### Le problème de départ : pourquoi on fait ça
 
 - **Le constat** : beaucoup de communes françaises éteignent ou baissent l'éclairage public une partie de la nuit, pour économiser l'énergie (le mouvement s'est accéléré avec la hausse du prix de l'électricité en 2022). Mais une rue noire inquiète les habitants et les piétons.

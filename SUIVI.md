@@ -2,6 +2,15 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 25 novembre 2026 : vendredi 27 rendu plus attractif (demande de l'enseignant ; remplace ci-dessous ce qui est prévu pour le 27)
+
+- **2nde** : TP « coulisses » inchangé à 8 h. `COURS_SNT_Web_PasAPas` ne couvrait que 9 points sur 20 de l'interrogation : activités resserrées, quiz de sortie remplacé par un **quiz par équipes** de 13 min (histoire, licences, moteurs, cookies ; questions différentes de l'interrogation).
+- **D1** : nouveau `COURS_TermSIN_Lampadaire_Panne` (enquête par équipes, rappel Python de 5 min). Le « pas à pas » reste celui des D3 (fait le 24).
+- **D2 + D3** : `COURS_TermSIN_Reseau_PasAPas` réécrit en enquête (cinq indices, deux passerelles fautives).
+- **D2, 3 h** : `COURS_TermSIN_I2C_PasAPas` réécrit (20 min de rappel de code comme avec les D3, appel I2C, nombres négatifs) ; ses anciens exemples donnaient les réponses des questions 2, 4a et 7 du TP. Puis `TP_TermSIN_ChambreFroide_Missions` (2 h, /20), reprise guidée des étapes 4 à 6 du TP du 20.
+- **Chambre froide testée dans Wokwi le 25 novembre** : scan [104], WHO_AM_I 0x68, −18 °C, valeurs négatives et alarme à hystérésis bonnes. Sans complément à 2 : +174,8 °C (calculé), corrigé dans le TP du 20 (écrit +190).
+- **Questions sans réponse** : rappel de 15-20 min aussi pour D1 ? où en étaient les D2 dans le TP le 20, et quelle note pour ce TP ? les notes du 27 remplacent-elles celles du 20 ? qu'est-ce qui a bien marché mardi avec les D3 ?
+
 ## Semaine du 23 novembre 2026 : reprendre les élèves par la main (première ébauche, à retravailler avec l'enseignant)
 
 - **Constat de l'enseignant (20 novembre)** : les Terminales ont peu travaillé ; les 2nde étaient perdus, la synthèse est allée trop vite. Les élèves ne comprennent pas **à quoi sert** ce qu'on fait : il manque du contexte.

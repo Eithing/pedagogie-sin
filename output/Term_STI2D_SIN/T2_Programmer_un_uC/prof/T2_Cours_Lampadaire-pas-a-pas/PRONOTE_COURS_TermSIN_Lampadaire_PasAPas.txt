@@ -4,10 +4,3 @@ T2 Traiter l'information par programme — Séance : le lampadaire pas à pas, l
 
 Description :
 T2, séance très guidée : exécuter un programme à la main, repérer les erreurs de syntaxe, puis programmer ensemble le lampadaire jour / nuit sur Wokwi, puis ajouter un cas au programme (if / elif / else). Fiche d'activités notée /20.
-
-=== TSTI2D1 (vendredi 27 novembre, 12 h) ===
-Titre de la séance :
-T2 Traiter l'information par programme — Séance : le lampadaire pas à pas, reprise guidée (Wokwi)
-
-Description :
-T2, reprise guidée de la séance du 20 novembre : exécuter un programme à la main, repérer les erreurs de syntaxe, programmer ensemble le lampadaire jour / nuit, puis ajouter un cas au programme (if / elif / else). Fiche d'activités notée /20.

@@ -5,30 +5,32 @@ sequence: S2
 court: Voyage d'un clic
 pronote:
   titre: "S2 Le Web — Séance : le voyage d'un clic, de l'adresse à la page affichée"
-  description: "S2, classe entière, reprise guidée avant l'interrogation du 4 décembre : décomposer une URL, jouer la requête et la réponse HTTP (client, DNS, serveur), lire un code HTML comme le navigateur. Fiche d'activités notée /20."
+  description: "S2, classe entière, reprise guidée avant l'interrogation du 4 décembre : décomposer une URL, jouer la requête et la réponse HTTP (client, DNS, serveur), lire un code HTML comme le navigateur, puis quiz par équipes sur le reste du thème (histoire, licences, moteurs, cookies). Fiche d'activités notée /20."
 type: cours
 duree: 55 min
 bareme: 20
 fiche_docx: true
 illustration: img/web/dialogue-http.svg
 accroche: "Vous cliquez, la page s'affiche en une demi-seconde. Entre les deux, cinq étapes : aujourd'hui, on les joue une par une."
-competences: [WEB.3, WEB.4, WEB.5, WEB.6, WEB.7]
+competences: [WEB.1, WEB.2, WEB.3, WEB.4, WEB.5, WEB.6, WEB.7, WEB.8, WEB.9]
 objectifs:
   - Décomposer une URL et reconnaître une page sécurisée
   - Raconter, dans l'ordre, ce qui se passe entre le clic et l'affichage (client, DNS, serveur, requête, réponse)
   - Lire un code HTML court comme le ferait le navigateur et distinguer contenu et style
+  - Retrouver l'essentiel sur l'histoire du Web, les licences, les moteurs de recherche et les cookies
 prerequis:
   - "S1 Internet : adresse IP, paquets, DNS"
   - "S2 : séance de synthèse du 20 novembre"
 preparation:
   - Imprimer la fiche d'activités (1 par élève) ; déposer le PDF sur l'ENT pour les absents
   - "Jeu de rôle de l'activité 2 : trois feuilles A4 écrites en gros, « NAVIGATEUR », « DNS (l'annuaire) », « SERVEUR WEB », et une enveloppe contenant le code HTML de la page (imprimer la diapo « Être le navigateur »)"
+  - "Quiz par équipes : former 5 ou 6 équipes, une ardoise ou trois feuilles A, B, C par équipe"
   - "Ouvrir le HTML de projection des diapos — F : plein écran, T : minuteur"
   - "Lire la fiche « contexte » de la séance (`CONTEXTE_SNT_Web_PasAPas`)"
 ---
 
 ::: prof
-**Pourquoi cette séance.** Le 20 novembre, la synthèse a couvert tout le thème en une heure : trop vite, les élèves étaient perdus. L'interrogation est **reportée au 4 décembre**. Cette séance ne reprend **qu'une seule histoire** : ce qui se passe quand on clique sur un lien. Tout le reste du thème (URL, HTTP, client / serveur, HTML) s'y accroche. Les licences, les moteurs et les cookies restent sur la fiche de révision.
+**Pourquoi cette séance.** Le 20 novembre, la synthèse a couvert tout le thème en une heure : trop vite, les élèves étaient perdus. L'interrogation est **reportée au 4 décembre**. Cette séance ne reprend **qu'une seule histoire** : ce qui se passe quand on clique sur un lien. Tout le reste du thème (URL, HTTP, client / serveur, HTML) s'y accroche. Les licences, les moteurs et les cookies (11 points sur 20 de l'interrogation avec l'histoire du Web) sont repris dans le quiz par équipes de fin de séance ; les questions sont différentes de celles de l'interrogation.
 
 **Méthode** : pour chaque étape, le professeur fait l'exemple au tableau, la classe le refait à l'oral, puis chacun le fait seul sur la fiche. On n'avance que quand la majorité a fini.
 
@@ -40,14 +42,14 @@ preparation:
 | :--- | :--- | :--- | :---: |
 | 1. Découper une adresse | Q1 | Protocole, serveur, chemin, paramètres ; page sécurisée | 4 |
 | 2. Jouer la scène | Q2 | Ordre des étapes, requête GET, codes 200 et 404, client et serveur | 4 |
-| 3. Être le navigateur | Q3, Q4 | Balises, rendu, lien ; contenu et style | 7 |
-| 4. Quiz de sortie | Q5 à Q9 | Les étapes du voyage | 5 |
+| 3. Être le navigateur | Q3, Q4 | Balises, rendu, lien ; contenu et style | 6 |
+| 4. Le quiz des équipes | Q5 à Q10 | Histoire, licences, moteurs, cookies | 6 |
 | **Total** | | | **20** |
 :::
 
 ## Le voyage d'un clic
 
-::: slide 4 min | Que se passe-t-il quand je clique ?
+::: slide 3 min | Que se passe-t-il quand je clique ?
 ![](img/web/dialogue-http.svg){width=94%}
 
 Cinq étapes, en une demi-seconde. Aujourd'hui, on les fait **une par une**.
@@ -69,7 +71,7 @@ Cinq étapes, en une demi-seconde. Aujourd'hui, on les fait **une par une**.
 **À dire** : « Une URL, c'est comme une adresse sur une enveloppe : le pays et la ville (le serveur), puis l'étage et la porte (le chemin). »
 :::
 
-::: activite 9 min | Découper une adresse | individuel
+::: activite 7 min | Découper une adresse | individuel
 D'abord l'exemple au tableau, puis les deux adresses de la question 1, seuls.
 :::
 
@@ -96,7 +98,7 @@ a) `https`, sécurisée · serveur `www.monclub-judo.fr` · chemin `/horaires.ht
 
 ## Étapes 2 et 3 : la demande et la réponse
 
-::: slide 3 min | Le client demande, le serveur répond | fiche
+::: slide 2 min | Le client demande, le serveur répond | fiche
 - Le **client**, c'est **votre navigateur** : il demande.
 - Le **DNS**, c'est l'**annuaire** : il donne l'adresse IP du serveur.
 - Le **serveur web** garde les pages : il répond.
@@ -114,7 +116,7 @@ a) `https`, sécurisée · serveur `www.monclub-judo.fr` · chemin `/horaires.ht
 **Peut ajouter** : la page 404 de certains sites est devenue un petit jeu ou un dessin (fiche contexte).
 :::
 
-::: activite 13 min | Jouer la scène | classe
+::: activite 11 min | Jouer la scène | classe
 Trois élèves jouent le **navigateur**, le **DNS** et le **serveur web**. Les autres suivent et complètent le dialogue de la question 2.
 :::
 
@@ -155,7 +157,7 @@ Qui est le client ? Qui est le serveur ?
 
 ## Étapes 4 et 5 : le navigateur construit la page
 
-::: slide 3 min | Le code HTML : des balises autour du contenu | fiche
+::: slide 2 min | Le code HTML : des balises autour du contenu | fiche
 ![](img/web/rendu-judo.svg){width=94%}
 
 - Le **HTML** dit **quoi** afficher : titre, paragraphe, lien. Le **CSS** dit **comment** : couleur, taille, police.
@@ -165,7 +167,7 @@ Qui est le client ? Qui est le serveur ?
 **À dire** : « Le serveur n'envoie pas une image de la page : il envoie un texte, avec des balises. C'est votre navigateur qui dessine la page. C'est pour ça qu'un même site s'affiche différemment sur un téléphone et sur un ordinateur. »
 :::
 
-::: activite 12 min | Être le navigateur | individuel
+::: activite 8 min | Être le navigateur | individuel
 Vous êtes le navigateur : voici le code reçu du serveur. Lisez-le, puis dessinez la page.
 
 ```html
@@ -181,12 +183,12 @@ Vous êtes le navigateur : voici le code reçu du serveur. Lisez-le, puis dessin
 3. `<h1>` : grand titre · `<p>` : paragraphe · `<a href="…">` : lien vers l'adresse écrite dans `href`.
 :::
 
-::: question 3 [5 pt]
+::: question 3 [4 pt]
 **a)** Citez les trois balises de ce code et leur rôle. **b)** Écrivez exactement ce qui s'affiche à l'écran. **c)** Un visiteur clique sur « Inscriptions » : à quel serveur le navigateur envoie-t-il sa requête, et pour quel chemin ?
 :::
 
 ::: reponse 5
-a) `h1` grand titre, `p` paragraphe, `a` lien (1,5 pt). b) « Tournoi de judo » en grand, « Samedi 5 décembre, au gymnase. », puis « Inscriptions » souligné : les balises ne s'affichent pas (1,5 pt). c) Au serveur `www.monclub-judo.fr` (1 pt), pour le chemin `/inscriptions.html` (1 pt).
+a) `h1` grand titre, `p` paragraphe, `a` lien (1,5 pt). b) « Tournoi de judo » en grand, « Samedi 5 décembre, au gymnase. », puis « Inscriptions » souligné : les balises ne s'affichent pas (1 pt). c) Au serveur `www.monclub-judo.fr` (1 pt), pour le chemin `/inscriptions.html` (0,5 pt).
 :::
 
 ::: question 4 [2 pt]
@@ -197,79 +199,110 @@ On ajoute la règle CSS `h1 { color: red; }`. Qu'est-ce qui change à l'écran ?
 Le grand titre s'affiche en rouge (1 pt). Le texte ne change pas : le CSS ne touche que le **style**, pas le contenu (1 pt).
 :::
 
-## Faire le bilan
+## Le reste du thème, en équipes
 
-::: retenir 5 min
-- Une URL se découpe en [[protocole]], serveur, [[chemin]] et paramètres ; `https` signifie que la page est [[sécurisée]].
-- Le navigateur est le [[client]] : il demande au DNS l'adresse IP du serveur, puis envoie une requête `GET`.
-- Le [[serveur]] répond par un code (200 : OK, 404 : introuvable) et le code HTML de la page.
-- Le HTML dit [[quoi]] afficher, le CSS dit [[comment]] l'afficher.
-:::
-
-::: activite 4 min | Quiz de sortie | individuel | projeter
-Répondez sur votre fiche.
-:::
-
-::: question 5 [1 pt]
-Dans `https://www.service-public.fr/particuliers`, le serveur est…
-
-- [ ] `https`
-- [x] `www.service-public.fr`
-- [ ] `/particuliers`
-:::
-
-::: reponse 0
-`www.service-public.fr` : entre `://` et le premier `/`.
-:::
-
-::: question 6 [1 pt]
-Qui donne l'adresse IP d'un site à partir de son nom ?
-
-- [ ] le serveur web
-- [x] le DNS
-- [ ] le navigateur
-:::
-
-::: reponse 0
-Le **DNS**, l'annuaire.
-:::
-
-::: question 7 [1 pt]
-Le code de réponse 404 signifie…
-
-- [ ] OK, voici la page
-- [x] page introuvable
-- [ ] page sécurisée
-:::
-
-::: reponse 0
-**Introuvable** : le chemin demandé n'existe pas sur le serveur.
-:::
-
-::: question 8 [1 pt]
-Dans le modèle client / serveur, le client, c'est…
-
-- [x] le navigateur de l'utilisateur
-- [ ] l'ordinateur qui héberge le site
-- [ ] le DNS
-:::
-
-::: reponse 0
-Le **navigateur** : il demande, le serveur répond.
-:::
-
-::: question 9 [1 pt]
-Pour mettre un titre en bleu, on modifie…
-
-- [ ] le HTML
-- [x] le CSS
-- [ ] l'URL
-:::
-
-::: reponse 0
-Le **CSS** : il gère le style.
+::: slide 3 min | Le Web en quatre idées | fiche
+- **Histoire** : 1989, Tim Berners-Lee invente le Web au CERN ; 1991, premier site ; 1993, domaine public. Le Web est **un service** d'Internet.
+- **Licences Creative Commons** : **BY** citer l'auteur · **NC** pas d'usage commercial · **ND** pas de modification · **SA** partager sous la même licence.
+- **Moteurs** : des robots remplissent un **index** ; les pages sont **classées**. « Sponsorisé » = publicité. Une source : qui ? quand ? d'où ? pourquoi ?
+- **Cookies** : ils reconnaissent le visiteur ; un cookie **tiers** suit d'un site à l'autre. La navigation privée n'efface que les traces **sur l'appareil**.
 :::
 
 ::: dire
-Ramasser les fiches. Annoncer : « L'interrogation est le **vendredi 4 décembre**. Si vous savez raconter le voyage d'un clic en cinq étapes, vous avez la moitié de l'interrogation. Relisez la fiche de révision, partie par partie. »
+**À dire** : « Voilà l'autre moitié de l'interrogation. Trois minutes pour lire, puis on joue. » Donner une phrase par idée, pas plus : les explications viennent avec les questions.
+
+**Peut ajouter** : les anecdotes du CERN et des cookies (fiche contexte).
+:::
+
+::: activite 13 min | Le quiz des équipes | groupe | projeter
+Trente secondes de discussion par question, puis chaque équipe lève A, B ou C **au signal**. Un point par bonne réponse, un point de plus si un membre, choisi par le professeur, sait **expliquer pourquoi**. Chacun coche sur sa fiche **avant** la correction.
+:::
+
+::: prof
+Environ 2 minutes par question. Désigner l'élève qui explique : c'est ce qui oblige l'équipe à se mettre d'accord. Le score d'équipe ne compte pas dans la note.
+:::
+
+::: question 5 [1 pt]
+Le premier site web public date de…
+
+- [ ] A : 1969
+- [x] B : 1991
+- [ ] C : 2004
+:::
+
+::: reponse 0
+1991, au CERN. 1969, c'est ARPANET, l'ancêtre d'Internet.
+:::
+
+::: question 6 [1 pt]
+Une musique est sous licence **CC BY-SA**. Je la remixe et je publie mon remix…
+
+- [ ] A : c'est interdit
+- [ ] B : sans citer personne
+- [x] C : en citant l'auteur, sous la même licence
+:::
+
+::: reponse 0
+BY : citer ; SA : partager sous la même licence. Pas de ND, la modification est permise.
+:::
+
+::: question 7 [1 pt]
+Pour répondre vite, un moteur de recherche consulte…
+
+- [x] A : son index, préparé à l'avance
+- [ ] B : tout le Web, à chaque fois
+- [ ] C : mon historique seulement
+:::
+
+::: reponse 0
+L'index a été construit par les robots avant la recherche.
+:::
+
+::: question 8 [1 pt]
+Un article sans auteur ni date promet un remède miracle et vend le produit. Je…
+
+- [ ] A : le crois, il est bien classé
+- [x] B : me méfie : qui, quand, pourquoi ?
+- [ ] C : le crois, il y a un cadenas
+:::
+
+::: reponse 0
+Le classement et le cadenas ne garantissent pas que le contenu est vrai.
+:::
+
+::: question 9 [1 pt]
+Un site se souvient que j'ai choisi le français. C'est grâce à…
+
+- [x] A : un cookie du site
+- [ ] B : un cookie tiers
+- [ ] C : le DNS
+:::
+
+::: reponse 0
+Un cookie déposé par le site visité ; le cookie tiers sert à suivre d'un site à l'autre.
+:::
+
+::: question 10 [1 pt]
+En navigation privée, au lycée, le réseau du lycée…
+
+- [ ] A : ne voit plus rien
+- [x] B : peut toujours voir les sites visités
+- [ ] C : est coupé
+:::
+
+::: reponse 0
+Seules les traces sur l'appareil sont effacées.
+:::
+
+## Faire le bilan
+
+::: retenir 4 min
+- Une URL se découpe en [[protocole]], serveur, [[chemin]] et paramètres ; `https` : les échanges sont [[chiffrés]].
+- Le navigateur est le [[client]] : il demande l'adresse au DNS, puis envoie `GET`. Le [[serveur]] répond par un code (200, 404) et le code HTML.
+- Le HTML dit [[quoi]] afficher, le CSS dit [[comment]].
+- Une licence dit ce que l'auteur [[autorise]] ; un moteur cherche dans son [[index]] ; un cookie [[tiers]] suit le visiteur d'un site à l'autre.
+:::
+
+::: dire
+Annoncer l'équipe gagnante, ramasser les fiches. « L'interrogation est le **vendredi 4 décembre**. Le voyage d'un clic et les quatre idées du quiz : tout y est. Relisez la fiche de révision, partie par partie. »
 :::

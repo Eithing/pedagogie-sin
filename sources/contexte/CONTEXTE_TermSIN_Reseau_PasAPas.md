@@ -16,8 +16,9 @@ accroche: "Heure commune D2 + D3, vendredi 27 novembre. À lire avant la séance
 
 Des suites de nombres (`192.168.20.1`, `255.255.255.0`) sans rien à quoi les accrocher. Tout l'enjeu de la séance est de **raccrocher chaque nombre à une image** : la rue, le numéro, le bureau de poste. Une fois l'image installée, ne plus la lâcher : chaque question se pose dans ces mots-là (« même rue ? », « quel bureau de poste ? »).
 
-### Amener la séance (les 4 premières minutes)
+### Amener la séance (les 3 premières minutes)
 
+1. « Vendredi, 18 h : l'écran de l'accueil du parking est figé, deux machines sont mal réglées. Vous menez l'enquête. »
 1. « Levez la main si vous avez une box à la maison. » Presque toutes les mains se lèvent.
 2. « Votre box, c'est un **routeur**. Celui du parking qu'on étudie depuis trois semaines, c'est le même objet, en plus gros. »
 3. « Quand votre téléphone va sur YouTube, il ne sait pas où est YouTube. Il sait juste une chose : "pour tout ce qui n'est pas dans la maison, je donne à la box". Cette box, c'est sa **passerelle**. »
@@ -58,6 +59,10 @@ L'image a ses limites (une vraie adresse postale n'a pas de masque) : ne pas la 
 | L'élève donne la passerelle de l'autre rue | « Ta lettre, tu la déposes au bureau de poste **de ta rue** ou de celle d'en face ? » |
 | L'élève met une passerelle pour parler dans sa rue | « Pour donner une lettre à ton voisin, tu passes par la poste ? » |
 | « Pourquoi la réponse ne revient pas ? » | Rejouer avec les enveloppes : l'accueil veut répondre, mais personne ne lui a dit où est le bureau de poste. |
+
+### Pendant l'enquête
+
+L'indice B innocente le routeur, la Supervision et la caisse ; l'indice D montre que c'est le **retour** qui manque ; l'indice E accuse la caméra. Si une équipe bloque, lui faire rejouer l'envoi avec les enveloppes. N'ouvrir la configuration qu'après les verdicts.
 
 ### Si la classe décroche
 

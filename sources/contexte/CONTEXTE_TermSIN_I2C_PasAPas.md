@@ -5,7 +5,7 @@ sequence: T3
 court: I2C pas a pas
 type: contexte
 competences: [3.4.3a, 3.4.3b, 5.3.4b, CO7.3-SIN2]
-accroche: "D2, vendredi 27 novembre, première heure du bloc de 3 h. À lire avant la séance : ce que vous pouvez raconter, et comment donner du sens aux trames et aux octets."
+accroche: "D2, vendredi 27 novembre, première partie du bloc de 3 h (rappel de code, I2C, nombres négatifs), avant le TP en missions. À lire avant la séance : ce que vous pouvez raconter, et comment donner du sens aux trames et aux octets."
 ---
 
 ::: info En une phrase, pour les élèves
@@ -22,7 +22,7 @@ accroche: "D2, vendredi 27 novembre, première heure du bloc de 3 h. À lire ava
 1. « Sortez votre téléphone, tournez-le. L'écran a pivoté. Qui a décidé ça, et comment il l'a su ? »
 2. « Un petit capteur a mesuré, puis il a **envoyé des nombres** au processeur, sur deux fils, en quelques millièmes de seconde. »
 3. « Le capteur du TP de vendredi dernier, le MPU6050, est exactement ce genre de capteur. On s'en sert pour son thermomètre. »
-4. « Vendredi, c'était trop d'un coup. Aujourd'hui, une notion à la fois, et d'abord sans ordinateur. »
+4. « Vendredi, c'était trop d'un coup. Aujourd'hui, on reprend d'abord le code, puis une notion à la fois, sans ordinateur. Ensuite, quatre missions sur Wokwi. »
 
 ### Les trois images à installer
 

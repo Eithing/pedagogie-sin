@@ -210,7 +210,7 @@ def lire_temperature():
         n = n - 65536
     return n / 340 + 36.53
 ```
-Fonction juste (1 pt) ; valeur suivie sur l'écran, validée (1 pt). Sans le complément à 2, les températures négatives s'affichent vers +190 °C : c'est le test qui le révèle.
+Fonction juste (1 pt) ; valeur suivie sur l'écran, validée (1 pt). Sans le complément à 2, les températures négatives s'affichent vers +175 °C : c'est le test qui le révèle.
 :::
 
 ### Étape 6 — Déclencher l'alarme (25 min)

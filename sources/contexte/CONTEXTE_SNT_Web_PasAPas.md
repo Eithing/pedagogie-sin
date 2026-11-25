@@ -21,7 +21,7 @@ Le 20 novembre, la synthèse a enchaîné neuf notions (histoire, licences, HTML
 1. « Combien de fois avez-vous cliqué sur un lien depuis ce matin ? » Laisser répondre (beaucoup).
 2. « Et que se passe-t-il, exactement, entre le moment où vous cliquez et le moment où la page s'affiche ? » Recueillir 2 ou 3 idées, même fausses (« ça télécharge », « ça va sur Internet »).
 3. « En une demi-seconde, votre téléphone a cherché une adresse dans un annuaire, écrit une lettre à un ordinateur parfois à l'autre bout du monde, reçu un texte bizarre plein de chevrons, et l'a transformé en page. Aujourd'hui, on joue ce voyage, étape par étape. »
-4. Annoncer : « L'interrogation est reportée au **4 décembre**. Cette séance, c'est la moitié de l'interrogation. »
+4. Annoncer : « L'interrogation est reportée au **4 décembre**. Le voyage d'un clic, puis un quiz par équipes sur le reste : tout le thème est là. »
 
 ### Le fil rouge : le restaurant
 

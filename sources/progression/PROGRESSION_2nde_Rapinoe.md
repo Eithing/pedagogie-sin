@@ -171,6 +171,8 @@ journal:
     texte: "Retour en présentiel prévu le 20 novembre ; il faut rattraper le retard. Le Web se termine le 27 novembre : séance de synthèse notée (20 novembre, avec la fiche de révision), TP noté « coulisses d'une page » (1er groupe le 20, 2e groupe le 27 avant l'interrogation), interrogation Web de 30 min le 27 novembre. Les cookies, vus seulement à distance, sont repris dans la synthèse. Les réseaux sociaux commencent le 4 décembre. Tous les TP et toutes les activités sont désormais notés."
   - date: 2026-11-23
     texte: "Le 20 novembre, la synthèse est allée trop vite : les élèves étaient perdus. L'interrogation Web est reportée au 4 décembre. Vendredi 27 novembre, 9 h : séance de reprise très guidée « le voyage d'un clic » (URL, DNS, requête et réponse HTTP jouées en classe, lire un code HTML), fiche notée /20, qui peut remplacer la note de la synthèse. Le TP du 2e demi-groupe reste le 27 à 8 h. Les réseaux sociaux commencent le 11 décembre."
+  - date: 2026-11-25
+    texte: "La séance du 27 novembre (9 h) est complétée par un quiz par équipes sur l'histoire du Web, les licences, les moteurs et les cookies, pour couvrir tout le thème avant l'interrogation du 4 décembre."
 ---
 
 ## Intentions pédagogiques

@@ -322,5 +322,20 @@
   ],
   "sources/contexte/CONTEXTE_TermSIN_Reseau_PasAPas.md": [
     "Term_STI2D_SIN/C1_Reseau_local/prof/C1_Contexte_Passerelle-pas-a-pas/CONTEXTE_TermSIN_Reseau_PasAPas.pdf"
+  ],
+  "sources/tp/TP_TermSIN_ChambreFroide_Missions.md": [
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_TP_Missions-chambre-froide/ELEVE_TP_TermSIN_ChambreFroide_Missions.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_TP_Missions-chambre-froide/PROF_TP_TermSIN_ChambreFroide_Missions.pdf",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/prof/T3_TP_Missions-chambre-froide/PRONOTE_TP_TermSIN_ChambreFroide_Missions.txt",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_TP_Missions-chambre-froide/diagram_chambre_froide.json",
+    "Term_STI2D_SIN/T3_Liaisons_serie_et_bus/eleve/T3_TP_Missions-chambre-froide/chambre_froide.py"
+  ],
+  "sources/cours/COURS_TermSIN_Lampadaire_Panne.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Cours_Lampadaire-en-panne/ELEVE_COURS_TermSIN_Lampadaire_Panne.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-en-panne/PROF_COURS_TermSIN_Lampadaire_Panne.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-en-panne/DEROULE_COURS_TermSIN_Lampadaire_Panne.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-en-panne/COURS_TermSIN_Lampadaire_Panne.html",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Lampadaire-en-panne/SLIDES_COURS_TermSIN_Lampadaire_Panne.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Lampadaire-en-panne/PRONOTE_COURS_TermSIN_Lampadaire_Panne.txt"
   ]
 }

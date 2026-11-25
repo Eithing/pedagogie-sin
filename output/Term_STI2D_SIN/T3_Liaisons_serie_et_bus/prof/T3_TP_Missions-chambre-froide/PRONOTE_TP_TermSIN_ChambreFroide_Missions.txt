@@ -1,0 +1,6 @@
+﻿=== TSTI2D2 (vendredi 27 novembre, 2 h) ===
+Titre de la séance :
+T3 Faire dialoguer les constituants — TP : sauver la chambre froide, quatre missions (Wokwi)
+
+Description :
+T3, suite et fin guidée du TP du 20 novembre, sur Wokwi : trouver et identifier un capteur I2C, lire une température négative, programmer une alarme à deux seuils. Noté /20.

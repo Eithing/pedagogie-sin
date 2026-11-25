@@ -7,9 +7,6 @@ pronote:
   - pour: "TSTI2D3 (mardi 24 novembre)"
     titre: "T2 Traiter l'information par programme — Séance : le lampadaire pas à pas, lire, décider, agir (Wokwi)"
     description: "T2, séance très guidée : exécuter un programme à la main, repérer les erreurs de syntaxe, puis programmer ensemble le lampadaire jour / nuit sur Wokwi, puis ajouter un cas au programme (if / elif / else). Fiche d'activités notée /20."
-  - pour: "TSTI2D1 (vendredi 27 novembre, 12 h)"
-    titre: "T2 Traiter l'information par programme — Séance : le lampadaire pas à pas, reprise guidée (Wokwi)"
-    description: "T2, reprise guidée de la séance du 20 novembre : exécuter un programme à la main, repérer les erreurs de syntaxe, programmer ensemble le lampadaire jour / nuit, puis ajouter un cas au programme (if / elif / else). Fiche d'activités notée /20."
 type: cours
 duree: 55 min
 bareme: 20

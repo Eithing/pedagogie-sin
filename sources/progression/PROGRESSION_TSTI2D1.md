@@ -59,6 +59,8 @@ journal:
     texte: "Plan de rattrapage : T2 resserrée, fin le 4 décembre, puis T3 (liaisons série et bus) dès le 11 décembre. Vendredi 20 novembre, retour en présentiel : séance « du diagramme d'états au programme » (lampadaire jour / nuit sur Wokwi), fiche d'activités notée /20. Tous les TP et toutes les activités sont désormais notés."
   - date: 2026-11-23
     texte: "La séance du 20 novembre a peu produit : trop de consignes à la fois, le sens du programme échappait aux élèves. Vendredi 27 novembre : reprise lente des mêmes notions, « le lampadaire pas à pas » (exécuter le programme à la main, chasse aux erreurs, Wokwi geste par geste avec le professeur, le piéton écrit d'abord sur la fiche), fiche notée /20, qui peut remplacer la note du 20 novembre."
+  - date: 2026-11-25
+    texte: "La reprise du 27 novembre devient une enquête par équipes, « panne dans l'allée » (diagnostic à la main, tournoi des bugs, réparation sur Wokwi, défi du crépuscule), fiche notée /20, à la place du lampadaire pas à pas."
 ---
 
 ## Organisation
