@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="1200" height="500" fill="#ffffff"/>
+  <!-- cadenas ouvert -->
+  <path d="M80 160 L80 100 A100 100 0 0 1 280 100 L280 60" fill="none" stroke="#475569" stroke-width="26"/>
+  <rect x="40" y="150" width="420" height="230" rx="26" fill="#15803d"/>
+  <text x="250" y="196" font-size="24" font-weight="800" fill="#ffffff" text-anchor="middle">OUVERT</text>
+  <g font-size="44" font-weight="800" fill="#0f172a" text-anchor="middle">
+    <rect x="64" y="222" width="64" height="86" rx="10" fill="#ffffff"/><text x="96" y="280">3</text>
+    <rect x="140" y="222" width="64" height="86" rx="10" fill="#ffffff"/><text x="172" y="280">5</text>
+    <rect x="216" y="222" width="64" height="86" rx="10" fill="#ffffff"/><text x="248" y="280">4</text>
+    <rect x="292" y="222" width="64" height="86" rx="10" fill="#ffffff"/><text x="324" y="280">9</text>
+    <rect x="368" y="222" width="64" height="86" rx="10" fill="#ffffff"/><text x="400" y="280">2</text>
+  </g>
+  <text x="250" y="350" font-size="18" fill="#ffffff" text-anchor="middle">La vente de mardi est sauvée.</text>
+  <!-- ce que chaque chiffre a demande -->
+  <text x="520" y="60" font-size="22" font-weight="800" fill="#0f172a">Ce que chaque chiffre vous a fait faire</text>
+  <g font-size="19" fill="#0f172a">
+    <rect x="520" y="84" width="54" height="54" rx="10" fill="#0d9488"/><text x="547" y="121" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="592" y="106" font-weight="700">Lire une URL</text>
+    <text x="592" y="130" fill="#475569">le serveur va jusqu'au premier / ; https = chiffré</text>
+    <rect x="520" y="156" width="54" height="54" rx="10" fill="#0d9488"/><text x="547" y="193" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">5</text>
+    <text x="592" y="178" font-weight="700">Lire un dialogue HTTP</text>
+    <text x="592" y="202" fill="#475569">le client demande (GET), le serveur répond (200, 404)</text>
+    <rect x="520" y="228" width="54" height="54" rx="10" fill="#0d9488"/><text x="547" y="265" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">4</text>
+    <text x="592" y="250" font-weight="700">Être le navigateur</text>
+    <text x="592" y="274" fill="#475569">HTML = le contenu, CSS = le style</text>
+    <rect x="520" y="300" width="54" height="54" rx="10" fill="#0d9488"/><text x="547" y="337" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">9</text>
+    <text x="592" y="322" font-weight="700">Choisir une image</text>
+    <text x="592" y="346" fill="#475569">la licence dit ce que l'auteur autorise</text>
+    <rect x="520" y="372" width="54" height="54" rx="10" fill="#0d9488"/><text x="547" y="409" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="592" y="394" font-weight="700">Repérer les cookies tiers et la publicité</text>
+    <text x="592" y="418" fill="#475569">un autre domaine vous suit ; « Sponsorisé » = payé</text>
+  </g>
+  <text x="520" y="474" font-size="19" font-weight="700" fill="#ea580c">C'est exactement le programme de l'interrogation du 4 décembre.</text>
+</svg>

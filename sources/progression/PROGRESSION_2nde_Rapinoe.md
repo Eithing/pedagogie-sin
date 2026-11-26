@@ -51,7 +51,7 @@ sequences:
       - "Régler cookies et confidentialité du navigateur ; visualiser les traqueurs"
     outils: [navigateur (outils de développement), éditeur web maison (fichier HTML, sans compte)]
     evaluation: "Interrogation de 30 min (sujets A / B, 45 min avec tiers-temps), vendredi 4 décembre (reportée du 27 novembre). Notes de TP : page web (9 octobre), moteurs de recherche (13 novembre), coulisses d'une page (20 et 27 novembre) ; fiche de synthèse notée (20 novembre)."
-    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_MoteursRecherche_Note, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso, COURS_SNT_Web_Synthese, TP_SNT_Web_Coulisses, COURS_SNT_Web_PasAPas, REVISION_SNT_Web, EVAL_SNT_Web]
+    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_MoteursRecherche_Note, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso, COURS_SNT_Web_Synthese, TP_SNT_Web_Coulisses, COURS_SNT_Web_Escape, REVISION_SNT_Web, EVAL_SNT_Web]
     semaines: 4
     etat: en-cours
     debut: 2026-10-09
@@ -173,6 +173,8 @@ journal:
     texte: "Le 20 novembre, la synthèse est allée trop vite : les élèves étaient perdus. L'interrogation Web est reportée au 4 décembre. Vendredi 27 novembre, 9 h : séance de reprise très guidée « le voyage d'un clic » (URL, DNS, requête et réponse HTTP jouées en classe, lire un code HTML), fiche notée /20, qui peut remplacer la note de la synthèse. Le TP du 2e demi-groupe reste le 27 à 8 h. Les réseaux sociaux commencent le 11 décembre."
   - date: 2026-11-25
     texte: "La séance du 27 novembre (9 h) est complétée par un quiz par équipes sur l'histoire du Web, les licences, les moteurs et les cookies, pour couvrir tout le thème avant l'interrogation du 4 décembre."
+  - date: 2026-11-26
+    texte: "La séance « le voyage d'un clic » ressemblait trop à la synthèse du 20 novembre et au jeu de rôle du 2 novembre : elle est remplacée par un escape game par équipes, « Panique à la MDL » (lien piégé, journal d'un serveur, page HTML cassée, licence d'une image, cookies tiers et publicité, verrou final sur l'histoire du Web), avec des exemples nouveaux. Fiche notée /20, qui peut remplacer la note de la synthèse."
 ---
 
 ## Intentions pédagogiques

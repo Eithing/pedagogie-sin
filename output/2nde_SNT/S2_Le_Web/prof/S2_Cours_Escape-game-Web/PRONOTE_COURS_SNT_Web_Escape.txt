@@ -1,0 +1,5 @@
+﻿Titre de la séance :
+S2 Le Web — Séance : panique à la MDL, l'escape game du Web
+
+Description :
+S2, classe entière, révision par équipes avant l'interrogation du 4 décembre : cinq énigmes (lien piégé, journal d'un serveur, page HTML cassée, licence d'une image, cookies tiers et publicité) et un verrou final sur l'histoire du Web. Fiche d'activités notée /20.

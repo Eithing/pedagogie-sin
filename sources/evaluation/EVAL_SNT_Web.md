@@ -18,7 +18,7 @@ consignes:
 ---
 
 ::: prof
-**Date** : vendredi 4 décembre, 9 h, classe entière (reportée du 27 novembre : les élèves étaient perdus après la synthèse du 20 ; séance de reprise « le voyage d'un clic » le 27). Prévoir 30 min ; **45 min pour les élèves avec un PAI** (tiers-temps) : le sujet est calibré pour 30 min, sans question longue ni calcul. La fiche de révision `REVISION_SNT_Web` (même dossier) a été distribuée le 20 novembre ; chaque question correspond à une de ses parties.
+**Date** : vendredi 4 décembre, 9 h, classe entière (reportée du 27 novembre : les élèves étaient perdus après la synthèse du 20 ; séance de reprise le 27 : l'escape game « Panique à la MDL »). Prévoir 30 min ; **45 min pour les élèves avec un PAI** (tiers-temps) : le sujet est calibré pour 30 min, sans question longue ni calcul. La fiche de révision `REVISION_SNT_Web` (même dossier) a été distribuée le 20 novembre ; chaque question correspond à une de ses parties.
 
 **Mise en œuvre** : distribuer les sujets A et B en alternance selon les rangs. Même structure, même difficulté, même barème ; seuls les exemples changent.
 :::

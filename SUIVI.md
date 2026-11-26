@@ -2,6 +2,12 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 26 novembre 2026 : 2nde du 27, l'escape game remplace « le voyage d'un clic »
+
+- **Constat de l'enseignant** : « le voyage d'un clic » faisait redite (mêmes schémas que la synthèse du 20, jeu de rôle du clic déjà joué le 2 novembre). Remplacé, à sa demande (format choisi parmi trois), par **`COURS_SNT_Web_Escape`**, « Panique à la MDL » : escape game par équipes de 4 ou 5, sur papier, cinq énigmes qui donnent chacune un chiffre du cadenas **3 5 4 9 2** (lien d'hameçonnage, journal d'un serveur avec 200 / 404, page HTML et CSS cassée, licence d'une image, cookies tiers et résultat sponsorisé), puis un verrou final en QCM (histoire du Web, robots, navigation privée). Carnet du détective (méthode) projeté et imprimé à chaque énigme, 2 jokers par équipe, tableau des scores. Notée /20 (4 + 4 + 4 + 3 + 3 + 2), peut remplacer la note du 20. Exemples tous nouveaux et différents de l'interrogation.
+- Sources renommées : `COURS_SNT_Web_PasAPas` → `COURS_SNT_Web_Escape`, `CONTEXTE_SNT_Web_PasAPas` → `CONTEXTE_SNT_Web_Escape` (fiche contexte réécrite : lancer le jeu, tenir le rythme, anecdotes à placer entre les énigmes). Nouvelles figures `img/web/escape-alerte.svg` et `escape-cadenas.svg`. Progression 2nde (ressources + journal du 26) et note de l'interrogation mises à jour.
+- Facultatif pour l'enseignant : une boîte fermée par un cadenas à 5 chiffres réglé sur 3 5 4 9 2.
+
 ## 25 novembre 2026 : vendredi 27 rendu plus attractif (demande de l'enseignant ; remplace ci-dessous ce qui est prévu pour le 27)
 
 - **2nde** : TP « coulisses » inchangé à 8 h. `COURS_SNT_Web_PasAPas` ne couvrait que 9 points sur 20 de l'interrogation : activités resserrées, quiz de sortie remplacé par un **quiz par équipes** de 13 min (histoire, licences, moteurs, cookies ; questions différentes de l'interrogation).
