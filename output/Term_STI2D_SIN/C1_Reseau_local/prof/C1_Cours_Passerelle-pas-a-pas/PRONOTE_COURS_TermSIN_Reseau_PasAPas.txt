@@ -1,6 +1,6 @@
 ﻿=== TSTI2D2 + TSTI2D3, heure commune (vendredi 27 novembre) ===
 Titre de la séance :
-C1 Mettre en réseau des objets — Séance : panne au parking, l'enquête réseau (routeur et passerelle)
+C1 Mettre en réseau des objets — Séance : le réseau du parking en quatre règles (adresse IP, routeur, passerelle, ping)
 
 Description :
-C1, heure commune D2 + D3, reprise sur papier : adresse IP « rue + numéro », jeu des enveloppes (routeur et passerelle), puis enquête par équipes pour localiser deux pannes de configuration. Fiche d'activités notée /20.
+C1, heure commune D2 + D3, sur table, sans PC : quatre règles montrées au tableau, chacune suivie d'un exercice individuel (la rue et le numéro d'une adresse /24, direct ou routeur, la passerelle, l'aller et le retour d'un ping). Fiche notée /20.

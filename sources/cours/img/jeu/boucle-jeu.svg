@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <marker id="fl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="520" fill="#ffffff"/>
+  <text x="600" y="40" text-anchor="middle" font-size="27" font-weight="800" fill="#0f172a">La boucle de jeu : tout jeu vidéo tourne comme ça</text>
+
+  <!-- trois étapes -->
+  <rect x="60" y="90" width="320" height="150" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="220" y="130" text-anchor="middle" font-size="22" font-weight="800" fill="#1d4ed8">1. Lire</text>
+  <text x="220" y="165" text-anchor="middle" font-size="18" fill="#0f172a">la manette, le clavier</text>
+  <text x="220" y="195" text-anchor="middle" font-size="18" fill="#0f172a">(le joueur appuie ?)</text>
+  <text x="220" y="225" text-anchor="middle" font-size="16" fill="#475569">les entrées</text>
+
+  <rect x="440" y="90" width="320" height="150" rx="16" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="600" y="130" text-anchor="middle" font-size="22" font-weight="800" fill="#9a3412">2. Décider</text>
+  <text x="600" y="165" text-anchor="middle" font-size="18" fill="#0f172a">touché ? PV − 30</text>
+  <text x="600" y="195" text-anchor="middle" font-size="18" fill="#0f172a">PV à 0 ? GAME OVER</text>
+  <text x="600" y="225" text-anchor="middle" font-size="16" fill="#475569">variables et if</text>
+
+  <rect x="820" y="90" width="320" height="150" rx="16" fill="#f0fdf4" stroke="#15803d" stroke-width="3"/>
+  <text x="980" y="130" text-anchor="middle" font-size="22" font-weight="800" fill="#15803d">3. Afficher</text>
+  <text x="980" y="165" text-anchor="middle" font-size="18" fill="#0f172a">l'image, le son,</text>
+  <text x="980" y="195" text-anchor="middle" font-size="18" fill="#0f172a">la barre de vie</text>
+  <text x="980" y="225" text-anchor="middle" font-size="16" fill="#475569">les sorties</text>
+
+  <line x1="380" y1="165" x2="436" y2="165" stroke="#475569" stroke-width="4" marker-end="url(#fl)"/>
+  <line x1="760" y1="165" x2="816" y2="165" stroke="#475569" stroke-width="4" marker-end="url(#fl)"/>
+  <path d="M980,240 C980,330 220,330 220,244" fill="none" stroke="#475569" stroke-width="4" marker-end="url(#fl)"/>
+  <rect x="430" y="280" width="340" height="44" rx="22" fill="#0f172a"/>
+  <text x="600" y="309" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">on recommence 60 fois par seconde</text>
+
+  <!-- barre de vie -->
+  <text x="60" y="390" font-size="20" font-weight="800" fill="#0f172a">PV</text>
+  <rect x="110" y="370" width="400" height="30" rx="6" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <rect x="110" y="370" width="180" height="30" rx="6" fill="#15803d"/>
+  <text x="530" y="393" font-size="19" font-family="Consolas, monospace" fill="#0f172a">pv = 45</text>
+
+  <!-- lien avec le lampadaire -->
+  <rect x="60" y="430" width="1080" height="64" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="600" y="470" text-anchor="middle" font-size="19" fill="#0f172a">Le lampadaire fait pareil : <tspan font-weight="800" fill="#1d4ed8">lire</tspan> le capteur → <tspan font-weight="800" fill="#9a3412">décider</tspan> → <tspan font-weight="800" fill="#15803d">régler</tspan> la lampe, dans un <tspan font-family="Consolas, monospace">while True</tspan></text>
+</svg>

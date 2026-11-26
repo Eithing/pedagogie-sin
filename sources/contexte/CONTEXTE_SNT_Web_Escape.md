@@ -23,6 +23,19 @@ Les élèves ont déjà vu ces notions trois fois : le 2 novembre (le clic au ra
 3. Poser la boîte et son cadenas sur le bureau, si vous en avez une. Même sans bonbons dedans, l'objet suffit à créer l'envie.
 4. Les règles en une minute, puis l'annonce : « La note de cette fiche peut remplacer celle du 20 novembre. »
 
+### Le plan de bataille
+
+| Moment | Ce que je fais |
+| :--- | :--- |
+| **La veille** | J'écris le nom de chaque élève sur sa fiche, et je forme les 6 équipes (niveaux mélangés, bavards séparés). |
+| **Avant qu'ils entrent** | Îlots formés, fiches posées : chacun cherche sa fiche, et son équipe. Le tableau des scores est déjà tracé. |
+| **Minute 1 à 5** | « Lancer le jeu » ci-dessus : le message de la MDL, le cadenas, les règles. Rien d'autre. |
+| **Pendant les énigmes** | Minuteur projeté. Je passe dans chaque îlot : **chacun écrit** sur sa fiche, pas seulement le secrétaire. |
+| **Entre deux énigmes** | Correction express d'une minute, score au tableau, une anecdote si l'ambiance retombe. |
+| **Fin d'heure** | Ouverture du cadenas, trace écrite, puis je suis **à la porte** : on sort en me donnant sa fiche. |
+
+L'interrogation reste au **4 décembre** : cette heure est la dernière révision. Dire en sortant : « Ce que vous avez trouvé aujourd'hui, c'est ce qui tombe vendredi prochain. »
+
 ### Tenir le rythme
 
 - **Le minuteur est votre allié** : appuyer sur T dès le début de chaque énigme ; à la fin, « 3, 2, 1, chiffres en l'air ! ».

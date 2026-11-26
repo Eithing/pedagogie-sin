@@ -37,7 +37,7 @@ sequences:
     etat: fait
     debut: 2026-11-06
     fin: 2026-11-13
-    ressources: [TP_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Pieton]
+    ressources: [TP_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Wokwi, AUTO_TermSIN_Lampadaire_Pieton, COURS_TermSIN_Python_Jeu, TP_TermSIN_Python_Reflexes]
   - ref: T3
     semaines: 6
     etat: en-cours
@@ -69,6 +69,8 @@ journal:
     texte: "Le 20 novembre, peu de travail : le TP « chambre froide » apportait trop de notions d'un coup ; l'heure commune « routeur et passerelle » est restée abstraite. Vendredi 27 novembre : heure commune, reprise sur papier « la passerelle pas à pas » (la box de la maison, jeu des enveloppes), notée /20 et pouvant remplacer la note du 20 ; bloc de 3 h, une heure de reprise « comment deux puces se parlent » (trame série, appel en classe pour l'I2C, complément à 2), notée /20, puis deux heures pour finir le TP du 20 novembre."
   - date: 2026-11-25
     texte: "L'heure commune du 27 novembre devient une enquête par équipes, « panne au parking » (jeu des enveloppes, puis cinq indices pour trouver deux erreurs de passerelle), sur papier, fiche notée /20. Bloc de 3 h : 20 min de rappel de code, bus I2C joué et nombres négatifs (55 min en tout), puis TP noté de 2 h « sauver la chambre froide » en quatre missions sur Wokwi, qui reprend en plus guidé les étapes 4 à 6 du TP du 20 novembre."
+  - date: 2026-11-26
+    texte: "Bilan du 20 novembre : heure commune très difficile (bavardages, chamailleries ; 14 copies nominatives et 5 sans nom sur 23 présents) ; bloc de 3 h correct mais à relancer souvent (10 rendus sur 12 présents). Vendredi 27 novembre : heure commune sur table, « le réseau du parking en quatre règles » (une règle montrée, un exercice individuel en silence, quatre fois), notée /20, meilleure des deux notes ; bloc de 3 h : retour sur la programmation, que les élèves maîtrisent mal, avec une heure au tableau « Python, le moteur des jeux vidéo » puis le TP noté « le jeu des réflexes » sur Wokwi. Le TP « chambre froide » et la reprise I2C sont reportés."
 ---
 
 ## Organisation

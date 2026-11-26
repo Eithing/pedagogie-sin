@@ -1,6 +1,6 @@
 ﻿=== TSTI2D1 (vendredi 27 novembre, 12 h) ===
 Titre de la séance :
-T2 Traiter l'information par programme — Séance : panne dans l'allée, l'enquête du lampadaire (Wokwi)
+T2 Traiter l'information par programme — Séance : panne dans l'allée, le lampadaire (cours Python puis enquête sur Wokwi)
 
 Description :
-T2, reprise de la séance du 20 novembre sous forme d'enquête : diagnostiquer un programme en panne, chasse aux erreurs par équipes, réparation et test sur Wokwi (if / elif / else). Fiche d'activités notée /20.
+T2 : 15 min de cours au tableau (variable, if / else, grand N = nuit), puis 30 min d'enquête : exécuter un programme à la main, corriger des erreurs, réparer le lampadaire sur Wokwi. Fiche notée /20, avec visas du professeur.

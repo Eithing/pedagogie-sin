@@ -29,7 +29,7 @@ sequences:
     etat: en-cours
     debut: 2026-11-06
     fin: 2026-12-04
-    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_PasAPas]
+    ressources: [COURS_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Etats, AUTO_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_Programme, COURS_TermSIN_Lampadaire_PasAPas, COURS_TermSIN_Lampadaire_Panne]
   - { ref: T3, semaines: 6 }
   - { ref: T4, semaines: 5 }
   - { ref: T5, semaines: fin }
@@ -61,6 +61,8 @@ journal:
     texte: "La séance du 20 novembre a peu produit : trop de consignes à la fois, le sens du programme échappait aux élèves. Vendredi 27 novembre : reprise lente des mêmes notions, « le lampadaire pas à pas » (exécuter le programme à la main, chasse aux erreurs, Wokwi geste par geste avec le professeur, le piéton écrit d'abord sur la fiche), fiche notée /20, qui peut remplacer la note du 20 novembre."
   - date: 2026-11-25
     texte: "La reprise du 27 novembre devient une enquête par équipes, « panne dans l'allée » (diagnostic à la main, tournoi des bugs, réparation sur Wokwi, défi du crépuscule), fiche notée /20, à la place du lampadaire pas à pas."
+  - date: 2026-11-26
+    texte: "Bilan du 20 novembre : la classe a un peu travaillé, mais seulement 9 fiches rendues sur 14 présents (1 absent). La séance du 27 novembre est réorganisée : présentation au tableau, 15 min de cours (variable, if / else), puis 30 min d'activité en trois étapes validées chacune par un visa du professeur ; fiches nominatives posées sur les tables, ramassage à la porte. Notée /20, la meilleure des deux notes compte."
 ---
 
 ## Organisation

@@ -337,5 +337,26 @@
   ],
   "sources/contexte/CONTEXTE_SNT_Web_Escape.md": [
     "2nde_SNT/S2_Le_Web/prof/S2_Contexte_Escape-game-Web/CONTEXTE_SNT_Web_Escape.pdf"
+  ],
+  "sources/cours/COURS_TermSIN_Python_Jeu.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_Cours_Python-jeu-video/ELEVE_COURS_TermSIN_Python_Jeu.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Python-jeu-video/PROF_COURS_TermSIN_Python_Jeu.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Python-jeu-video/DEROULE_COURS_TermSIN_Python_Jeu.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Python-jeu-video/COURS_TermSIN_Python_Jeu.html",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/slides/T2_Cours_Python-jeu-video/SLIDES_COURS_TermSIN_Python_Jeu.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Cours_Python-jeu-video/PRONOTE_COURS_TermSIN_Python_Jeu.txt"
+  ],
+  "sources/tp/TP_TermSIN_Python_Reflexes.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Jeu-des-reflexes/ELEVE_TP_TermSIN_Python_Reflexes.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Jeu-des-reflexes/PROF_TP_TermSIN_Python_Reflexes.pdf",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_TP_Jeu-des-reflexes/PRONOTE_TP_TermSIN_Python_Reflexes.txt",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Jeu-des-reflexes/diagram_jeu_reflexes.json",
+    "Term_STI2D_SIN/T2_Programmer_un_uC/eleve/T2_TP_Jeu-des-reflexes/jeu_reflexes.py"
+  ],
+  "sources/contexte/CONTEXTE_TermSIN_Lampadaire_Panne.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Contexte_Lampadaire-en-panne/CONTEXTE_TermSIN_Lampadaire_Panne.pdf"
+  ],
+  "sources/contexte/CONTEXTE_TermSIN_Python_Jeu.md": [
+    "Term_STI2D_SIN/T2_Programmer_un_uC/prof/T2_Contexte_Python-jeu-video/CONTEXTE_TermSIN_Python_Jeu.pdf"
   ]
 }

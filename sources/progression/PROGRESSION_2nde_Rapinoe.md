@@ -175,6 +175,8 @@ journal:
     texte: "La séance du 27 novembre (9 h) est complétée par un quiz par équipes sur l'histoire du Web, les licences, les moteurs et les cookies, pour couvrir tout le thème avant l'interrogation du 4 décembre."
   - date: 2026-11-26
     texte: "La séance « le voyage d'un clic » ressemblait trop à la synthèse du 20 novembre et au jeu de rôle du 2 novembre : elle est remplacée par un escape game par équipes, « Panique à la MDL » (lien piégé, journal d'un serveur, page HTML cassée, licence d'une image, cookies tiers et publicité, verrou final sur l'histoire du Web), avec des exemples nouveaux. Fiche notée /20, qui peut remplacer la note de la synthèse."
+  - date: 2026-11-26
+    texte: "Bilan du 20 novembre : le TP « coulisses » s'est bien passé ; la synthèse a couvert tout le contenu, mais trop vite, et les élèves ne sont pas prêts pour l'interrogation. L'escape game du 27 novembre est confirmé comme séance de révision, notée ; l'interrogation reste le 4 décembre."
 ---
 
 ## Intentions pédagogiques

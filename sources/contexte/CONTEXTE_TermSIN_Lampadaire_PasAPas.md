@@ -13,7 +13,7 @@ accroche: "Pour D3 (mardi 24 novembre) et D1 (vendredi 27 novembre, 12 h). À li
 :::
 
 ::: info D1, vendredi 27 novembre : version « enquête »
-Avec les D1, la séance est `COURS_TermSIN_Lampadaire_Panne` : on part du message du gardien (lampe éteinte la nuit, allumée le jour) au lieu de la diapo de l'allée. Le fil rouge, les anecdotes et les déblocages de cette fiche restent valables.
+Avec les D1, la séance est `COURS_TermSIN_Lampadaire_Panne` (15 min de cours, puis 30 min d'enquête avec visas). Elle a sa propre fiche contexte, `CONTEXTE_TermSIN_Lampadaire_Panne`, avec le plan de bataille.
 :::
 
 ### Le problème de départ : pourquoi on fait ça

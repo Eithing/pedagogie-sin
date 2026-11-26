@@ -2,6 +2,38 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 26 novembre 2026 (après-midi) : bilan du 20 novembre et séances du 27 refaites pour les Terminales
+
+- **Bilan de l'enseignant** :
+  - 2nde : le TP « coulisses » s'est bien passé ; le cours a tout vu, mais vite, et les élèves ne sont pas prêts pour l'interrogation (4 décembre).
+  - D1 : un peu de travail, mais seulement 9 fiches rendues sur 14 présents.
+  - D2 + D3 : heure commune « atroce » (bavardages, chamailleries, ordre très dur à tenir) ; 14 copies avec nom, 5 sans nom, sur 23 présents.
+  - D2, TP : correct, mais les élèves sont à relancer sans cesse ; 10 rendus sur 12. Ils ont du mal avec la programmation et aiment les jeux vidéo.
+  - Toutes les classes : il manque le sens (« pourquoi on fait ça »). D'où, dans chaque séance, un **temps de présentation au tableau** dès les premières minutes, avec sa fiche contexte. **Objectif : des notes pour tout le monde avant Noël.**
+- **Principes contre le non-rendu et le désordre** :
+  - fiches **nominatives** (le nom est écrit par le professeur), posées sur les tables : c'est aussi le plan de classe ;
+  - le contrat est dit en une minute ; on sort en rendant sa fiche à la porte ;
+  - la meilleure des deux notes (20 ou 27) compte.
+- **2nde** : l'escape game `COURS_SNT_Web_Escape` est gardé, avec un plan de bataille ajouté dans sa fiche contexte.
+- **D1** : `COURS_TermSIN_Lampadaire_Panne` est réécrit en 5 min de présentation, **15 min de cours** (lire / décider / agir, variable, if / else, deux questions éclair), puis **30 min d'activité** en trois étapes : exécuter à la main, tournoi des bugs, réparer sur Wokwi (+ le crépuscule). Chaque étape a un **visa** du professeur, noté aussi sur une grille. Nouvelle fiche `CONTEXTE_TermSIN_Lampadaire_Panne`.
+- **D2 + D3** : `COURS_TermSIN_Reseau_PasAPas` est réécrit en « le réseau du parking en quatre règles ».
+  - Sur table, individuel, en silence : une règle montrée au tableau, puis un exercice, quatre fois (rue et numéro, direct ou routeur, passerelle, aller et retour du ping), et un quiz.
+  - Réponses au bleu, correction au vert (le vert ne rapporte rien).
+  - Plus de jeu des enveloppes en classe entière ni d'enquête par équipes. Nouvelle figure `img/reseau/rues-parking.svg`.
+  - La fiche contexte est réécrite (plan de bataille, notation du 20 novembre : copies sans nom, non-rendus, meilleure des deux notes).
+- **D2, bloc de 3 h** :
+  - nouveau `COURS_TermSIN_Python_Jeu`, « Python, le moteur des jeux vidéo » : au tableau, sans PC, non noté, avec un tableau des scores par équipes (barre de vie, game over, boss mal programmé, partie au dé jouée à la main, tournoi des bugs) ;
+  - puis nouveau `TP_TermSIN_Python_Reflexes`, « le jeu des réflexes », 2 h, noté /20 : LED au hasard, bouton, temps de réaction, commentaires, anti-triche, record et moyenne, amélioration personnelle. Fichiers `diagram_jeu_reflexes.json` et `jeu_reflexes.py` (noms nouveaux).
+  - La **solution a été testée dans Wokwi le 26 novembre** (5 manches, commentaires, triche, record, moyenne : justes). Le programme de départ n'a pas été lancé seul, mais il n'est qu'un extrait de la solution.
+  - Nouvelle fiche `CONTEXTE_TermSIN_Python_Jeu` (anecdotes vraies : Tennis for Two, Super Mario Bros. en 40 Ko, Space Invaders, niveau 256 de Pac-Man, faux départ au 100 m).
+  - Séquence T2 (programmation) : `TP_TermSIN_ChambreFroide_Missions` et `COURS_TermSIN_I2C_PasAPas` sont **reportés** (leurs PDF restent prêts).
+- Progressions : journal du 26 novembre dans les quatre ; ressources ajoutées (Panne pour D1, Python pour D2).
+- **À demander à l'enseignant** :
+  - comment se sont passées les séances du 27 ;
+  - le nombre de fiches rendues ;
+  - quand reprendre la chambre froide (D2) ;
+  - les notes prévues d'ici Noël : TP réseau C1 le 4 décembre, interrogation Web des 2nde le 4 décembre, et pour D1 et D3 ?
+
 ## 26 novembre 2026 : 2nde du 27, l'escape game remplace « le voyage d'un clic »
 
 - **Constat de l'enseignant** : « le voyage d'un clic » faisait redite (mêmes schémas que la synthèse du 20, jeu de rôle du clic déjà joué le 2 novembre). Remplacé, à sa demande (format choisi parmi trois), par **`COURS_SNT_Web_Escape`**, « Panique à la MDL » : escape game par équipes de 4 ou 5, sur papier, cinq énigmes qui donnent chacune un chiffre du cadenas **3 5 4 9 2** (lien d'hameçonnage, journal d'un serveur avec 200 / 404, page HTML et CSS cassée, licence d'une image, cookies tiers et résultat sponsorisé), puis un verrou final en QCM (histoire du Web, robots, navigation privée). Carnet du détective (méthode) projeté et imprimé à chaque énigme, 2 jokers par équipe, tableau des scores. Notée /20 (4 + 4 + 4 + 3 + 3 + 2), peut remplacer la note du 20. Exemples tous nouveaux et différents de l'interrogation.

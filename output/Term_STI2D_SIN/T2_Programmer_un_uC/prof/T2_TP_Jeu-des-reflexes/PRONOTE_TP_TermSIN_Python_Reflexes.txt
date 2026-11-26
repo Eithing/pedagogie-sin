@@ -1,0 +1,6 @@
+﻿=== TSTI2D2 (vendredi 27 novembre, 2 h, après la séance « Python, le moteur des jeux vidéo ») ===
+Titre de la séance :
+T2 Traiter l'information par programme — TP : le jeu des réflexes, programmer un jeu sur ESP32 (Wokwi)
+
+Description :
+T2, sur Wokwi en MicroPython : un jeu de réflexes (LED au hasard, bouton, temps de réaction) complété mission par mission : réglages, commentaires avec if / elif / else, anti-triche, meilleur temps et moyenne, amélioration personnelle. Noté /20.

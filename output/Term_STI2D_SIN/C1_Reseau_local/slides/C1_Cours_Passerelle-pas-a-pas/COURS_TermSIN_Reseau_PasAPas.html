@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Panne au parking : l'enquête réseau — Diapos</title>
+<title>Le réseau du parking en quatre règles — Diapos</title>
 
 <style>
 pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
@@ -675,167 +675,248 @@ body.presentation {
 <section class="diapo diapo-couverture">
   <div class="couverture-texte">
     <div class="couverture-bandeau">Lycée César Baggio · Term STI2D SIN</div>
-    <h1>Panne au parking : l'enquête réseau</h1>
-    <p class="couverture-accroche">L'écran de l'accueil est figé. Six machines, cinq indices, deux pannes. À vous de trouver les coupables.</p>
-    <ul class="couverture-objectifs"><li>Lire une adresse IP /24 comme une adresse postale (la rue, puis le numéro)</li><li>Décider si un paquet va directement à son destinataire ou passe par la passerelle</li><li>Localiser une panne de réseau à partir de résultats de ping</li><li>Expliquer pourquoi il faut une passerelle des deux côtés (l'aller et le retour)</li></ul>
+    <h1>Le réseau du parking en quatre règles</h1>
+    <p class="couverture-accroche">Une adresse IP, c'est une adresse postale : une rue et un numéro. Quatre règles, quatre exercices, et le réseau du parking n'a plus de secret.</p>
+    <ul class="couverture-objectifs"><li>Lire une adresse IP /24 comme une adresse postale (la rue, puis le numéro)</li><li>Décider si un paquet va directement à son destinataire ou passe par le routeur</li><li>Donner la passerelle d'une machine</li><li>Expliquer l'échec d'un ping par l'aller ou le retour</li></ul>
   </div>
-  <img class="titre-illustration" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUyMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+DQogIDxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjUyMCIgZmlsbD0iI2ZmZmZmZiIvPg0KICA8dGV4dCB4PSI2MDAiIHk9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5DaGV6IHZvdXMsIGlsIHkgYSBkw6lqw6AgdW4gcm91dGV1ciA6IGxhIGJveDwvdGV4dD4NCiAgPCEtLSBtYWlzb24gLS0+DQogIDxyZWN0IHg9IjMwIiB5PSI3MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI0MjAiIHJ4PSIxOCIgZmlsbD0iI2VjZmRmNSIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1kYXNoYXJyYXk9IjEwIDYiLz4NCiAgPHRleHQgeD0iNTAiIHk9IjEwNCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmNzY2ZSI+TGEgbWFpc29uIDogcsOpc2VhdSAxOTIuMTY4LjEuMCAobGEgwqsgcnVlIMK7KTwvdGV4dD4NCiAgPCEtLSBhcHBhcmVpbHMgLS0+DQogIDxnIGZvbnQtc2l6ZT0iMTciPg0KICAgIDxyZWN0IHg9IjYwIiB5PSIxNDAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSIxNjUiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+VMOpbMOpcGhvbmU8L3RleHQ+DQogICAgPHRleHQgeD0iMTY1IiB5PSIyMDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMjM8L3RleHQ+DQogICAgPHJlY3QgeD0iNjAiIHk9IjI2MCIgd2lkdGg9IjIxMCIgaGVpZ2h0PSI5MCIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iMiIvPg0KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5PcmRpbmF0ZXVyPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMzI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzBmNzY2ZSI+MTkyLjE2OC4xLjEwPC90ZXh0Pg0KICAgIDxyZWN0IHg9IjYwIiB5PSIzODAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSIxNjUiIHk9IjQxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q29uc29sZSBkZSBqZXU8L3RleHQ+DQogICAgPHRleHQgeD0iMTY1IiB5PSI0NDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMzE8L3RleHQ+DQogIDwvZz4NCiAgPCEtLSBsaWVucyAtLT4NCiAgPGcgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjQiPg0KICAgIDxsaW5lIHgxPSIyNzAiIHkxPSIxODUiIHgyPSI0NzAiIHkyPSIyOTAiLz4NCiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMzA1IiB4Mj0iNDcwIiB5Mj0iMzA1Ii8+DQogICAgPGxpbmUgeDE9IjI3MCIgeTE9IjQyNSIgeDI9IjQ3MCIgeTI9IjMyMCIvPg0KICA8L2c+DQogIDx0ZXh0IHg9IjM3MCIgeT0iMjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMGY3NjZlIiB0cmFuc2Zvcm09InJvdGF0ZSgyNyAzNzAgMjMyKSI+bcOqbWUgcnVlIDogZGlyZWN0PC90ZXh0Pg0KICA8IS0tIGJveCAtLT4NCiAgPHJlY3QgeD0iNDcwIiB5PSIyMzAiIHdpZHRoPSIyNDAiIGhlaWdodD0iMTUwIiByeD0iMTYiIGZpbGw9IiNlYTU4MGMiLz4NCiAgPHRleHQgeD0iNTkwIiB5PSIyNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiPkxhIGJveDwvdGV4dD4NCiAgPHRleHQgeD0iNTkwIiB5PSIyOTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmZmZmYiPj0gdW4gcm91dGV1cjwvdGV4dD4NCiAgPHJlY3QgeD0iNDgyIiB5PSIzMTAiIHdpZHRoPSIyMTYiIGhlaWdodD0iNTYiIHJ4PSI4IiBmaWxsPSIjZmZmN2VkIi8+DQogIDx0ZXh0IHg9IjU5MCIgeT0iMzMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOWEzNDEyIj5jw7R0w6kgbWFpc29uIChsYSBwYXNzZXJlbGxlKTwvdGV4dD4NCiAgPHRleHQgeD0iNTkwIiB5PSIzNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTciIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjOWEzNDEyIj4xOTIuMTY4LjEuMTwvdGV4dD4NCiAgPCEtLSBpbnRlcm5ldCAtLT4NCiAgPGxpbmUgeDE9IjcxMCIgeTE9IjMwNSIgeDI9IjkwMCIgeTI9IjMwNSIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjUiLz4NCiAgPHRleHQgeD0iODA1IiB5PSIyOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZDRlZDgiPmF1dHJlIHLDqXNlYXU8L3RleHQ+DQogIDx0ZXh0IHg9IjgwNSIgeT0iMzMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5jw7R0w6kgSW50ZXJuZXQgOiB1bmU8L3RleHQ+DQogIDx0ZXh0IHg9IjgwNSIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5hdXRyZSBhZHJlc3NlIElQPC90ZXh0Pg0KICA8ZWxsaXBzZSBjeD0iMTAzMCIgY3k9IjMwNSIgcng9IjE0MCIgcnk9Ijk1IiBmaWxsPSIjZWZmNmZmIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMyIvPg0KICA8dGV4dCB4PSIxMDMwIiB5PSIyOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxZDRlZDgiPkludGVybmV0PC90ZXh0Pg0KICA8dGV4dCB4PSIxMDMwIiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZTQwYWYiPllvdVR1YmUsIFByb25vdGXigKY8L3RleHQ+DQogIDwhLS0gbGVnZW5kZSAtLT4NCiAgPHRleHQgeD0iNjAwIiB5PSI1MTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzQxNTUiPlBvdXIgc29ydGlyIGRlIGxhIG1haXNvbiwgY2hhcXVlIGFwcGFyZWlsIGNvbmZpZSBzZXMgcGFxdWV0cyDDoCBsYSBib3ggOiBjJ2VzdCBzYSA8dHNwYW4gZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2MyNDEwYyI+cGFzc2VyZWxsZTwvdHNwYW4+LjwvdGV4dD4NCjwvc3ZnPg0K" alt="">
-  <footer class="diapo-pied"><span>55 min</span><span>1 / 18</span></footer>
+  <img class="titre-illustration" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUwMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHRleHQgeD0iNjAwIiB5PSIzNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+RGV1eCBydWVzLCB1biBidXJlYXUgZGUgcG9zdGUgYXUgbWlsaWV1PC90ZXh0PgoKICA8IS0tIHJ1ZSBkdSBwYXJraW5nIC0tPgogIDxyZWN0IHg9IjIwIiB5PSI2NCIgd2lkdGg9IjQ0MCIgaGVpZ2h0PSI0MTAiIHJ4PSIxNiIgZmlsbD0iI2VmZjZmZiIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8dGV4dCB4PSIyNDAiIHk9Ijk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5SdWUgZHUgcGFya2luZzwvdGV4dD4KICA8dGV4dCB4PSIyNDAiIHk9IjEyNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxOSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMxZDRlZDgiPjE5Mi4xNjguMjAuX19fPC90ZXh0PgogIDxnIGZvbnQtc2l6ZT0iMTciPgogICAgPHJlY3QgeD0iNTAiIHk9IjE1MCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSI4MCIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPHRleHQgeD0iNzAiIHk9IjE4MyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q2FwdGV1ciBQMDE8L3RleHQ+CiAgICA8dGV4dCB4PSI3MCIgeT0iMjEzIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzMzNDE1NSI+MTkyLjE2OC4yMC48dHNwYW4gZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2VhNTgwYyI+MTE8L3RzcGFuPjwvdGV4dD4KICAgIDxyZWN0IHg9IjUwIiB5PSIyNTAiIHdpZHRoPSIzODAiIGhlaWdodD0iODAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjcwIiB5PSIyODMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjE3MmEiPlN1cGVydmlzaW9uPC90ZXh0PgogICAgPHRleHQgeD0iNzAiIHk9IjMxMyIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMzMzQxNTUiPjE5Mi4xNjguMjAuPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNlYTU4MGMiPjI8L3RzcGFuPjwvdGV4dD4KICAgIDxyZWN0IHg9IjUwIiB5PSIzNTAiIHdpZHRoPSIzODAiIGhlaWdodD0iODAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjcwIiB5PSIzODMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjE3MmEiPkNhbcOpcmE8L3RleHQ+CiAgICA8dGV4dCB4PSI3MCIgeT0iNDEzIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzMzNDE1NSI+MTkyLjE2OC4yMC48dHNwYW4gZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2VhNTgwYyI+NTA8L3RzcGFuPjwvdGV4dD4KICA8L2c+CiAgPHRleHQgeD0iMjQwIiB5PSI0NjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiM0NzU1NjkiPm3Dqm1lIHJ1ZSA6IG9uIHNlIHBhcmxlIGRpcmVjdGVtZW50IChzd2l0Y2gpPC90ZXh0PgoKICA8IS0tIHJ1ZSBkZSBsJ2FjY3VlaWwgLS0+CiAgPHJlY3QgeD0iNzQwIiB5PSI2NCIgd2lkdGg9IjQ0MCIgaGVpZ2h0PSI0MTAiIHJ4PSIxNiIgZmlsbD0iI2YwZmRmNCIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8dGV4dCB4PSI5NjAiIHk9Ijk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMTU4MDNkIj5SdWUgZGUgbCdhY2N1ZWlsPC90ZXh0PgogIDx0ZXh0IHg9Ijk2MCIgeT0iMTI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE5IiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzE1ODAzZCI+MTAuMC4wLl9fXzwvdGV4dD4KICA8ZyBmb250LXNpemU9IjE3Ij4KICAgIDxyZWN0IHg9Ijc3MCIgeT0iMTUwIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjgwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzE1ODAzZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSI3OTAiIHk9IjE4MyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+UG9zdGUgZGUgbCdhY2N1ZWlsPC90ZXh0PgogICAgPHRleHQgeD0iNzkwIiB5PSIyMTMiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMzM0MTU1Ij4xMC4wLjAuPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNlYTU4MGMiPjI1PC90c3Bhbj48L3RleHQ+CiAgICA8cmVjdCB4PSI3NzAiIHk9IjI1MCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSI4MCIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMxNTgwM2QiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPHRleHQgeD0iNzkwIiB5PSIyODMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjE3MmEiPkNhaXNzZTwvdGV4dD4KICAgIDx0ZXh0IHg9Ijc5MCIgeT0iMzEzIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzMzNDE1NSI+MTAuMC4wLjx0c3BhbiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjZWE1ODBjIj4zMDwvdHNwYW4+PC90ZXh0PgogICAgPHJlY3QgeD0iNzcwIiB5PSIzNTAiIHdpZHRoPSIzODAiIGhlaWdodD0iODAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9Ijc5MCIgeT0iMzgzIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5JbXByaW1hbnRlPC90ZXh0PgogICAgPHRleHQgeD0iNzkwIiB5PSI0MTMiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMzM0MTU1Ij4xMC4wLjAuPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNlYTU4MGMiPjQwPC90c3Bhbj48L3RleHQ+CiAgPC9nPgogIDx0ZXh0IHg9Ijk2MCIgeT0iNDYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjNDc1NTY5Ij5tw6ptZSBydWUgOiBvbiBzZSBwYXJsZSBkaXJlY3RlbWVudCAoc3dpdGNoKTwvdGV4dD4KCiAgPCEtLSByb3V0ZXVyIC0tPgogIDxyZWN0IHg9IjQ5MCIgeT0iMTcwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIwMCIgcng9IjE0IiBmaWxsPSIjZmZmN2VkIiBzdHJva2U9IiNlYTU4MGMiIHN0cm9rZS13aWR0aD0iMyIvPgogIDx0ZXh0IHg9IjYwMCIgeT0iMjA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjOWEzNDEyIj5Sb3V0ZXVyPC90ZXh0PgogIDx0ZXh0IHg9IjYwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjOWEzNDEyIj4obGUgYnVyZWF1IGRlIHBvc3RlKTwvdGV4dD4KICA8cmVjdCB4PSI0NzAiIHk9IjI1MCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjcwIiByeD0iNiIgZmlsbD0iIzI1NjNlYiIvPgogIDxyZWN0IHg9IjY4NiIgeT0iMjUwIiB3aWR0aD0iNDQiIGhlaWdodD0iNzAiIHJ4PSI2IiBmaWxsPSIjMTU4MDNkIi8+CiAgPHRleHQgeD0iNjAwIiB5PSI0MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5wb3J0ZSBwYXJraW5nIDogMTkyLjE2OC4yMC4xPC90ZXh0PgogIDx0ZXh0IHg9IjYwMCIgeT0iNDI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzE1ODAzZCI+cG9ydGUgYWNjdWVpbCA6IDEwLjAuMC4xPC90ZXh0PgogIDx0ZXh0IHg9IjYwMCIgeT0iMjkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMzM0MTU1Ij51bmUgcG9ydGU8L3RleHQ+CiAgPHRleHQgeD0iNjAwIiB5PSIzMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMzMzQxNTUiPnN1ciBjaGFxdWUgcnVlPC90ZXh0PgogIDxsaW5lIHgxPSI0MzAiIHkxPSIyODUiIHgyPSI0NzAiIHkyPSIyODUiIHN0cm9rZT0iIzI1NjNlYiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgPGxpbmUgeDE9IjczMCIgeTE9IjI4NSIgeDI9Ijc3MCIgeTI9IjI4NSIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+Cg==" alt="">
+  <footer class="diapo-pied"><span>55 min</span><span>1 / 21</span></footer>
 </section>
 <section class="diapo diapo-phase" >
   
-  <div class="diapo-corps"><h2>L'affaire</h2></div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>2 / 18</span></footer>
-  <div class="diapo-progression" style="--p:11.11111111111111%"></div>
+  <div class="diapo-corps"><h2>Présentation</h2></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>2 / 21</span></footer>
+  <div class="diapo-progression" style="--p:9.523809523809524%"></div>
 </section>
 <section class="diapo " >
-  <header class="diapo-titre"><h2>Vendredi, 18 h : l'écran de l'accueil est figé</h2></header>
-  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUyMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+DQogIDxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjUyMCIgZmlsbD0iI2ZmZmZmZiIvPg0KICA8dGV4dCB4PSI2MDAiIHk9IjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5DaGV6IHZvdXMsIGlsIHkgYSBkw6lqw6AgdW4gcm91dGV1ciA6IGxhIGJveDwvdGV4dD4NCiAgPCEtLSBtYWlzb24gLS0+DQogIDxyZWN0IHg9IjMwIiB5PSI3MCIgd2lkdGg9IjY4MCIgaGVpZ2h0PSI0MjAiIHJ4PSIxOCIgZmlsbD0iI2VjZmRmNSIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1kYXNoYXJyYXk9IjEwIDYiLz4NCiAgPHRleHQgeD0iNTAiIHk9IjEwNCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmNzY2ZSI+TGEgbWFpc29uIDogcsOpc2VhdSAxOTIuMTY4LjEuMCAobGEgwqsgcnVlIMK7KTwvdGV4dD4NCiAgPCEtLSBhcHBhcmVpbHMgLS0+DQogIDxnIGZvbnQtc2l6ZT0iMTciPg0KICAgIDxyZWN0IHg9IjYwIiB5PSIxNDAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSIxNjUiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+VMOpbMOpcGhvbmU8L3RleHQ+DQogICAgPHRleHQgeD0iMTY1IiB5PSIyMDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMjM8L3RleHQ+DQogICAgPHJlY3QgeD0iNjAiIHk9IjI2MCIgd2lkdGg9IjIxMCIgaGVpZ2h0PSI5MCIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iMiIvPg0KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5PcmRpbmF0ZXVyPC90ZXh0Pg0KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMzI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzBmNzY2ZSI+MTkyLjE2OC4xLjEwPC90ZXh0Pg0KICAgIDxyZWN0IHg9IjYwIiB5PSIzODAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4NCiAgICA8dGV4dCB4PSIxNjUiIHk9IjQxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q29uc29sZSBkZSBqZXU8L3RleHQ+DQogICAgPHRleHQgeD0iMTY1IiB5PSI0NDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMzE8L3RleHQ+DQogIDwvZz4NCiAgPCEtLSBsaWVucyAtLT4NCiAgPGcgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjQiPg0KICAgIDxsaW5lIHgxPSIyNzAiIHkxPSIxODUiIHgyPSI0NzAiIHkyPSIyOTAiLz4NCiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMzA1IiB4Mj0iNDcwIiB5Mj0iMzA1Ii8+DQogICAgPGxpbmUgeDE9IjI3MCIgeTE9IjQyNSIgeDI9IjQ3MCIgeTI9IjMyMCIvPg0KICA8L2c+DQogIDx0ZXh0IHg9IjM3MCIgeT0iMjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMGY3NjZlIiB0cmFuc2Zvcm09InJvdGF0ZSgyNyAzNzAgMjMyKSI+bcOqbWUgcnVlIDogZGlyZWN0PC90ZXh0Pg0KICA8IS0tIGJveCAtLT4NCiAgPHJlY3QgeD0iNDcwIiB5PSIyMzAiIHdpZHRoPSIyNDAiIGhlaWdodD0iMTUwIiByeD0iMTYiIGZpbGw9IiNlYTU4MGMiLz4NCiAgPHRleHQgeD0iNTkwIiB5PSIyNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiPkxhIGJveDwvdGV4dD4NCiAgPHRleHQgeD0iNTkwIiB5PSIyOTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmZmZmYiPj0gdW4gcm91dGV1cjwvdGV4dD4NCiAgPHJlY3QgeD0iNDgyIiB5PSIzMTAiIHdpZHRoPSIyMTYiIGhlaWdodD0iNTYiIHJ4PSI4IiBmaWxsPSIjZmZmN2VkIi8+DQogIDx0ZXh0IHg9IjU5MCIgeT0iMzMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOWEzNDEyIj5jw7R0w6kgbWFpc29uIChsYSBwYXNzZXJlbGxlKTwvdGV4dD4NCiAgPHRleHQgeD0iNTkwIiB5PSIzNTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTciIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjOWEzNDEyIj4xOTIuMTY4LjEuMTwvdGV4dD4NCiAgPCEtLSBpbnRlcm5ldCAtLT4NCiAgPGxpbmUgeDE9IjcxMCIgeTE9IjMwNSIgeDI9IjkwMCIgeTI9IjMwNSIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjUiLz4NCiAgPHRleHQgeD0iODA1IiB5PSIyOTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZDRlZDgiPmF1dHJlIHLDqXNlYXU8L3RleHQ+DQogIDx0ZXh0IHg9IjgwNSIgeT0iMzMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5jw7R0w6kgSW50ZXJuZXQgOiB1bmU8L3RleHQ+DQogIDx0ZXh0IHg9IjgwNSIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5hdXRyZSBhZHJlc3NlIElQPC90ZXh0Pg0KICA8ZWxsaXBzZSBjeD0iMTAzMCIgY3k9IjMwNSIgcng9IjE0MCIgcnk9Ijk1IiBmaWxsPSIjZWZmNmZmIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMyIvPg0KICA8dGV4dCB4PSIxMDMwIiB5PSIyOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxZDRlZDgiPkludGVybmV0PC90ZXh0Pg0KICA8dGV4dCB4PSIxMDMwIiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZTQwYWYiPllvdVR1YmUsIFByb25vdGXigKY8L3RleHQ+DQogIDwhLS0gbGVnZW5kZSAtLT4NCiAgPHRleHQgeD0iNjAwIiB5PSI1MTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMzMzQxNTUiPlBvdXIgc29ydGlyIGRlIGxhIG1haXNvbiwgY2hhcXVlIGFwcGFyZWlsIGNvbmZpZSBzZXMgcGFxdWV0cyDDoCBsYSBib3ggOiBjJ2VzdCBzYSA8dHNwYW4gZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2MyNDEwYyI+cGFzc2VyZWxsZTwvdHNwYW4+LjwvdGV4dD4NCjwvc3ZnPg0K" alt="" width="70%"></p>
-<ul>
-<li>Le poste de Supervision n'arrive plus à joindre l'<strong>accueil</strong> du parking.</li>
-<li>Câbles branchés, machines allumées : <strong>où est la panne ?</strong></li>
-<li>L'outil du détective : le routeur, le même genre d'appareil que votre box.</li>
-</ul>
+  <header class="diapo-titre"><h2>Chez vous, il y a déjà un routeur</h2></header>
+  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUyMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTIwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHRleHQgeD0iNjAwIiB5PSI0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q2hleiB2b3VzLCBpbCB5IGEgZMOpasOgIHVuIHJvdXRldXIgOiBsYSBib3g8L3RleHQ+CiAgPCEtLSBtYWlzb24gLS0+CiAgPHJlY3QgeD0iMzAiIHk9IjcwIiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjQyMCIgcng9IjE4IiBmaWxsPSIjZWNmZGY1IiBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNiIvPgogIDx0ZXh0IHg9IjUwIiB5PSIxMDQiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjc2NmUiPkxhIG1haXNvbiA6IHLDqXNlYXUgMTkyLjE2OC4xLjAgKGxhIMKrIHJ1ZSDCuyk8L3RleHQ+CiAgPCEtLSBhcHBhcmVpbHMgLS0+CiAgPGcgZm9udC1zaXplPSIxNyI+CiAgICA8cmVjdCB4PSI2MCIgeT0iMTQwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjkwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjE3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+VMOpbMOpcGhvbmU8L3RleHQ+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjIwNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMwZjc2NmUiPjE5Mi4xNjguMS4yMzwvdGV4dD4KICAgIDxyZWN0IHg9IjYwIiB5PSIyNjAiIHdpZHRoPSIyMTAiIGhlaWdodD0iOTAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMGQ5NDg4IiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjE2NSIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5PcmRpbmF0ZXVyPC90ZXh0PgogICAgPHRleHQgeD0iMTY1IiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMGY3NjZlIj4xOTIuMTY4LjEuMTA8L3RleHQ+CiAgICA8cmVjdCB4PSI2MCIgeT0iMzgwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjkwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjQxNSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q29uc29sZSBkZSBqZXU8L3RleHQ+CiAgICA8dGV4dCB4PSIxNjUiIHk9IjQ0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMwZjc2NmUiPjE5Mi4xNjguMS4zMTwvdGV4dD4KICA8L2c+CiAgPCEtLSBsaWVucyAtLT4KICA8ZyBzdHJva2U9IiMwZDk0ODgiIHN0cm9rZS13aWR0aD0iNCI+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMTg1IiB4Mj0iNDcwIiB5Mj0iMjkwIi8+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iMzA1IiB4Mj0iNDcwIiB5Mj0iMzA1Ii8+CiAgICA8bGluZSB4MT0iMjcwIiB5MT0iNDI1IiB4Mj0iNDcwIiB5Mj0iMzIwIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjM3MCIgeT0iMjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMGY3NjZlIiB0cmFuc2Zvcm09InJvdGF0ZSgyNyAzNzAgMjMyKSI+bcOqbWUgcnVlIDogZGlyZWN0PC90ZXh0PgogIDwhLS0gYm94IC0tPgogIDxyZWN0IHg9IjQ3MCIgeT0iMjMwIiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjE1MCIgcng9IjE2IiBmaWxsPSIjZWE1ODBjIi8+CiAgPHRleHQgeD0iNTkwIiB5PSIyNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMjIiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNmZmZmZmYiPkxhIGJveDwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjI5NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNiIgZmlsbD0iI2ZmZmZmZiI+PSB1biByb3V0ZXVyPC90ZXh0PgogIDxyZWN0IHg9IjQ4MiIgeT0iMzEwIiB3aWR0aD0iMjE2IiBoZWlnaHQ9IjU2IiByeD0iOCIgZmlsbD0iI2ZmZjdlZCIvPgogIDx0ZXh0IHg9IjU5MCIgeT0iMzMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjOWEzNDEyIj5jw7R0w6kgbWFpc29uIChsYSBwYXNzZXJlbGxlKTwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjM1NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiM5YTM0MTIiPjE5Mi4xNjguMS4xPC90ZXh0PgogIDwhLS0gaW50ZXJuZXQgLS0+CiAgPGxpbmUgeDE9IjcxMCIgeTE9IjMwNSIgeDI9IjkwMCIgeTI9IjMwNSIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8dGV4dCB4PSI4MDUiIHk9IjI5MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzFkNGVkOCI+YXV0cmUgcsOpc2VhdTwvdGV4dD4KICA8dGV4dCB4PSI4MDUiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzFkNGVkOCI+Y8O0dMOpIEludGVybmV0IDogdW5lPC90ZXh0PgogIDx0ZXh0IHg9IjgwNSIgeT0iMzUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMWQ0ZWQ4Ij5hdXRyZSBhZHJlc3NlIElQPC90ZXh0PgogIDxlbGxpcHNlIGN4PSIxMDMwIiBjeT0iMzA1IiByeD0iMTQwIiByeT0iOTUiIGZpbGw9IiNlZmY2ZmYiIHN0cm9rZT0iIzI1NjNlYiIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHRleHQgeD0iMTAzMCIgeT0iMjk1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5JbnRlcm5ldDwvdGV4dD4KICA8dGV4dCB4PSIxMDMwIiB5PSIzMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMxZTQwYWYiPllvdVR1YmUsIFByb25vdGXigKY8L3RleHQ+CiAgPCEtLSBsZWdlbmRlIC0tPgogIDx0ZXh0IHg9IjYwMCIgeT0iNTEyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzM0MTU1Ij5Qb3VyIHNvcnRpciBkZSBsYSBtYWlzb24sIGNoYXF1ZSBhcHBhcmVpbCBjb25maWUgc2VzIHBhcXVldHMgw6AgbGEgYm94IDogYydlc3Qgc2EgPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNjMjQxMGMiPnBhc3NlcmVsbGU8L3RzcGFuPi48L3RleHQ+Cjwvc3ZnPgo=" alt="" width="66%"></p>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>3 / 18</span></footer>
-  <div class="diapo-progression" style="--p:16.666666666666664%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>3 / 21</span></footer>
+  <div class="diapo-progression" style="--p:14.285714285714285%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Règle 1 : la rue et le numéro</h2></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>4 / 21</span></footer>
+  <div class="diapo-progression" style="--p:19.047619047619047%"></div>
 </section>
 <section class="diapo " >
-  <header class="diapo-titre"><h2>Règle n° 1 : la rue et le numéro</h2></header>
+  <header class="diapo-titre"><h2>Règle 1 : une adresse IP = une rue + un numéro</h2></header>
   <div class="diapo-corps"><table>
 <thead>
 <tr>
 <th style="text-align:left">Adresse IP (masque /24)</th>
-<th style="text-align:left">La <strong>rue</strong> (réseau)</th>
-<th style="text-align:left">Le <strong>numéro</strong> (machine)</th>
+<th style="text-align:left">La <strong>rue</strong> (le réseau)</th>
+<th style="text-align:left">Le <strong>numéro</strong> (la machine)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><code>192.168.1.23</code></td>
-<td style="text-align:left"><code>192.168.1.0</code></td>
-<td style="text-align:left">23</td>
+<td style="text-align:left"><code>192.168.20.11</code></td>
+<td style="text-align:left"><code>192.168.20.0</code></td>
+<td style="text-align:left">11</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>10.0.0.25</code></td>
+<td style="text-align:left"><code>10.0.0.0</code></td>
+<td style="text-align:left">25</td>
 </tr>
 </tbody>
 </table>
-<p>Dans la <strong>même rue</strong>, on se parle <strong>directement</strong> (le switch est le facteur de la rue).</p>
+<p>Les <strong>trois premiers nombres</strong> donnent la rue ; on écrit la rue avec un 0 à la fin. Le <strong>dernier</strong> nombre est le numéro.</p>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>4 / 18</span></footer>
-  <div class="diapo-progression" style="--p:22.22222222222222%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>5 / 21</span></footer>
+  <div class="diapo-progression" style="--p:23.809523809523807%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 1</span>
         <span class="act-modalite">individuel</span>
-        <span class="act-chrono" data-act="1" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
-      </div>Rue et numéro</h2></header>
-  <div class="diapo-corps"><p>Écrivez la rue et le numéro de chaque machine.</p>
-<ol class="act-questions"><li value="1"><p>Donnez la rue et le numéro de : <strong>a)</strong> <code>192.168.20.11</code> · <strong>b)</strong> <code>10.0.0.25</code> · <strong>c)</strong> <code>192.168.20.2</code>. Lesquelles sont dans la même rue ?</p>
-</li></ol></div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>5 / 18</span></footer>
-  <div class="diapo-progression" style="--p:27.77777777777778%"></div>
-</section>
-<section class="diapo diapo-phase" >
-  
-  <div class="diapo-corps"><h2>Jouer le trajet</h2></div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>6 / 18</span></footer>
-  <div class="diapo-progression" style="--p:33.33333333333333%"></div>
-</section>
-<section class="diapo " >
-  <header class="diapo-titre"><h2>Règle n° 2 : le bureau de poste de ma rue</h2></header>
-  <div class="diapo-corps"><ul>
-<li><strong>Autre rue</strong> : on confie la lettre au <strong>routeur</strong>, qui a <strong>une adresse dans chaque rue</strong>.</li>
-<li>L'adresse du routeur <strong>dans ma rue</strong>, c'est ma <strong>passerelle</strong>.</li>
-<li>La passerelle est donc <strong>toujours dans la même rue</strong> que la machine.</li>
-</ul>
-</div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>7 / 18</span></footer>
-  <div class="diapo-progression" style="--p:38.88888888888889%"></div>
-</section>
-<section class="diapo diapo-activite" >
-  <header class="diapo-titre"><h2><div class="act-bandeau">
-        <span class="act-num">Activité 2</span>
-        <span class="act-modalite">classe entière</span>
-        <span class="act-chrono" data-act="2" data-secondes="840" title="Clic ou touche T : démarrer / pause">14:00</span>
-      </div>Le jeu des enveloppes</h2></header>
-  <div class="diapo-corps"><ol>
-<li><strong>Même rue</strong> que le destinataire : je donne l'enveloppe directement.</li>
-<li><strong>Autre rue</strong> : je la donne au routeur, à la main <strong>de ma rue</strong> (ma passerelle).</li>
-<li>Le routeur la passe à son autre main, qui la remet au destinataire.</li>
-</ol>
-</div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>8 / 18</span></footer>
-  <div class="diapo-progression" style="--p:44.44444444444444%"></div>
-</section>
-<section class="diapo diapo-phase" >
-  
-  <div class="diapo-corps"><h2>Enquêter</h2></div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>9 / 18</span></footer>
-  <div class="diapo-progression" style="--p:50%"></div>
-</section>
-<section class="diapo " >
-  <header class="diapo-titre"><h2>Un ping : un aller ET un retour</h2></header>
-  <div class="diapo-corps"><ul>
-<li>Un <code>ping</code> envoie une <strong>demande</strong> et attend une <strong>réponse</strong>.</li>
-<li>« Échec » veut dire : la demande <strong>ou</strong> la réponse s'est perdue.</li>
-<li>L'aller utilise la passerelle de l'<strong>expéditeur</strong>, le retour celle du <strong>destinataire</strong>.</li>
-</ul>
-</div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>10 / 18</span></footer>
-  <div class="diapo-progression" style="--p:55.55555555555556%"></div>
-</section>
-<section class="diapo diapo-activite" >
-  <header class="diapo-titre"><h2><div class="act-bandeau">
-        <span class="act-num">Activité 3</span>
-        <span class="act-modalite">en groupe</span>
-        <span class="act-chrono" data-act="3" data-secondes="840" title="Clic ou touche T : démarrer / pause">14:00</span>
-      </div>L'enquête</h2></header>
-  <div class="diapo-corps"><table>
+        <span class="act-chrono" data-act="1" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Exercice 1 : la rue et le numéro</h2></header>
+  <div class="diapo-corps"><p>Seul, en silence, au stylo bleu. Écrivez la rue et le numéro de chaque adresse.</p>
+<ol class="act-questions"><li value="1"><table>
 <thead>
 <tr>
-<th style="text-align:center">Indice</th>
-<th style="text-align:left">Test</th>
-<th style="text-align:left">Résultat</th>
+<th style="text-align:left">Adresse</th>
+<th style="text-align:center">La rue</th>
+<th style="text-align:center">Le numéro</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">A</td>
-<td style="text-align:left">Supervision (<code>192.168.20.2</code>) → Accueil (<code>10.0.0.25</code>)</td>
-<td style="text-align:left">échec</td>
+<td style="text-align:left"><code>192.168.20.50</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">B</td>
-<td style="text-align:left">Supervision → Caisse (<code>10.0.0.30</code>)</td>
-<td style="text-align:left">réussi</td>
+<td style="text-align:left"><code>10.0.0.30</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">C</td>
-<td style="text-align:left">Caisse → Accueil</td>
-<td style="text-align:left">réussi</td>
+<td style="text-align:left"><code>172.16.5.40</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td style="text-align:center">D</td>
-<td style="text-align:left">Pendant le test A, on voit la demande <strong>arriver</strong> à l'Accueil</td>
-<td style="text-align:left">aucune réponse ne revient</td>
-</tr>
-<tr>
-<td style="text-align:center">E</td>
-<td style="text-align:left">Caméra (<code>192.168.20.50</code>) → Supervision : réussi</td>
-<td style="text-align:left">Caméra → Caisse : échec</td>
+<td style="text-align:left"><code>192.168.1.254</code></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>6 / 21</span></footer>
+  <div class="diapo-progression" style="--p:28.57142857142857%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Règle 2 : même rue ou pas ?</h2></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>7 / 21</span></footer>
+  <div class="diapo-progression" style="--p:33.33333333333333%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Règle 2 : même rue → direct ; autre rue → routeur</h2></header>
+  <div class="diapo-corps"><p><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDUwMCIgZm9udC1mYW1pbHk9IkludGVyLCBTZWdvZSBVSSwgc2Fucy1zZXJpZiI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHRleHQgeD0iNjAwIiB5PSIzNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIyNiIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+RGV1eCBydWVzLCB1biBidXJlYXUgZGUgcG9zdGUgYXUgbWlsaWV1PC90ZXh0PgoKICA8IS0tIHJ1ZSBkdSBwYXJraW5nIC0tPgogIDxyZWN0IHg9IjIwIiB5PSI2NCIgd2lkdGg9IjQ0MCIgaGVpZ2h0PSI0MTAiIHJ4PSIxNiIgZmlsbD0iI2VmZjZmZiIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8dGV4dCB4PSIyNDAiIHk9Ijk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5SdWUgZHUgcGFya2luZzwvdGV4dD4KICA8dGV4dCB4PSIyNDAiIHk9IjEyNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1zaXplPSIxOSIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMxZDRlZDgiPjE5Mi4xNjguMjAuX19fPC90ZXh0PgogIDxnIGZvbnQtc2l6ZT0iMTciPgogICAgPHJlY3QgeD0iNTAiIHk9IjE1MCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSI4MCIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPHRleHQgeD0iNzAiIHk9IjE4MyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+Q2FwdGV1ciBQMDE8L3RleHQ+CiAgICA8dGV4dCB4PSI3MCIgeT0iMjEzIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzMzNDE1NSI+MTkyLjE2OC4yMC48dHNwYW4gZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2VhNTgwYyI+MTE8L3RzcGFuPjwvdGV4dD4KICAgIDxyZWN0IHg9IjUwIiB5PSIyNTAiIHdpZHRoPSIzODAiIGhlaWdodD0iODAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjcwIiB5PSIyODMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjE3MmEiPlN1cGVydmlzaW9uPC90ZXh0PgogICAgPHRleHQgeD0iNzAiIHk9IjMxMyIgZm9udC1mYW1pbHk9IkNvbnNvbGFzLCBtb25vc3BhY2UiIGZpbGw9IiMzMzQxNTUiPjE5Mi4xNjguMjAuPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNlYTU4MGMiPjI8L3RzcGFuPjwvdGV4dD4KICAgIDxyZWN0IHg9IjUwIiB5PSIzNTAiIHdpZHRoPSIzODAiIGhlaWdodD0iODAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMjU2M2ViIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9IjcwIiB5PSIzODMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjE3MmEiPkNhbcOpcmE8L3RleHQ+CiAgICA8dGV4dCB4PSI3MCIgeT0iNDEzIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzMzNDE1NSI+MTkyLjE2OC4yMC48dHNwYW4gZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iI2VhNTgwYyI+NTA8L3RzcGFuPjwvdGV4dD4KICA8L2c+CiAgPHRleHQgeD0iMjQwIiB5PSI0NjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiM0NzU1NjkiPm3Dqm1lIHJ1ZSA6IG9uIHNlIHBhcmxlIGRpcmVjdGVtZW50IChzd2l0Y2gpPC90ZXh0PgoKICA8IS0tIHJ1ZSBkZSBsJ2FjY3VlaWwgLS0+CiAgPHJlY3QgeD0iNzQwIiB5PSI2NCIgd2lkdGg9IjQ0MCIgaGVpZ2h0PSI0MTAiIHJ4PSIxNiIgZmlsbD0iI2YwZmRmNCIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8dGV4dCB4PSI5NjAiIHk9Ijk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMTU4MDNkIj5SdWUgZGUgbCdhY2N1ZWlsPC90ZXh0PgogIDx0ZXh0IHg9Ijk2MCIgeT0iMTI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE5IiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzE1ODAzZCI+MTAuMC4wLl9fXzwvdGV4dD4KICA8ZyBmb250LXNpemU9IjE3Ij4KICAgIDxyZWN0IHg9Ijc3MCIgeT0iMTUwIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjgwIiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iIzE1ODAzZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB4PSI3OTAiIHk9IjE4MyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzBmMTcyYSI+UG9zdGUgZGUgbCdhY2N1ZWlsPC90ZXh0PgogICAgPHRleHQgeD0iNzkwIiB5PSIyMTMiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMzM0MTU1Ij4xMC4wLjAuPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNlYTU4MGMiPjI1PC90c3Bhbj48L3RleHQ+CiAgICA8cmVjdCB4PSI3NzAiIHk9IjI1MCIgd2lkdGg9IjM4MCIgaGVpZ2h0PSI4MCIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiMxNTgwM2QiIHN0cm9rZS13aWR0aD0iMiIvPgogICAgPHRleHQgeD0iNzkwIiB5PSIyODMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMwZjE3MmEiPkNhaXNzZTwvdGV4dD4KICAgIDx0ZXh0IHg9Ijc5MCIgeT0iMzEzIiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZmlsbD0iIzMzNDE1NSI+MTAuMC4wLjx0c3BhbiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjZWE1ODBjIj4zMDwvdHNwYW4+PC90ZXh0PgogICAgPHJlY3QgeD0iNzcwIiB5PSIzNTAiIHdpZHRoPSIzODAiIGhlaWdodD0iODAiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHg9Ijc5MCIgeT0iMzgzIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMGYxNzJhIj5JbXByaW1hbnRlPC90ZXh0PgogICAgPHRleHQgeD0iNzkwIiB5PSI0MTMiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmaWxsPSIjMzM0MTU1Ij4xMC4wLjAuPHRzcGFuIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiNlYTU4MGMiPjQwPC90c3Bhbj48L3RleHQ+CiAgPC9nPgogIDx0ZXh0IHg9Ijk2MCIgeT0iNDYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjNDc1NTY5Ij5tw6ptZSBydWUgOiBvbiBzZSBwYXJsZSBkaXJlY3RlbWVudCAoc3dpdGNoKTwvdGV4dD4KCiAgPCEtLSByb3V0ZXVyIC0tPgogIDxyZWN0IHg9IjQ5MCIgeT0iMTcwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjIwMCIgcng9IjE0IiBmaWxsPSIjZmZmN2VkIiBzdHJva2U9IiNlYTU4MGMiIHN0cm9rZS13aWR0aD0iMyIvPgogIDx0ZXh0IHg9IjYwMCIgeT0iMjA1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjOWEzNDEyIj5Sb3V0ZXVyPC90ZXh0PgogIDx0ZXh0IHg9IjYwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjOWEzNDEyIj4obGUgYnVyZWF1IGRlIHBvc3RlKTwvdGV4dD4KICA8cmVjdCB4PSI0NzAiIHk9IjI1MCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjcwIiByeD0iNiIgZmlsbD0iIzI1NjNlYiIvPgogIDxyZWN0IHg9IjY4NiIgeT0iMjUwIiB3aWR0aD0iNDQiIGhlaWdodD0iNzAiIHJ4PSI2IiBmaWxsPSIjMTU4MDNkIi8+CiAgPHRleHQgeD0iNjAwIiB5PSI0MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtZmFtaWx5PSJDb25zb2xhcywgbW9ub3NwYWNlIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMWQ0ZWQ4Ij5wb3J0ZSBwYXJraW5nIDogMTkyLjE2OC4yMC4xPC90ZXh0PgogIDx0ZXh0IHg9IjYwMCIgeT0iNDI1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmb250LWZhbWlseT0iQ29uc29sYXMsIG1vbm9zcGFjZSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzE1ODAzZCI+cG9ydGUgYWNjdWVpbCA6IDEwLjAuMC4xPC90ZXh0PgogIDx0ZXh0IHg9IjYwMCIgeT0iMjkwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXNpemU9IjE1IiBmaWxsPSIjMzM0MTU1Ij51bmUgcG9ydGU8L3RleHQ+CiAgPHRleHQgeD0iNjAwIiB5PSIzMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiMzMzQxNTUiPnN1ciBjaGFxdWUgcnVlPC90ZXh0PgogIDxsaW5lIHgxPSI0MzAiIHkxPSIyODUiIHgyPSI0NzAiIHkyPSIyODUiIHN0cm9rZT0iIzI1NjNlYiIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgPGxpbmUgeDE9IjczMCIgeTE9IjI4NSIgeDI9Ijc3MCIgeTI9IjI4NSIgc3Ryb2tlPSIjMTU4MDNkIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+Cg==" alt="" width="78%"></p>
+<ul>
+<li><strong>Même rue</strong> : on se parle <strong>directement</strong> (le switch est le facteur de la rue).</li>
+<li><strong>Autre rue</strong> : on passe <strong>par le routeur</strong>, le bureau de poste qui a une porte sur chaque rue.</li>
+</ul>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>11 / 18</span></footer>
-  <div class="diapo-progression" style="--p:61.111111111111114%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>8 / 21</span></footer>
+  <div class="diapo-progression" style="--p:38.095238095238095%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 2</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="2" data-secondes="360" title="Clic ou touche T : démarrer / pause">06:00</span>
+      </div>Exercice 2 : direct ou routeur ?</h2></header>
+  <div class="diapo-corps"><p>Seul, en silence. Pour chaque envoi, cochez direct ou routeur, en vous aidant du dessin.</p>
+<ol class="act-questions"><li value="2"><table>
+<thead>
+<tr>
+<th style="text-align:left">Envoi</th>
+<th style="text-align:center">Direct</th>
+<th style="text-align:center">Routeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Capteur P01 (<code>192.168.20.11</code>) → Supervision (<code>192.168.20.2</code>)</td>
+<td style="text-align:center">☐</td>
+<td style="text-align:center">☐</td>
+</tr>
+<tr>
+<td style="text-align:left">Supervision (<code>192.168.20.2</code>) → Accueil (<code>10.0.0.25</code>)</td>
+<td style="text-align:center">☐</td>
+<td style="text-align:center">☐</td>
+</tr>
+<tr>
+<td style="text-align:left">Caisse (<code>10.0.0.30</code>) → Imprimante (<code>10.0.0.40</code>)</td>
+<td style="text-align:center">☐</td>
+<td style="text-align:center">☐</td>
+</tr>
+<tr>
+<td style="text-align:left">Caméra (<code>192.168.20.50</code>) → Caisse (<code>10.0.0.30</code>)</td>
+<td style="text-align:center">☐</td>
+<td style="text-align:center">☐</td>
+</tr>
+</tbody>
+</table>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>9 / 21</span></footer>
+  <div class="diapo-progression" style="--p:42.857142857142854%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Règle 3 : la passerelle</h2></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>10 / 21</span></footer>
+  <div class="diapo-progression" style="--p:47.61904761904761%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Règle 3 : ma passerelle = la porte du routeur dans MA rue</h2></header>
+  <div class="diapo-corps"><ul>
+<li>Le routeur a <strong>une adresse dans chaque rue</strong> : <code>192.168.20.1</code> côté parking, <code>10.0.0.1</code> côté accueil.</li>
+<li>La <strong>passerelle</strong> d'une machine, c'est l'adresse du routeur <strong>dans sa rue à elle</strong>.</li>
+<li>Donc la passerelle a toujours <strong>la même rue</strong> que la machine.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>11 / 21</span></footer>
+  <div class="diapo-progression" style="--p:52.38095238095239%"></div>
+</section>
+<section class="diapo diapo-activite" >
+  <header class="diapo-titre"><h2><div class="act-bandeau">
+        <span class="act-num">Activité 3</span>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="3" data-secondes="480" title="Clic ou touche T : démarrer / pause">08:00</span>
+      </div>Exercice 3 : la passerelle</h2></header>
+  <div class="diapo-corps"><p>Seul, en silence. Donnez la passerelle de chaque machine.</p>
+<ol class="act-questions"><li value="3"><table>
+<thead>
+<tr>
+<th style="text-align:left">Machine</th>
+<th style="text-align:left">Adresse</th>
+<th style="text-align:center">Sa passerelle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Capteur P01</td>
+<td style="text-align:left"><code>192.168.20.11</code></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Supervision</td>
+<td style="text-align:left"><code>192.168.20.2</code></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Caméra</td>
+<td style="text-align:left"><code>192.168.20.50</code></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Poste de l'accueil</td>
+<td style="text-align:left"><code>10.0.0.25</code></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Caisse</td>
+<td style="text-align:left"><code>10.0.0.30</code></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</li></ol></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>12 / 21</span></footer>
+  <div class="diapo-progression" style="--p:57.14285714285714%"></div>
+</section>
+<section class="diapo diapo-phase" >
+  
+  <div class="diapo-corps"><h2>Règle 4 : l'aller et le retour</h2></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>13 / 21</span></footer>
+  <div class="diapo-progression" style="--p:61.904761904761905%"></div>
+</section>
+<section class="diapo " >
+  <header class="diapo-titre"><h2>Règle 4 : un ping, c'est un aller ET un retour</h2></header>
+  <div class="diapo-corps"><ul>
+<li><code>ping</code> envoie une <strong>demande</strong> et attend une <strong>réponse</strong> : « Tu es là ? » « Oui ! »</li>
+<li>L'aller utilise la passerelle de l'<strong>expéditeur</strong> ; le retour, celle du <strong>destinataire</strong>.</li>
+<li>S'il manque une passerelle d'un seul côté, le ping <strong>échoue</strong>, même si la demande est bien arrivée.</li>
+</ul>
+</div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>14 / 21</span></footer>
+  <div class="diapo-progression" style="--p:66.66666666666666%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 4</span>
-        <span class="act-modalite">classe entière</span>
-        <span class="act-chrono" data-act="4" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
-      </div>Le verdict</h2></header>
+        <span class="act-modalite">individuel</span>
+        <span class="act-chrono" data-act="4" data-secondes="540" title="Clic ou touche T : démarrer / pause">09:00</span>
+      </div>Exercice 4 : l'aller et le retour</h2></header>
   <div class="diapo-corps"><table>
 <thead>
 <tr>
@@ -851,57 +932,47 @@ body.presentation {
 <td style="text-align:left"><code>192.168.20.1</code></td>
 </tr>
 <tr>
-<td style="text-align:left">Caméra</td>
-<td style="text-align:left"><code>192.168.20.50</code></td>
-<td style="text-align:left"><code>10.0.0.1</code></td>
-</tr>
-<tr>
-<td style="text-align:left">Accueil</td>
+<td style="text-align:left">Poste de l'accueil</td>
 <td style="text-align:left"><code>10.0.0.25</code></td>
 <td style="text-align:left"><em>(vide)</em></td>
-</tr>
-<tr>
-<td style="text-align:left">Caisse</td>
-<td style="text-align:left"><code>10.0.0.30</code></td>
-<td style="text-align:left"><code>10.0.0.1</code></td>
 </tr>
 </tbody>
 </table>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>12 / 18</span></footer>
-  <div class="diapo-progression" style="--p:66.66666666666666%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>15 / 21</span></footer>
+  <div class="diapo-progression" style="--p:71.42857142857143%"></div>
 </section>
 <section class="diapo diapo-phase" >
   
-  <div class="diapo-corps"><h2>Faire le bilan</h2></div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>13 / 18</span></footer>
-  <div class="diapo-progression" style="--p:72.22222222222221%"></div>
+  <div class="diapo-corps"><h2>Bilan</h2></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>16 / 21</span></footer>
+  <div class="diapo-progression" style="--p:76.19047619047619%"></div>
 </section>
 <section class="diapo diapo-retenir" >
   <header class="diapo-titre"><h2>À retenir</h2></header>
   <div class="diapo-corps"><ul>
-<li>Une adresse IP /24 : la <mark class="trou-rempli">rue</mark> (le réseau, 3 premiers nombres), puis le <mark class="trou-rempli">numéro</mark> (la machine).</li>
-<li>Dans la même rue, les machines se parlent <mark class="trou-rempli">directement</mark>.</li>
-<li>Pour sortir de sa rue, une machine passe par sa <mark class="trou-rempli">passerelle</mark>, toujours dans la <mark class="trou-rempli">même</mark> rue qu'elle.</li>
-<li>Un ping est un aller et un retour : il faut une passerelle des <mark class="trou-rempli">deux</mark> côtés.</li>
+<li>Une adresse IP /24 : la <mark class="trou-rempli">rue</mark> (les trois premiers nombres), puis le <mark class="trou-rempli">numéro</mark> (la machine).</li>
+<li>Dans la même rue, les machines se parlent <mark class="trou-rempli">directement</mark> ; sinon, elles passent par le <mark class="trou-rempli">routeur</mark>.</li>
+<li>La passerelle d'une machine est l'adresse du routeur dans <mark class="trou-rempli">sa</mark> rue.</li>
+<li>Un ping est un aller et un <mark class="trou-rempli">retour</mark> : il faut une passerelle des deux côtés.</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>14 / 18</span></footer>
-  <div class="diapo-progression" style="--p:77.77777777777779%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>17 / 21</span></footer>
+  <div class="diapo-progression" style="--p:80.95238095238095%"></div>
 </section>
 <section class="diapo diapo-activite" >
   <header class="diapo-titre"><h2><div class="act-bandeau">
         <span class="act-num">Activité 5</span>
         <span class="act-modalite">individuel</span>
-        <span class="act-chrono" data-act="5" data-secondes="240" title="Clic ou touche T : démarrer / pause">04:00</span>
+        <span class="act-chrono" data-act="5" data-secondes="300" title="Clic ou touche T : démarrer / pause">05:00</span>
       </div>Quiz de sortie</h2></header>
-  <div class="diapo-corps"><p>Répondez sur votre fiche.</p>
+  <div class="diapo-corps"><p>Seul, sur la fiche. Puis on sort en me donnant sa fiche à la porte.</p>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>15 / 18</span></footer>
-  <div class="diapo-progression" style="--p:83.33333333333334%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>18 / 21</span></footer>
+  <div class="diapo-progression" style="--p:85.71428571428571%"></div>
 </section>
 <section class="diapo diapo-question" >
-  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 6</h2></header>
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 5</h2></header>
   <div class="diapo-corps"><p><code>172.16.5.40</code> et <code>172.16.5.7</code> (masque /24) sont…</p>
 <ul class="qcm qcm qcm">
 <li class="choix"><span class="case"></span>dans la même rue : ils se parlent directement</li>
@@ -909,11 +980,11 @@ body.presentation {
 <li class="choix"><span class="case"></span>impossibles à comparer sans le routeur</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>16 / 18</span></footer>
-  <div class="diapo-progression" style="--p:88.88888888888889%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>19 / 21</span></footer>
+  <div class="diapo-progression" style="--p:90.47619047619048%"></div>
 </section>
 <section class="diapo diapo-question" >
-  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 7</h2></header>
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 6</h2></header>
   <div class="diapo-corps"><p>La passerelle de <code>172.16.5.40</code> peut être…</p>
 <ul class="qcm qcm qcm">
 <li class="choix"><span class="case"></span><code>172.16.5.1</code></li>
@@ -921,11 +992,11 @@ body.presentation {
 <li class="choix"><span class="case"></span><code>10.0.0.1</code></li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>17 / 18</span></footer>
-  <div class="diapo-progression" style="--p:94.44444444444444%"></div>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>20 / 21</span></footer>
+  <div class="diapo-progression" style="--p:95.23809523809523%"></div>
 </section>
 <section class="diapo diapo-question" >
-  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 8</h2></header>
+  <header class="diapo-titre"><h2><span class="act-num">Activité 5</span> Question 7</h2></header>
   <div class="diapo-corps"><p>À la maison, le routeur qui sert de passerelle à votre téléphone, c'est…</p>
 <ul class="qcm qcm qcm">
 <li class="choix"><span class="case"></span>l'antenne 4G</li>
@@ -933,7 +1004,7 @@ body.presentation {
 <li class="choix"><span class="case"></span>le serveur de YouTube</li>
 </ul>
 </div>
-  <footer class="diapo-pied"><span>Panne au parking : l'enquête réseau</span><span>18 / 18</span></footer>
+  <footer class="diapo-pied"><span>Le réseau du parking en quatre règles</span><span>21 / 21</span></footer>
   <div class="diapo-progression" style="--p:100%"></div>
 </section>
 </main>

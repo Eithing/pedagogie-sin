@@ -63,6 +63,8 @@ journal:
     texte: "Le 20 novembre, l'heure commune « routeur et passerelle » est restée abstraite pour les élèves. Mardi 24 novembre : « le lampadaire pas à pas » (première séance en présentiel sur le programme : exécuter le programme à la main, chasse aux erreurs, Wokwi geste par geste avec le professeur), fiche notée /20. Vendredi 27 novembre, heure commune : reprise sur papier « la passerelle pas à pas » (la box de la maison, jeu des enveloppes), notée /20, qui peut remplacer la note du 20 novembre."
   - date: 2026-11-25
     texte: "L'heure commune du 27 novembre devient une enquête par équipes, « panne au parking » (jeu des enveloppes, puis cinq indices pour trouver deux erreurs de passerelle), sur papier, fiche notée /20."
+  - date: 2026-11-26
+    texte: "Bilan du 20 novembre : heure commune très difficile (bavardages, chamailleries ; 14 copies nominatives et 5 sans nom sur 23 présents pour D2 + D3). Vendredi 27 novembre : heure commune sur table, « le réseau du parking en quatre règles » (une règle montrée, un exercice individuel en silence, quatre fois), notée /20, la meilleure des deux notes compte."
 ---
 
 ## Organisation

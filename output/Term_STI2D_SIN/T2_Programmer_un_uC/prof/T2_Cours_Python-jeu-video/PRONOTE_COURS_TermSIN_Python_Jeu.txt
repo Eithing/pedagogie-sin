@@ -1,0 +1,6 @@
+﻿=== TSTI2D2 (vendredi 27 novembre, 1re heure du bloc de 3 h) ===
+Titre de la séance :
+T2 Traiter l'information par programme — Séance : Python, le moteur des jeux vidéo (variables, if / elif / else, boucle while)
+
+Description :
+T2, au tableau et sur table, sans PC : les bases de Python vues à travers un jeu vidéo (points de vie, game over, boucle de jeu, hasard), exécution à la main et tournoi des bugs, avant le TP « jeu des réflexes ». Non noté.

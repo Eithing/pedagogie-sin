@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="Inter, Segoe UI, sans-serif">
+  <rect width="1200" height="500" fill="#ffffff"/>
+  <text x="600" y="36" text-anchor="middle" font-size="26" font-weight="800" fill="#0f172a">Deux rues, un bureau de poste au milieu</text>
+
+  <!-- rue du parking -->
+  <rect x="20" y="64" width="440" height="410" rx="16" fill="#eff6ff" stroke="#2563eb" stroke-width="3"/>
+  <text x="240" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#1d4ed8">Rue du parking</text>
+  <text x="240" y="126" text-anchor="middle" font-size="19" font-family="Consolas, monospace" fill="#1d4ed8">192.168.20.___</text>
+  <g font-size="17">
+    <rect x="50" y="150" width="380" height="80" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="70" y="183" font-weight="800" fill="#0f172a">Capteur P01</text>
+    <text x="70" y="213" font-family="Consolas, monospace" fill="#334155">192.168.20.<tspan font-weight="800" fill="#ea580c">11</tspan></text>
+    <rect x="50" y="250" width="380" height="80" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="70" y="283" font-weight="800" fill="#0f172a">Supervision</text>
+    <text x="70" y="313" font-family="Consolas, monospace" fill="#334155">192.168.20.<tspan font-weight="800" fill="#ea580c">2</tspan></text>
+    <rect x="50" y="350" width="380" height="80" rx="12" fill="#ffffff" stroke="#2563eb" stroke-width="2"/>
+    <text x="70" y="383" font-weight="800" fill="#0f172a">Caméra</text>
+    <text x="70" y="413" font-family="Consolas, monospace" fill="#334155">192.168.20.<tspan font-weight="800" fill="#ea580c">50</tspan></text>
+  </g>
+  <text x="240" y="460" text-anchor="middle" font-size="15" fill="#475569">même rue : on se parle directement (switch)</text>
+
+  <!-- rue de l'accueil -->
+  <rect x="740" y="64" width="440" height="410" rx="16" fill="#f0fdf4" stroke="#15803d" stroke-width="3"/>
+  <text x="960" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#15803d">Rue de l'accueil</text>
+  <text x="960" y="126" text-anchor="middle" font-size="19" font-family="Consolas, monospace" fill="#15803d">10.0.0.___</text>
+  <g font-size="17">
+    <rect x="770" y="150" width="380" height="80" rx="12" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+    <text x="790" y="183" font-weight="800" fill="#0f172a">Poste de l'accueil</text>
+    <text x="790" y="213" font-family="Consolas, monospace" fill="#334155">10.0.0.<tspan font-weight="800" fill="#ea580c">25</tspan></text>
+    <rect x="770" y="250" width="380" height="80" rx="12" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+    <text x="790" y="283" font-weight="800" fill="#0f172a">Caisse</text>
+    <text x="790" y="313" font-family="Consolas, monospace" fill="#334155">10.0.0.<tspan font-weight="800" fill="#ea580c">30</tspan></text>
+    <rect x="770" y="350" width="380" height="80" rx="12" fill="#ffffff" stroke="#15803d" stroke-width="2"/>
+    <text x="790" y="383" font-weight="800" fill="#0f172a">Imprimante</text>
+    <text x="790" y="413" font-family="Consolas, monospace" fill="#334155">10.0.0.<tspan font-weight="800" fill="#ea580c">40</tspan></text>
+  </g>
+  <text x="960" y="460" text-anchor="middle" font-size="15" fill="#475569">même rue : on se parle directement (switch)</text>
+
+  <!-- routeur -->
+  <rect x="490" y="170" width="220" height="200" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="3"/>
+  <text x="600" y="205" text-anchor="middle" font-size="19" font-weight="800" fill="#9a3412">Routeur</text>
+  <text x="600" y="230" text-anchor="middle" font-size="15" fill="#9a3412">(le bureau de poste)</text>
+  <rect x="470" y="250" width="44" height="70" rx="6" fill="#2563eb"/>
+  <rect x="686" y="250" width="44" height="70" rx="6" fill="#15803d"/>
+  <text x="600" y="400" text-anchor="middle" font-size="15" font-family="Consolas, monospace" font-weight="800" fill="#1d4ed8">porte parking : 192.168.20.1</text>
+  <text x="600" y="425" text-anchor="middle" font-size="15" font-family="Consolas, monospace" font-weight="800" fill="#15803d">porte accueil : 10.0.0.1</text>
+  <text x="600" y="290" text-anchor="middle" font-size="15" fill="#334155">une porte</text>
+  <text x="600" y="310" text-anchor="middle" font-size="15" fill="#334155">sur chaque rue</text>
+  <line x1="430" y1="285" x2="470" y2="285" stroke="#2563eb" stroke-width="4"/>
+  <line x1="730" y1="285" x2="770" y2="285" stroke="#15803d" stroke-width="4"/>
+</svg>
