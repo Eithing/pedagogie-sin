@@ -1,12 +1,12 @@
 ---
-titre: "Le Web : histoire, droit d'auteur, HTML, URL, HTTP, moteurs et cookies"
+titre: "Le Web : l'essentiel"
 niveau: SNT (2nde)
 sequence: S2
 court: Interro Web
 rangement: Eval/2nde
 pronote:
-  titre: "Le Web — Interrogation : tout le thème"
-  description: "S2 Le Web : interrogation écrite de 30 min (45 min avec tiers-temps), deux sujets (A/B), sur tout le thème : histoire, licences, HTML et CSS, URL, requête HTTP et client / serveur, moteurs de recherche, cookies. Notée."
+  titre: "S2 Le Web — Interrogation : l'essentiel du thème"
+  description: "S2 Le Web : interrogation courte de 30 min (45 min avec tiers-temps), sujets A et B, surtout des questions à cocher : Internet et Web, histoire, licences, HTML et CSS, URL, client / serveur, moteurs, cookies. Notée."
 type: evaluation
 duree: 30 min
 bareme: 20
@@ -18,167 +18,220 @@ consignes:
 ---
 
 ::: prof
-**Date** : vendredi 4 décembre, 9 h, classe entière (reportée du 27 novembre : les élèves étaient perdus après la synthèse du 20 ; séance de reprise le 27 : l'escape game « Panique à la MDL »). Prévoir 30 min ; **45 min pour les élèves avec un PAI** (tiers-temps) : le sujet est calibré pour 30 min, sans question longue ni calcul. La fiche de révision `REVISION_SNT_Web` (même dossier) a été distribuée le 20 novembre ; chaque question correspond à une de ses parties.
+**Date** : vendredi 4 décembre, 9 h, classe entière. Sujet **volontairement simple** (demande de l'enseignant, 27 novembre) : les élèves n'étaient pas prêts après la synthèse du 20. Il remplace la première version, plus longue (dans l'historique git). La moitié des points vient des cases à cocher ; aucune question ne demande d'écrire plus de deux lignes.
+
+**Révision** : fiche `REVISION_SNT_Web_Essentiel` (même dossier), à déposer sur l'ENT et Pronote dès le 27 novembre. Chaque question de l'interrogation correspond à un encadré de la fiche, avec un exemple différent.
 
 **Mise en œuvre** : distribuer les sujets A et B en alternance selon les rangs. Même structure, même difficulté, même barème ; seuls les exemples changent.
 :::
 
-## Partie 1 — Connaissances
+## Partie 1 — Questions à cocher
 
-:::: question 1 [4 pt]
+:::: question 1 [5 pt]
 Cocher la bonne réponse.
 
 ::: variante A
-**a)** Le Web a été inventé…
+**a)** Le Web, c'est…
 
-- [ ] en 1969, aux États-Unis, par l'armée
+- [ ] le réseau mondial de câbles et de routeurs
+- [x] un service d'Internet : des pages reliées par des liens
+- [ ] un autre nom de Google
+
+**b)** Le Web a été inventé…
+
 - [x] en 1989, au CERN, par Tim Berners-Lee
+- [ ] en 1969, par l'armée américaine
 - [ ] en 2004, par Mark Zuckerberg
 
-**b)** Internet et le Web…
+**c)** Le langage qui décrit le **contenu** d'une page (titres, paragraphes, liens) est…
 
-- [ ] sont deux noms de la même chose
-- [x] sont différents : le Web est un service qui utilise Internet
-- [ ] sont différents : Internet est un service qui utilise le Web
+- [x] HTML
+- [ ] CSS
+- [ ] HTTP
 
-**c)** Pour trouver rapidement les pages qui contiennent un mot, un moteur de recherche utilise…
+**d)** Le langage qui décrit le **style** d'une page (couleurs, polices) est…
 
-- [x] un index construit à l'avance par ses robots
-- [ ] une lecture de toutes les pages du Web à chaque recherche
-- [ ] la liste des sites que l'utilisateur a déjà visités
+- [ ] HTML
+- [x] CSS
+- [ ] URL
 
-**d)** Un cookie tiers est déposé…
+**e)** Une photo trouvée sur Internet…
 
-- [ ] par le site que l'on visite, pour garder le panier
-- [x] par un autre domaine, souvent une régie publicitaire, pour suivre la navigation
-- [ ] par le navigateur, pour accélérer l'affichage
+- [ ] est libre : on peut en faire ce qu'on veut
+- [x] est protégée par le droit d'auteur, sauf si une licence autorise autre chose
+- [ ] n'appartient à personne
+
 :::
 
 ::: variante B
-**a)** En 1993, le CERN…
+**a)** Internet, c'est…
 
-- [ ] a inventé Internet
-- [x] a placé le Web dans le domaine public
-- [ ] a créé le premier moteur de recherche
+- [x] le réseau mondial qui transporte les données
+- [ ] uniquement les pages web
+- [ ] un logiciel installé sur l'ordinateur
 
-**b)** Le courrier électronique…
+**b)** Le Web a été inventé par…
 
-- [x] utilise Internet, mais ne fait pas partie du Web
-- [ ] fait partie du Web
-- [ ] n'utilise pas Internet
+- [ ] Bill Gates, chez Microsoft
+- [x] Tim Berners-Lee, au CERN
+- [ ] Steve Jobs, chez Apple
 
-**c)** Les robots d'un moteur de recherche…
+**c)** La balise `<a href="…">` sert à faire…
 
-- [ ] répondent aux questions des utilisateurs
-- [x] parcourent le Web de lien en lien pour construire l'index
-- [ ] suppriment les pages fausses
+- [ ] un titre
+- [ ] une image
+- [x] un lien hypertexte
 
-**d)** En navigation privée…
+**d)** Pour mettre tous les titres en rouge, on écrit une règle…
 
-- [ ] personne ne peut voir les sites que je visite
-- [x] l'historique et les cookies ne sont pas conservés sur mon appareil
-- [ ] les sites ne peuvent pas déposer de cookies
+- [x] CSS
+- [ ] HTML
+- [ ] HTTP
+
+**e)** Dans une licence Creative Commons, **BY** veut dire…
+
+- [x] citer l'auteur
+- [ ] pas d'utilisation commerciale
+- [ ] pas de modification
 :::
 ::::
 
 ::: reponse 0
-1 point par bonne réponse. {{1989, CERN ; le Web est un service d'Internet ; index ; cookie d'un autre domaine qui suit la navigation.|Domaine public ; courriel hors du Web ; les robots construisent l'index ; rien n'est conservé sur l'appareil.}}
+1 point par item. {{a) un service d'Internet ; b) 1989, CERN ; c) HTML ; d) CSS ; e) droit d'auteur.|a) le réseau ; b) Tim Berners-Lee ; c) lien ; d) CSS ; e) citer l'auteur.}}
 :::
 
-::: question 2 [2 pt]
-{{Une photo est publiée sous licence **CC BY-NC**. Peut-on **a)** la mettre dans un exposé, en citant l'auteur ? **b)** l'utiliser sur l'affiche publicitaire d'un magasin ? Justifier.|Un dessin est publié sous licence **CC BY-ND**. Peut-on **a)** le mettre tel quel sur le blog du lycée, en citant l'auteur ? **b)** le recadrer et le recolorier pour une affiche ? Justifier.}}
+:::: question 2 [5 pt]
+Cocher la bonne réponse.
+
+::: variante A
+**a)** Le navigateur (Firefox, Chrome…) est…
+
+- [x] le client : il demande la page et l'affiche
+- [ ] le serveur : il stocke les pages
+- [ ] un moteur de recherche
+
+**b)** Le serveur répond `404`. Cela veut dire…
+
+- [ ] tout s'est bien passé
+- [x] la page demandée est introuvable
+- [ ] la page est sécurisée
+
+**c)** Pour trouver vite les pages qui contiennent un mot, un moteur de recherche utilise…
+
+- [x] un index construit à l'avance par des robots
+- [ ] une lecture de tout le Web à chaque recherche
+- [ ] l'historique de l'utilisateur
+
+**d)** Un résultat marqué « Sponsorisé »…
+
+- [ ] est le site le plus fiable
+- [x] est une publicité payée
+- [ ] est le site le plus ancien
+
+**e)** Un cookie, c'est…
+
+- [ ] un virus
+- [x] un petit fichier déposé par un site pour me reconnaître
+- [ ] un mot de passe
 :::
 
-::: reponse 4
-{{a) **Oui** : BY impose de citer l'auteur, c'est fait. b) **Non** : NC interdit l'usage commercial.|a) **Oui** : BY impose de citer l'auteur, c'est fait. b) **Non** : ND interdit la modification.}} (1 pt par cas, justification comprise)
+::: variante B
+**a)** Le serveur web…
+
+- [ ] affiche la page avec ses couleurs
+- [x] stocke ou fabrique la page, puis l'envoie
+- [ ] est l'écran de l'ordinateur
+
+**b)** Le serveur répond `200 OK`. Cela veut dire…
+
+- [x] tout s'est bien passé, la page est envoyée
+- [ ] la page est introuvable
+- [ ] il y a un virus
+
+**c)** Les robots d'un moteur de recherche…
+
+- [x] parcourent le Web de lien en lien pour construire l'index
+- [ ] répondent aux questions des utilisateurs
+- [ ] suppriment les fausses informations
+
+**d)** Deux moteurs de recherche différents…
+
+- [ ] donnent toujours les mêmes résultats
+- [x] ne donnent pas forcément les mêmes résultats
+- [ ] utilisent le même index
+
+**e)** En navigation privée…
+
+- [ ] personne ne peut voir les sites que je visite
+- [x] l'historique et les cookies ne sont pas gardés sur mon appareil
+- [ ] Internet est plus rapide
+:::
+::::
+
+::: reponse 0
+1 point par item. {{a) client ; b) introuvable ; c) index ; d) publicité ; e) petit fichier qui me reconnaît.|a) stocke ou fabrique, puis envoie ; b) tout va bien ; c) construisent l'index ; d) pas forcément les mêmes ; e) rien n'est gardé sur l'appareil.}}
 :::
 
-## Partie 2 — Le code et l'adresse
+## Partie 2 — Lire et comprendre
 
 :::: question 3 [3 pt]
 Voici le code d'une page :
 
 ```html
-<h1>{{Le club de théâtre|La radio du lycée}}</h1>
-<p>{{Répétition le jeudi soir.|Émission tous les lundis.}}</p>
-<a href="{{https://www.theatre-exemple.fr|https://www.radio-exemple.fr}}">{{Notre spectacle|Écouter en direct}}</a>
+<h1>{{Le club photo|Le foyer du lycée}}</h1>
+<p>{{Rendez-vous le mardi à midi.|Ouvert de 10 h à 16 h.}}</p>
+<a href="{{https://www.photo-exemple.fr|https://www.foyer-exemple.fr}}">{{Voir nos photos|Le menu du jour}}</a>
 ```
 
-**a)** Que fait la dernière ligne ? Quel texte voit-on à l'écran ?
-
-::: zone 2
-:::
-
-**b)** Écrire la règle CSS qui met les paragraphes en {{vert (`green`)|rouge (`red`)}}. Dans quel fichier, HTML ou CSS, l'écrit-on ?
-
-::: zone 2
-:::
-::::
-
-::: reponse 0
-**a)** Un **lien hypertexte** : on voit « {{Notre spectacle|Écouter en direct}} », qui mène à `{{https://www.theatre-exemple.fr|https://www.radio-exemple.fr}}`. (1,5 pt)
-
-**b)** `p { color: {{green|red}}; }`, dans le fichier **CSS** (le style), sans toucher au HTML (le contenu). (1,5 pt)
-:::
-
-::: question 4 [3 pt]
-Décomposer l'URL `{{https://www.cinema-exemple.fr/seances?film=dune&jour=samedi|https://www.bus-exemple.fr/horaires?ligne=12&arret=gare}}` : protocole, nom de domaine, chemin, paramètres. Cette page est-elle sécurisée ? Qu'est-ce que cela garantit ?
-:::
-
-::: reponse 5
-Protocole `https` ; domaine `{{www.cinema-exemple.fr|www.bus-exemple.fr}}` ; chemin `{{/seances|/horaires}}` ; paramètres `{{film=dune` et `jour=samedi|ligne=12` et `arret=gare}}`. (2 pt) Oui, `https` : les échanges sont **chiffrés** ; cela ne garantit pas que le site est honnête. (1 pt)
-:::
-
-## Partie 3 — Le dialogue client / serveur
-
-:::: question 5 [3 pt]
-Un navigateur envoie la requête suivante et reçoit cette réponse :
-
-```text
-GET {{/recherche?q=volley&page=1|/produits?taille=M&couleur=bleu}} HTTP/1.1
-Host: {{www.sport-exemple.fr|www.boutique-exemple.fr}}
-
-HTTP/1.1 {{200 OK|404 Not Found}}
-```
-
-**a)** Quel serveur est interrogé ? Quels paramètres sont envoyés ?
-
-::: zone 2
-:::
-
-**b)** Que signifie la réponse ?
+**a)** Quel est le **titre** de la page ?
 
 ::: zone 1
 :::
 
-**c)** Qui **fabrique** la page de résultats à partir de la base de données : le client ou le serveur ? Qui l'**affiche** avec ses couleurs ?
+**b)** Quel texte est un **lien** ? Vers quelle adresse mène-t-il ?
 
 ::: zone 1
 :::
 ::::
 
 ::: reponse 0
-**a)** `{{www.sport-exemple.fr|www.boutique-exemple.fr}}` ; paramètres `{{q=volley` et `page=1|taille=M` et `couleur=bleu}}`. (1 pt)
+**a)** « {{Le club photo|Le foyer du lycée}} » (balise `<h1>`). (1 pt)
 
-**b)** {{`200 OK` : tout s'est bien passé, la page est envoyée.|`404 Not Found` : la ressource demandée est introuvable sur le serveur.}} (1 pt)
-
-**c)** Le **serveur** fabrique la page ; le **client** (le navigateur) l'affiche. (1 pt)
+**b)** « {{Voir nos photos|Le menu du jour}} » (balise `<a>`), qui mène à `{{https://www.photo-exemple.fr|https://www.foyer-exemple.fr}}`. (2 pt : 1 pour le texte, 1 pour l'adresse)
 :::
 
-## Partie 4 — Recherche et cookies
+:::: question 4 [3 pt]
+Voici une adresse : `{{https://www.piscine-exemple.fr/horaires|http://www.jeux-exemple.fr/gagner}}`
 
-::: question 6 [3 pt]
-{{Un site de vente de compléments alimentaires arrive en premier dans un moteur de recherche, avec la mention « Sponsorisé ». **a)** Pourquoi est-il en premier ? **b)** Citer deux questions à se poser pour juger si ses informations sur la santé sont fiables.|Une page qui affirme qu'un jeu vidéo rend plus intelligent arrive en deuxième position d'une recherche. **a)** Citer une raison pour laquelle une page peut être bien classée. **b)** Citer deux questions à se poser pour juger si cette affirmation est fiable.}}
+**a)** Quel est le **nom de domaine** (le nom du serveur) ?
+
+::: zone 1
 :::
 
-::: reponse 4
-**a)** {{C'est une **publicité** : le site a payé pour apparaître en premier.|Elle reçoit beaucoup de **liens** d'autres pages (des « votes »), ou c'est une publicité.}} (1 pt) **b)** Deux questions parmi : **qui** écrit ? **quand** ? **d'où** viennent les informations (sources) ? **pourquoi** la page existe-t-elle (informer, vendre, convaincre) ? (2 pt)
+**b)** Cette page est-elle **sécurisée** ? Comment le sait-on ?
+
+::: zone 1
+:::
+::::
+
+::: reponse 0
+**a)** `{{www.piscine-exemple.fr|www.jeux-exemple.fr}}`. (1 pt)
+
+**b)** {{**Oui** : l'adresse commence par `https`, les échanges sont chiffrés (cadenas).|**Non** : l'adresse commence par `http` sans « s », les échanges ne sont pas chiffrés.}} (2 pt : 1 pour la réponse, 1 pour la raison)
 :::
 
-::: question 7 [2 pt]
-{{Après avoir regardé des chaussures sur un site, Lina voit des publicités pour ces chaussures sur tous les autres sites. Expliquer ce qui permet cela, et un réglage du navigateur qui l'éviterait.|Tom se croit invisible en navigation privée sur l'ordinateur du lycée. A-t-il raison ? Expliquer ce que fait vraiment la navigation privée.}}
+::: question 5 [2 pt]
+{{Une image est sous licence **CC BY-NC** (citer l'auteur, pas d'usage commercial). Léa veut la mettre dans son exposé de SNT, en citant l'auteur. **A-t-elle le droit ?** Pourquoi ?|Une image est sous licence **CC BY-NC** (citer l'auteur, pas d'usage commercial). Un magasin veut la mettre sur sa publicité. **A-t-il le droit ?** Pourquoi ?}}
 :::
 
-::: reponse 4
-{{Un **cookie tiers**, déposé par une régie publicitaire présente sur de nombreux sites, permet de suivre sa navigation d'un site à l'autre (1 pt). Bloquer les cookies tiers, ou refuser les cookies publicitaires dans la bannière (1 pt).|**Non** (1 pt) : la navigation privée n'enregistre ni historique ni cookies **sur l'ordinateur** une fois la fenêtre fermée, mais les sites visités et le réseau du lycée voient toujours passer ses connexions (1 pt).}}
+::: reponse 2
+{{**Oui** : elle cite l'auteur (BY) et un exposé n'est pas commercial (NC respecté).|**Non** : une publicité est un usage commercial, interdit par NC.}} (1 pt la réponse, 1 pt la raison)
+:::
+
+::: question 6 [2 pt]
+{{Après avoir regardé un vélo sur un site, Noé voit des publicités pour ce vélo sur d'autres sites. **Qu'est-ce qui permet cela ?** Donner un moyen de l'éviter.|Sur un site, une bannière demande « Accepter tous les cookies ? ». **À quoi servent les cookies publicitaires ?** Que peut-on faire pour les éviter ?}}
+:::
+
+::: reponse 2
+{{Les **cookies** (cookies tiers, publicitaires) qui suivent sa navigation d'un site à l'autre (1 pt).|À **suivre** ma navigation pour me montrer des publicités ciblées (1 pt).}} Pour l'éviter : **refuser** les cookies dans la bannière, ou bloquer les cookies tiers dans le navigateur (1 pt).
 :::

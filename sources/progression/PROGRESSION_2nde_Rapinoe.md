@@ -50,8 +50,8 @@ sequences:
       - "Indexer à la main quelques textes puis répondre à une requête ; comparer plusieurs moteurs de recherche"
       - "Régler cookies et confidentialité du navigateur ; visualiser les traqueurs"
     outils: [navigateur (outils de développement), éditeur web maison (fichier HTML, sans compte)]
-    evaluation: "Interrogation de 30 min (sujets A / B, 45 min avec tiers-temps), vendredi 4 décembre (reportée du 27 novembre). Notes de TP : page web (9 octobre), moteurs de recherche (13 novembre), coulisses d'une page (20 et 27 novembre) ; fiche de synthèse notée (20 novembre)."
-    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_MoteursRecherche_Note, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso, COURS_SNT_Web_Synthese, TP_SNT_Web_Coulisses, COURS_SNT_Web_Escape, REVISION_SNT_Web, EVAL_SNT_Web]
+    evaluation: "Interrogation simple de 30 min (sujets A / B, 45 min avec tiers-temps, surtout des cases à cocher), vendredi 4 décembre (reportée du 27 novembre). Notes de TP : page web (9 octobre), moteurs de recherche (13 novembre), coulisses d'une page (20 et 27 novembre) ; fiche de synthèse notée (20 novembre)."
+    ressources: [AUTO_SNT_Web_Decouverte, AUTO_SNT_Web_PremierePage, AUTO_SNT_Web_ClicPage, AUTO_SNT_Web_MoteursRecherche, AUTO_SNT_Web_MoteursRecherche_Note, AUTO_SNT_Web_Cookies, COURS_SNT_Web_Reprise, TP_SNT_Web_PagePerso, COURS_SNT_Web_Synthese, TP_SNT_Web_Coulisses, COURS_SNT_Web_Escape, REVISION_SNT_Web, REVISION_SNT_Web_Essentiel, EVAL_SNT_Web]
     semaines: 4
     etat: en-cours
     debut: 2026-10-09
@@ -177,6 +177,8 @@ journal:
     texte: "La séance « le voyage d'un clic » ressemblait trop à la synthèse du 20 novembre et au jeu de rôle du 2 novembre : elle est remplacée par un escape game par équipes, « Panique à la MDL » (lien piégé, journal d'un serveur, page HTML cassée, licence d'une image, cookies tiers et publicité, verrou final sur l'histoire du Web), avec des exemples nouveaux. Fiche notée /20, qui peut remplacer la note de la synthèse."
   - date: 2026-11-26
     texte: "Bilan du 20 novembre : le TP « coulisses » s'est bien passé ; la synthèse a couvert tout le contenu, mais trop vite, et les élèves ne sont pas prêts pour l'interrogation. L'escape game du 27 novembre est confirmé comme séance de révision, notée ; l'interrogation reste le 4 décembre."
+  - date: 2026-11-27
+    texte: "L'interrogation Web du 4 décembre est refaite en version très simple, à la demande de l'enseignant : 10 questions à cocher (10 points), puis lire un code HTML, une URL, une licence et une question sur les cookies. Nouvelle fiche de révision courte (7 encadrés et un auto-test corrigé), à déposer sur l'ENT."
 ---
 
 ## Intentions pédagogiques

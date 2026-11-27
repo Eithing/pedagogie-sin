@@ -2,6 +2,21 @@
 
 Ce fichier remplace la mémoire de conversation entre les postes (PC fixe, portable du lycée). Claude le lit au démarrage (voir `CLAUDE.md`) et le met à jour en fin de session : décisions prises, travail fait, questions en attente.
 
+## 27 novembre 2026 : interrogation Web des 2nde (4 décembre) refaite en très simple
+
+- **Demande de l'enseignant** : une interrogation « très simple » pour la semaine prochaine, et une fiche de révision.
+- `EVAL_SNT_Web` **réécrit à la place de l'ancien sujet**, qui n'avait pas servi et reste dans l'historique git. Le nouveau sujet a les mêmes noms de fichiers dans `output/Eval/2nde/` et garde les sujets A et B, sur 30 min (45 min avec tiers-temps). Barème :
+  - questions 1 et 2 : 2 × 5 cases à cocher (10 pt) ;
+  - question 3 : lire un code HTML, trouver le titre et le lien (3 pt) ;
+  - question 4 : nom de domaine d'une URL et page sécurisée ou non (3 pt) ;
+  - question 5 : licence CC BY-NC, oui ou non, et pourquoi (2 pt) ;
+  - question 6 : cookies publicitaires (2 pt).
+  
+  3 pages par sujet.
+- Nouvelle fiche **`REVISION_SNT_Web_Essentiel`** : 7 encadrés qui correspondent aux questions de l'interrogation, avec des exemples différents, et un auto-test de 7 questions corrigé. Recto-verso. L'ancienne `REVISION_SNT_Web` (distribuée le 20) est gardée. Pronote : le nom de fichier est nouveau.
+- La progression 2nde a été mise à jour (évaluation, ressources, journal du 27).
+- **À faire par l'enseignant** : déposer `REVISION_SNT_Web_Essentiel.pdf` sur l'ENT et Pronote, et imprimer les sujets A et B.
+
 ## 26 novembre 2026 (après-midi) : bilan du 20 novembre et séances du 27 refaites pour les Terminales
 
 - **Bilan de l'enseignant** :
